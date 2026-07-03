@@ -1,0 +1,86 @@
+# A Performance Cost/Benefit Analysis of Adaptive Computing in the Tactical Edge
+
+## Metadata
+
+- Year: 2024
+- URL: https://doi.org/10.1109/icmcis61231.2024.10541027
+- DOI: 10.1109/icmcis61231.2024.10541027
+- Read status: abstract_only
+
+## One-line Takeaway
+
+Adaptive tactical edge computing can reduce bandwidth, latency, and congestion by deploying processing services near active sensors, but the benefit must be weighed against orchestration overhead.
+
+## D4D Relevance
+
+Directly relevant to a Resilient Maritime COP over Denied Networks because it supports a design where vessels, unmanned systems, or shore-edge nodes process raw maritime sensor feeds locally and transmit compact semantic COP updates when links are constrained or intermittent. For a T3 semantic COP, the paper motivates adaptive, mission-aware placement of fusion, filtering, detection, and summarization services rather than fixed pipelines that fail when sensors, compute nodes, or links disappear.
+
+## Key Concepts
+
+- Tactical edge computing
+- Adaptive service deployment
+- Disadvantaged tactical networks
+- Bandwidth reduction through local processing
+- Latency reduction
+- Network congestion avoidance
+- Mission-aware compute placement
+- Sensor and node churn
+- Cost-benefit analysis of adaptivity
+- NATO IST-193 adaptive tactical edge computing
+
+## Input Data
+
+- Raw sensor data collected at the tactical edge
+- Sensor tasking information
+- Mission requirements
+- Sensor and node availability
+- Sensor or data-source location when known
+- Network bandwidth constraints
+- No specific dataset or maritime sensor suite is described in the provided abstract
+
+## Methods Or Architecture
+
+- Place processing capabilities close to tactical sensor data sources
+- Filter or process data locally before transmission
+- Deploy edge services on demand rather than through static pre-placement
+- Adapt service placement based on tasked sensors and mission needs
+- Account for unpredictable edge conditions such as sensors or nodes going offline
+- Analyze benefits of adaptivity against overhead costs, though detailed experimental setup is not available from the abstract
+
+## Outputs / Metrics
+
+- Reduced bandwidth consumption from avoiding transmission of uninteresting raw data
+- Reduced processing latency by moving computation closer to the source
+- Avoidance or reduction of tactical network congestion
+- Performance benefits of adaptive deployment
+- Overhead costs introduced by adaptive orchestration
+- Specific quantitative metrics are not provided in the supplied text
+
+## Prototype Hooks
+
+- Implement a T3 edge orchestrator that deploys COP services only near currently tasked maritime sensors
+- Use local classifiers or filters to turn radar, AIS, EO/IR, acoustic, or track data into semantic events before transmission
+- Send compact semantic products such as vessel detections, confidence scores, track updates, anomalies, and intent cues instead of raw feeds
+- Make service placement mission-aware, for example prioritizing chokepoint monitoring, convoy protection, or search-and-rescue tasks
+- Build resilience logic for disappearing ships, sensors, UAVs, buoys, or relay nodes
+- Include an explicit cost model comparing bandwidth saved against compute, startup, migration, and coordination overhead
+
+## Pitch Evidence
+
+- Tactical edge networks often cannot afford high-rate raw sensor transfer, which matches denied or degraded maritime communications
+- Much raw sensor data may be irrelevant, supporting semantic filtering before network transmission
+- Local processing can reduce both bandwidth demand and latency, key claims for a resilient COP
+- Static edge deployments are brittle when data sources and node availability change
+- Adaptive deployment aligns with contested maritime operations where sensors, compute nodes, and links are dynamic
+
+## Limitations / Risks
+
+- Only the abstract was available, so implementation details, experiments, and quantitative results could not be verified
+- The provided text does not specify maritime use cases or sensor modalities
+- Adaptive orchestration may add overhead that outweighs benefits for short-lived tasks or very small data products
+- Dynamic service placement requires reliable discovery, tasking, and resource-state awareness, which may itself be hard over denied networks
+- Security, trust, and adversarial interference risks are not discussed in the supplied excerpt
+
+## Confidence
+
+low

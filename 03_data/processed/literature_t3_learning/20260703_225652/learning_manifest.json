@@ -1,0 +1,147 @@
+{
+  "version": "20260703_225652",
+  "generated_at": "2026-07-03T13:56:52.965453+00:00",
+  "limit": 20,
+  "papers": [
+    {
+      "priority": 11,
+      "title": "Application of Augmented Reality, Mobile Devices, and Sensors for a Combat Entity Quantitative Assessment Supporting Decisions and Situational Awareness Development",
+      "url": "https://doi.org/10.3390/app9214577",
+      "pdf_url": "https://www.mdpi.com/2076-3417/9/21/4577/pdf?version=1572261462",
+      "status": {
+        "downloaded_pdf": false,
+        "download_message": "<HTTPError 403: 'Forbidden'>",
+        "extract_message": "abstract fallback",
+        "text_chars": 2777
+      },
+      "summary_json": "/Users/mollykim/projects/D4D/03_data/processed/literature_t3_learning/20260703_225652/11_Application_of_Augmented_Reality_Mobile_Devices_and_Sensors_for_a_Combat_Entity_Quantitative_Assessm.json",
+      "note_md": "/Users/mollykim/projects/D4D/01_research/literature/t3_deep_research/paper_notes/11_Application_of_Augmented_Reality_Mobile_Devices_and_Sensors_for_a_Combat_Entity_Quantitative_Assessm.md"
+    },
+    {
+      "priority": 12,
+      "title": "Maritime information sharing environment deployment using the advanced multilayered Data Lake capabilities",
+      "url": "https://doi.org/10.31217/p.36.2.13",
+      "pdf_url": "https://hrcak.srce.hr/file/416250",
+      "status": {
+        "downloaded_pdf": true,
+        "download_message": "downloaded 4449513 bytes (application/pdf)",
+        "extract_message": "pypdf pages=14 chars=54977",
+        "text_chars": 54977
+      },
+      "summary_json": "/Users/mollykim/projects/D4D/03_data/processed/literature_t3_learning/20260703_225652/12_Maritime_information_sharing_environment_deployment_using_the_advanced_multilayered_Data_Lake_capabi.json",
+      "note_md": "/Users/mollykim/projects/D4D/01_research/literature/t3_deep_research/paper_notes/12_Maritime_information_sharing_environment_deployment_using_the_advanced_multilayered_Data_Lake_capabi.md"
+    },
+    {
+      "priority": 13,
+      "title": "Deep Learning Enabled Semantic Communication Systems",
+      "url": "https://doi.org/10.1109/tsp.2021.3071210",
+      "pdf_url": "https://ieeexplore.ieee.org/ielx7/78/9307529/09398576.pdf",
+      "status": {
+        "downloaded_pdf": true,
+        "download_message": "downloaded 1338407 bytes (application/pdf)",
+        "extract_message": "pypdf pages=13 chars=64532",
+        "text_chars": 64532
+      },
+      "summary_json": "/Users/mollykim/projects/D4D/03_data/processed/literature_t3_learning/20260703_225652/13_Deep_Learning_Enabled_Semantic_Communication_Systems.json",
+      "note_md": "/Users/mollykim/projects/D4D/01_research/literature/t3_deep_research/paper_notes/13_Deep_Learning_Enabled_Semantic_Communication_Systems.md"
+    },
+    {
+      "priority": 14,
+      "title": "A survey on semantic communications: Technologies, solutions, applications and challenges",
+      "url": "https://doi.org/10.1016/j.dcan.2023.05.010",
+      "pdf_url": "",
+      "status": {
+        "downloaded_pdf": false,
+        "download_message": "no pdf_url",
+        "extract_message": "abstract fallback",
+        "text_chars": 1050
+      },
+      "summary_json": "/Users/mollykim/projects/D4D/03_data/processed/literature_t3_learning/20260703_225652/14_A_survey_on_semantic_communications_Technologies_solutions_applications_and_challenges.json",
+      "note_md": "/Users/mollykim/projects/D4D/01_research/literature/t3_deep_research/paper_notes/14_A_survey_on_semantic_communications_Technologies_solutions_applications_and_challenges.md"
+    },
+    {
+      "priority": 15,
+      "title": "Harnessing the power of Machine learning for AIS Data-Driven maritime Research: A comprehensive review",
+      "url": "https://doi.org/10.1016/j.tre.2024.103426",
+      "pdf_url": "",
+      "status": {
+        "downloaded_pdf": false,
+        "download_message": "no pdf_url",
+        "extract_message": "abstract fallback",
+        "text_chars": 862
+      },
+      "summary_json": "/Users/mollykim/projects/D4D/03_data/processed/literature_t3_learning/20260703_225652/15_Harnessing_the_power_of_Machine_learning_for_AIS_Data-Driven_maritime_Research_A_comprehensive_revie.json",
+      "note_md": "/Users/mollykim/projects/D4D/01_research/literature/t3_deep_research/paper_notes/15_Harnessing_the_power_of_Machine_learning_for_AIS_Data-Driven_maritime_Research_A_comprehensive_revie.md"
+    },
+    {
+      "priority": 16,
+      "title": "AI in Maritime Security: Applications, Challenges, Future Directions, and Key Data Sources",
+      "url": "https://doi.org/10.3390/info16080658",
+      "pdf_url": "https://www.mdpi.com/2078-2489/16/8/658/pdf?version=1753970192",
+      "status": {
+        "downloaded_pdf": false,
+        "download_message": "<HTTPError 403: 'Forbidden'>",
+        "extract_message": "abstract fallback",
+        "text_chars": 1681
+      },
+      "summary_json": "/Users/mollykim/projects/D4D/03_data/processed/literature_t3_learning/20260703_225652/16_AI_in_Maritime_Security_Applications_Challenges_Future_Directions_and_Key_Data_Sources.json",
+      "note_md": "/Users/mollykim/projects/D4D/01_research/literature/t3_deep_research/paper_notes/16_AI_in_Maritime_Security_Applications_Challenges_Future_Directions_and_Key_Data_Sources.md"
+    },
+    {
+      "priority": 17,
+      "title": "AI-Driven Tactical Communications and Networking for Defense: A Survey and Emerging Trends",
+      "url": "http://arxiv.org/abs/2504.05071v1",
+      "pdf_url": "https://arxiv.org/pdf/2504.05071v1",
+      "status": {
+        "downloaded_pdf": true,
+        "download_message": "downloaded 2407364 bytes (application/pdf)",
+        "extract_message": "pypdf pages=38 chars=194071",
+        "text_chars": 194071
+      },
+      "summary_json": "/Users/mollykim/projects/D4D/03_data/processed/literature_t3_learning/20260703_225652/17_AI-Driven_Tactical_Communications_and_Networking_for_Defense_A_Survey_and_Emerging_Trends.json",
+      "note_md": "/Users/mollykim/projects/D4D/01_research/literature/t3_deep_research/paper_notes/17_AI-Driven_Tactical_Communications_and_Networking_for_Defense_A_Survey_and_Emerging_Trends.md"
+    },
+    {
+      "priority": 18,
+      "title": "A Systematic Literature Review of Retrieval-Augmented Generation: Techniques, Metrics, and Challenges",
+      "url": "https://doi.org/10.3390/bdcc9120320",
+      "pdf_url": "https://www.mdpi.com/2504-2289/9/12/320/pdf",
+      "status": {
+        "downloaded_pdf": false,
+        "download_message": "<HTTPError 403: 'Forbidden'>",
+        "extract_message": "abstract fallback",
+        "text_chars": 2741
+      },
+      "summary_json": "/Users/mollykim/projects/D4D/03_data/processed/literature_t3_learning/20260703_225652/18_A_Systematic_Literature_Review_of_Retrieval-Augmented_Generation_Techniques_Metrics_and_Challenges.json",
+      "note_md": "/Users/mollykim/projects/D4D/01_research/literature/t3_deep_research/paper_notes/18_A_Systematic_Literature_Review_of_Retrieval-Augmented_Generation_Techniques_Metrics_and_Challenges.md"
+    },
+    {
+      "priority": 19,
+      "title": "Correctness is not Faithfulness in Retrieval Augmented Generation Attributions",
+      "url": "https://doi.org/10.1145/3731120.3744592",
+      "pdf_url": "",
+      "status": {
+        "downloaded_pdf": false,
+        "download_message": "no pdf_url",
+        "extract_message": "abstract fallback",
+        "text_chars": 1436
+      },
+      "summary_json": "/Users/mollykim/projects/D4D/03_data/processed/literature_t3_learning/20260703_225652/19_Correctness_is_not_Faithfulness_in_Retrieval_Augmented_Generation_Attributions.json",
+      "note_md": "/Users/mollykim/projects/D4D/01_research/literature/t3_deep_research/paper_notes/19_Correctness_is_not_Faithfulness_in_Retrieval_Augmented_Generation_Attributions.md"
+    },
+    {
+      "priority": 20,
+      "title": "Provenance-Aware Knowledge Representation: A Survey of Data Models and Contextualized Knowledge Graphs",
+      "url": "https://doi.org/10.1007/s41019-020-00118-0",
+      "pdf_url": "https://link.springer.com/content/pdf/10.1007/s41019-020-00118-0.pdf",
+      "status": {
+        "downloaded_pdf": true,
+        "download_message": "downloaded 1137488 bytes (application/pdf)",
+        "extract_message": "pypdf pages=24 chars=116186",
+        "text_chars": 116186
+      },
+      "summary_json": "/Users/mollykim/projects/D4D/03_data/processed/literature_t3_learning/20260703_225652/20_Provenance-Aware_Knowledge_Representation_A_Survey_of_Data_Models_and_Contextualized_Knowledge_Graph.json",
+      "note_md": "/Users/mollykim/projects/D4D/01_research/literature/t3_deep_research/paper_notes/20_Provenance-Aware_Knowledge_Representation_A_Survey_of_Data_Models_and_Contextualized_Knowledge_Graph.md"
+    }
+  ]
+}

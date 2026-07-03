@@ -1,0 +1,287 @@
+{
+  "version": "20260703_231026",
+  "generated_at": "2026-07-03T14:10:26.101578+00:00",
+  "limit": 40,
+  "papers": [
+    {
+      "priority": 21,
+      "title": "Semantic Edge Computing and Semantic Communications in 6G Networks: A Unifying Survey and Research Challenges",
+      "url": "http://arxiv.org/abs/2411.18199v3",
+      "pdf_url": "https://arxiv.org/pdf/2411.18199v3",
+      "status": {
+        "downloaded_pdf": true,
+        "download_message": "downloaded 1302780 bytes (application/pdf)",
+        "extract_message": "pypdf pages=69 chars=95991",
+        "text_chars": 95991
+      },
+      "summary_json": "/Users/mollykim/projects/D4D/03_data/processed/literature_t3_learning/20260703_231026/21_Semantic_Edge_Computing_and_Semantic_Communications_in_6G_Networks_A_Unifying_Survey_and_Research_Ch.json",
+      "note_md": "/Users/mollykim/projects/D4D/01_research/literature/t3_deep_research/paper_notes/21_Semantic_Edge_Computing_and_Semantic_Communications_in_6G_Networks_A_Unifying_Survey_and_Research_Ch.md"
+    },
+    {
+      "priority": 22,
+      "title": "A Performance Cost/Benefit Analysis of Adaptive Computing in the Tactical Edge",
+      "url": "https://doi.org/10.1109/icmcis61231.2024.10541027",
+      "pdf_url": "",
+      "status": {
+        "downloaded_pdf": false,
+        "download_message": "no pdf_url",
+        "extract_message": "abstract fallback",
+        "text_chars": 1277
+      },
+      "summary_json": "/Users/mollykim/projects/D4D/03_data/processed/literature_t3_learning/20260703_231026/22_A_Performance_Cost_Benefit_Analysis_of_Adaptive_Computing_in_the_Tactical_Edge.json",
+      "note_md": "/Users/mollykim/projects/D4D/01_research/literature/t3_deep_research/paper_notes/22_A_Performance_Cost_Benefit_Analysis_of_Adaptive_Computing_in_the_Tactical_Edge.md"
+    },
+    {
+      "priority": 23,
+      "title": "Detecting Intentional AIS Shutdown in Open Sea Maritime Surveillance Using Self-Supervised Deep Learning",
+      "url": "https://doi.org/10.1109/tits.2023.3322690",
+      "pdf_url": "",
+      "status": {
+        "downloaded_pdf": false,
+        "download_message": "no pdf_url",
+        "extract_message": "abstract fallback",
+        "text_chars": 1421
+      },
+      "summary_json": "/Users/mollykim/projects/D4D/03_data/processed/literature_t3_learning/20260703_231026/23_Detecting_Intentional_AIS_Shutdown_in_Open_Sea_Maritime_Surveillance_Using_Self-Supervised_Deep_Lear.json",
+      "note_md": "/Users/mollykim/projects/D4D/01_research/literature/t3_deep_research/paper_notes/23_Detecting_Intentional_AIS_Shutdown_in_Open_Sea_Maritime_Surveillance_Using_Self-Supervised_Deep_Lear.md"
+    },
+    {
+      "priority": 24,
+      "title": "DarkVesselNet: Multi-Modal Remote Sensing and Trajectory Reasoning for Dark Vessel Detection",
+      "url": "http://arxiv.org/abs/2606.00445v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.00445v1",
+      "status": {
+        "downloaded_pdf": true,
+        "download_message": "downloaded 319956 bytes (application/pdf)",
+        "extract_message": "pypdf pages=18 chars=54568",
+        "text_chars": 54568
+      },
+      "summary_json": "/Users/mollykim/projects/D4D/03_data/processed/literature_t3_learning/20260703_231026/24_DarkVesselNet_Multi-Modal_Remote_Sensing_and_Trajectory_Reasoning_for_Dark_Vessel_Detection.json",
+      "note_md": "/Users/mollykim/projects/D4D/01_research/literature/t3_deep_research/paper_notes/24_DarkVesselNet_Multi-Modal_Remote_Sensing_and_Trajectory_Reasoning_for_Dark_Vessel_Detection.md"
+    },
+    {
+      "priority": 25,
+      "title": "Design of Antasena: an AI-powered maritime surveillance and anomaly detection system for security decision support",
+      "url": "https://doi.org/10.11591/ijai.v15.i1.pp269-288",
+      "pdf_url": "https://ijai.iaescore.com/index.php/IJAI/article/download/27721/14936",
+      "status": {
+        "downloaded_pdf": true,
+        "download_message": "downloaded 874442 bytes (application/pdf)",
+        "extract_message": "pypdf pages=20 chars=87054",
+        "text_chars": 87054
+      },
+      "summary_json": "/Users/mollykim/projects/D4D/03_data/processed/literature_t3_learning/20260703_231026/25_Design_of_Antasena_an_AI-powered_maritime_surveillance_and_anomaly_detection_system_for_security_dec.json",
+      "note_md": "/Users/mollykim/projects/D4D/01_research/literature/t3_deep_research/paper_notes/25_Design_of_Antasena_an_AI-powered_maritime_surveillance_and_anomaly_detection_system_for_security_dec.md"
+    },
+    {
+      "priority": 26,
+      "title": "BATMAN: A Brain-like Approach for Tracking Maritime Activity and Nuance",
+      "url": "https://doi.org/10.3390/s23052424",
+      "pdf_url": "https://www.mdpi.com/1424-8220/23/5/2424/pdf?version=1677059491",
+      "status": {
+        "downloaded_pdf": false,
+        "download_message": "<HTTPError 403: 'Forbidden'>",
+        "extract_message": "abstract fallback",
+        "text_chars": 1340
+      },
+      "summary_json": "/Users/mollykim/projects/D4D/03_data/processed/literature_t3_learning/20260703_231026/26_BATMAN_A_Brain-like_Approach_for_Tracking_Maritime_Activity_and_Nuance.json",
+      "note_md": "/Users/mollykim/projects/D4D/01_research/literature/t3_deep_research/paper_notes/26_BATMAN_A_Brain-like_Approach_for_Tracking_Maritime_Activity_and_Nuance.md"
+    },
+    {
+      "priority": 27,
+      "title": "Marine Vision-Based Situational Awareness Using Discriminative Deep Learning: A Survey",
+      "url": "https://doi.org/10.3390/jmse9040397",
+      "pdf_url": "https://www.mdpi.com/2077-1312/9/4/397/pdf?version=1618275073",
+      "status": {
+        "downloaded_pdf": false,
+        "download_message": "<HTTPError 403: 'Forbidden'>",
+        "extract_message": "abstract fallback",
+        "text_chars": 1670
+      },
+      "summary_json": "/Users/mollykim/projects/D4D/03_data/processed/literature_t3_learning/20260703_231026/27_Marine_Vision-Based_Situational_Awareness_Using_Discriminative_Deep_Learning_A_Survey.json",
+      "note_md": "/Users/mollykim/projects/D4D/01_research/literature/t3_deep_research/paper_notes/27_Marine_Vision-Based_Situational_Awareness_Using_Discriminative_Deep_Learning_A_Survey.md"
+    },
+    {
+      "priority": 28,
+      "title": "Enhancing Maritime Cybersecurity through Operational Technology Sensor Data Fusion: A Comprehensive Survey and Analysis",
+      "url": "https://doi.org/10.3390/s24113458",
+      "pdf_url": "https://www.mdpi.com/1424-8220/24/11/3458/pdf?version=1716816829",
+      "status": {
+        "downloaded_pdf": false,
+        "download_message": "<HTTPError 403: 'Forbidden'>",
+        "extract_message": "abstract fallback",
+        "text_chars": 1045
+      },
+      "summary_json": "/Users/mollykim/projects/D4D/03_data/processed/literature_t3_learning/20260703_231026/28_Enhancing_Maritime_Cybersecurity_through_Operational_Technology_Sensor_Data_Fusion_A_Comprehensive_S.json",
+      "note_md": "/Users/mollykim/projects/D4D/01_research/literature/t3_deep_research/paper_notes/28_Enhancing_Maritime_Cybersecurity_through_Operational_Technology_Sensor_Data_Fusion_A_Comprehensive_S.md"
+    },
+    {
+      "priority": 29,
+      "title": "The common operational picture : A powerful enabler or a cause of severe misunderstanding?",
+      "url": "http://urn.kb.se/resolve?urn=urn:nbn:se:fhs:diva-7172",
+      "pdf_url": "",
+      "status": {
+        "downloaded_pdf": false,
+        "download_message": "no pdf_url",
+        "extract_message": "abstract fallback",
+        "text_chars": 1484
+      },
+      "summary_json": "/Users/mollykim/projects/D4D/03_data/processed/literature_t3_learning/20260703_231026/29_The_common_operational_picture_A_powerful_enabler_or_a_cause_of_severe_misunderstanding.json",
+      "note_md": "/Users/mollykim/projects/D4D/01_research/literature/t3_deep_research/paper_notes/29_The_common_operational_picture_A_powerful_enabler_or_a_cause_of_severe_misunderstanding.md"
+    },
+    {
+      "priority": 30,
+      "title": "Partnering with technology: the importance of human machine teaming in future MDC2 systems",
+      "url": "https://doi.org/10.1117/12.2518750",
+      "pdf_url": "",
+      "status": {
+        "downloaded_pdf": false,
+        "download_message": "no pdf_url",
+        "extract_message": "abstract fallback",
+        "text_chars": 1389
+      },
+      "summary_json": "/Users/mollykim/projects/D4D/03_data/processed/literature_t3_learning/20260703_231026/30_Partnering_with_technology_the_importance_of_human_machine_teaming_in_future_MDC2_systems.json",
+      "note_md": "/Users/mollykim/projects/D4D/01_research/literature/t3_deep_research/paper_notes/30_Partnering_with_technology_the_importance_of_human_machine_teaming_in_future_MDC2_systems.md"
+    },
+    {
+      "priority": 31,
+      "title": "Security-Aware Sensor Fusion with MATE: the Multi-Agent Trust Estimator",
+      "url": "http://arxiv.org/abs/2503.04954v1",
+      "pdf_url": "https://arxiv.org/pdf/2503.04954v1",
+      "status": {
+        "downloaded_pdf": true,
+        "download_message": "downloaded 19614757 bytes (application/pdf)",
+        "extract_message": "pypdf pages=22 chars=86855",
+        "text_chars": 86855
+      },
+      "summary_json": "/Users/mollykim/projects/D4D/03_data/processed/literature_t3_learning/20260703_231026/31_Security-Aware_Sensor_Fusion_with_MATE_the_Multi-Agent_Trust_Estimator.json",
+      "note_md": "/Users/mollykim/projects/D4D/01_research/literature/t3_deep_research/paper_notes/31_Security-Aware_Sensor_Fusion_with_MATE_the_Multi-Agent_Trust_Estimator.md"
+    },
+    {
+      "priority": 32,
+      "title": "From SLAM to Situational Awareness: Challenges and Survey",
+      "url": "https://doi.org/10.3390/s23104849",
+      "pdf_url": "https://www.mdpi.com/1424-8220/23/10/4849/pdf?version=1684411197",
+      "status": {
+        "downloaded_pdf": false,
+        "download_message": "<HTTPError 403: 'Forbidden'>",
+        "extract_message": "abstract fallback",
+        "text_chars": 1866
+      },
+      "summary_json": "/Users/mollykim/projects/D4D/03_data/processed/literature_t3_learning/20260703_231026/32_From_SLAM_to_Situational_Awareness_Challenges_and_Survey.json",
+      "note_md": "/Users/mollykim/projects/D4D/01_research/literature/t3_deep_research/paper_notes/32_From_SLAM_to_Situational_Awareness_Challenges_and_Survey.md"
+    },
+    {
+      "priority": 33,
+      "title": "Wireless Resource Management in Intelligent Semantic Communication Networks",
+      "url": "https://doi.org/10.1109/infocomwkshps54753.2022.9797984",
+      "pdf_url": "",
+      "status": {
+        "downloaded_pdf": false,
+        "download_message": "no pdf_url",
+        "extract_message": "abstract fallback",
+        "text_chars": 1258
+      },
+      "summary_json": "/Users/mollykim/projects/D4D/03_data/processed/literature_t3_learning/20260703_231026/33_Wireless_Resource_Management_in_Intelligent_Semantic_Communication_Networks.json",
+      "note_md": "/Users/mollykim/projects/D4D/01_research/literature/t3_deep_research/paper_notes/33_Wireless_Resource_Management_in_Intelligent_Semantic_Communication_Networks.md"
+    },
+    {
+      "priority": 34,
+      "title": "Semantic Communication for Edge Intelligence: Theoretical Foundations and Implications on Protocols",
+      "url": "https://doi.org/10.1109/iotm.001.2300167",
+      "pdf_url": "",
+      "status": {
+        "downloaded_pdf": false,
+        "download_message": "no pdf_url",
+        "extract_message": "abstract fallback",
+        "text_chars": 1121
+      },
+      "summary_json": "/Users/mollykim/projects/D4D/03_data/processed/literature_t3_learning/20260703_231026/34_Semantic_Communication_for_Edge_Intelligence_Theoretical_Foundations_and_Implications_on_Protocols.json",
+      "note_md": "/Users/mollykim/projects/D4D/01_research/literature/t3_deep_research/paper_notes/34_Semantic_Communication_for_Edge_Intelligence_Theoretical_Foundations_and_Implications_on_Protocols.md"
+    },
+    {
+      "priority": 35,
+      "title": "A Survey on Goal-Oriented Semantic Communication: Techniques, Challenges, and Future Directions",
+      "url": "https://doi.org/10.1109/access.2024.3381967",
+      "pdf_url": "",
+      "status": {
+        "downloaded_pdf": false,
+        "download_message": "no pdf_url",
+        "extract_message": "abstract fallback",
+        "text_chars": 1311
+      },
+      "summary_json": "/Users/mollykim/projects/D4D/03_data/processed/literature_t3_learning/20260703_231026/35_A_Survey_on_Goal-Oriented_Semantic_Communication_Techniques_Challenges_and_Future_Directions.json",
+      "note_md": "/Users/mollykim/projects/D4D/01_research/literature/t3_deep_research/paper_notes/35_A_Survey_on_Goal-Oriented_Semantic_Communication_Techniques_Challenges_and_Future_Directions.md"
+    },
+    {
+      "priority": 36,
+      "title": "On the Resilience of Underwater Semantic Wireless Communications",
+      "url": "http://arxiv.org/abs/2506.23350v1",
+      "pdf_url": "https://arxiv.org/pdf/2506.23350v1",
+      "status": {
+        "downloaded_pdf": true,
+        "download_message": "downloaded 3070828 bytes (application/pdf)",
+        "extract_message": "pypdf pages=7 chars=22023",
+        "text_chars": 22023
+      },
+      "summary_json": "/Users/mollykim/projects/D4D/03_data/processed/literature_t3_learning/20260703_231026/36_On_the_Resilience_of_Underwater_Semantic_Wireless_Communications.json",
+      "note_md": "/Users/mollykim/projects/D4D/01_research/literature/t3_deep_research/paper_notes/36_On_the_Resilience_of_Underwater_Semantic_Wireless_Communications.md"
+    },
+    {
+      "priority": 37,
+      "title": "Wireless End-to-End Image Transmission System Using Semantic Communications",
+      "url": "https://doi.org/10.1109/access.2023.3266656",
+      "pdf_url": "https://ieeexplore.ieee.org/ielx7/6287639/6514899/10100737.pdf",
+      "status": {
+        "downloaded_pdf": false,
+        "download_message": "<HTTPError 404: 'Not Found'>",
+        "extract_message": "abstract fallback",
+        "text_chars": 1579
+      },
+      "summary_json": "/Users/mollykim/projects/D4D/03_data/processed/literature_t3_learning/20260703_231026/37_Wireless_End-to-End_Image_Transmission_System_Using_Semantic_Communications.json",
+      "note_md": "/Users/mollykim/projects/D4D/01_research/literature/t3_deep_research/paper_notes/37_Wireless_End-to-End_Image_Transmission_System_Using_Semantic_Communications.md"
+    },
+    {
+      "priority": 38,
+      "title": "Semantic Communication Systems for Speech Transmission",
+      "url": "https://doi.org/10.1109/jsac.2021.3087240",
+      "pdf_url": "",
+      "status": {
+        "downloaded_pdf": false,
+        "download_message": "no pdf_url",
+        "extract_message": "abstract fallback",
+        "text_chars": 1478
+      },
+      "summary_json": "/Users/mollykim/projects/D4D/03_data/processed/literature_t3_learning/20260703_231026/38_Semantic_Communication_Systems_for_Speech_Transmission.json",
+      "note_md": "/Users/mollykim/projects/D4D/01_research/literature/t3_deep_research/paper_notes/38_Semantic_Communication_Systems_for_Speech_Transmission.md"
+    },
+    {
+      "priority": 39,
+      "title": "Task-Oriented Multi-User Semantic Communications for VQA",
+      "url": "https://doi.org/10.1109/lwc.2021.3136045",
+      "pdf_url": "",
+      "status": {
+        "downloaded_pdf": false,
+        "download_message": "no pdf_url",
+        "extract_message": "abstract fallback",
+        "text_chars": 903
+      },
+      "summary_json": "/Users/mollykim/projects/D4D/03_data/processed/literature_t3_learning/20260703_231026/39_Task-Oriented_Multi-User_Semantic_Communications_for_VQA.json",
+      "note_md": "/Users/mollykim/projects/D4D/01_research/literature/t3_deep_research/paper_notes/39_Task-Oriented_Multi-User_Semantic_Communications_for_VQA.md"
+    },
+    {
+      "priority": 40,
+      "title": "Maritime Autonomous Surface Ships: Architecture for Autonomous Navigation Systems",
+      "url": "https://doi.org/10.3390/jmse13010122",
+      "pdf_url": "https://www.mdpi.com/2077-1312/13/1/122/pdf?version=1736758908",
+      "status": {
+        "downloaded_pdf": false,
+        "download_message": "<HTTPError 403: 'Forbidden'>",
+        "extract_message": "abstract fallback",
+        "text_chars": 1607
+      },
+      "summary_json": "/Users/mollykim/projects/D4D/03_data/processed/literature_t3_learning/20260703_231026/40_Maritime_Autonomous_Surface_Ships_Architecture_for_Autonomous_Navigation_Systems.json",
+      "note_md": "/Users/mollykim/projects/D4D/01_research/literature/t3_deep_research/paper_notes/40_Maritime_Autonomous_Surface_Ships_Architecture_for_Autonomous_Navigation_Systems.md"
+    }
+  ]
+}

@@ -1,0 +1,1704 @@
+[
+  {
+    "id": "term-001-거부환경",
+    "category": "작전·공통 개념",
+    "term": "거부환경",
+    "english": "Denied Environment",
+    "description": "GPS·통신·전자전 교란 등으로 정상적인 지휘통제·항법·전송이 방해받는 작전 환경.",
+    "related_tracks": [
+      "공통"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 3,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-002-거부작전-반접근-지역거부",
+    "category": "작전·공통 개념",
+    "term": "거부작전 / 반접근·지역거부",
+    "english": "A2/AD, Anti-Access·Area Denial",
+    "description": "적이 특정 해·공역으로의 접근(Anti-Access)과 그 안에서의 작전(Area Denial)을 거부·방해하는 전략.",
+    "related_tracks": [
+      "공통"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 4,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-003-회색지대",
+    "category": "작전·공통 개념",
+    "term": "회색지대",
+    "english": "Gray-zone",
+    "description": "평시도 전시도 아닌 모호한 영역에서 벌이는 강압·도발(민병·위장선박 등).",
+    "related_tracks": [
+      "T1",
+      "T3",
+      "T4"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 5,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-004-전력-승수",
+    "category": "작전·공통 개념",
+    "term": "전력 승수",
+    "english": "Force Multiplier",
+    "description": "같은 규모의 전력으로 작전 효과를 몇 배로 키워 주는 수단·기술.",
+    "related_tracks": [
+      "T2"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 6,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-005-회복-탄력성",
+    "category": "작전·공통 개념",
+    "term": "회복 탄력성",
+    "english": "Resilience",
+    "description": "교란·피해를 입어도 핵심 기능을 유지하거나 빠르게 복구하는 능력.",
+    "related_tracks": [
+      "T3"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 7,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-006-인지부하",
+    "category": "작전·공통 개념",
+    "term": "인지부하",
+    "english": "Cognitive Load",
+    "description": "운용자가 동시에 처리해야 하는 정신적 부담의 양.",
+    "related_tracks": [
+      "T1"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 8,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-007-부수적-피해",
+    "category": "작전·공통 개념",
+    "term": "부수적 피해",
+    "english": "Collateral Damage",
+    "description": "목표물 외에 발생하는 민간인·아군·시설 피해.",
+    "related_tracks": [
+      "T1"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 9,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-008-골든타임",
+    "category": "작전·공통 개념",
+    "term": "골든타임",
+    "english": "Golden Time",
+    "description": "위협에 효과적으로 대응할 수 있는, 짧고 결정적인 시간 창(窓).",
+    "related_tracks": [
+      "T1",
+      "T5"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 10,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-009-전조-징후",
+    "category": "작전·공통 개념",
+    "term": "전조 징후",
+    "english": "Indicator & Warning",
+    "description": "사건·도발이 실제로 벌어지기 전에 나타나는 사전 신호.",
+    "related_tracks": [
+      "T4"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 11,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-010-전투-준비태세",
+    "category": "작전·공통 개념",
+    "term": "전투 준비태세",
+    "english": "Readiness",
+    "description": "부대·인원이 즉시 임무를 수행할 수 있는 준비 상태.",
+    "related_tracks": [
+      "T5"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 12,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-011-비정규-세력-해상-민병대",
+    "category": "작전·공통 개념",
+    "term": "비정규 세력 / 해상 민병대",
+    "english": "Irregular Forces / Maritime Militia",
+    "description": "정규군이 아닌 민병·무장 단체. 어선 등 민간 선박으로 위장하기도 함.",
+    "related_tracks": [
+      "T3",
+      "T4"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 13,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-012-자급자족-자체-조달",
+    "category": "작전·공통 개념",
+    "term": "자급자족 / 자체 조달",
+    "english": "Local Sourcing",
+    "description": "보급선이 끊긴 상황에서 현지 자원으로 군수를 충당하는 것.",
+    "related_tracks": [
+      "T3"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 14,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-013-isr",
+    "category": "작전·공통 개념",
+    "term": "ISR",
+    "english": "Intelligence, Surveillance, Reconnaissance",
+    "description": "정보·감시·정찰. 표적·상황 정보를 수집·감시·정찰하는 활동(전 영역 공통).",
+    "related_tracks": [
+      "T1",
+      "T2",
+      "T3"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 15,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-014-conops",
+    "category": "작전·공통 개념",
+    "term": "CONOPS",
+    "english": "Concept of Operations",
+    "description": "운용 개념. 체계를 실제로 '어떻게 운용할지'를 정의한 개념.",
+    "related_tracks": [
+      "T1"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 16,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-015-합성-가상-데이터",
+    "category": "작전·공통 개념",
+    "term": "합성·가상 데이터",
+    "english": "Synthetic Data",
+    "description": "실제 데이터 대신 모의로 생성한 훈련·시험용 데이터(민간 해커톤 데이터 기준).",
+    "related_tracks": [
+      "T1",
+      "T3",
+      "T5"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 17,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-016-uxv",
+    "category": "무인·자율 / 대드론",
+    "term": "UxV",
+    "english": "Unmanned x Vehicle",
+    "description": "공중·지상·해상 무인 이동체의 총칭(x에 Air/Ground/Surface 대입).",
+    "related_tracks": [
+      "T1"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 18,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-017-uas",
+    "category": "무인·자율 / 대드론",
+    "term": "UAS",
+    "english": "Unmanned Aircraft System",
+    "description": "무인 항공 시스템. 드론 기체 + 지상통제 + 데이터링크를 포함.",
+    "related_tracks": [
+      "T1"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 19,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-018-ugv",
+    "category": "무인·자율 / 대드론",
+    "term": "UGV",
+    "english": "Unmanned Ground Vehicle",
+    "description": "무인 지상 차량.",
+    "related_tracks": [
+      "T1"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 20,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-019-usv",
+    "category": "무인·자율 / 대드론",
+    "term": "USV",
+    "english": "Unmanned Surface Vehicle",
+    "description": "무인 수상정(보트).",
+    "related_tracks": [
+      "T1",
+      "T4"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 21,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-020-유무인-복합-mum-t",
+    "category": "무인·자율 / 대드론",
+    "term": "유무인 복합 / MUM-T",
+    "english": "Manned-Unmanned Teaming",
+    "description": "사람이 운용하는 체계와 무인체계가 한 팀으로 협업하는 운용 개념.",
+    "related_tracks": [
+      "T1"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 22,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-021-counter-uas-c-uas",
+    "category": "무인·자율 / 대드론",
+    "term": "Counter-UAS (C-UAS)",
+    "english": "Counter-Unmanned Aircraft System",
+    "description": "적 무인기를 탐지·추적·식별·무력화하는 대드론 체계.",
+    "related_tracks": [
+      "T1"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 23,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-022-lss",
+    "category": "무인·자율 / 대드론",
+    "term": "LSS",
+    "english": "Low, Slow, Small",
+    "description": "저고도·저속·저신호. 기존 레이더로 탐지가 어려운 소형 비행체 특성.",
+    "related_tracks": [
+      "T1"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 24,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-023-소프트킬-하드킬",
+    "category": "무인·자율 / 대드론",
+    "term": "소프트킬 / 하드킬",
+    "english": "Soft-kill / Hard-kill",
+    "description": "전자적 교란으로 무력화(소프트킬) vs 물리적 타격으로 파괴(하드킬).",
+    "related_tracks": [
+      "T1"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 25,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-024-iff",
+    "category": "무인·자율 / 대드론",
+    "term": "IFF",
+    "english": "Identification Friend or Foe",
+    "description": "피아식별. 아군·적·미상을 구분하는 절차·체계.",
+    "related_tracks": [
+      "T1",
+      "T3"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 26,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-025-지형-마스킹-추종",
+    "category": "무인·자율 / 대드론",
+    "term": "지형 마스킹 / 추종",
+    "english": "Terrain Masking / Following",
+    "description": "지형을 엄폐물로 활용하거나 지형 고도에 맞춰 저고도 비행하는 기동.",
+    "related_tracks": [
+      "T1"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 27,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-026-자율-임무-재계획",
+    "category": "무인·자율 / 대드론",
+    "term": "자율 임무 재계획",
+    "english": "Autonomous Re-Planning",
+    "description": "위협·환경 변화 시 무인기가 스스로 경로·임무를 다시 계획하는 것.",
+    "related_tracks": [
+      "T1"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 28,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-027-군집",
+    "category": "무인·자율 / 대드론",
+    "term": "군집",
+    "english": "Swarm",
+    "description": "다수 무인기가 협조해 하나의 임무를 수행하는 운용(군집 위협=Swarming).",
+    "related_tracks": [
+      "T1"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 29,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-028-사람-개입-in-the-loop",
+    "category": "무인·자율 / 대드론",
+    "term": "사람 개입 (in-the-loop)",
+    "english": "Human-in-the-loop",
+    "description": "자동화의 매 결정에 사람의 판단·승인을 개입시키는 설계.",
+    "related_tracks": [
+      "T1"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 30,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-029-사람-감독-on-the-loop",
+    "category": "무인·자율 / 대드론",
+    "term": "사람 감독 (on-the-loop)",
+    "english": "Human-on-the-loop",
+    "description": "사람은 감독만 하고 시스템이 자율 실행, 개입은 예외적(종말유도 등).",
+    "related_tracks": [
+      "T1"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 31,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-030-자율-종말-유도",
+    "category": "무인·자율 / 대드론",
+    "term": "자율 종말 유도",
+    "english": "Autonomous Terminal Guidance",
+    "description": "마지막(종말) 단계에서 표적을 스스로 탐지·추적·유도하는 것.",
+    "related_tracks": [
+      "T1"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 32,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-031-fpv",
+    "category": "무인·자율 / 대드론",
+    "term": "FPV",
+    "english": "First-Person View",
+    "description": "1인칭 시점 드론. 조종사가 기체 영상으로 직접 조종하는 방식.",
+    "related_tracks": [
+      "T1"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 33,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-032-gcs",
+    "category": "무인·자율 / 대드론",
+    "term": "GCS",
+    "english": "Ground Control Station",
+    "description": "지상통제소. 무인기를 운용·통제하는 지상 장비/시스템.",
+    "related_tracks": [
+      "T1"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 34,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-033-객체-탐지",
+    "category": "무인·자율 / 대드론",
+    "term": "객체 탐지",
+    "english": "Object Detection",
+    "description": "영상에서 물체의 위치·종류를 찾아내는 비전 기술.",
+    "related_tracks": [
+      "T1"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 35,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-034-기만",
+    "category": "무인·자율 / 대드론",
+    "term": "기만",
+    "english": "Decoy",
+    "description": "적의 탐지·공격을 유인·교란하기 위한 가짜 표적·임무.",
+    "related_tracks": [
+      "T1"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 36,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-035-ew",
+    "category": "무인·자율 / 대드론",
+    "term": "EW",
+    "english": "Electronic Warfare",
+    "description": "전자전. 전자기 스펙트럼을 이용·교란(재밍)·방어하는 작전.",
+    "related_tracks": [
+      "T1",
+      "T3"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 37,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-036-eo-ir",
+    "category": "무인·자율 / 대드론",
+    "term": "EO/IR",
+    "english": "Electro-Optical / Infrared",
+    "description": "전자광학/적외선 센서(주간 영상 / 열영상).",
+    "related_tracks": [
+      "T1",
+      "T3",
+      "T4"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 38,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-037-재밍",
+    "category": "무인·자율 / 대드론",
+    "term": "재밍",
+    "english": "Jamming",
+    "description": "전파를 방해해 통신·레이더·GPS를 무력화하는 전자공격.",
+    "related_tracks": [
+      "T1",
+      "T3"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 39,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-038-cca",
+    "category": "공중·우주 / 공군 (Air & Space)",
+    "term": "CCA",
+    "english": "Collaborative Combat Aircraft",
+    "description": "협업 전투기. 유인기와 한 팀으로 작전하는 무인 전투기.",
+    "related_tracks": [
+      "T1"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 40,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-039-project-maven",
+    "category": "공중·우주 / 공군 (Air & Space)",
+    "term": "Project Maven",
+    "english": "Project Maven",
+    "description": "미 국방부의 AI 기반 영상·정보 분석 프로젝트. 다중소스 ISR 융합의 대표 사례.",
+    "related_tracks": [
+      "T2"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 41,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-040-aip",
+    "category": "공중·우주 / 공군 (Air & Space)",
+    "term": "AIP",
+    "english": "Palantir AIP (AI Platform)",
+    "description": "Palantir의 AI 운영 플랫폼. 온톨로지+LLM+에이전트로 작전 데이터를 분석·결심지원.",
+    "related_tracks": [
+      "T3"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 42,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-041-foundry",
+    "category": "공중·우주 / 공군 (Air & Space)",
+    "term": "Foundry",
+    "english": "Palantir Foundry",
+    "description": "데이터를 통합·구조화해 운영·분석하는 Palantir 플랫폼.",
+    "related_tracks": [
+      "T3"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 43,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-042-ai-agent",
+    "category": "공중·우주 / 공군 (Air & Space)",
+    "term": "AI Agent",
+    "english": "AI Agent",
+    "description": "도구·데이터를 활용해 목표를 자율적으로 수행하는 AI(질의응답·상황분석·자동화).",
+    "related_tracks": [
+      "T3"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 44,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-043-link-16-전술데이터링크",
+    "category": "공중·우주 / 공군 (Air & Space)",
+    "term": "Link-16 / 전술데이터링크",
+    "english": "Link-16 / Tactical Data Link",
+    "description": "항공기·부대 간 실시간으로 전술정보를 공유하는 군용 데이터링크.",
+    "related_tracks": [
+      "T3"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 45,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-044-iamd",
+    "category": "공중·우주 / 공군 (Air & Space)",
+    "term": "IAMD",
+    "english": "Integrated Air and Missile Defense",
+    "description": "통합방공. 항공기·미사일·드론 위협을 통합적으로 탐지·대응.",
+    "related_tracks": [
+      "T3"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 46,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-045-osint",
+    "category": "정보·사이버 (OSINT)",
+    "term": "OSINT",
+    "english": "Open-Source Intelligence",
+    "description": "공개출처정보. 합법적으로 공개된 정보를 수집·분석하는 정보활동.",
+    "related_tracks": [
+      "T2",
+      "T3",
+      "T4"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 47,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-046-자격증명",
+    "category": "정보·사이버 (OSINT)",
+    "term": "자격증명",
+    "english": "Credential",
+    "description": "계정 접근에 쓰이는 ID·비밀번호·토큰 등.",
+    "related_tracks": [
+      "T2"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 48,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-047-인포스틸러",
+    "category": "정보·사이버 (OSINT)",
+    "term": "인포스틸러",
+    "english": "Infostealer / Stealer",
+    "description": "감염 기기에서 자격증명·쿠키 등을 탈취하는 정보유출형 악성코드.",
+    "related_tracks": [
+      "T2"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 49,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-048-apt",
+    "category": "정보·사이버 (OSINT)",
+    "term": "APT",
+    "english": "Advanced Persistent Threat",
+    "description": "지능형 지속위협. 장기간 은밀히 침투하는 고도화 공격(주로 국가 배후).",
+    "related_tracks": [
+      "T2"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 50,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-049-동일인-해소",
+    "category": "정보·사이버 (OSINT)",
+    "term": "동일인 해소",
+    "english": "Entity Resolution",
+    "description": "흩어진 식별자(별칭·이메일·지갑 등)를 같은 실체로 묶는 작업.",
+    "related_tracks": [
+      "T2"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 51,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-050-지식그래프",
+    "category": "정보·사이버 (OSINT)",
+    "term": "지식그래프",
+    "english": "Knowledge Graph",
+    "description": "객체와 관계를 네트워크로 연결해 맥락 이해·추론을 가능케 하는 데이터 모델.",
+    "related_tracks": [
+      "T2",
+      "T5"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 52,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-051-감성-분석",
+    "category": "정보·사이버 (OSINT)",
+    "term": "감성 분석",
+    "english": "Sentiment Analysis",
+    "description": "텍스트에 담긴 감정·태도·여론을 분석하는 기법.",
+    "related_tracks": [
+      "T4"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 53,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-052-이상-탐지",
+    "category": "정보·사이버 (OSINT)",
+    "term": "이상 탐지",
+    "english": "Anomaly Detection",
+    "description": "정상 패턴에서 벗어난 비정상 신호·행동을 가려내는 기법.",
+    "related_tracks": [
+      "T4"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 54,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-053-mcp",
+    "category": "정보·사이버 (OSINT)",
+    "term": "MCP",
+    "english": "Model Context Protocol",
+    "description": "LLM이 외부 도구·데이터 소스를 표준 방식으로 호출하게 하는 프로토콜.",
+    "related_tracks": [
+      "T2"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 55,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-054-rag",
+    "category": "정보·사이버 (OSINT)",
+    "term": "RAG",
+    "english": "Retrieval-Augmented Generation",
+    "description": "검색증강생성. 외부 지식을 먼저 검색해 참조하며 답을 생성(환각 저감).",
+    "related_tracks": [
+      "T2",
+      "T5"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 56,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-055-출처-명시",
+    "category": "정보·사이버 (OSINT)",
+    "term": "출처 명시",
+    "english": "Citation",
+    "description": "답변의 근거 출처를 함께 제시하는 것.",
+    "related_tracks": [
+      "T2"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 57,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-056-중간자-공격",
+    "category": "정보·사이버 (OSINT)",
+    "term": "중간자 공격",
+    "english": "MITM, Man-in-the-Middle",
+    "description": "통신 중간에 끼어들어 가로채거나 변조하는 공격.",
+    "related_tracks": [
+      "T1",
+      "T2"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 58,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-057-재전송-공격",
+    "category": "정보·사이버 (OSINT)",
+    "term": "재전송 공격",
+    "english": "Replay Attack",
+    "description": "정상 통신을 가로챘다가 그대로 재전송해 인증을 우회하는 공격.",
+    "related_tracks": [
+      "T1"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 59,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-058-c2",
+    "category": "지휘통제·군수 (C2)",
+    "term": "C2",
+    "english": "Command & Control",
+    "description": "지휘통제. 부대·자산을 지휘하고 통제하는 체계·활동.",
+    "related_tracks": [
+      "T3"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 60,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-059-cop",
+    "category": "지휘통제·군수 (C2)",
+    "term": "COP",
+    "english": "Common Operating Picture",
+    "description": "공통(작전)상황도. 부대가 공유하는 단일 전장 상황 지도.",
+    "related_tracks": [
+      "T3",
+      "T4"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 61,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-060-센서-퓨전",
+    "category": "지휘통제·군수 (C2)",
+    "term": "센서 퓨전",
+    "english": "Sensor Fusion",
+    "description": "여러 센서의 데이터를 융합해 단일한 상황 인식을 만드는 기술.",
+    "related_tracks": [
+      "T3",
+      "T4"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 62,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-061-표적-추적-유지",
+    "category": "지휘통제·군수 (C2)",
+    "term": "표적 추적 유지",
+    "english": "Custody (Track Custody)",
+    "description": "표적을 끊김 없이 계속 추적·유지하는 상태.",
+    "related_tracks": [
+      "T3",
+      "T4"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 63,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-062-다영역",
+    "category": "지휘통제·군수 (C2)",
+    "term": "다영역",
+    "english": "Multi-domain",
+    "description": "지상·해상·공중·우주·사이버 등 다영역을 통합한 작전.",
+    "related_tracks": [
+      "T3"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 64,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-063-이종-데이터",
+    "category": "지휘통제·군수 (C2)",
+    "term": "이종 데이터",
+    "english": "Heterogeneous Data",
+    "description": "형식·출처가 서로 다른 데이터(예: 레이더 신호 + 영상 + 텍스트).",
+    "related_tracks": [
+      "T3",
+      "T4"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 65,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-064-시공간-상관",
+    "category": "지휘통제·군수 (C2)",
+    "term": "시공간 상관",
+    "english": "Spatio-temporal Correlation",
+    "description": "데이터를 시간과 위치 기준으로 연결·정합하는 것.",
+    "related_tracks": [
+      "T3",
+      "T4"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 66,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-065-출처-추적",
+    "category": "지휘통제·군수 (C2)",
+    "term": "출처 추적",
+    "english": "Provenance",
+    "description": "데이터의 출처·생성·변경 이력을 끝까지 추적·검증하는 것.",
+    "related_tracks": [
+      "T3"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 67,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-066-s-dot",
+    "category": "지휘통제·군수 (C2)",
+    "term": "S-DOT",
+    "english": "Semantic Data On Tactical-network",
+    "description": "전술망에서 영상 원본 대신 '의미 기반 텍스트'로 핵심 정보만 전송하는 체계.",
+    "related_tracks": [
+      "T3"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 68,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-067-시맨틱-통신",
+    "category": "지휘통제·군수 (C2)",
+    "term": "시맨틱 통신",
+    "english": "Semantic Communication",
+    "description": "데이터 원본 대신 그 '의미'를 추출해 전송하는 차세대 통신.",
+    "related_tracks": [
+      "T3"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 69,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-068-엣지-ai",
+    "category": "지휘통제·군수 (C2)",
+    "term": "엣지 AI",
+    "english": "Edge AI",
+    "description": "클라우드가 아닌 단말(드론·센서·부표)에서 직접 추론하는 AI.",
+    "related_tracks": [
+      "T3",
+      "T4",
+      "T5"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 70,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-069-npu",
+    "category": "지휘통제·군수 (C2)",
+    "term": "NPU",
+    "english": "Neural Processing Unit",
+    "description": "저전력 단말에서 AI 연산을 가속하는 전용 반도체.",
+    "related_tracks": [
+      "T3"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 71,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-070-rdf-triple",
+    "category": "지휘통제·군수 (C2)",
+    "term": "RDF Triple",
+    "english": "Resource Description Framework Triple",
+    "description": "<주어-술어-목적어> 3요소로 정보를 구조화하는 W3C 표준 데이터 모델.",
+    "related_tracks": [
+      "T3"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 72,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-071-온톨로지",
+    "category": "지휘통제·군수 (C2)",
+    "term": "온톨로지",
+    "english": "Ontology",
+    "description": "데이터의 의미·관계를 정의해 기계 판독·추론을 가능케 하는 체계.",
+    "related_tracks": [
+      "T3",
+      "T5"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 73,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-072-예측정비",
+    "category": "지휘통제·군수 (C2)",
+    "term": "예측정비",
+    "english": "Predictive Maintenance",
+    "description": "장비 상태를 분석해 고장 전에 정비 소요를 예측하는 것.",
+    "related_tracks": [
+      "T3"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 74,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-073-지속지원",
+    "category": "지휘통제·군수 (C2)",
+    "term": "지속지원",
+    "english": "Sustainment",
+    "description": "보급·정비 등 전투지속능력을 떠받치는 군수 활동.",
+    "related_tracks": [
+      "T3"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 75,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-074-mda",
+    "category": "해상 \n(Maritime)",
+    "term": "MDA",
+    "english": "Maritime Domain Awareness",
+    "description": "해상영역인식. 해양에서의 모든 활동을 탐지·이해하는 능력.",
+    "related_tracks": [
+      "T4"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 76,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-075-ais",
+    "category": "해상 \n(Maritime)",
+    "term": "AIS",
+    "english": "Automatic Identification System",
+    "description": "선박자동식별장치. 선박 위치·정보를 자동으로 송수신.",
+    "related_tracks": [
+      "T4"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 77,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-076-유령선",
+    "category": "해상 \n(Maritime)",
+    "term": "유령선",
+    "english": "AIS-Off / Dark Vessel",
+    "description": "AIS를 고의로 끈 채 운항해 추적을 회피하는 선박.",
+    "related_tracks": [
+      "T4"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 78,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-077-elint",
+    "category": "해상 \n(Maritime)",
+    "term": "ELINT",
+    "english": "Electronic Intelligence",
+    "description": "전자정보. 비통신 전자방출(레이더 등)을 수집·분석.",
+    "related_tracks": [
+      "T3",
+      "T4"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 79,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-078-sar",
+    "category": "해상 \n(Maritime)",
+    "term": "SAR",
+    "english": "Synthetic Aperture Radar",
+    "description": "합성개구레이더. 기상·주야와 무관하게 영상을 얻는 위성/항공 레이더.",
+    "related_tracks": [
+      "T4"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 80,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-079-패시브-소나",
+    "category": "해상 \n(Maritime)",
+    "term": "패시브 소나",
+    "english": "Passive Sonar",
+    "description": "스스로 음파를 쏘지 않고 표적이 내는 소리만 듣는 수동 음향 탐지.",
+    "related_tracks": [
+      "T4"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 81,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-080-선박-간-접선",
+    "category": "해상 \n(Maritime)",
+    "term": "선박 간 접선",
+    "english": "Ship-to-Ship",
+    "description": "해상에서 선박끼리 물자·인원을 옮기는 환적 행위(불법 활동에서 자주 포착).",
+    "related_tracks": [
+      "T4"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 82,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-081-클러터",
+    "category": "해상 \n(Maritime)",
+    "term": "클러터",
+    "english": "Clutter",
+    "description": "파도·해양 생물음·반사광 등 탐지를 방해하는 배경 잡신호.",
+    "related_tracks": [
+      "T4"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 83,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-082-요동-보정",
+    "category": "해상 \n(Maritime)",
+    "term": "요동 보정",
+    "english": "Stabilization",
+    "description": "파도·진동에 의한 센서 흔들림을 보정해 안정된 영상·신호를 얻는 것.",
+    "related_tracks": [
+      "T4"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 84,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-083-nll",
+    "category": "해상 \n(Maritime)",
+    "term": "NLL",
+    "english": "Northern Limit Line",
+    "description": "북방한계선. 서해 남북 해상 경계선.",
+    "related_tracks": [
+      "T4"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 85,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-084-워게임",
+    "category": "교육·훈련",
+    "term": "워게임",
+    "english": "War-game",
+    "description": "가상 시나리오로 전략·전술 결심을 훈련·검증하는 모의.",
+    "related_tracks": [
+      "T5"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 86,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-085-사후-검토",
+    "category": "교육·훈련",
+    "term": "사후 검토",
+    "english": "AAR, After Action Review",
+    "description": "훈련·작전 종료 후 잘잘못을 복기해 교훈을 도출하는 검토.",
+    "related_tracks": [
+      "T3",
+      "T5"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 87,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-086-온디바이스-ai",
+    "category": "교육·훈련",
+    "term": "온디바이스 AI",
+    "english": "On-device AI",
+    "description": "외부 연결 없이 단말 내부에서 완결적으로 구동되는 AI.",
+    "related_tracks": [
+      "T5"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 88,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-087-rbac",
+    "category": "교육·훈련",
+    "term": "RBAC",
+    "english": "Role-Based Access Control",
+    "description": "역할 기반 접근통제. 권한에 따라 접근·생성 자원을 제한.",
+    "related_tracks": [
+      "T5"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 89,
+      "version": "20260703_174407"
+    }
+  },
+  {
+    "id": "term-088-llm",
+    "category": "교육·훈련",
+    "term": "LLM",
+    "english": "Large Language Model",
+    "description": "거대언어모델. 대규모 텍스트로 학습해 언어를 이해·생성하는 AI.",
+    "related_tracks": [
+      "T2",
+      "T5"
+    ],
+    "source": {
+      "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+      "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+      "sheet": "B-3. 용어집",
+      "gid": "1682873298",
+      "row": 90,
+      "version": "20260703_174407"
+    }
+  }
+]

@@ -1,0 +1,56 @@
+{
+  "title": "Anomaly Detection in Maritime AIS Tracks: A Review of Recent Approaches",
+  "read_status": "abstract_only",
+  "one_line_takeaway": "AIS anomaly detection is a mature enough research area to inform semantic maritime COP alerts, but this source is a review abstract and does not provide implementation details.",
+  "d4d_relevance": "Directly relevant to a Resilient Maritime COP because AIS tracks are a core maritime sensing layer, and anomalous behavior can be transformed into compact semantic events for T3 sharing over degraded or denied networks.",
+  "key_concepts": [
+    "AIS-based maritime domain awareness",
+    "vessel track anomaly detection",
+    "safety and security event indication",
+    "collision risk and traffic monitoring",
+    "survey of 44 AIS anomaly detection studies",
+    "taxonomy of anomaly types and use cases"
+  ],
+  "input_data": [
+    "AIS broadcast messages",
+    "vessel identification",
+    "vessel position",
+    "speed over ground",
+    "course or heading information",
+    "historical AIS tracks"
+  ],
+  "methods_or_architecture": [
+    "Literature review of recent AIS anomaly detection approaches",
+    "Classification of AIS anomaly types addressed by prior work",
+    "Assessment of operational use cases for detected anomalies",
+    "Review of research limitations across surveyed methods"
+  ],
+  "outputs_metrics": [
+    "Identified AIS anomaly categories",
+    "Mapped safety and security use cases",
+    "Landscape assessment of recent AIS anomaly research",
+    "Known limitations of existing AIS anomaly detection work",
+    "No specific quantitative benchmark metrics available from the provided abstract"
+  ],
+  "prototype_hooks": [
+    "Use AIS anomaly types as semantic event classes in the COP ontology",
+    "Convert raw AIS streams into low-bandwidth alerts such as loitering, route deviation, spoofing suspicion, or abnormal speed/course changes",
+    "Run anomaly detection at edge nodes and transmit only prioritized semantic events when networks are denied or intermittent",
+    "Fuse AIS-derived anomaly events with OSINT, radar, EO/IR, or operator reports in a T3 knowledge graph",
+    "Attach confidence, vessel identity, location, time, and anomaly rationale to each COP event"
+  ],
+  "pitch_evidence": [
+    "AIS contains identity, position, speed, and course fields that are directly usable for maritime situational awareness",
+    "AIS anomalies can indicate events relevant to both maritime safety and security",
+    "The paper surveys 44 research articles, supporting the claim that AIS anomaly detection is an established research area",
+    "Automatic detection is motivated by the growing volume of accessible AIS data"
+  ],
+  "limitations_risks": [
+    "Only the abstract was available, so detailed anomaly classes, algorithms, datasets, and evaluation results were not reviewed",
+    "AIS is broadcast-based and can be missing, spoofed, manipulated, or unavailable under adversarial conditions",
+    "A review paper informs design choices but does not directly provide a deployable detector",
+    "Semantic alerts may lose useful raw-track context if compression is too aggressive",
+    "Existing research limitations are mentioned but not specified in the provided excerpt"
+  ],
+  "confidence": "medium"
+}

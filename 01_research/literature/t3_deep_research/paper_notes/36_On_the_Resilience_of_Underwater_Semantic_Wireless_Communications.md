@@ -1,0 +1,90 @@
+# On the Resilience of Underwater Semantic Wireless Communications
+
+## Metadata
+
+- Year: 2025
+- URL: http://arxiv.org/abs/2506.23350v1
+- DOI: -
+- Read status: full_text
+
+## One-line Takeaway
+
+SAGE shows that transmitting compact semantic descriptions instead of raw imagery can preserve useful underwater scene meaning across highly degraded acoustic links.
+
+## D4D Relevance
+
+Directly relevant to a Resilient Maritime COP over Denied Networks: the paper provides a concrete pattern for turning bandwidth-heavy maritime sensor data into small semantic payloads that can survive noisy, low-throughput links and still support shared operational understanding.
+
+## Key Concepts
+
+- Semantic communications over underwater acoustic links
+- SAGE framework
+- Image-to-text compression
+- Text-to-image reconstruction
+- GenAI-assisted error tolerance
+- BLIP caption generation
+- Stable Diffusion reconstruction
+- Character substitution, character deletion, and word deletion errors
+- CLIPScore as semantic similarity metric
+- Payload reduction from megabyte-scale imagery to SMS-scale text
+
+## Input Data
+
+- 30 underwater images, mostly from a public underwater image enhancement dataset
+- BLIP-generated image captions
+- Corrupted text descriptions produced by a custom error simulator
+- Random character substitution scenarios
+- Character deletion scenarios
+- Word deletion scenarios
+- Generic unrelated control image for baseline comparison
+
+## Methods Or Architecture
+
+- Transmitter converts an underwater image into a compact natural-language description
+- Text description is transmitted over a simulated degraded acoustic channel
+- Receiver reconstructs an image from the received text using a generative model
+- Each corrupted-condition prompt is regenerated multiple times to account for Stable Diffusion randomness
+- Simulator injects configurable text-level errors independently by type
+- Evaluation compares original images, reconstructed images, and a control baseline using pixel and semantic metrics
+
+## Outputs / Metrics
+
+- 300 generated images per error ratio condition
+- CLIPScore remained meaningfully useful under moderate corruption
+- CLIPScore dropped from about 60% to 50% near 15% character substitution error
+- Similar CLIPScore degradation appeared near 20% character deletion error
+- Word deletion was more tolerant, with similar degradation only near 50% deletion
+- PSNR and SSIM were poor indicators for semantic reconstruction quality
+- The paper argues semantic reconstruction can reduce dependence on heavy error correction
+
+## Prototype Hooks
+
+- Use semantic payloads for COP updates: object, activity, location, timestamp, confidence, source, and intent instead of raw media
+- Build a denied-network simulator that corrupts or drops semantic fields and measures COP degradation
+- Use CLIP-like or embedding-based semantic similarity to score whether received COP state preserves operational meaning
+- Support tiered maritime payloads: full image when available, caption when constrained, object list when severely constrained
+- Add domain-specific controlled vocabulary for vessels, hazards, sensors, tracks, zones, and mission events
+- Pair generative reconstruction with machine-readable facts so COP displays do not depend on hallucinated imagery
+- Use GenAI to repair partially corrupted reports while preserving provenance and uncertainty
+
+## Pitch Evidence
+
+- Underwater acoustic links are a strong analog for denied maritime networks: low bandwidth, high latency, and high error rates
+- The paper demonstrates a large data-volume reduction by replacing image transmission with compact semantic text
+- Empirical results show useful scene meaning can survive corruption levels that would damage conventional payloads
+- Semantic similarity metrics better match mission value than pixel fidelity metrics
+- The architecture is model-agnostic, making it adaptable to future VLMs, LLMs, and maritime-specific models
+
+## Limitations / Risks
+
+- Evaluation uses only 30 images, so operational generalization is limited
+- The channel model corrupts text synthetically and does not fully model real acoustic networking, routing, latency, or packet behavior
+- Stable Diffusion reconstruction may create plausible but false visual details, which is risky for operational COP use
+- The work evaluates reconstructed images, not structured COP objects, tracks, alerts, or commander decisions
+- General image captioning models may miss maritime-specific entities or tactical details
+- PSNR and SSIM are shown to be weak for this task, but CLIPScore alone is not sufficient for mission assurance
+- No adversarial tampering, authentication, encryption overhead, or trust model is evaluated
+
+## Confidence
+
+high

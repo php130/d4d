@@ -1,0 +1,89 @@
+# A Survey on Semantic Communications for Intelligent Wireless Networks
+
+## Metadata
+
+- Year: 2022
+- URL: https://doi.org/10.1007/s11277-022-10111-7
+- DOI: 10.1007/s11277-022-10111-7
+- Read status: partial_text
+
+## One-line Takeaway
+
+Semantic communications shifts wireless networking from exact bit reproduction to transmitting task-relevant meaning, which is directly useful for keeping a COP usable when bandwidth, energy, and link quality are constrained.
+
+## D4D Relevance
+
+For a Resilient Maritime COP over Denied Networks, this survey provides the conceptual backbone for sending semantic objects, events, priorities, and uncertainty instead of raw feeds. It supports a T3 semantic COP architecture where edge nodes extract mission-relevant meaning from AIS, radar, EO/IR, acoustic, text, and operator inputs, then transmit only what changes the shared operational picture under degraded or contested links.
+
+## Key Concepts
+
+- semantic communications
+- goal-oriented communications
+- semantic fidelity instead of bit accuracy
+- semantic source and channel coding
+- cross-layer network interaction
+- edge intelligence
+- federated learning
+- information bottleneck
+- quality of information
+- semantic-aware networking
+- AI/ML-enabled wireless systems
+- resource-constrained 6G networking
+
+## Input Data
+
+- surveyed literature; no original dataset generated
+- wireless channel state and resource constraints
+- application goals or task context
+- semantic features extracted from speech, image, video, IoT, or sensor data
+- edge model updates or learned representations
+- mission relevance and quality-of-information priorities
+
+## Methods Or Architecture
+
+- semantic encoder/decoder architecture separating meaning extraction from physical transmission
+- joint semantic and channel coding to preserve task meaning under noisy channels
+- cross-layer design linking application semantics with network scheduling and resource allocation
+- edge intelligence for local inference before transmission
+- federated or distributed learning to train semantic models without centralizing all data
+- goal-oriented communication where success is measured by task outcome rather than packet fidelity
+
+## Outputs / Metrics
+
+- semantic fidelity
+- task success or goal completion
+- bandwidth reduction
+- latency reduction
+- energy efficiency
+- spectrum efficiency
+- quality of information
+- robustness under blockage, absorption, or degraded channels
+
+## Prototype Hooks
+
+- add a semantic gateway that converts raw maritime feeds into entities, tracks, events, confidence, and intent hypotheses
+- prioritize COP updates by mission value, freshness, uncertainty, and recipient role
+- use semantic compression for video or sensor feeds by transmitting detections and features before raw imagery
+- adapt message detail based on link quality: full data on strong links, object/event summaries on denied links
+- share model updates or embeddings between edge nodes using federated learning when connectivity is intermittent
+- define COP metrics around decision utility, not only throughput or packet delivery
+
+## Pitch Evidence
+
+- The paper argues that exact reconstruction drives ever-growing bandwidth demand, while meaning-focused communication can reduce resource use.
+- It frames semantic communication as a response to high-frequency wireless limits such as blockage, absorption, and scarcity, analogous to maritime denied-network conditions.
+- It surveys cross-layer and goal-oriented approaches, giving a defensible research basis for mission-aware COP networking.
+- It connects semantic communications with edge AI and federated learning, supporting a distributed maritime architecture with local inference.
+- It explicitly positions semantic communication as a future direction for intelligent wireless networks, useful for pitching T3 as beyond conventional data transport.
+
+## Limitations / Risks
+
+- The provided text is mostly abstract, metadata, and references, so detailed claims about individual architectures should be verified from the full paper or cited primary works.
+- As a survey, it does not provide a deployable maritime COP implementation or measured maritime-denial results.
+- Semantic models may fail under domain shift, adversarial deception, or poorly labeled maritime data.
+- Semantic compression can hide low-level evidence needed for forensic review unless raw-data fallback or provenance is retained.
+- Shared semantic meaning requires aligned ontologies, model versions, and confidence calibration across coalition nodes.
+
+## Confidence
+
+medium

@@ -1,0 +1,244 @@
+{
+  "version": "20260701_081735",
+  "generated_at": "2026-06-30T23:18:45.268078+00:00",
+  "topics": [
+    {
+      "topic_id": "T1_multi_uxv_control",
+      "track_ids": [
+        "T1"
+      ],
+      "problem_ids": [
+        "T1-001"
+      ],
+      "label": "1인 다중 무인기 통제 / Multi-UxV control",
+      "queries": [
+        "multi UAV control human swarm autonomy",
+        "human swarm interaction multi robot control unmanned systems cognitive load"
+      ]
+    },
+    {
+      "topic_id": "T1_terrain_aware_autonomy",
+      "track_ids": [
+        "T1"
+      ],
+      "problem_ids": [
+        "T1-002"
+      ],
+      "label": "지형 인지형 자율성 / Terrain-aware autonomy",
+      "queries": [
+        "terrain aware UAV path planning GPS denied environment",
+        "UAV path planning electronic warfare communication denied environment"
+      ]
+    },
+    {
+      "topic_id": "T1_counter_uas_sensor_fusion",
+      "track_ids": [
+        "T1"
+      ],
+      "problem_ids": [
+        "T1-003",
+        "T1-005"
+      ],
+      "label": "Counter-UAS 탐지·추적·요격",
+      "queries": [
+        "counter UAS drone detection RF EO IR radar sensor fusion",
+        "autonomous drone interception target tracking counter unmanned aircraft systems"
+      ]
+    },
+    {
+      "topic_id": "T1_radio_silent_iff",
+      "track_ids": [
+        "T1"
+      ],
+      "problem_ids": [
+        "T1-006"
+      ],
+      "label": "무선침묵 IFF / 저방출 피아식별",
+      "queries": [
+        "identification friend or foe UAV cryptographic challenge response replay attack",
+        "radio silent authentication unmanned aerial vehicles challenge response protocol"
+      ]
+    },
+    {
+      "topic_id": "T2_fusion_intel_copilot",
+      "track_ids": [
+        "T2"
+      ],
+      "problem_ids": [
+        "T2-001"
+      ],
+      "label": "멀티소스 융합 인텔 코파일럿",
+      "queries": [
+        "open source intelligence multi source fusion knowledge graph large language model",
+        "OSINT intelligence analysis knowledge graph provenance citation LLM"
+      ]
+    },
+    {
+      "topic_id": "T2_cyber_threat_intelligence",
+      "track_ids": [
+        "T2"
+      ],
+      "problem_ids": [
+        "T2-003",
+        "T2-004"
+      ],
+      "label": "사이버 위협 인텔리전스 / 지식그래프 / 엔티티 해소",
+      "queries": [
+        "cyber threat intelligence knowledge graph entity resolution",
+        "dark web threat intelligence credential exposure infostealer",
+        "cyber threat intelligence ontology knowledge graph APT"
+      ]
+    },
+    {
+      "topic_id": "T2_air_isr_fusion",
+      "track_ids": [
+        "T2"
+      ],
+      "problem_ids": [
+        "T2-002"
+      ],
+      "label": "공중 ISR 다중소스 융합",
+      "queries": [
+        "multi source ISR fusion aircraft satellite weather OSINT",
+        "airborne ISR data fusion anomaly detection open source intelligence"
+      ]
+    },
+    {
+      "topic_id": "T3_sensor_fusion_cop",
+      "track_ids": [
+        "T3"
+      ],
+      "problem_ids": [
+        "T3-001",
+        "T3-003"
+      ],
+      "label": "센서퓨전 / 자연어 COP / C2",
+      "queries": [
+        "sensor fusion common operational picture command and control decision support",
+        "multi domain command and control ontology sensor fusion"
+      ]
+    },
+    {
+      "topic_id": "T3_semantic_tactical_network",
+      "track_ids": [
+        "T3"
+      ],
+      "problem_ids": [
+        "T3-005"
+      ],
+      "label": "전술망 시맨틱 전송 / 거부환경 통신",
+      "queries": [
+        "semantic communication tactical networks edge AI denied environment",
+        "semantic communication wireless networks deep learning bandwidth constrained"
+      ]
+    },
+    {
+      "topic_id": "T3_sustainment_logistics",
+      "track_ids": [
+        "T3"
+      ],
+      "problem_ids": [
+        "T3-006"
+      ],
+      "label": "지속지원 / 군수 C2 / 예측정비",
+      "queries": [
+        "military logistics sustainment predictive maintenance decision support",
+        "resilient military supply chain logistics optimization denied environment"
+      ]
+    },
+    {
+      "topic_id": "T4_maritime_anomaly_ais",
+      "track_ids": [
+        "T4"
+      ],
+      "problem_ids": [
+        "T4-001",
+        "T4-002"
+      ],
+      "label": "AIS 기반 해상 이상탐지 / 회색지대 조기경보",
+      "queries": [
+        "AIS anomaly detection maritime domain awareness dark vessel",
+        "maritime vessel trajectory anomaly detection AIS deep learning",
+        "dark vessel detection SAR AIS fusion maritime surveillance"
+      ]
+    },
+    {
+      "topic_id": "T4_maritime_sensor_fusion",
+      "track_ids": [
+        "T4"
+      ],
+      "problem_ids": [
+        "T4-001",
+        "T4-003"
+      ],
+      "label": "해상 센서퓨전 / 무인 감시 자산",
+      "queries": [
+        "maritime surveillance sensor fusion EO IR radar sonar unmanned surface vehicle",
+        "passive sonar anomaly detection maritime surveillance deep learning"
+      ]
+    },
+    {
+      "topic_id": "T5_wargame_ai_tutor",
+      "track_ids": [
+        "T5"
+      ],
+      "problem_ids": [
+        "T5-001",
+        "T5-003"
+      ],
+      "label": "AI 워게임 교관 / 의사결정 코치",
+      "queries": [
+        "wargaming artificial intelligence tutor after action review military training",
+        "large language model wargame simulation decision support military training"
+      ]
+    },
+    {
+      "topic_id": "T5_on_device_tactical_ai",
+      "track_ids": [
+        "T5"
+      ],
+      "problem_ids": [
+        "T5-002"
+      ],
+      "label": "온디바이스 전술 AI / 오프라인 RAG",
+      "queries": [
+        "on device large language model retrieval augmented generation offline",
+        "edge AI tactical assistant offline RAG military decision support"
+      ]
+    },
+    {
+      "topic_id": "X_llm_reliability_provenance",
+      "track_ids": [
+        "T2",
+        "T3",
+        "T5"
+      ],
+      "problem_ids": [
+        "T2-001",
+        "T3-001",
+        "T5-002"
+      ],
+      "label": "LLM 신뢰성 / citation / provenance / 평가",
+      "queries": [
+        "retrieval augmented generation citation provenance hallucination evaluation",
+        "LLM agents tool use evaluation provenance question answering"
+      ]
+    }
+  ],
+  "sources": {
+    "OpenAlex": "https://api.openalex.org/works",
+    "arXiv": "https://export.arxiv.org/api/query"
+  },
+  "counts": {
+    "raw_records": 265,
+    "deduped_records": 228,
+    "topics": 15,
+    "queries": 32
+  },
+  "outputs": {
+    "records_json": "/Users/mollykim/projects/D4D/03_data/processed/literature/versions/20260701_081735/literature_seed_catalog.json",
+    "records_csv": "/Users/mollykim/projects/D4D/03_data/processed/literature/versions/20260701_081735/literature_seed_catalog.csv",
+    "run_log": "/Users/mollykim/projects/D4D/03_data/raw/literature/20260701_081735/collection_run_log.json",
+    "markdown": "/Users/mollykim/projects/D4D/01_research/literature/literature_seed_catalog.md"
+  }
+}

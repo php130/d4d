@@ -1,0 +1,664 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>D4D T3 Resilient Maritime COP Report</title>
+    <link rel="icon" href="data:," />
+    <style>
+      :root {
+        --bg: #f2f4f1;
+        --paper: #ffffff;
+        --ink: #17211f;
+        --muted: #65716d;
+        --line: #d9dfdc;
+        --teal: #087f7a;
+        --blue: #2f67b1;
+        --red: #bd2d2a;
+        --amber: #b86b00;
+        --green: #277846;
+        --soft-teal: #e0f3f1;
+        --soft-blue: #e4eefb;
+        --soft-amber: #fff1dc;
+        --shadow: 0 18px 44px rgba(28, 42, 38, 0.11);
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.58;
+        letter-spacing: 0;
+      }
+
+      a { color: var(--blue); font-weight: 760; text-decoration: none; }
+      a:hover { text-decoration: underline; }
+
+      .page {
+        width: min(1120px, calc(100vw - 32px));
+        margin: 0 auto;
+        padding: 28px 0 56px;
+      }
+
+      .hero {
+        min-height: 320px;
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
+        gap: 24px;
+        align-items: center;
+        padding: 18px 0 26px;
+      }
+
+      .eyebrow {
+        margin: 0 0 8px;
+        color: var(--muted);
+        font-size: 0.82rem;
+        font-weight: 820;
+        text-transform: uppercase;
+      }
+
+      h1, h2, h3, p { margin-top: 0; }
+
+      h1 {
+        margin-bottom: 14px;
+        font-size: clamp(2.4rem, 5vw, 4.7rem);
+        line-height: 0.96;
+      }
+
+      h2 {
+        margin: 0 0 12px;
+        font-size: 1.65rem;
+        line-height: 1.15;
+      }
+
+      h3 {
+        margin: 0 0 8px;
+        font-size: 1.05rem;
+      }
+
+      .lead {
+        max-width: 680px;
+        color: #35423f;
+        font-size: 1.08rem;
+      }
+
+      .hero-visual {
+        min-height: 300px;
+        border: 1px solid #b9c7c3;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        background: #dbeae6;
+      }
+
+      .section {
+        margin-top: 18px;
+        padding: 22px;
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+      }
+
+      .glossary-strip {
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        margin: 0 0 18px;
+        padding: 14px;
+        border: 1px solid #b8d8d5;
+        border-radius: 8px;
+        background: rgba(250, 253, 252, 0.96);
+        box-shadow: 0 12px 28px rgba(28, 42, 38, 0.12);
+        backdrop-filter: blur(10px);
+      }
+
+      .glossary-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(280px, 0.7fr);
+        gap: 12px;
+        align-items: stretch;
+      }
+
+      .glossary-title {
+        margin: 0 0 8px;
+        color: var(--muted);
+        font-size: 0.78rem;
+        font-weight: 840;
+        text-transform: uppercase;
+      }
+
+      .glossary-chips,
+      .term-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+      }
+
+      .term-list {
+        margin-top: 10px;
+      }
+
+      .term-chip {
+        min-height: 30px;
+        padding: 4px 10px;
+        border: 1px solid #a8c9c5;
+        border-radius: 999px;
+        background: #eef8f6;
+        color: #075e5a;
+        font: inherit;
+        font-size: 0.78rem;
+        font-weight: 820;
+        cursor: pointer;
+      }
+
+      .term-chip:hover,
+      .term-chip:focus,
+      .term-chip.active {
+        outline: none;
+        border-color: var(--teal);
+        background: var(--soft-teal);
+        box-shadow: inset 0 0 0 1px var(--teal);
+      }
+
+      .glossary-definition {
+        min-height: 100%;
+        padding: 12px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #f8faf8;
+      }
+
+      .glossary-definition strong {
+        display: block;
+        margin-bottom: 4px;
+        color: var(--ink);
+      }
+
+      .glossary-definition span {
+        display: block;
+        color: var(--muted);
+        font-size: 0.82rem;
+        font-weight: 780;
+      }
+
+      .glossary-definition p {
+        margin: 8px 0 0;
+        font-size: 0.9rem;
+      }
+
+      .grid-2 {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .tile {
+        min-height: 120px;
+        padding: 14px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #f8faf8;
+      }
+
+      .tile strong {
+        display: block;
+        margin-bottom: 6px;
+      }
+
+      .callout {
+        padding: 14px 16px;
+        border-radius: 8px;
+        border: 1px solid #a8d8d2;
+        background: var(--soft-teal);
+      }
+
+      .warning {
+        border-color: #efc98e;
+        background: var(--soft-amber);
+      }
+
+      .diagram {
+        margin-top: 12px;
+        overflow: auto;
+      }
+
+      .flow {
+        min-width: 760px;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+        align-items: stretch;
+      }
+
+      .flow div {
+        position: relative;
+        min-height: 92px;
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid var(--line);
+        background: var(--soft-blue);
+        font-weight: 730;
+      }
+
+      .flow div::after {
+        content: ">";
+        position: absolute;
+        right: -10px;
+        top: 34px;
+        color: var(--muted);
+        font-weight: 900;
+      }
+
+      .flow div:last-child::after { content: ""; }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.94rem;
+      }
+
+      th, td {
+        padding: 10px 9px;
+        border-bottom: 1px solid var(--line);
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        color: var(--muted);
+        font-size: 0.78rem;
+        text-transform: uppercase;
+      }
+
+      code {
+        padding: 1px 5px;
+        border-radius: 6px;
+        background: #edf1ef;
+        color: #174d4a;
+        font-weight: 760;
+      }
+
+      .status {
+        display: inline-flex;
+        align-items: center;
+        min-height: 26px;
+        padding: 2px 9px;
+        border-radius: 999px;
+        font-size: 0.78rem;
+        font-weight: 820;
+      }
+
+      .send { background: #e2f3e8; color: var(--green); }
+      .defer { background: #fff1dc; color: var(--amber); }
+      .drop { background: #ffe2df; color: var(--red); }
+
+      .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 14px;
+      }
+
+      .links a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 36px;
+        padding: 0 12px;
+        border-radius: 8px;
+        border: 1px solid var(--line);
+        background: #f8faf8;
+      }
+
+      .small {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 860px) {
+        .hero,
+        .grid-2,
+        .grid-3,
+        .glossary-layout {
+          display: block;
+        }
+
+        .tile {
+          margin-bottom: 10px;
+        }
+
+        .glossary-definition {
+          margin-top: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">D4D Deploy for Defense · T3</p>
+          <h1>거부환경 해상 COP 의미 전송 시스템</h1>
+          <p class="lead">
+            통신망이 불안정할 때 원본 데이터를 모두 보내려 하면 중요한 판단이 늦어집니다.
+            이 프로젝트는 AIS, SAR, 기상, OSINT, 네트워크 상태를 작전적으로 의미 있는 이벤트로 줄여서
+            지휘관 화면에 남기는 방식을 보여줍니다.
+          </p>
+        </div>
+        <div class="hero-visual" aria-label="Semantic COP visual">
+          <svg viewBox="0 0 900 520" width="100%" height="100%" role="img">
+            <rect width="900" height="520" fill="#dbeae6"></rect>
+            <path d="M54 438 C118 412 178 330 254 296 C330 260 364 205 460 174 C560 138 674 70 836 62 L860 492 L54 492 Z" fill="#edf6f3" stroke="#9aaea9" stroke-width="3"></path>
+            <g stroke="rgba(43,89,84,.17)" stroke-width="1">
+              <path d="M80 90 H820 M80 150 H820 M80 210 H820 M80 270 H820 M80 330 H820 M80 390 H820"></path>
+              <path d="M140 72 V470 M240 72 V470 M340 72 V470 M440 72 V470 M540 72 V470 M640 72 V470 M740 72 V470"></path>
+            </g>
+            <path d="M278 382 L332 340 L382 306" fill="none" stroke="#2f67b1" stroke-width="7" stroke-linecap="round"></path>
+            <circle cx="382" cy="306" r="10" fill="#fff" stroke="#5d7470" stroke-width="3"></circle>
+            <circle cx="458" cy="282" r="18" fill="#b86b00" stroke="#fff" stroke-width="5"></circle>
+            <circle cx="516" cy="268" r="21" fill="#bd2d2a" stroke="#fff" stroke-width="5"></circle>
+            <circle cx="704" cy="152" r="12" fill="#2f67b1" stroke="#fff" stroke-width="4"></circle>
+            <text x="74" y="54" fill="#17211f" font-size="24" font-weight="800">Raw feeds fail</text>
+            <text x="74" y="86" fill="#65716d" font-size="17">semantic alert card survives</text>
+            <text x="532" y="272" fill="#17211f" font-size="16" font-weight="800">SAR without AIS</text>
+            <text x="474" y="286" fill="#17211f" font-size="16" font-weight="800">AIS gap</text>
+            <text x="60" y="474" fill="#65716d" font-size="15">Synthetic maritime COP scenario</text>
+          </svg>
+        </div>
+      </section>
+
+      <section class="glossary-strip" aria-label="용어 도움말">
+        <div class="glossary-layout">
+          <div>
+            <p class="glossary-title">용어 도움말 · 모르는 줄임말을 눌러보세요</p>
+            <div class="glossary-chips" id="reportGlossaryChips"></div>
+          </div>
+          <div class="glossary-definition" id="reportGlossaryDefinition" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>한 문장으로 설명하면</h2>
+        <div class="callout">
+          <strong>“무전이 잘 안 되는 상황에서, 모든 영상을 보내는 대신 꼭 필요한 작전 의미만 먼저 보내는 시스템”입니다.</strong>
+          <p style="margin-bottom:0">
+            예를 들어 4MB짜리 원본 SAR 이미지와 AIS 로그를 다 보내지 못해도,
+            “어느 선박의 AIS가 끊겼고, 같은 시간대 SAR에는 선박 크기 물체가 보이며, 이 정보는 어떤 근거로 판단했는지”라는
+            1KB 안팎의 경보 카드는 보낼 수 있습니다.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>왜 이게 T3 주제인가</h2>
+        <div class="grid-3">
+          <div class="tile">
+            <strong>COP / C2</strong>
+            지휘관이 보는 상황도는 단순 지도가 아니라 “무엇이 중요하고 왜 믿을 수 있는지”를 보여줘야 합니다.
+            <div class="term-list">
+              <button class="term-chip" type="button" data-term="COP">COP</button>
+              <button class="term-chip" type="button" data-term="C2">C2</button>
+              <button class="term-chip" type="button" data-term="Evidence Bundle">Evidence Bundle</button>
+            </div>
+          </div>
+          <div class="tile">
+            <strong>Battle Network</strong>
+            통신 링크가 약해지면 원본 데이터보다 우선순위가 높은 의미 메시지를 먼저 보내야 합니다.
+            <div class="term-list">
+              <button class="term-chip" type="button" data-term="Battle Network">Battle Network</button>
+              <button class="term-chip" type="button" data-term="DDIL">DDIL</button>
+              <button class="term-chip" type="button" data-term="Semantic Event">Semantic Event</button>
+            </div>
+          </div>
+          <div class="tile">
+            <strong>Maritime Domain</strong>
+            데이터는 T4 해상 MDA에서 가져오지만, 핵심 산출물은 T3식 C2/semantic transmission입니다.
+            <div class="term-list">
+              <button class="term-chip" type="button" data-term="MDA">MDA</button>
+              <button class="term-chip" type="button" data-term="AIS">AIS</button>
+              <button class="term-chip" type="button" data-term="SAR">SAR</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>비유로 이해하기</h2>
+        <div class="grid-2">
+          <div class="tile">
+            <h3>택배 박스가 아니라 송장부터 보낸다</h3>
+            원본 데이터는 큰 택배 박스와 같습니다. 통신망이 좁으면 박스 전체를 못 보냅니다.
+            그래서 먼저 송장처럼 “누가, 어디서, 무엇을, 왜 중요한지”를 보냅니다.
+          </div>
+          <div class="tile">
+            <h3>응급실 triage와 비슷하다</h3>
+            모든 환자를 동시에 볼 수 없을 때, 생명이 위험한 환자를 먼저 봅니다.
+            이 시스템도 모든 데이터를 똑같이 보내지 않고, 작전적으로 급한 이벤트를 먼저 보냅니다.
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>기술 흐름</h2>
+        <div class="diagram">
+          <div class="flow">
+            <div>Source<br><span class="small">AIS, SAR, weather, OSINT</span></div>
+            <div>Normalize<br><span class="small">time, location, entity</span></div>
+            <div>Semantic Event<br><span class="small">AIS_GAP, SAR_WITHOUT_AIS</span></div>
+            <div>Priority Routing<br><span class="small">send, defer, drop</span></div>
+            <div>COP Update<br><span class="small">map, alert, evidence</span></div>
+          </div>
+        </div>
+        <div class="term-list">
+          <button class="term-chip" type="button" data-term="AIS Gap">AIS_GAP</button>
+          <button class="term-chip" type="button" data-term="SAR without AIS">SAR_WITHOUT_AIS</button>
+          <button class="term-chip" type="button" data-term="Priority Routing">Priority Routing</button>
+          <button class="term-chip" type="button" data-term="Alert Card">Alert Card</button>
+          <button class="term-chip" type="button" data-term="Sensor Fusion">Sensor Fusion</button>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>데모 시나리오</h2>
+        <table>
+          <thead>
+            <tr><th>단계</th><th>상황</th><th>COP가 해야 하는 일</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Haneul-77이라는 선박의 AIS가 02:05 이후 끊김</td><td><code>AIS_GAP</code> 이벤트 생성</td></tr>
+            <tr><td>2</td><td>02:24에 SAR-like detection이 나타났지만 AIS 매칭이 없음</td><td><code>SAR_WITHOUT_AIS</code> 경보 생성</td></tr>
+            <tr><td>3</td><td>기상 악화로 시각 확인이 어려워짐</td><td>기상 근거를 confidence 계산에 포함</td></tr>
+            <tr><td>4</td><td>통신망이 96 kbps 수준으로 저하</td><td>원본 대신 alert card만 전송</td></tr>
+            <tr><td>5</td><td>충돌하는 저신뢰 보고가 들어옴</td><td>덮어쓰지 않고 contested evidence로 보관</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section">
+        <h2>Mock Dataset의 근거 구조</h2>
+        <p>
+          현재 데이터는 모두 안전한 합성 데이터입니다. 하지만 아무렇게나 만든 숫자가 아니라,
+          실제 API가 나중에 들어왔을 때 교체 가능한 source type을 기준으로 설계했습니다.
+        </p>
+        <div class="term-list">
+          <button class="term-chip" type="button" data-term="Raw Feed">Raw Feed</button>
+          <button class="term-chip" type="button" data-term="GDELT">GDELT</button>
+          <button class="term-chip" type="button" data-term="KMA">KMA</button>
+          <button class="term-chip" type="button" data-term="OSINT">OSINT</button>
+        </div>
+        <table>
+          <thead>
+            <tr><th>Mock source</th><th>나중에 교체할 실제 소스</th><th>데모에서 맡는 역할</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>mock_ais_tracks</code></td><td>data.go.kr AIS, Global Fishing Watch, NOAA AIS</td><td>협조 선박 위치와 AIS gap 탐지</td></tr>
+            <tr><td><code>mock_sar_detections</code></td><td>Copernicus Sentinel-1, xView3, GFW SAR</td><td>AIS가 없어도 보이는 독립 탐지</td></tr>
+            <tr><td><code>mock_weather_hazard</code></td><td>KMA APIHub, Copernicus Marine, NOAA/NCEP</td><td>기상 위험과 센서 신뢰도 맥락</td></tr>
+            <tr><td><code>mock_osint_incident</code></td><td>GDELT, 공식 해상 안전 공지</td><td>사건/공지 근거와 설명</td></tr>
+            <tr><td><code>mock_network_state</code></td><td>Cloudflare Radar, Ookla, RIPE Atlas, netem</td><td>저대역/단절 상황 재현</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section">
+        <h2>Priority Routing</h2>
+        <p>
+          통신이 제한되면 모든 것을 보낼 수 없습니다. 그래서 이벤트마다 점수를 계산합니다.
+        </p>
+        <div class="term-list">
+          <button class="term-chip" type="button" data-term="Priority Routing">Priority Routing</button>
+          <button class="term-chip" type="button" data-term="Confidence">Confidence</button>
+          <button class="term-chip" type="button" data-term="Trust">Trust</button>
+          <button class="term-chip" type="button" data-term="Store Forward">Store Forward</button>
+          <button class="term-chip" type="button" data-term="Stale Warning">Stale Warning</button>
+        </div>
+        <div class="callout">
+          <code>priority = mission impact + urgency + confidence + trust + novelty + network efficiency</code>
+        </div>
+        <table style="margin-top:14px">
+          <thead>
+            <tr><th>Network mode</th><th>전송 판단</th><th>데모에서 보이는 결과</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>full_sync</code></td><td><span class="status send">SEND</span> 전체</td><td>모든 이벤트와 근거를 볼 수 있음</td></tr>
+            <tr><td><code>semantic_summary</code></td><td><span class="status send">SEND</span> 핵심만</td><td>상위 경보 카드만 살아남음</td></tr>
+            <tr><td><code>store_forward</code></td><td><span class="status defer">DEFER</span> 대부분</td><td>나머지는 링크 복구 후 동기화</td></tr>
+            <tr><td><code>local_only</code></td><td><span class="status drop">LOCAL</span> 전송 없음</td><td>로컬 COP에만 stale warning으로 남음</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section">
+        <h2>해커톤에서 보여줄 산출물</h2>
+        <div class="grid-2">
+          <div class="tile">
+            <strong>1. 기술 설계 문서</strong>
+            컴포넌트, 데이터 계약, 라우팅 알고리즘, 검증 기준을 포함합니다.
+          </div>
+          <div class="tile">
+            <strong>2. Mock dataset</strong>
+            실제 API가 없어도 재현 가능한 AIS/SAR/weather/OSINT/network 이벤트 세트입니다.
+          </div>
+          <div class="tile">
+            <strong>3. Local demo app</strong>
+            지도, 경보 큐, 근거 패널, raw vs semantic bytes 비교를 보여줍니다.
+          </div>
+          <div class="tile">
+            <strong>4. 설명 리포트</strong>
+            비전공자도 발표할 수 있게 개념과 흐름을 풀어쓴 문서입니다.
+          </div>
+        </div>
+        <div class="links">
+          <a href="../../06_prototype/app/resilient_maritime_cop/index.html">Open Demo App</a>
+          <a href="../../06_prototype/docs/resilient_maritime_cop_technical_design.md">Technical Design</a>
+          <a href="../../03_data/samples/resilient_maritime_cop/mock_dataset.json">Mock Dataset</a>
+          <a href="../../05_analysis/knowledge_graph/t3_resilient_maritime_cop_schema_v0_1.md">Schema v0.1</a>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>발표할 때 쓸 수 있는 설명</h2>
+        <div class="callout">
+          <p>
+            “저희는 해상 데이터를 많이 보여주는 대시보드를 만든 것이 아닙니다.
+            통신이 나빠졌을 때도 지휘관에게 필요한 작전 의미가 살아남도록,
+            원본 데이터를 증거가 붙은 작은 이벤트 메시지로 바꾸는 COP 시스템을 만들었습니다.”
+          </p>
+          <p style="margin-bottom:0">
+            “AIS는 진실이 아니라 하나의 주장입니다. 그래서 SAR, 기상, OSINT, 네트워크 상태와 함께
+            evidence bundle로 묶고, 신뢰도와 freshness를 표시합니다.”
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>한계와 안전장치</h2>
+        <div class="warning callout">
+          <p>
+            이 데모는 실제 작전 판단 시스템이 아닙니다. 합성 데이터로 시스템 패턴을 보여주는 것입니다.
+            AIS가 끊겼다고 불법이라고 판단하지 않으며, SAR detection도 사람의 검토가 필요한 후보로만 다룹니다.
+          </p>
+          <p style="margin-bottom:0">
+            API key, 계정, 원본 민감 데이터는 리포트와 데모에 포함하지 않습니다.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>다음 로드맵</h2>
+        <table>
+          <thead>
+            <tr><th>순서</th><th>작업</th><th>완료 기준</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>API 수집 세션 결과 반영</td><td>mock source 하나를 live connector로 교체</td></tr>
+            <tr><td>2</td><td>KMA/weather connector</td><td><code>WEATHER_HAZARD</code> 이벤트 자동 생성</td></tr>
+            <tr><td>3</td><td>GDELT OSINT connector</td><td>해상 키워드 뉴스가 citation 달린 이벤트로 변환</td></tr>
+            <tr><td>4</td><td>AIS/port connector</td><td>AIS gap 또는 port anomaly가 실제/샘플 데이터에서 계산</td></tr>
+            <tr><td>5</td><td>Palantir AIP mapping</td><td>Ontology object/action/function 설계로 변환</td></tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+    <script src="../../06_prototype/app/resilient_maritime_cop/assets/glossary.js"></script>
+    <script>
+      (function () {
+        const glossary = window.D4D_GLOSSARY || {};
+        const pinnedTerms = [
+          "AIS",
+          "SAR",
+          "COP",
+          "C2",
+          "MDA",
+          "OSINT",
+          "DDIL",
+          "Semantic Event",
+          "Priority Routing",
+          "Evidence Bundle",
+          "Alert Card",
+          "Palantir AIP",
+        ];
+        const chips = document.getElementById("reportGlossaryChips");
+        const definition = document.getElementById("reportGlossaryDefinition");
+
+        function renderDefinition(term) {
+          const item = glossary[term];
+          if (!item || !definition) return;
+          definition.innerHTML = `
+            <strong>${item.label}</strong>
+            <span>${item.full}</span>
+            <p>${item.plain}</p>
+            <p class="small">${item.example}</p>
+          `;
+          document.querySelectorAll("[data-term]").forEach((button) => {
+            button.classList.toggle("active", button.dataset.term === term);
+          });
+        }
+
+        if (chips) {
+          chips.innerHTML = pinnedTerms.map((term) => {
+            const item = glossary[term];
+            return `<button class="term-chip" type="button" data-term="${term}" title="${item ? item.plain : term}">${term}</button>`;
+          }).join("");
+        }
+
+        document.querySelectorAll("[data-term]").forEach((button) => {
+          const item = glossary[button.dataset.term];
+          if (item) button.title = `${item.full}: ${item.plain}`;
+          button.addEventListener("click", () => renderDefinition(button.dataset.term));
+        });
+
+        renderDefinition("AIS");
+      })();
+    </script>
+  </body>
+</html>

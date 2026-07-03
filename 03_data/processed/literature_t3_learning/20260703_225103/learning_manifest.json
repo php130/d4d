@@ -1,0 +1,147 @@
+{
+  "version": "20260703_225103",
+  "generated_at": "2026-07-03T13:51:03.298453+00:00",
+  "limit": 10,
+  "papers": [
+    {
+      "priority": 1,
+      "title": "What is Semantic Communication? A View on Conveying Meaning in the Era of Machine Intelligence",
+      "url": "https://doi.org/10.23919/jcin.2021.9663101",
+      "pdf_url": "https://ieeexplore.ieee.org/ielx7/8892389/9663097/09663101.pdf",
+      "status": {
+        "downloaded_pdf": true,
+        "download_message": "downloaded 2941932 bytes (application/pdf)",
+        "extract_message": "pypdf pages=36 chars=191444",
+        "text_chars": 191444
+      },
+      "summary_json": "/Users/mollykim/projects/D4D/03_data/processed/literature_t3_learning/20260703_225103/01_What_is_Semantic_Communication_A_View_on_Conveying_Meaning_in_the_Era_of_Machine_Intelligence.json",
+      "note_md": "/Users/mollykim/projects/D4D/01_research/literature/t3_deep_research/paper_notes/01_What_is_Semantic_Communication_A_View_on_Conveying_Meaning_in_the_Era_of_Machine_Intelligence.md"
+    },
+    {
+      "priority": 2,
+      "title": "A Survey on Semantic Communications for Intelligent Wireless Networks",
+      "url": "https://doi.org/10.1007/s11277-022-10111-7",
+      "pdf_url": "https://link.springer.com/content/pdf/10.1007/s11277-022-10111-7.pdf",
+      "status": {
+        "downloaded_pdf": true,
+        "download_message": "downloaded 424146 bytes (text/html; charset=utf-8)",
+        "extract_message": "fitz pages=34 chars=28588",
+        "text_chars": 28588
+      },
+      "summary_json": "/Users/mollykim/projects/D4D/03_data/processed/literature_t3_learning/20260703_225103/02_A_Survey_on_Semantic_Communications_for_Intelligent_Wireless_Networks.json",
+      "note_md": "/Users/mollykim/projects/D4D/01_research/literature/t3_deep_research/paper_notes/02_A_Survey_on_Semantic_Communications_for_Intelligent_Wireless_Networks.md"
+    },
+    {
+      "priority": 3,
+      "title": "Semantic Communication Meets Edge Intelligence",
+      "url": "https://doi.org/10.1109/mwc.004.2200050",
+      "pdf_url": "",
+      "status": {
+        "downloaded_pdf": false,
+        "download_message": "no pdf_url",
+        "extract_message": "abstract fallback",
+        "text_chars": 1240
+      },
+      "summary_json": "/Users/mollykim/projects/D4D/03_data/processed/literature_t3_learning/20260703_225103/03_Semantic_Communication_Meets_Edge_Intelligence.json",
+      "note_md": "/Users/mollykim/projects/D4D/01_research/literature/t3_deep_research/paper_notes/03_Semantic_Communication_Meets_Edge_Intelligence.md"
+    },
+    {
+      "priority": 4,
+      "title": "A6.2 - Multiplatform sensor fusion. Drawing a common tactical scenario.",
+      "url": "https://doi.org/10.5162/ettc2024/a6.2",
+      "pdf_url": "https://www.ama-science.org/proceedings/getFile/AGpjAD==",
+      "status": {
+        "downloaded_pdf": true,
+        "download_message": "downloaded 742684 bytes (application/pdf; name=\"A6.2.pdf\")",
+        "extract_message": "pypdf pages=9 chars=36984",
+        "text_chars": 36984
+      },
+      "summary_json": "/Users/mollykim/projects/D4D/03_data/processed/literature_t3_learning/20260703_225103/04_A6.2_-_Multiplatform_sensor_fusion._Drawing_a_common_tactical_scenario..json",
+      "note_md": "/Users/mollykim/projects/D4D/01_research/literature/t3_deep_research/paper_notes/04_A6.2_-_Multiplatform_sensor_fusion._Drawing_a_common_tactical_scenario..md"
+    },
+    {
+      "priority": 5,
+      "title": "Data-Driven Distributed Common Operational Picture from Heterogeneous Platforms using Multi-Agent Reinforcement Learning",
+      "url": "http://arxiv.org/abs/2411.05683v1",
+      "pdf_url": "https://arxiv.org/pdf/2411.05683v1",
+      "status": {
+        "downloaded_pdf": true,
+        "download_message": "downloaded 1256338 bytes (application/pdf)",
+        "extract_message": "pypdf pages=14 chars=52984",
+        "text_chars": 52984
+      },
+      "summary_json": "/Users/mollykim/projects/D4D/03_data/processed/literature_t3_learning/20260703_225103/05_Data-Driven_Distributed_Common_Operational_Picture_from_Heterogeneous_Platforms_using_Multi-Agent_Re.json",
+      "note_md": "/Users/mollykim/projects/D4D/01_research/literature/t3_deep_research/paper_notes/05_Data-Driven_Distributed_Common_Operational_Picture_from_Heterogeneous_Platforms_using_Multi-Agent_Re.md"
+    },
+    {
+      "priority": 6,
+      "title": "Anomaly Detection in Maritime AIS Tracks: A Review of Recent Approaches",
+      "url": "https://doi.org/10.3390/jmse10010112",
+      "pdf_url": "https://www.mdpi.com/2077-1312/10/1/112/pdf?version=1642404728",
+      "status": {
+        "downloaded_pdf": false,
+        "download_message": "<HTTPError 403: 'Forbidden'>",
+        "extract_message": "abstract fallback",
+        "text_chars": 1110
+      },
+      "summary_json": "/Users/mollykim/projects/D4D/03_data/processed/literature_t3_learning/20260703_225103/06_Anomaly_Detection_in_Maritime_AIS_Tracks_A_Review_of_Recent_Approaches.json",
+      "note_md": "/Users/mollykim/projects/D4D/01_research/literature/t3_deep_research/paper_notes/06_Anomaly_Detection_in_Maritime_AIS_Tracks_A_Review_of_Recent_Approaches.md"
+    },
+    {
+      "priority": 7,
+      "title": "Classification-Aided SAR and AIS Data Fusion for Space-Based Maritime Surveillance",
+      "url": "https://doi.org/10.3390/rs13010104",
+      "pdf_url": "https://www.mdpi.com/2072-4292/13/1/104/pdf?version=1609410841",
+      "status": {
+        "downloaded_pdf": false,
+        "download_message": "<HTTPError 403: 'Forbidden'>",
+        "extract_message": "abstract fallback",
+        "text_chars": 1587
+      },
+      "summary_json": "/Users/mollykim/projects/D4D/03_data/processed/literature_t3_learning/20260703_225103/07_Classification-Aided_SAR_and_AIS_Data_Fusion_for_Space-Based_Maritime_Surveillance.json",
+      "note_md": "/Users/mollykim/projects/D4D/01_research/literature/t3_deep_research/paper_notes/07_Classification-Aided_SAR_and_AIS_Data_Fusion_for_Space-Based_Maritime_Surveillance.md"
+    },
+    {
+      "priority": 8,
+      "title": "Revealing Dark Vessels in the Mauritius Exclusive Economic Zone (EEZ) Using Multi-Temporal SAR and AIS Data",
+      "url": "http://dx.doi.org/10.1109/igarss52108.2023.10282208",
+      "pdf_url": "",
+      "status": {
+        "downloaded_pdf": false,
+        "download_message": "no pdf_url",
+        "extract_message": "abstract fallback",
+        "text_chars": 1001
+      },
+      "summary_json": "/Users/mollykim/projects/D4D/03_data/processed/literature_t3_learning/20260703_225103/08_Revealing_Dark_Vessels_in_the_Mauritius_Exclusive_Economic_Zone_EEZ_Using_Multi-Temporal_SAR_and_AIS.json",
+      "note_md": "/Users/mollykim/projects/D4D/01_research/literature/t3_deep_research/paper_notes/08_Revealing_Dark_Vessels_in_the_Mauritius_Exclusive_Economic_Zone_EEZ_Using_Multi-Temporal_SAR_and_AIS.md"
+    },
+    {
+      "priority": 9,
+      "title": "Sensors and AI Techniques for Situational Awareness in Autonomous Ships: A Review",
+      "url": "https://doi.org/10.1109/tits.2020.3023957",
+      "pdf_url": "https://ieeexplore.ieee.org/ielx7/6979/9664404/09207841.pdf",
+      "status": {
+        "downloaded_pdf": true,
+        "download_message": "downloaded 11187921 bytes (application/pdf)",
+        "extract_message": "pypdf pages=20 chars=102423",
+        "text_chars": 102423
+      },
+      "summary_json": "/Users/mollykim/projects/D4D/03_data/processed/literature_t3_learning/20260703_225103/09_Sensors_and_AI_Techniques_for_Situational_Awareness_in_Autonomous_Ships_A_Review.json",
+      "note_md": "/Users/mollykim/projects/D4D/01_research/literature/t3_deep_research/paper_notes/09_Sensors_and_AI_Techniques_for_Situational_Awareness_in_Autonomous_Ships_A_Review.md"
+    },
+    {
+      "priority": 10,
+      "title": "A Common Operational Picture in Support of Situational Awareness for Efficient Emergency Response Operations",
+      "url": "https://doi.org/10.18488/journal.102.2017.21.10.35",
+      "pdf_url": "https://archive.conscientiabeam.com/index.php/102/article/download/2501/3851",
+      "status": {
+        "downloaded_pdf": true,
+        "download_message": "downloaded 961212 bytes (application/pdf)",
+        "extract_message": "pypdf pages=26 chars=106490",
+        "text_chars": 106490
+      },
+      "summary_json": "/Users/mollykim/projects/D4D/03_data/processed/literature_t3_learning/20260703_225103/10_A_Common_Operational_Picture_in_Support_of_Situational_Awareness_for_Efficient_Emergency_Response_Op.json",
+      "note_md": "/Users/mollykim/projects/D4D/01_research/literature/t3_deep_research/paper_notes/10_A_Common_Operational_Picture_in_Support_of_Situational_Awareness_for_Efficient_Emergency_Response_Op.md"
+    }
+  ]
+}

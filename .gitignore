@@ -1,0 +1,22 @@
+# Local secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*token*
+*secret*
+*credential*
+
+# Raw/private data snapshots
+03_data/raw/**
+03_data/samples/private/**
+
+# Local caches
+.DS_Store
+__pycache__/
+.pytest_cache/
+.ipynb_checkpoints/
+

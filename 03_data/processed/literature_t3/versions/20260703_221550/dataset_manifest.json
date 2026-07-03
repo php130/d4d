@@ -1,0 +1,119 @@
+{
+  "version": "20260703_221550",
+  "generated_at": "2026-07-03T13:18:15.733448+00:00",
+  "project": {
+    "project_id": "t3_resilient_maritime_semantic_cop",
+    "title": "Resilient Maritime COP over Denied Networks",
+    "title_ko": "거부환경 해상 COP 의미 전송 시스템",
+    "primary_track_ids": [
+      "T3"
+    ],
+    "supporting_track_ids": [
+      "T4",
+      "T2"
+    ],
+    "problem_ids": [
+      "T3-001",
+      "T3-005",
+      "T4-001",
+      "T4-002"
+    ]
+  },
+  "topics": [
+    {
+      "topic_id": "semantic_communication_core",
+      "label": "Semantic communication core",
+      "weight": 5,
+      "queries": [
+        "\"semantic communications\" wireless networks survey",
+        "\"semantic communication\" \"edge intelligence\" survey",
+        "\"semantic communication\" \"bandwidth\" \"wireless\"",
+        "\"task-oriented semantic communication\" wireless networks"
+      ]
+    },
+    {
+      "topic_id": "tactical_denied_networks",
+      "label": "Tactical / denied / degraded networks",
+      "weight": 5,
+      "queries": [
+        "\"tactical networks\" \"edge computing\" \"command and control\"",
+        "\"denied environment\" \"command and control\" network",
+        "\"disconnected intermittent limited\" tactical network",
+        "\"delay tolerant network\" military tactical communications"
+      ]
+    },
+    {
+      "topic_id": "cop_c2_situational_awareness",
+      "label": "COP / C2 / situational awareness",
+      "weight": 5,
+      "queries": [
+        "\"common operational picture\" \"command and control\"",
+        "\"common operational picture\" sensor fusion decision support",
+        "\"situational awareness\" \"command and control\" \"sensor fusion\"",
+        "\"ontology\" \"common operational picture\" \"command and control\""
+      ]
+    },
+    {
+      "topic_id": "sensor_fusion_event_correlation",
+      "label": "Sensor fusion and event correlation",
+      "weight": 4,
+      "queries": [
+        "\"multi sensor fusion\" \"situational awareness\" survey",
+        "\"event correlation\" \"sensor fusion\" \"situational awareness\"",
+        "\"track fusion\" \"sensor fusion\" \"command and control\"",
+        "\"spatio-temporal data fusion\" \"situational awareness\""
+      ]
+    },
+    {
+      "topic_id": "maritime_mda_ais_osint",
+      "label": "Maritime MDA / AIS / OSINT",
+      "weight": 4,
+      "queries": [
+        "\"AIS anomaly detection\" \"maritime domain awareness\" review",
+        "\"dark vessel\" \"AIS\" \"SAR\" fusion",
+        "\"maritime domain awareness\" \"OSINT\" \"AIS\"",
+        "\"maritime anomaly detection\" \"AIS\" \"deep learning\""
+      ]
+    },
+    {
+      "topic_id": "edge_ai_prioritization",
+      "label": "Edge AI, event prioritization, compression",
+      "weight": 3,
+      "queries": [
+        "\"edge intelligence\" \"data compression\" \"wireless networks\"",
+        "\"event prioritization\" \"edge computing\" \"IoT\"",
+        "\"adaptive data transmission\" \"edge computing\" sensor networks",
+        "\"quality of information\" \"sensor networks\" decision support"
+      ]
+    },
+    {
+      "topic_id": "rag_provenance_briefing",
+      "label": "RAG, provenance, citation-grounded briefing",
+      "weight": 3,
+      "queries": [
+        "\"retrieval augmented generation\" citation provenance evaluation",
+        "\"source grounded\" \"large language model\" \"question answering\"",
+        "\"RAG\" hallucination attribution citation evaluation",
+        "\"provenance aware\" question answering knowledge graph"
+      ]
+    }
+  ],
+  "counts": {
+    "raw_records": 464,
+    "deduped_records": 418,
+    "seed_records": 322,
+    "snowball_fetches": 180,
+    "topics": 7,
+    "queries": 28
+  },
+  "sources": {
+    "OpenAlex": "https://api.openalex.org/works",
+    "arXiv": "https://export.arxiv.org/api/query"
+  },
+  "outputs": {
+    "records_json": "/Users/mollykim/projects/D4D/03_data/processed/literature_t3/versions/20260703_221550/t3_deep_research_catalog.json",
+    "records_csv": "/Users/mollykim/projects/D4D/03_data/processed/literature_t3/versions/20260703_221550/t3_deep_research_catalog.csv",
+    "records_md": "/Users/mollykim/projects/D4D/01_research/literature/t3_deep_research/t3_deep_research_catalog.md",
+    "run_log": "/Users/mollykim/projects/D4D/03_data/raw/literature_t3/20260703_221550/collection_run_log.json"
+  }
+}

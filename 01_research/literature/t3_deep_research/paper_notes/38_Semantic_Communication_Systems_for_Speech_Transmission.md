@@ -1,0 +1,78 @@
+# Semantic Communication Systems for Speech Transmission
+
+## Metadata
+
+- Year: 2021
+- URL: https://doi.org/10.1109/jsac.2021.3087240
+- DOI: 10.1109/jsac.2021.3087240
+- Read status: abstract_only
+
+## One-line Takeaway
+
+DeepSC-S shows that neural semantic encoding with attention can preserve meaning-relevant speech content more robustly than conventional transmission under noisy, changing channels.
+
+## D4D Relevance
+
+For a resilient maritime COP over denied networks, the paper supports the idea of transmitting mission-relevant meaning instead of raw bits or waveforms. Its channel-robust semantic speech approach maps well to T3 COP voice reports, watchstander updates, and low-bandwidth command messages where intelligibility and operational meaning matter more than exact signal reconstruction.
+
+## Key Concepts
+
+- semantic communication
+- speech semantic recovery
+- DeepSC-S
+- attention mechanism
+- squeeze-and-excitation network
+- dynamic channel adaptation
+- low-SNR robustness
+- semantic-level loss objective
+
+## Input Data
+
+- speech signals
+- simulated wireless channel conditions
+- telephone transmission scenario
+- multimedia transmission scenario
+- varying SNR regimes
+
+## Methods Or Architecture
+
+- deep-learning-enabled semantic communication system for speech
+- attention weighting to emphasize essential speech information
+- squeeze-and-excitation network for feature importance modeling
+- generalized model intended to handle changing channel conditions without retraining
+- benchmarking against traditional communication systems
+
+## Outputs / Metrics
+
+- signal-to-distortion ratio
+- perceptual speech distortion evaluation
+- speech recovery accuracy
+- robustness under channel variation
+- performance in low-SNR conditions
+
+## Prototype Hooks
+
+- use semantic speech encoders for compressed voice reports from vessels or patrol aircraft
+- apply attention to prioritize mission-critical entities such as vessel ID, location, intent, threat, and time
+- train one channel-aware model for multiple degraded maritime link conditions
+- evaluate COP voice-message transmission by semantic intelligibility rather than packet success alone
+- combine recovered speech semantics with structured COP updates and confidence scores
+
+## Pitch Evidence
+
+- reported better speech-quality metrics than traditional communication baselines
+- designed to operate across dynamic channel environments without retraining
+- especially relevant to denied or degraded networks because gains are highlighted in low-SNR regimes
+- demonstrates a concrete semantic-communication architecture rather than only a conceptual claim
+
+## Limitations / Risks
+
+- evidence is based only on the abstract, not full methods or experimental details
+- focused on speech reconstruction, not structured maritime COP fusion
+- does not establish performance for tactical entities, geospatial tracks, or command-and-control workflows
+- semantic compression may lose exact wording that could be operationally or legally important
+- compute, latency, training data, adversarial robustness, and interoperability constraints are unclear
+
+## Confidence
+
+medium

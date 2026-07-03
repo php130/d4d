@@ -1,0 +1,65 @@
+{
+  "T1": {
+    "track_id": "T1",
+    "track_title_en": "Autonomy, Unmanned Systems & Counter-UAS",
+    "track_title_ko": "자율·무인 시스템 및 대드론",
+    "expansions": [
+      "공중 유무인복합(CCA) 확장"
+    ],
+    "anchor_partners": [
+      "Prairie Schooner",
+      "Oregon UAS Accelerator"
+    ],
+    "raw": "Autonomy, Unmanned Systems & Counter-UAS\n자율·무인 시스템 및 대드론 \n+ 공중 유무인복합(CCA) 확장\n\n-\nPrairie Schooner\n\nOregon UAS Accelerator"
+  },
+  "T2": {
+    "track_id": "T2",
+    "track_title_en": "OSINT & Defense Intelligence",
+    "track_title_ko": "OSINT·국방인텔",
+    "expansions": [
+      "공중 ISR 융합 확장"
+    ],
+    "anchor_partners": [
+      "Palantir",
+      "StealthMole",
+      "Morph Systems"
+    ],
+    "raw": "OSINT & Defense Intelligence\nOSINT·국방인텔 \n+ 공중 ISR 융합 확장\n\n-\nPalantir\n\nStealthMole\n\nMorph Systems"
+  },
+  "T3": {
+    "track_id": "T3",
+    "track_title_en": "Battle Network, C2 & Sustainment",
+    "track_title_ko": "전장네트워크·지휘통제·지속지원",
+    "expansions": [
+      "공중·우주 작전(AIP·COP·IAMD) 확장"
+    ],
+    "anchor_partners": [
+      "Palantir",
+      "BONE AI",
+      "Morph Systems"
+    ],
+    "raw": "Battle Network, C2 & Sustainment\n전장네트워크·지휘통제·지속지원\n\n+ 공중·우주 작전(AIP·COP·IAMD) 확장\n\n-\nPalantir\n\nBONE AI\n\nMorph Systems"
+  },
+  "T4": {
+    "track_id": "T4",
+    "track_title_en": "Maritime Domain Awareness",
+    "track_title_ko": "해상영역인식",
+    "expansions": [],
+    "anchor_partners": [
+      "F4GE"
+    ],
+    "raw": "Maritime Domain Awareness\n해상영역인식\n\n-\nF4GE"
+  },
+  "T5": {
+    "track_id": "T5",
+    "track_title_en": "Force Readiness, Training & Simulation",
+    "track_title_ko": "전투준비·교육·시뮬레이션",
+    "expansions": [
+      "공중전 의사결정 코치 확장"
+    ],
+    "anchor_partners": [
+      "EGCED TECH"
+    ],
+    "raw": "Force Readiness, Training & Simulation\n전투준비·교육·시뮬레이션\n\n+ 공중전 의사결정 코치 확장\n\n-\nEGCED TECH"
+  }
+}

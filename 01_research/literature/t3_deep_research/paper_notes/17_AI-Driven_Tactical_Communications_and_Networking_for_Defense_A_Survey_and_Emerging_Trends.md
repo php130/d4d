@@ -1,0 +1,98 @@
+# AI-Driven Tactical Communications and Networking for Defense: A Survey and Emerging Trends
+
+## Metadata
+
+- Year: 2025
+- URL: http://arxiv.org/abs/2504.05071v1
+- DOI: -
+- Read status: partial_text
+
+## One-line Takeaway
+
+This survey maps how AI can make tactical communications more adaptive, interoperable, self-healing, and EW-resilient, which is directly useful for designing a maritime COP that keeps semantic value flowing when networks are degraded or denied.
+
+## D4D Relevance
+
+Highly relevant as a reference architecture and justification source for Resilient Maritime COP over Denied Networks. It connects AI-enabled tactical information networks, distributed fusion, UAV relay concepts, radar/EW inputs, intelligent spectrum allocation, and self-healing networking. For a T3 semantic COP, the most useful lesson is to move from raw bandwidth-heavy data exchange toward prioritized, fused, machine-interpretable operational facts that can survive intermittent links and contested spectrum.
+
+## Key Concepts
+
+- AI-driven tactical communications
+- Denied, degraded, intermittent, and limited-bandwidth networks
+- Self-healing tactical networks
+- Multi-domain interoperability
+- Distributed data and information fusion
+- AI-assisted electronic warfare resilience
+- Intelligent spectrum allocation
+- UAV-assisted relay systems
+- Radar-assisted target tracking
+- Tactical information networks
+- NATO tactical links and STANAG-aligned exchange
+- Human-AI decision support
+- Adversarial AI risk
+- Explainable and trustworthy AI
+
+## Input Data
+
+- Tactical network messages from systems such as Link 11, Link 16, Link 22, VMF, and JREAP
+- Sensor feeds from ships, UAVs, satellites, ground systems, and portable devices
+- Radar detections, tracks, and signal-processing outputs
+- Electronic support and electronic warfare signal observations
+- Image, infrared, thermal, and video surveillance streams
+- Operational constraints such as latency, bandwidth, security, energy, and contested spectrum
+- Labeled, unlabeled, and partially labeled datasets for supervised, unsupervised, semi-supervised, and reinforcement learning
+- Defense industry project examples and published AI-in-defense studies
+
+## Methods Or Architecture
+
+- Survey taxonomy covering AI intelligence levels, ML paradigms, and defense communication applications
+- Three-criteria evaluation method based on system objectives, military communication constraints, and tactical environmental factors
+- Assessment across core military systems including tactical information networks, surveillance, EW, radar, fire direction, unmanned systems, and logistics
+- Use of AI for adaptive signal processing, routing, relay selection, spectrum management, anomaly detection, and decision support
+- Multi-agent coordination for network optimization and resilience
+- Distributed fusion concepts for combining sensor and tactical-network information
+- Roadmap-style synthesis of current gaps, emerging trends, and future research directions
+
+## Outputs / Metrics
+
+- Structured evaluation framework for AI applications in tactical communications
+- Comparison of AI techniques across military communication and networking domains
+- Research trend and gap analysis
+- Operationally relevant assessment categories such as resilience, latency, interoperability, adaptability, and security
+- Discussion of real-world defense initiatives and industry projects
+- Future roadmap for AI-enabled tactical networks, self-healing systems, decision support, and spectrum allocation
+
+## Prototype Hooks
+
+- Use the paper's three-criteria framework as the evaluation rubric for a D4D demo: mission objective, network constraint, and tactical environment
+- Model the COP as semantic facts and confidence-scored tracks rather than raw sensor feeds to reduce bandwidth during denial
+- Add AI-based prioritization so critical contacts, intent changes, and threat indicators transmit before lower-value data
+- Prototype degraded-network modes: full sync, summary sync, delta sync, and store-and-forward semantic updates
+- Include UAV or unmanned node relay logic as an optional path for maritime edge connectivity
+- Use EW-aware routing and spectrum-state indicators to explain why the COP changes communication behavior
+- Fuse radar, AIS-like, visual, and operator reports into a shared track graph with confidence and provenance
+- Demonstrate self-healing network behavior where nodes reroute, compress, or delay noncritical updates
+- Add adversarial-AI and data-poisoning checks as explicit risk controls in the architecture
+
+## Pitch Evidence
+
+- The paper argues that AI can improve secure data exchange, real-time situational awareness, and autonomous decision-making in tactical networks
+- It identifies self-healing networks, intelligent spectrum allocation, and AI-augmented decision support as emerging trends
+- It highlights distributed data fusion and multi-domain interoperability as central defense communication needs
+- It specifically discusses tactical information networks that exchange real-time operational data through NATO-style links and protocols
+- It frames EW resilience, UAV relays, and radar-assisted tracking as important AI application areas, matching maritime denied-network scenarios
+- It notes that current military AI work is fragmented, supporting a pitch for an integrated semantic COP prototype
+
+## Limitations / Risks
+
+- Survey paper, not a deployable architecture or benchmarked maritime COP implementation
+- Provided text is partial, so details from later sections may be missing
+- Many cited defense AI concepts may rely on controlled studies or conceptual analysis rather than operational validation
+- Real battlefield and maritime network conditions can invalidate assumptions about latency, data quality, and connectivity
+- Adversarial AI, spoofing, jamming, and data poisoning remain major risks
+- Explainability, operator trust, legal constraints, and rules of engagement must be addressed before operational use
+- Integration with classified or legacy tactical links may be harder than the survey-level discussion suggests
+
+## Confidence
+
+medium

@@ -1,0 +1,36 @@
+{
+  "version": "20260703_220357",
+  "generated_at": "2026-07-03T13:03:59.506460+00:00",
+  "source": {
+    "spreadsheet_id": "1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o",
+    "spreadsheet_title": "D4D_SEOUL_참가자안내(260629/공개)",
+    "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1l_ThafA1n5Wue2BnPeJ1FPpiZvThG6X9iIPRuJsxR5o/edit",
+    "sheets": {
+      "track_problems": {
+        "gid": "1313109997",
+        "tab": "B-2. 트랙별_문제",
+        "raw_filename": "B-2_track_problems.csv"
+      },
+      "glossary": {
+        "gid": "1682873298",
+        "tab": "B-3. 용어집",
+        "raw_filename": "B-3_glossary.csv"
+      }
+    },
+    "raw_dir": "/Users/mollykim/projects/D4D/03_data/raw/google_sheets/20260703_220357"
+  },
+  "counts": {
+    "tracks": 5,
+    "track_problem_statements": 23,
+    "glossary_terms": 88
+  },
+  "outputs": {
+    "track_problem_statements_json": "/Users/mollykim/projects/D4D/03_data/processed/versions/20260703_220357/track_problem_statements.json",
+    "track_problem_statements_csv": "/Users/mollykim/projects/D4D/03_data/processed/versions/20260703_220357/track_problem_statements.csv",
+    "glossary_terms_json": "/Users/mollykim/projects/D4D/03_data/processed/versions/20260703_220357/glossary_terms.json",
+    "glossary_terms_csv": "/Users/mollykim/projects/D4D/03_data/processed/versions/20260703_220357/glossary_terms.csv",
+    "track_markdown": "/Users/mollykim/projects/D4D/03_data/processed/versions/20260703_220357/track_problem_statements.md",
+    "project_track_markdown": "/Users/mollykim/projects/D4D/02_problem_statements/tracks/d4d_track_problem_dataset.md",
+    "project_glossary": "/Users/mollykim/projects/D4D/00_admin/glossary.md"
+  }
+}

@@ -1,0 +1,108 @@
+# What is Semantic Communication? A View on Conveying Meaning in the Era of Machine Intelligence
+
+## Metadata
+
+- Year: 2021
+- URL: https://doi.org/10.23919/jcin.2021.9663101
+- DOI: 10.23919/jcin.2021.9663101
+- Read status: partial_text
+
+## One-line Takeaway
+
+Semantic communication shifts network design from moving all bits reliably to moving the meaning, task-relevant state, and control effects needed by humans and machines.
+
+## D4D Relevance
+
+Highly relevant to a T3 semantic COP over denied maritime networks because it provides the conceptual basis for sending mission meaning instead of raw data: shared knowledge, semantic/effectiveness encoding, importance-aware transmission, machine-to-machine coordination, and knowledge-graph-based interpretation. For a resilient maritime COP, this supports bandwidth-thrifty updates such as vessel intent, track confidence, threat/event semantics, sensor-task relevance, and commander-facing summaries when links are degraded, intermittent, or contested.
+
+## Key Concepts
+
+- semantic communication
+- human-to-machine communication
+- machine-to-machine communication
+- semantic encoding
+- effectiveness encoding
+- semantic layer
+- semantic-effectiveness encoded data
+- data importance information
+- partial algorithm information
+- data type information
+- knowledge graphs
+- SplitNet
+- integrated communication and computing
+- semantic entropy
+- information bottleneck
+- importance-aware radio resource management
+
+## Input Data
+
+- IoT and edge sensor data
+- machine vision camera streams
+- human commands and queries
+- application-layer messages
+- semantic/effectiveness encoded data
+- channel rate information
+- data importance information
+- partial algorithm information
+- data type information
+- knowledge graph representations
+- distributed learning gradients
+- features for split inference
+- consensus state updates
+
+## Methods Or Architecture
+
+- Adds a semantic layer above radio access layers to perform semantic or effectiveness encoding and decoding.
+- Uses layer-coupling so application semantics can inform lower-layer transmission choices under resource constraints.
+- Defines control signals such as channel rate, data importance, algorithm information, and data type to guide adaptive communications.
+- Frames H2M communication around mutual interpretability between humans and machines.
+- Frames M2M communication around task effectiveness, distributed sensing, distributed learning, split inference, and consensus.
+- Discusses end-to-end neural designs where semantic and channel encoders are jointly trained.
+- Uses knowledge graphs as shared background knowledge for semantic representation, reasoning, and compression.
+- Applies information bottleneck ideas to retain task-relevant information while discarding irrelevant data.
+
+## Outputs / Metrics
+
+- semantic similarity rather than bit-perfect reconstruction
+- task effectiveness at the receiver
+- compression ratio with preserved meaning
+- classification or inference performance
+- learning performance for distributed training
+- latency and reliability under semantic priorities
+- resource efficiency
+- importance-aware scheduling or transmission gain
+- consensus quality or convergence
+- semantic ambiguity and redundancy reduction
+
+## Prototype Hooks
+
+- Model the COP update stream as semantic/effectiveness encoded data rather than raw sensor feeds.
+- Use a maritime knowledge graph for vessels, tracks, areas, missions, threats, sensor types, rules, and commander intent.
+- Attach data importance metadata to every COP fact so denied-network transport can prioritize urgent or high-uncertainty updates.
+- Transmit compact feature/state deltas such as track changes, inferred intent, confidence, and anomaly labels instead of full video or logs.
+- Use semantic layer APIs between COP apps and tactical radios to expose data type, importance, and algorithm context.
+- Implement M2M semantic exchange among edge nodes for distributed track fusion and consensus when disconnected from headquarters.
+- Use SplitNet or split inference for ship/edge sensors that send compressed task features to a higher node when raw imagery is too expensive.
+- Design fallback modes where humans receive readable semantic summaries while machines receive structured task directives.
+
+## Pitch Evidence
+
+- The paper argues that Shannon-style bit transport is insufficient for machine-intelligence networks because meaning, relevance, freshness, and task utility affect what should be sent.
+- It separates semantic communication into H2H, H2M, and M2M, matching a COP that must serve commanders, AI agents, and distributed edge nodes.
+- Its semantic-layer architecture is a direct pattern for adding meaning-aware middleware above tactical network transports.
+- Its data importance and algorithm metadata concepts justify adaptive prioritization during bandwidth scarcity and link denial.
+- Its knowledge-graph section supports a defensible approach for shared maritime context and machine-readable COP semantics.
+- Its M2M examples such as distributed learning, split inference, distributed consensus, and machine vision map closely to edge maritime sensing and coalition COP synchronization.
+
+## Limitations / Risks
+
+- The paper is primarily a survey and conceptual framework, not a validated maritime COP implementation.
+- Many techniques assume shared knowledge models; mismatched or stale knowledge graphs could create semantic errors.
+- End-to-end neural semantic communication may be hard to certify, debug, or trust in military decision workflows.
+- Semantic compression can discard details that later become operationally important.
+- Security, adversarial deception, and coalition access-control issues are not the central focus.
+- Denied-network performance claims would need domain-specific testing with realistic maritime traffic, jamming, intermittent links, and contested sensors.
+
+## Confidence
+
+medium

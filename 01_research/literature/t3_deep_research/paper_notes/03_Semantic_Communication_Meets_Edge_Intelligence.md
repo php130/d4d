@@ -1,0 +1,79 @@
+# Semantic Communication Meets Edge Intelligence
+
+## Metadata
+
+- Year: 2022
+- URL: https://doi.org/10.1109/mwc.004.2200050
+- DOI: 10.1109/mwc.004.2200050
+- Read status: abstract_only
+
+## One-line Takeaway
+
+The paper frames semantic communication as an edge-AI approach that sends task-relevant meaning instead of raw data, reducing bandwidth while preserving operational usefulness.
+
+## D4D Relevance
+
+Highly relevant to a resilient maritime COP over denied networks because it supports the core T3 idea: extract, maintain, and exchange compact semantic state at the edge so vessels, UAVs, and command nodes can keep a shared operational picture when spectrum, connectivity, and compute are constrained.
+
+## Key Concepts
+
+- semantic communication
+- understand-before-transmit
+- semantic extraction
+- edge intelligence
+- edge-driven training and execution
+- communication overhead reduction
+- semantic-aware resource optimization
+- generalization of intelligent agents
+
+## Input Data
+
+- mobile/IoT sensor data
+- wireless network state
+- edge-device observations
+- task semantics extracted from raw data
+- resource availability such as bandwidth, power, compute, and storage
+
+## Methods Or Architecture
+
+- AI-based semantic extraction before transmission
+- edge-based training, maintenance, and execution of semantic extraction models
+- integration of semantic communication with edge intelligence
+- resource optimization guided by semantic value rather than bit-level throughput
+- case study on wireless powered IoT resource allocation
+
+## Outputs / Metrics
+
+- reduced communication overhead
+- lower computation overhead for intelligent agents
+- maintained semantic effectiveness of transmitted symbols
+- improved generalization capability
+- resource allocation performance in wireless powered IoT
+- bandwidth pressure reduction
+
+## Prototype Hooks
+
+- Use edge nodes on ships, buoys, UAVs, and command posts to convert raw tracks, imagery, AIS, radar, and reports into compact semantic COP updates.
+- Prioritize transmission of mission-relevant entities, intents, anomalies, confidence, and uncertainty instead of full raw feeds.
+- Add a semantic value score to the T3 networking layer so scarce links carry the most operationally useful updates first.
+- Train or adapt semantic extractors at edge/cloud tiers, then execute lightweight models locally during denied-network periods.
+- Represent COP deltas as semantic packets: entity, event, location, time, confidence, provenance, and requested action.
+
+## Pitch Evidence
+
+- The paper directly supports the claim that semantic communication can reduce data exchange without losing task effectiveness.
+- It identifies edge intelligence as necessary because semantic extraction can be computationally expensive.
+- Its edge-driven training and execution concept maps well to contested maritime environments where nodes must operate with intermittent reachback.
+- The cited IoT resource-optimization case gives a precedent for optimizing communications around semantic utility, not just raw throughput.
+
+## Limitations / Risks
+
+- Only abstract-level evidence was available, so implementation details and quantitative results could not be verified.
+- The paper appears conceptual and case-study oriented rather than a deployed maritime COP system.
+- Semantic extraction adds compute and storage burden, which may be hard on small maritime edge devices.
+- Model generalization under adversarial, noisy, or novel maritime conditions remains a risk.
+- Semantic compression can discard details that later become operationally important if the mission context changes.
+
+## Confidence
+
+medium

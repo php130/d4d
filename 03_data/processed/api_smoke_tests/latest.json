@@ -1,0 +1,107 @@
+{
+  "run_id": "20260704_002947",
+  "generated_at": "2026-07-03T15:30:04.775366+00:00",
+  "env_path": "/Users/mollykim/projects/D4D/.env",
+  "raw_snapshot_dir": "/Users/mollykim/projects/D4D/03_data/raw/api_snapshots/20260704_002947",
+  "results": [
+    {
+      "service": "data_go_kr_weather",
+      "status": "passed",
+      "event_use": "WEATHER_HAZARD",
+      "checked_at": "2026-07-03T15:29:48.534970+00:00",
+      "url_label": "data.go.kr KMA ultra-short nowcast",
+      "http_status": 200,
+      "sample_path": "/Users/mollykim/projects/D4D/03_data/raw/api_snapshots/20260704_002947/data_go_kr_weather/sample.json",
+      "detail": "00: NORMAL_SERVICE",
+      "next_action": null
+    },
+    {
+      "service": "kma_apihub_sea_forecast",
+      "status": "passed",
+      "event_use": "WEATHER_HAZARD, SEA_STATE_RISK",
+      "checked_at": "2026-07-03T15:29:48.678043+00:00",
+      "url_label": "KMA APIHub short sea forecast",
+      "http_status": 200,
+      "sample_path": "/Users/mollykim/projects/D4D/03_data/raw/api_snapshots/20260704_002947/kma_apihub_sea_forecast/sample.txt",
+      "detail": "#START7777 # REG_ID TM_FC        TM_EF        MOD NE STN C MAN_ID       MAN_FC     W1 T W2 S1 S2  WH1  WH2 SKY  PREP WF #7777END ",
+      "next_action": null
+    },
+    {
+      "service": "vworld_geocode",
+      "status": "passed",
+      "event_use": "COP_BASE_LAYER",
+      "checked_at": "2026-07-03T15:29:48.774347+00:00",
+      "url_label": "VWorld road-address geocoding",
+      "http_status": 200,
+      "sample_path": "/Users/mollykim/projects/D4D/03_data/raw/api_snapshots/20260704_002947/vworld_geocode/sample.json",
+      "detail": "OK",
+      "next_action": null
+    },
+    {
+      "service": "gdelt_maritime",
+      "status": "failed",
+      "event_use": "OSINT_INCIDENT",
+      "checked_at": "2026-07-03T15:29:58.600651+00:00",
+      "url_label": "GDELT DOC API maritime query",
+      "http_status": 429,
+      "sample_path": null,
+      "detail": "HTTPError 429: Too Many Requests",
+      "next_action": "Check endpoint authorization, params, or service availability."
+    },
+    {
+      "service": "open_meteo_marine",
+      "status": "passed",
+      "event_use": "SEA_STATE_RISK",
+      "checked_at": "2026-07-03T15:30:00.269722+00:00",
+      "url_label": "Open-Meteo Marine API Busan AOI",
+      "http_status": 200,
+      "sample_path": "/Users/mollykim/projects/D4D/03_data/raw/api_snapshots/20260704_002947/open_meteo_marine/sample.json",
+      "detail": "time,wave_height,sea_surface_temperature",
+      "next_action": null
+    },
+    {
+      "service": "copernicus_sentinel1_catalogue",
+      "status": "passed",
+      "event_use": "SAR_DARK_VESSEL_CANDIDATE",
+      "checked_at": "2026-07-03T15:30:03.960047+00:00",
+      "url_label": "Copernicus Data Space Sentinel-1 product search",
+      "http_status": 200,
+      "sample_path": "/Users/mollykim/projects/D4D/03_data/raw/api_snapshots/20260704_002947/copernicus_sentinel1_catalogue/sample.json",
+      "detail": "S1A_IW_SLC__1SSV_20150731T013002_20150731T013029_007048_009957_731C.SAFE",
+      "next_action": null
+    },
+    {
+      "service": "nasa_earthdata_cmr",
+      "status": "passed",
+      "event_use": "OCEAN_STATE, WEATHER_HAZARD",
+      "checked_at": "2026-07-03T15:30:04.775308+00:00",
+      "url_label": "NASA CMR collection search",
+      "http_status": 200,
+      "sample_path": "/Users/mollykim/projects/D4D/03_data/raw/api_snapshots/20260704_002947/nasa_earthdata_cmr/sample.json",
+      "detail": "ASCATB-L2-Coastal",
+      "next_action": null
+    },
+    {
+      "service": "global_fishing_watch",
+      "status": "blocked",
+      "event_use": "AIS_GAP, SAR_DARK_VESSEL_CANDIDATE",
+      "checked_at": "2026-07-03T15:30:04.775353+00:00",
+      "url_label": "GFW API",
+      "http_status": null,
+      "sample_path": null,
+      "detail": "blocked_email_unverified_2026-07-03",
+      "next_action": "Verify the account email, then create/store GLOBAL_FISHING_WATCH_TOKEN."
+    },
+    {
+      "service": "safetydata",
+      "status": "blocked",
+      "event_use": "OSINT_INCIDENT, DISASTER_ALERT",
+      "checked_at": "2026-07-03T15:30:04.775361+00:00",
+      "url_label": "SafetyData API",
+      "http_status": null,
+      "sample_path": null,
+      "detail": "approval_pending_2026-07-03",
+      "next_action": "Wait for disaster message application approval, then store SAFETYDATA_API_KEY."
+    }
+  ]
+}

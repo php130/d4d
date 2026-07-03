@@ -1,0 +1,88 @@
+# Provenance-Aware Knowledge Representation: A Survey of Data Models and Contextualized Knowledge Graphs
+
+## Metadata
+
+- Year: 2020
+- URL: https://doi.org/10.1007/s41019-020-00118-0
+- DOI: 10.1007/s41019-020-00118-0
+- Read status: partial_text
+
+## One-line Takeaway
+
+For a T3 semantic COP, provenance must be first-class: every fused maritime fact should carry source, method, time, confidence, and context so operators can trust, query, and degrade gracefully under denied-network conditions.
+
+## D4D Relevance
+
+The paper directly supports a resilient maritime COP architecture by comparing ways to attach provenance to RDF knowledge graphs. In a denied or intermittent network, the COP cannot assume live source verification, so cached semantic assertions need embedded provenance, freshness, derivation path, and reliability metadata. The survey helps choose representation patterns for source-grounded vessel tracks, AIS/radar/EO reports, threat indicators, and analyst annotations.
+
+## Key Concepts
+
+- RDF triples and RDF provenance
+- contextualized knowledge graphs
+- named graphs and N-Quads
+- RDF reification and its scalability limits
+- RDF* and embedded metadata triples
+- nanopublications
+- PROV-style provenance modeling
+- provenance granularity: dataset, document, graph, molecule, triple, element
+- trustworthiness, uncertainty, reliability, and data quality
+- SPARQL queryability and standard compliance
+
+## Input Data
+
+- RDF statements from heterogeneous sources
+- source metadata for each assertion
+- sensor or dataset origin such as AIS, radar, imagery, intelligence reports, or network telemetry
+- time and location context
+- derivation or extraction method
+- data quality and reliability annotations
+- domain ontologies for maritime entities, networks, tracks, events, and threats
+
+## Methods Or Architecture
+
+- Survey and comparison of RDF provenance models, annotation frameworks, serialization formats, and algebras
+- Evaluation dimensions include formal semantics, RDF/SPARQL compliance, tuple type, vocabulary dependencies, blank-node use, provenance granularity, and scalability
+- Named graphs and N-Quads are practical candidates for graph-level or assertion-set provenance
+- RDF* and singleton-property-style approaches support fine-grained statement metadata but may introduce compatibility tradeoffs
+- Nanopublications separate assertion, provenance, and publication metadata, which maps well to packaged COP updates over constrained links
+- Application-specific provenance models can outperform generic approaches when tailored to the operational domain
+
+## Outputs / Metrics
+
+- Comparative tables of provenance representation approaches
+- Assessment of standard compliance with RDF, RDF serializations, and SPARQL
+- Assessment of provenance granularity supported by each method
+- Assessment of scalability risks such as triple bloat
+- Discussion of query complexity for retrieving provenance-aware statements
+- Guidance for selecting or combining approaches based on application needs
+
+## Prototype Hooks
+
+- Represent COP facts as RDF or JSON-LD assertions with provenance attached at assertion-set and triple level
+- Use named graphs for source-bundled updates: one graph per sensor feed, report, patrol unit, or disconnected sync package
+- Use nanopublication-like envelopes for denied-network replication: assertion graph, provenance graph, and metadata graph
+- Attach source, timestamp, confidence, extraction method, custody path, and expiration policy to each maritime observation
+- Support SPARQL or graph queries such as 'show contacts near route X from trusted sources updated within 30 minutes'
+- Implement provenance-aware conflict resolution when AIS, radar, and intelligence reports disagree
+- Cache provenance with offline COP tiles so operators can inspect why a track or threat label exists without reconnecting
+
+## Pitch Evidence
+
+- RDF is suited to data fusion from diverse sources and partial information, which matches maritime COP needs
+- The paper identifies provenance as important for verification, reliability assessment, trust, uncertainty, data quality, cybersecurity, and situational awareness
+- It shows that naive RDF reification can cause major data expansion, supporting the need for a careful architecture in bandwidth-limited environments
+- Named graphs, N-Quads, and nanopublications provide concrete implementation patterns for provenance-aware knowledge exchange
+- The survey gives defensible criteria for technology selection rather than treating the COP knowledge layer as an ad hoc data store
+
+## Limitations / Risks
+
+- The paper is a survey, not a maritime COP implementation or benchmark
+- Some fine-grained provenance approaches are not fully standard-compliant or require custom query support
+- RDF reification and similar approaches may create unacceptable storage and bandwidth overhead in denied networks
+- Named graphs are scalable and practical but may be too coarse for conflicting statement-level claims
+- Formal provenance does not automatically solve trust scoring; the COP still needs source reliability models and operator-facing explanations
+- The provided text excerpt does not include the full later sections, so implementation-specific conclusions should be validated against the complete paper
+
+## Confidence
+
+medium
