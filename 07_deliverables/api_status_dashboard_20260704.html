@@ -1,0 +1,1168 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>D4D API Integration Status</title>
+  <style>
+    :root {
+      --bg: #f7f7f4;
+      --surface: #ffffff;
+      --surface-alt: #f0f3f2;
+      --text: #20252b;
+      --muted: #66717c;
+      --line: #d9dedb;
+      --ready: #1f7a4d;
+      --ready-bg: #e8f5ee;
+      --partial: #8a5b13;
+      --partial-bg: #fff4dc;
+      --pending: #315f9d;
+      --pending-bg: #e8f0fb;
+      --blocked: #a43a3a;
+      --blocked-bg: #fbe9e9;
+      --deferred: #5d6270;
+      --deferred-bg: #eceef2;
+      --shadow: 0 8px 24px rgba(20, 26, 31, 0.08);
+      --radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans KR", Arial, sans-serif;
+      line-height: 1.55;
+    }
+
+    a {
+      color: #245f9c;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      width: min(1320px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 28px 0 42px;
+    }
+
+    header {
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 22px;
+      margin-bottom: 22px;
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      max-width: 900px;
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .source-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .source-row a,
+    .source-row span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 5px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px;
+      margin: 22px 0;
+    }
+
+    .metric {
+      min-height: 112px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .metric .number {
+      display: block;
+      font-size: 30px;
+      line-height: 1;
+      font-weight: 800;
+    }
+
+    .metric .label {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .metric.ready .number { color: var(--ready); }
+    .metric.partial .number { color: var(--partial); }
+    .metric.pending .number { color: var(--pending); }
+    .metric.blocked .number { color: var(--blocked); }
+    .metric.deferred .number { color: var(--deferred); }
+
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      display: grid;
+      grid-template-columns: minmax(220px, 1fr) auto;
+      gap: 12px;
+      align-items: center;
+      margin: 22px 0;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(247, 247, 244, 0.94);
+      backdrop-filter: blur(12px);
+    }
+
+    .search {
+      min-height: 42px;
+      width: 100%;
+      padding: 0 12px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: flex-end;
+    }
+
+    .filter-button {
+      min-height: 42px;
+      padding: 0 12px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .filter-button[aria-pressed="true"] {
+      border-color: #2d6a4f;
+      background: #e8f5ee;
+      color: #17492f;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      margin: 28px 0 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 20px;
+      letter-spacing: 0;
+    }
+
+    .section-title p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .api-card {
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+      min-height: 310px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .api-card.hidden {
+      display: none;
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+
+    .card-title {
+      min-width: 0;
+    }
+
+    .priority {
+      margin: 0 0 4px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.25;
+      letter-spacing: 0;
+      word-break: keep-all;
+      overflow-wrap: anywhere;
+    }
+
+    .badge {
+      flex: 0 0 auto;
+      max-width: 132px;
+      padding: 5px 8px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 900;
+      text-align: center;
+      white-space: normal;
+      line-height: 1.25;
+    }
+
+    .badge.ready { color: var(--ready); background: var(--ready-bg); }
+    .badge.partial { color: var(--partial); background: var(--partial-bg); }
+    .badge.pending { color: var(--pending); background: var(--pending-bg); }
+    .badge.blocked { color: var(--blocked); background: var(--blocked-bg); }
+    .badge.deferred { color: var(--deferred); background: var(--deferred-bg); }
+
+    .field-list {
+      display: grid;
+      gap: 9px;
+      margin: 0 0 14px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .field-list li {
+      display: grid;
+      grid-template-columns: 92px minmax(0, 1fr);
+      gap: 10px;
+      font-size: 13px;
+    }
+
+    .label {
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    code {
+      padding: 1px 5px;
+      border: 1px solid #d7ddd9;
+      border-radius: 5px;
+      background: #f4f6f5;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 12px;
+      white-space: normal;
+      overflow-wrap: anywhere;
+    }
+
+    .note {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-content: flex-end;
+      margin-top: 14px;
+    }
+
+    .chip {
+      padding: 4px 7px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface-alt);
+      color: #46515c;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 860px;
+      font-size: 13px;
+    }
+
+    th,
+    td {
+      padding: 12px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--surface-alt);
+      color: #3e4751;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    footer {
+      margin-top: 32px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 1080px) {
+      .summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 760px) {
+      .page {
+        width: min(100% - 24px, 1320px);
+        padding-top: 18px;
+      }
+
+      .summary,
+      .grid,
+      .toolbar {
+        grid-template-columns: 1fr;
+      }
+
+      .filters {
+        justify-content: flex-start;
+      }
+
+      .field-list li {
+        grid-template-columns: 1fr;
+        gap: 2px;
+      }
+
+      .api-card {
+        min-height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <p class="eyebrow">D4D API Integration Status</p>
+      <h1>국방/안보 해커톤 API 연동 현황</h1>
+      <p class="subtitle">
+        현재까지 발급·로그인·신청·smoke test를 진행한 API를 한 화면에 정리했습니다.
+        API key, token, password 값은 포함하지 않았고, `.env` 변수명과 운영 상태만 표시합니다.
+      </p>
+      <div class="source-row">
+        <span>Last updated: 2026-07-04 KST</span>
+        <a href="../01_research/osint_sources/api_collection_tracker.md">API Collection Tracker</a>
+        <a href="../01_research/osint_sources/api_signup_status.md">Signup Status</a>
+        <a href="../01_research/osint_sources/stealthmole_integration_notes_20260704.md">StealthMole Notes</a>
+        <a href="../03_data/processed/api_smoke_tests/20260704_080458/smoke_report.json">Maritime Smoke Report</a>
+        <a href="../03_data/processed/ukraine_osint_api_smoke_tests/20260704_114329/smoke_report.json">Ukraine OSINT Smoke Report</a>
+      </div>
+    </header>
+
+    <section class="summary" aria-label="API status summary">
+      <div class="metric ready">
+        <span class="number">11</span>
+        <span class="label">바로 연동 가능 / smoke 통과</span>
+      </div>
+      <div class="metric partial">
+        <span class="number">5</span>
+        <span class="label">부분 가능 / 주의 필요</span>
+      </div>
+      <div class="metric pending">
+        <span class="number">7</span>
+        <span class="label">승인·토큰·사용자 액션 대기</span>
+      </div>
+      <div class="metric blocked">
+        <span class="number">3</span>
+        <span class="label">시도했으나 차단 또는 실패</span>
+      </div>
+      <div class="metric deferred">
+        <span class="number">4</span>
+        <span class="label">후순위 / 상용·가입 검토</span>
+      </div>
+    </section>
+
+    <section class="toolbar" aria-label="API filters">
+      <input class="search" id="searchBox" type="search" placeholder="API, 데이터, 이벤트 타입, 다음 액션 검색">
+      <div class="filters" role="group" aria-label="status filters">
+        <button class="filter-button" data-filter="all" aria-pressed="true">전체</button>
+        <button class="filter-button" data-filter="ready" aria-pressed="false">연동 가능</button>
+        <button class="filter-button" data-filter="partial" aria-pressed="false">부분 가능</button>
+        <button class="filter-button" data-filter="pending" aria-pressed="false">대기</button>
+        <button class="filter-button" data-filter="blocked" aria-pressed="false">실패/차단</button>
+        <button class="filter-button" data-filter="deferred" aria-pressed="false">후순위</button>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <h2>API Cards</h2>
+        <p id="visibleCount">30개 항목 표시 중</p>
+      </div>
+      <div class="grid" id="apiGrid">
+        <article class="api-card" data-status="ready" data-search="data.go.kr 공공데이터포털 기상청 단기예보 weather hazard kma forecast">
+          <div class="card-top">
+            <div class="card-title">
+              <p class="priority">P0 · Weather</p>
+              <h3>공공데이터포털 기상청 단기예보</h3>
+            </div>
+            <span class="badge ready">연동 가능</span>
+          </div>
+          <ul class="field-list">
+            <li><span class="label">상태</span><span>일반 인증키 저장, 기상 API smoke 통과</span></li>
+            <li><span class="label">데이터</span><span>초단기실황/단기예보, 풍속·강수·기상 위험 context</span></li>
+            <li><span class="label">이벤트</span><span><code>WEATHER_HAZARD</code></span></li>
+            <li><span class="label">Env</span><span><code>DATA_GO_KR_SERVICE_KEY</code></span></li>
+          </ul>
+          <p class="note">MVP에서 바로 쓸 수 있는 공식 기상 레이어입니다.</p>
+          <div class="chips"><span class="chip">HTTP 200</span><span class="chip">smoke passed</span><span class="chip">Korea</span></div>
+        </article>
+
+        <article class="api-card" data-status="ready" data-search="kma apihub 기상청 해상예보 sea forecast sea state weather hazard">
+          <div class="card-top">
+            <div class="card-title">
+              <p class="priority">P0 · METOC</p>
+              <h3>기상청 API허브 단기 해상예보</h3>
+            </div>
+            <span class="badge ready">연동 가능</span>
+          </div>
+          <ul class="field-list">
+            <li><span class="label">상태</span><span>키 저장, 해상예보 활용신청 완료, smoke 통과</span></li>
+            <li><span class="label">데이터</span><span>해상구역별 예보 문구, 해상 위험 context</span></li>
+            <li><span class="label">이벤트</span><span><code>WEATHER_HAZARD</code> <code>SEA_STATE_RISK</code></span></li>
+            <li><span class="label">Env</span><span><code>KMA_APIHUB_KEY</code></span></li>
+          </ul>
+          <p class="note">해상 COP의 기상·해상상태 설명력을 가장 빠르게 올릴 수 있습니다.</p>
+          <div class="chips"><span class="chip">HTTP 200</span><span class="chip">maritime</span></div>
+        </article>
+
+        <article class="api-card" data-status="ready" data-search="vworld map geocode base layer coordinate cop 지도 주소 좌표">
+          <div class="card-top">
+            <div class="card-title">
+              <p class="priority">P0 · Map</p>
+              <h3>VWorld 주소/좌표 API</h3>
+            </div>
+            <span class="badge ready">연동 가능</span>
+          </div>
+          <ul class="field-list">
+            <li><span class="label">상태</span><span>기존 개발키 확인 및 저장, geocoding smoke 통과</span></li>
+            <li><span class="label">데이터</span><span>주소·기관·항만 위치 보조, COP base layer</span></li>
+            <li><span class="label">이벤트</span><span><code>COP_BASE_LAYER</code></span></li>
+            <li><span class="label">Env</span><span><code>VWORLD_API_KEY</code></span></li>
+          </ul>
+          <p class="note">지휘관 화면의 좌표화와 장소 normalization에 사용합니다.</p>
+          <div class="chips"><span class="chip">OK response</span><span class="chip">map</span></div>
+        </article>
+
+        <article class="api-card" data-status="ready" data-search="global fishing watch gfw ais vessel presence sar dark vessel maritime">
+          <div class="card-top">
+            <div class="card-title">
+              <p class="priority">P1 · Maritime</p>
+              <h3>Global Fishing Watch 4Wings</h3>
+            </div>
+            <span class="badge ready">연동 가능</span>
+          </div>
+          <ul class="field-list">
+            <li><span class="label">상태</span><span>이메일 인증 완료, access token 생성, 4Wings smoke 통과</span></li>
+            <li><span class="label">데이터</span><span>AIS vessel presence / traffic density bin</span></li>
+            <li><span class="label">이벤트</span><span><code>AIS_DENSITY_CHANGE</code> <code>AIS_GAP</code></span></li>
+            <li><span class="label">Env</span><span><code>GLOBAL_FISHING_WATCH_TOKEN</code></span></li>
+          </ul>
+          <p class="note">실제 선박을 위협으로 단정하지 않고 AOI/time-bin evidence로만 사용합니다.</p>
+          <div class="chips"><span class="chip">HTTP 200</span><span class="chip">AIS evidence</span></div>
+        </article>
+
+        <article class="api-card" data-status="ready" data-search="opensanctions sanctions watchlist vessel company risk screen">
+          <div class="card-top">
+            <div class="card-title">
+              <p class="priority">P1 · Entity Risk</p>
+              <h3>OpenSanctions Match API</h3>
+            </div>
+            <span class="badge ready">연동 가능</span>
+          </div>
+          <ul class="field-list">
+            <li><span class="label">상태</span><span>trial key 발급, `/match/default` smoke 통과</span></li>
+            <li><span class="label">데이터</span><span>제재·watchlist entity matching</span></li>
+            <li><span class="label">이벤트</span><span><code>SANCTION_OR_WATCHLIST_MATCH</code></span></li>
+            <li><span class="label">Env</span><span><code>OPENSANCTIONS_API_KEY</code></span></li>
+          </ul>
+          <p class="note">데모에서는 synthetic 선박·회사명 또는 문서화된 sample entity만 사용합니다.</p>
+          <div class="chips"><span class="chip">trial</span><span class="chip">expires 2026-08-02</span></div>
+        </article>
+
+        <article class="api-card" data-status="ready" data-search="copernicus data space sentinel-1 sar catalogue satellite dark vessel">
+          <div class="card-top">
+            <div class="card-title">
+              <p class="priority">P2 · Satellite</p>
+              <h3>Copernicus Data Space Sentinel-1</h3>
+            </div>
+            <span class="badge ready">연동 가능</span>
+          </div>
+          <ul class="field-list">
+            <li><span class="label">상태</span><span>OData access token 발급, Sentinel-1 catalogue smoke 통과</span></li>
+            <li><span class="label">데이터</span><span>해당 시간/구역 SAR 장면 존재 근거</span></li>
+            <li><span class="label">이벤트</span><span><code>SAR_DARK_VESSEL_CANDIDATE</code></span></li>
+            <li><span class="label">Env</span><span><code>COPERNICUS_ACCESS_TOKEN</code></span></li>
+          </ul>
+          <p class="note">실제 선박 탐지는 별도 모델/데이터가 필요하고, 현재는 catalogue evidence로 사용합니다.</p>
+          <div class="chips"><span class="chip">catalogue</span><span class="chip">token refresh needed</span></div>
+        </article>
+
+        <article class="api-card" data-status="ready" data-search="nasa earthdata cmr ocean weather collection metadata satellite">
+          <div class="card-top">
+            <div class="card-title">
+              <p class="priority">P2 · Earth Observation</p>
+              <h3>NASA Earthdata CMR</h3>
+            </div>
+            <span class="badge ready">연동 가능</span>
+          </div>
+          <ul class="field-list">
+            <li><span class="label">상태</span><span>Bearer token 생성, CMR collection search smoke 통과</span></li>
+            <li><span class="label">데이터</span><span>해양·기상·위성 collection metadata</span></li>
+            <li><span class="label">이벤트</span><span><code>OCEAN_STATE</code> <code>WEATHER_HAZARD</code></span></li>
+            <li><span class="label">Env</span><span><code>NASA_EARTHDATA_TOKEN</code></span></li>
+          </ul>
+          <p class="note">원시 데이터보다 collection 후보와 provenance metadata를 먼저 붙이는 방향입니다.</p>
+          <div class="chips"><span class="chip">CMR</span><span class="chip">metadata</span></div>
+        </article>
+
+        <article class="api-card" data-status="ready" data-search="nasa firms fire thermal anomaly viirs modis ukraine strike proxy">
+          <div class="card-top">
+            <div class="card-title">
+              <p class="priority">P0 · Thermal</p>
+              <h3>NASA FIRMS</h3>
+            </div>
+            <span class="badge ready">연동 가능</span>
+          </div>
+          <ul class="field-list">
+            <li><span class="label">상태</span><span>MAP_KEY 저장, Ukraine tiny AOI smoke 통과</span></li>
+            <li><span class="label">데이터</span><span>VIIRS/MODIS active fire, thermal anomaly</span></li>
+            <li><span class="label">이벤트</span><span><code>THERMAL_ANOMALY_PROXY</code></span></li>
+            <li><span class="label">Env</span><span><code>NASA_FIRMS_MAP_KEY</code></span></li>
+          </ul>
+          <p class="note">열원은 공격의 확정 증거가 아니라 교차검증용 proxy로만 사용합니다.</p>
+          <div class="chips"><span class="chip">HTTP 200</span><span class="chip">Ukraine OSINT</span></div>
+        </article>
+
+        <article class="api-card" data-status="ready" data-search="kaggle api token ukraine missile uav dataset piterfm bearer">
+          <div class="card-top">
+            <div class="card-title">
+              <p class="priority">P1 · Ukraine OSINT</p>
+              <h3>Kaggle API Token</h3>
+            </div>
+            <span class="badge ready">연동 가능</span>
+          </div>
+          <ul class="field-list">
+            <li><span class="label">상태</span><span>프로젝트용 API token 생성, direct Bearer API smoke 통과</span></li>
+            <li><span class="label">데이터</span><span>공식 missile/UAV dataset package fetch 후보</span></li>
+            <li><span class="label">이벤트</span><span><code>MISSILE_UAV_ATTACK_DATASET</code></span></li>
+            <li><span class="label">Env</span><span><code>KAGGLE_API_TOKEN</code></span></li>
+          </ul>
+          <p class="note">로컬 Kaggle CLI는 token 지원 버전보다 낮아 direct HTTP Bearer 방식이 우선입니다.</p>
+          <div class="chips"><span class="chip">Bearer API</span><span class="chip">results=11</span></div>
+        </article>
+
+        <article class="api-card" data-status="ready" data-search="hdx humanitarian data exchange ckan ukraine admin context">
+          <div class="card-top">
+            <div class="card-title">
+              <p class="priority">P1 · Humanitarian</p>
+              <h3>HDX CKAN API</h3>
+            </div>
+            <span class="badge ready">연동 가능</span>
+          </div>
+          <ul class="field-list">
+            <li><span class="label">상태</span><span>프로젝트용 API token 생성, CKAN search smoke 통과</span></li>
+            <li><span class="label">데이터</span><span>인도주의·행정구역·피해 context metadata</span></li>
+            <li><span class="label">이벤트</span><span><code>HUMANITARIAN_CONTEXT_LAYER</code></span></li>
+            <li><span class="label">Env</span><span><code>HDX_API_TOKEN</code></span></li>
+          </ul>
+          <p class="note">Token expires in early August 2026. 기본 CKAN 검색은 토큰 없이도 가능했습니다.</p>
+          <div class="chips"><span class="chip">HTTP 200</span><span class="chip">312 results</span></div>
+        </article>
+
+        <article class="api-card" data-status="ready" data-search="open-meteo marine sea state wave sst forecast no key">
+          <div class="card-top">
+            <div class="card-title">
+              <p class="priority">P0 · No-key Fallback</p>
+              <h3>Open-Meteo Marine</h3>
+            </div>
+            <span class="badge ready">연동 가능</span>
+          </div>
+          <ul class="field-list">
+            <li><span class="label">상태</span><span>key 없이 wave/SST hourly fields smoke 통과</span></li>
+            <li><span class="label">데이터</span><span>파고, 해수면 온도, 해양 예보</span></li>
+            <li><span class="label">이벤트</span><span><code>SEA_STATE_RISK</code></span></li>
+            <li><span class="label">Env</span><span>없음</span></li>
+          </ul>
+          <p class="note">KMA API가 막혀도 해상상태 risk를 만들 수 있는 fallback입니다.</p>
+          <div class="chips"><span class="chip">no key</span><span class="chip">HTTP 200</span></div>
+        </article>
+
+        <article class="api-card" data-status="partial" data-search="gdelt doc api maritime osint news rate limited 429">
+          <div class="card-top">
+            <div class="card-title">
+              <p class="priority">P0 · OSINT</p>
+              <h3>GDELT DOC / Event APIs</h3>
+            </div>
+            <span class="badge partial">주의 필요</span>
+          </div>
+          <ul class="field-list">
+            <li><span class="label">상태</span><span>key 불필요. 최신 smoke는 HTTP 429 rate limit</span></li>
+            <li><span class="label">데이터</span><span>뉴스 기반 사건·문서 evidence</span></li>
+            <li><span class="label">이벤트</span><span><code>OSINT_INCIDENT</code></span></li>
+            <li><span class="label">Env</span><span>없음</span></li>
+          </ul>
+          <p class="note">재시도/backoff/cache 또는 bulk export 경로를 사용해야 안정적입니다.</p>
+          <div class="chips"><span class="chip">HTTP 429 latest</span><span class="chip">no key</span></div>
+        </article>
+
+        <article class="api-card" data-status="partial" data-search="stealthmole darkweb telegram credential ransomware cyber threat intelligence">
+          <div class="card-top">
+            <div class="card-title">
+              <p class="priority">P1 · Cyber Threat</p>
+              <h3>StealthMole</h3>
+            </div>
+            <span class="badge partial">키 저장 / 문서 필요</span>
+          </div>
+          <ul class="field-list">
+            <li><span class="label">상태</span><span>Access key / Secret key 저장. 공개 문서상 base URL·signing 미확인</span></li>
+            <li><span class="label">데이터</span><span>다크웹, Telegram, credential exposure, ransomware/leak monitoring</span></li>
+            <li><span class="label">이벤트</span><span><code>CYBER_INCIDENT_CONTEXT</code> <code>CREDENTIAL_EXPOSURE_AGGREGATE</code></span></li>
+            <li><span class="label">Env</span><span><code>STEALTHMOLE_ACCESS_KEY</code> <code>STEALTHMOLE_SECRET_KEY</code></span></li>
+          </ul>
+          <p class="note">원문·PII·password는 저장/시연하지 않고 aggregate/redacted cyber context로만 사용합니다.</p>
+          <div class="chips"><span class="chip">endpoint unconfirmed</span><span class="chip">stored</span></div>
+        </article>
+
+        <article class="api-card" data-status="partial" data-search="공공데이터포털 approved apis 나라장터 kotra country issue monitoring procurement">
+          <div class="card-top">
+            <div class="card-title">
+              <p class="priority">P2 · Public Data</p>
+              <h3>공공데이터포털 승인 API 묶음</h3>
+            </div>
+            <span class="badge partial">일부 테스트 대기</span>
+          </div>
+          <ul class="field-list">
+            <li><span class="label">상태</span><span>REST API 5건 승인. 기상은 통과, 나머지는 pending/일부 unauthorized</span></li>
+            <li><span class="label">데이터</span><span>나라장터, KOTRA 국가 목록, 글로벌 이슈 monitoring</span></li>
+            <li><span class="label">이벤트</span><span><code>SUPPLY_CHAIN_CONTEXT</code> <code>COUNTRY_NORMALIZATION</code></span></li>
+            <li><span class="label">Env</span><span><code>DATA_GO_KR_SERVICE_KEY</code></span></li>
+          </ul>
+          <p class="note">MVP 핵심은 아니지만 sustainment/공급망 storyline 강화에 유용합니다.</p>
+          <div class="chips"><span class="chip">approved</span><span class="chip">partial</span></div>
+        </article>
+
+        <article class="api-card" data-status="partial" data-search="copernicus marine xview3 gfw sar future ship detection dark vessel">
+          <div class="card-top">
+            <div class="card-title">
+              <p class="priority">P2 · SAR Detection</p>
+              <h3>SAR Ship Detection 후보</h3>
+            </div>
+            <span class="badge partial">후속 연결</span>
+          </div>
+          <ul class="field-list">
+            <li><span class="label">상태</span><span>Copernicus catalogue는 가능. 실제 ship detection layer는 별도 필요</span></li>
+            <li><span class="label">데이터</span><span>xView3, GFW SAR detection, synthetic SAR-only detection</span></li>
+            <li><span class="label">이벤트</span><span><code>SAR_DARK_VESSEL_CANDIDATE</code></span></li>
+            <li><span class="label">Env</span><span>서비스별 상이</span></li>
+          </ul>
+          <p class="note">해커톤 데모에서는 synthetic detection + catalogue evidence 조합이 현실적입니다.</p>
+          <div class="chips"><span class="chip">research</span><span class="chip">not MVP-critical</span></div>
+        </article>
+
+        <article class="api-card" data-status="partial" data-search="network outage cloudflare radar ioda ripe atlas ookla synthetic denied network">
+          <div class="card-top">
+            <div class="card-title">
+              <p class="priority">P2 · Network Context</p>
+              <h3>네트워크 장애 공개 지표 후보</h3>
+            </div>
+            <span class="badge partial">대체 데이터</span>
+          </div>
+          <ul class="field-list">
+            <li><span class="label">상태</span><span>Cloudflare Radar, CAIDA IODA, RIPE Atlas, Ookla 후보</span></li>
+            <li><span class="label">데이터</span><span>국가/ASN/지역 단위 outage, latency, bandwidth baseline</span></li>
+            <li><span class="label">이벤트</span><span><code>NETWORK_DEGRADATION_CONTEXT</code></span></li>
+            <li><span class="label">Env</span><span>대부분 no-key 또는 별도 신청</span></li>
+          </ul>
+          <p class="note">T3 핵심 네트워크 상태는 synthetic simulator가 우선이고, 공개 지표는 설명 보강용입니다.</p>
+          <div class="chips"><span class="chip">context only</span><span class="chip">later</span></div>
+        </article>
+
+        <article class="api-card" data-status="pending" data-search="safetydata 재난안전데이터 긴급재난문자 approval pending disaster alert">
+          <div class="card-top">
+            <div class="card-title">
+              <p class="priority">P1 · Official Alert</p>
+              <h3>재난안전데이터 긴급재난문자</h3>
+            </div>
+            <span class="badge pending">승인 대기</span>
+          </div>
+          <ul class="field-list">
+            <li><span class="label">상태</span><span>2026-07-04 확인 기준 `승인대기`</span></li>
+            <li><span class="label">데이터</span><span>공식 재난/기상/항만 관련 문자 context</span></li>
+            <li><span class="label">이벤트</span><span><code>DISASTER_ALERT</code> <code>OSINT_INCIDENT</code></span></li>
+            <li><span class="label">Env</span><span><code>SAFETYDATA_API_KEY</code></span></li>
+          </ul>
+          <p class="note">승인 후 key/API URL 확인, endpoint connector 구현이 다음 단계입니다.</p>
+          <div class="chips"><span class="chip">approval pending</span></div>
+        </article>
+
+        <article class="api-card" data-status="pending" data-search="alerts.in.ua ukraine air alert token pending warning pressure">
+          <div class="card-top">
+            <div class="card-title">
+              <p class="priority">P0 · Ukraine Alert</p>
+              <h3>alerts.in.ua</h3>
+            </div>
+            <span class="badge pending">토큰 대기</span>
+          </div>
+          <ul class="field-list">
+            <li><span class="label">상태</span><span>API 요청 form 제출 완료, token email pending</span></li>
+            <li><span class="label">데이터</span><span>우크라이나 공습경보/경보 지속시간</span></li>
+            <li><span class="label">이벤트</span><span><code>AIR_ALERT</code> <code>WARNING_PRESSURE</code></span></li>
+            <li><span class="label">Env</span><span><code>ALERTS_IN_UA_TOKEN</code></span></li>
+          </ul>
+          <p class="note">메일함/스팸함 확인. 7일 내 미수신 시 재요청 또는 support contact.</p>
+          <div class="chips"><span class="chip">request submitted</span><span class="chip">2026-07-04</span></div>
+        </article>
+
+        <article class="api-card" data-status="pending" data-search="data.go.kr ministry ocean fisheries ais port-mis vessel movement verification">
+          <div class="card-top">
+            <div class="card-title">
+              <p class="priority">P1 · AIS / Port</p>
+              <h3>해양수산부 AIS / Port-MIS</h3>
+            </div>
+            <span class="badge pending">신청 확인 필요</span>
+          </div>
+          <ul class="field-list">
+            <li><span class="label">상태</span><span>활용신청 폼 작성/확인 시도. 최종 목록 확인 필요</span></li>
+            <li><span class="label">데이터</span><span>선박 이동, 항만 입출항, 물류 이상징후</span></li>
+            <li><span class="label">이벤트</span><span><code>AIS_GAP</code> <code>PORT_ANOMALY</code></span></li>
+            <li><span class="label">Env</span><span><code>DATA_GO_KR_SERVICE_KEY</code></span></li>
+          </ul>
+          <p class="note">승인되면 해상 MDA 도메인이 훨씬 선명해집니다. Demo output에서는 선박 식별정보 masking 필요.</p>
+          <div class="chips"><span class="chip">verify list</span><span class="chip">maritime core</span></div>
+        </article>
+
+        <article class="api-card" data-status="pending" data-search="reliefweb appname humanitarian reports ocha ohchr ukraine">
+          <div class="card-top">
+            <div class="card-title">
+              <p class="priority">P1 · Humanitarian Reports</p>
+              <h3>ReliefWeb API v2</h3>
+            </div>
+            <span class="badge pending">appname 승인 필요</span>
+          </div>
+          <ul class="field-list">
+            <li><span class="label">상태</span><span>2025-11-01 이후 pre-approved appname 필요</span></li>
+            <li><span class="label">데이터</span><span>OCHA/OHCHR 등 공식 report metadata</span></li>
+            <li><span class="label">이벤트</span><span><code>HUMANITARIAN_REPORT_CONTEXT</code></span></li>
+            <li><span class="label">Env</span><span><code>RELIEFWEB_APPNAME</code></span></li>
+          </ul>
+          <p class="note">HDX가 먼저 통과했으므로 ReliefWeb은 citation layer 보강용입니다.</p>
+          <div class="chips"><span class="chip">pre-approval</span></div>
+        </article>
+
+        <article class="api-card" data-status="pending" data-search="ai hub 국방 합성 데이터 approval terms user action">
+          <div class="card-top">
+            <div class="card-title">
+              <p class="priority">P0 · Synthetic Data</p>
+              <h3>AI Hub</h3>
+            </div>
+            <span class="badge pending">사용자 액션</span>
+          </div>
+          <ul class="field-list">
+            <li><span class="label">상태</span><span>일반회원 선택 완료, 약관/개인정보 동의 단계 필요</span></li>
+            <li><span class="label">데이터</span><span>일부 국방 합성 데이터, 영상·교통·재난 데이터</span></li>
+            <li><span class="label">이벤트</span><span><code>SYNTHETIC_TRAINING_DATA</code></span></li>
+            <li><span class="label">Env</span><span>발급 후 결정</span></li>
+          </ul>
+          <p class="note">데이터셋별 다운로드 승인과 대용량 저장공간 확인이 필요합니다.</p>
+          <div class="chips"><span class="chip">terms</span><span class="chip">user required</span></div>
+        </article>
+
+        <article class="api-card" data-status="pending" data-search="생활안전지도 safemap openapi agreement key disaster public safety">
+          <div class="card-top">
+            <div class="card-title">
+              <p class="priority">P1 · Public Safety</p>
+              <h3>생활안전지도 OpenAPI</h3>
+            </div>
+            <span class="badge pending">약관 동의 필요</span>
+          </div>
+          <ul class="field-list">
+            <li><span class="label">상태</span><span>인증키 발급 전 필수 약관 동의 필요</span></li>
+            <li><span class="label">데이터</span><span>안전·재난·지역 위험 context</span></li>
+            <li><span class="label">이벤트</span><span><code>PUBLIC_SAFETY_CONTEXT</code></span></li>
+            <li><span class="label">Env</span><span>발급 후 결정</span></li>
+          </ul>
+          <p class="note">국내 재난/공공안전 시나리오를 넓힐 때 활용합니다.</p>
+          <div class="chips"><span class="chip">user required</span></div>
+        </article>
+
+        <article class="api-card" data-status="pending" data-search="its openapi traffic incident 국토교통부 돌발상황 교통소통 link">
+          <div class="card-top">
+            <div class="card-title">
+              <p class="priority">P2 · Logistics</p>
+              <h3>ITS OpenAPI 교통소통/돌발상황</h3>
+            </div>
+            <span class="badge pending">별도 키 필요</span>
+          </div>
+          <ul class="field-list">
+            <li><span class="label">상태</span><span>공공데이터포털 상세가 LINK 유형. ITS 별도 신청 필요</span></li>
+            <li><span class="label">데이터</span><span>교통소통, 돌발상황, 물류 제약 context</span></li>
+            <li><span class="label">이벤트</span><span><code>LOGISTICS_CONSTRAINT</code></span></li>
+            <li><span class="label">Env</span><span>발급 후 결정</span></li>
+          </ul>
+          <p class="note">전장 sustainment/보급로 제약을 설명할 때 쓸 수 있습니다.</p>
+          <div class="chips"><span class="chip">separate key</span></div>
+        </article>
+
+        <article class="api-card" data-status="blocked" data-search="acled oauth invalid credentials conflict event spine ukraine">
+          <div class="card-top">
+            <div class="card-title">
+              <p class="priority">P0 · Conflict Events</p>
+              <h3>ACLED</h3>
+            </div>
+            <span class="badge blocked">로그인 실패</span>
+          </div>
+          <ul class="field-list">
+            <li><span class="label">상태</span><span>OAuth token request 결과 `invalid_grant` / incorrect credentials</span></li>
+            <li><span class="label">데이터</span><span>structured conflict event spine, actor/location/time/source</span></li>
+            <li><span class="label">이벤트</span><span><code>CONFLICT_EVENT_SPINE</code></span></li>
+            <li><span class="label">Env</span><span><code>ACLED_ACCESS_TOKEN</code> <code>ACLED_REFRESH_TOKEN</code></span></li>
+          </ul>
+          <p class="note">ACLED 비밀번호 또는 이메일 인증 상태 확인 후 재시도해야 합니다.</p>
+          <div class="chips"><span class="chip">blocked</span><span class="chip">invalid credentials</span></div>
+        </article>
+
+        <article class="api-card" data-status="blocked" data-search="나라장터 procurement unauthorized data.go.kr supply chain">
+          <div class="card-top">
+            <div class="card-title">
+              <p class="priority">P2 · Procurement</p>
+              <h3>나라장터 입찰공고 API</h3>
+            </div>
+            <span class="badge blocked">Unauthorized</span>
+          </div>
+          <ul class="field-list">
+            <li><span class="label">상태</span><span>승인 직후 smoke test에서 `Unauthorized`</span></li>
+            <li><span class="label">데이터</span><span>조달/계약/공급망 context</span></li>
+            <li><span class="label">이벤트</span><span><code>SUPPLY_CHAIN_CONTEXT</code></span></li>
+            <li><span class="label">Env</span><span><code>DATA_GO_KR_SERVICE_KEY</code></span></li>
+          </ul>
+          <p class="note">MVP 우선순위는 낮고, sustainment story가 필요할 때 재시도합니다.</p>
+          <div class="chips"><span class="chip">blocked</span><span class="chip">retry later</span></div>
+        </article>
+
+        <article class="api-card" data-status="blocked" data-search="gdeltdoc 429 rate limit failed but no key osint">
+          <div class="card-top">
+            <div class="card-title">
+              <p class="priority">P0 · Rate Limit</p>
+              <h3>GDELT 최신 query 상태</h3>
+            </div>
+            <span class="badge blocked">최신 run 제한</span>
+          </div>
+          <ul class="field-list">
+            <li><span class="label">상태</span><span>최신 smoke run은 HTTP 429. query syntax는 수정 완료</span></li>
+            <li><span class="label">데이터</span><span>뉴스 OSINT article/event evidence</span></li>
+            <li><span class="label">이벤트</span><span><code>OSINT_INCIDENT</code></span></li>
+            <li><span class="label">Env</span><span>없음</span></li>
+          </ul>
+          <p class="note">실패라기보다 호출 빈도 문제입니다. 5초 이상 backoff, cache, bulk export를 사용합니다.</p>
+          <div class="chips"><span class="chip">HTTP 429</span><span class="chip">rate-limited</span></div>
+        </article>
+
+        <article class="api-card" data-status="deferred" data-search="marinetraffic kpler api ais commercial maritime data services">
+          <div class="card-top">
+            <div class="card-title">
+              <p class="priority">P1 · Commercial AIS</p>
+              <h3>MarineTraffic / Kpler</h3>
+            </div>
+            <span class="badge deferred">상용 접근</span>
+          </div>
+          <ul class="field-list">
+            <li><span class="label">상태</span><span>API는 `api_key` 기반이나 데이터 서비스 문의/데모/상용 접근 필요</span></li>
+            <li><span class="label">데이터</span><span>AIS tracking, vessel movement, port calls</span></li>
+            <li><span class="label">이벤트</span><span><code>AIS_GAP</code> <code>PORT_ANOMALY</code></span></li>
+            <li><span class="label">Env</span><span>발급 시 결정</span></li>
+          </ul>
+          <p class="note">GFW와 공공 AIS/Port-MIS를 먼저 쓰고, 필요 시 상용 접근을 검토합니다.</p>
+          <div class="chips"><span class="chip">commercial</span></div>
+        </article>
+
+        <article class="api-card" data-status="deferred" data-search="un comtrade trade api azure subscription logistics supply chain">
+          <div class="card-top">
+            <div class="card-title">
+              <p class="priority">P3 · Trade</p>
+              <h3>UN Comtrade</h3>
+            </div>
+            <span class="badge deferred">로그인/구독 필요</span>
+          </div>
+          <ul class="field-list">
+            <li><span class="label">상태</span><span>Azure API Management 개발자 포털 로그인 필요</span></li>
+            <li><span class="label">데이터</span><span>무역량, 공급망, 국가 간 물류 context</span></li>
+            <li><span class="label">이벤트</span><span><code>SUPPLY_CHAIN_CONTEXT</code></span></li>
+            <li><span class="label">Env</span><span>발급 시 결정</span></li>
+          </ul>
+          <p class="note">해커톤 MVP보다는 공급망 확장판에 적합합니다.</p>
+          <div class="chips"><span class="chip">P3</span></div>
+        </article>
+
+        <article class="api-card" data-status="deferred" data-search="space-track satellite tle space object agreement signup">
+          <div class="card-top">
+            <div class="card-title">
+              <p class="priority">P2 · Space</p>
+              <h3>Space-Track</h3>
+            </div>
+            <span class="badge deferred">가입/약관 필요</span>
+          </div>
+          <ul class="field-list">
+            <li><span class="label">상태</span><span>이메일/조직/주소/전화번호/User Agreement 필요</span></li>
+            <li><span class="label">데이터</span><span>위성/TLE/우주물체 tracking context</span></li>
+            <li><span class="label">이벤트</span><span><code>SPACE_ASSET_CONTEXT</code></span></li>
+            <li><span class="label">Env</span><span>발급 시 결정</span></li>
+          </ul>
+          <p class="note">위성/우주 domain story를 붙일 때 의미가 있습니다.</p>
+          <div class="chips"><span class="chip">signup</span></div>
+        </article>
+
+        <article class="api-card" data-status="deferred" data-search="kisa c-tas kr cert cyber threat intelligence ioc malware approval">
+          <div class="card-top">
+            <div class="card-title">
+              <p class="priority">P3 · Cyber</p>
+              <h3>KISA C-TAS</h3>
+            </div>
+            <span class="badge deferred">관리자 승인</span>
+          </div>
+          <ul class="field-list">
+            <li><span class="label">상태</span><span>회원가입 및 관리자 승인 필요</span></li>
+            <li><span class="label">데이터</span><span>악성 IP/도메인, 보안공지, 위협정보 IOC</span></li>
+            <li><span class="label">이벤트</span><span><code>CYBER_IOC_CONTEXT</code></span></li>
+            <li><span class="label">Env</span><span>발급 시 결정</span></li>
+          </ul>
+          <p class="note">StealthMole과 함께 cyber enrichment layer로 확장 가능합니다.</p>
+          <div class="chips"><span class="chip">approval</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <h2>Demo Integration Plan</h2>
+        <p>데모 우선순위 기준</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Priority</th>
+              <th>Use in demo</th>
+              <th>APIs</th>
+              <th>Semantic events</th>
+              <th>Safety / handling</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Now</strong></td>
+              <td>바로 붙여 COP에 표시</td>
+              <td>KMA, data.go.kr weather, VWorld, Open-Meteo Marine, GFW, Copernicus, NASA FIRMS, Kaggle, HDX, OpenSanctions</td>
+              <td><code>WEATHER_HAZARD</code>, <code>SEA_STATE_RISK</code>, <code>AIS_DENSITY_CHANGE</code>, <code>THERMAL_ANOMALY_PROXY</code>, <code>HUMANITARIAN_CONTEXT_LAYER</code></td>
+              <td>실제 선박/조직을 위협으로 단정하지 않고 evidence/context로만 사용</td>
+            </tr>
+            <tr>
+              <td><strong>Next</strong></td>
+              <td>승인·토큰 도착 후 연결</td>
+              <td>SafetyData, alerts.in.ua, ACLED, AIS/Port-MIS, ReliefWeb</td>
+              <td><code>DISASTER_ALERT</code>, <code>AIR_ALERT</code>, <code>CONFLICT_EVENT_SPINE</code>, <code>PORT_ANOMALY</code></td>
+              <td>공식 경보/분쟁 이벤트도 demo에서는 지연·집계·비식별 모드 권장</td>
+            </tr>
+            <tr>
+              <td><strong>Context</strong></td>
+              <td>스토리 강화용</td>
+              <td>StealthMole, C-TAS, 나라장터, KOTRA, ITS, UN Comtrade</td>
+              <td><code>CYBER_INCIDENT_CONTEXT</code>, <code>SUPPLY_CHAIN_CONTEXT</code>, <code>LOGISTICS_CONSTRAINT</code></td>
+              <td>PII, raw credential, raw dark web content, 민감 원본 데이터는 저장/시연 제외</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <h2>Open Blockers</h2>
+        <p>사람 확인 또는 승인 대기</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>Blocker</th>
+              <th>Needed action</th>
+              <th>Impact if cleared</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>ACLED</td>
+              <td>OAuth `invalid_grant`, credentials incorrect</td>
+              <td>비밀번호 또는 이메일 인증 상태 확인 후 token 재발급</td>
+              <td>우크라이나/분쟁 event spine 확보</td>
+            </tr>
+            <tr>
+              <td>SafetyData 긴급재난문자</td>
+              <td>승인대기</td>
+              <td>승인 후 API key/endpoint 확인</td>
+              <td>공식 재난/항만/기상 alert layer 확보</td>
+            </tr>
+            <tr>
+              <td>alerts.in.ua</td>
+              <td>토큰 승인 메일 대기</td>
+              <td>메일함/스팸함 확인, 미수신 시 재요청</td>
+              <td>우크라이나 air alert / warning pressure 연결</td>
+            </tr>
+            <tr>
+              <td>StealthMole</td>
+              <td>공개 문서상 base URL/signing 미확인</td>
+              <td>플랫폼/메일/support에서 공식 API 문서 확보</td>
+              <td>darkweb/credential/ransomware cyber context 연결</td>
+            </tr>
+            <tr>
+              <td>해양수산부 AIS/Port-MIS</td>
+              <td>신청 목록 최종 확인 필요</td>
+              <td>공공데이터포털 활용신청 현황 재확인</td>
+              <td>해상 MDA demo의 핵심 real maritime layer 강화</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer>
+      <p>
+        이 HTML은 D4D 로컬 프로젝트 상태를 요약합니다.
+        민감정보는 `.env`에만 보관하며, 발표·공유용 산출물에는 raw token, password, raw credential leak, 원본 DB를 포함하지 않습니다.
+      </p>
+    </footer>
+  </main>
+
+  <script>
+    const buttons = Array.from(document.querySelectorAll(".filter-button"));
+    const cards = Array.from(document.querySelectorAll(".api-card"));
+    const searchBox = document.getElementById("searchBox");
+    const visibleCount = document.getElementById("visibleCount");
+    let activeFilter = "all";
+
+    function normalize(value) {
+      return value.toLowerCase().replace(/\s+/g, " ").trim();
+    }
+
+    function applyFilters() {
+      const query = normalize(searchBox.value);
+      let count = 0;
+
+      cards.forEach((card) => {
+        const status = card.dataset.status;
+        const text = normalize(card.textContent + " " + (card.dataset.search || ""));
+        const statusMatch = activeFilter === "all" || status === activeFilter;
+        const queryMatch = !query || text.includes(query);
+        const visible = statusMatch && queryMatch;
+        card.classList.toggle("hidden", !visible);
+        if (visible) count += 1;
+      });
+
+      visibleCount.textContent = `${count}개 항목 표시 중`;
+    }
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        activeFilter = button.dataset.filter;
+        buttons.forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
+        applyFilters();
+      });
+    });
+
+    searchBox.addEventListener("input", applyFilters);
+    applyFilters();
+  </script>
+</body>
+</html>

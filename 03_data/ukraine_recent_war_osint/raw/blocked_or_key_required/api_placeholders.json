@@ -1,0 +1,69 @@
+[
+  {
+    "source": "acled",
+    "status": "blocked_invalid_credentials",
+    "needed_env": [
+      "ACLED_EMAIL",
+      "ACLED_ACCESS_TOKEN",
+      "ACLED_REFRESH_TOKEN"
+    ],
+    "example_endpoint": "https://acleddata.com/api/acled/read?_format=json&country=Ukraine&event_date=2025-12-01|2026-07-04&event_date_where=BETWEEN&limit=5000",
+    "last_checked": "2026-07-04",
+    "smoke_report": "/Users/mollykim/projects/D4D/03_data/processed/ukraine_osint_api_smoke_tests/20260704_114329/smoke_report.json",
+    "note": "ACLED OAuth token request returned invalid_grant / incorrect credentials for the provided account. Verify password or email activation, then store OAuth tokens only in .env."
+  },
+  {
+    "source": "nasa_firms",
+    "status": "key_issued_smoke_passed",
+    "needed_env": [
+      "NASA_FIRMS_MAP_KEY"
+    ],
+    "example_endpoint": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/{MAP_KEY}/VIIRS_SNPP_NRT/22,44,40,53/10/2026-07-04",
+    "last_smoke_test": "20260704_114329",
+    "note": "Use for thermal anomaly/fire proxy, not direct strike attribution without corroboration."
+  },
+  {
+    "source": "alerts_in_ua",
+    "status": "request_submitted_token_pending",
+    "needed_env": [
+      "ALERTS_IN_UA_TOKEN"
+    ],
+    "request_url": "https://alerts.in.ua/api-request",
+    "requested_at": "2026-07-04",
+    "approval_expectation": "site states response may take up to 7 days, usually within 24 hours; check spam folder",
+    "example_project": "https://github.com/alerts-ua/alerts-in-ua-py",
+    "note": "User submitted the browser request form and saw the Tally thank-you confirmation page. Waiting for token email. Use delayed/historical mode for public demos."
+  },
+  {
+    "source": "kaggle",
+    "status": "api_token_issued_smoke_passed",
+    "needed_env": [
+      "KAGGLE_USERNAME",
+      "KAGGLE_API_TOKEN"
+    ],
+    "dataset": "piterfm/massive-missile-attacks-on-ukraine",
+    "last_smoke_test": "20260704_114329",
+    "note": "New Kaggle API token issued and stored as KAGGLE_API_TOKEN plus /Users/mollykim/.kaggle/access_token. Local PyPI kaggle/kagglehub versions are below the token-support versions, so use direct Bearer API calls or update tooling before CLI-based collection."
+  },
+  {
+    "source": "hdx",
+    "status": "api_token_issued_smoke_passed",
+    "needed_env": [
+      "HDX_API_TOKEN"
+    ],
+    "signup_url": "https://data.humdata.org/signup/",
+    "example_endpoint": "https://data.humdata.org/api/3/action/package_search?q=Ukraine&rows=20",
+    "last_smoke_test": "20260704_114329",
+    "note": "HDX account login succeeded and API token was created for D4D Ukraine OSINT. CKAN package_search for Ukraine passed with Authorization header."
+  },
+  {
+    "source": "reliefweb",
+    "status": "blocked_preapproved_appname_required",
+    "needed_env": [
+      "RELIEFWEB_APPNAME"
+    ],
+    "request_url": "https://docs.google.com/forms/d/e/1FAIpQLScR5EE_SBhweLLg_2xMCnXNbT6md4zxqIB00OL0yZWyrqX_Nw/viewform?usp=header",
+    "example_endpoint": "https://api.reliefweb.int/v2/reports?appname={RELIEFWEB_APPNAME}&query[value]=Ukraine&limit=100",
+    "note": "ReliefWeb API v1 is decommissioned. V2 requires pre-approved appname from 2025-11-01. Useful for humanitarian reports and OHCHR/OCHA documents."
+  }
+]

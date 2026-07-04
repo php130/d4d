@@ -1,0 +1,154 @@
+{
+  "bundle_id": "sdot_drone_semantic_ops_palantir_handoff_v0_1",
+  "generated_at": "2026-07-04T08:34:23.352000+00:00",
+  "source_dataset": "03_data/samples/sdot_drone_semantic_ops/mock_dataset.json",
+  "dataset_id": "s_dot_drone_semantic_ops_mock_v0_6",
+  "safety_note": "Synthetic drone flight, GNSS/link degradation, jamming hypothesis, and semantic packet data. No real routes, force posture, EW emitter data, or sensitive coordinates.",
+  "object_files": [
+    {
+      "path": "objects/DroneAsset.csv",
+      "records": 3,
+      "sha256": "14cdb4da7cf884673b3d36c726e9bed8cd814fb88d9ec85168c7f635e2ced628"
+    },
+    {
+      "path": "objects/SimulationCase.csv",
+      "records": 5,
+      "sha256": "bc87b9cdb2b0f38113c7978f2f902175f2e4a5d911bd447b833775cd5d45b658"
+    },
+    {
+      "path": "objects/SemanticEvent.csv",
+      "records": 6,
+      "sha256": "c8448ca20caac3661fb655958a0750af5f6a07d587615a404ccc8d5d6a9120b8"
+    },
+    {
+      "path": "objects/SemanticPacket.csv",
+      "records": 6,
+      "sha256": "6eceba8ddf3c4d5085a49424ec5f6506f3ad89c79bc3c0d2957c86febc6127b7"
+    },
+    {
+      "path": "objects/RawObservation.csv",
+      "records": 7,
+      "sha256": "57d81d3ea36c67bb3d3eb149776741348cba421f1376c2db17b5e0cd93ca8ce3"
+    },
+    {
+      "path": "objects/EdgeDetection.csv",
+      "records": 2,
+      "sha256": "351239a9ffadde3d13983ea4d49c53fc9b699b751b3164c2ea1e17ae34d70da9"
+    },
+    {
+      "path": "objects/JammingHypothesis.csv",
+      "records": 2,
+      "sha256": "c4970f9727dcf7fc22ae6fbe9a76cee8e414c2fdc5c5953da3a70affbf65aaf5"
+    },
+    {
+      "path": "objects/CaseEvaluation.csv",
+      "records": 5,
+      "sha256": "f6361854d1c8934714322e0781404bd986eca2157d803674ef527637904a52b9"
+    },
+    {
+      "path": "objects/CaseEvaluationPoint.csv",
+      "records": 65,
+      "sha256": "2375a3d042fd255d4e32dda731244aedbc762ccec2b2c3b447ff499b61bae209"
+    },
+    {
+      "path": "objects/KalmanTracePoint.csv",
+      "records": 65,
+      "sha256": "9bebe95dadbdd6c9f6c588f1c32ca11579ea30bb1b87fae0299c32737774160a"
+    },
+    {
+      "path": "objects/RoutingDecision.csv",
+      "records": 30,
+      "sha256": "37d7a7b993892ebe044084a2caac9a4413a6824d653739127c2a0fd299899365"
+    },
+    {
+      "path": "objects/RejoinAudit.csv",
+      "records": 1,
+      "sha256": "6b38aa7fecc2db8992015f6b24da0af80211f4d0bfc25c96c6be1a51053a9473"
+    }
+  ],
+  "relationship_count": 225,
+  "manifest_hash_note": "`bundle_manifest.json` is excluded from the file hash list to avoid self-referential hashing.",
+  "files": [
+    {
+      "path": "objects/DroneAsset.csv",
+      "records": 3,
+      "sha256": "14cdb4da7cf884673b3d36c726e9bed8cd814fb88d9ec85168c7f635e2ced628"
+    },
+    {
+      "path": "objects/SimulationCase.csv",
+      "records": 5,
+      "sha256": "bc87b9cdb2b0f38113c7978f2f902175f2e4a5d911bd447b833775cd5d45b658"
+    },
+    {
+      "path": "objects/SemanticEvent.csv",
+      "records": 6,
+      "sha256": "c8448ca20caac3661fb655958a0750af5f6a07d587615a404ccc8d5d6a9120b8"
+    },
+    {
+      "path": "objects/SemanticPacket.csv",
+      "records": 6,
+      "sha256": "6eceba8ddf3c4d5085a49424ec5f6506f3ad89c79bc3c0d2957c86febc6127b7"
+    },
+    {
+      "path": "objects/RawObservation.csv",
+      "records": 7,
+      "sha256": "57d81d3ea36c67bb3d3eb149776741348cba421f1376c2db17b5e0cd93ca8ce3"
+    },
+    {
+      "path": "objects/EdgeDetection.csv",
+      "records": 2,
+      "sha256": "351239a9ffadde3d13983ea4d49c53fc9b699b751b3164c2ea1e17ae34d70da9"
+    },
+    {
+      "path": "objects/JammingHypothesis.csv",
+      "records": 2,
+      "sha256": "c4970f9727dcf7fc22ae6fbe9a76cee8e414c2fdc5c5953da3a70affbf65aaf5"
+    },
+    {
+      "path": "objects/CaseEvaluation.csv",
+      "records": 5,
+      "sha256": "f6361854d1c8934714322e0781404bd986eca2157d803674ef527637904a52b9"
+    },
+    {
+      "path": "objects/CaseEvaluationPoint.csv",
+      "records": 65,
+      "sha256": "2375a3d042fd255d4e32dda731244aedbc762ccec2b2c3b447ff499b61bae209"
+    },
+    {
+      "path": "objects/KalmanTracePoint.csv",
+      "records": 65,
+      "sha256": "9bebe95dadbdd6c9f6c588f1c32ca11579ea30bb1b87fae0299c32737774160a"
+    },
+    {
+      "path": "objects/RoutingDecision.csv",
+      "records": 30,
+      "sha256": "37d7a7b993892ebe044084a2caac9a4413a6824d653739127c2a0fd299899365"
+    },
+    {
+      "path": "objects/RejoinAudit.csv",
+      "records": 1,
+      "sha256": "6b38aa7fecc2db8992015f6b24da0af80211f4d0bfc25c96c6be1a51053a9473"
+    },
+    {
+      "path": "links.csv",
+      "records": 225,
+      "sha256": "a9392dab8176b8be5c53f761632067f73ad0eeef51771588b80caabd85e26917"
+    },
+    {
+      "path": "ontology_model.json",
+      "records": 8,
+      "sha256": "f26050a94f27ac991dc6a2463f4d668fba04297cec9ecc5393e63aacde04d609"
+    },
+    {
+      "path": "aip_workflow_cards.json",
+      "records": 3,
+      "sha256": "b4ffbc11a98e8e65c047a036cf48710f04d0c3d8a62e5941d77a2b38756f1e71"
+    },
+    {
+      "path": "README.md",
+      "records": 1,
+      "sha256": "735da7709b6f6cd55398743e7a17e1921ee8e78d0d1b04c89b2946e2df776e5e"
+    }
+  ],
+  "generated_file_count_excluding_manifest": 16
+}

@@ -1,0 +1,257 @@
+{
+  "metadata": {
+    "dataset_id": "operation_communication_taxonomy_v0_1",
+    "created_at_kst": "2026-07-04",
+    "classification": "public_doctrine_level_reference",
+    "safety_note": "This dataset is a synthetic, non-operational reference layer. It does not contain real unit procedures, classified systems, real orders, or rules of engagement.",
+    "intended_use": "Help map D4D Resilient Maritime COP demo objects to public command-and-control communication concepts."
+  },
+  "source_references": [
+    {
+      "source_id": "adp_5_0_operations_process",
+      "title": "U.S. Army ADP 5-0 The Operations Process",
+      "url": "https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN18126-ADP_5-0-000-WEB-3.pdf",
+      "use": "operations process: planning, preparing, executing, assessing"
+    },
+    {
+      "source_id": "fm_6_0_c2_staff",
+      "title": "U.S. Army FM 6-0 Commander and Staff Organization and Operations",
+      "url": "https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN35404-FM_6-0-000-WEB-1.pdf",
+      "use": "C2 system, command posts, staff processes, battle rhythm, reports and meetings"
+    },
+    {
+      "source_id": "fm_6_99_report_formats",
+      "title": "U.S. Army FM 6-99 Report and Message Formats",
+      "url": "https://digitalcommons.unl.edu/usarmyfieldmanuals/51/",
+      "use": "public reference for standardized report/message families"
+    },
+    {
+      "source_id": "cjcsm_3130_02",
+      "title": "CJCSM 3130.02 Joint Planning and Execution Policies and Procedures",
+      "url": "https://www.jcs.mil/Portals/36/Documents/Library/Manuals/CJCSM%203130.02.pdf",
+      "use": "joint planning and execution transition from plans to orders"
+    }
+  ],
+  "operation_flow": [
+    {
+      "phase": "guidance",
+      "plain_korean": "상급 지휘부가 목표, 제약, 우선순위, 필요한 효과를 제시한다.",
+      "typical_artifacts": ["planning_guidance", "mission", "commander_intent_seed"],
+      "demo_mapping": ["scenario", "command_intent"]
+    },
+    {
+      "phase": "planning",
+      "plain_korean": "참모가 상황을 분석하고 가능한 방책과 위험을 비교한다.",
+      "typical_artifacts": ["running_estimate", "decision_support_matrix", "ccir"],
+      "demo_mapping": ["evidence_bundle", "priority_features", "decision_point"]
+    },
+    {
+      "phase": "warning",
+      "plain_korean": "하급 조직이 미리 준비할 수 있도록 경고명령 또는 사전 알림을 보낸다.",
+      "typical_artifacts": ["WARNORD"],
+      "demo_mapping": ["early_warning_event", "priority_brief"]
+    },
+    {
+      "phase": "ordering",
+      "plain_korean": "작전명령으로 상황, 임무, 실행, 지속지원, 지휘/통신 기준을 전달한다.",
+      "typical_artifacts": ["OPORD", "annex", "overlay"],
+      "demo_mapping": ["baseline_cop_context", "map_layers", "recommended_action"]
+    },
+    {
+      "phase": "execution",
+      "plain_korean": "작전 중 보고와 상황판 업데이트가 계속 들어오고, 지휘관은 필요한 결정을 내린다.",
+      "typical_artifacts": ["SITREP", "SPOTREP", "LOGSTAT", "COP_update", "request_for_support"],
+      "demo_mapping": ["semantic_event", "cop_map_marker", "grounded_briefing"]
+    },
+    {
+      "phase": "adjustment",
+      "plain_korean": "상황이 바뀌면 전체 명령을 다시 쓰기보다 바뀐 부분만 빠르게 갱신한다.",
+      "typical_artifacts": ["FRAGO", "decision_update", "branch_or_sequel"],
+      "demo_mapping": ["routing_result", "defer_or_send_decision", "store_forward_update"]
+    },
+    {
+      "phase": "assessment",
+      "plain_korean": "작전이 의도한 방향으로 가는지 계속 평가하고 다음 결심에 반영한다.",
+      "typical_artifacts": ["assessment", "running_estimate_update", "after_action_review"],
+      "demo_mapping": ["confidence", "trust_score", "freshness_seconds", "operator_summary"]
+    }
+  ],
+  "message_families": [
+    {
+      "id": "WARNORD",
+      "name": "Warning Order",
+      "plain_korean": "곧 명령이나 임무가 올 수 있으니 준비하라는 사전 알림",
+      "typical_direction": "higher_to_lower",
+      "decision_value": "준비시간 확보",
+      "minimal_fields_for_demo": ["time", "area", "expected_issue", "preparation_required", "source"],
+      "d4d_event_mapping": ["OSINT_INCIDENT", "WEATHER_HAZARD", "PRIORITY_BRIEF"],
+      "network_priority": "medium_to_high",
+      "synthetic_example": {
+        "message_id": "msg_warnord_demo_001",
+        "summary": "Maritime weather and OSINT context may affect monitoring in the Yellow Sea AOI.",
+        "safe_note": "Synthetic demonstration message."
+      }
+    },
+    {
+      "id": "OPORD",
+      "name": "Operation Order",
+      "plain_korean": "작전 수행의 기준이 되는 본 명령",
+      "typical_direction": "higher_to_lower",
+      "decision_value": "공통 기준선 설정",
+      "minimal_fields_for_demo": ["situation", "mission", "execution", "sustainment", "command_signal"],
+      "d4d_event_mapping": ["baseline_context", "recommended_action"],
+      "network_priority": "high_but_not_frequent",
+      "synthetic_example": {
+        "message_id": "msg_opord_demo_001",
+        "summary": "Maintain maritime COP and prioritize evidence-backed alerts under degraded network conditions.",
+        "safe_note": "Synthetic high-level mission framing; not a real order."
+      }
+    },
+    {
+      "id": "FRAGO",
+      "name": "Fragmentary Order",
+      "plain_korean": "기존 명령 중 바뀐 부분만 빠르게 전달하는 갱신 명령",
+      "typical_direction": "higher_to_lower_or_staff_update",
+      "decision_value": "변경사항 전파",
+      "minimal_fields_for_demo": ["changed_item", "effective_time", "affected_area", "reason", "ack_required"],
+      "d4d_event_mapping": ["NETWORK_DEGRADED", "PRIORITY_BRIEF"],
+      "network_priority": "high_when_time_sensitive",
+      "synthetic_example": {
+        "message_id": "msg_frago_demo_001",
+        "summary": "Switch COP transmission to semantic-summary mode due to link degradation.",
+        "safe_note": "Synthetic network-mode update."
+      }
+    },
+    {
+      "id": "SITREP",
+      "name": "Situation Report",
+      "plain_korean": "현재 상황/부대/지역 상태를 주기적으로 정리하는 보고",
+      "typical_direction": "lower_to_higher",
+      "decision_value": "상황 이해 유지",
+      "minimal_fields_for_demo": ["time_window", "area", "status_summary", "notable_changes", "requests"],
+      "d4d_event_mapping": ["grounded_briefing", "cop_summary"],
+      "network_priority": "medium",
+      "synthetic_example": {
+        "message_id": "msg_sitrep_demo_001",
+        "summary": "AOI contains one high-priority alert, degraded weather context, and reduced link capacity.",
+        "safe_note": "Synthetic situation summary."
+      }
+    },
+    {
+      "id": "SPOTREP",
+      "name": "Spot Report",
+      "plain_korean": "즉시 알릴 가치가 있는 관측/사건을 짧게 보고",
+      "typical_direction": "collector_to_command_post",
+      "decision_value": "즉각적인 주의 환기",
+      "minimal_fields_for_demo": ["what", "where", "when", "source", "confidence", "why_it_matters"],
+      "d4d_event_mapping": ["AIS_GAP", "SAR_WITHOUT_AIS", "OSINT_INCIDENT", "WEATHER_HAZARD"],
+      "network_priority": "high_if_ccir_related",
+      "synthetic_example": {
+        "message_id": "msg_spotrep_demo_001",
+        "summary": "AIS gap overlaps SAR-like detection and reduced visibility in Yellow Sea AOI.",
+        "safe_note": "Synthetic report-like event; does not identify a real vessel."
+      }
+    },
+    {
+      "id": "INTSUM",
+      "name": "Intelligence Summary",
+      "plain_korean": "여러 정보 출처를 평가해 요약한 정보 판단",
+      "typical_direction": "staff_to_commander_or_units",
+      "decision_value": "근거 있는 맥락 제공",
+      "minimal_fields_for_demo": ["claims", "evidence_refs", "confidence", "source_reliability", "gaps"],
+      "d4d_event_mapping": ["evidence_bundle", "trust_score", "grounded_claims"],
+      "network_priority": "medium_to_high",
+      "synthetic_example": {
+        "message_id": "msg_intsum_demo_001",
+        "summary": "Open-source context supports monitoring but does not prove hostile intent.",
+        "safe_note": "Synthetic analytic summary."
+      }
+    },
+    {
+      "id": "LOGSTAT",
+      "name": "Logistics Status",
+      "plain_korean": "보급, 정비, 지속지원 상태를 보고",
+      "typical_direction": "lower_to_higher_or_supporting_to_supported",
+      "decision_value": "지속지원 가능성 판단",
+      "minimal_fields_for_demo": ["asset", "status", "constraint", "eta", "support_required"],
+      "d4d_event_mapping": ["PORT_CONTEXT", "LOGISTICS_CONSTRAINT"],
+      "network_priority": "medium",
+      "synthetic_example": {
+        "message_id": "msg_logstat_demo_001",
+        "summary": "Port approach delay may affect support timing.",
+        "safe_note": "Synthetic sustainment extension candidate."
+      }
+    },
+    {
+      "id": "NETSTAT",
+      "name": "Network Status",
+      "plain_korean": "통신 링크 품질과 전송 가능 상태를 보고",
+      "typical_direction": "network_node_to_command_post",
+      "decision_value": "무엇을 보낼지 결정",
+      "minimal_fields_for_demo": ["link_id", "bandwidth_kbps", "latency_ms", "packet_loss_pct", "status"],
+      "d4d_event_mapping": ["NETWORK_DEGRADED", "routing_results"],
+      "network_priority": "critical_for_this_project",
+      "synthetic_example": {
+        "message_id": "msg_netstat_demo_001",
+        "summary": "Ship-to-shore link degraded to semantic-summary mode.",
+        "safe_note": "Synthetic network impairment."
+      }
+    }
+  ],
+  "information_requirements": [
+    {
+      "id": "CCIR_001",
+      "category": "PIR_like",
+      "plain_korean": "작전지역에서 협조 신호가 사라진 선박과 독립 센서 관측이 겹치는가?",
+      "demo_trigger": ["AIS_GAP", "SAR_WITHOUT_AIS"],
+      "priority_weight": 0.95,
+      "reason": "Could change monitoring priority under limited bandwidth."
+    },
+    {
+      "id": "CCIR_002",
+      "category": "FFIR_like",
+      "plain_korean": "COP를 갱신할 수 없을 정도로 지휘통신 링크가 저하되었는가?",
+      "demo_trigger": ["NETWORK_DEGRADED"],
+      "priority_weight": 1.0,
+      "reason": "Determines whether raw data, deltas, or only alert cards can move."
+    },
+    {
+      "id": "CCIR_003",
+      "category": "PIR_like",
+      "plain_korean": "공개 출처의 사건/기상/항만 정보가 해상 감시 우선순위를 바꾸는가?",
+      "demo_trigger": ["OSINT_INCIDENT", "WEATHER_HAZARD", "PORT_CONTEXT"],
+      "priority_weight": 0.75,
+      "reason": "Adds context and urgency, but should remain evidence-backed and non-attributive."
+    },
+    {
+      "id": "CCIR_004",
+      "category": "EEFI_like",
+      "plain_korean": "공개 데모에 실제 식별자, 민감정보, 원본 데이터가 노출되는가?",
+      "demo_trigger": ["RAW_IDENTIFIER_PRESENT", "PII_PRESENT", "SECRET_PRESENT"],
+      "priority_weight": 1.0,
+      "reason": "Safety and submission security requirement."
+    }
+  ],
+  "d4d_cop_mapping": {
+    "semantic_event": {
+      "doctrine_analogy": "SPOTREP-like event or staff update",
+      "explanation": "A compact operationally meaningful report derived from one or more observations."
+    },
+    "evidence_bundle": {
+      "doctrine_analogy": "running estimate / intelligence summary support",
+      "explanation": "Keeps source references, confidence, trust, freshness, and disagreement visible."
+    },
+    "priority_packet": {
+      "doctrine_analogy": "degraded-network message selection",
+      "explanation": "Determines what survives when only a limited number of messages can move."
+    },
+    "grounded_briefing": {
+      "doctrine_analogy": "commander update / situation summary",
+      "explanation": "Summarizes only evidence-backed claims and recommended actions."
+    },
+    "network_mode": {
+      "doctrine_analogy": "communications condition / C2 link status",
+      "explanation": "Models how full sync, delta sync, semantic summary, store-forward, or local-only modes change what gets transmitted."
+    }
+  }
+}

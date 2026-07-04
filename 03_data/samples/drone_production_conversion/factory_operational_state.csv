@@ -1,0 +1,232 @@
+﻿row_type,id,factory_id,factory_name,part_category,part_label,finished_goods_units,wip_units,qa_hold_units,committed_units,available_to_ship_units,raw_material_days_on_hand,max_daily_output_units,frozen_quantity_units,freeze_until_day,shipment_kind,route_id,quantity_units,quantity_kg,progress_ratio,eta_hours,data_status
+inventory_wip,inv_fac_bc7e58b68d_airframe,fac_bc7e58b68d,(주)일흥,airframe,Airframe,140,135,45,0,151,22.1,99,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_4b5f75efa3_airframe,fac_4b5f75efa3,(주)파트라,airframe,Airframe,365,245,120,0,347,12.5,103,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_72253f4176_airframe,fac_72253f4176,동일정밀,airframe,Airframe,115,310,80,0,165,17.2,76,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_3a010122df_airframe,fac_3a010122df,본하이테크(주),airframe,Airframe,210,150,25,0,248,15.9,78,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_c647d0865d_airframe,fac_c647d0865d,에이테크솔루션(주),airframe,Airframe,290,165,75,3341,17,15.5,112,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_94c213e613_airframe,fac_94c213e613,정일금형정공(주),airframe,Airframe,195,350,75,2920,34,13.5,98,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_4ffe268ca6_airframe,fac_4ffe268ca6,(주)한국카본,airframe,Airframe,275,200,75,0,284,17.5,111,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_a05baacbd9_airframe,fac_a05baacbd9,(주)승우,airframe,Airframe,115,145,95,0,80,8.7,96,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_82ab4f0707_airframe,fac_82ab4f0707,대성플라스틱,airframe,Airframe,135,295,70,2400,0,14.4,81,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_bcb738a9ef_airframe,fac_bcb738a9ef,대진산업,airframe,Airframe,250,175,90,0,233,15.6,82,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_43edae06c8_airframe,fac_43edae06c8,서진산업(주) 경주공장,airframe,Airframe,345,300,95,0,376,6.4,103,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_f635077c6b_airframe,fac_f635077c6b,플라스틱옴니엄(주),airframe,Airframe,110,330,110,0,138,19.7,100,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_cc1c9e0bfe_airframe,fac_cc1c9e0bfe,(주)델타금형컴퍼니,airframe,Airframe,165,245,25,1339,135,7.8,77,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_0d7b9f0444_airframe,fac_0d7b9f0444,울산알루미늄(주),airframe,Airframe,335,430,90,0,425,16.9,102,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_14a678e0c4_airframe,fac_14a678e0c4,(주)일야,airframe,Airframe,175,345,125,0,194,19.9,108,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_2c18f288aa_airframe,fac_2c18f288aa,주식회사 신성기업,airframe,Airframe,140,230,40,0,196,17.7,68,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_7535e7d481_airframe,fac_7535e7d481,(주)데크카본,airframe,Airframe,130,250,55,0,180,13.7,96,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_62d7d9da1f_airframe,fac_62d7d9da1f,(주)에이엠피테크,airframe,Airframe,125,220,60,0,157,19.6,62,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_28241c338b_airframe,fac_28241c338b,(주)국영지앤엠,airframe,Airframe,360,385,115,0,406,11.4,102,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_ff5f895916_airframe,fac_ff5f895916,(주)삼우코리아,airframe,Airframe,370,260,130,0,349,10.5,112,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_b5a9465c28_airframe,fac_b5a9465c28,(주)일진유니스코,airframe,Airframe,270,220,105,0,257,23.7,99,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_2a0a6d1f44_airframe,fac_2a0a6d1f44,(주)하나금형,airframe,Airframe,115,325,85,0,166,9.4,84,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_f431574550_airframe,fac_f431574550,(주)우진플라임,airframe,Airframe,220,275,60,0,275,16.1,95,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_priority_115bd4ae5d_drone_assembly,fac_priority_115bd4ae5d,두산모빌리티이노베이션 / DMI,drone_assembly,Assembly,55,140,20,833,27,8.9,33,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_priority_a88e092d3c_drone_assembly,fac_priority_a88e092d3c,두산모빌리티이노베이션 / DMI,drone_assembly,Assembly,75,50,35,0,61,9.0,31,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_priority_dcd57f44db_drone_assembly,fac_priority_dcd57f44db,아쎄따 / ASSETTA,drone_assembly,Assembly,30,35,10,0,34,19.7,21,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_priority_a2d8939ba2_drone_assembly,fac_priority_a2d8939ba2,유비파이 / UVify,drone_assembly,Assembly,130,110,20,834,90,20.8,40,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_priority_2a8852932a_drone_assembly,fac_priority_2a8852932a,파블로항공 / PABLO AIR,drone_assembly,Assembly,150,150,35,0,178,15.7,44,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_priority_f1709ef7e1_drone_assembly,fac_priority_f1709ef7e1,프리뉴 / PRENEU,drone_assembly,Assembly,145,80,35,833,77,14.3,43,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_priority_370a54ec3d_drone_assembly,fac_priority_370a54ec3d,파블로항공 / PABLO AIR,drone_assembly,Assembly,135,70,15,0,149,13.2,39,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_priority_058abeb837_drone_assembly,fac_priority_058abeb837,파블로항공 / PABLO AIR,drone_assembly,Assembly,95,100,35,0,102,12.0,39,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_priority_fcbe04f951_drone_assembly,fac_priority_fcbe04f951,피앤유드론 / PNU Drone,drone_assembly,Assembly,50,85,35,0,50,5.7,31,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_priority_c8a807e8e7_drone_assembly,fac_priority_c8a807e8e7,니나노컴퍼니 / NINANO COMPANY,drone_assembly,Assembly,75,75,20,0,86,17.4,22,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_priority_6b3e5b31bb_drone_assembly,fac_priority_6b3e5b31bb,니나노컴퍼니 / NINANO COMPANY,drone_assembly,Assembly,70,35,20,0,64,16.7,25,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_priority_d8652de781_drone_assembly,fac_priority_d8652de781,본AI,drone_assembly,Assembly,170,150,25,834,142,18.9,48,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_priority_30f272099b_drone_assembly,fac_priority_30f272099b,아쎄따 / ASSETTA,drone_assembly,Assembly,45,85,15,0,65,10.7,19,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_priority_38de94e360_drone_assembly,fac_priority_38de94e360,유콘시스템 / UCONSYSTEM,drone_assembly,Assembly,100,105,25,833,53,20.9,45,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_priority_7660b03367_drone_assembly,fac_priority_7660b03367,대한항공 항공우주사업본부,drone_assembly,Assembly,170,145,80,833,84,15.9,70,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_priority_ffb4309405_drone_assembly,fac_priority_ffb4309405,피앤유드론 / PNU Drone,drone_assembly,Assembly,95,140,25,833,62,6.1,33,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_priority_79355b2c62_drone_assembly,fac_priority_79355b2c62,숨비 / SOOMVI,drone_assembly,Assembly,65,85,10,0,90,23.2,19,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_priority_ee105ea137_drone_assembly,fac_priority_ee105ea137,에이럭스 / ALUX,drone_assembly,Assembly,50,85,25,834,0,5.3,29,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_priority_3872d4e82a_drone_assembly,fac_priority_3872d4e82a,숨비 / SOOMVI,drone_assembly,Assembly,90,40,35,833,5,10.4,30,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_priority_4bcce541d9_drone_assembly,fac_priority_4bcce541d9,아스트로엑스 / AstroX,drone_assembly,Assembly,30,55,25,833,0,9.0,26,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_priority_5daa57ca08_drone_assembly,fac_priority_5daa57ca08,아쎄따 / ASSETTA,drone_assembly,Assembly,110,125,15,833,81,8.2,33,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_priority_d14c61f1b0_drone_assembly,fac_priority_d14c61f1b0,파블로항공 / PABLO AIR,drone_assembly,Assembly,80,170,20,834,65,15.9,45,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_639e547997_drone_assembly,fac_639e547997,(주)한성티앤아이,drone_assembly,Assembly,40,50,10,0,51,10.8,17,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_afa5a16158_flight_stack,fac_afa5a16158,(주)동희산업 수원지점,flight_stack,Flight Stack,220,235,80,0,238,20.9,68,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_2560cc10c8_flight_stack,fac_2560cc10c8,(주)로보스타,flight_stack,Flight Stack,175,210,65,0,198,18.1,67,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_9b86d99440_flight_stack,fac_9b86d99440,(주)매직디스플레이,flight_stack,Flight Stack,105,105,25,1782,0,15.8,60,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_163f1a11ee_flight_stack,fac_163f1a11ee,(주)모다이노칩,flight_stack,Flight Stack,180,265,50,0,241,18.4,72,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_3a6ca4bdf0_flight_stack,fac_3a6ca4bdf0,금성제어기(주),flight_stack,Flight Stack,95,235,30,0,163,10.4,61,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_0469d3cc51_flight_stack,fac_0469d3cc51,대덕전자(주),flight_stack,Flight Stack,120,105,80,2128,0,18.6,72,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_6e28ddc870_flight_stack,fac_6e28ddc870,대형정밀(주),flight_stack,Flight Stack,175,130,70,596,112,20.0,60,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_2efdf8c1a1_flight_stack,fac_2efdf8c1a1,인텍전기전자(주),flight_stack,Flight Stack,200,135,45,1881,61,6.1,63,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_6bedc85f6e_flight_stack,fac_6bedc85f6e,제이씨현전자(주),flight_stack,Flight Stack,195,255,20,1757,142,22.2,59,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_42e82c2139_flight_stack,fac_42e82c2139,한국SMT(주),flight_stack,Flight Stack,215,285,65,1856,121,12.7,62,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_e0e174d97d_flight_stack,fac_e0e174d97d,(주)테크노전자,flight_stack,Flight Stack,110,80,65,0,78,18.1,57,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_536d0d4da0_flight_stack,fac_536d0d4da0,(주)한누리시스템,flight_stack,Flight Stack,130,100,25,0,147,7.3,41,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_1dc7d89a05_flight_stack,fac_1dc7d89a05,(주)지오데코,flight_stack,Flight Stack,170,225,45,0,219,7.5,52,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_352a3afb22_flight_stack,fac_352a3afb22,(주)행성디지털,flight_stack,Flight Stack,170,310,35,0,265,6.1,68,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_3a88a5c6e6_flight_stack,fac_3a88a5c6e6,태동ENG,flight_stack,Flight Stack,55,165,50,0,74,15.1,48,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_e164a7ae4c_flight_stack,fac_e164a7ae4c,(주)이수페타시스,flight_stack,Flight Stack,190,285,15,0,294,5.7,67,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_bdab92bf13_flight_stack,fac_bdab92bf13,현대일렉트릭앤에너지시스템(주),flight_stack,Flight Stack,165,305,30,0,263,10.6,67,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_cc218ecfde_flight_stack,fac_cc218ecfde,현우산업(주),flight_stack,Flight Stack,125,325,35,0,226,11.3,71,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_d095f6a2a9_flight_stack,fac_d095f6a2a9,대우전자부품(주),flight_stack,Flight Stack,210,160,35,0,242,6.2,67,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_7a3bb005da_flight_stack,fac_7a3bb005da,(주)이녹스첨단소재,flight_stack,Flight Stack,75,220,50,0,117,6.7,66,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_e5bc0f3bbb_flight_stack,fac_e5bc0f3bbb,넥스콘테크놀러지(주),flight_stack,Flight Stack,100,95,40,0,99,17.7,61,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_eb78c3566e_flight_stack,fac_eb78c3566e,미래산업(주),flight_stack,Flight Stack,135,180,75,0,135,21.6,69,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_0266cd5574_flight_stack,fac_0266cd5574,(주)심텍,flight_stack,Flight Stack,240,290,55,0,306,8.2,73,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_5244c91c73_flight_stack,fac_5244c91c73,(주)파워로직스,flight_stack,Flight Stack,230,150,55,0,238,14.3,69,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_84841e186d_flight_stack,fac_84841e186d,아비코테크(주),flight_stack,Flight Stack,145,330,55,0,228,5.5,70,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_ec226a2984_harness,fac_ec226a2984,(주)명보케이블,harness,Harness,220,160,60,0,227,11.7,85,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_b12d89c034_harness,fac_b12d89c034,[주]유라코퍼레이션,harness,Harness,245,350,40,0,352,7.3,91,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_b0e7ca700a_harness,fac_b0e7ca700a,가온전선(주),harness,Harness,350,245,115,1660,205,8.9,98,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_19c4d87762_harness,fac_19c4d87762,주식회사 일신비츠온(제1공장),harness,Harness,240,210,95,0,233,20.1,84,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_057f46ae7f_harness,fac_057f46ae7f,(주)대건테크,harness,Harness,280,300,90,0,316,17.8,84,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_da18417347_harness,fac_da18417347,삼부전선(주),harness,Harness,95,315,50,0,177,23.1,78,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_4d329291e4_harness,fac_4d329291e4,(주)삼동,harness,Harness,105,230,40,0,161,23.2,82,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_8915634608_harness,fac_8915634608,LS전선(주)인동공장,harness,Harness,280,270,40,0,353,19.9,88,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_6e819607ce_harness,fac_6e819607ce,대륙전선(주)2공장,harness,Harness,155,130,60,0,149,6.7,61,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_6436530ffb_harness,fac_6436530ffb,타이코에이엠피(주),harness,Harness,240,335,60,0,320,17.3,82,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_de8898e30b_harness,fac_de8898e30b,고려전선(주),harness,Harness,115,415,90,0,199,21.1,87,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_798af9d574_harness,fac_798af9d574,기성전선(주),harness,Harness,135,230,50,0,181,24.0,78,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_ae8fc8c5c6_harness,fac_ae8fc8c5c6,(주)현대엘앤씨 엘텍 세종사업장,harness,Harness,270,115,80,0,238,15.3,85,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_a45f5853e9_harness,fac_a45f5853e9,(주)티엠씨,harness,Harness,125,210,60,0,153,5.8,98,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_3215491325_harness,fac_3215491325,대한전선(주),harness,Harness,210,265,80,3019,0,12.6,102,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_e9184ea9bd_harness,fac_e9184ea9bd,(주)금화전선,harness,Harness,210,295,20,2524,112,8.7,85,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_e9c585bf64_harness,fac_e9c585bf64,극동전선(주),harness,Harness,325,150,105,0,283,23.3,94,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_780cc26d8c_harness,fac_780cc26d8c,넥상스코리아(주),harness,Harness,205,305,30,0,303,23.3,93,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_18d73ec4e7_harness,fac_18d73ec4e7,한미전선(주),harness,Harness,175,175,75,2797,0,8.2,94,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_167cd638df_power,fac_167cd638df,(주)아이거텍알에프,power,Power,80,70,30,1237,0,22.8,42,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_8e09801f80_power,fac_8e09801f80,(주)에이비일렉콤,power,Power,60,85,20,0,75,17.6,31,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_af71cbeea9_power,fac_af71cbeea9,(주)피앤이솔루션,power,Power,75,195,50,0,106,13.5,49,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_3c49864f5e_power,fac_3c49864f5e,주식회사 에스피파워,power,Power,55,65,30,0,52,21.3,32,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_681c5ac79f_power,fac_681c5ac79f,주식회사 위저드쏠루션,power,Power,85,125,35,1064,17,16.5,36,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_1a38150c72_power,fac_1a38150c72,지에스피(주),power,Power,45,70,45,1262,0,23.0,42,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_5076e591a9_power,fac_5076e591a9,세방전지(주),power,Power,115,70,45,0,99,5.2,50,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_32278c84ac_power,fac_32278c84ac,(유)클라리오스델코,power,Power,180,105,60,0,164,20.2,52,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_673f38594f_power,fac_673f38594f,(주)에코프로지이엠,power,Power,90,145,40,0,110,19.4,52,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_8faf03f243_power,fac_8faf03f243,(주)엘앤에프,power,Power,90,180,35,0,130,18.0,47,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_010df10a77_power,fac_010df10a77,LG전자(주) A1공장,power,Power,125,100,50,0,117,21.9,52,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_cf822580e7_power,fac_cf822580e7,도레이배터리세퍼레이터필름한국(유),power,Power,185,80,45,0,173,21.9,52,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_f331d39f34_power,fac_f331d39f34,세방산업(주),power,Power,160,155,50,0,175,13.6,48,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_fed37ec3af_power,fac_fed37ec3af,세방전지(주),power,Power,135,180,30,0,180,15.3,50,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_297cb359e5_power,fac_297cb359e5,(주)에스제이신소재,power,Power,120,180,15,0,180,19.0,42,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_3c5c35ccaa_power,fac_3c5c35ccaa,(주)엘바텍,power,Power,125,125,20,0,157,16.0,36,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_469ba77679_power,fac_469ba77679,삼성에스디아이(주),power,Power,85,80,35,0,83,17.7,48,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_e693f6eff8_power,fac_e693f6eff8,원광전력(주),power,Power,100,105,25,0,119,17.1,31,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_40abaf57ad_power,fac_40abaf57ad,(주)엘지화학,power,Power,70,100,50,1460,0,21.2,49,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_76a1a776e6_power,fac_76a1a776e6,(주)비츠로셀,power,Power,105,220,40,0,157,17.3,53,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_20b0a23ce0_power,fac_20b0a23ce0,(주)타보스,power,Power,130,130,45,1138,48,22.4,38,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_c788629a58_power,fac_c788629a58,SK이노베이션(주),power,Power,95,180,40,1559,6,10.7,52,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_37c2239e67_power,fac_37c2239e67,주식회사 코캄 3공장,power,Power,155,135,50,0,161,6.2,46,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_8ad22b0771_power,fac_8ad22b0771,(주)아이티엠반도체 (2공장),power,Power,135,120,10,0,175,21.5,50,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_91e0701f06_power,fac_91e0701f06,(주)에코프로비엠 (3공장),power,Power,60,125,50,0,62,19.8,56,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_a7c39b4765_power,fac_a7c39b4765,(주)엘지화학청주공장,power,Power,170,105,15,0,199,12.6,53,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_91c24dafa3_propulsion,fac_91c24dafa3,(주)대성환경건설,propulsion,Propulsion,415,600,120,0,547,20.1,127,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_1d8ca5b561_propulsion,fac_1d8ca5b561,(주)네오티스,propulsion,Propulsion,370,545,85,0,513,22.5,149,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_4aeb6288f1_propulsion,fac_4aeb6288f1,(주)아모텍,propulsion,Propulsion,375,465,165,0,405,22.3,153,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_e67713f287_propulsion,fac_e67713f287,(주)에스씨디,propulsion,Propulsion,480,580,100,4900,231,7.9,165,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_6884b83922_propulsion,fac_6884b83922,(주)원진일렉트로닉스,propulsion,Propulsion,580,735,150,4826,352,18.2,162,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_083c0288da_propulsion,fac_083c0288da,대화기전(주),propulsion,Propulsion,500,380,45,4653,242,16.9,157,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_df3d5b6432_propulsion,fac_df3d5b6432,상훈전기,propulsion,Propulsion,120,355,25,0,244,8.2,100,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_b9b6abc2fa_propulsion,fac_b9b6abc2fa,한국보우모터스 주식회사,propulsion,Propulsion,295,320,125,3910,0,12.3,132,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_af17d777fb_propulsion,fac_af17d777fb,대상공업,propulsion,Propulsion,245,525,45,0,420,22.4,128,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_7f2271c9dd_propulsion,fac_7f2271c9dd,에이지테크(주),propulsion,Propulsion,310,560,85,0,460,22.8,148,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_a361915069_propulsion,fac_a361915069,하이젠 모터(주),propulsion,Propulsion,500,550,115,0,616,19.2,151,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_0813d27406_propulsion,fac_0813d27406,효성중공업㈜ 창원3공장,propulsion,Propulsion,405,605,45,0,614,5.1,160,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_a10886c3e8_propulsion,fac_a10886c3e8,(주)귀뚜라미,propulsion,Propulsion,270,270,180,0,203,5.1,153,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_a031ba9d5f_propulsion,fac_a031ba9d5f,(주)성화주공,propulsion,Propulsion,175,215,40,0,225,14.1,118,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_bc7e3d7431_propulsion,fac_bc7e3d7431,(주)투엠모터스,propulsion,Propulsion,235,310,85,0,280,15.9,123,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_d6a4b95723_propulsion,fac_d6a4b95723,발레오전장시스템스코리아(주),propulsion,Propulsion,420,505,185,0,447,23.6,167,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_c9c7e34696_propulsion,fac_c9c7e34696,(주)세신정밀,propulsion,Propulsion,395,225,50,0,439,19.6,146,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_ac58a3f4c3_propulsion,fac_ac58a3f4c3,동성정밀,propulsion,Propulsion,265,290,95,0,291,19.1,83,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_a4d3f730aa_propulsion,fac_a4d3f730aa,에코모터,propulsion,Propulsion,240,375,110,3019,46,12.1,102,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_d1da85bcf5_propulsion,fac_d1da85bcf5,(주)나우테크,propulsion,Propulsion,330,565,165,0,402,13.6,154,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_ae8a9b41b2_propulsion,fac_ae8a9b41b2,(주)삼양감속기,propulsion,Propulsion,525,465,65,0,655,21.2,148,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_556f1aeb9b_propulsion,fac_556f1aeb9b,(주)에스엠알 효상,propulsion,Propulsion,250,350,105,0,292,7.1,134,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_496dda5a33_propulsion,fac_496dda5a33,(주)에스피지,propulsion,Propulsion,355,260,130,4405,0,14.3,148,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_c8932790b4_propulsion,fac_c8932790b4,(주)에스피지,propulsion,Propulsion,160,205,70,0,176,10.4,146,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_2a64fe1bb2_propulsion,fac_2a64fe1bb2,(주)에이치에스지,propulsion,Propulsion,185,565,60,0,362,7.5,141,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_e0b53a21c4_propulsion,fac_e0b53a21c4,(주)동해기계항공 제1공장,propulsion,Propulsion,155,365,120,0,188,7.2,138,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_5e0ed24c76_propulsion,fac_5e0ed24c76,(주)맥슨모터매뉴팩처링,propulsion,Propulsion,235,345,40,0,339,13.7,128,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_163be2959d_propulsion,fac_163be2959d,(주)성일,propulsion,Propulsion,180,530,45,0,357,18.7,127,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_2980ed5ec0_propulsion,fac_2980ed5ec0,(주)포스코인터내셔널 TMC사업부 천안사업장,propulsion,Propulsion,485,635,120,0,631,23.4,147,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_1b2d96e204_propulsion,fac_1b2d96e204,디와이오토(주),propulsion,Propulsion,395,340,85,0,452,10.8,160,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_cb50eed1fd_qa_packaging,fac_cb50eed1fd,(주)신안포장,qa_packaging,QA,330,300,40,3415,143,6.9,115,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_4edd5921dd_qa_packaging,fac_4edd5921dd,(주)에이치시티,qa_packaging,QA,165,305,125,0,168,11.8,117,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_d4214bd4bb_qa_packaging,fac_d4214bd4bb,(주)테크윙,qa_packaging,QA,260,200,40,0,304,8.4,113,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_ee30082ddc_qa_packaging,fac_ee30082ddc,미래포장(주),qa_packaging,QA,230,300,65,3391,20,5.3,114,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_be98174b87_qa_packaging,fac_be98174b87,양지포장,qa_packaging,QA,250,430,80,3069,105,17.2,103,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_6bcca01c50_qa_packaging,fac_6bcca01c50,율촌화학(주) 전자소재공장,qa_packaging,QA,310,205,115,0,281,14.6,132,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_8fd2d14ece_qa_packaging,fac_8fd2d14ece,(주)태광수출포장,qa_packaging,QA,280,500,65,125,415,10.8,108,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_6900a30db0_qa_packaging,fac_6900a30db0,대성포장공업(주),qa_packaging,QA,130,220,105,0,117,16.9,110,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_2dd35dba74_qa_packaging,fac_2dd35dba74,원창포장공업(주),qa_packaging,QA,285,205,60,0,311,9.9,114,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_01299e64cd_qa_packaging,fac_01299e64cd,코리아수출포장공업사,qa_packaging,QA,260,330,50,0,348,15.5,97,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_3d125ce937_qa_packaging,fac_3d125ce937,(주)삼광,qa_packaging,QA,395,315,30,0,497,20.5,115,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_9f57830577_qa_packaging,fac_9f57830577,태림포장(주) 구미공장,qa_packaging,QA,215,295,30,0,308,20.4,113,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_8db85fcb64_qa_packaging,fac_8db85fcb64,신흥목재포장(주),qa_packaging,QA,310,350,45,0,412,6.1,111,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_96232c46be_qa_packaging,fac_96232c46be,리노공업(주),qa_packaging,QA,305,420,40,0,441,6.4,111,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_d81a18f1ad_qa_packaging,fac_d81a18f1ad,(주)서영,qa_packaging,QA,185,155,130,0,120,21.5,112,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_52f1fa8316_qa_packaging,fac_52f1fa8316,롯데알미늄(주)기공사업본부,qa_packaging,QA,310,300,75,0,361,17.3,118,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_5be23269c4_qa_packaging,fac_5be23269c4,조광수출포장,qa_packaging,QA,345,400,35,0,478,8.3,100,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_a2ac22681a_qa_packaging,fac_a2ac22681a,(주)퍼시픽패키지,qa_packaging,QA,235,265,75,0,271,12.8,142,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_98233090d1_qa_packaging,fac_98233090d1,동광판지(주),qa_packaging,QA,380,310,50,0,460,9.3,118,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_ddc847b2dc_qa_packaging,fac_ddc847b2dc,태림포장(주),qa_packaging,QA,380,370,70,0,465,16.6,116,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_80fa3bde4b_sensor_payload,fac_80fa3bde4b,(주)광명전기,sensor_payload,Sensor,175,155,35,0,205,11.4,75,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_63c5738482_sensor_payload,fac_63c5738482,(주)세코닉스,sensor_payload,Sensor,105,115,30,0,123,9.9,72,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_39453d026e_sensor_payload,fac_39453d026e,부원광학(주),sensor_payload,Sensor,155,145,60,2178,0,15.6,73,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_700aec486e_sensor_payload,fac_700aec486e,케이에스아이㈜,sensor_payload,Sensor,200,205,25,1289,158,13.0,74,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_5b9b5c4665_sensor_payload,fac_5b9b5c4665,(주)삼양옵틱스,sensor_payload,Sensor,205,240,65,2301,56,14.3,78,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_b40c1bdfbc_sensor_payload,fac_b40c1bdfbc,기진정밀,sensor_payload,Sensor,90,280,50,0,157,15.0,60,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_ddcdfe1cc5_sensor_payload,fac_ddcdfe1cc5,한국토키나,sensor_payload,Sensor,195,150,25,0,233,7.3,64,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_3b80fa9b93_sensor_payload,fac_3b80fa9b93,아이오솔루션(주),sensor_payload,Sensor,75,80,40,0,68,10.3,58,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_b2b985fe08_sensor_payload,fac_b2b985fe08,(주)에이프로테크놀로지,sensor_payload,Sensor,255,165,40,0,284,14.1,72,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_7d4287308e_sensor_payload,fac_7d4287308e,(주)케이씨이,sensor_payload,Sensor,250,295,25,0,348,23.1,70,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_574770868e_sensor_payload,fac_574770868e,(주)한광옵토,sensor_payload,Sensor,130,210,75,2178,0,8.8,73,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_a0492a505b_sensor_payload,fac_a0492a505b,(주)소모에너지엔테크놀러지 담양공장 제2공장,sensor_payload,Sensor,190,225,80,0,204,23.3,69,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_89f58aa11a_sensor_payload,fac_89f58aa11a,(유)제이씨기술정보통신,sensor_payload,Sensor,155,220,35,0,212,5.7,52,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+inventory_wip,inv_fac_864caccf17_sensor_payload,fac_864caccf17,(주)그린광학 (1공장),sensor_payload,Sensor,150,210,75,2054,0,20.6,69,,,,,,,,,synthetic_placeholder_for_erp_mes_join
+frozen_order,ord_frozen_001,fac_e67713f287,(주)에스씨디,propulsion,Motor / Propulsion,,,,,,,,1333,7,,,,,,,synthetic_placeholder_for_erp_procurement_join
+frozen_order,ord_frozen_002,fac_6884b83922,(주)원진일렉트로닉스,propulsion,Motor / Propulsion,,,,,,,,2411,6,,,,,,,synthetic_placeholder_for_erp_procurement_join
+frozen_order,ord_frozen_003,fac_083c0288da,대화기전(주),propulsion,Motor / Propulsion,,,,,,,,956,3,,,,,,,synthetic_placeholder_for_erp_procurement_join
+frozen_order,ord_frozen_004,fac_496dda5a33,(주)에스피지,propulsion,Motor / Propulsion,,,,,,,,1420,4,,,,,,,synthetic_placeholder_for_erp_procurement_join
+frozen_order,ord_frozen_005,fac_b9b6abc2fa,한국보우모터스 주식회사,propulsion,Motor / Propulsion,,,,,,,,1500,6,,,,,,,synthetic_placeholder_for_erp_procurement_join
+frozen_order,ord_frozen_006,fac_cb50eed1fd,(주)신안포장,qa_packaging,Test / Packaging,,,,,,,,1722,5,,,,,,,synthetic_placeholder_for_erp_procurement_join
+frozen_order,ord_frozen_007,fac_ee30082ddc,미래포장(주),qa_packaging,Test / Packaging,,,,,,,,1695,8,,,,,,,synthetic_placeholder_for_erp_procurement_join
+frozen_order,ord_frozen_008,fac_c647d0865d,에이테크솔루션(주),airframe,Airframe / Materials,,,,,,,,938,6,,,,,,,synthetic_placeholder_for_erp_procurement_join
+frozen_order,ord_frozen_009,fac_be98174b87,양지포장,qa_packaging,Test / Packaging,,,,,,,,1228,7,,,,,,,synthetic_placeholder_for_erp_procurement_join
+frozen_order,ord_frozen_010,fac_3215491325,대한전선(주),harness,Harness / Connector,,,,,,,,1554,5,,,,,,,synthetic_placeholder_for_erp_procurement_join
+frozen_order,ord_frozen_011,fac_a4d3f730aa,에코모터,propulsion,Motor / Propulsion,,,,,,,,852,2,,,,,,,synthetic_placeholder_for_erp_procurement_join
+frozen_order,ord_frozen_012,fac_94c213e613,정일금형정공(주),airframe,Airframe / Materials,,,,,,,,778,7,,,,,,,synthetic_placeholder_for_erp_procurement_join
+frozen_order,ord_frozen_013,fac_18d73ec4e7,한미전선(주),harness,Harness / Connector,,,,,,,,1332,8,,,,,,,synthetic_placeholder_for_erp_procurement_join
+frozen_order,ord_frozen_014,fac_e9184ea9bd,(주)금화전선,harness,Harness / Connector,,,,,,,,602,5,,,,,,,synthetic_placeholder_for_erp_procurement_join
+frozen_order,ord_frozen_015,fac_82ab4f0707,대성플라스틱,airframe,Airframe / Materials,,,,,,,,875,4,,,,,,,synthetic_placeholder_for_erp_procurement_join
+frozen_order,ord_frozen_016,fac_5b9b5c4665,(주)삼양옵틱스,sensor_payload,Sensor / Camera,,,,,,,,512,6,,,,,,,synthetic_placeholder_for_erp_procurement_join
+frozen_order,ord_frozen_017,fac_39453d026e,부원광학(주),sensor_payload,Sensor / Camera,,,,,,,,417,7,,,,,,,synthetic_placeholder_for_erp_procurement_join
+frozen_order,ord_frozen_018,fac_574770868e,(주)한광옵토,sensor_payload,Sensor / Camera,,,,,,,,502,2,,,,,,,synthetic_placeholder_for_erp_procurement_join
+frozen_order,ord_frozen_019,fac_0469d3cc51,대덕전자(주),flight_stack,Flight Stack / Electronics,,,,,,,,1057,2,,,,,,,synthetic_placeholder_for_erp_procurement_join
+frozen_order,ord_frozen_020,fac_864caccf17,(주)그린광학 (1공장),sensor_payload,Sensor / Camera,,,,,,,,758,4,,,,,,,synthetic_placeholder_for_erp_procurement_join
+frozen_order,ord_frozen_021,fac_2efdf8c1a1,인텍전기전자(주),flight_stack,Flight Stack / Electronics,,,,,,,,521,7,,,,,,,synthetic_placeholder_for_erp_procurement_join
+frozen_order,ord_frozen_022,fac_42e82c2139,한국SMT(주),flight_stack,Flight Stack / Electronics,,,,,,,,358,6,,,,,,,synthetic_placeholder_for_erp_procurement_join
+frozen_order,ord_frozen_023,fac_9b86d99440,(주)매직디스플레이,flight_stack,Flight Stack / Electronics,,,,,,,,609,3,,,,,,,synthetic_placeholder_for_erp_procurement_join
+frozen_order,ord_frozen_024,fac_6bedc85f6e,제이씨현전자(주),flight_stack,Flight Stack / Electronics,,,,,,,,528,3,,,,,,,synthetic_placeholder_for_erp_procurement_join
+in_transit_shipment,ship_prod_001,fac_e67713f287,(주)에스씨디,propulsion,Propulsion,,,,,,,,,,component_factory_to_final_assembly_factory,route_baseline_fac_e67713f287_fac_priority_a2d8939ba2,370,,0.713,0.15,synthetic_placeholder_for_tms_join
+in_transit_shipment,ship_prod_002,fac_6884b83922,(주)원진일렉트로닉스,propulsion,Propulsion,,,,,,,,,,component_factory_to_final_assembly_factory,route_baseline_fac_6884b83922_fac_priority_f1709ef7e1,722,,0.255,0.44,synthetic_placeholder_for_tms_join
+in_transit_shipment,ship_prod_003,fac_083c0288da,대화기전(주),propulsion,Propulsion,,,,,,,,,,component_factory_to_final_assembly_factory,route_baseline_fac_083c0288da_fac_priority_f1709ef7e1,498,,0.441,0.28,synthetic_placeholder_for_tms_join
+in_transit_shipment,ship_prod_004,fac_496dda5a33,(주)에스피지,propulsion,Propulsion,,,,,,,,,,component_factory_to_final_assembly_factory,route_baseline_fac_496dda5a33_fac_priority_4bcce541d9,279,,0.512,0.15,synthetic_placeholder_for_tms_join
+in_transit_shipment,ship_prod_005,fac_b9b6abc2fa,한국보우모터스 주식회사,propulsion,Propulsion,,,,,,,,,,component_factory_to_final_assembly_factory,route_baseline_fac_b9b6abc2fa_fac_priority_f1709ef7e1,402,,0.257,0.96,synthetic_placeholder_for_tms_join
+in_transit_shipment,ship_prod_006,fac_cb50eed1fd,(주)신안포장,qa_packaging,QA,,,,,,,,,,component_factory_to_final_assembly_factory,route_baseline_fac_cb50eed1fd_fac_priority_d14c61f1b0,250,,0.701,0.21,synthetic_placeholder_for_tms_join
+in_transit_shipment,ship_prod_007,fac_ee30082ddc,미래포장(주),qa_packaging,QA,,,,,,,,,,component_factory_to_final_assembly_factory,route_baseline_fac_ee30082ddc_fac_priority_a2d8939ba2,456,,0.872,0.03,synthetic_placeholder_for_tms_join
+in_transit_shipment,ship_prod_008,fac_c647d0865d,에이테크솔루션(주),airframe,Airframe,,,,,,,,,,component_factory_to_final_assembly_factory,route_baseline_fac_c647d0865d_fac_priority_a2d8939ba2,360,,0.738,0.13,synthetic_placeholder_for_tms_join
+in_transit_shipment,ship_prod_009,fac_be98174b87,양지포장,qa_packaging,QA,,,,,,,,,,component_factory_to_final_assembly_factory,route_baseline_fac_be98174b87_fac_priority_f1709ef7e1,469,,0.287,0.68,synthetic_placeholder_for_tms_join
+in_transit_shipment,ship_prod_010,fac_3215491325,대한전선(주),harness,Harness,,,,,,,,,,component_factory_to_final_assembly_factory,route_baseline_fac_3215491325_fac_priority_38de94e360,224,,0.462,0.71,synthetic_placeholder_for_tms_join
+in_transit_shipment,ship_prod_011,fac_a4d3f730aa,에코모터,propulsion,Propulsion,,,,,,,,,,component_factory_to_final_assembly_factory,route_baseline_fac_a4d3f730aa_fac_priority_4bcce541d9,486,,0.813,0.06,synthetic_placeholder_for_tms_join
+in_transit_shipment,ship_prod_012,fac_94c213e613,정일금형정공(주),airframe,Airframe,,,,,,,,,,component_factory_to_final_assembly_factory,route_baseline_fac_94c213e613_fac_priority_a2d8939ba2,323,,0.667,0.17,synthetic_placeholder_for_tms_join
+in_transit_shipment,ship_prod_013,fac_18d73ec4e7,한미전선(주),harness,Harness,,,,,,,,,,component_factory_to_final_assembly_factory,route_baseline_fac_18d73ec4e7_fac_priority_38de94e360,215,,0.323,0.45,synthetic_placeholder_for_tms_join
+in_transit_shipment,ship_prod_014,fac_e9184ea9bd,(주)금화전선,harness,Harness,,,,,,,,,,component_factory_to_final_assembly_factory,route_baseline_fac_e9184ea9bd_fac_priority_38de94e360,381,,0.293,0.56,synthetic_placeholder_for_tms_join
+in_transit_shipment,ship_prod_015,fac_82ab4f0707,대성플라스틱,airframe,Airframe,,,,,,,,,,component_factory_to_final_assembly_factory,route_baseline_fac_82ab4f0707_fac_priority_d8652de781,297,,0.216,0.34,synthetic_placeholder_for_tms_join
+in_transit_shipment,ship_prod_016,fac_5b9b5c4665,(주)삼양옵틱스,sensor_payload,Sensor,,,,,,,,,,component_factory_to_final_assembly_factory,route_baseline_fac_5b9b5c4665_fac_priority_7660b03367,381,,0.583,0.29,synthetic_placeholder_for_tms_join
+in_transit_shipment,ship_prod_017,fac_39453d026e,부원광학(주),sensor_payload,Sensor,,,,,,,,,,component_factory_to_final_assembly_factory,route_baseline_fac_39453d026e_fac_priority_f1709ef7e1,321,,0.798,0.11,synthetic_placeholder_for_tms_join
+in_transit_shipment,ship_prod_018,fac_574770868e,(주)한광옵토,sensor_payload,Sensor,,,,,,,,,,component_factory_to_final_assembly_factory,route_baseline_fac_574770868e_fac_priority_d14c61f1b0,335,,0.639,0.17,synthetic_placeholder_for_tms_join
+in_transit_shipment,ship_res_019,fac_3a88a5c6e6,태동ENG,flight_stack,Urban Mining,,,,,,,,,,resource_to_factory,resource_route_baseline_res_6f5706c533_fac_3a88a5c6e6,,711,0.802,0.03,synthetic_placeholder_for_tms_join
+in_transit_shipment,ship_res_020,fac_3c49864f5e,주식회사 에스피파워,power,Battery Material,,,,,,,,,,resource_to_factory,resource_route_baseline_res_cfeeeaca30_fac_3c49864f5e,,223,0.647,0.02,synthetic_placeholder_for_tms_join
+in_transit_shipment,ship_res_021,fac_df3d5b6432,상훈전기,propulsion,NdFeB / Magnet,,,,,,,,,,resource_to_factory,resource_route_baseline_res_eb9ae8b021_fac_df3d5b6432,,284,0.776,0.08,synthetic_placeholder_for_tms_join
+in_transit_shipment,ship_res_022,fac_8e09801f80,(주)에이비일렉콤,power,Battery Material,,,,,,,,,,resource_to_factory,resource_route_baseline_res_69aabe04a8_fac_8e09801f80,,101,0.523,0.07,synthetic_placeholder_for_tms_join
+in_transit_shipment,ship_res_023,fac_2c18f288aa,주식회사 신성기업,airframe,Composite,,,,,,,,,,resource_to_factory,resource_route_baseline_res_7e7af48ca0_fac_2c18f288aa,,85,0.599,0.07,synthetic_placeholder_for_tms_join
+in_transit_shipment,ship_res_024,fac_3a010122df,본하이테크(주),airframe,Composite,,,,,,,,,,resource_to_factory,resource_route_baseline_res_48b967f945_fac_3a010122df,,259,0.305,0.05,synthetic_placeholder_for_tms_join
+in_transit_shipment,ship_res_025,fac_62d7d9da1f,(주)에이엠피테크,airframe,Composite,,,,,,,,,,resource_to_factory,resource_route_baseline_res_d8af4ff6e0_fac_62d7d9da1f,,224,0.813,0.03,synthetic_placeholder_for_tms_join
+in_transit_shipment,ship_res_026,fac_6e819607ce,대륙전선(주)2공장,harness,Urban Mining,,,,,,,,,,resource_to_factory,resource_route_baseline_res_1d4bb9f895_fac_6e819607ce,,119,0.68,0.03,synthetic_placeholder_for_tms_join
+in_transit_shipment,ship_res_027,fac_163be2959d,(주)성일,propulsion,NdFeB / Magnet,,,,,,,,,,resource_to_factory,resource_route_baseline_res_7e58fa0713_fac_163be2959d,,26,0.658,0.02,synthetic_placeholder_for_tms_join

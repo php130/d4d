@@ -1,0 +1,7 @@
+packet_id,event_id,asset_id,payload_tier,case_ids_json,priority,bytes_raw_represented,bytes_semantic,requires_ack,rejoin_audit_required
+sdot_uav_s1_status_summary,evt_uav_s1_status_summary,uav_s1,STATUS_CARD,"[""case_a_normal""]",0.346,96000,360,False,False
+sdot_uav_s1_link_degraded,evt_uav_s1_link_degraded,uav_s1,LINK_HEALTH_CARD,"[""case_b_link_degraded"",""case_c_gnss_jamming_suspected"",""case_d_spoofing_like_inconsistency""]",0.638,240000,520,False,False
+sdot_uav_s1_gnss_degraded,evt_uav_s1_gnss_degraded,uav_s1,NAV_HEALTH_CARD,"[""case_c_gnss_jamming_suspected""]",0.775,192000,640,True,False
+sdot_uav_s1_jamming_suspected,evt_uav_s1_jamming_suspected,uav_s1,NAV_HEALTH_CARD,"[""case_c_gnss_jamming_suspected""]",0.868,18442000,920,True,True
+sdot_uav_s1_spoofing_suspected,evt_uav_s1_spoofing_suspected,uav_s1,NAV_INTEGRITY_CARD,"[""case_d_spoofing_like_inconsistency""]",0.827,402000,820,False,False
+sdot_uav_s1_rejoin_audit_required,evt_uav_s1_rejoin_audit_required,uav_s1,REJOIN_AUDIT_CARD,"[""case_e_rejoin_audit""]",0.725,18322000,760,False,True

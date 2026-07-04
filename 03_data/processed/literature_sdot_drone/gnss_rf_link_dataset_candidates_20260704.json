@@ -1,0 +1,235 @@
+{
+  "metadata": {
+    "dataset_id": "sdot_drone_gnss_rf_link_dataset_candidates_20260704",
+    "created_at": "2026-07-04T17:55:00+09:00",
+    "purpose": "Candidate public GNSS, RF, and link-health datasets for S-DOT drone semantic transmission research.",
+    "scope": "Defensive GNSS degradation/spoofing/jamming detection, drone RF/link context, wireless bearer feature calibration, synthetic data justification.",
+    "safety_note": "Use for defensive validation and feature calibration only. Do not infer real military routes, EW emitter locations, or operational tactics."
+  },
+  "classification_definitions": {
+    "candidate_validation": "Potentially useful for targeted sample ingestion or feature-range calibration after a concrete validation task is defined.",
+    "reference_only": "Useful for citations, design rationale, and modality awareness, but not recommended for immediate ingestion.",
+    "synthetic_required": "Data should be generated synthetically because public data is unavailable, sensitive, too operational, or not aligned with the demo object model."
+  },
+  "datasets": [
+    {
+      "dataset_id": "texbat",
+      "name": "Texas Spoofing Test Battery (TEXBAT)",
+      "classification": "candidate_validation",
+      "domain": "gnss_spoofing",
+      "data_type": ["recorded_gps_spoofing_scenarios", "raw_iq"],
+      "source_url": "https://radionavlab.ae.utexas.edu/texbat/",
+      "license_or_access": "research use encouraged; direct UT download referenced",
+      "best_sdot_use": ["spoofing_benchmark_context", "anti_spoofing_reference", "optional_iq_processing"],
+      "candidate_fields": ["spoofing_scenario_label", "iq_samples", "scenario_metadata"],
+      "limitations": ["GPS L1 benchmark, not drone telemetry", "large raw data processing required"]
+    },
+    {
+      "dataset_id": "oakbat_gps",
+      "name": "Oak Ridge Spoofing and Interference Test Battery (OAKBAT) - GPS",
+      "classification": "candidate_validation",
+      "domain": "gnss_spoofing_interference",
+      "data_type": ["binary_rf_recordings", "metadata", "configuration_files"],
+      "source_url": "https://doi.ccs.ornl.gov/dataset/d21dfe58-3af9-5ed8-9c97-693c12045aee",
+      "license_or_access": "Globus dataset download",
+      "best_sdot_use": ["reproducible_gnss_rf_reference", "future_sdr_feature_extraction"],
+      "candidate_fields": ["rf_recording_ref", "scenario_start_time", "signal_band", "metadata_ref"],
+      "limitations": ["requires SDR/GNSS processing", "not drone mission telemetry"]
+    },
+    {
+      "dataset_id": "fgi_jsdr",
+      "name": "FGI GNSS Jamming and Spoofing Dataset Repository (FGI-JSDR)",
+      "classification": "candidate_validation",
+      "domain": "gnss_jamming_spoofing",
+      "data_type": ["raw_gnss_iq", "gps_l1ca", "galileo_e1", "gps_l5", "galileo_e5a"],
+      "source_url": "https://www.maanmittauslaitos.fi/en/research/research/gnss-specialists/fgi-gnss-jamming-and-spoofing-dataset-repository-fgi-jsdr",
+      "related_tool_url": "https://github.com/nlsfi/FGI-GSRx",
+      "license_or_access": "public repository links via FGI/Fairdata",
+      "best_sdot_use": ["modern_gnss_attack_reference", "multi_frequency_feature_inspiration", "future_fgi_gsrx_processing"],
+      "candidate_fields": ["iq_data_ref", "signal_band", "spoofing_type", "jamming_condition"],
+      "limitations": ["processing requires FGI-GSRx or similar receiver", "not UAV-specific"]
+    },
+    {
+      "dataset_id": "yunnan_gnss_interference_spoofing",
+      "name": "GNSS Dataset (with Interference and Spoofing)",
+      "classification": "candidate_validation",
+      "domain": "gnss_receiver_features",
+      "data_type": ["raw_data", "processed_data", "clean_jamming_spoofing_scenarios"],
+      "source_url": "https://data.mendeley.com/datasets/ccdgjcfvn5/1",
+      "license_or_access": "CC BY 4.0",
+      "best_sdot_use": ["v0_7_feature_range_calibration", "cn0_dop_doppler_position_reference", "class_label_reference"],
+      "candidate_fields": ["cn0", "signal_spectrum", "doppler_shift", "pseudorange", "carrier_phase", "position", "dop", "scenario_label"],
+      "limitations": ["static receiver dataset", "not drone movement", "jamming/spoofing generation details should not be reused operationally"]
+    },
+    {
+      "dataset_id": "zenodo_gnss_jamming_spoofing_meaconing_2025",
+      "name": "GNSS Dataset Under Jamming, Spoofing, and Meaconing Conditions",
+      "classification": "candidate_validation",
+      "domain": "gnss_attack_conditions",
+      "data_type": ["ubx", "rinex", "rf_monitoring", "navigation_solutions"],
+      "source_url": "https://zenodo.org/records/15911359",
+      "license_or_access": "Zenodo open record; verify external resource access before ingestion",
+      "best_sdot_use": ["attack_condition_taxonomy", "dynamic_static_case_reference", "future_validation"],
+      "candidate_fields": ["attack_type", "power_level", "receiver_condition", "rinex_ref", "ubx_ref", "nav_solution_ref"],
+      "limitations": ["large external resources", "controlled test setting", "not drone-specific"]
+    },
+    {
+      "dataset_id": "dronerf_mendeley",
+      "name": "DroneRF Dataset",
+      "classification": "reference_only",
+      "domain": "drone_rf_detection",
+      "data_type": ["rf_recordings", "drone_mode_labels"],
+      "source_url": "https://data.mendeley.com/datasets/f4c2b4n755/1",
+      "license_or_access": "Mendeley dataset",
+      "best_sdot_use": ["rf_modality_reference", "drone_rf_mode_classification_reference"],
+      "candidate_fields": ["drone_mode", "rf_segment_ref", "background_rf_label"],
+      "limitations": ["not GNSS integrity", "not link degradation", "only 3 drones and background RF"]
+    },
+    {
+      "dataset_id": "aerpaw_dataset_12",
+      "name": "AERPAW Dataset-12: Rural A2G Channel Measurements at 3.3 GHz",
+      "classification": "candidate_validation",
+      "domain": "uav_wireless_link",
+      "data_type": ["iq_samples", "gps_coordinates", "rss_values", "trajectory"],
+      "source_url": "https://aerpaw.org/dataset/uav-based-signal-data-collected-at-varying-altitudes-and-sampling-rates-for-wireless-communication-studies/",
+      "license_or_access": "Dryad dataset link from AERPAW page",
+      "best_sdot_use": ["rss_feature_range", "link_health_feature_reference", "a2g_propagation_reference"],
+      "candidate_fields": ["rss", "gps_coordinates", "altitude", "sampling_rate", "iq_samples"],
+      "limitations": ["not jamming", "rural propagation dataset", "not tactical network policy"]
+    },
+    {
+      "dataset_id": "aerpaw_dataset_28",
+      "name": "AERPAW Multi-Modal RF Sensor and Radar Dataset for UAV Tracking",
+      "classification": "reference_only",
+      "domain": "uav_rf_radar_tracking",
+      "data_type": ["rf_sensor_measurements", "radar_measurements", "ground_truth_trajectories"],
+      "source_url": "https://aerpaw.org/dataset/multi-modal-rf-sensor-and-radar-dataset-for-uav-tracking/",
+      "license_or_access": "AERPAW dataset page",
+      "best_sdot_use": ["future_sensor_fusion_reference", "ground_truth_trajectory_reference"],
+      "candidate_fields": ["rf_position_estimate", "radar_measurement", "ground_truth_trajectory"],
+      "limitations": ["tracking dataset, not communication outage", "future use only"]
+    },
+    {
+      "dataset_id": "aerpaw_drone_rc_rf",
+      "name": "AERPAW Drone Remote Controller RF Signal Dataset",
+      "classification": "reference_only",
+      "domain": "drone_remote_controller_rf",
+      "data_type": ["rf_signals", "remote_controller_labels"],
+      "source_url": "https://aerpaw.org/dataset/drone-remote-controller-rf-signal-dataset/",
+      "license_or_access": "IEEE Dataport link from AERPAW page",
+      "best_sdot_use": ["counter_uas_rf_fingerprinting_reference", "interference_analysis_reference"],
+      "candidate_fields": ["rc_model", "rf_signal_ref", "frequency_band"],
+      "limitations": ["drones idle during capture", "Counter-UAS not S-DOT link health"]
+    },
+    {
+      "dataset_id": "deepsense_6g_scenario_23",
+      "name": "DeepSense 6G Scenario 23 / Sensing-Aided 6G Drone Communications",
+      "classification": "candidate_validation",
+      "domain": "drone_wireless_multimodal",
+      "data_type": ["wireless_received_power", "rgb_images", "gps_position", "height", "distance", "speed", "pitch", "roll"],
+      "source_url": "https://www.deepsense6g.net/",
+      "paper_url": "https://arxiv.org/html/2412.04734v1",
+      "license_or_access": "DeepSense dataset access flow; verify before ingestion",
+      "best_sdot_use": ["bearer_state_feature_inspiration", "link_prediction_reference", "multi_modal_drone_comm_reference"],
+      "candidate_fields": ["received_power", "gps_position", "height", "distance", "speed", "pitch", "roll", "rgb_image_ref"],
+      "limitations": ["not jamming", "mmWave/6G context", "dataset access path must be verified"]
+    },
+    {
+      "dataset_id": "ku_leuven_drone_rf",
+      "name": "KU Leuven Drone RF Dataset",
+      "classification": "reference_only",
+      "domain": "drone_rf_classification",
+      "data_type": ["iq_samples", "mat_files", "controlled_chamber_rf"],
+      "source_url": "https://rdr.kuleuven.be/dataset.xhtml?persistentId=doi:10.48804/HZRVNZ",
+      "license_or_access": "open access; large Globus transfer",
+      "best_sdot_use": ["rf_classification_reference", "novelty_detection_reference"],
+      "candidate_fields": ["iq_samples", "center_frequency", "sample_rate", "drone_controller_distance"],
+      "limitations": ["semi-anechoic chamber", "not field link degradation", "43.5 GB"]
+    },
+    {
+      "dataset_id": "maritime_gnss_antarctica",
+      "name": "Voyage to the Frozen Continent: Maritime GNSS & Jamming Dataset",
+      "classification": "reference_only",
+      "domain": "maritime_gnss_jamming",
+      "data_type": ["ubx_logs", "jamming_labels", "spectrum_waterfalls", "raw_observations"],
+      "source_url": "https://github.com/aljazblatnik/GNSS",
+      "license_or_access": "GitHub repository with Zenodo data link; license noted in repository",
+      "best_sdot_use": ["real_world_jamming_label_reference", "spectrum_waterfall_concept", "receiver_resilience_reference"],
+      "candidate_fields": ["jamming_label", "cn0", "spectrum_waterfall", "position_error", "satellite_visibility"],
+      "limitations": ["maritime vessel, not UAV", "large data volume", "not tactical"]
+    },
+    {
+      "dataset_id": "uav_lora_avalanche",
+      "name": "Experimental Dataset Using UAVs and LoRa Technology in Avalanche Scenarios",
+      "classification": "reference_only",
+      "domain": "uav_lora_rssi_snr",
+      "data_type": ["rssi", "snr", "gps_rtk_positions", "flight_trajectories"],
+      "source_url": "https://www.sciencedirect.com/science/article/pii/S2352340925009643",
+      "license_or_access": "ScienceDirect data article; verify data download path",
+      "best_sdot_use": ["rssi_snr_example", "uav_search_rescue_comm_reference"],
+      "candidate_fields": ["rssi", "snr", "receiver_position", "transmitter_position", "flight_path"],
+      "limitations": ["LoRa avalanche SaR context", "not jamming", "not tactical C2"]
+    },
+    {
+      "dataset_id": "uav_a2g_path_loss_mendeley",
+      "name": "Path Loss Data for UAV Channel Modeling",
+      "classification": "reference_only",
+      "domain": "uav_channel_modeling",
+      "data_type": ["simulation_path_loss", "free_space_path_loss", "excess_path_loss"],
+      "source_url": "https://data.mendeley.com/datasets/z97wrdk75y/1",
+      "license_or_access": "Mendeley dataset",
+      "best_sdot_use": ["path_loss_reference", "bearer_degradation_synthetic_calibration"],
+      "candidate_fields": ["total_path_loss", "free_space_path_loss", "excess_path_loss", "frequency"],
+      "limitations": ["simulation-derived", "not live packet loss", "not jamming"]
+    }
+  ],
+  "synthetic_required": [
+    {
+      "needed_data": "drone_mission_under_active_jamming_with_command_board_telemetry",
+      "reason": "Real data is sensitive, rare, and may expose operational behavior.",
+      "required_mock_fields": ["truth_position", "reported_position", "gnss_quality_metrics", "link_metrics", "operator_state"]
+    },
+    {
+      "needed_data": "combined_drone_gnss_link_eoir_local_cache_rejoin_timeline",
+      "reason": "Public datasets usually cover one modality and do not include S-DOT semantic packet/rejoin workflow.",
+      "required_mock_fields": ["raw_observations", "semantic_packets", "custody_chains", "rejoin_error_budget"]
+    },
+    {
+      "needed_data": "tactical_network_mode_transitions",
+      "reason": "Public wireless datasets do not encode tactical bearer policy states.",
+      "required_mock_fields": ["network_mode", "packet_policy", "send_defer_hold_decision"]
+    },
+    {
+      "needed_data": "operator_decision_labels_and_sdot_priority",
+      "reason": "These labels are product workflow semantics, not raw sensor measurements.",
+      "required_mock_fields": ["packet_priority_breakdown", "operator_reason_ko", "recommended_action"]
+    },
+    {
+      "needed_data": "rejoin_audit_truth_vs_prediction",
+      "reason": "Requires hidden truth and cached raw evidence timeline.",
+      "required_mock_fields": ["cached_truth_position", "predicted_position", "discrepancy_m", "contained_in_envelope"]
+    }
+  ],
+  "recommended_v0_7_fields": [
+    "cn0_dbhz_mean",
+    "satellite_count",
+    "hdop",
+    "vdop",
+    "doppler_shift_proxy",
+    "pseudorange_residual_proxy",
+    "rss_dbm",
+    "snr_bucket",
+    "packet_loss_pct",
+    "heartbeat_gap_sec",
+    "iq_data_ref",
+    "scenario_label",
+    "attack_condition_label"
+  ],
+  "recommended_next_actions": [
+    "Keep the public demo synthetic.",
+    "Use the Yunnan GNSS dataset for the first small feature-range smoke test if calibration is needed.",
+    "Use AERPAW Dataset-12 for RSS/GPS/link-health feature inspiration.",
+    "Avoid ingesting multi-GB RF/IQ datasets unless a specific validation question is defined.",
+    "Add source caveats to any UI or presentation claim that mentions jamming or spoofing."
+  ]
+}

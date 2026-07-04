@@ -1,0 +1,408 @@
+{
+  "run_id": "20260704_174645",
+  "checked_at": "2026-07-04T08:46:50.110461+00:00",
+  "summary": {
+    "source_count": 3,
+    "passed": 3,
+    "failed": 0
+  },
+  "results": [
+    {
+      "dataset_id": "yunnan_gnss_interference_spoofing",
+      "title": "GNSS Dataset (with Interference and Spoofing) Part I",
+      "source_url": "https://data.mendeley.com/datasets/ccdgjcfvn5/1",
+      "api_url": "https://data.mendeley.com/public-api/datasets/ccdgjcfvn5",
+      "source_kind": "mendeley_public_api",
+      "sdot_use": [
+        "GNSS C/N0, DOP, Doppler, pseudorange, position feature-range calibration",
+        "clean/jamming/spoofing receiver-state class reference"
+      ],
+      "ingestion_role": "best_gnss_feature_range_candidate",
+      "caveat": "Static receiver dataset; not a moving drone trajectory. Do not reuse offensive spoofing/jamming setup details.",
+      "source_check": {
+        "status": "passed",
+        "http_status": 200,
+        "content_type": "application/json; charset=utf-8",
+        "bytes": 165213
+      },
+      "inventory_status": "passed",
+      "doi": "10.17632/ccdgjcfvn5.1",
+      "license": "CC BY 4.0",
+      "publication_date": "2024-01-15T16:28:34.259Z",
+      "repository_size_bytes": 9215211601,
+      "repository_size_human": "8.58 GB",
+      "file_count": 216,
+      "sample_files": [
+        {
+          "filename": "0.zip",
+          "size_bytes": 42622804,
+          "size_human": "40.65 MB",
+          "content_type": "application/zip",
+          "file_id": "d06cbc7c-cd6e-4fba-8ac5-15f4c530e62a",
+          "has_download_url": true,
+          "status": "COMPLETED"
+        },
+        {
+          "filename": "0.zip",
+          "size_bytes": 43023307,
+          "size_human": "41.03 MB",
+          "content_type": "application/zip",
+          "file_id": "87f75fc2-0a38-44c6-b9c6-c38b9ec5de59",
+          "has_download_url": true,
+          "status": "COMPLETED"
+        },
+        {
+          "filename": "0.zip",
+          "size_bytes": 43140139,
+          "size_human": "41.14 MB",
+          "content_type": "application/zip",
+          "file_id": "206470c5-473d-4455-bd27-d83f686089dd",
+          "has_download_url": true,
+          "status": "COMPLETED"
+        },
+        {
+          "filename": "0.zip",
+          "size_bytes": 42629206,
+          "size_human": "40.65 MB",
+          "content_type": "application/zip",
+          "file_id": "cb18426a-60ce-475e-a999-ee20b4392bed",
+          "has_download_url": true,
+          "status": "COMPLETED"
+        },
+        {
+          "filename": "0.zip",
+          "size_bytes": 43823249,
+          "size_human": "41.79 MB",
+          "content_type": "application/zip",
+          "file_id": "6fccdb54-698f-4461-b9ca-dec47dae184e",
+          "has_download_url": true,
+          "status": "COMPLETED"
+        },
+        {
+          "filename": "0.zip",
+          "size_bytes": 44133229,
+          "size_human": "42.09 MB",
+          "content_type": "application/zip",
+          "file_id": "3c9529b2-977d-49c8-9403-848e60610559",
+          "has_download_url": true,
+          "status": "COMPLETED"
+        },
+        {
+          "filename": "0.zip",
+          "size_bytes": 43061490,
+          "size_human": "41.07 MB",
+          "content_type": "application/zip",
+          "file_id": "330cf6bc-9e08-4c5e-a97b-550de0a7571d",
+          "has_download_url": true,
+          "status": "COMPLETED"
+        },
+        {
+          "filename": "0.zip",
+          "size_bytes": 41963225,
+          "size_human": "40.02 MB",
+          "content_type": "application/zip",
+          "file_id": "f80fa4e7-b43f-4985-a382-711ede5a65d6",
+          "has_download_url": true,
+          "status": "COMPLETED"
+        },
+        {
+          "filename": "0.zip",
+          "size_bytes": 41830358,
+          "size_human": "39.89 MB",
+          "content_type": "application/zip",
+          "file_id": "71a163f5-2b02-4338-8aec-6dea2cd1a446",
+          "has_download_url": true,
+          "status": "COMPLETED"
+        },
+        {
+          "filename": "1.zip",
+          "size_bytes": 41442892,
+          "size_human": "39.52 MB",
+          "content_type": "application/zip",
+          "file_id": "9e60b2c2-be8e-4077-8f58-ddb8468ced0a",
+          "has_download_url": true,
+          "status": "COMPLETED"
+        },
+        {
+          "filename": "1.zip",
+          "size_bytes": 42379227,
+          "size_human": "40.42 MB",
+          "content_type": "application/zip",
+          "file_id": "8884c5db-f5ae-4485-9695-7b596b2f088c",
+          "has_download_url": true,
+          "status": "COMPLETED"
+        },
+        {
+          "filename": "1.zip",
+          "size_bytes": 41915593,
+          "size_human": "39.97 MB",
+          "content_type": "application/zip",
+          "file_id": "4b1c031d-36b9-4b8d-9223-b3280f9f8d13",
+          "has_download_url": true,
+          "status": "COMPLETED"
+        },
+        {
+          "filename": "1.zip",
+          "size_bytes": 42292457,
+          "size_human": "40.33 MB",
+          "content_type": "application/zip",
+          "file_id": "978ecf25-dda1-458b-ad5b-5bb5e04ccaeb",
+          "has_download_url": true,
+          "status": "COMPLETED"
+        },
+        {
+          "filename": "1.zip",
+          "size_bytes": 42329386,
+          "size_human": "40.37 MB",
+          "content_type": "application/zip",
+          "file_id": "c4020784-024d-4e35-ad97-098865394d2a",
+          "has_download_url": true,
+          "status": "COMPLETED"
+        },
+        {
+          "filename": "1.zip",
+          "size_bytes": 41851178,
+          "size_human": "39.91 MB",
+          "content_type": "application/zip",
+          "file_id": "5f826163-7a1b-4e10-84e4-4751b02eb6ba",
+          "has_download_url": true,
+          "status": "COMPLETED"
+        },
+        {
+          "filename": "1.zip",
+          "size_bytes": 41996039,
+          "size_human": "40.05 MB",
+          "content_type": "application/zip",
+          "file_id": "710b5f1a-8a4c-4cdf-96ab-ec58d97397d7",
+          "has_download_url": true,
+          "status": "COMPLETED"
+        },
+        {
+          "filename": "1.zip",
+          "size_bytes": 41919929,
+          "size_human": "39.98 MB",
+          "content_type": "application/zip",
+          "file_id": "618eec20-1065-44ef-8d8a-fde1f1afaa32",
+          "has_download_url": true,
+          "status": "COMPLETED"
+        },
+        {
+          "filename": "1.zip",
+          "size_bytes": 41132550,
+          "size_human": "39.23 MB",
+          "content_type": "application/zip",
+          "file_id": "cc27958a-ab0d-4d81-b9aa-a78b34eced06",
+          "has_download_url": true,
+          "status": "COMPLETED"
+        },
+        {
+          "filename": "10.zip",
+          "size_bytes": 41865024,
+          "size_human": "39.93 MB",
+          "content_type": "application/zip",
+          "file_id": "f415d34d-0f2b-40b1-bf77-f5ca0c17cc7a",
+          "has_download_url": true,
+          "status": "COMPLETED"
+        },
+        {
+          "filename": "10.zip",
+          "size_bytes": 42438435,
+          "size_human": "40.47 MB",
+          "content_type": "application/zip",
+          "file_id": "e13fe1d5-290b-443b-afe1-e50b366f3c82",
+          "has_download_url": true,
+          "status": "COMPLETED"
+        }
+      ],
+      "feature_terms": [
+        "C/N0",
+        "DOP",
+        "Doppler",
+        "pseudorange",
+        "carrier phase",
+        "GPS",
+        "GNSS",
+        "jamming",
+        "spoofing"
+      ],
+      "structure_notes": [
+        "Dataset is split into raw clean-data parts and a processed/attack-condition part.",
+        "Public description identifies normal, jamming-affected, and spoofing-affected receiver scenarios.",
+        "Description references five constellations and multiple signal bands; treat as receiver-feature calibration, not drone trajectory truth."
+      ],
+      "candidate_sdot_fields": [
+        "cn0_dbhz_mean",
+        "doppler_shift_proxy",
+        "pseudorange_residual_proxy",
+        "carrier_phase_quality_proxy",
+        "hdop",
+        "vdop",
+        "receiver_position_error_proxy",
+        "gnss_condition_label"
+      ],
+      "download_policy": "Optional small single-zip inspection only after selecting a concrete feature table. Never bulk-download the full 8.58GB during demo prep.",
+      "recommended_ingestion": "Use API metadata and selected small zip only after choosing a specific feature table; avoid bulk download."
+    },
+    {
+      "dataset_id": "aerpaw_dataset_12",
+      "title": "AERPAW Dataset-12: Rural air-to-ground channel measurements at 3.3 GHz",
+      "source_url": "https://aerpaw.org/dataset/uav-based-signal-data-collected-at-varying-altitudes-and-sampling-rates-for-wireless-communication-studies/",
+      "api_url": "https://datadryad.org/api/v2/datasets/doi%3A10.5061%2Fdryad.2z34tmpvv",
+      "source_kind": "dryad_api_plus_html",
+      "sdot_use": [
+        "UAV RSS/link-health feature-range calibration",
+        "GPS/RSS timestamp alignment and bearer-health model reference"
+      ],
+      "ingestion_role": "best_link_health_feature_range_candidate",
+      "caveat": "Large 150GB+ IQ archive; use metadata and README first, not bulk download.",
+      "source_check": {
+        "status": "passed",
+        "http_status": 200,
+        "content_type": "application/json; charset=utf-8",
+        "bytes": 8370
+      },
+      "html_check": {
+        "status": "passed",
+        "http_status": 200,
+        "content_type": "text/html; charset=utf-8",
+        "bytes": 46432
+      },
+      "inventory_status": "passed",
+      "doi": "doi:10.5061/dryad.2z34tmpvv",
+      "license": "https://spdx.org/licenses/CC0-1.0.html",
+      "publication_date": "2025-03-20",
+      "repository_size_bytes": 150837341337,
+      "repository_size_human": "140.48 GB",
+      "file_count": 4,
+      "sample_files": [
+        {
+          "filename": "README.md",
+          "size_human": "4.36 KB",
+          "download_path": "/downloads/file_stream/3529045"
+        },
+        {
+          "filename": "UAV-Based_Signal_Data_Collected_at_Varying_Altitudes_and_Sampling_Rates_for_Wireless_Communication_Studies.zip",
+          "size_human": "150.84 GB",
+          "download_path": "/downloads/file_stream/3529043"
+        },
+        {
+          "filename": "README.md",
+          "size_human": "3.96 KB",
+          "download_path": "/downloads/file_stream/3965306"
+        },
+        {
+          "filename": "UAV-Based_Signal_Data_Collected_at_Varying_Altitudes_and_Sampling_Rates_for_Wireless_Communication_Studies.zip",
+          "size_human": "150.84 GB",
+          "download_path": "/downloads/file_stream/3965303"
+        }
+      ],
+      "keywords": [
+        "Wireless communication",
+        "UAV",
+        "IQ Data",
+        "Signal Data",
+        "GPS",
+        "Received Signal Strength",
+        "RSS",
+        "SigMF",
+        "USRP B210",
+        "wireless",
+        "Altitude Variations",
+        "Sampling Rates"
+      ],
+      "feature_terms": [
+        "GPS",
+        "RSS",
+        "SigMF",
+        "IQ",
+        "trajectory",
+        "altitude",
+        "sampling rate"
+      ],
+      "structure_notes": [
+        "UAV follows repeated trajectories at 40m, 70m, and 100m altitude.",
+        "40m runs include 5MHz, 10MHz, and 20MHz sampling rates.",
+        "GPS coordinates are 1Hz; radio measurements are timestamped separately and aligned by interpolation.",
+        "Data uses SigMF metadata/data files and includes RSS measurements from fixed nodes LW1-LW5.",
+        "Dryad page exposes multiple file blocks; use the current Dryad API record as the authoritative dataset metadata."
+      ],
+      "candidate_sdot_fields": [
+        "rss_dbm",
+        "rss1_dbm",
+        "rss2_dbm",
+        "snr_bucket",
+        "gps_x",
+        "gps_y",
+        "gps_z",
+        "interpolated_mx",
+        "interpolated_my",
+        "interpolated_mz",
+        "altitude_m",
+        "sampling_rate_hz"
+      ],
+      "download_policy": "Use Dryad API/methods text and README-level metadata first. Avoid 150GB archive unless a small subset can be isolated.",
+      "recommended_ingestion": "Use README/API metadata now. Only ingest GPS/RSS metadata if a small subset can be isolated; do not bulk download 150GB archive."
+    },
+    {
+      "dataset_id": "zenodo_gnss_jamming_spoofing_meaconing_2025",
+      "title": "GNSS Dataset Under Jamming, Spoofing, and Meaconing Conditions",
+      "source_url": "https://zenodo.org/records/15911359",
+      "api_url": "https://zenodo.org/api/records/15911359",
+      "source_kind": "zenodo_record_api",
+      "sdot_use": [
+        "GNSS attack-condition taxonomy",
+        "UBX/RINEX/RF-monitoring/navigation-solution schema reference"
+      ],
+      "ingestion_role": "small_readme_and_taxonomy_reference",
+      "caveat": "Record currently exposes a small README through Zenodo; external/raw resources should be checked manually before use.",
+      "source_check": {
+        "status": "passed",
+        "http_status": 200,
+        "content_type": "application/json",
+        "bytes": 4510
+      },
+      "inventory_status": "passed",
+      "doi": "10.5281/zenodo.15911359",
+      "license": "gpl-3.0-or-later",
+      "publication_date": "2025-07-15",
+      "repository_size_bytes": 5080,
+      "repository_size_human": "4.96 KB",
+      "file_count": 1,
+      "sample_files": [
+        {
+          "filename": "README.md",
+          "size_bytes": 5080,
+          "size_human": "4.96 KB",
+          "content_link_present": true
+        }
+      ],
+      "feature_terms": [
+        "GNSS",
+        "jamming",
+        "spoofing",
+        "meaconing",
+        "IQ"
+      ],
+      "structure_notes": [
+        "Zenodo record exposes a small README through the record API.",
+        "README describes scenario-level metadata and GNSS monitoring/navigation files such as scenario metadata, RF monitoring, PVT, RINEX, and UBX-style raw receiver data.",
+        "Use as taxonomy/schema reference unless raw-resource access is separately validated."
+      ],
+      "candidate_sdot_fields": [
+        "attack_condition_label",
+        "receiver_mobility_label",
+        "mon_rf_quality_proxy",
+        "nav_pvt_position_proxy",
+        "rinex_observation_ref",
+        "scenario_metadata_ref"
+      ],
+      "download_policy": "Safe to use README/taxonomy. Do not assume raw scenario files are locally available from the Zenodo record.",
+      "recommended_ingestion": "Ingest README/taxonomy only unless external raw-resource access is explicitly needed."
+    }
+  ],
+  "safety_boundary": [
+    "No raw RF/IQ/UBX/RINEX or large zip data downloaded.",
+    "Use public datasets for defensive feature calibration and citation only.",
+    "Keep end-to-end mission timelines synthetic."
+  ]
+}

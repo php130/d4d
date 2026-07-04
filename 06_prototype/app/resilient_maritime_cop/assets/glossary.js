@@ -1,5 +1,47 @@
 (function () {
   window.D4D_GLOSSARY = {
+    "S-DOT": {
+      label: "S-DOT",
+      full: "Semantic Data On Tactical-network",
+      plain: "이 데모에서 S-DOT은 전술망이 느리거나 끊길 때 원본 데이터를 모두 보내는 대신, 지휘 판단에 필요한 의미만 작게 압축해 보내는 해커톤 개념명입니다. 기존 SDoT 제품/표준과 구분해서 설명해야 합니다.",
+      example: "원본 로그 전체 대신 '12-1 전력 42%, 의료지원 필요, 90초 접속창 예상' 같은 작은 의미 패킷을 먼저 보냅니다.",
+    },
+    "Mission Intent": {
+      label: "Mission Intent",
+      full: "Commander / staff intent",
+      plain: "세부 지시가 끊겨도 현장 부대가 판단할 수 있도록 사전에 정리된 목적, 우선순위, 제약 조건입니다.",
+      example: "통신이 끊겨도 12-1은 민간 접근로 보호, 의료 readiness, 통신 복구를 우선한다는 기준을 유지합니다.",
+    },
+    "Predicted COP": {
+      label: "Predicted COP",
+      full: "Predicted Local Common Operational Picture",
+      plain: "통신이 끊긴 부대의 실시간 상태가 아니라, 마지막 확인 상태와 임무 의도, 시간 경과, 제약 조건으로 추정한 예상 상황도입니다.",
+      example: "지도에서 실선 마커는 마지막 확인 위치이고, 반투명 마커와 원형 범위는 예상 위치와 불확실성을 뜻합니다.",
+    },
+    "Support Option": {
+      label: "Support Option",
+      full: "Support resource option",
+      plain: "고립 부대를 돕기 위한 의료, 전력, 통신 relay, 보급 같은 지원 후보입니다.",
+      example: "Medic-2가 가장 빠르고 위험도가 낮으면 1순위 지원 옵션으로 표시됩니다.",
+    },
+    "Civil Comms Asset": {
+      label: "Civil Comms Asset",
+      full: "Civil / public communications asset",
+      plain: "상용 5G/LTE, PS-LTE, LTE-M, 유선 백홀, 공유기/AP, 위성 등 전시/재난 시 후보 통신수단이 될 수 있는 민간·공공 인프라입니다.",
+      example: "후보 자산이라고 해서 바로 쓸 수 있다는 뜻은 아니며, 법적 권한, 인증, 전력, 백홀, 보안 상태가 맞아야 합니다.",
+    },
+    "PACE": {
+      label: "PACE",
+      full: "Primary, Alternate, Contingency, Emergency",
+      plain: "통신이 나빠질 때 어떤 bearer를 어떤 순서로 쓸지 정한 통신 운용 사다리입니다.",
+      example: "전술 IP망이 Primary라면 위성/장거리 백업, 승인형 민간·공공 bearer, 메시/스토어-포워드가 단계별 대안이 됩니다.",
+    },
+    "Bearer": {
+      label: "Bearer",
+      full: "Communication bearer",
+      plain: "S-DOT 패킷이 이동할 수 있는 통신 수단입니다. 전술망, 위성, PS-LTE, LTE-M, 상용망, 메시망 등이 후보가 될 수 있습니다.",
+      example: "민간 인프라는 자동 사용 자산이 아니라 authorized opportunistic bearer 후보로만 표시합니다.",
+    },
     AIS: {
       label: "AIS",
       full: "Automatic Identification System",
@@ -10,7 +52,7 @@
       label: "AIS Gap",
       full: "AIS Signal Gap",
       plain: "선박 AIS 신호가 예상 시간보다 오래 비는 상황입니다.",
-      example: "데모의 AIS_GAP 이벤트는 Haneul-77의 마지막 AIS 위치 이후 업데이트가 끊긴 상황을 뜻합니다.",
+      example: "현재 서울 지상 COP 데모에서는 AIS가 아니라 부대·통신·지원·후보축 이벤트를 중심으로 봅니다.",
     },
     SAR: {
       label: "SAR",
@@ -70,7 +112,7 @@
       label: "Semantic Event",
       full: "Meaning-level event message",
       plain: "원본 로그나 이미지 전체가 아니라, 작전적으로 의미 있는 사건만 작게 요약한 메시지입니다.",
-      example: "AIS_GAP, SAR_WITHOUT_AIS처럼 '무슨 일이 일어났는지'를 한 장의 카드로 바꾼 것입니다.",
+      example: "UNIT_ISOLATED, OPPOSING_AXIS_WATCH처럼 '무슨 일이 작전 판단에 중요한지'를 한 장의 카드로 바꾼 것입니다.",
     },
     "Alert Card": {
       label: "Alert Card",
@@ -87,8 +129,8 @@
     Weather: {
       label: "Weather",
       full: "Weather and maritime conditions",
-      plain: "바람, 파고, 시정, 구름 같은 기상/해양 상태입니다. 센서가 얼마나 잘 보이는지와 임무 위험도에 영향을 줍니다.",
-      example: "기상이 나쁘면 EO/IR 확인이 어려워지고, SAR나 AIS 같은 다른 근거의 비중이 커질 수 있습니다.",
+      plain: "강우, 시정, 풍속, 구름 같은 기상 상태입니다. 이동 위험, 관측 신뢰도, 지원 경로 판단에 영향을 줍니다.",
+      example: "강우와 시정 저하는 도심 이동과 지원 경로의 불확실성을 키울 수 있습니다.",
     },
     "Human Report": {
       label: "Human Report",

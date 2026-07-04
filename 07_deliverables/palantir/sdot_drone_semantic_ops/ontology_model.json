@@ -1,0 +1,211 @@
+{
+  "bundle_type": "palantir_aip_handoff",
+  "dataset_id": "s_dot_drone_semantic_ops_mock_v0_6",
+  "generated_at": "2026-07-04T08:34:23.351618+00:00",
+  "note": "Handoff model for mapping into Foundry Ontology/AIP. Not an official Palantir import specification.",
+  "safety_boundary": "Synthetic drone flight, GNSS/link degradation, jamming hypothesis, and semantic packet data. No real routes, force posture, EW emitter data, or sensitive coordinates.",
+  "object_types": [
+    {
+      "name": "DroneAsset",
+      "primary_key": "asset_id",
+      "display_name": "DroneAsset",
+      "properties": [
+        "asset_code",
+        "asset_type",
+        "comm_state",
+        "battery_pct",
+        "last_contact_time"
+      ]
+    },
+    {
+      "name": "SimulationCase",
+      "primary_key": "case_id",
+      "display_name": "SimulationCase",
+      "properties": [
+        "label_ko",
+        "scenario_summary_ko",
+        "default_mode",
+        "primary"
+      ]
+    },
+    {
+      "name": "SemanticEvent",
+      "primary_key": "event_id",
+      "display_name": "SemanticEvent",
+      "properties": [
+        "event_type",
+        "severity",
+        "time",
+        "summary",
+        "priority",
+        "recommended_action"
+      ]
+    },
+    {
+      "name": "SemanticPacket",
+      "primary_key": "packet_id",
+      "display_name": "SemanticPacket",
+      "properties": [
+        "payload_tier",
+        "priority",
+        "bytes_semantic",
+        "requires_ack",
+        "rejoin_audit_required"
+      ]
+    },
+    {
+      "name": "RawObservation",
+      "primary_key": "observation_id",
+      "display_name": "RawObservation",
+      "properties": [
+        "sensor_type",
+        "time",
+        "raw_bytes",
+        "summary",
+        "retention_policy"
+      ]
+    },
+    {
+      "name": "EdgeDetection",
+      "primary_key": "detection_id",
+      "display_name": "EdgeDetection",
+      "properties": [
+        "candidate_type",
+        "model_or_rule",
+        "confidence"
+      ]
+    },
+    {
+      "name": "JammingHypothesis",
+      "primary_key": "hypothesis_id",
+      "display_name": "JammingHypothesis",
+      "properties": [
+        "label",
+        "score",
+        "time",
+        "caveat"
+      ]
+    },
+    {
+      "name": "CaseEvaluation",
+      "primary_key": "evaluation_id",
+      "display_name": "CaseEvaluation",
+      "properties": [
+        "case_id",
+        "max_residual_m",
+        "max_nis",
+        "false_alarm_risk",
+        "confidence"
+      ]
+    },
+    {
+      "name": "CaseEvaluationPoint",
+      "primary_key": "point_id",
+      "display_name": "CaseEvaluationPoint",
+      "properties": [
+        "case_id",
+        "t_seconds",
+        "nis",
+        "residual_m",
+        "threshold_state",
+        "action_hint_ko"
+      ]
+    },
+    {
+      "name": "KalmanTracePoint",
+      "primary_key": "trace_point_id",
+      "display_name": "KalmanTracePoint",
+      "properties": [
+        "case_id",
+        "t_seconds",
+        "innovation_nis",
+        "update_decision",
+        "estimate_error_m",
+        "reported_error_m"
+      ]
+    },
+    {
+      "name": "RoutingDecision",
+      "primary_key": "routing_id",
+      "display_name": "RoutingDecision",
+      "properties": [
+        "network_mode",
+        "decision",
+        "payload_tier",
+        "priority",
+        "bytes_semantic"
+      ]
+    },
+    {
+      "name": "RejoinAudit",
+      "primary_key": "audit_id",
+      "display_name": "RejoinAudit",
+      "properties": [
+        "asset_id",
+        "case_id",
+        "status",
+        "discrepancy_m",
+        "inside_uncertainty_envelope"
+      ]
+    }
+  ],
+  "relationship_types": [
+    "asset_emits_event",
+    "case_contains_event",
+    "event_evidenced_by",
+    "event_encoded_as_packet",
+    "asset_has_observation",
+    "asset_has_detection",
+    "asset_has_hypothesis",
+    "case_has_evaluation",
+    "case_has_eval_point",
+    "case_has_kalman_trace",
+    "packet_has_routing_decision",
+    "asset_has_rejoin_audit"
+  ],
+  "action_types": [
+    {
+      "action_id": "approve_semantic_packet",
+      "display_name_ko": "시맨틱 패킷 전송 승인",
+      "target_object": "SemanticPacket",
+      "parameters": [
+        "operator_id",
+        "approval_reason",
+        "network_mode"
+      ],
+      "expected_effect": "Set routing decision override and create an audit log entry."
+    },
+    {
+      "action_id": "mark_measurement_contested",
+      "display_name_ko": "보고 위치 contested 표시",
+      "target_object": "KalmanTracePoint",
+      "parameters": [
+        "operator_id",
+        "reason_code"
+      ],
+      "expected_effect": "Mark the measurement as contested when innovation gate rejects it."
+    },
+    {
+      "action_id": "request_rejoin_audit",
+      "display_name_ko": "재연결 감사 요청",
+      "target_object": "DroneAsset",
+      "parameters": [
+        "operator_id",
+        "case_id",
+        "priority"
+      ],
+      "expected_effect": "Queue a RejoinAudit workflow and sync semantic packets before raw cache."
+    },
+    {
+      "action_id": "change_ddil_mode",
+      "display_name_ko": "DDIL 모드 변경",
+      "target_object": "SimulationCase",
+      "parameters": [
+        "operator_id",
+        "new_network_mode",
+        "valid_until"
+      ],
+      "expected_effect": "Recompute routing decisions for the selected network mode."
+    }
+  ]
+}

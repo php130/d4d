@@ -1,0 +1,12 @@
+{
+  "name": "d4d-sdot-drone-semantic-ops-demo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "D4D S-DOT drone semantic transmission demo",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

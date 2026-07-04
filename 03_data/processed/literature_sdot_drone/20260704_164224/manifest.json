@@ -1,0 +1,136 @@
+{
+  "version": "20260704_164224",
+  "generated_at": "2026-07-04T16:44:11.304706",
+  "topics": [
+    {
+      "topic_id": "semantic_communications_uav_edge",
+      "label": "Semantic communications for UAV / edge",
+      "weight": 6,
+      "queries": [
+        "\"semantic communication\" UAV edge intelligence",
+        "\"semantic communications\" unmanned aerial vehicle",
+        "\"task-oriented semantic communication\" UAV",
+        "\"semantic communication\" image transmission wireless edge",
+        "\"semantic communication\" \"Internet of Drones\""
+      ]
+    },
+    {
+      "topic_id": "uav_gnss_denied_navigation",
+      "label": "UAV GNSS-denied navigation",
+      "weight": 6,
+      "queries": [
+        "\"UAV\" \"GNSS-denied\" navigation survey",
+        "\"GPS-denied\" UAV navigation \"visual inertial\"",
+        "\"UAV\" \"GPS denied\" \"SLAM\"",
+        "\"unmanned aerial vehicle\" \"GNSS denied\" \"sensor fusion\"",
+        "\"drone\" \"GPS-denied\" navigation \"Kalman\""
+      ]
+    },
+    {
+      "topic_id": "gnss_jamming_spoofing_detection",
+      "label": "GNSS jamming / spoofing detection and integrity",
+      "weight": 7,
+      "queries": [
+        "\"GNSS jamming detection\" UAV",
+        "\"GNSS spoofing detection\" UAV",
+        "\"GPS spoofing detection\" inertial measurement unit",
+        "\"GNSS interference detection\" \"Kalman filter\"",
+        "\"GNSS integrity monitoring\" residual \"Kalman\"",
+        "\"receiver autonomous integrity monitoring\" UAV GNSS"
+      ]
+    },
+    {
+      "topic_id": "kalman_residual_integrity",
+      "label": "Kalman residual / NIS / integrity monitoring",
+      "weight": 5,
+      "queries": [
+        "\"normalized innovation squared\" Kalman filter fault detection",
+        "\"innovation-based\" fault detection \"Kalman filter\" navigation",
+        "\"residual-based\" anomaly detection \"Kalman filter\" UAV",
+        "\"state estimation\" \"uncertainty ellipse\" UAV tracking"
+      ]
+    },
+    {
+      "topic_id": "uav_networks_ddil_dtn",
+      "label": "UAV networks, DDIL, DTN, intermittent links",
+      "weight": 5,
+      "queries": [
+        "\"UAV networks\" delay tolerant network",
+        "\"drone network\" intermittent connectivity",
+        "\"UAV communication\" \"packet loss\" \"edge computing\"",
+        "\"tactical network\" UAV \"delay tolerant\"",
+        "\"disconnected intermittent limited\" network UAV"
+      ]
+    },
+    {
+      "topic_id": "anti_jamming_resilient_uav_comms",
+      "label": "Resilient UAV communications under jamming",
+      "weight": 5,
+      "queries": [
+        "\"UAV communication\" jamming detection",
+        "\"anti-jamming\" UAV communication survey",
+        "\"unmanned aerial vehicle\" \"communication jamming\"",
+        "\"UAV\" \"radio frequency interference\" communication",
+        "\"resilient communications\" UAV jamming"
+      ]
+    },
+    {
+      "topic_id": "edge_ai_compression_video",
+      "label": "Edge AI / compression / video semantic transmission",
+      "weight": 4,
+      "queries": [
+        "\"edge AI\" UAV video compression",
+        "\"semantic video transmission\" wireless",
+        "\"adaptive video transmission\" UAV edge",
+        "\"object-level\" video compression edge intelligence",
+        "\"event-based\" data transmission sensor networks UAV"
+      ]
+    },
+    {
+      "topic_id": "uav_sensor_fusion_tracking",
+      "label": "UAV sensor fusion and tracking",
+      "weight": 4,
+      "queries": [
+        "\"UAV\" \"multi-sensor fusion\" tracking",
+        "\"drone\" \"sensor fusion\" \"situational awareness\"",
+        "\"UAV\" \"EO IR\" \"RF\" \"sensor fusion\"",
+        "\"multi-UAV\" \"sensor fusion\" \"target tracking\""
+      ]
+    },
+    {
+      "topic_id": "uav_digital_twin_simulation",
+      "label": "UAV simulation / digital twin / 3D validation",
+      "weight": 3,
+      "queries": [
+        "\"UAV\" digital twin simulation",
+        "\"drone\" \"digital twin\" \"simulation\"",
+        "\"UAV\" \"3D simulation\" \"autonomous navigation\"",
+        "\"unmanned aerial vehicle\" \"simulation environment\" \"sensor data\""
+      ]
+    },
+    {
+      "topic_id": "provenance_trust_c2",
+      "label": "Provenance, trust, C2, decision support",
+      "weight": 3,
+      "queries": [
+        "\"provenance\" \"sensor fusion\" decision support",
+        "\"trust management\" \"sensor fusion\" UAV",
+        "\"command and control\" UAV sensor fusion decision support",
+        "\"common operational picture\" UAV sensor fusion"
+      ]
+    }
+  ],
+  "raw_record_count": 1771,
+  "deduped_record_count": 1343,
+  "outputs": {
+    "records_json": "/Users/mollykim/projects/D4D/03_data/processed/literature_sdot_drone/20260704_164224/sdot_drone_literature_records.json",
+    "records_csv": "/Users/mollykim/projects/D4D/03_data/processed/literature_sdot_drone/20260704_164224/sdot_drone_literature_records.csv",
+    "topic_summary": "/Users/mollykim/projects/D4D/03_data/processed/literature_sdot_drone/20260704_164224/sdot_drone_topic_summary.json",
+    "reading_queue": "/Users/mollykim/projects/D4D/01_research/literature/sdot_drone_research/sdot_drone_first_reading_queue_20260704_164224.md",
+    "catalog": "/Users/mollykim/projects/D4D/01_research/literature/sdot_drone_research/sdot_drone_research_catalog_20260704_164224.md"
+  },
+  "sources": [
+    "https://api.openalex.org/works",
+    "https://export.arxiv.org/api/query"
+  ]
+}

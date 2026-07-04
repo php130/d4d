@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>S-DOT 드론 시맨틱 전송 데모</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./assets/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">D4D T3 · S-DOT</p>
+          <h1>S-DOT Edge Semantic Ops</h1>
+          <p class="subtitle">드론 통신·GNSS 단절/교란 환경에서 예측 위치, 불확실성, 근거, 시맨틱 패킷을 유지하는 데모</p>
+        </div>
+        <div class="top-metrics" id="topMetrics"></div>
+      </header>
+
+      <section class="objective-strip" id="objectiveStrip" aria-label="임무 목표"></section>
+
+      <section class="ops-grid" aria-label="S-DOT 드론 운용 화면">
+        <aside class="left-rail" aria-label="케이스 및 네트워크 제어">
+          <section class="panel">
+            <div class="panel-heading">
+              <div>
+                <p class="panel-kicker">시뮬레이션 케이스</p>
+                <h2>상황 선택</h2>
+              </div>
+            </div>
+            <div class="case-buttons" id="caseButtons"></div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-heading">
+              <div>
+                <p class="panel-kicker">DDIL 모드</p>
+                <h2>전술망 상태</h2>
+              </div>
+            </div>
+            <div class="mode-buttons" id="modeButtons"></div>
+          </section>
+
+          <section class="panel asset-panel">
+            <div class="panel-heading">
+              <div>
+                <p class="panel-kicker">무인 자산</p>
+                <h2>드론·중계·센서</h2>
+              </div>
+            </div>
+            <div id="assetList"></div>
+          </section>
+        </aside>
+
+        <section class="sim-stage" aria-label="3D 드론 시뮬레이션">
+          <div class="sim-toolbar" id="simToolbar"></div>
+          <div id="sceneRoot"></div>
+          <div class="scene-legend">
+            <span><b class="planned"></b>예정 경로</span>
+            <span><b class="predicted"></b>예측 경로</span>
+            <span><b class="reported"></b>보고/수신 위치</span>
+            <span><b class="uncertainty"></b>불확실성</span>
+          </div>
+        </section>
+
+        <aside class="right-rail" aria-label="오퍼레이터 판단 패널">
+          <section class="panel">
+            <div class="panel-heading">
+              <div>
+                <p class="panel-kicker">항법 무결성</p>
+                <h2>예측 vs 수신</h2>
+              </div>
+              <span class="status-pill" id="caseStatus">...</span>
+            </div>
+            <div id="navIntegrity"></div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-heading">
+              <div>
+                <p class="panel-kicker">판단 근거</p>
+                <h2>알고리즘 평가</h2>
+              </div>
+            </div>
+            <div id="evaluationPanel"></div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-heading">
+              <div>
+                <p class="panel-kicker">시맨틱 이벤트</p>
+                <h2>S-DOT 큐</h2>
+              </div>
+            </div>
+            <div class="event-list" id="eventList"></div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-heading">
+              <div>
+                <p class="panel-kicker">근거·감사</p>
+                <h2>근거 체인</h2>
+              </div>
+            </div>
+            <div id="evidencePanel"></div>
+          </section>
+        </aside>
+      </section>
+
+      <section class="packet-strip" aria-label="원본 대비 시맨틱 전송">
+        <div class="panel-heading">
+          <div>
+            <p class="panel-kicker">S-DOT 패킷 검사</p>
+            <h2>원본 데이터 vs 시맨틱 패킷</h2>
+          </div>
+          <span class="status-pill" id="routingDecision">...</span>
+        </div>
+        <div id="packetInspector"></div>
+      </section>
+
+      <section class="handoff-strip" aria-label="Palantir AIP handoff">
+        <div class="panel-heading">
+          <div>
+            <p class="panel-kicker">Platform Handoff</p>
+            <h2>Foundry / AIP 연결 준비</h2>
+          </div>
+          <span class="status-pill accepted">검증됨</span>
+        </div>
+        <div id="handoffPanel"></div>
+      </section>
+    </main>
+
+    <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+    <script src="./data/mock_dataset.js"></script>
+    <script src="./assets/app.js"></script>
+  </body>
+</html>

@@ -24,6 +24,9 @@ PROJECT_ROOT = Path("/Users/mollykim/projects/D4D")
 ENV_PATH = PROJECT_ROOT / ".env"
 RAW_ROOT = PROJECT_ROOT / "03_data/raw/api_snapshots"
 REPORT_ROOT = PROJECT_ROOT / "03_data/processed/api_smoke_tests"
+DEFAULT_HEADERS = {
+    "User-Agent": "D4D-hackathon-research/0.1 contact:mollykim2602@gmail.com",
+}
 
 
 KST = timezone(timedelta(hours=9))
@@ -83,7 +86,9 @@ def url_with_query(base_url: str, params: dict[str, Any]) -> str:
 
 
 def get_bytes(url: str, headers: dict[str, str] | None = None, timeout: int = 20) -> tuple[int, bytes]:
-    req = urllib.request.Request(url, headers=headers or {})
+    request_headers = DEFAULT_HEADERS.copy()
+    request_headers.update(headers or {})
+    req = urllib.request.Request(url, headers=request_headers)
     with urllib.request.urlopen(req, timeout=timeout) as response:
         return response.status, response.read()
 
@@ -96,6 +101,15 @@ def post_form(url: str, data: dict[str, str], timeout: int = 20) -> tuple[int, b
         headers={"Content-Type": "application/x-www-form-urlencoded"},
         method="POST",
     )
+    with urllib.request.urlopen(req, timeout=timeout) as response:
+        return response.status, response.read()
+
+
+def post_json(url: str, data: dict[str, Any], headers: dict[str, str] | None = None, timeout: int = 20) -> tuple[int, bytes]:
+    encoded = json.dumps(data).encode("utf-8")
+    request_headers = {"Content-Type": "application/json"}
+    request_headers.update(headers or {})
+    req = urllib.request.Request(url, data=encoded, headers=request_headers, method="POST")
     with urllib.request.urlopen(req, timeout=timeout) as response:
         return response.status, response.read()
 
@@ -132,6 +146,16 @@ def catch_result(service: str, event_use: str, url_label: str, exc: Exception) -
     if isinstance(exc, urllib.error.HTTPError):
         detail = f"HTTPError {exc.code}: {exc.reason}"
         http_status = exc.code
+        if exc.code == 429:
+            return result(
+                service,
+                "rate_limited",
+                event_use,
+                url_label,
+                http_status=http_status,
+                detail=detail[:500],
+                next_action="Back off before retrying; cache the latest sample or use bulk export/BigQuery for higher-volume GDELT collection.",
+            )
     elif isinstance(exc, urllib.error.URLError):
         detail = f"URLError: {exc.reason}"
         http_status = None
@@ -246,7 +270,7 @@ def gdelt_maritime(run_dir: Path) -> SmokeResult:
     service = "gdelt_maritime"
     event_use = "OSINT_INCIDENT"
     params = {
-        "query": '"maritime incident" OR "port disruption" OR "AIS"',
+        "query": '("maritime incident" OR "port disruption" OR "AIS")',
         "mode": "ArtList",
         "format": "json",
         "maxrecords": 5,
@@ -355,16 +379,23 @@ def global_fishing_watch(env: dict[str, str], run_dir: Path) -> SmokeResult:
             detail=email_status or "token missing",
             next_action="Verify the account email, then create/store GLOBAL_FISHING_WATCH_TOKEN.",
         )
-    url = "https://gateway.api.globalfishingwatch.org/v3/datasets"
+    params = {
+        "datasets[0]": "public-global-presence:latest",
+        "temporal-aggregation": "false",
+        "num-bins": 9,
+        "interval": "DAY",
+    }
+    url = url_with_query("https://gateway.api.globalfishingwatch.org/v3/4wings/bins/1", params)
     try:
         http_status, payload = get_bytes(url, headers={"Authorization": f"Bearer {token}"})
         sample_path = write_sample(run_dir, service, "json", payload)
         data = decode_json(payload)
-        status = "passed" if isinstance(data, (list, dict)) else "failed"
-        detail = f"type={type(data).__name__}"
-        return result(service, status, event_use, "GFW datasets", http_status=http_status, sample_path=sample_path, detail=detail)
+        entries = data.get("entries", []) if isinstance(data, dict) else []
+        status = "passed" if isinstance(entries, list) else "failed"
+        detail = f"entries={len(entries)}"
+        return result(service, status, event_use, "GFW 4Wings AIS vessel presence bins", http_status=http_status, sample_path=sample_path, detail=detail)
     except Exception as exc:  # noqa: BLE001
-        return catch_result(service, event_use, "GFW datasets", exc)
+        return catch_result(service, event_use, "GFW 4Wings AIS vessel presence bins", exc)
 
 
 def safetydata(env: dict[str, str]) -> SmokeResult:
@@ -383,6 +414,36 @@ def safetydata(env: dict[str, str]) -> SmokeResult:
     return result(service, "pending_connector", event_use, "SafetyData API", detail="key present; endpoint connector not implemented yet")
 
 
+def opensanctions_match(env: dict[str, str], run_dir: Path) -> SmokeResult:
+    service = "opensanctions_match"
+    event_use = "SANCTION_OR_WATCHLIST_MATCH"
+    key = env.get("OPENSANCTIONS_API_KEY")
+    if not key:
+        return result(service, "skipped", event_use, "OpenSanctions /match/default", next_action="Store OPENSANCTIONS_API_KEY.")
+    payload = {
+        "queries": {
+            "query": {
+                "schema": "Person",
+                "properties": {"name": ["Vladimir Putin"]},
+            }
+        }
+    }
+    try:
+        http_status, response = post_json(
+            "https://api.opensanctions.org/match/default",
+            payload,
+            headers={"Authorization": f"ApiKey {key}"},
+        )
+        sample_path = write_sample(run_dir, service, "json", response)
+        data = decode_json(response)
+        results = data.get("responses", {}).get("query", {}).get("results", [])
+        status = "passed" if isinstance(results, list) else "failed"
+        detail = f"results={len(results)}"
+        return result(service, status, event_use, "OpenSanctions match/default documented sample query", http_status=http_status, sample_path=sample_path, detail=detail)
+    except Exception as exc:  # noqa: BLE001
+        return catch_result(service, event_use, "OpenSanctions match/default documented sample query", exc)
+
+
 def run_all() -> dict[str, Any]:
     env = load_env(ENV_PATH)
     rid = run_id()
@@ -399,6 +460,7 @@ def run_all() -> dict[str, Any]:
         open_meteo_marine(raw_run_dir),
         copernicus_sentinel1(env, raw_run_dir),
         nasa_cmr(env, raw_run_dir),
+        opensanctions_match(env, raw_run_dir),
         global_fishing_watch(env, raw_run_dir),
         safetydata(env),
     ]

@@ -1,0 +1,7 @@
+- 20260704_164224: raw 1771, deduped 1343, outputs `/Users/mollykim/projects/D4D/03_data/processed/literature_sdot_drone/20260704_164224`
+- snowball_20260704_165653: seeds 120, candidates 500, new 446, merged 1789, outputs `/Users/mollykim/projects/D4D/03_data/processed/literature_sdot_drone/snowball_20260704_165653`
+- final_20260704_170558: base + snowball + arXiv retry merged corpus, total 1900 records, outputs `/Users/mollykim/projects/D4D/03_data/processed/literature_sdot_drone/final_20260704_170558`
+- arxiv_retry_20260704_170558: raw 216, new 111, failures 0, outputs `/Users/mollykim/projects/D4D/03_data/processed/literature_sdot_drone/arxiv_retry_20260704_170558`
+- priority_source_access_20260704: structured access/use dataset for 14 priority sources, output `/Users/mollykim/projects/D4D/03_data/processed/literature_sdot_drone/priority_source_access_20260704.json`
+- gnss_rf_link_dataset_candidates_20260704: structured public GNSS/RF/link dataset candidate catalog, 14 datasets + 5 synthetic-required categories, output `/Users/mollykim/projects/D4D/03_data/processed/literature_sdot_drone/gnss_rf_link_dataset_candidates_20260704.json`
+- dataset_smoke_test_20260704_173915: metadata/page/API accessibility smoke-test for 14 GNSS/RF/link dataset candidates, passed 13, failed 1 (`uav_lora_avalanche` ScienceDirect 403), output `/Users/mollykim/projects/D4D/03_data/processed/literature_sdot_drone/dataset_smoke_tests/20260704_173915`

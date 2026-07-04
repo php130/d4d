@@ -1,0 +1,174 @@
+{
+  "metadata": {
+    "dataset_id": "sdot_drone_priority_source_access_20260704",
+    "created_at": "2026-07-04T17:30:00+09:00",
+    "purpose": "Structured access-status and implementation-use dataset for priority S-DOT drone research sources.",
+    "scope": "Drone semantic transmission, GNSS/link degradation, residual/NIS integrity, GPS-denied navigation, task-oriented semantic communications, simulation datasets.",
+    "safety_note": "Sources are used for defensive diagnosis, uncertainty handling, semantic packet design, and simulation validation only. No offensive EW guidance, real emitter inference, or sensitive operational data."
+  },
+  "sources": [
+    {
+      "source_id": "semperfi_ndss_2022",
+      "priority": "P0",
+      "title": "SemperFi: Anti-spoofing GPS Receiver for UAVs",
+      "category": "gnss_spoofing_defense",
+      "access_status": "official_page_and_pdf_accessible",
+      "source_url": "https://www.ndss-symposium.org/ndss-paper/auto-draft-220/",
+      "pdf_url": "https://www.ndss-symposium.org/wp-content/uploads/2022-71-paper.pdf",
+      "recommended_use": "Use for defensive spoofing-risk framing, recovery limits, and onboard diagnostic motivation.",
+      "demo_modules": ["jamming_spoofing_hypothesis", "operator_caveat", "rejoin_audit"],
+      "limitations": ["Do not reproduce attack mechanics.", "Do not claim SemperFi is implemented in the hackathon demo."]
+    },
+    {
+      "source_id": "raim_ins_plans_2014",
+      "priority": "P0",
+      "title": "GPS Spoofing Detection Using RAIM with INS Coupling",
+      "category": "residual_integrity_monitoring",
+      "access_status": "official_abstract_accessible_full_paper_restricted",
+      "source_url": "https://www.ion.org/publications/abstract.cfm?articleID=11749",
+      "recommended_use": "Use for RAIM/INS residual-monitoring framing and integrity-risk language.",
+      "demo_modules": ["innovation_check", "nis_panel", "operator_caveat"],
+      "limitations": ["Full paper access should be obtained before making detailed algorithm claims."]
+    },
+    {
+      "source_id": "gnss_detection_survey_sensors_2024",
+      "priority": "P0",
+      "title": "Recent Advances on Jamming and Spoofing Detection in GNSS",
+      "category": "gnss_jamming_spoofing_survey",
+      "access_status": "full_html_accessible",
+      "source_url": "https://www.mdpi.com/1424-8220/24/13/4210",
+      "recommended_use": "Use for taxonomy of detection methods and the need to treat jamming/spoofing as a hypothesis.",
+      "demo_modules": ["hypothesis_taxonomy", "feature_breakdown", "ml_future_track"],
+      "limitations": ["Survey-level support; not a single deployed method."]
+    },
+    {
+      "source_id": "gps_denied_uav_nav_review_2023",
+      "priority": "P0",
+      "title": "A review of UAV autonomous navigation in GPS-denied environments",
+      "category": "gps_denied_navigation_review",
+      "access_status": "open_access_pdf_accessible",
+      "source_url": "https://sure.sunderland.ac.uk/id/eprint/16820/1/1-s2.0-S0921889023001720-main.pdf",
+      "recommended_use": "Use for navigation-method taxonomy and evaluation-metric framing.",
+      "demo_modules": ["alternate_navigation_evidence", "vio_placeholder", "operator_uncertainty"],
+      "limitations": ["Broad review; not a direct implementation spec."]
+    },
+    {
+      "source_id": "goal_oriented_semcom_2024",
+      "priority": "P0",
+      "title": "Goal-Oriented Semantic Communications for 6G Networks",
+      "category": "semantic_communications",
+      "access_status": "arxiv_full_text_accessible",
+      "source_url": "https://arxiv.org/abs/2210.09372",
+      "recommended_use": "Use for task/effectiveness-aware S-DOT packet design.",
+      "demo_modules": ["semantic_packet_priority", "packet_inspector", "raw_vs_semantic_bytes"],
+      "limitations": ["Adapt 6G theory to DDIL demo; do not claim actual 6G deployment."]
+    },
+    {
+      "source_id": "gnss_denied_visual_matching_2021",
+      "priority": "P0",
+      "title": "GNSS-denied geolocalization of UAVs by visual matching of onboard camera images with orthophotos",
+      "category": "visual_map_localization",
+      "access_status": "arxiv_full_text_accessible",
+      "source_url": "https://arxiv.org/abs/2103.14381",
+      "recommended_use": "Use for visual-map location hypothesis evidence.",
+      "demo_modules": ["alternate_navigation_evidence", "visual_match_placeholder", "confidence_decay"],
+      "limitations": ["Use synthetic/non-sensitive maps; visual matches are uncertain and map-age dependent."]
+    },
+    {
+      "source_id": "terrain_aided_nav_mdpi_2020",
+      "priority": "P1",
+      "title": "A Pragmatic Approach to the Design of Advanced Precision Terrain-Aided Navigation for UAVs and Its Verification",
+      "category": "terrain_referenced_navigation",
+      "access_status": "full_html_accessible",
+      "source_url": "https://www.mdpi.com/2072-4292/12/9/1396",
+      "recommended_use": "Use for INS/GNSS/TRN federated-filter fallback concept.",
+      "demo_modules": ["alternate_navigation_evidence", "prediction_uncertainty", "rejoin_audit"],
+      "limitations": ["Do not add real military elevation/route data to public demo."]
+    },
+    {
+      "source_id": "personalized_saliency_semcom_2022",
+      "priority": "P1",
+      "title": "Personalized Saliency in Task-Oriented Semantic Communications: Image Transmission and Performance Analysis",
+      "category": "task_oriented_image_semantic_compression",
+      "access_status": "arxiv_full_text_accessible",
+      "source_url": "https://arxiv.org/abs/2209.12274",
+      "recommended_use": "Use for EO/IR semantic compression and scene-graph-style summaries.",
+      "demo_modules": ["packet_inspector", "edge_detection_summary", "semantic_packet_priority"],
+      "limitations": ["Current v0.6 does not implement a saliency model; use as future feature rationale."]
+    },
+    {
+      "source_id": "gnss_ml_dl_arxiv_2025",
+      "priority": "P1",
+      "title": "GNSS/GPS Spoofing and Jamming Identification Using Machine Learning and Deep Learning",
+      "category": "ml_detection_future_track",
+      "access_status": "arxiv_full_text_accessible",
+      "source_url": "https://arxiv.org/abs/2501.02352",
+      "recommended_use": "Use as a future classifier direction once labeled synthetic/public data exists.",
+      "demo_modules": ["ml_future_track", "feature_vector_schema"],
+      "limitations": ["Do not imply production ML performance from the current synthetic dataset."]
+    },
+    {
+      "source_id": "tartanair_iros_2020",
+      "priority": "P1",
+      "title": "TartanAir: A Dataset to Push the Limits of Visual SLAM",
+      "category": "simulation_dataset",
+      "access_status": "arxiv_and_dataset_page_accessible",
+      "source_url": "https://arxiv.org/abs/2003.14338",
+      "dataset_url": "https://theairlab.org/tartanair-dataset/",
+      "recommended_use": "Use for later visual/VIO validation under synthetic weather and scene variation.",
+      "demo_modules": ["dataset_validation", "visual_slam_future_track"],
+      "limitations": ["Large dataset; do not ingest unless v0.7 scope explicitly requires it."]
+    },
+    {
+      "source_id": "airsim_fsr_2017",
+      "priority": "P1",
+      "title": "AirSim: High-Fidelity Visual and Physical Simulation for Autonomous Vehicles",
+      "category": "simulator",
+      "access_status": "arxiv_github_docs_accessible",
+      "source_url": "https://arxiv.org/abs/1705.05065",
+      "repo_url": "https://github.com/microsoft/AirSim",
+      "recommended_use": "Use as a future controlled simulation generator if local setup time allows.",
+      "demo_modules": ["simulation_future_track", "synthetic_telemetry_generation"],
+      "limitations": ["Setup cost may be too high for hackathon; current v0.6 should remain lightweight."]
+    },
+    {
+      "source_id": "euroc_mav_dataset_2016",
+      "priority": "P1",
+      "title": "EuRoC MAV Dataset",
+      "category": "visual_inertial_dataset",
+      "access_status": "official_dataset_page_accessible",
+      "source_url": "https://projects.asl.ethz.ch/datasets/euroc-mav/",
+      "recommended_use": "Use for visual-inertial trajectory validation after v0.7 schema is stable.",
+      "demo_modules": ["dataset_validation", "vio_future_track"],
+      "limitations": ["Dataset may require preprocessing; not necessary for first public demo."]
+    },
+    {
+      "source_id": "uzh_fpv_dataset",
+      "priority": "P1",
+      "title": "UZH-FPV Drone Racing Dataset",
+      "category": "aggressive_visual_inertial_dataset",
+      "access_status": "official_dataset_page_accessible",
+      "source_url": "https://fpv.ifi.uzh.ch/",
+      "recommended_use": "Use for stress-testing aggressive flight and uncertainty growth.",
+      "demo_modules": ["dataset_validation", "state_estimation_stress_test"],
+      "limitations": ["Research/non-commercial license considerations must be checked before reuse."]
+    },
+    {
+      "source_id": "two_step_nis_ieee_access_2019",
+      "priority": "P2",
+      "title": "Two-Step Trajectory Spoofing Algorithm for Loosely Coupled GNSS/IMU and NIS Sequence Detection",
+      "category": "nis_integrity_reference",
+      "access_status": "metadata_confirmed_full_text_not_confirmed_locally",
+      "source_url": "https://doi.org/10.1109/access.2019.2927539",
+      "recommended_use": "Use only for NIS concept and defensive detection caveat until full text is verified.",
+      "demo_modules": ["nis_panel"],
+      "limitations": ["Offensive spoofing framing; avoid implementation detail."]
+    }
+  ],
+  "recommended_next_actions": [
+    "Use P0 and P1 sources for v0.7 implementation justification.",
+    "Do not base core claims on P2 sources until full text is verified.",
+    "Add innovation_check, gnss_quality_metrics, packet_priority_breakdown, and rejoin_error_budget to the v0.7 dataset generator.",
+    "Keep all jamming/spoofing labels as defensive hypotheses."
+  ]
+}

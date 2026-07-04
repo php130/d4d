@@ -111,3 +111,12 @@
 | 프로젝트 운영 | Dark Web | Dark Web | 일반 검색엔진으로 접근되지 않고 특수 네트워크가 필요한 웹 영역. 위협 행위자, 유출정보, 범죄 인프라 탐지 소스로 다뤄질 수 있습니다. | T2 |
 | 프로젝트 운영 | Indicator | Indicator | 위협이나 사건을 식별하는 단서. IP, 도메인, 이메일, 해시, 지갑주소 등이 포함됩니다. | T2 |
 | 프로젝트 운영 | Military Deployability | Military Deployability | 군 환경에 실제 배치 가능한 정도. 보안, 권한, 감사, 네트워크, 현장 제약, 설명 가능성을 함께 봅니다. | 공통 |
+| 작전전달 | Commander Intent | Commander Intent | 세부 통신이나 지시가 끊겨도 하급 조직이 무엇을 달성해야 하는지 이해하게 하는 지휘관 의도. | T3·T5 |
+| 작전전달 | CCIR | Commander's Critical Information Requirements | 지휘관이 결심을 내리기 위해 반드시 알아야 하는 핵심 정보 요구. PIR, FFIR, EEFI 등으로 나눠 설명할 수 있습니다. | T3 |
+| 작전전달 | WARNO / WARNORD | Warning Order | 곧 임무나 작전명령이 내려올 수 있음을 알려 하급 조직이 미리 준비하게 하는 경고명령. | T3·T5 |
+| 작전전달 | OPORD | Operation Order | 상황, 임무, 실행, 지속지원, 지휘·통신 기준을 담은 작전 수행의 기준 명령. | T3·T5 |
+| 작전전달 | FRAGO / FRAGORD | Fragmentary Order | 기존 작전명령 전체를 다시 쓰지 않고 바뀐 부분만 빠르게 전달하는 단편명령. | T3 |
+| 작전전달 | SITREP | Situation Report | 현재 상황, 상태, 주요 변화, 요청사항 등을 주기적으로 정리해 보고하는 상황보고. | T3 |
+| 작전전달 | SPOTREP | Spot Report | 즉시 알릴 가치가 있는 사건이나 관측을 짧게 보고하는 형식. 이 프로젝트의 semantic event와 가장 가깝습니다. | T3·T4 |
+| 작전전달 | Running Estimate | Running Estimate | 참모가 자기 분야의 상황, 위험, 판단을 계속 갱신하는 추정/판단 자료. evidence bundle과 유사한 역할을 합니다. | T3 |
+| 작전전달 | Battle Rhythm | Battle Rhythm | 회의, 보고, 결심, 업데이트가 언제 돌아가는지 정한 지휘소의 반복 운영 주기. | T3 |

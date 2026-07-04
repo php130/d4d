@@ -1,0 +1,19 @@
+﻿scenario_id,day,units,phase,headline_bottleneck_id,headline_bottleneck_label,subcomponent_bottleneck_id,survival_days_likely,valley_start_day,valley_end_day,valley_depth_units_per_day
+baseline,1,3333,A_STOCK_DRAW,camera_module,Camera / imaging module,camera_cmos,8.0,9,73,3331
+baseline,8,3333,A_STOCK_DRAW,camera_module,Camera / imaging module,camera_cmos,8.0,9,73,3331
+baseline,9,2,VALLEY,camera_module,Camera / imaging module,camera_cmos,8.0,9,73,3331
+baseline,73,2,VALLEY,camera_module,Camera / imaging module,camera_cmos,8.0,9,73,3331
+baseline,74,10,B_RAMPED_DOMESTIC,camera_module,Camera / imaging module,camera_cmos,8.0,9,73,3331
+baseline,90,10,B_RAMPED_DOMESTIC,camera_module,Camera / imaging module,camera_cmos,8.0,9,73,3331
+western_axis_threat,1,3333,A_STOCK_DRAW,vtx_module,Video transmitter module,mcu_kit,7.6,9,81,3331
+western_axis_threat,8,3333,A_STOCK_DRAW,vtx_module,Video transmitter module,mcu_kit,7.6,9,81,3331
+western_axis_threat,9,2,VALLEY,vtx_module,Video transmitter module,mcu_kit,7.6,9,81,3331
+western_axis_threat,81,2,VALLEY,vtx_module,Video transmitter module,mcu_kit,7.6,9,81,3331
+western_axis_threat,82,13,B_RAMPED_DOMESTIC,vtx_module,Video transmitter module,mcu_kit,7.6,9,81,3331
+western_axis_threat,90,13,B_RAMPED_DOMESTIC,vtx_module,Video transmitter module,mcu_kit,7.6,9,81,3331
+southern_port_disruption,1,3333,A_STOCK_DRAW,flight_controller,Flight controller board,imu_sensor,7.4,8,73,3332
+southern_port_disruption,7,3333,A_STOCK_DRAW,flight_controller,Flight controller board,imu_sensor,7.4,8,73,3332
+southern_port_disruption,8,1,VALLEY,flight_controller,Flight controller board,imu_sensor,7.4,8,73,3332
+southern_port_disruption,73,1,VALLEY,flight_controller,Flight controller board,imu_sensor,7.4,8,73,3332
+southern_port_disruption,74,9,B_RAMPED_DOMESTIC,flight_controller,Flight controller board,imu_sensor,7.4,8,73,3332
+southern_port_disruption,90,9,B_RAMPED_DOMESTIC,flight_controller,Flight controller board,imu_sensor,7.4,8,73,3332

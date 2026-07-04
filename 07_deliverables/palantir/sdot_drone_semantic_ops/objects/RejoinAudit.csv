@@ -1,0 +1,2 @@
+audit_id,asset_id,case_id,status,discrepancy_m,inside_uncertainty_envelope,prediction_before_rejoin_json,simulated_truth_at_rejoin_json,expected_sync_order_json
+audit_uav_s1_case_c,uav_s1,case_c_gnss_jamming_suspected,pending_rejoin,0.0,True,"{""down"":-120.0,""east"":318.0,""north"":1536.0}","{""down"":-120.0,""east"":318.0,""north"":1536.0}","[""sdot_uav_s1_jamming_suspected"",""sdot_uav_s1_gnss_degraded"",""sdot_uav_s1_rejoin_audit_required""]"

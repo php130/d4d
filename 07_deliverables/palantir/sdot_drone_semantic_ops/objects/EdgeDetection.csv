@@ -1,0 +1,3 @@
+detection_id,asset_id,candidate_type,model_or_rule,confidence,features_json,observation_refs_json
+det_nav_residual_001,uav_s1,NAVIGATION_RESIDUAL_SPIKE,nis_residual_rule_v0,0.63,"{""gnss_quality_drop"":0.72,""heartbeat_gap_seconds"":18,""link_quality_drop"":0.58,""normalized_innovation_squared"":25.0,""residual_m"":166.01,""threshold"":9.21}","[""obs_gnss_012"",""obs_link_014"",""obs_imu_011""]"
+det_nav_residual_002,uav_s1,POSITION_REPORT_INCONSISTENCY,nis_residual_rule_v0,0.66,"{""gnss_present_but_inconsistent"":1.0,""imu_gnss_disagreement"":0.82,""normalized_innovation_squared"":816.24,""residual_m"":282.84,""threshold"":9.21}","[""obs_spoofing_like_021"",""obs_imu_011""]"

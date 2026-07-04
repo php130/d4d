@@ -1,0 +1,435 @@
+{
+  "version": "snowball_20260704_165653",
+  "generated_at": "2026-07-04T17:00:39.132606",
+  "base_records": 1343,
+  "seed_count": 120,
+  "candidate_work_ids": 500,
+  "fetched_records": 446,
+  "new_records": 446,
+  "merged_records": 1789,
+  "failure_count": 54,
+  "relation_counts_new": {
+    "referenced_work": 390,
+    "related_work": 56
+  },
+  "top_new_records": [
+    {
+      "title": "A Pragmatic Approach to the Design of Advanced Precision Terrain-Aided Navigation for UAVs and Its Verification",
+      "year": 2020,
+      "score": 50,
+      "cited_by_count": 12,
+      "url": "https://doi.org/10.3390/rs12091396"
+    },
+    {
+      "title": "GPS-denied navigation using location estimation and texel image correction",
+      "year": 2023,
+      "score": 49,
+      "cited_by_count": 2,
+      "url": "https://doi.org/10.1117/12.2664119"
+    },
+    {
+      "title": "Capture of UAVs Through GPS Spoofing",
+      "year": 2018,
+      "score": 45,
+      "cited_by_count": 41,
+      "url": "https://doi.org/10.1109/gws.2018.8686727"
+    },
+    {
+      "title": "Terrain Aided Planetary UAV Localization Based on Geo-referencing",
+      "year": 2022,
+      "score": 43,
+      "cited_by_count": 30,
+      "url": "https://doi.org/10.1109/tgrs.2022.3198745"
+    },
+    {
+      "title": "2-D UAV navigation solution with LIDAR sensor under GPS-denied environment",
+      "year": 2021,
+      "score": 43,
+      "cited_by_count": 10,
+      "url": "https://doi.org/10.1088/1742-6596/2120/1/012026"
+    },
+    {
+      "title": "Global Navigation Satellite System (GNSS) Independent Navigation for Unmanned Aerial Vehicles (UAV)",
+      "year": 2024,
+      "score": 43,
+      "cited_by_count": 0,
+      "url": "https://doi.org/10.51785/jar.1370785"
+    },
+    {
+      "title": "GPS spoofing detection using RAIM with INS coupling",
+      "year": 2014,
+      "score": 41,
+      "cited_by_count": 130,
+      "url": "https://doi.org/10.1109/plans.2014.6851498"
+    },
+    {
+      "title": "Feasibility of Fault Exclusion Related to Advanced RAIM for GNSS Spoofing Detection",
+      "year": 2017,
+      "score": 40,
+      "cited_by_count": 25,
+      "url": "https://doi.org/10.33012/2017.15193"
+    },
+    {
+      "title": "Maximum-Likelihood Power-Distortion Monitoring for GNSS-Signal Authentication",
+      "year": 2018,
+      "score": 39,
+      "cited_by_count": 72,
+      "url": "https://doi.org/10.1109/taes.2018.2848318"
+    },
+    {
+      "title": "UAV navigation in large-scale GPS-denied bridge environments using fiducial marker-corrected stereo visual-inertial localisation",
+      "year": 2023,
+      "score": 39,
+      "cited_by_count": 26,
+      "url": "https://doi.org/10.1016/j.autcon.2023.105139"
+    },
+    {
+      "title": "UAV Navigation With Monocular Visual Inertial Odometry Under GNSS-Denied Environment",
+      "year": 2023,
+      "score": 39,
+      "cited_by_count": 21,
+      "url": "https://doi.org/10.1109/tgrs.2023.3323519"
+    },
+    {
+      "title": "GOMSF: Graph-Optimization Based Multi-Sensor Fusion for robust UAV Pose estimation",
+      "year": 2018,
+      "score": 38,
+      "cited_by_count": 129,
+      "url": "https://doi.org/10.1109/icra.2018.8460193"
+    },
+    {
+      "title": "A Novel Positioning Method for UAV in GNSS-Denied Environments Based on Mechanical Antenna",
+      "year": 2024,
+      "score": 38,
+      "cited_by_count": 35,
+      "url": "https://doi.org/10.1109/tie.2023.3347859"
+    },
+    {
+      "title": "Robust Visual Inertial Odometry Using a Direct EKF-Based Approach",
+      "year": 2015,
+      "score": 37,
+      "cited_by_count": 422,
+      "url": "http://hdl.handle.net/20.500.11850/155340"
+    },
+    {
+      "title": "Multi-UAV Collaborative Absolute Vision Positioning and Navigation: A Survey and Discussion",
+      "year": 2023,
+      "score": 35,
+      "cited_by_count": 66,
+      "url": "https://doi.org/10.3390/drones7040261"
+    },
+    {
+      "title": "GNSS Spoofing Detection Based on Coupled Visual/Inertial/GNSS Navigation System",
+      "year": 2021,
+      "score": 35,
+      "cited_by_count": 26,
+      "url": "https://doi.org/10.3390/s21206769"
+    },
+    {
+      "title": "User-Centric View of Unmanned Aerial Vehicle Transmission Against Smart Attacks",
+      "year": 2017,
+      "score": 34,
+      "cited_by_count": 172,
+      "url": "https://doi.org/10.1109/tvt.2017.2785414"
+    },
+    {
+      "title": "A Friendly and Low-Cost Technique for Capturing Non-Cooperative Civilian Unmanned Aerial Vehicles",
+      "year": 2018,
+      "score": 34,
+      "cited_by_count": 57,
+      "url": "https://doi.org/10.1109/mnet.2018.1800065"
+    },
+    {
+      "title": "SMART-TRACK: A Novel Kalman Filter-Guided Sensor Fusion for Robust UAV Object Tracking in Dynamic Environments",
+      "year": 2024,
+      "score": 34,
+      "cited_by_count": 26,
+      "url": "https://doi.org/10.1109/jsen.2024.3505939"
+    },
+    {
+      "title": "GPS Spoofing Detector with Adaptive Trustable Residence Area for Cellular based-UAVs",
+      "year": 2020,
+      "score": 34,
+      "cited_by_count": 25,
+      "url": "https://doi.org/10.1109/globecom42002.2020.9348030"
+    },
+    {
+      "title": "Impact analysis of spoofing on different-grade GNSS receivers",
+      "year": 2023,
+      "score": 34,
+      "cited_by_count": 22,
+      "url": "https://doi.org/10.1109/plans53410.2023.10139934"
+    },
+    {
+      "title": "Covert Spoofing Algorithm of UAV Based on GPS/INS-Integrated Navigation",
+      "year": 2019,
+      "score": 33,
+      "cited_by_count": 145,
+      "url": "https://doi.org/10.1109/tvt.2019.2914477"
+    },
+    {
+      "title": "LSVL: Large-scale season-invariant visual localization for UAVs",
+      "year": 2023,
+      "score": 33,
+      "cited_by_count": 27,
+      "url": "https://doi.org/10.1016/j.robot.2023.104497"
+    },
+    {
+      "title": "A Review of Navigation Algorithms for Unmanned Aerial Vehicles Based on Computer Vision Systems",
+      "year": 2022,
+      "score": 33,
+      "cited_by_count": 22,
+      "url": "https://doi.org/10.1134/s2075108722040022"
+    },
+    {
+      "title": "GPS-Denied Navigation Aided by Synthetic Aperture Radar Using the Range-Doppler Algorithm",
+      "year": 2022,
+      "score": 33,
+      "cited_by_count": 14,
+      "url": "https://doi.org/10.33012/navi.533"
+    },
+    {
+      "title": "Visual-based landing system of a multirotor UAV in GNSS denied environment",
+      "year": 2023,
+      "score": 33,
+      "cited_by_count": 9,
+      "url": "https://doi.org/10.1109/metroaerospace57412.2023.10190013"
+    },
+    {
+      "title": "An Assessment of GNSS Receiver Behaviour in Laboratory Conditions When Subject to GPS Meaconing or Spoofing Scenarios",
+      "year": 2020,
+      "score": 33,
+      "cited_by_count": 5,
+      "url": "https://doi.org/10.33012/2020.17735"
+    },
+    {
+      "title": "Semi-Aerodynamic Model Aided Invariant Kalman Filtering for UAV Full-State Estimation",
+      "year": 2023,
+      "score": 33,
+      "cited_by_count": 1,
+      "url": "http://arxiv.org/abs/2310.01844"
+    },
+    {
+      "title": "Unmanned Aircraft Capture and Control Via GPS Spoofing",
+      "year": 2014,
+      "score": 32,
+      "cited_by_count": 661,
+      "url": "https://doi.org/10.1002/rob.21513"
+    },
+    {
+      "title": "Design of an Extended Kalman Filter for UAV Localization",
+      "year": 2007,
+      "score": 32,
+      "cited_by_count": 131,
+      "url": "https://doi.org/10.1109/idc.2007.374554"
+    }
+  ],
+  "outputs": {
+    "new_json": "/Users/mollykim/projects/D4D/03_data/processed/literature_sdot_drone/snowball_20260704_165653/sdot_drone_snowball_new_records.json",
+    "new_csv": "/Users/mollykim/projects/D4D/03_data/processed/literature_sdot_drone/snowball_20260704_165653/sdot_drone_snowball_new_records.csv",
+    "merged_json": "/Users/mollykim/projects/D4D/03_data/processed/literature_sdot_drone/snowball_20260704_165653/sdot_drone_literature_records_merged.json",
+    "queue": "/Users/mollykim/projects/D4D/01_research/literature/sdot_drone_research/sdot_drone_snowball_reading_queue_20260704_165653.md"
+  },
+  "failures": [
+    {
+      "work_id": "https://openalex.org/W6731781941",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "work_id": "https://openalex.org/W6735195370",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "work_id": "https://openalex.org/W2963264512",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "work_id": "https://openalex.org/W2980110727",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "work_id": "https://openalex.org/W3106100950",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "work_id": "https://openalex.org/W6678212408",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "work_id": "https://openalex.org/W6679208462",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "work_id": "https://openalex.org/W6745148471",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "work_id": "https://openalex.org/W6763486604",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "work_id": "https://openalex.org/W6779053972",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "work_id": "https://openalex.org/W6991566385",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "work_id": "https://openalex.org/W2992221258",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "work_id": "https://openalex.org/W6686477898",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "work_id": "https://openalex.org/W6691711145",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "work_id": "https://openalex.org/W6695399365",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "work_id": "https://openalex.org/W6713367996",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "work_id": "https://openalex.org/W6735006567",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "work_id": "https://openalex.org/W6735544702",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "work_id": "https://openalex.org/W6770608024",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "work_id": "https://openalex.org/W2941217974",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "work_id": "https://openalex.org/W3103149073",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "work_id": "https://openalex.org/W6721630048",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "work_id": "https://openalex.org/W6738885829",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "work_id": "https://openalex.org/W6745639221",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "work_id": "https://openalex.org/W6762562918",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "work_id": "https://openalex.org/W6787154106",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "work_id": "https://openalex.org/W6790378786",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "work_id": "https://openalex.org/W3104310154",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "work_id": "https://openalex.org/W3105598087",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "work_id": "https://openalex.org/W6679388247",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "work_id": "https://openalex.org/W2963209930",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "work_id": "https://openalex.org/W2963389793",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "work_id": "https://openalex.org/W2963491718",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "work_id": "https://openalex.org/W2964200805",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "work_id": "https://openalex.org/W2990233814",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "work_id": "https://openalex.org/W3043758338",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "work_id": "https://openalex.org/W3097974940",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "work_id": "https://openalex.org/W3099456616",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "work_id": "https://openalex.org/W3102483098",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "work_id": "https://openalex.org/W3103493968",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "work_id": "https://openalex.org/W6639703010",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "work_id": "https://openalex.org/W6676935882",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "work_id": "https://openalex.org/W6677580257",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "work_id": "https://openalex.org/W6684205842",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "work_id": "https://openalex.org/W6687785706",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "work_id": "https://openalex.org/W6700264148",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "work_id": "https://openalex.org/W6738796088",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "work_id": "https://openalex.org/W6756436328",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "work_id": "https://openalex.org/W6768234139",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "work_id": "https://openalex.org/W6776676535",
+      "error": "HTTP Error 404: Not Found"
+    }
+  ]
+}

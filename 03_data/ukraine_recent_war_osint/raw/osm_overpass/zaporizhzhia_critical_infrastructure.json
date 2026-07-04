@@ -1,0 +1,8397 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-07-04T01:43:55Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 293207077,
+  "lat": 47.7223523,
+  "lon": 35.1946405,
+  "tags": {
+    "name": "Кушугум",
+    "name:en": "Kushugum",
+    "name:fr": "Kouchouhoum",
+    "name:ru": "Кушугум",
+    "name:uk": "Кушугум",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "uic_ref": "2210718"
+  }
+},
+{
+  "type": "node",
+  "id": 293225493,
+  "lat": 47.8509185,
+  "lon": 35.1608252,
+  "tags": {
+    "esr:user": "460611",
+    "name": "6 км",
+    "name:uk": "6 км",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes",
+    "wikidata": "Q28706801",
+    "wikipedia": "uk:6 км (зупинний пункт, Придніпровська залізниця, Запоріжжя)"
+  }
+},
+{
+  "type": "node",
+  "id": 314924963,
+  "lat": 47.8153366,
+  "lon": 35.4246686,
+  "tags": {
+    "esr:user": "463713",
+    "name": "202 км",
+    "name:be": "202 км",
+    "name:bg": "202 км",
+    "name:ee": "202 km",
+    "name:hy": "202 կմ",
+    "name:ka": "202 კმ",
+    "name:lt": "202 km",
+    "name:lv": "202 km",
+    "name:md": "202 km",
+    "name:pl": "202 km",
+    "name:ro": "202 km",
+    "name:ru": "202 км",
+    "name:uk": "202 км",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes",
+    "uic_ref": "2210964"
+  }
+},
+{
+  "type": "node",
+  "id": 314925033,
+  "lat": 47.8091114,
+  "lon": 35.2832882,
+  "tags": {
+    "esr:user": "463605",
+    "name": "Ростуща",
+    "name:ru": "Растущая",
+    "name:uk": "Ростуща",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "uic_ref": "2210686",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 325172776,
+  "lat": 47.8047401,
+  "lon": 35.0500282,
+  "tags": {
+    "esr:user": "465121",
+    "int_name": "166 km",
+    "name": "166 км",
+    "name:ru": "166 км",
+    "name:uk": "166 км",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes",
+    "uic_ref": "2210148"
+  }
+},
+{
+  "type": "node",
+  "id": 325172816,
+  "lat": 47.8174466,
+  "lon": 35.0711583,
+  "tags": {
+    "esr:user": "465117",
+    "name": "168 км",
+    "name:be": "168 км",
+    "name:bg": "168 км",
+    "name:ee": "168 km",
+    "name:hy": "168 կմ",
+    "name:ka": "168 კმ",
+    "name:lt": "168 km",
+    "name:lv": "168 km",
+    "name:md": "168 km",
+    "name:pl": "168 km",
+    "name:ro": "168 km",
+    "name:ru": "168 км",
+    "name:uk": "168 км",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes",
+    "uic_ref": "2210194",
+    "wikidata": "Q22073998",
+    "wikipedia": "uk:168 км (платформа, Запоріжжя)"
+  }
+},
+{
+  "type": "node",
+  "id": 442084560,
+  "lat": 47.8552728,
+  "lon": 35.1133253,
+  "tags": {
+    "esr:user": "460645",
+    "int_name": "174 km",
+    "name": "174 км",
+    "name:be": "174 км",
+    "name:bg": "174 км",
+    "name:ee": "174 km",
+    "name:hy": "174 կմ",
+    "name:ka": "174 კმ",
+    "name:lt": "174 km",
+    "name:lv": "174 km",
+    "name:md": "174 km",
+    "name:pl": "174 km",
+    "name:ro": "174 km",
+    "name:ru": "174 км",
+    "name:uk": "174 км",
+    "platforms": "2",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes",
+    "uic_ref": "2210145"
+  }
+},
+{
+  "type": "node",
+  "id": 442091682,
+  "lat": 47.8219961,
+  "lon": 35.1843837,
+  "tags": {
+    "esr:user": "460607",
+    "name": "Запоріжжя 2",
+    "name:ru": "Запорожье 2",
+    "name:uk": "Запоріжжя 2",
+    "name:zh": "扎波罗热Ⅱ",
+    "network": "Укрзалізниця",
+    "network:en": "Ukrainian Railways",
+    "network:uk": "Укрзалізниця",
+    "network:wikidata": "Q923337",
+    "operator": "Укрзалізниця",
+    "operator:en": "Ukrainian Railways",
+    "operator:uk": "Укрзалізниця",
+    "operator:wikidata": "Q923337",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "uic_ref": "2210730",
+    "wikidata": "Q12105859",
+    "wikipedia": "uk:Запоріжжя II"
+  }
+},
+{
+  "type": "node",
+  "id": 442094303,
+  "lat": 47.7952487,
+  "lon": 35.1877372,
+  "tags": {
+    "addr:street": "Привокзальна площа",
+    "name": "Запоріжжя 1",
+    "name:ru": "Запорожье I",
+    "name:uk": "Запоріжжя 1",
+    "name:zh": "扎波罗热Ⅰ",
+    "network": "Укрзалізниця",
+    "network:en": "Ukrainian Railways",
+    "network:short": "УЗ",
+    "network:short:uk": "УЗ",
+    "network:short:uk-Latn": "UZ",
+    "network:uk": "Укрзалізниця",
+    "network:uk-Latn": "Ukrzaliznytsia",
+    "network:wikidata": "Q923337",
+    "operator": "Укрзалізниця",
+    "operator:en": "Ukrainian Railways",
+    "operator:short": "УЗ",
+    "operator:short:uk": "УЗ",
+    "operator:short:uk-Latn": "UZ",
+    "operator:uk": "Укрзалізниця",
+    "operator:uk-Latn": "Ukrzaliznytsia",
+    "operator:wikidata": "Q923337",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "uic_ref": "2210800",
+    "wheelchair": "limited",
+    "wikidata": "Q12105858",
+    "wikipedia": "uk:Запоріжжя I"
+  }
+},
+{
+  "type": "node",
+  "id": 442102500,
+  "lat": 47.8873794,
+  "lon": 35.0675845,
+  "tags": {
+    "amenity": "hospital",
+    "name": "Дитяча поліклініка",
+    "name:ru": "Детская поликлиника",
+    "name:uk": "Дитяча поліклініка"
+  }
+},
+{
+  "type": "node",
+  "id": 601037801,
+  "lat": 47.8785557,
+  "lon": 35.0639063,
+  "tags": {
+    "esr:user": "465507",
+    "name": "Дніпробуд I",
+    "name:ru": "Днепрострой I",
+    "name:uk": "Дніпробуд I",
+    "photolines": "https://railwayz.info/photolines/station/8528",
+    "railway": "yard",
+    "train": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 606112274,
+  "lat": 47.7782893,
+  "lon": 35.5051624,
+  "tags": {
+    "esr:code": "463817",
+    "esr:user": "463817",
+    "name": "213 км.",
+    "name:uk": "213 км.",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes",
+    "uic_ref": "2210963"
+  }
+},
+{
+  "type": "node",
+  "id": 606112443,
+  "lat": 47.7912383,
+  "lon": 35.5114735,
+  "tags": {
+    "esr:code": "463821",
+    "esr:user": "463821",
+    "name": "211 км.",
+    "name:uk": "211 км.",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes",
+    "uic_ref": "2210057"
+  }
+},
+{
+  "type": "node",
+  "id": 617815973,
+  "lat": 47.8097357,
+  "lon": 35.0259491,
+  "tags": {
+    "esr:user": "465206",
+    "name": "Дніпробуд ІІ",
+    "name:ru": "Днепрострой II",
+    "name:uk": "Дніпробуд ІІ",
+    "network": "Укрзалізниця",
+    "network:en": "Ukrainian Railways",
+    "network:uk": "Укрзалізниця",
+    "network:wikidata": "Q923337",
+    "operator": "Укрзалізниця",
+    "operator:en": "Ukrainian Railways",
+    "operator:uk": "Укрзалізниця",
+    "operator:wikidata": "Q923337",
+    "platforms": "2",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "uic_ref": "2210831",
+    "wikidata": "Q20076362",
+    "wikipedia": "uk:Дніпробуд II"
+  }
+},
+{
+  "type": "node",
+  "id": 702722002,
+  "lat": 47.8329280,
+  "lon": 35.0768590,
+  "tags": {
+    "esr:user": "465102",
+    "name": "Запорізька Січ",
+    "name:ru": "Запорожская Сечь",
+    "name:uk": "Запорізька Січ",
+    "network": "Укрзалізниця",
+    "operator": "Придніпровська залізниця",
+    "photolines": "https://railwayz.info/photolines/station/8307",
+    "platforms": "3",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "uic_ref": "2210728",
+    "wikidata": "Q22076198",
+    "wikipedia": "uk:Запорізька Січ (станція)"
+  }
+},
+{
+  "type": "node",
+  "id": 795620094,
+  "lat": 47.8513037,
+  "lon": 35.2351346,
+  "tags": {
+    "addr:housenumber": "4",
+    "addr:street": "вулиця Авраменка",
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Центральна районна поліклініка №2",
+    "name:uk": "Центральна районна поліклініка №2",
+    "phone": "+380 612 65 5437",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 1016616714,
+  "lat": 47.8403004,
+  "lon": 35.0828660,
+  "tags": {
+    "leisure": "marina",
+    "seamark:harbour:category": "marina",
+    "seamark:type": "harbour"
+  }
+},
+{
+  "type": "node",
+  "id": 1161731719,
+  "lat": 47.8757779,
+  "lon": 35.1167612,
+  "tags": {
+    "esr:user": "460804",
+    "name": "Порт-Велике Запоріжжя",
+    "name:en": "Port-Velyke Zaporizhzhia",
+    "name:ru": "Порт-Великое Запорожье",
+    "name:uk": "Порт-Велике Запоріжжя",
+    "railway": "yard",
+    "train": "yes",
+    "wikidata": "Q25436110",
+    "wikipedia": "uk:Порт-Велике Запоріжжя"
+  }
+},
+{
+  "type": "node",
+  "id": 1259503613,
+  "lat": 47.8270947,
+  "lon": 35.2072392,
+  "tags": {
+    "alt_name": "1103 км",
+    "esr:user": "460734",
+    "name": "Мотор",
+    "name:uk": "Мотор",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes",
+    "uic_ref": "2210003"
+  }
+},
+{
+  "type": "node",
+  "id": 1286849166,
+  "lat": 47.8531857,
+  "lon": 35.1288202,
+  "tags": {
+    "esr:user": "460630",
+    "name": "Імені Анатолія Алімова",
+    "name:en": "Imeni Anatoliia Alimova",
+    "name:ru": "Имени Анатолия Алимова",
+    "name:uk": "Імені Анатолія Алімова",
+    "old_name": "Запоріжжя-Мале",
+    "old_name:uk": "Запоріжжя-Мале",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "uic_ref": "2210835",
+    "wikidata": "Q12074332",
+    "wikipedia": "uk:Імені Анатолія Алімова"
+  }
+},
+{
+  "type": "node",
+  "id": 1298884392,
+  "lat": 47.6936777,
+  "lon": 35.2226289,
+  "tags": {
+    "name": "Осетрівка",
+    "name:en": "Osetrovka",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes",
+    "uic_ref": "2210270"
+  }
+},
+{
+  "type": "node",
+  "id": 1298884644,
+  "lat": 47.7082946,
+  "lon": 35.2053814,
+  "tags": {
+    "name": "Затока",
+    "name:uk": "Затока",
+    "old_name": "1117 км",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes",
+    "uic_ref": "2210158"
+  }
+},
+{
+  "type": "node",
+  "id": 1388547992,
+  "lat": 47.7833065,
+  "lon": 34.8119267,
+  "tags": {
+    "name": "142 км",
+    "name:uk": "142 км",
+    "public_transport": "stop_position",
+    "railway": "halt",
+    "train": "yes",
+    "uic_ref": "2210273"
+  }
+},
+{
+  "type": "node",
+  "id": 1388547995,
+  "lat": 47.8049405,
+  "lon": 34.8611191,
+  "tags": {
+    "name": "148 км",
+    "name:uk": "148 км",
+    "public_transport": "stop_position",
+    "railway": "halt",
+    "train": "yes",
+    "uic_ref": "2210347"
+  }
+},
+{
+  "type": "node",
+  "id": 1388547998,
+  "lat": 47.8243100,
+  "lon": 34.8908435,
+  "tags": {
+    "esr:user": "465314",
+    "name": "150 км",
+    "name:uk": "150 км",
+    "public_transport": "stop_position",
+    "railway": "halt",
+    "train": "yes",
+    "uic_ref": "2210212"
+  }
+},
+{
+  "type": "node",
+  "id": 1719800448,
+  "lat": 47.6533702,
+  "lon": 35.2489488,
+  "tags": {
+    "name": "Історична",
+    "name:en": "Istorychna",
+    "name:uk": "Історична",
+    "old_name": "Канкринівка;Kankrinovka;Kankrynivka;Kankrinowka",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "uic_ref": "2210717",
+    "url": "https://cfts.org.ua/news/2023/10/27/pridniprovska_zaliznitsya_v_ramkakh_derusifikatsi_pereymenuvala_zaliznichnu_stantsiyu_kankrinivka_76976"
+  }
+},
+{
+  "type": "node",
+  "id": 1735023081,
+  "lat": 47.7457030,
+  "lon": 35.2095884,
+  "tags": {
+    "name": "Балабине",
+    "name:en": "Balabyne",
+    "name:fr": "Balabyne",
+    "name:uk": "Балабине",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes",
+    "uic_ref": "2210240"
+  }
+},
+{
+  "type": "node",
+  "id": 1977196851,
+  "lat": 47.7244919,
+  "lon": 35.5356218,
+  "tags": {
+    "name": "Фісаки",
+    "name:ru": "Фисаки",
+    "name:uk": "Фісаки",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "uic_ref": "2210689"
+  }
+},
+{
+  "type": "node",
+  "id": 1977205809,
+  "lat": 47.8072980,
+  "lon": 35.4675313,
+  "tags": {
+    "name": "Кирпотине",
+    "name:en": "Kyrpotyne",
+    "name:ru": "Кирпотино",
+    "name:uk": "Кирпотине",
+    "old_name": "Kirpotino",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "uic_ref": "2210687",
+    "wikidata": "Q20077656",
+    "wikipedia": "uk:Кирпотине (станція"
+  }
+},
+{
+  "type": "node",
+  "id": 1977212394,
+  "lat": 47.8092453,
+  "lon": 35.3554820,
+  "tags": {
+    "name": "Лежине",
+    "name:ru": "Лежино",
+    "name:uk": "Лежине",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "uic_ref": "2210684"
+  }
+},
+{
+  "type": "node",
+  "id": 2022893367,
+  "lat": 47.8466615,
+  "lon": 35.1103175,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital"
+  }
+},
+{
+  "type": "node",
+  "id": 2022893368,
+  "lat": 47.8459049,
+  "lon": 35.1110390,
+  "tags": {
+    "amenity": "hospital"
+  }
+},
+{
+  "type": "node",
+  "id": 2033070630,
+  "lat": 47.8499237,
+  "lon": 35.0963526,
+  "tags": {
+    "esr:user": "460658",
+    "name": "172 км",
+    "name:uk": "172 км",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes",
+    "uic_ref": "2210164"
+  }
+},
+{
+  "type": "node",
+  "id": 2033278550,
+  "lat": 47.6075555,
+  "lon": 35.2811605,
+  "tags": {
+    "name": "1130 км",
+    "name:uk": "1130 км",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes",
+    "uic_ref": "2210159"
+  }
+},
+{
+  "type": "node",
+  "id": 2033363572,
+  "lat": 47.8554368,
+  "lon": 35.2570475,
+  "tags": {
+    "name": "Запоріжжя-Вантажне",
+    "name:en": "Zaporizhzhia-Vantazhne",
+    "name:ru": "Запорожье-Грузовое",
+    "name:uk": "Запоріжжя-Вантажне",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "uic_ref": "2210150",
+    "wikidata": "Q24937350",
+    "wikipedia": "uk:Запоріжжя-Вантажне"
+  }
+},
+{
+  "type": "node",
+  "id": 2033363576,
+  "lat": 47.8788032,
+  "lon": 35.2285115,
+  "tags": {
+    "name": "Запоріжжя-Ліве",
+    "name:ru": "Запорожье-Левое",
+    "name:uk": "Запоріжжя-Ліве",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "uic_ref": "2210801",
+    "wikidata": "Q12105856",
+    "wikipedia": "uk:Запоріжжя-Ліве"
+  }
+},
+{
+  "type": "node",
+  "id": 2033363579,
+  "lat": 47.9341059,
+  "lon": 35.3846317,
+  "tags": {
+    "name": "Любимівка",
+    "name:uk": "Любимівка",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes",
+    "uic_ref": "2210250"
+  }
+},
+{
+  "type": "node",
+  "id": 2033363585,
+  "lat": 48.0244904,
+  "lon": 35.4854484,
+  "tags": {
+    "name": "Новогупалівка",
+    "name:uk": "Новогупалівка",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "uic_ref": "2210682"
+  }
+},
+{
+  "type": "node",
+  "id": 2033363592,
+  "lat": 47.9135492,
+  "lon": 35.3071230,
+  "tags": {
+    "alt_name:ru": "Разъезд 11 км",
+    "alt_name:uk": "Роз’їзд 11 км",
+    "name": "11 км",
+    "name:ru": "11 км",
+    "name:uk": "11 км",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes",
+    "uic_ref": "2210207"
+  }
+},
+{
+  "type": "node",
+  "id": 2033363597,
+  "lat": 47.9078933,
+  "lon": 35.3562967,
+  "tags": {
+    "name": "Янцеве",
+    "name:uk": "Янцеве",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "uic_ref": "2210759"
+  }
+},
+{
+  "type": "node",
+  "id": 2033363624,
+  "lat": 47.9029675,
+  "lon": 35.2837899,
+  "tags": {
+    "name": "13 км",
+    "name:uk": "13 км",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2033363627,
+  "lat": 47.9186697,
+  "lon": 35.3287091,
+  "tags": {
+    "name": "9 км",
+    "name:uk": "9 км",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes",
+    "uic_ref": "2210375"
+  }
+},
+{
+  "type": "node",
+  "id": 2033404080,
+  "lat": 47.8670616,
+  "lon": 35.1842660,
+  "tags": {
+    "name": "21 км",
+    "name:uk": "21 км",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes",
+    "uic_ref": "2210593",
+    "wikidata": "Q25446036",
+    "wikipedia": "uk:21 км (зупинний пункт, Придніпровська залізниця)"
+  }
+},
+{
+  "type": "node",
+  "id": 2033404087,
+  "lat": 47.8610606,
+  "lon": 35.1701815,
+  "tags": {
+    "name": "23 км",
+    "name:uk": "23 км",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes",
+    "uic_ref": "2210594",
+    "wikidata": "Q25446037",
+    "wikipedia": "uk:23 км (платформа)"
+  }
+},
+{
+  "type": "node",
+  "id": 2033411658,
+  "lat": 47.8413099,
+  "lon": 34.9502751,
+  "tags": {
+    "name": "Канцерівка",
+    "name:ru": "Канцеровка",
+    "name:uk": "Канцерівка",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "uic_ref": "2210741",
+    "wikidata": "Q12108331",
+    "wikipedia": "uk:Канцерівка (станція)"
+  }
+},
+{
+  "type": "node",
+  "id": 2037125315,
+  "lat": 47.8186948,
+  "lon": 35.2236083,
+  "tags": {
+    "name": "Передатна",
+    "name:ru": "Передаточная",
+    "name:uk": "Передатна",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "uic_ref": "2210806",
+    "wikidata": "Q20091195",
+    "wikipedia": "uk:Передатна"
+  }
+},
+{
+  "type": "node",
+  "id": 2037145661,
+  "lat": 47.6669589,
+  "lon": 35.2340716,
+  "tags": {
+    "name": "Джерельна",
+    "name:ru": "Джерельная",
+    "name:uk": "Джерельна",
+    "old_name": "1123 км",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes",
+    "uic_ref": "2210281"
+  }
+},
+{
+  "type": "node",
+  "id": 2040994963,
+  "lat": 47.8805740,
+  "lon": 34.9986144,
+  "tags": {
+    "name": "Хортиця",
+    "name:ru": "Хортица",
+    "name:uk": "Хортиця",
+    "railway": "yard",
+    "train": "yes",
+    "wikidata": "Q25445161",
+    "wikipedia": "uk:Хортиця (станція)"
+  }
+},
+{
+  "type": "node",
+  "id": 2050284200,
+  "lat": 47.8399269,
+  "lon": 35.1177007,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Мiська лiкарня № 6"
+  }
+},
+{
+  "type": "node",
+  "id": 2300063236,
+  "lat": 47.8163636,
+  "lon": 34.9648471,
+  "tags": {
+    "esr:user": "465210",
+    "name": "159 км",
+    "name:uk": "159 км",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes",
+    "uic_ref": "2210226"
+  }
+},
+{
+  "type": "node",
+  "id": 3386544571,
+  "lat": 48.0776094,
+  "lon": 35.5233049,
+  "tags": {
+    "esr:user": "464824",
+    "name": "Степова",
+    "name:en": "Stepova",
+    "name:uk": "Степова",
+    "old_name": "1061 км",
+    "old_name:ru": "1061 км",
+    "old_name:uk": "1061 км",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3386567110,
+  "lat": 48.1252167,
+  "lon": 35.5103467,
+  "tags": {
+    "addr:place": "Славгород",
+    "addr:postcode": "52580",
+    "baby_feeding": "no",
+    "esr:code": "464909",
+    "esr:user": "464909",
+    "express:code": "2210681",
+    "internet_access": "no",
+    "name": "Славгород-Південний",
+    "name:ru": "Славгород-Южный",
+    "name:uk": "Славгород-Південний",
+    "network": "Укрзалізниця",
+    "network:en": "Ukrainian Railways",
+    "network:short": "УЗ",
+    "network:uk": "Укрзалізниця",
+    "network:wikidata": "Q923337",
+    "operator": "Укрзалізниця",
+    "operator:en": "Ukrainian Railways",
+    "operator:short": "УЗ",
+    "operator:uk": "Укрзалізниця",
+    "operator:wikidata": "Q923337",
+    "owner": "Придніпровська залізниця",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "uic_ref": "2210681",
+    "wheelchair": "yes",
+    "wikidata": "Q12153542",
+    "wikipedia": "uk:Славгород-Південний"
+  }
+},
+{
+  "type": "node",
+  "id": 3386573436,
+  "lat": 48.0597511,
+  "lon": 35.5035380,
+  "tags": {
+    "esr:user": "464811",
+    "name": "Солоне",
+    "name:en": "Solone",
+    "name:uk": "Солоне",
+    "old_name": "1063 км",
+    "old_name:be": "1063 км",
+    "old_name:bg": "1063 км",
+    "old_name:ee": "1063 km",
+    "old_name:hy": "1063 կմ",
+    "old_name:ka": "1063 კმ",
+    "old_name:lt": "1063 km",
+    "old_name:lv": "1063 km",
+    "old_name:md": "1063 km",
+    "old_name:pl": "1063 km",
+    "old_name:ro": "1063 km",
+    "old_name:ru": "1063 км",
+    "old_name:uk": "1063 км",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes",
+    "uic_ref": "2210175"
+  }
+},
+{
+  "type": "node",
+  "id": 3898364214,
+  "lat": 47.8036356,
+  "lon": 35.2180541,
+  "tags": {
+    "location": "outdoor",
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 4122685392,
+  "lat": 47.8423667,
+  "lon": 35.1200276,
+  "tags": {
+    "addr:housenumber": "28",
+    "addr:street": "вулиця Сталеварів",
+    "amenity": "hospital",
+    "name": "Запорізький обласний центр із профілактики та боротьби зі СНІД. Поліклінічне відділення",
+    "name:ru": "Запорожский городской центр иммуннокоррекции",
+    "name:uk": "Запорізький обласний центр із профілактики та боротьби зі СНІД. Поліклінічне відділення",
+    "phone": "+380 612 33 6336"
+  }
+},
+{
+  "type": "node",
+  "id": 4132834289,
+  "lat": 47.8446341,
+  "lon": 35.1217854,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Запорізька обласна станція переливання крові",
+    "name:ru": "Запорожская областная станция перелевания крови",
+    "name:uk": "Запорізька обласна станція переливання крові"
+  }
+},
+{
+  "type": "node",
+  "id": 4409657294,
+  "lat": 47.8165210,
+  "lon": 35.1774930,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Обласна дитяча лікарня",
+    "name:ru": "областная детская больница",
+    "name:uk": "Обласна дитяча лікарня"
+  }
+},
+{
+  "type": "node",
+  "id": 4504452491,
+  "lat": 47.8607393,
+  "lon": 35.0079661,
+  "tags": {
+    "amenity": "hospital",
+    "name": "Хірургічний корпус центральної районної лікарні Запорізького району",
+    "name:ru": "Хирургический корпус центральной районной больницы Запорожского района",
+    "name:uk": "Хірургічний корпус центральної районної лікарні Запорізького району"
+  }
+},
+{
+  "type": "node",
+  "id": 4504462090,
+  "lat": 47.7790014,
+  "lon": 35.2072036,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Дитяча лікарня №1",
+    "name:ru": "Детская клиническая больница 1",
+    "name:uk": "Дитяча лікарня №1"
+  }
+},
+{
+  "type": "node",
+  "id": 4588540746,
+  "lat": 47.8445225,
+  "lon": 35.1442243,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Запорiзький мiський психо-неврологiчний диспансер",
+    "name:ru": "Запорожский городской психо-неврологический диспансер",
+    "name:uk": "Запорiзький мiський психо-неврологiчний диспансер"
+  }
+},
+{
+  "type": "node",
+  "id": 4588544229,
+  "lat": 47.8454295,
+  "lon": 35.1434252,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Запорiзький обласний наркологiчний диспансер",
+    "name:ru": "Запорожский областной наркологический диспансер",
+    "name:uk": "Запорiзький обласний наркологiчний диспансер"
+  }
+},
+{
+  "type": "node",
+  "id": 4788826721,
+  "lat": 47.8315543,
+  "lon": 35.1341068,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "4-та дитяча поліклініка",
+    "name:ru": "4-ая детская поликлиника",
+    "name:uk": "4-та дитяча поліклініка",
+    "opening_hours": "Mo-Fr 08:00-17:00"
+  }
+},
+{
+  "type": "node",
+  "id": 4945207668,
+  "lat": 47.8302983,
+  "lon": 35.1368033,
+  "tags": {
+    "addr:housenumber": "95-А",
+    "addr:street": "вулиця Перемоги",
+    "amenity": "hospital",
+    "emergency": "no",
+    "healthcare": "hospital",
+    "healthcare:speciality": "general;ophthalmology;gynaecology;paediatrics;psychiatry;otolaryngology;internal;urology;neurology;anaesthetics;surgery;endocrinology;infectious_diseases;vaccination;stomatology;palliative",
+    "name": "Поліклінічне відділення",
+    "operator": "КНП \"Оріхівська БЛІЛ\"",
+    "operator:type": "public"
+  }
+},
+{
+  "type": "node",
+  "id": 5527864891,
+  "lat": 47.8391229,
+  "lon": 35.1222443,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "healthcare:speciality": "chiropractic;osteopathy;physiotherapy",
+    "name": "Медкорд",
+    "name:uk": "Медкорд",
+    "operator": "medcord.com.ua",
+    "website": "http://medcord.com.ua"
+  }
+},
+{
+  "type": "node",
+  "id": 5690389649,
+  "lat": 47.8299980,
+  "lon": 35.0435753,
+  "tags": {
+    "building": "service",
+    "name": "ТП-661",
+    "name:uk": "ТП-661",
+    "power": "substation"
+  }
+},
+{
+  "type": "node",
+  "id": 6528170238,
+  "lat": 47.9433816,
+  "lon": 35.4381005,
+  "tags": {
+    "esr:user": "464701",
+    "name": "Вільнянськ",
+    "name:ru": "Вольнянск",
+    "name:uk": "Вільнянськ",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "uic_ref": "2210683"
+  }
+},
+{
+  "type": "node",
+  "id": 6906836535,
+  "lat": 47.7690651,
+  "lon": 35.2023579,
+  "tags": {
+    "name": "Депо",
+    "name:uk": "Депо",
+    "network": "Укрзалізниця",
+    "operator": "Придніпровська",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 6939595443,
+  "lat": 47.8378885,
+  "lon": 35.2210586,
+  "tags": {
+    "alt_name": "1101 км",
+    "esr:user": "460724",
+    "name": "Іскра",
+    "name:uk": "Іскра",
+    "network": "Укрзалізниця",
+    "operator": "Укрзалізниця",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes",
+    "uic_ref": "2210173"
+  }
+},
+{
+  "type": "node",
+  "id": 6939826863,
+  "lat": 47.8890222,
+  "lon": 35.2470905,
+  "tags": {
+    "name": "17 км",
+    "name:uk": "17 км",
+    "network": "Укрзалізниця",
+    "operator": "Придніпровська",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 7177724075,
+  "lat": 47.8730128,
+  "lon": 35.1322218,
+  "tags": {
+    "name": "Сортувальна (ЗАлК)",
+    "name:uk": "Сортувальна (ЗАлК)",
+    "network": "ЗАлК",
+    "operator": "АТ «ЗАлК»",
+    "railway": "yard",
+    "train": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 7298401821,
+  "lat": 47.8173023,
+  "lon": 35.0042412,
+  "tags": {
+    "name": "162 км",
+    "name:uk": "162 км",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 7529070199,
+  "lat": 47.8706325,
+  "lon": 35.3990271,
+  "tags": {
+    "addr:postcode": "70050",
+    "addr:street": "Горького вулиця",
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "healthcare:speciality": "cardiology;therapist",
+    "name": "Кам'янська амбулаторія",
+    "name:uk": "Кам'янська амбулаторія"
+  }
+},
+{
+  "type": "node",
+  "id": 8323645443,
+  "lat": 47.7985232,
+  "lon": 34.8443863,
+  "tags": {
+    "esr:user": "465333",
+    "name": "146 км",
+    "name:en": "146 km",
+    "name:ru": "146 км",
+    "name:uk": "146 км",
+    "old_name": "Колгоспка",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes",
+    "uic_ref": "2210268"
+  }
+},
+{
+  "type": "node",
+  "id": 8752257811,
+  "lat": 47.8213692,
+  "lon": 35.0331497,
+  "tags": {
+    "addr:housenumber": "28а",
+    "addr:street": "вулиця Сорочинська",
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Міська дитяча лікарня №5",
+    "name:uk": "Міська дитяча лікарня №5"
+  }
+},
+{
+  "type": "node",
+  "id": 8752331739,
+  "lat": 47.8213615,
+  "lon": 35.0312614,
+  "tags": {
+    "addr:housenumber": "28",
+    "addr:street": "вулиця Сорочинська",
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Пологовий будинок №9",
+    "name:uk": "Пологовий будинок №9",
+    "phone": "+380 612 78 0744"
+  }
+},
+{
+  "type": "node",
+  "id": 8978847271,
+  "lat": 47.7884293,
+  "lon": 35.1920182,
+  "tags": {
+    "name": "ТП-1",
+    "name:uk": "ТП-1",
+    "power": "substation"
+  }
+},
+{
+  "type": "node",
+  "id": 10100627826,
+  "lat": 47.9711071,
+  "lon": 35.5069251,
+  "tags": {
+    "name": "Значкове",
+    "name:en": "Znachkove",
+    "name:uk": "Значкове",
+    "old_name": "1074 км",
+    "old_name:en": "1074 km",
+    "old_name:uk": "1074 км",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes",
+    "uic_ref": "2210250"
+  }
+},
+{
+  "type": "node",
+  "id": 10100627827,
+  "lat": 47.9703220,
+  "lon": 35.5075797,
+  "tags": {
+    "name": "Значкове",
+    "name:en": "Znachkove",
+    "name:uk": "Значкове",
+    "old_name": "1074 км",
+    "old_name:en": "1074 km",
+    "old_name:uk": "1074 км",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes",
+    "uic_ref": "2210250"
+  }
+},
+{
+  "type": "node",
+  "id": 10222738817,
+  "lat": 47.8383554,
+  "lon": 35.1312717,
+  "tags": {
+    "addr:housenumber": "58",
+    "addr:postcode": "69005",
+    "addr:street": "Патріотична вулиця",
+    "amenity": "hospital",
+    "email": "lormed.zp@gmail.com",
+    "healthcare": "hospital",
+    "internet_access": "wlan",
+    "name": "Лормед",
+    "name:en": "Lormed",
+    "name:uk": "Лормед",
+    "phone": "0686196888",
+    "website": "https://www.lormed.com.ua/"
+  }
+},
+{
+  "type": "node",
+  "id": 10242932792,
+  "lat": 47.7804364,
+  "lon": 35.2290088,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Міська лікарня №1",
+    "name:uk": "Міська лікарня №1"
+  }
+},
+{
+  "type": "node",
+  "id": 10824463949,
+  "lat": 47.8450687,
+  "lon": 35.1205781,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Медичний центр \"Юліс\"",
+    "name:uk": "Медичний центр \"Юліс\""
+  }
+},
+{
+  "type": "node",
+  "id": 10966211672,
+  "lat": 47.8718472,
+  "lon": 35.1942791,
+  "tags": {
+    "name": "Східна (Запоріжсталь)",
+    "name:uk": "Східна (Запоріжсталь)",
+    "network": "Запоріжсталь",
+    "operator": "ПАТ \"Запоріжсталь\"",
+    "railway": "yard"
+  }
+},
+{
+  "type": "node",
+  "id": 10966211673,
+  "lat": 47.8594266,
+  "lon": 35.1549949,
+  "tags": {
+    "name": "Південна (Запоріжкокс)",
+    "name:uk": "Південна (Запоріжкокс)",
+    "network": "Запоріжкокс",
+    "operator": "ПрАТ \"Запоріжкокс\"",
+    "railway": "yard"
+  }
+},
+{
+  "type": "node",
+  "id": 10966211674,
+  "lat": 47.8796288,
+  "lon": 35.2000241,
+  "tags": {
+    "name": "Силікатна (Запоріжвогнетрив)",
+    "name:uk": "Силікатна (Запоріжвогнетрив)",
+    "network": "Запоріжвогнетрив",
+    "operator": "ПрАТ \"Запоріжвогнетрив\"",
+    "railway": "yard"
+  }
+},
+{
+  "type": "node",
+  "id": 10967544430,
+  "lat": 47.8729155,
+  "lon": 35.1726287,
+  "tags": {
+    "name": "Підбіркова (Запоріжсталь)",
+    "name:uk": "Підбіркова (Запоріжсталь)",
+    "network": "Запоріжсталь",
+    "operator": "ПАТ \"Запоріжсталь\"",
+    "railway": "yard"
+  }
+},
+{
+  "type": "node",
+  "id": 10967544431,
+  "lat": 47.8669605,
+  "lon": 35.1790699,
+  "tags": {
+    "name": "Сортувальна (Дніпроспецсталь)",
+    "name:uk": "Сортувальна (Дніпроспецсталь)",
+    "network": "Дніпроспецсталь",
+    "operator": "ПрАТ \"Дніпроспецсталь\"",
+    "railway": "yard"
+  }
+},
+{
+  "type": "node",
+  "id": 11060626770,
+  "lat": 47.7893573,
+  "lon": 35.1777646,
+  "tags": {
+    "name": "Депо Запорізької дитячої залізниці",
+    "name:uk": "Депо Запорізької дитячої залізниці",
+    "operator": "Регіональна філія «Придніпровська залізниця» акціонерного товариства «Укрзалізниця»",
+    "railway": "yard"
+  }
+},
+{
+  "type": "node",
+  "id": 11377512368,
+  "lat": 47.8667046,
+  "lon": 35.1950873,
+  "tags": {
+    "generator:method": "photovoltaic",
+    "generator:output:electricity": "yes",
+    "generator:source": "solar",
+    "generator:type": "solar_photovoltaic_panel",
+    "location": "roof",
+    "power": "generator"
+  }
+},
+{
+  "type": "node",
+  "id": 11377542869,
+  "lat": 47.8667353,
+  "lon": 35.1951710,
+  "tags": {
+    "generator:method": "photovoltaic",
+    "generator:output:electricity": "yes",
+    "generator:source": "solar",
+    "generator:type": "solar_photovoltaic_panel",
+    "location": "roof",
+    "power": "generator"
+  }
+},
+{
+  "type": "node",
+  "id": 13051917209,
+  "lat": 47.8737476,
+  "lon": 35.1096969,
+  "tags": {
+    "name": "Станція Порт Велике Запоріжжя",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13375473815,
+  "lat": 47.8642129,
+  "lon": 35.1123564,
+  "tags": {
+    "generator:method": "photovoltaic",
+    "generator:output:electricity": "yes",
+    "generator:source": "solar",
+    "generator:type": "solar_photovoltaic_panel",
+    "power": "generator",
+    "ref": "Solar Flow"
+  }
+},
+{
+  "type": "way",
+  "id": 23543533,
+  "center": {
+    "lat": 47.8324819,
+    "lon": 35.1752544
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "secondary",
+    "layer": "1",
+    "line": "3",
+    "name": "вулиця Українська",
+    "name:en": "Ukrainska Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 23549515,
+  "center": {
+    "lat": 47.8344261,
+    "lon": 35.1478222
+  },
+  "tags": {
+    "bridge": "yes",
+    "foot": "no",
+    "hgv": "no",
+    "highway": "primary",
+    "layer": "1",
+    "maxspeed": "50",
+    "name": "Вознесенівський узвіз",
+    "name:en": "Voznesenivsky descent",
+    "name:ru": "Вознесеновский спуск",
+    "name:uk": "Вознесенівський узвіз",
+    "nat_ref": "Н-08",
+    "old_name": "Леніна проспект",
+    "old_name:en": "Lenina Avenue",
+    "old_name:uk": "Леніна проспект",
+    "oneway": "yes",
+    "operator": "МЖКГ м. Запоріжжя",
+    "ref": "Н-08",
+    "surface": "asphalt",
+    "trolley_wire": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 23549668,
+  "center": {
+    "lat": 47.8343427,
+    "lon": 35.1477389
+  },
+  "tags": {
+    "bridge": "yes",
+    "foot": "no",
+    "hgv": "no",
+    "highway": "primary",
+    "layer": "1",
+    "maxspeed": "50",
+    "name": "Вознесенівський узвіз",
+    "name:en": "Voznesenivsky descent",
+    "name:ru": "Вознесеновский спуск",
+    "name:uk": "Вознесенівський узвіз",
+    "nat_ref": "Н-08",
+    "old_name": "Леніна проспект",
+    "old_name:en": "Lenina Avenue",
+    "old_name:uk": "Леніна проспект",
+    "oneway": "yes",
+    "operator": "МЖКГ м. Запоріжжя",
+    "ref": "Н-08",
+    "surface": "asphalt",
+    "trolley_wire": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 23583427,
+  "center": {
+    "lat": 47.8055901,
+    "lon": 35.1847597
+  },
+  "tags": {
+    "bridge": "yes",
+    "bridge:name": "Шенвізський міст",
+    "bridge:name:en": "Shenvize bridge",
+    "bridge:name:ru": "Шенвизский мост",
+    "bridge:name:uk": "Шенвізський міст",
+    "foot": "no",
+    "hgv": "no",
+    "highway": "primary",
+    "layer": "1",
+    "name": "проспект Соборний",
+    "name:en": "Sobornyi Avenue",
+    "name:ru": "Соборный проспект",
+    "name:uk": "проспект Соборний",
+    "nat_ref": "Н-08",
+    "old_name": "Леніна проспект",
+    "old_name:en": "Lenina Avenue",
+    "old_name:uk": "Леніна проспект",
+    "oneway": "yes",
+    "operator": "МЖКГ м. Запоріжжя",
+    "ref": "Н-08",
+    "surface": "asphalt",
+    "trolley_wire": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 26732946,
+  "center": {
+    "lat": 47.8011766,
+    "lon": 35.1891627
+  },
+  "tags": {
+    "bridge": "yes",
+    "electrified": "contact_line",
+    "frequency": "0",
+    "gauge": "1520",
+    "layer": "1",
+    "operator": "Укрзалізниця",
+    "railway": "rail",
+    "usage": "main",
+    "voltage": "3000"
+  }
+},
+{
+  "type": "way",
+  "id": 26732960,
+  "center": {
+    "lat": 47.8045700,
+    "lon": 35.1915539
+  },
+  "tags": {
+    "bridge": "yes",
+    "electrified": "contact_line",
+    "frequency": "0",
+    "gauge": "1520",
+    "layer": "1",
+    "operator": "Укрзалізниця",
+    "passenger_lines": "2",
+    "railway": "rail",
+    "usage": "main",
+    "voltage": "3000"
+  }
+},
+{
+  "type": "way",
+  "id": 26732998,
+  "center": {
+    "lat": 47.8077345,
+    "lon": 35.1936390
+  },
+  "tags": {
+    "bridge": "yes",
+    "electrified": "contact_line",
+    "frequency": "0",
+    "gauge": "1520",
+    "layer": "1",
+    "operator": "Укрзалізниця",
+    "passenger_lines": "1",
+    "railway": "rail",
+    "usage": "main",
+    "voltage": "3000"
+  }
+},
+{
+  "type": "way",
+  "id": 26733012,
+  "center": {
+    "lat": 47.8047627,
+    "lon": 35.1910359
+  },
+  "tags": {
+    "bridge": "yes",
+    "electrified": "contact_line",
+    "frequency": "0",
+    "gauge": "1520",
+    "layer": "1",
+    "operator": "Укрзалізниця",
+    "passenger_lines": "1",
+    "railway": "rail",
+    "usage": "main",
+    "voltage": "3000"
+  }
+},
+{
+  "type": "way",
+  "id": 26733181,
+  "center": {
+    "lat": 47.7810248,
+    "lon": 35.1953827
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "primary",
+    "lanes": "2",
+    "layer": "1",
+    "name": "вулиця Олександра Говорухи",
+    "name:en": "Oleksandra Hovorukhy Street",
+    "name:uk": "вулиця Олександра Говорухи",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 26733268,
+  "center": {
+    "lat": 47.8055596,
+    "lon": 35.1849479
+  },
+  "tags": {
+    "bridge": "yes",
+    "bridge:name": "Шенвізський міст",
+    "bridge:name:en": "Shenvize bridge",
+    "bridge:name:ru": "Шенвизский мост",
+    "bridge:name:uk": "Шенвізський міст",
+    "foot": "no",
+    "hgv": "no",
+    "highway": "primary",
+    "layer": "1",
+    "name": "проспект Соборний",
+    "name:en": "Sobornyi Avenue",
+    "name:ru": "Соборный проспект",
+    "name:uk": "проспект Соборний",
+    "nat_ref": "Н-08",
+    "oneway": "yes",
+    "operator": "МЖКГ м. Запоріжжя",
+    "ref": "Н-08",
+    "surface": "asphalt",
+    "trolley_wire": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 26733337,
+  "center": {
+    "lat": 47.8206119,
+    "lon": 35.2041818
+  },
+  "tags": {
+    "bridge": "yes",
+    "electrified": "contact_line",
+    "frequency": "0",
+    "gauge": "1520",
+    "layer": "1",
+    "operator": "Укрзалізниця",
+    "passenger_lines": "2",
+    "railway": "rail",
+    "usage": "main",
+    "voltage": "3000"
+  }
+},
+{
+  "type": "way",
+  "id": 26733362,
+  "center": {
+    "lat": 47.8137763,
+    "lon": 35.2009511
+  },
+  "tags": {
+    "bridge": "yes",
+    "electrified": "contact_line",
+    "frequency": "0",
+    "gauge": "1520",
+    "layer": "1",
+    "operator": "Укрзалізниця",
+    "passenger_lines": "1",
+    "railway": "rail",
+    "usage": "main",
+    "voltage": "3000"
+  }
+},
+{
+  "type": "way",
+  "id": 26733367,
+  "center": {
+    "lat": 47.8139180,
+    "lon": 35.2006692
+  },
+  "tags": {
+    "bridge": "yes",
+    "electrified": "contact_line",
+    "frequency": "0",
+    "gauge": "1520",
+    "layer": "1",
+    "operator": "Укрзалізниця",
+    "passenger_lines": "1",
+    "railway": "rail",
+    "usage": "main",
+    "voltage": "3000"
+  }
+},
+{
+  "type": "way",
+  "id": 26733370,
+  "center": {
+    "lat": 47.8136723,
+    "lon": 35.2012254
+  },
+  "tags": {
+    "bridge": "yes",
+    "electrified": "contact_line",
+    "frequency": "0",
+    "gauge": "1520",
+    "layer": "1",
+    "operator": "Укрзалізниця",
+    "passenger_lines": "2",
+    "railway": "rail",
+    "usage": "main",
+    "voltage": "3000"
+  }
+},
+{
+  "type": "way",
+  "id": 26733415,
+  "center": {
+    "lat": 47.8277012,
+    "lon": 35.1819582
+  },
+  "tags": {
+    "bridge": "yes",
+    "electrified": "contact_line",
+    "frequency": "0",
+    "gauge": "1520",
+    "layer": "1",
+    "operator": "Укрзалізниця",
+    "passenger_lines": "1",
+    "railway": "rail",
+    "usage": "main",
+    "voltage": "3000"
+  }
+},
+{
+  "type": "way",
+  "id": 26733530,
+  "center": {
+    "lat": 47.8325768,
+    "lon": 35.1750296
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "secondary",
+    "layer": "1",
+    "line": "3",
+    "name": "вулиця Українська",
+    "name:en": "Ukrainska Street",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 26733726,
+  "center": {
+    "lat": 47.8179422,
+    "lon": 35.2394967
+  },
+  "tags": {
+    "bridge": "yes",
+    "electrified": "contact_line",
+    "frequency": "0",
+    "gauge": "1520",
+    "layer": "1",
+    "operator": "Укрзалізниця",
+    "passenger_lines": "1",
+    "railway": "rail",
+    "usage": "main",
+    "voltage": "3000"
+  }
+},
+{
+  "type": "way",
+  "id": 26734024,
+  "center": {
+    "lat": 47.8184262,
+    "lon": 35.2499263
+  },
+  "tags": {
+    "bridge": "yes",
+    "electrified": "contact_line",
+    "frequency": "0",
+    "gauge": "1520",
+    "layer": "1",
+    "operator": "Укрзалізниця",
+    "passenger_lines": "1",
+    "railway": "rail",
+    "usage": "main",
+    "voltage": "3000"
+  }
+},
+{
+  "type": "way",
+  "id": 28655213,
+  "center": {
+    "lat": 47.8107076,
+    "lon": 35.2740187
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "unclassified",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 28655479,
+  "center": {
+    "lat": 47.8406007,
+    "lon": 35.0755233
+  },
+  "tags": {
+    "bridge": "yes",
+    "electrified": "contact_line",
+    "frequency": "0",
+    "gauge": "1520",
+    "layer": "1",
+    "operator": "Укрзалізниця",
+    "passenger_lines": "2",
+    "railway": "rail",
+    "usage": "main",
+    "voltage": "3000"
+  }
+},
+{
+  "type": "way",
+  "id": 28655485,
+  "center": {
+    "lat": 47.8455100,
+    "lon": 35.0844233
+  },
+  "tags": {
+    "bridge": "yes",
+    "electrified": "contact_line",
+    "frequency": "0",
+    "gauge": "1520",
+    "layer": "2",
+    "operator": "Укрзалізниця",
+    "passenger_lines": "2",
+    "railway": "rail",
+    "usage": "main",
+    "voltage": "3000"
+  }
+},
+{
+  "type": "way",
+  "id": 29498246,
+  "center": {
+    "lat": 47.8547701,
+    "lon": 35.1100665
+  },
+  "tags": {
+    "bridge": "yes",
+    "foot": "no",
+    "hgv": "no",
+    "highway": "primary",
+    "layer": "1",
+    "name": "проспект Соборний",
+    "name:en": "Sobornyi Avenue",
+    "name:ru": "Соборный проспект",
+    "name:uk": "проспект Соборний",
+    "nat_ref": "Н-08",
+    "old_name": "Леніна проспект",
+    "old_name:en": "Lenina Avenue",
+    "old_name:uk": "Леніна проспект",
+    "oneway": "yes",
+    "operator": "МЖКГ м. Запоріжжя",
+    "ref": "Н-08",
+    "surface": "asphalt",
+    "trolley_wire": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 29499427,
+  "center": {
+    "lat": 47.8204221,
+    "lon": 35.0750704
+  },
+  "tags": {
+    "bridge": "yes",
+    "bridge:structure": "arch",
+    "electrified": "contact_line",
+    "frequency": "0",
+    "gauge": "1520",
+    "layer": "2",
+    "operator": "Укрзалізниця",
+    "passenger_lines": "2",
+    "railway": "rail",
+    "usage": "main",
+    "voltage": "3000"
+  }
+},
+{
+  "type": "way",
+  "id": 29499474,
+  "center": {
+    "lat": 47.8203591,
+    "lon": 35.0750724
+  },
+  "tags": {
+    "bridge": "yes",
+    "bridge:structure": "arch",
+    "highway": "secondary",
+    "lanes": "2",
+    "layer": "1",
+    "loc_ref": "Т-08-06",
+    "maxspeed": "50",
+    "maxspeed:type": "UA:urban",
+    "name": "II міст Преображенського",
+    "name:uk": "II міст Преображенського",
+    "oneway": "yes",
+    "smoothness": "bad",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 31099264,
+  "center": {
+    "lat": 47.8618796,
+    "lon": 35.0622633
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "secondary",
+    "layer": "1",
+    "maxweight": "36",
+    "name": "Арковий міст",
+    "name:uk": "Арковий міст",
+    "smoothness": "good",
+    "surface": "asphalt",
+    "wikidata": "Q4069861",
+    "wikipedia": "uk:Арковий міст у Запоріжжі"
+  }
+},
+{
+  "type": "way",
+  "id": 36826478,
+  "center": {
+    "lat": 47.8548290,
+    "lon": 35.1102075
+  },
+  "tags": {
+    "bridge": "yes",
+    "foot": "no",
+    "hgv": "no",
+    "highway": "primary",
+    "layer": "1",
+    "name": "проспект Соборний",
+    "name:en": "Sobornyi Avenue",
+    "name:ru": "Соборный проспект",
+    "name:uk": "проспект Соборний",
+    "nat_ref": "Н-08",
+    "old_name": "Леніна проспект",
+    "old_name:en": "Lenina Avenue",
+    "old_name:uk": "Леніна проспект",
+    "oneway": "yes",
+    "operator": "МЖКГ м. Запоріжжя",
+    "ref": "Н-08",
+    "surface": "asphalt",
+    "trolley_wire": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 36826479,
+  "center": {
+    "lat": 47.8534403,
+    "lon": 35.1311831
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "secondary",
+    "layer": "1",
+    "name": "вулиця Заводська",
+    "name:en": "Zavodska Street",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 36826481,
+  "center": {
+    "lat": 47.8542410,
+    "lon": 35.1419541
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "secondary",
+    "layer": "1",
+    "name": "Сєдова вулиця",
+    "name:en": "Siedova Street",
+    "name:pl": "ulica Sedowa",
+    "name:ru": "Седова улица",
+    "name:uk": "Сєдова вулиця",
+    "trolley_wire": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 52500708,
+  "center": {
+    "lat": 47.8172883,
+    "lon": 35.1880642
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "secondary",
+    "layer": "1",
+    "name": "Червона вулиця",
+    "name:en": "Chervona street",
+    "name:uk": "Червона вулиця"
+  }
+},
+{
+  "type": "way",
+  "id": 57014787,
+  "center": {
+    "lat": 47.8244864,
+    "lon": 35.1458467
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "primary",
+    "layer": "1",
+    "lit": "yes",
+    "maxspeed": "50",
+    "name": "Прибережна автомагістраль",
+    "name:ru": "Прибрежная автомагистраль",
+    "name:uk": "Прибережна автомагістраль",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 57014795,
+  "center": {
+    "lat": 47.8246235,
+    "lon": 35.1459136
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "primary",
+    "layer": "1",
+    "lit": "yes",
+    "maxspeed": "50",
+    "name": "Прибережна автомагістраль",
+    "name:ru": "Прибрежная автомагистраль",
+    "name:uk": "Прибережна автомагістраль",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 57016211,
+  "center": {
+    "lat": 47.8440260,
+    "lon": 35.0804095
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "secondary",
+    "layer": "1",
+    "loc_ref": "Т-08-06",
+    "name": "I міст Преображенського",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 57016216,
+  "center": {
+    "lat": 47.8454768,
+    "lon": 35.0844211
+  },
+  "tags": {
+    "bridge": "yes",
+    "bridge:structure": "arch",
+    "highway": "secondary",
+    "layer": "1",
+    "loc_ref": "Т-08-06",
+    "maxspeed": "40",
+    "name": "I міст Преображенського",
+    "name:uk": "I міст Преображенського",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 57016219,
+  "center": {
+    "lat": 47.8214818,
+    "lon": 35.0282536
+  },
+  "tags": {
+    "bridge": "yes",
+    "layer": "1",
+    "railway": "rail",
+    "service": "spur"
+  }
+},
+{
+  "type": "way",
+  "id": 57016221,
+  "center": {
+    "lat": 47.8550056,
+    "lon": 35.1227570
+  },
+  "tags": {
+    "bridge": "yes",
+    "layer": "1",
+    "railway": "rail"
+  }
+},
+{
+  "type": "way",
+  "id": 57016223,
+  "center": {
+    "lat": 47.8541379,
+    "lon": 35.1219463
+  },
+  "tags": {
+    "bridge": "yes",
+    "electrified": "contact_line",
+    "frequency": "0",
+    "gauge": "1520",
+    "layer": "1",
+    "operator": "Укрзалізниця",
+    "passenger_lines": "2",
+    "railway": "rail",
+    "usage": "main",
+    "voltage": "3000"
+  }
+},
+{
+  "type": "way",
+  "id": 57016224,
+  "center": {
+    "lat": 47.8553021,
+    "lon": 35.1172025
+  },
+  "tags": {
+    "bridge": "yes",
+    "electrified": "contact_line",
+    "frequency": "0",
+    "gauge": "1520",
+    "layer": "1",
+    "operator": "Укрзалізниця",
+    "passenger_lines": "2",
+    "railway": "rail",
+    "usage": "main",
+    "voltage": "3000"
+  }
+},
+{
+  "type": "way",
+  "id": 57035321,
+  "center": {
+    "lat": 47.8387479,
+    "lon": 35.0998046
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "footway",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 57035323,
+  "center": {
+    "lat": 47.8309012,
+    "lon": 35.1495565
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "secondary",
+    "layer": "1",
+    "name": "Поштова вулиця",
+    "name:pl": "ulica Pocztowa",
+    "name:uk": "Поштова вулиця",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 57035326,
+  "center": {
+    "lat": 47.9261285,
+    "lon": 35.3774420
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "primary",
+    "lanes": "2",
+    "layer": "1",
+    "maxspeed": "90",
+    "maxweight": "30",
+    "nat_ref": "Н-15",
+    "ref": "Н-15",
+    "source:maxspeed": "UA:rural",
+    "source:maxweight": "sign",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 57035328,
+  "center": {
+    "lat": 47.8326177,
+    "lon": 35.1514511
+  },
+  "tags": {
+    "bridge": "yes",
+    "foot": "no",
+    "hgv": "no",
+    "highway": "primary",
+    "layer": "1",
+    "name": "Вознесенівський узвіз",
+    "name:en": "Voznesenivsky descent",
+    "name:ru": "Вознесеновский спуск",
+    "name:uk": "Вознесенівський узвіз",
+    "nat_ref": "Н-08",
+    "old_name": "Леніна проспект",
+    "old_name:en": "Lenina Avenue",
+    "old_name:uk": "Леніна проспект",
+    "oneway": "yes",
+    "operator": "МЖКГ м. Запоріжжя",
+    "ref": "Н-08",
+    "surface": "asphalt",
+    "trolley_wire": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 57035329,
+  "center": {
+    "lat": 47.8079437,
+    "lon": 35.1764285
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "primary",
+    "lanes": "3",
+    "layer": "1",
+    "maxweight:signed": "no",
+    "name": "Набережна вулиця",
+    "name:en": "Naberezhna Street",
+    "name:pl": "ulica Nadbrzeżna",
+    "name:ru": "Набережная улица",
+    "name:uk": "Набережна вулиця",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 57035332,
+  "center": {
+    "lat": 47.8325517,
+    "lon": 35.1513706
+  },
+  "tags": {
+    "bridge": "yes",
+    "foot": "no",
+    "hgv": "no",
+    "highway": "primary",
+    "layer": "1",
+    "name": "Вознесенівський узвіз",
+    "name:en": "Voznesenivsky descent",
+    "name:ru": "Вознесеновский спуск",
+    "name:uk": "Вознесенівський узвіз",
+    "nat_ref": "Н-08",
+    "old_name": "Леніна проспект",
+    "old_name:en": "Lenina Avenue",
+    "old_name:uk": "Леніна проспект",
+    "oneway": "yes",
+    "ref": "Н-08",
+    "surface": "asphalt",
+    "trolley_wire": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 57035334,
+  "center": {
+    "lat": 47.8080069,
+    "lon": 35.1762197
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "primary",
+    "lanes": "3",
+    "layer": "1",
+    "maxweight:signed": "no",
+    "name": "Набережна вулиця",
+    "name:en": "Naberezhna Street",
+    "name:pl": "ulica Nadbrzeżna",
+    "name:ru": "Набережная улица",
+    "name:uk": "Набережна вулиця",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 82459704,
+  "center": {
+    "lat": 47.8917988,
+    "lon": 35.1833393
+  },
+  "tags": {
+    "bridge": "yes",
+    "layer": "2",
+    "railway": "rail",
+    "service": "spur"
+  }
+},
+{
+  "type": "way",
+  "id": 82490036,
+  "center": {
+    "lat": 47.8534583,
+    "lon": 35.1313830
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "secondary",
+    "layer": "1",
+    "name": "вулиця Заводська",
+    "name:en": "Zavodska Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 87141816,
+  "center": {
+    "lat": 47.8887465,
+    "lon": 35.0627175
+  },
+  "tags": {
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "way",
+  "id": 88675752,
+  "center": {
+    "lat": 47.8339909,
+    "lon": 35.1315318
+  },
+  "tags": {
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "way",
+  "id": 88689767,
+  "center": {
+    "lat": 47.8391412,
+    "lon": 35.1029339
+  },
+  "tags": {
+    "building": "yes",
+    "power": "substation",
+    "source": "survey",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "way",
+  "id": 91462439,
+  "center": {
+    "lat": 47.8875913,
+    "lon": 35.0664794
+  },
+  "tags": {
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "way",
+  "id": 97230673,
+  "center": {
+    "lat": 47.8379717,
+    "lon": 35.0762395
+  },
+  "tags": {
+    "bridge": "yes",
+    "check_date": "2021-07-17",
+    "highway": "construction",
+    "layer": "1",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 97232881,
+  "center": {
+    "lat": 47.8406586,
+    "lon": 35.0786737
+  },
+  "tags": {
+    "bridge": "yes",
+    "bridge:structure": "beam",
+    "check_date": "2021-07-17",
+    "highway": "primary",
+    "layer": "1",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 98728307,
+  "center": {
+    "lat": 47.8337778,
+    "lon": 35.2001025
+  },
+  "tags": {
+    "bridge": "yes",
+    "electrified": "no",
+    "gauge": "1520",
+    "layer": "2",
+    "railway": "rail",
+    "service": "spur",
+    "usage": "industrial"
+  }
+},
+{
+  "type": "way",
+  "id": 102420750,
+  "center": {
+    "lat": 47.8195304,
+    "lon": 35.0770835
+  },
+  "tags": {
+    "bridge": "yes",
+    "bridge:structure": "beam",
+    "construction": "primary",
+    "highway": "construction",
+    "layer": "1",
+    "name": "Балковий міст",
+    "name:uk": "Балковий міст",
+    "oneway": "yes",
+    "opening_date": "11.2021"
+  }
+},
+{
+  "type": "way",
+  "id": 102420751,
+  "center": {
+    "lat": 47.8195997,
+    "lon": 35.0768223
+  },
+  "tags": {
+    "bridge": "yes",
+    "bridge:structure": "beam",
+    "highway": "primary",
+    "lanes": "3",
+    "layer": "1",
+    "name": "Балковий міст",
+    "name:uk": "Балковий міст",
+    "oneway": "yes",
+    "opening_date": "24.12.2020"
+  }
+},
+{
+  "type": "way",
+  "id": 104040843,
+  "center": {
+    "lat": 48.0546556,
+    "lon": 34.9298737
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "primary",
+    "layer": "1",
+    "oneway": "no",
+    "smoothness": "intermediate",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 107706806,
+  "center": {
+    "lat": 47.8180641,
+    "lon": 35.2017594
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "residential",
+    "layer": "1",
+    "name": "Червона вулиця",
+    "name:en": "Chervona Street",
+    "name:uk": "Червона вулиця"
+  }
+},
+{
+  "type": "way",
+  "id": 107799709,
+  "center": {
+    "lat": 47.8469663,
+    "lon": 35.1432639
+  },
+  "tags": {
+    "amenity": "hospital",
+    "name": "Стоматологія",
+    "name:ru": "Городская государственная стоматология #4",
+    "name:uk": "Стоматологія"
+  }
+},
+{
+  "type": "way",
+  "id": 109157140,
+  "center": {
+    "lat": 47.8071825,
+    "lon": 35.1702593
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "footway",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 109157486,
+  "center": {
+    "lat": 47.8101227,
+    "lon": 35.1721889
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "footway",
+    "layer": "1",
+    "surface": "asphalt",
+    "wikimedia_commons": "Category:Central bridge in Dubovy Hay (Zaporizhzhia)"
+  }
+},
+{
+  "type": "way",
+  "id": 112167341,
+  "center": {
+    "lat": 47.8254123,
+    "lon": 35.0282643
+  },
+  "tags": {
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "way",
+  "id": 112565562,
+  "center": {
+    "lat": 47.7719163,
+    "lon": 35.1900841
+  },
+  "tags": {
+    "building": "service",
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "way",
+  "id": 112567593,
+  "center": {
+    "lat": 47.8118887,
+    "lon": 34.8694696
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "primary",
+    "layer": "1",
+    "maxspeed": "90",
+    "nat_ref": "Н-23",
+    "ref": "Н-23",
+    "smoothness": "good",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 112569907,
+  "center": {
+    "lat": 47.7735737,
+    "lon": 35.1868702
+  },
+  "tags": {
+    "building": "service",
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "way",
+  "id": 113308943,
+  "center": {
+    "lat": 47.8679295,
+    "lon": 35.0858217
+  },
+  "tags": {
+    "alt_name": "Дніпрогес",
+    "alt_name:ru": "Днепрогэс",
+    "generator:source": "hydro",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Дніпрогес_з_висоти.jpg",
+    "landuse": "industrial",
+    "name": "Дніпровська ГЕС",
+    "name:de": "DniproHES",
+    "name:en": "Dnieper Hydroelectric Station",
+    "name:hr": "DniproGES",
+    "name:ru": "Днепровская ГЭС",
+    "name:uk": "Дніпровська ГЕС",
+    "name:zh": "第聂伯河水电站",
+    "plant:method": "water-storage",
+    "plant:output:electricity": "1578,6 MW",
+    "plant:source": "hydro",
+    "power": "plant",
+    "start_date": "1932-10-10",
+    "waterway": "dam",
+    "wikidata": "Q738619",
+    "wikipedia": "uk:Дніпровська ГЕС"
+  }
+},
+{
+  "type": "way",
+  "id": 113463481,
+  "center": {
+    "lat": 47.7909321,
+    "lon": 35.1798897
+  },
+  "tags": {
+    "addr:housenumber": "1",
+    "addr:postcode": "69118",
+    "addr:street": "Привокзальна вулиця",
+    "air_conditioning": "no",
+    "building": "yes",
+    "building:levels": "1",
+    "internet_access": "wlan",
+    "internet_access:fee": "no",
+    "name": "Станція Жовтнева",
+    "name:uk": "Станція Жовтнева",
+    "network": "Запорізька дитяча залізниця",
+    "operator": "Регіональна філія «Придніпровська залізниця» акціонерного товариства «Укрзалізниця»",
+    "public_transport": "station",
+    "railway": "station",
+    "roof:colour": "Червоний",
+    "smoking": "no",
+    "train": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 113560155,
+  "center": {
+    "lat": 47.8587850,
+    "lon": 35.1065284
+  },
+  "tags": {
+    "addr:housenumber": "9",
+    "amenity": "hospital",
+    "building": "yes",
+    "healthcare": "hospital",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 117064901,
+  "center": {
+    "lat": 47.8581675,
+    "lon": 35.1058372
+  },
+  "tags": {
+    "amenity": "hospital",
+    "barrier": "fence",
+    "healthcare": "hospital"
+  }
+},
+{
+  "type": "way",
+  "id": 117092420,
+  "center": {
+    "lat": 47.8307300,
+    "lon": 35.1449440
+  },
+  "tags": {
+    "amenity": "hospital",
+    "building": "yes",
+    "healthcare": "hospital",
+    "name": "Міська клінічна лікарня екстреної та швидкої медичної допомоги",
+    "name:ru": "Городская клиническая больница экстренной и скорой медицинской помощи. Хирургический корпус.",
+    "name:uk": "Міська клінічна лікарня екстреної та швидкої медичної допомоги"
+  }
+},
+{
+  "type": "way",
+  "id": 118933436,
+  "center": {
+    "lat": 47.8752604,
+    "lon": 35.0579486
+  },
+  "tags": {
+    "addr:housenumber": "9",
+    "addr:street": "Дудикіна вулиця",
+    "amenity": "hospital",
+    "building": "yes",
+    "name": "Пологовий будинок № 4",
+    "name:ru": "Роддом № 4",
+    "name:uk": "Пологовий будинок № 4"
+  }
+},
+{
+  "type": "way",
+  "id": 126408249,
+  "center": {
+    "lat": 47.6940072,
+    "lon": 35.3739842
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "tertiary",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 131946016,
+  "center": {
+    "lat": 47.8385628,
+    "lon": 35.1984949
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "residential",
+    "horse": "no",
+    "layer": "1",
+    "motor_vehicle": "no",
+    "name": "вулиця Січових Стрільців",
+    "name:uk": "вулиця Січових Стрільців"
+  }
+},
+{
+  "type": "way",
+  "id": 154388618,
+  "center": {
+    "lat": 47.8567879,
+    "lon": 35.0990797
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital"
+  }
+},
+{
+  "type": "way",
+  "id": 154761098,
+  "center": {
+    "lat": 47.8656081,
+    "lon": 35.0627983
+  },
+  "tags": {
+    "frequency": "50",
+    "full_name": "ПС „Правобережна“ 150/35/6 кВ",
+    "location": "outdoor",
+    "name": "Правобережна",
+    "name:uk": "Правобережна",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "50 MVA",
+    "substation": "distribution",
+    "voltage": "150000;35000;6000"
+  }
+},
+{
+  "type": "way",
+  "id": 154912302,
+  "center": {
+    "lat": 47.8626852,
+    "lon": 35.0897503
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "service",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 155025340,
+  "center": {
+    "lat": 47.8269539,
+    "lon": 35.2221406
+  },
+  "tags": {
+    "amenity": "hospital",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 156582996,
+  "center": {
+    "lat": 47.8568778,
+    "lon": 35.1697412
+  },
+  "tags": {
+    "bridge": "yes",
+    "electrified": "contact_line",
+    "frequency": "0",
+    "gauge": "1520",
+    "layer": "1",
+    "operator": "Укрзалізниця",
+    "passenger_lines": "1",
+    "railway": "rail",
+    "usage": "main",
+    "voltage": "3000"
+  }
+},
+{
+  "type": "way",
+  "id": 158445496,
+  "center": {
+    "lat": 47.8454887,
+    "lon": 35.2223417
+  },
+  "tags": {
+    "addr:housenumber": "11",
+    "addr:street": "Бочарова вулиця",
+    "amenity": "hospital",
+    "building": "hospital",
+    "healthcare": "hospital",
+    "healthcare:speciality": "gynaecology",
+    "name": "Пологовий будинок №3",
+    "name:ru": "Родильный дом №3",
+    "name:uk": "Пологовий будинок №3"
+  }
+},
+{
+  "type": "way",
+  "id": 162775567,
+  "center": {
+    "lat": 47.8343076,
+    "lon": 35.1322935
+  },
+  "tags": {
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "way",
+  "id": 162780828,
+  "center": {
+    "lat": 47.8510873,
+    "lon": 35.0996976
+  },
+  "tags": {
+    "bridge": "yes",
+    "electrified": "contact_line",
+    "frequency": "0",
+    "gauge": "1520",
+    "layer": "1",
+    "operator": "Укрзалізниця",
+    "passenger_lines": "2",
+    "railway": "rail",
+    "usage": "main",
+    "voltage": "3000"
+  }
+},
+{
+  "type": "way",
+  "id": 162873708,
+  "center": {
+    "lat": 47.8534545,
+    "lon": 35.1313298
+  },
+  "tags": {
+    "bridge": "yes",
+    "electrified": "contact_line",
+    "frequency": "0",
+    "gauge": "1524",
+    "layer": "1",
+    "oneway": "yes",
+    "railway": "tram",
+    "usage": "main",
+    "voltage": "600"
+  }
+},
+{
+  "type": "way",
+  "id": 162885479,
+  "center": {
+    "lat": 47.8167160,
+    "lon": 35.1718201
+  },
+  "tags": {
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "way",
+  "id": 162943123,
+  "center": {
+    "lat": 47.8247588,
+    "lon": 35.1459799
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "footway",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 162943126,
+  "center": {
+    "lat": 47.8308260,
+    "lon": 35.1494566
+  },
+  "tags": {
+    "bridge": "yes",
+    "electrified": "contact_line",
+    "frequency": "0",
+    "gauge": "1524",
+    "layer": "1",
+    "oneway": "yes",
+    "railway": "tram",
+    "usage": "main",
+    "voltage": "600"
+  }
+},
+{
+  "type": "way",
+  "id": 162943136,
+  "center": {
+    "lat": 47.8303278,
+    "lon": 35.1494168
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "footway",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 162954029,
+  "center": {
+    "lat": 47.8324877,
+    "lon": 35.1513063
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "footway",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 162954032,
+  "center": {
+    "lat": 47.8342804,
+    "lon": 35.1476740
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "footway",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 162989858,
+  "center": {
+    "lat": 47.8539064,
+    "lon": 35.0162611
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "primary",
+    "lanes": "4",
+    "layer": "1",
+    "name": "вулиця Абрагама Коопа",
+    "name:uk": "вулиця Абрагама Коопа",
+    "surface": "asphalt",
+    "trolley_wire": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 163004224,
+  "center": {
+    "lat": 47.7388311,
+    "lon": 35.2036228
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "service",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 163011092,
+  "center": {
+    "lat": 47.8031682,
+    "lon": 35.1688604
+  },
+  "tags": {
+    "bridge": "yes",
+    "layer": "1",
+    "railway": "disused",
+    "service": "spur"
+  }
+},
+{
+  "type": "way",
+  "id": 163553761,
+  "center": {
+    "lat": 47.8588743,
+    "lon": 35.1068554
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "3-я міська лікарня",
+    "name:ru": "3-я городская больница",
+    "name:uk": "3-я міська лікарня",
+    "name:zh": "扎波罗热市第三医院"
+  }
+},
+{
+  "type": "way",
+  "id": 164041969,
+  "center": {
+    "lat": 47.8463784,
+    "lon": 35.1415107
+  },
+  "tags": {
+    "barrier": "wall",
+    "frequency": "50",
+    "full_name": "ПС „Лівобережна-2“ 150/35/6 кВ",
+    "location": "outdoor",
+    "name": "Лівобережна-2",
+    "name:uk": "Лівобережна-2",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "80 MVA",
+    "substation": "distribution",
+    "voltage": "150000;35000;6000"
+  }
+},
+{
+  "type": "way",
+  "id": 164434002,
+  "center": {
+    "lat": 47.8489487,
+    "lon": 35.1094888
+  },
+  "tags": {
+    "addr:housenumber": "5",
+    "addr:street": "Дивногорська вулиця",
+    "amenity": "hospital",
+    "building": "yes",
+    "name": "Обласний медичний центр репродукції людини",
+    "name:ru": "Областной медицинский центр репродукции человека",
+    "name:uk": "Обласний медичний центр репродукції людини"
+  }
+},
+{
+  "type": "way",
+  "id": 169398907,
+  "center": {
+    "lat": 47.7017025,
+    "lon": 35.2135965
+  },
+  "tags": {
+    "bridge": "yes",
+    "electrified": "contact_line",
+    "frequency": "0",
+    "gauge": "1520",
+    "layer": "1",
+    "passenger_lines": "2",
+    "railway": "disused",
+    "usage": "main",
+    "voltage": "3000"
+  }
+},
+{
+  "type": "way",
+  "id": 169398908,
+  "center": {
+    "lat": 47.6304739,
+    "lon": 35.2657951
+  },
+  "tags": {
+    "bridge": "yes",
+    "electrified": "contact_line",
+    "frequency": "0",
+    "gauge": "1520",
+    "layer": "1",
+    "passenger_lines": "2",
+    "railway": "disused",
+    "usage": "main",
+    "voltage": "3000"
+  }
+},
+{
+  "type": "way",
+  "id": 169398909,
+  "center": {
+    "lat": 47.6726595,
+    "lon": 35.2279625
+  },
+  "tags": {
+    "bridge": "yes",
+    "electrified": "contact_line",
+    "frequency": "0",
+    "gauge": "1520",
+    "layer": "1",
+    "passenger_lines": "2",
+    "railway": "disused",
+    "usage": "main",
+    "voltage": "3000"
+  }
+},
+{
+  "type": "way",
+  "id": 177333006,
+  "center": {
+    "lat": 47.6041539,
+    "lon": 35.4108115
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "Марганецька",
+    "name:uk": "Марганецька",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "50 MVA",
+    "substation": "distribution",
+    "voltage": "150000;35000;6000"
+  }
+},
+{
+  "type": "way",
+  "id": 185677911,
+  "center": {
+    "lat": 47.8113322,
+    "lon": 35.2122991
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "footway",
+    "layer": "1",
+    "name": "Технічна вулиця",
+    "name:en": "Tekhnichna Street",
+    "name:pl": "ulica Techniczna",
+    "name:ru": "Техническая улица",
+    "name:uk": "Технічна вулиця"
+  }
+},
+{
+  "type": "way",
+  "id": 185677954,
+  "center": {
+    "lat": 47.8137011,
+    "lon": 35.2183377
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "footway",
+    "layer": "1",
+    "name": "Саперна вулиця",
+    "name:en": "Saperna Street",
+    "name:ru": "Сапёрная улица",
+    "name:uk": "Саперна вулиця"
+  }
+},
+{
+  "type": "way",
+  "id": 187159949,
+  "center": {
+    "lat": 47.7786392,
+    "lon": 35.2037679
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Онкоцентр",
+    "name:uk": "Онкоцентр"
+  }
+},
+{
+  "type": "way",
+  "id": 187194205,
+  "center": {
+    "lat": 47.7789978,
+    "lon": 35.2044446
+  },
+  "tags": {
+    "amenity": "hospital",
+    "building": "yes",
+    "healthcare": "hospital"
+  }
+},
+{
+  "type": "way",
+  "id": 187194206,
+  "center": {
+    "lat": 47.7784380,
+    "lon": 35.2025582
+  },
+  "tags": {
+    "amenity": "hospital",
+    "building": "yes",
+    "healthcare": "hospital"
+  }
+},
+{
+  "type": "way",
+  "id": 187194207,
+  "center": {
+    "lat": 47.7788101,
+    "lon": 35.2036248
+  },
+  "tags": {
+    "amenity": "hospital",
+    "building": "yes",
+    "healthcare": "hospital"
+  }
+},
+{
+  "type": "way",
+  "id": 187194208,
+  "center": {
+    "lat": 47.7788111,
+    "lon": 35.2030170
+  },
+  "tags": {
+    "amenity": "hospital",
+    "building": "yes",
+    "healthcare": "hospital"
+  }
+},
+{
+  "type": "way",
+  "id": 191695796,
+  "center": {
+    "lat": 47.8340676,
+    "lon": 35.1224103
+  },
+  "tags": {
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "way",
+  "id": 192916231,
+  "center": {
+    "lat": 47.9044490,
+    "lon": 35.2492148
+  },
+  "tags": {
+    "barrier": "fence",
+    "frequency": "50",
+    "location": "outdoor",
+    "name": "Запорізька-330",
+    "name:ru": "Запорожская-330",
+    "name:uk": "Запорізька-330",
+    "operator": "Укренерго",
+    "power": "substation",
+    "rating": "1400 MVA",
+    "substation": "transmission",
+    "voltage": "330000;150000;10000"
+  }
+},
+{
+  "type": "way",
+  "id": 195056932,
+  "center": {
+    "lat": 47.7791789,
+    "lon": 35.2042834
+  },
+  "tags": {
+    "amenity": "hospital",
+    "building": "yes",
+    "healthcare": "hospital"
+  }
+},
+{
+  "type": "way",
+  "id": 198435188,
+  "center": {
+    "lat": 47.8879079,
+    "lon": 35.0002554
+  },
+  "tags": {
+    "power": "substation",
+    "substation": "industrial",
+    "voltage": "35000"
+  }
+},
+{
+  "type": "way",
+  "id": 198435190,
+  "center": {
+    "lat": 47.8900181,
+    "lon": 35.0003658
+  },
+  "tags": {
+    "barrier": "fence",
+    "frequency": "50",
+    "full_name": "ПС „Армаліт“ 150/35/6 кВ",
+    "location": "outdoor",
+    "name": "Армаліт",
+    "name:uk": "Армаліт",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "126 MVA",
+    "substation": "distribution",
+    "voltage": "150000;35000;6000"
+  }
+},
+{
+  "type": "way",
+  "id": 198440422,
+  "center": {
+    "lat": 47.8258527,
+    "lon": 34.9970609
+  },
+  "tags": {
+    "barrier": "fence",
+    "frequency": "50",
+    "full_name": "ПС „Горизонт“ 150/10 кВ",
+    "location": "outdoor",
+    "name": "Горизонт",
+    "name:uk": "Горизонт",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "126 MVA",
+    "substation": "distribution",
+    "voltage": "150000;10000"
+  }
+},
+{
+  "type": "way",
+  "id": 198440711,
+  "center": {
+    "lat": 47.8199652,
+    "lon": 35.0263128
+  },
+  "tags": {
+    "barrier": "fence",
+    "frequency": "50",
+    "full_name": "ПС „Супутник“ 150/35/10 кВ",
+    "location": "outdoor",
+    "name": "Супутник",
+    "name:ru": "Спутник",
+    "name:uk": "Супутник",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "151 MVA",
+    "substation": "distribution",
+    "voltage": "150000;35000;10000"
+  }
+},
+{
+  "type": "way",
+  "id": 198779501,
+  "center": {
+    "lat": 47.8035615,
+    "lon": 35.1854672
+  },
+  "tags": {
+    "location": "outdoor",
+    "name": "Олександрівська-1",
+    "name:uk": "Олександрівська-1",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "126 MVA",
+    "voltage": "150000;35000;6000"
+  }
+},
+{
+  "type": "way",
+  "id": 198793407,
+  "center": {
+    "lat": 47.7665724,
+    "lon": 35.2009943
+  },
+  "tags": {
+    "barrier": "wall",
+    "frequency": "50",
+    "full_name": "ПС „Комунальна“ 150/10 кВ",
+    "location": "outdoor",
+    "name": "Комунальна",
+    "name:uk": "Комунальна",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "32 MVA",
+    "substation": "distribution",
+    "voltage": "150000;10000"
+  }
+},
+{
+  "type": "way",
+  "id": 198794315,
+  "center": {
+    "lat": 47.7681844,
+    "lon": 35.2124610
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "Виноградна",
+    "name:uk": "Виноградна",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "7.2 MVA",
+    "substation": "distribution",
+    "voltage": "35000;6000"
+  }
+},
+{
+  "type": "way",
+  "id": 198806153,
+  "center": {
+    "lat": 47.8566302,
+    "lon": 35.1143787
+  },
+  "tags": {
+    "frequency": "50",
+    "full_name": "ПС „Лівобережна-1“ 150/35/6 кВ",
+    "location": "outdoor",
+    "name": "Лівобережна-1",
+    "name:ru": "Левобережная-1",
+    "name:uk": "Лівобережна-1",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "80 MVA",
+    "substation": "distribution",
+    "voltage": "150000;35000;6000"
+  }
+},
+{
+  "type": "way",
+  "id": 199069428,
+  "center": {
+    "lat": 47.7443026,
+    "lon": 35.1368589
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "Розумівка",
+    "name:uk": "Розумівка",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "10.5 MVA",
+    "substation": "distribution",
+    "voltage": "35000;10000;6000"
+  }
+},
+{
+  "type": "way",
+  "id": 199105512,
+  "center": {
+    "lat": 47.7962946,
+    "lon": 35.2369145
+  },
+  "tags": {
+    "barrier": "fence",
+    "frequency": "50",
+    "full_name": "ПС „Лікарняна“ 150/35/10 кВ",
+    "location": "outdoor",
+    "name": "Лікарняна",
+    "name:uk": "Лікарняна",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "126 MVA",
+    "voltage": "150000;35000;10000"
+  }
+},
+{
+  "type": "way",
+  "id": 199111584,
+  "center": {
+    "lat": 47.8112804,
+    "lon": 35.1969572
+  },
+  "tags": {
+    "branch": "Придніпровська залізниця",
+    "frequency": "50",
+    "full_name": "ПС №ЕЧЕ-39 „ст.Запоріжжя-1 транзитна“ 35/10/6 кВ",
+    "location": "outdoor",
+    "name": "Запоріжжя-1 транзитна",
+    "name:uk": "Запоріжжя-1 транзитна",
+    "operator": "Укрзалізниця",
+    "operator:en": "Ukrainian Railways",
+    "operator:uk": "Укрзалізниця",
+    "operator:wikidata": "Q923337",
+    "power": "substation",
+    "rating": "11.4 MVA",
+    "ref": "ЕЧЕ-39",
+    "substation": "traction",
+    "voltage": "35000;10000;6000"
+  }
+},
+{
+  "type": "way",
+  "id": 199211797,
+  "center": {
+    "lat": 47.8244547,
+    "lon": 35.2105318
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "МЖК",
+    "name:uk": "МЖК",
+    "power": "substation",
+    "rating": "32 MVA",
+    "substation": "industrial",
+    "voltage": "35000"
+  }
+},
+{
+  "type": "way",
+  "id": 199213188,
+  "center": {
+    "lat": 47.8259744,
+    "lon": 35.2190730
+  },
+  "tags": {
+    "name": "МПС(ГДЗ)",
+    "name:uk": "МПС(ГДЗ)",
+    "power": "substation",
+    "rating": "20 MVA",
+    "voltage": "35000"
+  }
+},
+{
+  "type": "way",
+  "id": 199365155,
+  "center": {
+    "lat": 47.8926290,
+    "lon": 35.0596811
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "Бородинська",
+    "name:uk": "Бородинська",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "30 MVA",
+    "substation": "distribution",
+    "voltage": "35000;10000"
+  }
+},
+{
+  "type": "way",
+  "id": 199365156,
+  "center": {
+    "lat": 47.8977239,
+    "lon": 35.0576755
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "Сонячна 2",
+    "name:uk": "Сонячна 2",
+    "power": "substation",
+    "rating": "5 MVA",
+    "voltage": "35000"
+  }
+},
+{
+  "type": "way",
+  "id": 199366398,
+  "center": {
+    "lat": 47.8727180,
+    "lon": 35.0160380
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "Запоріжкабель",
+    "name:uk": "Запоріжкабель",
+    "power": "substation",
+    "substation": "industrial",
+    "voltage": "35000"
+  }
+},
+{
+  "type": "way",
+  "id": 199366595,
+  "center": {
+    "lat": 47.8669906,
+    "lon": 35.0068285
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "Хортиця",
+    "name:uk": "Хортиця",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "20 MVA",
+    "substation": "distribution",
+    "voltage": "35000;6000"
+  }
+},
+{
+  "type": "way",
+  "id": 199369670,
+  "center": {
+    "lat": 47.8650289,
+    "lon": 35.0281887
+  },
+  "tags": {
+    "barrier": "fence",
+    "location": "outdoor",
+    "name": "Перетворювач",
+    "name:uk": "Перетворювач",
+    "power": "substation",
+    "rating": "64 MVA",
+    "substation": "industrial",
+    "voltage": "150000;6000"
+  }
+},
+{
+  "type": "way",
+  "id": 199389017,
+  "center": {
+    "lat": 47.8868231,
+    "lon": 35.0493667
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "path",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 199509234,
+  "center": {
+    "lat": 47.8677757,
+    "lon": 35.1247813
+  },
+  "tags": {
+    "frequency": "50",
+    "full_name": "ПС „Алюмінієва“ 150/10 кВ",
+    "location": "outdoor",
+    "name": "Алюмінієва",
+    "name:uk": "Алюмінієва",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "630 MVA",
+    "voltage": "150000;10000"
+  }
+},
+{
+  "type": "way",
+  "id": 199509237,
+  "center": {
+    "lat": 47.8701991,
+    "lon": 35.1558089
+  },
+  "tags": {
+    "frequency": "50",
+    "full_name": "ПС „М-1“ 150/6 кВ",
+    "location": "outdoor",
+    "name": "М-1",
+    "name:uk": "М-1",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "190 MVA",
+    "ref": "М-1",
+    "voltage": "150000;6000"
+  }
+},
+{
+  "type": "way",
+  "id": 199509241,
+  "center": {
+    "lat": 47.8732818,
+    "lon": 35.1617378
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "М-3",
+    "name:uk": "М-3",
+    "power": "substation",
+    "rating": "252 MVA",
+    "substation": "industrial",
+    "voltage": "150000"
+  }
+},
+{
+  "type": "way",
+  "id": 199509243,
+  "center": {
+    "lat": 47.8703394,
+    "lon": 35.1258454
+  },
+  "tags": {
+    "name": "Електродна",
+    "name:uk": "Електродна",
+    "power": "substation",
+    "rating": "126 MVA",
+    "voltage": "150000"
+  }
+},
+{
+  "type": "way",
+  "id": 199509246,
+  "center": {
+    "lat": 47.8741903,
+    "lon": 35.1308849
+  },
+  "tags": {
+    "name": "Графіт",
+    "name:uk": "Графіт",
+    "power": "substation",
+    "rating": "64 MVA",
+    "substation": "industrial",
+    "voltage": "150000"
+  }
+},
+{
+  "type": "way",
+  "id": 199509249,
+  "center": {
+    "lat": 47.8688995,
+    "lon": 35.1415731
+  },
+  "tags": {
+    "frequency": "50",
+    "full_name": "ПС „Феросплавна-1“ 150/35/10-6 кВ",
+    "location": "outdoor",
+    "name": "Феросплавна-1",
+    "name:uk": "Феросплавна-1",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "378 MVA",
+    "voltage": "150000;35000;10000;6000"
+  }
+},
+{
+  "type": "way",
+  "id": 199509250,
+  "center": {
+    "lat": 47.8725805,
+    "lon": 35.1408761
+  },
+  "tags": {
+    "name": "Феросплавна-2",
+    "name:uk": "Феросплавна-2",
+    "power": "substation",
+    "rating": "315 MVA",
+    "substation": "industrial",
+    "voltage": "150000"
+  }
+},
+{
+  "type": "way",
+  "id": 199511401,
+  "center": {
+    "lat": 47.8681420,
+    "lon": 35.1823210
+  },
+  "tags": {
+    "name": "М-4",
+    "name:uk": "М-4",
+    "power": "substation",
+    "rating": "126 MVA",
+    "voltage": "150000"
+  }
+},
+{
+  "type": "way",
+  "id": 199511404,
+  "center": {
+    "lat": 47.8805718,
+    "lon": 35.2165061
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "Складська",
+    "name:uk": "Складська",
+    "power": "substation",
+    "rating": "10 MVA",
+    "voltage": "35000"
+  }
+},
+{
+  "type": "way",
+  "id": 199513278,
+  "center": {
+    "lat": 47.8955454,
+    "lon": 35.2136311
+  },
+  "tags": {
+    "frequency": "50",
+    "full_name": "ПС „Титаномагнієва-3“ 150/10 кВ",
+    "location": "outdoor",
+    "name": "Титаномагнієва-3",
+    "name:uk": "Титаномагнієва-3",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "126 MVA",
+    "ref": "ТМ-3",
+    "substation": "distribution",
+    "voltage": "150000;10000"
+  }
+},
+{
+  "type": "way",
+  "id": 199513284,
+  "center": {
+    "lat": 47.8950306,
+    "lon": 35.2117028
+  },
+  "tags": {
+    "barrier": "fence",
+    "frequency": "50",
+    "full_name": "ПС „Титаномагнієва-2“ 150/35/10 кВ",
+    "location": "outdoor",
+    "name": "Титаномагнієва-2",
+    "name:uk": "Титаномагнієва-2",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "126 MVA",
+    "ref": "ТМ-2",
+    "substation": "distribution",
+    "voltage": "150000;35000;10000"
+  }
+},
+{
+  "type": "way",
+  "id": 199513285,
+  "center": {
+    "lat": 47.8875526,
+    "lon": 35.2122451
+  },
+  "tags": {
+    "name": "Полімерна",
+    "name:uk": "Полімерна",
+    "power": "substation",
+    "rating": "126 MVA",
+    "voltage": "150000"
+  }
+},
+{
+  "type": "way",
+  "id": 199513289,
+  "center": {
+    "lat": 47.8948577,
+    "lon": 35.2090333
+  },
+  "tags": {
+    "barrier": "fence",
+    "frequency": "50",
+    "full_name": "ПС „Титаномагнієва-1“ 150/35/10 кВ",
+    "location": "outdoor",
+    "name": "Титаномагнієва-1",
+    "name:uk": "Титаномагнієва-1",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "126 MVA",
+    "ref": "ТМ-1",
+    "substation": "distribution",
+    "voltage": "150000;35000;10000"
+  }
+},
+{
+  "type": "way",
+  "id": 199631298,
+  "center": {
+    "lat": 47.8713186,
+    "lon": 35.0015047
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "tertiary",
+    "layer": "1",
+    "name": "вулиця Героїв 37-го батальйону",
+    "old_name": "Шушенська вулиця",
+    "old_name:en": "Shushenska Street",
+    "old_name:uk": "Шушенська вулиця"
+  }
+},
+{
+  "type": "way",
+  "id": 199631302,
+  "center": {
+    "lat": 47.8654756,
+    "lon": 35.0125025
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "residential",
+    "layer": "1",
+    "name": "Зачиняєва вулиця",
+    "name:en": "Zachyniaieva Street",
+    "name:ru": "Зачиняева улица",
+    "name:uk": "Зачиняєва вулиця",
+    "oneway": "no",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 199631303,
+  "center": {
+    "lat": 47.8660479,
+    "lon": 35.0108216
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "primary",
+    "lanes": "4",
+    "layer": "1",
+    "maxspeed": "50",
+    "name": "вулиця Абрагама Коопа",
+    "name:uk": "вулиця Абрагама Коопа",
+    "oneway": "no",
+    "surface": "asphalt",
+    "trolley_wire": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 199633844,
+  "center": {
+    "lat": 47.8768104,
+    "lon": 35.0200859
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "tertiary",
+    "layer": "1",
+    "name": "вулиця Ольги Кобилянської",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 199657598,
+  "center": {
+    "lat": 47.8392872,
+    "lon": 34.9532669
+  },
+  "tags": {
+    "barrier": "fence",
+    "branch": "Придніпровська залізниця",
+    "frequency": "50",
+    "full_name": "ПС №ЕЧЕ-2 „Канцерівка проміжна“ 35/10/6 кВ",
+    "location": "outdoor",
+    "name": "Канцерівка проміжна",
+    "name:en": "Kantserіvka",
+    "name:uk": "Канцерівка проміжна",
+    "operator": "Укрзалізниця",
+    "power": "substation",
+    "rating": "2000 kVA",
+    "ref": "ЕЧЕ-2",
+    "substation": "traction",
+    "voltage": "35000;10000;6000"
+  }
+},
+{
+  "type": "way",
+  "id": 199662928,
+  "center": {
+    "lat": 47.8096252,
+    "lon": 35.0262960
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "footway",
+    "layer": "1",
+    "source": "bing"
+  }
+},
+{
+  "type": "way",
+  "id": 199696922,
+  "center": {
+    "lat": 47.8287105,
+    "lon": 35.2044708
+  },
+  "tags": {
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "way",
+  "id": 199743701,
+  "center": {
+    "lat": 47.8595235,
+    "lon": 35.1347353
+  },
+  "tags": {
+    "bridge": "yes",
+    "layer": "2",
+    "railway": "rail",
+    "service": "spur"
+  }
+},
+{
+  "type": "way",
+  "id": 199784319,
+  "center": {
+    "lat": 47.8561349,
+    "lon": 35.2179737
+  },
+  "tags": {
+    "barrier": "fence",
+    "frequency": "50",
+    "location": "outdoor",
+    "name": "Дніпро-Донбас",
+    "name:en": "Dnipro-Donbas",
+    "name:uk": "Дніпро-Донбас",
+    "operator": "Укренерго",
+    "power": "substation",
+    "rating": "1000 MVA",
+    "source": "bing",
+    "substation": "transmission",
+    "voltage": "330000;150000;35000"
+  }
+},
+{
+  "type": "way",
+  "id": 199808668,
+  "center": {
+    "lat": 47.5997287,
+    "lon": 35.2871076
+  },
+  "tags": {
+    "barrier": "wall",
+    "branch": "Придніпровська залізниця",
+    "frequency": "50",
+    "full_name": "ПС №ЕЧЕ-49 „1132 км транзитна“ 35/10 кВ",
+    "location": "outdoor",
+    "name": "1132 км транзитна",
+    "name:uk": "1132 км транзитна",
+    "operator": "Укрзалізниця",
+    "power": "substation",
+    "rating": "19 MVA",
+    "ref": "ЕЧЕ-49",
+    "substation": "traction",
+    "voltage": "35000;10000"
+  }
+},
+{
+  "type": "way",
+  "id": 199830884,
+  "center": {
+    "lat": 47.8979546,
+    "lon": 35.2701769
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "trunk",
+    "int_ref": "E 105",
+    "layer": "1",
+    "maxspeed": "60",
+    "ref": "М-18",
+    "smoothness": "good",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 199831876,
+  "center": {
+    "lat": 47.8940460,
+    "lon": 35.1735082
+  },
+  "tags": {
+    "barrier": "wall",
+    "frequency": "50",
+    "full_name": "ПС „Промзона“ 150/35/10-6 кВ",
+    "location": "outdoor",
+    "name": "Промзона",
+    "name:uk": "Промзона",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "60 MVA",
+    "substation": "distribution",
+    "voltage": "150000;35000;10000;6000"
+  }
+},
+{
+  "type": "way",
+  "id": 199915137,
+  "center": {
+    "lat": 47.8683844,
+    "lon": 35.2772055
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "path",
+    "layer": "1",
+    "source": "bing"
+  }
+},
+{
+  "type": "way",
+  "id": 200027146,
+  "center": {
+    "lat": 47.8224268,
+    "lon": 35.2424051
+  },
+  "tags": {
+    "name": "ЖБК-10",
+    "name:uk": "ЖБК-10",
+    "power": "substation",
+    "rating": "12.6 MVA",
+    "substation": "industrial",
+    "voltage": "35000"
+  }
+},
+{
+  "type": "way",
+  "id": 200027148,
+  "center": {
+    "lat": 47.8474086,
+    "lon": 35.2402357
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "trunk",
+    "int_ref": "E 105",
+    "layer": "1",
+    "maxspeed": "50",
+    "oneway": "yes",
+    "ref": "М-18",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 200027151,
+  "center": {
+    "lat": 47.8474626,
+    "lon": 35.2403794
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "trunk",
+    "int_ref": "E 105",
+    "lanes": "2",
+    "layer": "1",
+    "maxspeed": "50",
+    "oneway": "yes",
+    "ref": "М-18",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 200029039,
+  "center": {
+    "lat": 47.8395088,
+    "lon": 35.2350968
+  },
+  "tags": {
+    "barrier": "wall",
+    "name": "Іскра",
+    "name:uk": "Іскра",
+    "power": "substation",
+    "rating": "50 MVA",
+    "substation": "industrial",
+    "voltage": "35000"
+  }
+},
+{
+  "type": "way",
+  "id": 200051976,
+  "center": {
+    "lat": 47.8523225,
+    "lon": 35.2848606
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "Вимпіл",
+    "name:uk": "Вимпіл",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "10.3 MVA",
+    "substation": "distribution",
+    "voltage": "35000;6000"
+  }
+},
+{
+  "type": "way",
+  "id": 200053528,
+  "center": {
+    "lat": 47.8227992,
+    "lon": 35.2836180
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "Діоніс",
+    "name:uk": "Діоніс",
+    "power": "substation",
+    "rating": "12.6 MVA",
+    "substation": "industrial",
+    "voltage": "35000"
+  }
+},
+{
+  "type": "way",
+  "id": 200241878,
+  "center": {
+    "lat": 47.8345966,
+    "lon": 35.0114684
+  },
+  "tags": {
+    "building": "service",
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "way",
+  "id": 200241916,
+  "center": {
+    "lat": 47.8228701,
+    "lon": 35.0440238
+  },
+  "tags": {
+    "building": "service",
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "way",
+  "id": 200566626,
+  "center": {
+    "lat": 47.7109027,
+    "lon": 35.2212986
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "Кушугум",
+    "name:uk": "Кушугум",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "20 MVA",
+    "substation": "distribution",
+    "voltage": "35000;10000"
+  }
+},
+{
+  "type": "way",
+  "id": 207228907,
+  "center": {
+    "lat": 48.1221800,
+    "lon": 34.9349938
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "Восход",
+    "name:uk": "Восход",
+    "operator": "Дніпровські електромережі",
+    "power": "substation",
+    "rating": "25 MVA",
+    "substation": "distribution",
+    "voltage": "150000;35000;10000"
+  }
+},
+{
+  "type": "way",
+  "id": 208116467,
+  "center": {
+    "lat": 48.1222968,
+    "lon": 35.0683644
+  },
+  "tags": {
+    "bridge": "yes",
+    "diameter": "355 mm",
+    "layer": "1",
+    "location": "overground",
+    "man_made": "pipeline",
+    "material": "steel",
+    "name": "Тольятті-Одеса",
+    "name:uk": "Тольятті-Одеса",
+    "substance": "ammonia",
+    "usage": "transmission"
+  }
+},
+{
+  "type": "way",
+  "id": 209059587,
+  "center": {
+    "lat": 47.8415077,
+    "lon": 35.1538563
+  },
+  "tags": {
+    "bridge": "yes",
+    "description": "пешеходный мостик",
+    "highway": "path",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 209879378,
+  "center": {
+    "lat": 47.9994501,
+    "lon": 35.5098885
+  },
+  "tags": {
+    "barrier": "wall",
+    "frequency": "50",
+    "location": "outdoor",
+    "name": "Запорізька-750",
+    "name:ru": "Запорожская-750",
+    "name:uk": "Запорізька-750",
+    "power": "substation",
+    "rating": "2000 MVA",
+    "substation": "transmission",
+    "voltage": "750000;330000;35000;15000"
+  }
+},
+{
+  "type": "way",
+  "id": 213206882,
+  "center": {
+    "lat": 48.0980813,
+    "lon": 34.8783980
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "tertiary",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 214150911,
+  "center": {
+    "lat": 47.7899403,
+    "lon": 35.1714090
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "7-ма міська лікарня",
+    "name:en": "Urban Hospital 7",
+    "name:ru": "7-я городская больница",
+    "name:uk": "7-ма міська лікарня"
+  }
+},
+{
+  "type": "way",
+  "id": 214173262,
+  "center": {
+    "lat": 47.7993837,
+    "lon": 35.1951689
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "footway",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 214173266,
+  "center": {
+    "lat": 47.8010850,
+    "lon": 35.1894336
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "footway",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 214208875,
+  "center": {
+    "lat": 47.7985174,
+    "lon": 35.0712567
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "residential",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 214208877,
+  "center": {
+    "lat": 47.8023721,
+    "lon": 35.0960835
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "Піщаний к-р",
+    "name:uk": "Піщаний к-р",
+    "power": "substation",
+    "rating": "1 MVA",
+    "substation": "industrial",
+    "voltage": "35000"
+  }
+},
+{
+  "type": "way",
+  "id": 214342634,
+  "center": {
+    "lat": 48.0580673,
+    "lon": 34.8322857
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "track",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 215240023,
+  "center": {
+    "lat": 47.8299380,
+    "lon": 35.1430060
+  },
+  "tags": {
+    "amenity": "hospital",
+    "emergency": "yes",
+    "healthcare": "hospital",
+    "name": "5-та міська лікарня",
+    "name:ru": "5-я городская больница",
+    "name:uk": "5-та міська лікарня",
+    "short_name:ru": "5 горбольница",
+    "short_name:uk": "5-та міськлікарня"
+  }
+},
+{
+  "type": "way",
+  "id": 215264753,
+  "center": {
+    "lat": 47.8096402,
+    "lon": 35.1805282
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Діагностичний центр Клініки медичного університету",
+    "name:uk": "Діагностичний центр Клініки медичного університету"
+  }
+},
+{
+  "type": "way",
+  "id": 215284066,
+  "center": {
+    "lat": 47.9107552,
+    "lon": 35.3050738
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "Запорізька Січ",
+    "name:uk": "Запорізька Січ",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "12.6 MVA",
+    "substation": "distribution",
+    "voltage": "35000;10000"
+  }
+},
+{
+  "type": "way",
+  "id": 215373226,
+  "center": {
+    "lat": 47.8456959,
+    "lon": 35.3539379
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "tertiary",
+    "lanes": "2",
+    "layer": "1",
+    "ref": "О-080514",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 215399770,
+  "center": {
+    "lat": 47.9544000,
+    "lon": 35.4231997
+  },
+  "tags": {
+    "barrier": "fence",
+    "frequency": "50",
+    "full_name": "ПС „Вільнянська“ 150/35/10 кВ",
+    "location": "outdoor",
+    "name": "Вільнянська-150",
+    "name:uk": "Вільнянська-150",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "80 MVA",
+    "substation": "distribution",
+    "voltage": "150000;35000;10000"
+  }
+},
+{
+  "type": "way",
+  "id": 215415449,
+  "center": {
+    "lat": 47.9434991,
+    "lon": 35.4394857
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "footway",
+    "layer": "1",
+    "source": "bing"
+  }
+},
+{
+  "type": "way",
+  "id": 215421266,
+  "center": {
+    "lat": 47.9331651,
+    "lon": 35.4160447
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "Механічна",
+    "name:uk": "Механічна",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "12.6 MVA",
+    "substation": "distribution",
+    "voltage": "35000;10000"
+  }
+},
+{
+  "type": "way",
+  "id": 215434021,
+  "center": {
+    "lat": 47.9475579,
+    "lon": 35.4683074
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "tertiary",
+    "lanes": "2",
+    "layer": "1",
+    "oneway": "no",
+    "source": "Bing",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 216820222,
+  "center": {
+    "lat": 47.8790147,
+    "lon": 35.2364658
+  },
+  "tags": {
+    "barrier": "fence",
+    "branch": "Придніпровська залізниця",
+    "frequency": "50",
+    "full_name": "ПС №ЕЧЕ-1 „Запоріжжя Ліве транзитна“ 35/10/6 кВ",
+    "location": "outdoor",
+    "name": "Запоріжжя Ліве транзитна",
+    "name:uk": "Запоріжжя Ліве транзитна",
+    "operator": "Укрзалізниця",
+    "power": "substation",
+    "rating": "14.4 MVA",
+    "ref": "ЕЧЕ-1",
+    "substation": "traction",
+    "voltage": "35000;10000;6000"
+  }
+},
+{
+  "type": "way",
+  "id": 216820223,
+  "center": {
+    "lat": 47.8784840,
+    "lon": 35.2288672
+  },
+  "tags": {
+    "building": "yes",
+    "name": "Запоріжжя-Ліве",
+    "name:ru": "Запорожье-Левое",
+    "network": "Укрзалізниця",
+    "network:en": "Ukrainian Railways",
+    "network:short": "УЗ",
+    "network:short:uk": "УЗ",
+    "network:short:uk-Latn": "UZ",
+    "network:uk": "Укрзалізниця",
+    "network:uk-Latn": "Ukrzaliznytsia",
+    "network:wikidata": "Q923337",
+    "operator": "Укрзалізниця",
+    "operator:en": "Ukrainian Railways",
+    "operator:short": "УЗ",
+    "operator:short:uk": "УЗ",
+    "operator:short:uk-Latn": "UZ",
+    "operator:uk": "Укрзалізниця",
+    "operator:uk-Latn": "Ukrzaliznytsia",
+    "operator:wikidata": "Q923337",
+    "public_transport": "station",
+    "railway": "station",
+    "source": "bing",
+    "train": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 217648108,
+  "center": {
+    "lat": 47.9543969,
+    "lon": 35.2570523
+  },
+  "tags": {
+    "bridge": "yes",
+    "bridge:structure": "suspension",
+    "highway": "track",
+    "layer": "1",
+    "source": "gps"
+  }
+},
+{
+  "type": "way",
+  "id": 222387585,
+  "center": {
+    "lat": 47.8340135,
+    "lon": 35.1424547
+  },
+  "tags": {
+    "access": "no",
+    "bicycle": "yes",
+    "bridge": "yes",
+    "foot": "yes",
+    "highway": "footway",
+    "layer": "1",
+    "motor_vehicle": "no"
+  }
+},
+{
+  "type": "way",
+  "id": 224244621,
+  "center": {
+    "lat": 47.8833554,
+    "lon": 35.0223858
+  },
+  "tags": {
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "way",
+  "id": 245305111,
+  "center": {
+    "lat": 47.8490642,
+    "lon": 35.2224918
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "footway",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 263983534,
+  "center": {
+    "lat": 47.8471842,
+    "lon": 35.0910468
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "primary",
+    "layer": "1",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 263983536,
+  "center": {
+    "lat": 47.8446622,
+    "lon": 35.0909550
+  },
+  "tags": {
+    "bridge": "yes",
+    "bridge:structure": "beam",
+    "highway": "primary",
+    "layer": "1",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 270120821,
+  "center": {
+    "lat": 47.7936253,
+    "lon": 35.1061645
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "track",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 293505269,
+  "center": {
+    "lat": 47.8945194,
+    "lon": 35.1654585
+  },
+  "tags": {
+    "addr:street": "Перспективна вулиця",
+    "amenity": "hospital",
+    "contact:email": "otb@med.zp.ua",
+    "contact:phone": "+380 61 236 6480",
+    "name": "Протитуберкульозний диспансер",
+    "name:ru": "Противотуберкулёзный диспансер",
+    "name:uk": "Протитуберкульозний диспансер",
+    "official_name": "Запорізький областний протитуберкульозний клінічний диспансер"
+  }
+},
+{
+  "type": "way",
+  "id": 300536001,
+  "center": {
+    "lat": 47.7768518,
+    "lon": 35.2176417
+  },
+  "tags": {
+    "addr:housenumber": "13а",
+    "addr:postcode": "69104",
+    "addr:street": "Європейська вулиця",
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Геріатричний пансіонат",
+    "name:ru": "гериатрический пансионат",
+    "name:uk": "Геріатричний пансіонат"
+  }
+},
+{
+  "type": "way",
+  "id": 300550657,
+  "center": {
+    "lat": 47.7830086,
+    "lon": 35.2450689
+  },
+  "tags": {
+    "addr:housenumber": "8",
+    "addr:street": "Оріхівське шосе",
+    "amenity": "hospital",
+    "emergency": "yes",
+    "healthcare": "hospital",
+    "name": "Запорізька обласна клінічна лікарня",
+    "name:ru": "Запорожская областная клиническая больница",
+    "name:uk": "Запорізька обласна клінічна лікарня"
+  }
+},
+{
+  "type": "way",
+  "id": 300550659,
+  "center": {
+    "lat": 47.7836772,
+    "lon": 35.2486031
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Психдиспансер",
+    "name:uk": "Психдиспансер"
+  }
+},
+{
+  "type": "way",
+  "id": 300623083,
+  "center": {
+    "lat": 47.8311317,
+    "lon": 35.1605220
+  },
+  "tags": {
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "way",
+  "id": 306539904,
+  "center": {
+    "lat": 47.8427018,
+    "lon": 35.0934254
+  },
+  "tags": {
+    "bridge": "yes",
+    "bridge:structure": "beam",
+    "highway": "primary",
+    "layer": "1",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 306998292,
+  "center": {
+    "lat": 47.8711805,
+    "lon": 35.1466352
+  },
+  "tags": {
+    "name": "КХЗ",
+    "name:uk": "КХЗ",
+    "power": "substation",
+    "rating": "126 MVA",
+    "ref": "КХЗ",
+    "substation": "industrial",
+    "voltage": "150000"
+  }
+},
+{
+  "type": "way",
+  "id": 306998303,
+  "center": {
+    "lat": 47.8779925,
+    "lon": 35.1796810
+  },
+  "tags": {
+    "barrier": "fence",
+    "frequency": "50",
+    "full_name": "ПС „М-2“ 150/6 кВ",
+    "location": "outdoor",
+    "name": "М-2",
+    "name:uk": "М-2",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "158 MVA",
+    "ref": "М-2",
+    "voltage": "150000;6000"
+  }
+},
+{
+  "type": "way",
+  "id": 307067274,
+  "center": {
+    "lat": 47.8650513,
+    "lon": 35.1581624
+  },
+  "tags": {
+    "name": "М-5",
+    "name:uk": "М-5",
+    "power": "substation",
+    "rating": "252 MVA",
+    "substation": "industrial",
+    "voltage": "150000"
+  }
+},
+{
+  "type": "way",
+  "id": 307067288,
+  "center": {
+    "lat": 47.8316749,
+    "lon": 35.1682008
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "Трампарк",
+    "name:uk": "Трампарк",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "48 MVA",
+    "substation": "distribution",
+    "voltage": "35000;6000"
+  }
+},
+{
+  "type": "way",
+  "id": 307067296,
+  "center": {
+    "lat": 47.8870425,
+    "lon": 35.1882537
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "ОУ-1",
+    "name:uk": "ОУ-1",
+    "power": "substation",
+    "rating": "32 MVA",
+    "substation": "industrial",
+    "voltage": "150000"
+  }
+},
+{
+  "type": "way",
+  "id": 307067297,
+  "center": {
+    "lat": 47.8900638,
+    "lon": 35.1800754
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "ОУ-2",
+    "name:uk": "ОУ-2",
+    "power": "substation",
+    "rating": "126 MVA",
+    "substation": "industrial",
+    "voltage": "150000"
+  }
+},
+{
+  "type": "way",
+  "id": 307067298,
+  "center": {
+    "lat": 47.8209456,
+    "lon": 35.2332818
+  },
+  "tags": {
+    "frequency": "50",
+    "full_name": "ПС „ЗАІ“ 150/35/10 кВ",
+    "location": "outdoor",
+    "name": "ЗАІ",
+    "name:uk": "ЗАІ",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "252 MVA",
+    "voltage": "150000;35000;10000"
+  }
+},
+{
+  "type": "way",
+  "id": 307067299,
+  "center": {
+    "lat": 47.8660498,
+    "lon": 35.1743969
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "М-6",
+    "name:uk": "М-6",
+    "power": "substation",
+    "rating": "96 MVA",
+    "substation": "industrial",
+    "voltage": "150000"
+  }
+},
+{
+  "type": "way",
+  "id": 307067300,
+  "center": {
+    "lat": 47.8304067,
+    "lon": 35.1980334
+  },
+  "tags": {
+    "frequency": "50",
+    "full_name": "ПС „Новозапорізька“ 150/35/6 кВ",
+    "location": "outdoor",
+    "name": "Новозапорізька",
+    "name:uk": "Новозапорізька",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "190 MVA",
+    "substation": "distribution",
+    "voltage": "150000;35000;6000"
+  }
+},
+{
+  "type": "way",
+  "id": 307139296,
+  "center": {
+    "lat": 47.7436969,
+    "lon": 34.8333593
+  },
+  "tags": {
+    "barrier": "fence",
+    "branch": "Томаковский РЭС",
+    "name": "Владимировка",
+    "name:uk": "Владимировка",
+    "operator": "Дніпровські електромережі",
+    "power": "substation",
+    "rating": "2.5 MVA",
+    "substation": "distribution",
+    "voltage": "35000;10000"
+  }
+},
+{
+  "type": "way",
+  "id": 307139297,
+  "center": {
+    "lat": 48.0605239,
+    "lon": 35.2864067
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "НСП-10",
+    "name:uk": "НСП-10",
+    "power": "substation",
+    "substation": "industrial",
+    "voltage": "35000"
+  }
+},
+{
+  "type": "way",
+  "id": 307139299,
+  "center": {
+    "lat": 48.0616227,
+    "lon": 35.3084658
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "НСП-4",
+    "name:uk": "НСП-4",
+    "power": "substation",
+    "substation": "industrial",
+    "voltage": "35000"
+  }
+},
+{
+  "type": "way",
+  "id": 307139300,
+  "center": {
+    "lat": 48.0527913,
+    "lon": 35.2325555
+  },
+  "tags": {
+    "barrier": "fence",
+    "branch": "Вільнянські РЕМ",
+    "frequency": "50",
+    "full_name": "ПС „Петромихайлівська“ 35/10 кВ",
+    "location": "outdoor",
+    "name": "Петромихайлівська",
+    "name:uk": "Петромихайлівська",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "4 MVA",
+    "substation": "distribution",
+    "voltage": "35000;10000"
+  }
+},
+{
+  "type": "way",
+  "id": 307139307,
+  "center": {
+    "lat": 48.0805386,
+    "lon": 35.1216520
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "НСП-3",
+    "name:uk": "НСП-3",
+    "power": "substation",
+    "substation": "industrial",
+    "voltage": "35000"
+  }
+},
+{
+  "type": "way",
+  "id": 307139312,
+  "center": {
+    "lat": 48.0529391,
+    "lon": 35.3330715
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "НС-4",
+    "name:uk": "НС-4",
+    "power": "substation",
+    "substation": "industrial",
+    "voltage": "35000"
+  }
+},
+{
+  "type": "way",
+  "id": 307139315,
+  "center": {
+    "lat": 48.0560836,
+    "lon": 35.2400882
+  },
+  "tags": {
+    "barrier": "wall",
+    "frequency": "50",
+    "full_name": "ПС „Петромихайлівка“ 150/35/10 кВ",
+    "location": "outdoor",
+    "name": "Петромихайлівка",
+    "name:en": "Petromihaylіvka",
+    "name:uk": "Петромихайлівка",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "40 MVA",
+    "substation": "distribution",
+    "voltage": "150000;35000;10000"
+  }
+},
+{
+  "type": "way",
+  "id": 310983690,
+  "center": {
+    "lat": 47.8944388,
+    "lon": 35.0727969
+  },
+  "tags": {
+    "building": "service",
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "way",
+  "id": 311086226,
+  "center": {
+    "lat": 47.8843786,
+    "lon": 35.1686829
+  },
+  "tags": {
+    "amenity": "hospital",
+    "building": "yes",
+    "emergency": "yes",
+    "healthcare": "hospital",
+    "healthcare:speciality": "general",
+    "name": "Міська Лікарня №4"
+  }
+},
+{
+  "type": "way",
+  "id": 311603542,
+  "center": {
+    "lat": 48.1198886,
+    "lon": 35.5167515
+  },
+  "tags": {
+    "barrier": "wall",
+    "branch": "Придніпровська залізниця",
+    "frequency": "50",
+    "full_name": "ПС №ЕЧЕ-37 „Славгород транзитна“ 35/10 кВ",
+    "location": "outdoor",
+    "name": "Славгород транзитна",
+    "name:uk": "Славгород транзитна",
+    "operator": "Укрзалізниця",
+    "power": "substation",
+    "rating": "4800 kVA",
+    "ref": "ЕЧЕ-37",
+    "substation": "traction",
+    "voltage": "35000;10000"
+  }
+},
+{
+  "type": "way",
+  "id": 312042796,
+  "center": {
+    "lat": 47.8469155,
+    "lon": 35.1128450
+  },
+  "tags": {
+    "addr:housenumber": "25",
+    "addr:postcode": "69001",
+    "addr:street": "бульвар Шевченка",
+    "amenity": "hospital",
+    "email": "10gorbol@ukr.net",
+    "emergency": "no",
+    "healthcare": "hospital",
+    "healthcare:speciality": "cardiology;otolaryngology;ophthalmology;neurology;chiropractic;orthopaedics;oncology;dermatology;gynaecology;radiology;physiatry",
+    "name": "Запорізька міська клінічна лікарня № 10",
+    "name:ru": "Запорожская городская клиническая больница № 10",
+    "name:uk": "Запорізька міська клінічна лікарня № 10",
+    "name:zh": "扎波罗热市第十医院",
+    "phone": "+380 612 24 5196",
+    "start_date": "1953",
+    "website": "http://www.health.zp.ua/komunalna-ustanova-zaporizka-miska-klinichna-likarnia-10"
+  }
+},
+{
+  "type": "way",
+  "id": 312042799,
+  "center": {
+    "lat": 47.8393554,
+    "lon": 35.1116693
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Обласна інфекційна лікарня",
+    "name:en": "Infectious Disease Hospital",
+    "name:ru": "Областная инфекционная больница",
+    "name:uk": "Обласна інфекційна лікарня"
+  }
+},
+{
+  "type": "way",
+  "id": 312123043,
+  "center": {
+    "lat": 47.7213838,
+    "lon": 35.5404432
+  },
+  "tags": {
+    "barrier": "fence",
+    "branch": "Оріхівські РЕМ",
+    "frequency": "50",
+    "full_name": "ПС „Комишуваха“ 35/10 кВ",
+    "location": "outdoor",
+    "name": "Комишуваха",
+    "name:uk": "Комишуваха",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "12.6 MVA",
+    "substation": "distribution",
+    "voltage": "35000;10000"
+  }
+},
+{
+  "type": "way",
+  "id": 312759393,
+  "center": {
+    "lat": 47.8599361,
+    "lon": 35.1679537
+  },
+  "tags": {
+    "bridge": "yes",
+    "electrified": "contact_line",
+    "frequency": "0",
+    "gauge": "1520",
+    "layer": "1",
+    "operator": "Укрзалізниця",
+    "railway": "rail",
+    "usage": "main",
+    "voltage": "3000"
+  }
+},
+{
+  "type": "way",
+  "id": 331105708,
+  "center": {
+    "lat": 48.0965489,
+    "lon": 34.9738350
+  },
+  "tags": {
+    "power": "substation",
+    "substation": "industrial",
+    "voltage": "35000"
+  }
+},
+{
+  "type": "way",
+  "id": 331105720,
+  "center": {
+    "lat": 48.1119195,
+    "lon": 35.0369658
+  },
+  "tags": {
+    "barrier": "fence",
+    "power": "substation",
+    "substation": "industrial",
+    "voltage": "35000"
+  }
+},
+{
+  "type": "way",
+  "id": 331105721,
+  "center": {
+    "lat": 48.0415501,
+    "lon": 35.4947325
+  },
+  "tags": {
+    "branch": "Вільнянські РЕМ",
+    "frequency": "50",
+    "full_name": "ПС „Шевченківська“ 35/10 кВ",
+    "location": "outdoor",
+    "name": "Шевченківська",
+    "name:uk": "Шевченківська",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "20 MVA",
+    "voltage": "35000;10000"
+  }
+},
+{
+  "type": "way",
+  "id": 332099389,
+  "center": {
+    "lat": 47.7715987,
+    "lon": 35.1450023
+  },
+  "tags": {
+    "bridge": "yes",
+    "foot": "yes",
+    "highway": "path",
+    "layer": "1",
+    "motor_vehicle": "no",
+    "surface": "metal",
+    "width": "0"
+  }
+},
+{
+  "type": "way",
+  "id": 332254622,
+  "center": {
+    "lat": 47.8895572,
+    "lon": 35.0572678
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "residential",
+    "layer": "1",
+    "name": "вулиця Котляревського",
+    "name:en": "Kotliarevskoho Street",
+    "name:pl": "ulica Kotlarewskiego",
+    "name:ru": "Котляревского улица",
+    "name:uk": "вулиця Котляревського"
+  }
+},
+{
+  "type": "way",
+  "id": 332254632,
+  "center": {
+    "lat": 47.8905827,
+    "lon": 35.0583125
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "residential",
+    "layer": "1",
+    "name": "вулиця Панаса Мирного",
+    "name:en": "Panasa Myrnoho Street",
+    "name:ru": "Панаса Мирного улица",
+    "name:uk": "вулиця Панаса Мирного"
+  }
+},
+{
+  "type": "way",
+  "id": 332254634,
+  "center": {
+    "lat": 47.8911710,
+    "lon": 35.0586929
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "residential",
+    "layer": "1",
+    "name": "Прямий провулок",
+    "name:en": "Priamyi Lane",
+    "name:ru": "Прямой переулок",
+    "name:uk": "Прямий провулок"
+  }
+},
+{
+  "type": "way",
+  "id": 334477365,
+  "center": {
+    "lat": 47.7698295,
+    "lon": 35.2158352
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "footway",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 334651345,
+  "center": {
+    "lat": 47.7881857,
+    "lon": 35.1910465
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "footway",
+    "layer": "1",
+    "level": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 340558089,
+  "center": {
+    "lat": 47.6903253,
+    "lon": 35.0039903
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "Мар’ївка",
+    "name:uk": "Мар’ївка",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "12.6 MVA",
+    "substation": "distribution",
+    "voltage": "35000;10000"
+  }
+},
+{
+  "type": "way",
+  "id": 340558091,
+  "center": {
+    "lat": 47.6611505,
+    "lon": 34.8882508
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "Стрюківка",
+    "name:ru": "Стрюковка",
+    "name:uk": "Стрюківка",
+    "operator": "Дніпровські електромережі",
+    "power": "substation",
+    "rating": "35 MVA",
+    "substation": "distribution",
+    "voltage": "150000;35000;10000"
+  }
+},
+{
+  "type": "way",
+  "id": 340558095,
+  "center": {
+    "lat": 47.7182947,
+    "lon": 34.8335853
+  },
+  "tags": {
+    "power": "substation",
+    "substation": "industrial",
+    "voltage": "35000"
+  }
+},
+{
+  "type": "way",
+  "id": 345661172,
+  "center": {
+    "lat": 48.1238819,
+    "lon": 35.3422323
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "trunk",
+    "int_ref": "E 105",
+    "layer": "1",
+    "maxspeed": "50",
+    "ref": "М-18",
+    "smoothness": "bad",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 346307499,
+  "center": {
+    "lat": 47.8527266,
+    "lon": 35.2095639
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "Зелений Яр",
+    "name:uk": "Зелений Яр",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "32 MVA",
+    "substation": "distribution",
+    "voltage": "35000;6000"
+  }
+},
+{
+  "type": "way",
+  "id": 353733734,
+  "center": {
+    "lat": 47.8087130,
+    "lon": 35.1779990
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Клініка медичного університету",
+    "name:uk": "Клініка медичного університету"
+  }
+},
+{
+  "type": "way",
+  "id": 353736990,
+  "center": {
+    "lat": 47.8076437,
+    "lon": 35.1905385
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital"
+  }
+},
+{
+  "type": "way",
+  "id": 354831710,
+  "center": {
+    "lat": 47.8093376,
+    "lon": 35.2013947
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "footway",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 354845204,
+  "center": {
+    "lat": 47.8244871,
+    "lon": 35.1416198
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "path",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 354865177,
+  "center": {
+    "lat": 47.8296109,
+    "lon": 35.1432527
+  },
+  "tags": {
+    "amenity": "hospital",
+    "building": "yes",
+    "healthcare": "hospital",
+    "name": "Міська клінічна лікарня екстренної та швидкої медичної допомоги. Травматологічний корпус.",
+    "name:ru": "Городская клиническая больница экстренной и скорой медицинской помощи. Травматологический корпус.",
+    "name:uk": "Міська клінічна лікарня екстренної та швидкої медичної допомоги. Травматологічний корпус."
+  }
+},
+{
+  "type": "way",
+  "id": 354865194,
+  "center": {
+    "lat": 47.8287531,
+    "lon": 35.1416866
+  },
+  "tags": {
+    "addr:housenumber": "78",
+    "addr:street": "вулиця Перемоги",
+    "amenity": "hospital",
+    "building": "hospital",
+    "healthcare": "hospital",
+    "name": "Обласний медичний центр серцево-судинних захворювань",
+    "name:ru": "Областной медицинский центр сердечно-сосудистых заболеваний",
+    "name:uk": "Обласний медичний центр серцево-судинних захворювань",
+    "phone": "+380 612 89 4401"
+  }
+},
+{
+  "type": "way",
+  "id": 355061470,
+  "center": {
+    "lat": 47.8117540,
+    "lon": 35.1935179
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "pedestrian",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 356369791,
+  "center": {
+    "lat": 47.8396592,
+    "lon": 35.1594954
+  },
+  "tags": {
+    "building": "yes",
+    "location": "indoor",
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "way",
+  "id": 358216470,
+  "center": {
+    "lat": 47.8238532,
+    "lon": 34.8897854
+  },
+  "tags": {
+    "bridge": "yes",
+    "electrified": "contact_line",
+    "frequency": "0",
+    "gauge": "1520",
+    "operator": "Укрзалізниця",
+    "passenger_lines": "1",
+    "railway": "rail",
+    "usage": "main",
+    "voltage": "3000"
+  }
+},
+{
+  "type": "way",
+  "id": 358216471,
+  "center": {
+    "lat": 47.8155249,
+    "lon": 34.8737990
+  },
+  "tags": {
+    "bridge": "yes",
+    "electrified": "contact_line",
+    "frequency": "0",
+    "gauge": "1520",
+    "operator": "Укрзалізниця",
+    "railway": "rail",
+    "usage": "main",
+    "voltage": "3000"
+  }
+},
+{
+  "type": "way",
+  "id": 358327771,
+  "center": {
+    "lat": 47.8361796,
+    "lon": 35.1572388
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "service",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 358328039,
+  "center": {
+    "lat": 47.8006983,
+    "lon": 34.8509189
+  },
+  "tags": {
+    "bridge": "yes",
+    "electrified": "contact_line",
+    "frequency": "0",
+    "gauge": "1520",
+    "operator": "Укрзалізниця",
+    "passenger_lines": "2",
+    "railway": "rail",
+    "usage": "main",
+    "voltage": "3000"
+  }
+},
+{
+  "type": "way",
+  "id": 358330041,
+  "center": {
+    "lat": 47.8006472,
+    "lon": 34.8509501
+  },
+  "tags": {
+    "bridge": "yes",
+    "electrified": "contact_line",
+    "frequency": "0",
+    "gauge": "1520",
+    "operator": "Укрзалізниця",
+    "passenger_lines": "2",
+    "railway": "rail",
+    "usage": "main",
+    "voltage": "3000"
+  }
+},
+{
+  "type": "way",
+  "id": 361291830,
+  "center": {
+    "lat": 47.6322859,
+    "lon": 34.8016374
+  },
+  "tags": {
+    "barrier": "fence",
+    "power": "substation",
+    "substation": "industrial",
+    "voltage": "35000"
+  }
+},
+{
+  "type": "way",
+  "id": 362076910,
+  "center": {
+    "lat": 47.9394782,
+    "lon": 35.4307264
+  },
+  "tags": {
+    "addr:housenumber": "6А",
+    "addr:street": "Гнаровської вулиця",
+    "amenity": "hospital"
+  }
+},
+{
+  "type": "way",
+  "id": 362096694,
+  "center": {
+    "lat": 47.9512166,
+    "lon": 35.4327375
+  },
+  "tags": {
+    "addr:housenumber": "20",
+    "addr:street": "Козацька вулиця",
+    "building": "industrial",
+    "name": "Котельня",
+    "name:uk": "Котельня",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 362227746,
+  "center": {
+    "lat": 47.8326564,
+    "lon": 35.1515055
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "footway",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 362227751,
+  "center": {
+    "lat": 47.8344636,
+    "lon": 35.1478712
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "footway",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 362232117,
+  "center": {
+    "lat": 47.8350819,
+    "lon": 35.1540235
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "tertiary",
+    "layer": "1",
+    "name": "вулиця Сонячна",
+    "name:en": "Soniachna Street"
+  }
+},
+{
+  "type": "way",
+  "id": 362232123,
+  "center": {
+    "lat": 47.8355407,
+    "lon": 35.1555131
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "residential",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 362232124,
+  "center": {
+    "lat": 47.8350968,
+    "lon": 35.1541017
+  },
+  "tags": {
+    "bridge": "yes",
+    "footway": "sidewalk",
+    "highway": "footway",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 363010801,
+  "center": {
+    "lat": 47.8016059,
+    "lon": 35.3327410
+  },
+  "tags": {
+    "name": "ШНС-4",
+    "name:uk": "ШНС-4",
+    "power": "substation",
+    "rating": "5 MVA",
+    "substation": "industrial",
+    "voltage": "35000"
+  }
+},
+{
+  "type": "way",
+  "id": 363016065,
+  "center": {
+    "lat": 47.8095815,
+    "lon": 35.3552095
+  },
+  "tags": {
+    "building": "train_station",
+    "name": "Лежине",
+    "name:ru": "Лежино",
+    "name:uk": "Лежине",
+    "network": "Укрзалізниця",
+    "operator": "Придніпровська залізниця",
+    "public_transport": "station",
+    "railway": "station",
+    "uic_ref": "2210684",
+    "website": "https://railwayz.info/photolines/station/8232",
+    "wikipedia": "uk:Лежине (станція)"
+  }
+},
+{
+  "type": "way",
+  "id": 363021501,
+  "center": {
+    "lat": 47.8110631,
+    "lon": 35.3487443
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "Лежине",
+    "name:uk": "Лежине",
+    "power": "substation",
+    "rating": "10.3 MVA",
+    "voltage": "35000"
+  }
+},
+{
+  "type": "way",
+  "id": 366269816,
+  "center": {
+    "lat": 48.1177290,
+    "lon": 35.3178562
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "Сонячна",
+    "name:uk": "Сонячна",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "2.5 MVA",
+    "substation": "distribution",
+    "voltage": "35000;10000"
+  }
+},
+{
+  "type": "way",
+  "id": 366269818,
+  "center": {
+    "lat": 48.0199775,
+    "lon": 35.2728019
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "Дніпро",
+    "name:uk": "Дніпро",
+    "old_name": "Гнаровське",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "8.8 MVA",
+    "substation": "distribution",
+    "voltage": "35000;10000"
+  }
+},
+{
+  "type": "way",
+  "id": 366269825,
+  "center": {
+    "lat": 48.0611342,
+    "lon": 35.2760703
+  },
+  "tags": {
+    "barrier": "fence",
+    "power": "substation",
+    "substation": "industrial",
+    "voltage": "35000"
+  }
+},
+{
+  "type": "way",
+  "id": 367719006,
+  "center": {
+    "lat": 47.7566091,
+    "lon": 34.8026776
+  },
+  "tags": {
+    "bridge": "yes",
+    "fixme": "set proper name",
+    "highway": "tertiary",
+    "loc_ref": "О041904",
+    "ref": "О041904"
+  }
+},
+{
+  "type": "way",
+  "id": 368425734,
+  "center": {
+    "lat": 47.6855784,
+    "lon": 35.3354420
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "trunk",
+    "int_ref": "E 105",
+    "lanes": "1",
+    "layer": "1",
+    "maxspeed": "90",
+    "oneway": "yes",
+    "ref": "М-18",
+    "smoothness": "good",
+    "source:maxspeed": "UA:rural",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 368431593,
+  "center": {
+    "lat": 47.8634374,
+    "lon": 35.0896558
+  },
+  "tags": {
+    "bridge": "yes",
+    "foot": "yes",
+    "highway": "primary",
+    "layer": "1",
+    "maxspeed": "50",
+    "name": "ДніпроГЕС",
+    "name:ru": "ДнепроГЭС",
+    "name:uk": "ДніпроГЕС",
+    "nat_ref": "Н-08",
+    "operator": "МЖКГ м. Запоріжжя",
+    "ref": "Н-08",
+    "source:maxspeed": "UA:urban",
+    "surface": "asphalt",
+    "trolley_wire": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 368431594,
+  "center": {
+    "lat": 47.8709349,
+    "lon": 35.0825420
+  },
+  "tags": {
+    "bridge": "yes",
+    "foot": "yes",
+    "highway": "primary",
+    "lanes": "4",
+    "layer": "1",
+    "maxspeed": "40",
+    "name": "Аванкамерний міст",
+    "name:en": "Avankamerny bridge",
+    "name:ru": "Аванкамерный мост",
+    "name:uk": "Аванкамерний міст",
+    "nat_ref": "Н-08",
+    "operator": "МЖКГ м. Запоріжжя",
+    "ref": "Н-08",
+    "source:maxspeed": "sign",
+    "surface": "asphalt",
+    "trolley_wire": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 371204307,
+  "center": {
+    "lat": 47.8368622,
+    "lon": 35.1620030
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "path",
+    "incline": "up",
+    "layer": "1",
+    "width": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 371204308,
+  "center": {
+    "lat": 47.8369529,
+    "lon": 35.1649637
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "path",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 371718666,
+  "center": {
+    "lat": 47.8365975,
+    "lon": 35.1588232
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "path",
+    "horse": "no",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 371718672,
+  "center": {
+    "lat": 47.8369070,
+    "lon": 35.1610019
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "residential",
+    "layer": "1",
+    "maxweight:signed": "no"
+  }
+},
+{
+  "type": "way",
+  "id": 372796971,
+  "center": {
+    "lat": 47.8348958,
+    "lon": 35.1535264
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "path",
+    "layer": "1",
+    "surface": "metal"
+  }
+},
+{
+  "type": "way",
+  "id": 378217966,
+  "center": {
+    "lat": 47.8647854,
+    "lon": 34.9947444
+  },
+  "tags": {
+    "bridge": "yes",
+    "electrified": "no",
+    "gauge": "1520",
+    "layer": "1",
+    "operator": "Укрзалізниця",
+    "passenger_lines": "1",
+    "railway": "rail",
+    "usage": "branch"
+  }
+},
+{
+  "type": "way",
+  "id": 378223138,
+  "center": {
+    "lat": 47.8580966,
+    "lon": 34.9812056
+  },
+  "tags": {
+    "bridge": "yes",
+    "electrified": "no",
+    "gauge": "1520",
+    "layer": "1",
+    "operator": "Укрзалізниця",
+    "passenger_lines": "1",
+    "railway": "rail",
+    "usage": "branch"
+  }
+},
+{
+  "type": "way",
+  "id": 378772291,
+  "center": {
+    "lat": 47.8136701,
+    "lon": 35.2472487
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "residential",
+    "layer": "1",
+    "name": "Володимирська вулиця",
+    "name:en": "Volodymyrska Street",
+    "name:pl": "ulica Włodzimierska",
+    "name:ru": "Владимирская улица",
+    "name:uk": "Володимирська вулиця"
+  }
+},
+{
+  "type": "way",
+  "id": 378837615,
+  "center": {
+    "lat": 47.8268952,
+    "lon": 35.2199313
+  },
+  "tags": {
+    "addr:housenumber": "2",
+    "addr:postcode": "69014",
+    "addr:street": "Харчова вулиця",
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Міська лікарня №8",
+    "name:ru": "Городская больница №8",
+    "name:uk": "Міська лікарня №8",
+    "website": "http://health.zp.ua/bonus-page/po-funktsiyam-ustanov/departments-3/miska-likarnya-8"
+  }
+},
+{
+  "type": "way",
+  "id": 378837634,
+  "center": {
+    "lat": 47.8253110,
+    "lon": 35.2099441
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "path",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 379229747,
+  "center": {
+    "lat": 47.8331447,
+    "lon": 35.2145226
+  },
+  "tags": {
+    "bridge": "yes",
+    "electrified": "contact_line",
+    "frequency": "0",
+    "gauge": "1524",
+    "layer": "1",
+    "oneway": "yes",
+    "railway": "tram",
+    "usage": "main",
+    "voltage": "600"
+  }
+},
+{
+  "type": "way",
+  "id": 379649536,
+  "center": {
+    "lat": 47.8666995,
+    "lon": 35.0097514
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "footway",
+    "layer": "1",
+    "surface": "asphalt",
+    "width": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 379667033,
+  "center": {
+    "lat": 47.8113291,
+    "lon": 35.2356967
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "path",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 379674595,
+  "center": {
+    "lat": 47.8112624,
+    "lon": 35.2122677
+  },
+  "tags": {
+    "bridge": "yes",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 379714784,
+  "center": {
+    "lat": 47.8164311,
+    "lon": 35.0317679
+  },
+  "tags": {
+    "building": "service",
+    "name": "ТП-630",
+    "name:uk": "ТП-630",
+    "operator": "ВАТ „Запоріжжяобленерго“",
+    "power": "substation",
+    "ref": "ТП-630",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "way",
+  "id": 379714785,
+  "center": {
+    "lat": 47.8168613,
+    "lon": 35.0343693
+  },
+  "tags": {
+    "building": "service",
+    "operator": "ВАТ „Запоріжжяобленерго“",
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "way",
+  "id": 380162929,
+  "center": {
+    "lat": 47.8146022,
+    "lon": 35.2414118
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "trunk",
+    "int_ref": "E 105",
+    "lanes": "2",
+    "layer": "1",
+    "maxspeed": "50",
+    "oneway": "yes",
+    "ref": "М-18",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 380439957,
+  "center": {
+    "lat": 47.8095938,
+    "lon": 35.2265730
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "footway",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 381313898,
+  "center": {
+    "lat": 47.8206175,
+    "lon": 35.2042285
+  },
+  "tags": {
+    "bridge": "yes",
+    "electrified": "contact_line",
+    "frequency": "0",
+    "gauge": "1520",
+    "layer": "1",
+    "operator": "Укрзалізниця",
+    "passenger_lines": "2",
+    "railway": "rail",
+    "usage": "main",
+    "voltage": "3000"
+  }
+},
+{
+  "type": "way",
+  "id": 381313899,
+  "center": {
+    "lat": 47.8045487,
+    "lon": 35.1916189
+  },
+  "tags": {
+    "bridge": "yes",
+    "electrified": "contact_line",
+    "frequency": "0",
+    "gauge": "1520",
+    "layer": "1",
+    "operator": "Укрзалізниця",
+    "passenger_lines": "2",
+    "railway": "rail",
+    "usage": "main",
+    "voltage": "3000"
+  }
+},
+{
+  "type": "way",
+  "id": 381313901,
+  "center": {
+    "lat": 47.8011622,
+    "lon": 35.1892346
+  },
+  "tags": {
+    "bridge": "yes",
+    "electrified": "contact_line",
+    "frequency": "0",
+    "gauge": "1520",
+    "layer": "1",
+    "operator": "Укрзалізниця",
+    "railway": "rail",
+    "usage": "main",
+    "voltage": "3000"
+  }
+},
+{
+  "type": "way",
+  "id": 381313902,
+  "center": {
+    "lat": 47.8012167,
+    "lon": 35.1890552
+  },
+  "tags": {
+    "bridge": "yes",
+    "electrified": "contact_line",
+    "frequency": "0",
+    "gauge": "1520",
+    "layer": "1",
+    "operator": "Укрзалізниця",
+    "railway": "rail",
+    "usage": "main",
+    "voltage": "3000"
+  }
+},
+{
+  "type": "way",
+  "id": 381313903,
+  "center": {
+    "lat": 47.8136512,
+    "lon": 35.2012616
+  },
+  "tags": {
+    "bridge": "yes",
+    "electrified": "contact_line",
+    "frequency": "0",
+    "gauge": "1520",
+    "layer": "1",
+    "operator": "Укрзалізниця",
+    "passenger_lines": "2",
+    "railway": "rail",
+    "usage": "main",
+    "voltage": "3000"
+  }
+},
+{
+  "type": "way",
+  "id": 384144155,
+  "center": {
+    "lat": 47.8270190,
+    "lon": 35.2030814
+  },
+  "tags": {
+    "amenity": "hospital"
+  }
+},
+{
+  "type": "way",
+  "id": 386492259,
+  "center": {
+    "lat": 47.8013082,
+    "lon": 35.2288073
+  },
+  "tags": {
+    "building": "yes",
+    "man_made": "street_cabinet",
+    "power": "substation",
+    "street_cabinet": "power",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "way",
+  "id": 387151273,
+  "center": {
+    "lat": 47.7924731,
+    "lon": 35.2111758
+  },
+  "tags": {
+    "building": "service",
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "way",
+  "id": 387426872,
+  "center": {
+    "lat": 47.7927987,
+    "lon": 35.2218243
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "Космічна",
+    "name:ru": "Космическая",
+    "name:uk": "Космічна",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "64 MVA",
+    "substation": "distribution",
+    "voltage": "35000;10000;6000"
+  }
+},
+{
+  "type": "way",
+  "id": 387426930,
+  "center": {
+    "lat": 47.7967345,
+    "lon": 35.2204320
+  },
+  "tags": {
+    "building": "service",
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "way",
+  "id": 387426985,
+  "center": {
+    "lat": 47.7964198,
+    "lon": 35.2191131
+  },
+  "tags": {
+    "building": "service",
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "way",
+  "id": 387427026,
+  "center": {
+    "lat": 47.7966229,
+    "lon": 35.2236925
+  },
+  "tags": {
+    "building": "service",
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "way",
+  "id": 387694544,
+  "center": {
+    "lat": 47.8645735,
+    "lon": 35.0903658
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "service",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 403388384,
+  "center": {
+    "lat": 47.7796917,
+    "lon": 35.1908983
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "footway",
+    "surface": "metal"
+  }
+},
+{
+  "type": "way",
+  "id": 409585740,
+  "center": {
+    "lat": 47.8204210,
+    "lon": 35.0287188
+  },
+  "tags": {
+    "building": "service",
+    "name": "ТП-666",
+    "name:uk": "ТП-666",
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "way",
+  "id": 409585754,
+  "center": {
+    "lat": 47.8196052,
+    "lon": 35.0318360
+  },
+  "tags": {
+    "building": "service",
+    "name": "ТП-631",
+    "name:uk": "ТП-631",
+    "operator": "ВАТ „Запоріжжяобленерго“",
+    "power": "substation",
+    "ref": "ТП-631",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "way",
+  "id": 409585760,
+  "center": {
+    "lat": 47.8186356,
+    "lon": 35.0331111
+  },
+  "tags": {
+    "building": "service",
+    "name": "ТП 632",
+    "name:uk": "ТП 632",
+    "operator": "ВАТ „Запоріжжяобленерго“",
+    "power": "substation",
+    "ref": "ТП 632",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "way",
+  "id": 409852137,
+  "center": {
+    "lat": 47.8201135,
+    "lon": 35.0360759
+  },
+  "tags": {
+    "building": "service",
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "way",
+  "id": 410337350,
+  "center": {
+    "lat": 47.8136888,
+    "lon": 35.0334069
+  },
+  "tags": {
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "way",
+  "id": 410337357,
+  "center": {
+    "lat": 47.8147838,
+    "lon": 35.0327311
+  },
+  "tags": {
+    "building": "service",
+    "operator": "ВАТ „Запоріжжяобленерго“",
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "way",
+  "id": 410337362,
+  "center": {
+    "lat": 47.8147144,
+    "lon": 35.0340209
+  },
+  "tags": {
+    "building": "service",
+    "operator": "ВАТ „Запоріжжяобленерго“",
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "way",
+  "id": 411785222,
+  "center": {
+    "lat": 48.0839017,
+    "lon": 34.8801310
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "Миколай-поле",
+    "name:uk": "Миколай-поле",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "5 MVA",
+    "substation": "distribution",
+    "voltage": "35000;10000"
+  }
+},
+{
+  "type": "way",
+  "id": 411785244,
+  "center": {
+    "lat": 48.0768111,
+    "lon": 34.8900652
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "unclassified",
+    "layer": "1",
+    "surface": "ground"
+  }
+},
+{
+  "type": "way",
+  "id": 411785245,
+  "center": {
+    "lat": 48.0980970,
+    "lon": 34.8785485
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "track",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 420487092,
+  "center": {
+    "lat": 47.8300756,
+    "lon": 35.0413051
+  },
+  "tags": {
+    "building": "service",
+    "name": "ТП-660",
+    "name:uk": "ТП-660",
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "way",
+  "id": 420924678,
+  "center": {
+    "lat": 47.7709671,
+    "lon": 35.1855849
+  },
+  "tags": {
+    "building": "service",
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "way",
+  "id": 424508033,
+  "center": {
+    "lat": 47.7415835,
+    "lon": 35.1737342
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "footway",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 425258594,
+  "center": {
+    "lat": 47.8133770,
+    "lon": 35.0293695
+  },
+  "tags": {
+    "building": "service",
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "way",
+  "id": 430049871,
+  "center": {
+    "lat": 47.8220905,
+    "lon": 35.0314709
+  },
+  "tags": {
+    "building": "service",
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "way",
+  "id": 432144530,
+  "center": {
+    "lat": 47.8223463,
+    "lon": 35.0401803
+  },
+  "tags": {
+    "building": "service",
+    "name": "РП-32",
+    "name:uk": "РП-32",
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "way",
+  "id": 433263342,
+  "center": {
+    "lat": 47.8150598,
+    "lon": 35.0375625
+  },
+  "tags": {
+    "building": "service",
+    "name": "ТП-647",
+    "name:uk": "ТП-647",
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "way",
+  "id": 434876751,
+  "center": {
+    "lat": 47.8103519,
+    "lon": 35.0534634
+  },
+  "tags": {
+    "building": "service",
+    "name": "ТП-620",
+    "name:uk": "ТП-620",
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "way",
+  "id": 435093972,
+  "center": {
+    "lat": 47.9525005,
+    "lon": 35.2459417
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "trunk",
+    "int_ref": "E 105",
+    "layer": "1",
+    "maxspeed": "50",
+    "oneway": "yes",
+    "ref": "М-18",
+    "smoothness": "good"
+  }
+},
+{
+  "type": "way",
+  "id": 436609089,
+  "center": {
+    "lat": 47.8541374,
+    "lon": 35.1638653
+  },
+  "tags": {
+    "bridge": "yes",
+    "electrified": "contact_line",
+    "frequency": "0",
+    "gauge": "1524",
+    "layer": "1",
+    "oneway": "yes",
+    "railway": "construction",
+    "usage": "main",
+    "voltage": "600"
+  }
+},
+{
+  "type": "way",
+  "id": 440120402,
+  "center": {
+    "lat": 47.8605194,
+    "lon": 35.2404653
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "steps"
+  }
+},
+{
+  "type": "way",
+  "id": 440120430,
+  "center": {
+    "lat": 47.8585647,
+    "lon": 35.2400215
+  },
+  "tags": {
+    "building": "service",
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "way",
+  "id": 440120431,
+  "center": {
+    "lat": 47.8572906,
+    "lon": 35.2374630
+  },
+  "tags": {
+    "building": "service",
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "way",
+  "id": 440120435,
+  "center": {
+    "lat": 47.8606198,
+    "lon": 35.2401996
+  },
+  "tags": {
+    "building": "service",
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "way",
+  "id": 442751807,
+  "center": {
+    "lat": 47.9398876,
+    "lon": 35.4152347
+  },
+  "tags": {
+    "barrier": "fence",
+    "branch": "Придніпровська залізниця",
+    "frequency": "50",
+    "full_name": "ПС №ЕЧЕ-38 „Вільнянськ транзитна“ 35/10 кВ",
+    "location": "outdoor",
+    "name": "Вільнянськ транзитна",
+    "name:uk": "Вільнянськ транзитна",
+    "operator": "Укрзалізниця",
+    "power": "substation",
+    "rating": "32.6 MVA",
+    "ref": "ЕЧЕ-38",
+    "substation": "traction",
+    "voltage": "35000;10000"
+  }
+},
+{
+  "type": "way",
+  "id": 442751808,
+  "center": {
+    "lat": 47.8363706,
+    "lon": 35.2757280
+  },
+  "tags": {
+    "name": "ШНС-3",
+    "name:uk": "ШНС-3",
+    "power": "substation",
+    "rating": "5 MVA",
+    "substation": "industrial",
+    "voltage": "35000"
+  }
+},
+{
+  "type": "way",
+  "id": 442751810,
+  "center": {
+    "lat": 47.9419978,
+    "lon": 35.4395075
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "Шевченківська",
+    "name:uk": "Шевченківська",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "32.6 MVA",
+    "substation": "distribution",
+    "voltage": "35000;10000"
+  }
+},
+{
+  "type": "way",
+  "id": 442751813,
+  "center": {
+    "lat": 47.8269136,
+    "lon": 35.3130930
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "МКК (Мокрянський к-р)",
+    "name:uk": "МКК (Мокрянський к-р)",
+    "power": "substation",
+    "rating": "12.6 MVA",
+    "substation": "industrial",
+    "voltage": "35000"
+  }
+},
+{
+  "type": "way",
+  "id": 442892583,
+  "center": {
+    "lat": 48.0582829,
+    "lon": 35.4998257
+  },
+  "tags": {
+    "barrier": "fence",
+    "branch": "Вільнянські РЕМ",
+    "frequency": "50",
+    "full_name": "ПС „Солона“ 35/10 кВ",
+    "location": "outdoor",
+    "name": "Солоне",
+    "name:uk": "Солоне",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "8 MVA",
+    "substation": "distribution",
+    "voltage": "35000;10000"
+  }
+},
+{
+  "type": "way",
+  "id": 442892587,
+  "center": {
+    "lat": 47.8312791,
+    "lon": 35.0768025
+  },
+  "tags": {
+    "barrier": "fence",
+    "branch": "Придніпровська залізниця",
+    "frequency": "50",
+    "full_name": "ПС №ЕЧЕ-75 „Запорізька Січ транзитна“ 35/10 кВ",
+    "location": "outdoor",
+    "name": "Запорізька Січ транзитна",
+    "name:uk": "Запорізька Січ транзитна",
+    "operator": "Укрзалізниця",
+    "power": "substation",
+    "rating": "12.6 MVA",
+    "ref": "ЕЧЕ-75",
+    "substation": "traction",
+    "voltage": "35000;10000"
+  }
+},
+{
+  "type": "way",
+  "id": 442948405,
+  "center": {
+    "lat": 47.9327116,
+    "lon": 35.1350373
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "ДВС",
+    "name:uk": "ДВС",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "30 MVA",
+    "substation": "distribution",
+    "voltage": "35000;10000"
+  }
+},
+{
+  "type": "way",
+  "id": 442948406,
+  "center": {
+    "lat": 48.0404450,
+    "lon": 35.4659083
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "НСП-8",
+    "name:uk": "НСП-8",
+    "power": "substation",
+    "substation": "industrial",
+    "voltage": "35000"
+  }
+},
+{
+  "type": "way",
+  "id": 442948417,
+  "center": {
+    "lat": 47.9566392,
+    "lon": 35.2138446
+  },
+  "tags": {
+    "barrier": "fence",
+    "branch": "Вільнянські РЕМ",
+    "frequency": "50",
+    "full_name": "ПС „Вільногрушівка“ 35/6 кВ",
+    "location": "outdoor",
+    "name": "Вільногрушівка",
+    "name:uk": "Вільногрушівка",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "10 MVA",
+    "substation": "distribution",
+    "voltage": "35000;6000"
+  }
+},
+{
+  "type": "way",
+  "id": 442948429,
+  "center": {
+    "lat": 48.0292125,
+    "lon": 35.4339177
+  },
+  "tags": {
+    "barrier": "fence",
+    "branch": "Вільнянські РЕМ",
+    "frequency": "50",
+    "full_name": "ПС „Новогупалівка“ 35/10 кВ",
+    "location": "outdoor",
+    "name": "Новогупалівка",
+    "name:uk": "Новогупалівка",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "8 MVA",
+    "substation": "distribution",
+    "voltage": "35000;10000"
+  }
+},
+{
+  "type": "way",
+  "id": 442948433,
+  "center": {
+    "lat": 47.8136236,
+    "lon": 35.4626568
+  },
+  "tags": {
+    "barrier": "fence",
+    "branch": "Оріхівські РЕМ",
+    "frequency": "50",
+    "full_name": "ПС „Новотаврічеська“ 35/10 кВ",
+    "location": "outdoor",
+    "name": "Новотаврична",
+    "name:uk": "Новотаврична",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "5 MVA",
+    "voltage": "35000;10000"
+  }
+},
+{
+  "type": "way",
+  "id": 442948437,
+  "center": {
+    "lat": 47.6286915,
+    "lon": 35.5025516
+  },
+  "tags": {
+    "barrier": "fence",
+    "branch": "Оріхівські РЕМ",
+    "frequency": "50",
+    "full_name": "ПС „Новояковлівка“ 35/10 кВ",
+    "location": "outdoor",
+    "name": "Новояковлівка",
+    "name:uk": "Новояковлівка",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "2.5 MVA",
+    "substation": "distribution",
+    "voltage": "35000;10000"
+  }
+},
+{
+  "type": "way",
+  "id": 442975244,
+  "center": {
+    "lat": 47.6856183,
+    "lon": 35.3355959
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "trunk",
+    "int_ref": "E 105",
+    "lanes": "2",
+    "layer": "1",
+    "maxspeed": "90",
+    "oneway": "yes",
+    "ref": "М-18",
+    "smoothness": "good",
+    "source:maxspeed": "UA:rural",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 442975266,
+  "center": {
+    "lat": 47.6927104,
+    "lon": 35.3604268
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "path",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 444035718,
+  "center": {
+    "lat": 47.7726917,
+    "lon": 35.1840198
+  },
+  "tags": {
+    "building": "service",
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "way",
+  "id": 448570219,
+  "center": {
+    "lat": 47.8575794,
+    "lon": 35.1616391
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "secondary",
+    "layer": "1",
+    "name": "вулиця Каліброва",
+    "name:en": "Kalibrova Street",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 448570225,
+  "center": {
+    "lat": 47.8534542,
+    "lon": 35.1312937
+  },
+  "tags": {
+    "bridge": "yes",
+    "electrified": "contact_line",
+    "frequency": "0",
+    "gauge": "1524",
+    "layer": "1",
+    "oneway": "yes",
+    "railway": "tram",
+    "usage": "main",
+    "voltage": "600"
+  }
+},
+{
+  "type": "way",
+  "id": 451106967,
+  "center": {
+    "lat": 47.8988854,
+    "lon": 34.8961602
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "Широке",
+    "name:uk": "Широке",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "5 MVA",
+    "substation": "distribution",
+    "voltage": "35000;10000"
+  }
+},
+{
+  "type": "way",
+  "id": 451106972,
+  "center": {
+    "lat": 47.9860130,
+    "lon": 34.9707396
+  },
+  "tags": {
+    "name": "Петропавлівська (КІМ)",
+    "name:uk": "Петропавлівська (КІМ)",
+    "power": "substation",
+    "rating": "5 MVA",
+    "voltage": "35000"
+  }
+},
+{
+  "type": "way",
+  "id": 457855445,
+  "center": {
+    "lat": 47.8141211,
+    "lon": 35.0667754
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "service",
+    "layer": "1",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 457855448,
+  "center": {
+    "lat": 47.8139880,
+    "lon": 35.0666057
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "primary",
+    "layer": "1",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 457855449,
+  "center": {
+    "lat": 47.8156115,
+    "lon": 35.0724599
+  },
+  "tags": {
+    "bridge": "yes",
+    "bridge:structure": "beam",
+    "highway": "primary",
+    "lanes": "3",
+    "layer": "1",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 457855450,
+  "center": {
+    "lat": 47.8154993,
+    "lon": 35.0726463
+  },
+  "tags": {
+    "bridge": "yes",
+    "bridge:structure": "beam",
+    "construction": "primary",
+    "highway": "construction",
+    "layer": "1",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 468687475,
+  "center": {
+    "lat": 47.7990923,
+    "lon": 35.0627270
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "residential",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 468687483,
+  "center": {
+    "lat": 47.8001611,
+    "lon": 35.0672789
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "footway",
+    "layer": "1",
+    "source": "bing"
+  }
+},
+{
+  "type": "way",
+  "id": 475604330,
+  "center": {
+    "lat": 47.8929625,
+    "lon": 35.2043941
+  },
+  "tags": {
+    "building": "industrial",
+    "name": "ГПП-2",
+    "name:uk": "ГПП-2",
+    "power": "substation",
+    "rating": "50 MVA",
+    "substation": "industrial",
+    "voltage": "35000"
+  }
+},
+{
+  "type": "way",
+  "id": 475604430,
+  "center": {
+    "lat": 47.8902817,
+    "lon": 35.2021625
+  },
+  "tags": {
+    "building": "industrial",
+    "name": "ГПП-4",
+    "name:uk": "ГПП-4",
+    "power": "substation",
+    "rating": "50 MVA",
+    "substation": "industrial",
+    "voltage": "35000"
+  }
+},
+{
+  "type": "way",
+  "id": 475669864,
+  "center": {
+    "lat": 47.8669087,
+    "lon": 35.0383190
+  },
+  "tags": {
+    "name": "ЗТЗ",
+    "name:uk": "ЗТЗ",
+    "power": "substation",
+    "rating": "64 MVA",
+    "substation": "industrial",
+    "voltage": "150000;6000"
+  }
+},
+{
+  "type": "way",
+  "id": 475849123,
+  "center": {
+    "lat": 47.8862319,
+    "lon": 35.0476017
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "service",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 475849126,
+  "center": {
+    "lat": 47.8859165,
+    "lon": 35.0455688
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "service",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 475887538,
+  "center": {
+    "lat": 47.8946320,
+    "lon": 35.0680887
+  },
+  "tags": {
+    "building": "industrial",
+    "generator:method": "combustion",
+    "generator:source": "gas",
+    "power": "generator"
+  }
+},
+{
+  "type": "way",
+  "id": 476045535,
+  "center": {
+    "lat": 47.7639133,
+    "lon": 35.2137182
+  },
+  "tags": {
+    "landuse": "industrial",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 486927667,
+  "center": {
+    "lat": 47.8180275,
+    "lon": 35.2395550
+  },
+  "tags": {
+    "bridge": "yes",
+    "layer": "1",
+    "railway": "rail",
+    "service": "spur"
+  }
+},
+{
+  "type": "way",
+  "id": 487365762,
+  "center": {
+    "lat": 47.8277272,
+    "lon": 35.1820931
+  },
+  "tags": {
+    "bridge": "yes",
+    "layer": "1",
+    "railway": "rail",
+    "service": "spur"
+  }
+},
+{
+  "type": "way",
+  "id": 487365764,
+  "center": {
+    "lat": 47.8277137,
+    "lon": 35.1820280
+  },
+  "tags": {
+    "bridge": "yes",
+    "layer": "1",
+    "railway": "rail",
+    "service": "spur"
+  }
+},
+{
+  "type": "way",
+  "id": 488097750,
+  "center": {
+    "lat": 48.1164433,
+    "lon": 35.3397480
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "trunk",
+    "int_ref": "E 105",
+    "layer": "1",
+    "maxspeed": "90",
+    "ref": "М-18",
+    "smoothness": "intermediate",
+    "source:maxspeed": "UA:rural",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 488098765,
+  "center": {
+    "lat": 47.9525031,
+    "lon": 35.2460964
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "trunk",
+    "int_ref": "E 105",
+    "layer": "1",
+    "maxspeed": "50",
+    "oneway": "yes",
+    "ref": "М-18",
+    "smoothness": "good"
+  }
+},
+{
+  "type": "way",
+  "id": 488103041,
+  "center": {
+    "lat": 47.8145470,
+    "lon": 35.2412706
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "trunk",
+    "int_ref": "E 105",
+    "lanes": "2",
+    "layer": "1",
+    "maxspeed": "50",
+    "oneway": "yes",
+    "ref": "М-18",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 497173578,
+  "center": {
+    "lat": 47.8597984,
+    "lon": 35.1891933
+  },
+  "tags": {
+    "bicycle": "yes",
+    "bridge": "yes",
+    "foot": "yes",
+    "highway": "footway",
+    "horse": "no",
+    "layer": "1",
+    "motor_vehicle": "no",
+    "name": "Пішохідний міст",
+    "name:uk": "Пішохідний міст",
+    "surface": "metal"
+  }
+},
+{
+  "type": "way",
+  "id": 499313453,
+  "center": {
+    "lat": 47.7461869,
+    "lon": 35.3924919
+  },
+  "tags": {
+    "name": "Новоолександрівка",
+    "name:uk": "Новоолександрівка",
+    "power": "substation",
+    "substation": "industrial",
+    "voltage": "35000"
+  }
+},
+{
+  "type": "way",
+  "id": 499313454,
+  "center": {
+    "lat": 47.6165700,
+    "lon": 35.2830088
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "Ірригаційна",
+    "name:uk": "Ірригаційна",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "6.5 MVA",
+    "substation": "distribution",
+    "voltage": "35000;10000;6000"
+  }
+},
+{
+  "type": "way",
+  "id": 500383710,
+  "center": {
+    "lat": 47.7889150,
+    "lon": 34.9556817
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "unclassified",
+    "lanes": "2",
+    "layer": "1",
+    "oneway": "no",
+    "ref": "С-080707",
+    "source": "bing",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 517863640,
+  "center": {
+    "lat": 47.8729405,
+    "lon": 35.2334002
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "residential",
+    "layer": "1",
+    "name": "Боковий провулок",
+    "name:en": "Bokovyi Lane",
+    "name:ru": "Боковой переулок",
+    "name:uk": "Боковий провулок"
+  }
+},
+{
+  "type": "way",
+  "id": 553319425,
+  "center": {
+    "lat": 47.8619937,
+    "lon": 35.0623260
+  },
+  "tags": {
+    "bridge": "yes",
+    "footway": "sidewalk",
+    "highway": "footway",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 560136666,
+  "center": {
+    "lat": 47.8402765,
+    "lon": 35.2121743
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "residential",
+    "layer": "1",
+    "name": "Слов’янська вулиця",
+    "name:en": "Slovianska Street",
+    "name:pl": "ulica Słowiańska",
+    "name:ru": "Славянская улица",
+    "name:uk": "Слов’янська вулиця"
+  }
+},
+{
+  "type": "way",
+  "id": 560136669,
+  "center": {
+    "lat": 47.8402612,
+    "lon": 35.2121298
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "footway",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 584424116,
+  "center": {
+    "lat": 47.9747804,
+    "lon": 35.4374569
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "tertiary",
+    "layer": "1",
+    "oneway": "no",
+    "ref": "О080511",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 584425511,
+  "center": {
+    "lat": 47.9553039,
+    "lon": 35.3865288
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "unclassified",
+    "layer": "1",
+    "ref": "О-080510"
+  }
+},
+{
+  "type": "way",
+  "id": 591408258,
+  "center": {
+    "lat": 47.8335936,
+    "lon": 35.1171781
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "footway",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 605043225,
+  "center": {
+    "lat": 47.8900514,
+    "lon": 35.0126884
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "Українська",
+    "name:uk": "Українська",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "8 MVA",
+    "substation": "distribution",
+    "voltage": "35000;10000"
+  }
+},
+{
+  "type": "way",
+  "id": 605043226,
+  "center": {
+    "lat": 47.9675866,
+    "lon": 35.0333919
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "Привільне",
+    "name:uk": "Привільне",
+    "old_name": "Радянське",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "4 MVA",
+    "substation": "distribution",
+    "voltage": "35000;10000"
+  }
+},
+{
+  "type": "way",
+  "id": 605043227,
+  "center": {
+    "lat": 48.0619541,
+    "lon": 34.8507859
+  },
+  "tags": {
+    "barrier": "fence",
+    "power": "substation",
+    "substation": "industrial",
+    "voltage": "35000"
+  }
+},
+{
+  "type": "way",
+  "id": 628637902,
+  "center": {
+    "lat": 47.8323239,
+    "lon": 35.1511375
+  },
+  "tags": {
+    "bridge": "yes",
+    "footway": "sidewalk",
+    "highway": "footway",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 629991237,
+  "center": {
+    "lat": 47.8285420,
+    "lon": 35.1484853
+  },
+  "tags": {
+    "bridge": "yes",
+    "fixme": "на Страве есть пешеходные и велосипедныве треки, пересекающие реку в этом месте. есть ли мост?",
+    "highway": "footway",
+    "layer": "1",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 629991238,
+  "center": {
+    "lat": 47.8274768,
+    "lon": 35.1479927
+  },
+  "tags": {
+    "bridge": "yes",
+    "fixme": "на Страве есть пешеходные и велосипедныве треки, пересекающие реку в этом месте. есть ли мост?",
+    "highway": "footway",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 650375317,
+  "center": {
+    "lat": 47.6862494,
+    "lon": 35.2202784
+  },
+  "tags": {
+    "bridge": "yes",
+    "electrified": "contact_line",
+    "frequency": "0",
+    "gauge": "1520",
+    "passenger_lines": "2",
+    "railway": "disused",
+    "usage": "main",
+    "voltage": "3000"
+  }
+},
+{
+  "type": "way",
+  "id": 651164668,
+  "center": {
+    "lat": 47.7126826,
+    "lon": 35.2009772
+  },
+  "tags": {
+    "bridge": "yes",
+    "electrified": "contact_line",
+    "frequency": "0",
+    "gauge": "1520",
+    "layer": "1",
+    "passenger_lines": "2",
+    "railway": "disused",
+    "usage": "main",
+    "voltage": "3000"
+  }
+},
+{
+  "type": "way",
+  "id": 651164673,
+  "center": {
+    "lat": 47.7094347,
+    "lon": 35.2039500
+  },
+  "tags": {
+    "bridge": "yes",
+    "electrified": "contact_line",
+    "frequency": "0",
+    "gauge": "1520",
+    "layer": "1",
+    "passenger_lines": "2",
+    "railway": "disused",
+    "usage": "main",
+    "voltage": "3000"
+  }
+},
+{
+  "type": "way",
+  "id": 651164690,
+  "center": {
+    "lat": 47.7056912,
+    "lon": 35.2086226
+  },
+  "tags": {
+    "bridge": "yes",
+    "electrified": "contact_line",
+    "frequency": "0",
+    "gauge": "1520",
+    "layer": "1",
+    "passenger_lines": "2",
+    "railway": "disused",
+    "usage": "main",
+    "voltage": "3000"
+  }
+},
+{
+  "type": "way",
+  "id": 652390780,
+  "center": {
+    "lat": 47.7456813,
+    "lon": 35.2147279
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "tertiary",
+    "lanes": "2",
+    "layer": "1",
+    "name": "Миру вулиця",
+    "name:pl": "ulica Pokoju",
+    "name:ru": "Мира улица",
+    "name:uk": "Миру вулиця",
+    "old_name": "Урицького вулиця",
+    "ref": "О-080720",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 652951895,
+  "center": {
+    "lat": 47.7284161,
+    "lon": 35.2087531
+  },
+  "tags": {
+    "amenity": "hospital",
+    "name": "Запорізька центральна районна лікарня",
+    "name:uk": "Запорізька центральна районна лікарня",
+    "source": "http://zrda.gov.ua/news/2403-filiia_polikliniki_kz_zaporizka_tsentralna_raionna_likarnia_zaporizkoi_raionnoi_radi_v_selishchi_kushugum_rozpochala_robotu_z_liutogo_2017_roku.html"
+  }
+},
+{
+  "type": "way",
+  "id": 670436499,
+  "center": {
+    "lat": 47.8372284,
+    "lon": 35.1663898
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "service",
+    "layer": "1",
+    "maxspeed": "20"
+  }
+},
+{
+  "type": "way",
+  "id": 686125739,
+  "center": {
+    "lat": 47.7392243,
+    "lon": 35.1760411
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "footway",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 703313679,
+  "center": {
+    "lat": 47.8539182,
+    "lon": 35.0164046
+  },
+  "tags": {
+    "bridge": "yes",
+    "footway": "sidewalk",
+    "highway": "footway",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 704301702,
+  "center": {
+    "lat": 47.8405544,
+    "lon": 35.0788189
+  },
+  "tags": {
+    "bridge": "yes",
+    "bridge:structure": "beam",
+    "check_date": "2021-07-17",
+    "highway": "construction",
+    "layer": "1",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 708944448,
+  "center": {
+    "lat": 47.8718451,
+    "lon": 35.1569628
+  },
+  "tags": {
+    "bridge": "yes",
+    "layer": "1",
+    "railway": "rail",
+    "service": "spur",
+    "usage": "industrial"
+  }
+},
+{
+  "type": "way",
+  "id": 708944450,
+  "center": {
+    "lat": 47.8727727,
+    "lon": 35.1587151
+  },
+  "tags": {
+    "bridge": "yes",
+    "gauge": "1520",
+    "layer": "2",
+    "railway": "rail",
+    "usage": "industrial"
+  }
+},
+{
+  "type": "way",
+  "id": 708944453,
+  "center": {
+    "lat": 47.8786621,
+    "lon": 35.1764404
+  },
+  "tags": {
+    "bridge": "yes",
+    "gauge": "1520",
+    "layer": "2",
+    "railway": "rail",
+    "usage": "industrial"
+  }
+},
+{
+  "type": "way",
+  "id": 710041635,
+  "center": {
+    "lat": 47.8274496,
+    "lon": 35.2160317
+  },
+  "tags": {
+    "access": "no",
+    "bicycle": "yes",
+    "bridge": "yes",
+    "foot": "yes",
+    "highway": "path",
+    "horse": "yes",
+    "layer": "1",
+    "motor_vehicle": "no",
+    "surface": "ground",
+    "width": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 710516659,
+  "center": {
+    "lat": 47.8580301,
+    "lon": 35.0201165
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "service",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 712157712,
+  "center": {
+    "lat": 47.6344521,
+    "lon": 35.0697702
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "Біленьке",
+    "name:uk": "Біленьке",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "12.6 MVA",
+    "substation": "distribution",
+    "voltage": "35000;10000"
+  }
+},
+{
+  "type": "way",
+  "id": 712157714,
+  "center": {
+    "lat": 47.6105459,
+    "lon": 35.0220745
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "Дніпровська",
+    "name:uk": "Дніпровська",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "12.6 MVA",
+    "substation": "distribution",
+    "voltage": "35000;10000"
+  }
+},
+{
+  "type": "way",
+  "id": 712252285,
+  "center": {
+    "lat": 47.7034673,
+    "lon": 35.3421527
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "Григорівка",
+    "name:uk": "Григорівка",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "8 MVA",
+    "substation": "distribution",
+    "voltage": "35000;10000"
+  }
+},
+{
+  "type": "way",
+  "id": 712252287,
+  "center": {
+    "lat": 47.7055880,
+    "lon": 35.4290840
+  },
+  "tags": {
+    "barrier": "wall",
+    "name": "Юлівка",
+    "name:uk": "Юлівка",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "4.1 MVA",
+    "substation": "distribution",
+    "voltage": "35000;10000"
+  }
+},
+{
+  "type": "way",
+  "id": 712655519,
+  "center": {
+    "lat": 47.9557401,
+    "lon": 35.2736321
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "Левшино",
+    "name:uk": "Левшино",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "5 MVA",
+    "substation": "distribution",
+    "voltage": "35000;10000"
+  }
+},
+{
+  "type": "way",
+  "id": 712655520,
+  "center": {
+    "lat": 47.9289138,
+    "lon": 35.2868524
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "Люцерна",
+    "name:uk": "Люцерна",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "5 MVA",
+    "substation": "distribution",
+    "voltage": "35000;6000"
+  }
+},
+{
+  "type": "way",
+  "id": 712655525,
+  "center": {
+    "lat": 47.9338725,
+    "lon": 35.4418762
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "Вільнянський Елеватор",
+    "name:en": "Vilnianskyi Elevator",
+    "name:uk": "Вільнянський Елеватор",
+    "power": "substation",
+    "substation": "industrial",
+    "voltage": "35000"
+  }
+},
+{
+  "type": "way",
+  "id": 713076297,
+  "center": {
+    "lat": 48.0651547,
+    "lon": 35.5475254
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "НСП-ІІ",
+    "name:uk": "НСП-ІІ",
+    "power": "substation",
+    "substation": "industrial",
+    "voltage": "35000"
+  }
+},
+{
+  "type": "way",
+  "id": 713379311,
+  "center": {
+    "lat": 47.8536717,
+    "lon": 35.0205328
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "footway",
+    "layer": "1",
+    "motor_vehicle": "no"
+  }
+},
+{
+  "type": "way",
+  "id": 719262584,
+  "center": {
+    "lat": 47.6313248,
+    "lon": 35.2709626
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "Рибгосп",
+    "name:uk": "Рибгосп",
+    "power": "substation",
+    "substation": "industrial",
+    "voltage": "35000"
+  }
+},
+{
+  "type": "way",
+  "id": 719281436,
+  "center": {
+    "lat": 47.7618332,
+    "lon": 35.3761980
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "НС-2",
+    "name:uk": "НС-2",
+    "power": "substation",
+    "substation": "industrial",
+    "voltage": "35000"
+  }
+},
+{
+  "type": "way",
+  "id": 719281438,
+  "center": {
+    "lat": 47.7878882,
+    "lon": 35.2677066
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "ШНС-2",
+    "name:uk": "ШНС-2",
+    "power": "substation",
+    "substation": "industrial",
+    "voltage": "35000"
+  }
+},
+{
+  "type": "way",
+  "id": 720257388,
+  "center": {
+    "lat": 48.0484978,
+    "lon": 35.4014762
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "НСП-9",
+    "name:uk": "НСП-9",
+    "power": "substation",
+    "substation": "industrial",
+    "voltage": "35000"
+  }
+},
+{
+  "type": "way",
+  "id": 720257390,
+  "center": {
+    "lat": 48.0476805,
+    "lon": 35.4195871
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "НСП",
+    "name:uk": "НСП",
+    "power": "substation",
+    "substation": "industrial",
+    "voltage": "35000"
+  }
+},
+{
+  "type": "way",
+  "id": 720289576,
+  "center": {
+    "lat": 48.0559508,
+    "lon": 35.2045405
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "НС-1",
+    "name:uk": "НС-1",
+    "power": "substation",
+    "substation": "industrial",
+    "voltage": "35000"
+  }
+},
+{
+  "type": "way",
+  "id": 720291834,
+  "center": {
+    "lat": 48.0657400,
+    "lon": 35.2406654
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "НС-2",
+    "name:uk": "НС-2",
+    "power": "substation",
+    "substation": "industrial",
+    "voltage": "35000"
+  }
+},
+{
+  "type": "way",
+  "id": 720305884,
+  "center": {
+    "lat": 47.9604049,
+    "lon": 35.1538785
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "Андріївка",
+    "name:uk": "Андріївка",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "8 MVA",
+    "substation": "distribution",
+    "voltage": "35000;10000"
+  }
+},
+{
+  "type": "way",
+  "id": 720314441,
+  "center": {
+    "lat": 47.9120607,
+    "lon": 35.2499361
+  },
+  "tags": {
+    "name": "Електротехнологія-2",
+    "name:uk": "Електротехнологія-2",
+    "power": "substation",
+    "substation": "industrial",
+    "voltage": "35000"
+  }
+},
+{
+  "type": "way",
+  "id": 720438526,
+  "center": {
+    "lat": 47.9942940,
+    "lon": 35.0600624
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "Відрадне",
+    "name:uk": "Відрадне",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "8 MVA",
+    "substation": "distribution",
+    "voltage": "35000;10000"
+  }
+},
+{
+  "type": "way",
+  "id": 720445886,
+  "center": {
+    "lat": 48.0229784,
+    "lon": 35.0436394
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "Світанок",
+    "name:uk": "Світанок",
+    "operator": "Запоріжжяобленерго",
+    "power": "substation",
+    "rating": "5 MVA",
+    "substation": "distribution",
+    "voltage": "35000;10000"
+  }
+}
+
+  ]
+}

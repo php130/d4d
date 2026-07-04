@@ -1,0 +1,260 @@
+{
+  "metadata": {
+    "dataset_id": "s_dot_drone_semantic_ops_framework_v0_1",
+    "created_at": "2026-07-04T00:00:00+09:00",
+    "purpose": "Framework dataset for drone/robot/sensor-first S-DOT semantic transmission under DDIL and navigation degradation.",
+    "mock_dataset": true,
+    "safety_note": "Synthetic drone, network, GNSS, jamming-hypothesis, and mission data only. No real drone routes, military unit locations, sensitive infrastructure coordinates, or operational EW details."
+  },
+  "simulation_cases": [
+    {
+      "case_id": "case_a_normal",
+      "label_ko": "정상 임무",
+      "description": "GNSS and command link remain stable; predicted and simulated actual paths stay close.",
+      "degradation_profile": {
+        "link": "normal",
+        "gnss": "normal",
+        "wind": "mild",
+        "expected_event_types": ["STATUS_SUMMARY"]
+      }
+    },
+    {
+      "case_id": "case_b_link_degraded",
+      "label_ko": "통신 저하",
+      "description": "Position remains reliable but raw video and full telemetry cannot move.",
+      "degradation_profile": {
+        "link": "degraded",
+        "gnss": "normal",
+        "wind": "mild",
+        "expected_event_types": ["LINK_DEGRADED", "EDGE_DETECTION_SUMMARY"]
+      }
+    },
+    {
+      "case_id": "case_c_gnss_jamming_suspected",
+      "label_ko": "GNSS 교란 의심",
+      "description": "GNSS quality drops, heartbeat becomes intermittent, prediction uncertainty grows, and residuals exceed threshold.",
+      "degradation_profile": {
+        "link": "intermittent",
+        "gnss": "degraded",
+        "wind": "moderate",
+        "expected_event_types": ["GNSS_DEGRADED", "NAVIGATION_RESIDUAL_SPIKE", "JAMMING_SUSPECTED"]
+      }
+    },
+    {
+      "case_id": "case_d_spoofing_like_inconsistency",
+      "label_ko": "위치 불일치",
+      "description": "GNSS appears present but reported position diverges from inertial/physics prediction.",
+      "degradation_profile": {
+        "link": "degraded",
+        "gnss": "inconsistent",
+        "wind": "mild",
+        "expected_event_types": ["NAVIGATION_RESIDUAL_SPIKE", "SPOOFING_SUSPECTED"]
+      }
+    },
+    {
+      "case_id": "case_e_rejoin_audit",
+      "label_ko": "재연결 감사",
+      "description": "Connectivity returns and cached raw telemetry is reconciled with semantic predictions.",
+      "degradation_profile": {
+        "link": "rejoined",
+        "gnss": "recovering",
+        "wind": "moderate",
+        "expected_event_types": ["REJOIN_AUDIT_REQUIRED"]
+      }
+    }
+  ],
+  "control_intent": {
+    "intent_id": "intent_drone_semantic_watch_01",
+    "display_name_ko": "드론 시맨틱 감시 임무",
+    "primary_objective": "드론 원본 영상/텔레메트리를 모두 전송할 수 없는 상황에서도 위치 예측, 불확실성, 링크/GNSS 상태, 교란 의심 근거를 시맨틱 패킷으로 유지한다.",
+    "valid_until": "2026-07-04T04:00:00Z",
+    "priority_weights": {
+      "flight_safety": 0.25,
+      "navigation_integrity": 0.24,
+      "mission_relevance": 0.21,
+      "link_survivability": 0.18,
+      "provenance_audit": 0.12
+    }
+  },
+  "drone_assets": [
+    {
+      "asset_id": "uav_s1",
+      "asset_code": "UAV-S1",
+      "asset_type": "synthetic_quadcopter",
+      "sensor_modalities": ["EO_IR", "GNSS", "IMU", "LINK_TELEMETRY"],
+      "comm_state": "intermittent",
+      "battery_pct": 64,
+      "local_cache_status": "raw_video_cached",
+      "sdot_outbox_count": 4
+    },
+    {
+      "asset_id": "ugv_r1",
+      "asset_code": "UGV-R1",
+      "asset_type": "synthetic_ground_relay",
+      "sensor_modalities": ["LINK_RELAY", "RF_CONTEXT"],
+      "comm_state": "degraded",
+      "battery_pct": 78,
+      "local_cache_status": "relay_logs_cached",
+      "sdot_outbox_count": 2
+    },
+    {
+      "asset_id": "rf_s3",
+      "asset_code": "RF-S3",
+      "asset_type": "synthetic_rf_sensor",
+      "sensor_modalities": ["RF_CONTEXT", "LINK_TELEMETRY"],
+      "comm_state": "connected",
+      "battery_pct": 92,
+      "local_cache_status": "summary_only",
+      "sdot_outbox_count": 1
+    }
+  ],
+  "flight_states": [
+    {
+      "state_id": "fs_uav_s1_t000",
+      "asset_id": "uav_s1",
+      "time": "2026-07-04T03:00:00Z",
+      "frame": "local_ned",
+      "position_m": {"north": 0, "east": 0, "down": -120},
+      "velocity_mps": {"north": 12.0, "east": 3.0, "down": 0.0},
+      "heading_deg": 76,
+      "battery_pct": 64,
+      "source": "synthetic_truth"
+    }
+  ],
+  "navigation_estimates": [
+    {
+      "estimate_id": "nav_uav_s1_t060",
+      "asset_id": "uav_s1",
+      "time": "2026-07-04T03:01:00Z",
+      "prediction_model": "constant_velocity_with_wind_uncertainty_v0",
+      "predicted_position_m": {"north": 720, "east": 190, "down": -118},
+      "uncertainty_ellipse_m": {"major": 220, "minor": 90, "bearing_deg": 82},
+      "covariance_ref": "mock://covariance/uav_s1/t060",
+      "confidence": 0.66
+    }
+  ],
+  "raw_observations": [
+    {
+      "observation_id": "obs_eoir_001",
+      "asset_id": "uav_s1",
+      "sensor_type": "EO_IR",
+      "time": "2026-07-04T03:01:00Z",
+      "raw_ref": "mock://uav_s1/eoir/frame_batch_030100",
+      "raw_bytes": 18000000,
+      "summary": "Raw EO/IR frame batch cached locally; not transmitted under semantic_summary mode.",
+      "retention_policy": "cache_until_rejoin_audit"
+    },
+    {
+      "observation_id": "obs_gnss_012",
+      "asset_id": "uav_s1",
+      "sensor_type": "GNSS_HEALTH",
+      "time": "2026-07-04T03:01:00Z",
+      "raw_ref": "mock://uav_s1/gnss/health_030100",
+      "raw_bytes": 82000,
+      "summary": "Synthetic GNSS quality dropped; satellite count and quality bucket degrade.",
+      "retention_policy": "send_summary_hold_raw"
+    },
+    {
+      "observation_id": "obs_link_014",
+      "asset_id": "uav_s1",
+      "sensor_type": "LINK_TELEMETRY",
+      "time": "2026-07-04T03:01:02Z",
+      "raw_ref": "mock://uav_s1/link/telemetry_030102",
+      "raw_bytes": 240000,
+      "summary": "Synthetic packet loss and heartbeat gap increased.",
+      "retention_policy": "send_summary_hold_raw"
+    }
+  ],
+  "edge_detections": [
+    {
+      "detection_id": "det_nav_residual_001",
+      "asset_id": "uav_s1",
+      "observation_refs": ["obs_gnss_012", "obs_link_014"],
+      "candidate_type": "NAVIGATION_RESIDUAL_SPIKE",
+      "model_or_rule": "nis_residual_rule_v0",
+      "confidence": 0.63,
+      "features": {
+        "normalized_innovation_squared": 12.4,
+        "threshold": 9.21,
+        "heartbeat_gap_seconds": 18,
+        "gnss_quality_drop": 0.72,
+        "link_quality_drop": 0.58
+      }
+    }
+  ],
+  "jamming_hypotheses": [
+    {
+      "hypothesis_id": "jam_hyp_uav_s1_001",
+      "asset_id": "uav_s1",
+      "time": "2026-07-04T03:01:05Z",
+      "label": "jamming_suspected",
+      "score": 0.68,
+      "inputs": {
+        "gnss_quality_drop": 0.72,
+        "link_quality_drop": 0.58,
+        "normalized_position_residual": 0.79,
+        "heartbeat_gap_score": 0.60,
+        "imu_gnss_disagreement": 0.55,
+        "context_risk": 0.42
+      },
+      "caveat": "Defensive diagnostic hypothesis only; not proof of interference source or location."
+    }
+  ],
+  "semantic_events": [
+    {
+      "event_id": "evt_uav_s1_jamming_suspected",
+      "event_type": "JAMMING_SUSPECTED",
+      "severity": "high",
+      "asset_id": "uav_s1",
+      "time": "2026-07-04T03:01:05Z",
+      "summary": "UAV-S1 navigation and link indicators suggest possible GNSS/link interference.",
+      "why_it_matters": "The command board should treat UAV-S1 position as an uncertainty envelope rather than exact truth.",
+      "recommended_action": "Switch to semantic_summary packets, transmit intent-only update, and hold raw EO/IR for rejoin audit.",
+      "evidence_refs": ["obs_gnss_012", "obs_link_014", "det_nav_residual_001", "jam_hyp_uav_s1_001"],
+      "raw_bytes": 18322000,
+      "semantic_bytes": 920,
+      "confidence": 0.61,
+      "priority": 0.87
+    }
+  ],
+  "semantic_packets": [
+    {
+      "packet_id": "sdot_nav_001",
+      "event_id": "evt_uav_s1_jamming_suspected",
+      "asset_id": "uav_s1",
+      "network_mode": "semantic_summary",
+      "payload_tier": "NAV_HEALTH_CARD",
+      "decision": "send",
+      "bytes_raw_represented": 18322000,
+      "bytes_semantic": 920,
+      "requires_ack": true,
+      "rejoin_audit_required": true
+    }
+  ],
+  "custody_chains": [
+    {
+      "custody_id": "custody_evt_uav_s1_jamming_suspected",
+      "event_id": "evt_uav_s1_jamming_suspected",
+      "source_observation_refs": ["obs_eoir_001", "obs_gnss_012", "obs_link_014"],
+      "edge_encoder_version": "edge_semantic_encoder_v0",
+      "packet_id": "sdot_nav_001",
+      "held_raw_refs": ["mock://uav_s1/eoir/frame_batch_030100"],
+      "audit_status": "pending_rejoin"
+    }
+  ],
+  "migration_map_from_v0_5": {
+    "operation_objective": "control_intent",
+    "mission_intent": "control_intent",
+    "network_modes": "network_modes",
+    "pace_bearer_ladder": "bearer_states",
+    "observations": "raw_observations + edge_detections",
+    "semantic_events": "semantic_events with drone/nav/link event types",
+    "sdot_messages": "semantic_packets",
+    "rejoin_audit": "rejoin_audits",
+    "korea_civil_infra_context": "context_layers.optional_public_background",
+    "unit_nodes": "optional_ground_context",
+    "support_options": "optional_support_context",
+    "adversary_assessment": "optional_scenario_cue_or_removed",
+    "urban_routes": "optional_map_context_or_removed"
+  }
+}

@@ -3,93 +3,176 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Resilient Maritime COP Demo</title>
+    <title>S-DOT 임무지속 COP 데모</title>
     <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="./assets/styles.css" />
   </head>
   <body>
-    <main class="app-shell">
+    <main class="app-shell ops-command">
       <header class="topbar">
         <div>
-          <p class="eyebrow">D4D T3 Demo</p>
-          <h1>Resilient Maritime COP</h1>
+          <p class="eyebrow">D4D T3 지휘상황판</p>
+          <h1>S-DOT 임무지속 COP</h1>
+          <p class="operation-subtitle">Semantic Data On Tactical-network · 통신 단절/거부 환경에서 지휘 의도, 최소 상황도, 자원 상태, 예측 불확실성, 재연결 감사를 유지하는 데모</p>
         </div>
-        <div class="topbar-metrics" id="topbarMetrics"></div>
+        <div class="topbar-right">
+          <div class="system-clock" id="systemClock"></div>
+          <div class="topbar-metrics" id="topbarMetrics"></div>
+        </div>
       </header>
 
-      <section class="glossary-panel" aria-label="Terminology helper">
-        <div>
-          <p class="panel-kicker">Glossary</p>
-          <div class="glossary-chips" id="glossaryChips"></div>
-        </div>
-        <div class="glossary-definition" id="glossaryDefinition" aria-live="polite"></div>
-      </section>
+      <section class="objective-banner" id="objectiveBanner" aria-label="현 작전 목표"></section>
 
-      <section class="mode-strip" aria-label="Network mode selector">
-        <div class="mode-buttons" id="modeButtons"></div>
-        <div class="mode-summary" id="modeSummary"></div>
-      </section>
+      <section class="ops-layout" aria-label="지휘상황실 상황판">
+        <aside class="left-rail" aria-label="작전 제어">
+          <section class="panel mode-panel mode-strip" aria-label="네트워크 모드 선택">
+            <div class="panel-heading">
+              <div>
+                <p class="panel-kicker">네트워크 모드</p>
+                <h2>DDIL 라우팅</h2>
+              </div>
+            </div>
+            <div class="mode-buttons" id="modeButtons"></div>
+            <div class="mode-summary" id="modeSummary"></div>
+          </section>
 
-      <section class="dashboard-grid">
-        <section class="panel map-panel" aria-label="COP map">
+          <section class="panel queue-panel" aria-label="이벤트 우선순위 큐">
+            <div class="panel-heading">
+              <div>
+                <p class="panel-kicker">우선순위 큐</p>
+                <h2>시맨틱 이벤트</h2>
+              </div>
+            </div>
+            <div class="event-list" id="eventList"></div>
+          </section>
+        </aside>
+
+        <section class="panel map-panel" aria-label="COP 지도">
           <div class="panel-heading">
             <div>
-              <p class="panel-kicker">COP Map</p>
-              <h2>Yellow Sea AOI</h2>
+              <p class="panel-kicker">공통작전상황도</p>
+              <h2>서울 도심 지상 AOI 지휘 지도</h2>
             </div>
             <span class="status-pill" id="selectedDecision">...</span>
           </div>
+          <div class="map-command-strip" id="mapCommandStrip"></div>
           <div class="map-stage">
-            <svg id="copMap" viewBox="0 0 1000 640" role="img" aria-label="Maritime COP map visualization"></svg>
+            <div class="map-hud" id="mapHud"></div>
+            <div id="copMap" role="application" aria-label="서울 지상 S-DOT COP 지도"></div>
           </div>
         </section>
 
-        <section class="panel queue-panel" aria-label="Event queue">
+        <aside class="right-rail" aria-label="판단지원 패널">
+          <section class="panel evidence-panel" aria-label="근거 묶음">
+            <div class="panel-heading">
+              <div>
+                <p class="panel-kicker">근거</p>
+                <h2 id="evidenceTitle">선택 이벤트</h2>
+              </div>
+              <span class="status-pill muted" id="reviewStatus">review</span>
+            </div>
+            <div id="evidenceBody"></div>
+          </section>
+
+          <section class="panel route-panel" aria-label="전송 결과">
+            <div class="panel-heading">
+              <div>
+                <p class="panel-kicker">전송</p>
+                <h2>원본 vs 시맨틱</h2>
+              </div>
+            </div>
+            <div id="routingMetrics"></div>
+            <div class="packet-table" id="packetTable"></div>
+          </section>
+
+          <section class="data-readiness-strip" aria-label="데이터 및 API 준비도">
+            <div>
+              <p class="panel-kicker">데이터/API 준비도</p>
+              <h2>현재 경계</h2>
+            </div>
+            <div class="readiness-grid" id="dataReadiness"></div>
+          </section>
+        </aside>
+      </section>
+
+      <section class="mission-grid" aria-label="S-DOT 임무지속 패널">
+        <section class="panel mission-panel" aria-label="지휘 의도">
           <div class="panel-heading">
             <div>
-              <p class="panel-kicker">Priority Queue</p>
-              <h2>Semantic Events</h2>
+              <p class="panel-kicker">지휘 의도</p>
+              <h2>목적·제약·우선순위</h2>
             </div>
           </div>
-          <div class="event-list" id="eventList"></div>
+          <div id="intentBody"></div>
         </section>
 
-        <section class="panel evidence-panel" aria-label="Evidence bundle">
+        <section class="panel mission-panel" aria-label="부대 상태">
           <div class="panel-heading">
             <div>
-              <p class="panel-kicker">Evidence</p>
-              <h2 id="evidenceTitle">Selected Event</h2>
+              <p class="panel-kicker">부대 레이어</p>
+              <h2>확인 상태 vs 예측 분기</h2>
             </div>
-            <span class="status-pill muted" id="reviewStatus">review</span>
           </div>
-          <div id="evidenceBody"></div>
+          <div id="unitBody"></div>
         </section>
 
-        <section class="panel route-panel" aria-label="Routing result">
+        <section class="panel mission-panel" aria-label="자원 지원">
           <div class="panel-heading">
             <div>
-              <p class="panel-kicker">Transmission</p>
-              <h2>Raw vs Semantic</h2>
+              <p class="panel-kicker">자원 레이어</p>
+              <h2>지원 옵션 순위</h2>
             </div>
           </div>
-          <div id="routingMetrics"></div>
-          <div class="packet-table" id="packetTable"></div>
+          <div id="supportBody"></div>
+        </section>
+
+        <section class="panel mission-panel" aria-label="네트워크 PACE">
+          <div class="panel-heading">
+            <div>
+              <p class="panel-kicker">네트워크/PACE</p>
+              <h2>Bearer 사다리</h2>
+            </div>
+          </div>
+          <div id="paceBody"></div>
+        </section>
+
+        <section class="panel mission-panel" aria-label="S-DOT 메시지 큐">
+          <div class="panel-heading">
+            <div>
+              <p class="panel-kicker">S-DOT 큐</p>
+              <h2>시맨틱 패킷</h2>
+            </div>
+          </div>
+          <div id="sdotBody"></div>
         </section>
       </section>
 
-      <section class="panel briefing-panel" aria-label="Grounded briefing">
-        <div class="panel-heading">
-          <div>
-            <p class="panel-kicker">Briefing</p>
-            <h2>Grounded COP Summary</h2>
+      <section class="ops-bottom" aria-label="브리핑 및 용어">
+        <section class="panel briefing-panel" aria-label="근거 기반 브리핑">
+          <div class="panel-heading">
+            <div>
+              <p class="panel-kicker">브리핑</p>
+              <h2>근거 기반 COP 요약</h2>
+            </div>
           </div>
-        </div>
-        <div id="briefingBody"></div>
+          <div id="briefingBody"></div>
+        </section>
+
+        <section class="glossary-panel" aria-label="용어 설명">
+          <div>
+            <p class="panel-kicker">용어</p>
+            <div class="glossary-chips" id="glossaryChips"></div>
+          </div>
+          <div class="glossary-definition" id="glossaryDefinition" aria-live="polite"></div>
+        </section>
       </section>
     </main>
 
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="./assets/glossary.js"></script>
     <script src="./data/mock_dataset.js"></script>
+    <script src="./data/building_footprints_osm.js"></script>
     <script src="./assets/app.js"></script>
   </body>
 </html>

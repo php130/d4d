@@ -1,77 +1,47 @@
 {
   "metadata": {
-    "dataset_id": "resilient_maritime_cop_mock_v0_1",
-    "generated_at": "2026-07-03T15:22:46.749610+00:00",
-    "scenario_name": "AIS silence and SAR mismatch under degraded ship-to-shore link",
+    "dataset_id": "s_dot_seoul_ground_mission_continuity_mock_v0_5",
+    "generated_at": "2026-07-04T05:59:39.370299+00:00",
+    "scenario_name": "S-DOT mission continuity in Seoul urban ground DDIL scenario",
+    "display_name_ko": "S-DOT 서울 지상 임무지속 COP",
+    "sdot_definition": "S-DOT = Semantic Data On Tactical-network. This is a hackathon concept label, not an existing tactical-link standard.",
     "mock_dataset": true,
-    "safety_note": "Synthetic, redacted-style demo data. No real vessel identity, personal data, or operational claim.",
-    "design_doc": "06_prototype/docs/resilient_maritime_cop_technical_design.md",
-    "schema_doc": "05_analysis/knowledge_graph/t3_resilient_maritime_cop_schema_v0_1.md"
+    "safety_note": "Public Seoul map and civil context plus synthetic unit/resource/network data. No real unit location, force disposition, protected-facility coordinates, personal data, or operational claim.",
+    "design_doc": "06_prototype/docs/s_dot_mission_continuity_implementation_20260704.md",
+    "schema_doc": "05_analysis/knowledge_graph/t3_resilient_maritime_cop_schema_v0_1.md",
+    "plan_doc": "02_problem_statements/hypotheses/s_dot_mission_continuity_cop_plan_20260704.md"
   },
   "scenario": {
     "aoi": {
-      "name": "Yellow Sea training AOI",
+      "name": "서울 도심 지상 AOI",
       "bounds": {
-        "lat_min": 36.95,
-        "lat_max": 37.65,
-        "lon_min": 125.05,
-        "lon_max": 126.05
+        "lat_min": 37.43,
+        "lat_max": 37.69,
+        "lon_min": 126.78,
+        "lon_max": 127.16
       },
       "center": {
-        "lat": 37.32,
-        "lon": 125.65
+        "lat": 37.5665,
+        "lon": 126.978
       }
     },
     "time_window": {
       "start": "2026-07-04T01:30:00Z",
       "end": "2026-07-04T03:00:00Z"
     },
-    "narrative": "A cooperative AIS track goes stale, an independent SAR-like detection appears nearby, weather reduces confirmation options, and the network drops into semantic-summary mode."
+    "narrative": "12-1 becomes intermittently connected in a Seoul urban ground scenario while command staff monitor synthetic opposing route branches, public civil context, support resources, and candidate bearers through S-DOT semantic packets."
   },
   "source_catalog": [
     {
-      "source_id": "mock_ais_tracks",
-      "label": "Synthetic AIS-like vessel tracks",
+      "source_id": "mock_unit_state",
+      "label": "Synthetic urban unit state",
       "real_replacement": [
-        "data.go.kr maritime AIS",
-        "Global Fishing Watch",
-        "NOAA MarineCadastre AIS"
+        "redacted SITREP",
+        "training exercise telemetry",
+        "unit-local COP export"
       ],
-      "source_rationale": "AIS is the cooperative maritime position-reporting layer. The mock fields mirror common AIS concepts: vessel id, time, lat/lon, speed, course, and freshness.",
-      "mock_notice": "Synthetic records; no real MMSI or operator data."
-    },
-    {
-      "source_id": "mock_sar_detections",
-      "label": "Synthetic SAR-like detection",
-      "real_replacement": [
-        "Copernicus Sentinel-1",
-        "xView3",
-        "Global Fishing Watch SAR detections"
-      ],
-      "source_rationale": "SAR provides independent physical observation when AIS is missing, spoofed, or delayed. The mock record carries scene id, detection point, size hint, and match status.",
-      "mock_notice": "Synthetic detection modeled after open SAR ship-detection workflows."
-    },
-    {
-      "source_id": "mock_weather_hazard",
-      "label": "Synthetic maritime weather warning",
-      "real_replacement": [
-        "KMA APIHub",
-        "Copernicus Marine",
-        "NOAA/NCEP"
-      ],
-      "source_rationale": "Weather affects vessel risk, sensor reliability, and operator urgency. The mock warning is represented as a time-bounded area hazard.",
-      "mock_notice": "Synthetic warning; not an official forecast."
-    },
-    {
-      "source_id": "mock_osint_incident",
-      "label": "Synthetic OSINT incident",
-      "real_replacement": [
-        "GDELT",
-        "official maritime advisories",
-        "ReliefWeb/HDX where relevant"
-      ],
-      "source_rationale": "OSINT gives cited narrative context, but must not be treated as sensor truth. The mock record is an advisory-style citation stub.",
-      "mock_notice": "Synthetic article/advisory metadata; URLs are not operational claims."
+      "source_rationale": "Real unit locations and readiness are sensitive. The mock layer shows the schema and routing behavior without operational disclosure.",
+      "mock_notice": "Fully synthetic unit and readiness data over a public Seoul map."
     },
     {
       "source_id": "mock_network_state",
@@ -86,122 +56,1035 @@
       "mock_notice": "Synthetic network profile designed for repeatable demo behavior."
     },
     {
-      "source_id": "mock_operator_report",
-      "label": "Synthetic operator report",
+      "source_id": "mock_civil_comms_assets",
+      "label": "Authorized opportunistic bearer candidates",
       "real_replacement": [
-        "watchstander report",
-        "field report",
-        "radio/voice transcript after redaction"
+        "KCA public radio-station datasets",
+        "PS-LTE/LTE-M/LTE-R public references",
+        "telco-provided emergency inventory"
       ],
-      "source_rationale": "Human reports are valuable but can conflict with sensor evidence, so the COP must model source trust and contradiction.",
-      "mock_notice": "Synthetic report with no real person or unit information."
+      "source_rationale": "Korea's dense communications environment can be modeled as candidate bearers only when lawful authority, authentication, power, backhaul, and priority policies are satisfied.",
+      "mock_notice": "Coarse or synthetic assets; not real base-station, AP, backbone, or military network data."
+    },
+    {
+      "source_id": "public_civil_infra_context",
+      "label": "Korea civil infrastructure COP context",
+      "real_replacement": [
+        "HIRA/NMC hospital APIs",
+        "OSM building footprints",
+        "MOLIT building data",
+        "MOIS aggregate public IT/power references"
+      ],
+      "source_rationale": "Public hospitals, public map tiles, building footprints, and aggregate infrastructure cells provide protected-civilian and support context.",
+      "mock_notice": "Sensitive infrastructure is aggregate/coarse only. Public hospitals are protected support nodes, not targets."
+    },
+    {
+      "source_id": "mock_weather_hazard",
+      "label": "Synthetic urban weather / visibility warning",
+      "real_replacement": [
+        "KMA APIHub",
+        "Open-Meteo",
+        "data.go.kr weather"
+      ],
+      "source_rationale": "Weather affects ground mobility, sensor confidence, and support route risk.",
+      "mock_notice": "Synthetic warning; not an official forecast."
+    },
+    {
+      "source_id": "mock_osint_incident",
+      "label": "Synthetic public advisory / OSINT context",
+      "real_replacement": [
+        "GDELT",
+        "official safety advisories",
+        "public emergency notices"
+      ],
+      "source_rationale": "OSINT gives cited narrative context but must not be treated as sensor truth.",
+      "mock_notice": "Synthetic advisory metadata; no operational claim."
+    },
+    {
+      "source_id": "mock_threat_assessment",
+      "label": "Synthetic opposing-route assessment",
+      "real_replacement": [
+        "exercise injects",
+        "approved training intelligence feed",
+        "analyst-authored scenario branches"
+      ],
+      "source_rationale": "The demo needs an opposing movement hypothesis, but real threat routes, order of battle, and tactical intelligence are sensitive.",
+      "mock_notice": "Fully synthetic route candidates for UI and S-DOT prioritization only."
+    },
+    {
+      "source_id": "mock_support_resources",
+      "label": "Synthetic support and sustainment resources",
+      "real_replacement": [
+        "public hospital/facility datasets",
+        "OSM/VWorld road context",
+        "exercise logistics tables"
+      ],
+      "source_rationale": "Support routing and resource allocation are demonstrated with public facility context plus synthetic support resources.",
+      "mock_notice": "Synthetic support units and resource capacities."
     }
   ],
-  "vessels": [
+  "operation_objective": {
+    "operation_id": "op_seoul_shield_01",
+    "display_name": "서울 도심 임무지속 방호",
+    "primary_objective": "12-1의 로컬 상황도를 유지하고, 민간 응급 접근로를 보호하며, 상대 후보 기동축을 감시하면서 90초 재연결 창에 핵심 S-DOT 패킷을 동기화한다.",
+    "end_state": "고립·간헐 접속 상황에서도 지휘 의도, 최소 상황도, 자원 상태, 예측 불확실성, 재연결 감사가 유지된다.",
+    "current_phase": "Phase 2 · 간헐 접속/도심 이동 제약",
+    "decision_focus": [
+      "후보축 A 감시 우선순위 유지",
+      "12-1 전력·의료 readiness 유지",
+      "한강 통신 aggregate 승인 가능성 확인",
+      "Medic-2와 Comms Relay-3 지원 옵션 보존"
+    ],
+    "protected_priorities": [
+      "민간 응급 접근로",
+      "공공 의료 거점",
+      "불확실한 정보의 오판 방지"
+    ],
+    "valid_until": "2026-07-04T04:00:00Z"
+  },
+  "adversary_assessment": {
+    "label": "상대 기동 후보축(합성)",
+    "safety_note": "Demo-only synthetic opposing movement assumptions; not real intelligence, operational guidance, or a targeting layer.",
+    "routes": [
+      {
+        "route_id": "opp_axis_a_north_cbd",
+        "display_name": "후보축 A · 북부→CBD",
+        "axis_code": "A",
+        "likelihood": 0.56,
+        "confidence": 0.54,
+        "status": "watch",
+        "points": [
+          [
+            37.65,
+            126.99
+          ],
+          [
+            37.61,
+            126.995
+          ],
+          [
+            37.57,
+            126.985
+          ],
+          [
+            37.545,
+            126.965
+          ]
+        ],
+        "why": "공개 도심 혼잡 맥락과 통신 저하가 겹쳐 감시 우선순위가 가장 높음."
+      },
+      {
+        "route_id": "opp_axis_b_west_crossing",
+        "display_name": "후보축 B · 서부 도하",
+        "axis_code": "B",
+        "likelihood": 0.29,
+        "confidence": 0.46,
+        "status": "secondary",
+        "points": [
+          [
+            37.56,
+            126.815
+          ],
+          [
+            37.54,
+            126.93
+          ],
+          [
+            37.535,
+            126.97
+          ]
+        ],
+        "why": "한강 도하/통신 aggregate와 연결되지만 기상·혼잡 때문에 불확실성이 큼."
+      },
+      {
+        "route_id": "opp_axis_c_east_medical",
+        "display_name": "후보축 C · 동부 의료회랑 우회",
+        "axis_code": "C",
+        "likelihood": 0.15,
+        "confidence": 0.38,
+        "status": "low_confidence",
+        "points": [
+          [
+            37.612,
+            127.098
+          ],
+          [
+            37.579,
+            126.999
+          ],
+          [
+            37.552,
+            127.002
+          ]
+        ],
+        "why": "공공 의료/전력 aggregate 주변 경로라 보호 맥락상 모니터링만 유지."
+      }
+    ]
+  },
+  "mission_intent": {
+    "mission_id": "urban_continuity_alpha",
+    "display_name": "Urban Continuity Alpha",
+    "commander_intent": "Maintain minimum local awareness, protect civilian access, preserve unit continuity, and prioritize medical readiness and communications restoration under DDIL conditions.",
+    "priority_weights": {
+      "civilian_protection": 0.24,
+      "medical": 0.22,
+      "communications": 0.22,
+      "power": 0.16,
+      "local_awareness": 0.16
+    },
+    "constraints": [
+      "No real unit data in demo",
+      "Use Seoul public map/civil data as context only",
+      "Treat civil infrastructure as candidate bearer, not guaranteed access",
+      "Human approval required for support decisions"
+    ],
+    "valid_until": "2026-07-04T04:00:00Z"
+  },
+  "unit_nodes": [
     {
-      "vessel_id": "vessel_haneul_77",
-      "display_name": "Haneul-77",
-      "masked_identifier": "MMSI-***-077",
-      "type": "cargo",
-      "identity_confidence": 0.81,
-      "route_role": "northbound commercial track crossing monitored corridor"
+      "unit_id": "unit_alpha_1",
+      "unit_code": "12-1",
+      "display_name": "12-1 기동팀",
+      "unit_type": "synthetic_urban_team",
+      "comm_state": "intermittent",
+      "c2_mode": "delegated",
+      "map_symbol": {
+        "shape": "friendly_unit",
+        "color_state": "amber",
+        "pulse": "intermittent"
+      },
+      "last_confirmed": {
+        "time": "2026-07-04T02:31:00Z",
+        "lat": 37.532,
+        "lon": 126.98,
+        "source": "obs_unit_alpha1_readiness"
+      },
+      "predicted_state": {
+        "time": "2026-07-04T02:44:00Z",
+        "lat": 37.545,
+        "lon": 126.965,
+        "confidence": 0.62,
+        "uncertainty_km": 2.4,
+        "likely_phase": "Phase 2: hold local COP and await contact window",
+        "assumptions": [
+          "follows intent corridor",
+          "ground movement constrained by crossings",
+          "power saving mode active"
+        ]
+      },
+      "branch_scenarios": [
+        {
+          "branch": "main_route_continue",
+          "label": "주경로 지속",
+          "probability": 0.52,
+          "confidence_delta_per_10m": -0.06
+        },
+        {
+          "branch": "hold_local_cop",
+          "label": "은폐/대기하며 로컬 상황도 유지",
+          "probability": 0.31,
+          "confidence_delta_per_10m": -0.04
+        },
+        {
+          "branch": "detour_to_support_node",
+          "label": "지원 노드 우회",
+          "probability": 0.17,
+          "confidence_delta_per_10m": -0.08
+        }
+      ],
+      "readiness": {
+        "power_pct": 42,
+        "medical_status": "yellow",
+        "local_cop_cache": "valid_but_aging",
+        "sdot_outbox": 6,
+        "critical_supplies_hours": 7.5
+      }
     },
     {
-      "vessel_id": "vessel_blue_maru_12",
-      "display_name": "Blue Maru-12",
-      "masked_identifier": "MMSI-***-112",
-      "type": "fishing",
-      "identity_confidence": 0.73,
-      "route_role": "routine fishing track outside the warning corridor"
+      "unit_id": "unit_anchor_2",
+      "unit_code": "12-2",
+      "display_name": "12-2 감시팀",
+      "unit_type": "synthetic_support_observer",
+      "comm_state": "degraded",
+      "c2_mode": "collaborative",
+      "map_symbol": {
+        "shape": "friendly_unit",
+        "color_state": "blue",
+        "pulse": "slow"
+      },
+      "last_confirmed": {
+        "time": "2026-07-04T02:33:00Z",
+        "lat": 37.57,
+        "lon": 126.985,
+        "source": "mock_unit_state"
+      },
+      "predicted_state": {
+        "time": "2026-07-04T02:44:00Z",
+        "lat": 37.566,
+        "lon": 126.999,
+        "confidence": 0.77,
+        "uncertainty_km": 1.2,
+        "likely_phase": "relay watch"
+      },
+      "branch_scenarios": [
+        {
+          "branch": "maintain_relay_watch",
+          "label": "중계 감시 유지",
+          "probability": 0.68,
+          "confidence_delta_per_10m": -0.03
+        },
+        {
+          "branch": "shift_to_medical_corridor",
+          "label": "의료 회랑 방향 지원",
+          "probability": 0.22,
+          "confidence_delta_per_10m": -0.05
+        },
+        {
+          "branch": "fall_back_power_save",
+          "label": "전력 절약 대기",
+          "probability": 0.1,
+          "confidence_delta_per_10m": -0.04
+        }
+      ],
+      "readiness": {
+        "power_pct": 68,
+        "medical_status": "green",
+        "local_cop_cache": "fresh",
+        "sdot_outbox": 2,
+        "critical_supplies_hours": 13.0
+      }
     },
     {
-      "vessel_id": "vessel_daehan_rescue_3",
-      "display_name": "Daehan Rescue-3",
-      "masked_identifier": "CALLSIGN-***-R3",
-      "type": "patrol_support",
-      "identity_confidence": 0.94,
-      "route_role": "friendly support asset with reliable reporting"
+      "unit_id": "unit_relay_3",
+      "unit_code": "12-3",
+      "display_name": "12-3 중계팀",
+      "unit_type": "synthetic_mobile_relay_reserve",
+      "comm_state": "connected",
+      "c2_mode": "collaborative",
+      "map_symbol": {
+        "shape": "friendly_unit",
+        "color_state": "green",
+        "pulse": "none"
+      },
+      "last_confirmed": {
+        "time": "2026-07-04T02:35:00Z",
+        "lat": 37.54,
+        "lon": 126.93,
+        "source": "mock_unit_state"
+      },
+      "predicted_state": {
+        "time": "2026-07-04T02:44:00Z",
+        "lat": 37.535,
+        "lon": 126.97,
+        "confidence": 0.81,
+        "uncertainty_km": 0.9,
+        "likely_phase": "hold relay option near authorized bearer candidate"
+      },
+      "branch_scenarios": [
+        {
+          "branch": "hold_relay_candidate",
+          "label": "중계 후보지 유지",
+          "probability": 0.61,
+          "confidence_delta_per_10m": -0.03
+        },
+        {
+          "branch": "shift_to_alpha_support",
+          "label": "12-1 지원축 이동",
+          "probability": 0.27,
+          "confidence_delta_per_10m": -0.05
+        },
+        {
+          "branch": "fallback_west_staging",
+          "label": "서부 대기점 복귀",
+          "probability": 0.12,
+          "confidence_delta_per_10m": -0.04
+        }
+      ],
+      "readiness": {
+        "power_pct": 79,
+        "medical_status": "green",
+        "local_cop_cache": "fresh",
+        "sdot_outbox": 1,
+        "critical_supplies_hours": 16.0
+      }
     }
   ],
-  "tracks": [
+  "pace_bearer_ladder": [
     {
-      "track_id": "trk_h77_001",
-      "vessel_id": "vessel_haneul_77",
-      "time": "2026-07-04T01:40:00Z",
-      "lat": 37.18,
-      "lon": 125.44,
-      "sog": 13.2,
-      "cog": 42,
-      "source": "mock_ais_tracks"
+      "pace": "P",
+      "label": "전술 IP망",
+      "bearer_type": "tactical_ip",
+      "role": "정상 연결 시 COP/근거 동기화",
+      "availability_by_mode": {
+        "full_sync": "active",
+        "delta_sync": "active",
+        "semantic_summary": "degraded",
+        "store_forward": "degraded",
+        "local_only": "down"
+      },
+      "risk_note": "실제 전술망 세부는 데모에 포함하지 않음."
     },
     {
-      "track_id": "trk_h77_002",
-      "vessel_id": "vessel_haneul_77",
-      "time": "2026-07-04T01:55:00Z",
-      "lat": 37.25,
-      "lon": 125.52,
-      "sog": 13.5,
-      "cog": 44,
-      "source": "mock_ais_tracks"
+      "pace": "A",
+      "label": "위성/장거리 백업",
+      "bearer_type": "satellite_or_longhaul_backup",
+      "role": "저속 명령 의도·readiness packet 전달",
+      "availability_by_mode": {
+        "full_sync": "standby",
+        "delta_sync": "standby",
+        "semantic_summary": "active",
+        "store_forward": "degraded",
+        "local_only": "down"
+      },
+      "risk_note": "전력·가시성·혼잡·교란 조건에 따라 품질 변동."
     },
     {
-      "track_id": "trk_h77_003",
-      "vessel_id": "vessel_haneul_77",
-      "time": "2026-07-04T02:05:00Z",
-      "lat": 37.3,
-      "lon": 125.58,
-      "sog": 13.1,
-      "cog": 43,
-      "source": "mock_ais_tracks",
-      "last_cooperative_point": true
+      "pace": "C",
+      "label": "승인형 민간/공공 bearer",
+      "bearer_type": "authorized_opportunistic_bearer",
+      "role": "PS-LTE/LTE-M/상용망/유선 백홀 후보",
+      "availability_by_mode": {
+        "full_sync": "standby",
+        "delta_sync": "candidate",
+        "semantic_summary": "candidate",
+        "store_forward": "candidate",
+        "local_only": "unavailable_without_authority"
+      },
+      "risk_note": "법적 권한, 인증, 전력, 백홀, 보안, 감청 위험 검토 필요."
     },
     {
-      "track_id": "trk_bm12_001",
-      "vessel_id": "vessel_blue_maru_12",
-      "time": "2026-07-04T02:00:00Z",
-      "lat": 37.06,
-      "lon": 125.82,
-      "sog": 7.4,
-      "cog": 310,
-      "source": "mock_ais_tracks"
+      "pace": "E",
+      "label": "메시/스토어-포워드",
+      "bearer_type": "mesh_store_forward_or_physical_sync",
+      "role": "접속창 전까지 로컬 저장 후 재연결 감사",
+      "availability_by_mode": {
+        "full_sync": "standby",
+        "delta_sync": "standby",
+        "semantic_summary": "standby",
+        "store_forward": "active",
+        "local_only": "local_only"
+      },
+      "risk_note": "실시간 지휘가 아니라 임무 지속성과 사후 동기화에 초점."
+    }
+  ],
+  "civil_comms_assets": [
+    {
+      "asset_id": "civil_comms_han_river",
+      "display_name": "한강 통신 aggregate 후보",
+      "bearer_type": "authorized LTE/PS-LTE/LTE-M candidate",
+      "owner_type": "civil_public_infra_aggregate",
+      "lat": 37.535,
+      "lon": 126.97,
+      "legal_status": "emergency_order_required",
+      "power_state": "unknown_backup_power",
+      "backhaul_state": "degraded_or_unknown",
+      "auth_required": true,
+      "priority_capable": true,
+      "estimated_bandwidth_kbps": 256,
+      "confidence": 0.62
     },
     {
-      "track_id": "trk_dr3_001",
-      "vessel_id": "vessel_daehan_rescue_3",
-      "time": "2026-07-04T02:10:00Z",
-      "lat": 37.5,
-      "lon": 125.43,
-      "sog": 18.0,
-      "cog": 110,
-      "source": "mock_ais_tracks"
+      "asset_id": "civil_comms_north_ridge",
+      "display_name": "북측 능선 무선 coverage aggregate",
+      "bearer_type": "coarse radio coverage candidate",
+      "owner_type": "civil_public_infra_aggregate",
+      "lat": 37.65,
+      "lon": 126.99,
+      "legal_status": "authority_required",
+      "power_state": "aggregate_unknown",
+      "backhaul_state": "aggregate_unknown",
+      "auth_required": true,
+      "priority_capable": false,
+      "estimated_bandwidth_kbps": 128,
+      "confidence": 0.55
+    }
+  ],
+  "korea_civil_infra_context": {
+    "schema": "korea_civil_infra_cop.v0.1",
+    "generated_at": "2026-07-04T05:06:53.388772+00:00",
+    "display_mode": "map_inset_reference_layer",
+    "aoi": {
+      "name": "Seoul Metropolitan AOI",
+      "bounds": {
+        "lat_min": 37.43,
+        "lat_max": 37.69,
+        "lon_min": 126.78,
+        "lon_max": 127.16
+      },
+      "center": {
+        "lat": 37.5665,
+        "lon": 126.978
+      }
+    },
+    "safety_boundary": "No exact sensitive telecom rooms, backbone routes, substations, or protected-facility coordinates are included.",
+    "use_note": "Used as authorized opportunistic bearer/resource context only; not a guaranteed military network or real force-support layer.",
+    "layers": {
+      "medical_facilities": [
+        {
+          "id": "med_nmc",
+          "name": "National Medical Center",
+          "kind": "public_hospital",
+          "lat": 37.5672,
+          "lon": 127.0057,
+          "district": "Jung-gu",
+          "role": "regional emergency care and public medical coordination",
+          "capacity_tier": "high",
+          "source_mode": "public_exact",
+          "source_candidates": [
+            "HIRA hospital API",
+            "NMC emergency medical API",
+            "VWorld geocode"
+          ]
+        },
+        {
+          "id": "med_snuh",
+          "name": "Seoul National University Hospital",
+          "kind": "tertiary_hospital",
+          "lat": 37.5798,
+          "lon": 126.999,
+          "district": "Jongno-gu",
+          "role": "tertiary emergency and trauma-capable medical support",
+          "capacity_tier": "very_high",
+          "source_mode": "public_exact",
+          "source_candidates": [
+            "HIRA hospital API",
+            "VWorld geocode"
+          ]
+        },
+        {
+          "id": "med_severance",
+          "name": "Severance Hospital",
+          "kind": "tertiary_hospital",
+          "lat": 37.5623,
+          "lon": 126.9407,
+          "district": "Seodaemun-gu",
+          "role": "tertiary emergency care and west-Seoul medical anchor",
+          "capacity_tier": "very_high",
+          "source_mode": "public_exact",
+          "source_candidates": [
+            "HIRA hospital API",
+            "VWorld geocode"
+          ]
+        },
+        {
+          "id": "med_st_mary",
+          "name": "Seoul St. Mary's Hospital",
+          "kind": "tertiary_hospital",
+          "lat": 37.5019,
+          "lon": 127.0058,
+          "district": "Seocho-gu",
+          "role": "south-central tertiary emergency care",
+          "capacity_tier": "very_high",
+          "source_mode": "public_exact",
+          "source_candidates": [
+            "HIRA hospital API",
+            "VWorld geocode"
+          ]
+        },
+        {
+          "id": "med_asan",
+          "name": "Asan Medical Center",
+          "kind": "tertiary_hospital",
+          "lat": 37.5263,
+          "lon": 127.1086,
+          "district": "Songpa-gu",
+          "role": "east-Seoul tertiary emergency and high-capacity care",
+          "capacity_tier": "very_high",
+          "source_mode": "public_exact",
+          "source_candidates": [
+            "HIRA hospital API",
+            "VWorld geocode"
+          ]
+        },
+        {
+          "id": "med_samsung",
+          "name": "Samsung Medical Center",
+          "kind": "tertiary_hospital",
+          "lat": 37.4885,
+          "lon": 127.0852,
+          "district": "Gangnam-gu",
+          "role": "south-east tertiary emergency care",
+          "capacity_tier": "very_high",
+          "source_mode": "public_exact",
+          "source_candidates": [
+            "HIRA hospital API",
+            "VWorld geocode"
+          ]
+        }
+      ],
+      "building_exposure_cells": [
+        {
+          "id": "bld_jongno_jung",
+          "label": "Jongno/Jung CBD",
+          "lat": 37.57,
+          "lon": 126.985,
+          "radius_km": 2.4,
+          "density": 0.91,
+          "civilian_exposure": "very_high",
+          "mobility_constraint": "high"
+        },
+        {
+          "id": "bld_yongsan",
+          "label": "Yongsan transit/river corridor",
+          "lat": 37.532,
+          "lon": 126.98,
+          "radius_km": 2.8,
+          "density": 0.74,
+          "civilian_exposure": "high",
+          "mobility_constraint": "medium"
+        },
+        {
+          "id": "bld_gangnam",
+          "label": "Gangnam/Seocho dense business belt",
+          "lat": 37.504,
+          "lon": 127.033,
+          "radius_km": 3.0,
+          "density": 0.95,
+          "civilian_exposure": "very_high",
+          "mobility_constraint": "high"
+        },
+        {
+          "id": "bld_songpa",
+          "label": "Songpa east medical/logistics belt",
+          "lat": 37.514,
+          "lon": 127.104,
+          "radius_km": 2.9,
+          "density": 0.79,
+          "civilian_exposure": "high",
+          "mobility_constraint": "medium"
+        },
+        {
+          "id": "bld_mapo_yeouido",
+          "label": "Mapo/Yeouido river crossing belt",
+          "lat": 37.54,
+          "lon": 126.93,
+          "radius_km": 3.2,
+          "density": 0.82,
+          "civilian_exposure": "high",
+          "mobility_constraint": "high"
+        }
+      ],
+      "communications_context_cells": [
+        {
+          "id": "comm_north_ridge",
+          "label": "North ridge wireless coverage aggregate",
+          "lat": 37.65,
+          "lon": 126.99,
+          "radius_km": 6.0,
+          "coverage_score": 0.73,
+          "stress": "medium",
+          "source_mode": "coarse_or_synthetic",
+          "public_source_candidate": "KCA mountain-area mobile radio station API",
+          "note": "Exact base-station locations are intentionally omitted."
+        },
+        {
+          "id": "comm_han_river",
+          "label": "Han River crossing communications aggregate",
+          "lat": 37.535,
+          "lon": 126.97,
+          "radius_km": 8.0,
+          "coverage_score": 0.82,
+          "stress": "high",
+          "source_mode": "coarse_or_synthetic",
+          "public_source_candidate": "radio station statistics + synthetic coverage model",
+          "note": "Represents expected civilian communications load around crossings."
+        },
+        {
+          "id": "comm_southeast",
+          "label": "South-east hospital corridor communications aggregate",
+          "lat": 37.505,
+          "lon": 127.095,
+          "radius_km": 5.5,
+          "coverage_score": 0.78,
+          "stress": "medium",
+          "source_mode": "coarse_or_synthetic",
+          "public_source_candidate": "public radio statistics + service continuity assumption",
+          "note": "No telecom room or backbone route is displayed."
+        }
+      ],
+      "power_it_aggregates": [
+        {
+          "id": "it_public_ops_seoul",
+          "label": "Public-sector IT operating facilities aggregate",
+          "kind": "public_it_facility_aggregate",
+          "lat": 37.566,
+          "lon": 126.978,
+          "district_level_only": true,
+          "count_bucket": "500m2_plus facilities present",
+          "source_mode": "district_aggregate",
+          "source_candidate": "MOIS public-sector IT operating facilities list",
+          "safe_use": "support continuity planning and restoration prioritization, not facility targeting"
+        },
+        {
+          "id": "power_seoul_region",
+          "label": "Seoul regional power dependency context",
+          "kind": "power_dependency_aggregate",
+          "lat": 37.52,
+          "lon": 127.02,
+          "district_level_only": true,
+          "count_bucket": "regional context",
+          "source_mode": "regional_aggregate",
+          "source_candidate": "KPX power market generation facility info + public renewable datasets",
+          "safe_use": "show dependency and restoration context without substation/backbone coordinates"
+        },
+        {
+          "id": "critical_core_stats",
+          "label": "National core infrastructure statistics",
+          "kind": "national_core_infra_stat",
+          "lat": 37.6,
+          "lon": 126.91,
+          "district_level_only": true,
+          "count_bucket": "national aggregate only",
+          "source_mode": "aggregate_only",
+          "source_candidate": "MOIS national core infrastructure statistics",
+          "safe_use": "display category awareness, not exact protected-facility locations"
+        }
+      ]
+    },
+    "semantic_events": [
+      {
+        "id": "evt_medical_access_north",
+        "event_type": "MEDICAL_SUPPORT_CAPACITY",
+        "severity": "high",
+        "priority": 0.91,
+        "lat": 37.579,
+        "lon": 126.999,
+        "summary": "Central and north-east hospitals provide overlapping emergency-care capacity near the AOI.",
+        "why_it_matters": "Civilian casualty evacuation and hospital access routes should stay protected and unobstructed.",
+        "recommended_action": "Maintain protected medical corridors, monitor congestion, and coordinate with civil authorities.",
+        "evidence_refs": [
+          "med_snuh",
+          "med_nmc",
+          "med_korea_anam",
+          "bld_jongno_jung"
+        ],
+        "transmit_tier": "alert_card",
+        "bytes_semantic": 780
+      },
+      {
+        "id": "evt_building_density_cbd",
+        "event_type": "CIVILIAN_EXPOSURE_DENSITY",
+        "severity": "high",
+        "priority": 0.87,
+        "lat": 37.57,
+        "lon": 126.985,
+        "summary": "CBD building density and civilian exposure are high around the central AOI.",
+        "why_it_matters": "Operations near dense civilian areas require stricter deconfliction and emergency-service access.",
+        "recommended_action": "Use aggregate exposure to guide protection, evacuation support, and movement deconfliction.",
+        "evidence_refs": [
+          "bld_jongno_jung",
+          "bld_yongsan"
+        ],
+        "transmit_tier": "exposure_summary",
+        "bytes_semantic": 640
+      },
+      {
+        "id": "evt_comms_stress_han",
+        "event_type": "COMMUNICATION_COVERAGE_STRESS",
+        "severity": "medium",
+        "priority": 0.79,
+        "lat": 37.535,
+        "lon": 126.97,
+        "summary": "Communications demand may concentrate around Han River crossing corridors.",
+        "why_it_matters": "Civil warning, responder coordination, and restoration teams may need priority connectivity support.",
+        "recommended_action": "Prioritize resilient civilian communications and do not disclose exact telecom facility locations.",
+        "evidence_refs": [
+          "comm_han_river",
+          "bld_mapo_yeouido",
+          "bld_yongsan"
+        ],
+        "transmit_tier": "context_summary",
+        "bytes_semantic": 710
+      },
+      {
+        "id": "evt_power_it_context",
+        "event_type": "PUBLIC_IT_POWER_CONTEXT",
+        "severity": "medium",
+        "priority": 0.74,
+        "lat": 37.552,
+        "lon": 127.002,
+        "summary": "Public IT facilities and regional power dependency should be treated as continuity context, not target data.",
+        "why_it_matters": "Staff should understand service continuity dependencies while avoiding disclosure of sensitive nodes.",
+        "recommended_action": "Show district aggregate, protect restoration access, and keep exact sensitive facility data out of the COP.",
+        "evidence_refs": [
+          "it_public_ops_seoul",
+          "power_seoul_region",
+          "critical_core_stats"
+        ],
+        "transmit_tier": "aggregate_context",
+        "bytes_semantic": 690
+      }
+    ],
+    "safety_rules": [
+      "Use real public hospital data as protected civilian assets only.",
+      "Represent telecom, public IT, power, and national core infrastructure as aggregate or synthetic layers.",
+      "Do not infer targets, vulnerabilities, attack paths, or exact protected-facility locations.",
+      "Use this COP for deconfliction, protection, restoration, evacuation support, and continuity planning."
+    ],
+    "source_catalog": [
+      {
+        "source": "HIRA hospital / pharmacy APIs",
+        "status": "candidate_public_api",
+        "public_url": "https://www.data.go.kr/data/15051059/fileData.do",
+        "layer": "medical",
+        "precision_allowed": "public exact for hospitals; no patient or PII data"
+      },
+      {
+        "source": "NMC emergency medical APIs",
+        "status": "candidate_public_api",
+        "public_url": "https://www.data.go.kr/",
+        "layer": "medical",
+        "precision_allowed": "public exact for emergency facilities"
+      },
+      {
+        "source": "MOLIT GIS building integrated information",
+        "status": "candidate_public_api_or_shp",
+        "public_url": "https://www.data.go.kr/data/15123970/openapi.do",
+        "layer": "building",
+        "precision_allowed": "building footprints can be public; demo uses aggregate exposure cells"
+      },
+      {
+        "source": "VWorld map/geocoding/data API",
+        "status": "key_available",
+        "public_url": "https://www.vworld.kr/",
+        "layer": "map",
+        "precision_allowed": "base map and public geocoding"
+      },
+      {
+        "source": "KCA mountain-area mobile radio station API",
+        "status": "candidate_public_api",
+        "public_url": "https://www.data.go.kr/data/15067860/openapi.do",
+        "layer": "communications",
+        "precision_allowed": "limited public wireless data; exact telecom backbone and rooms omitted"
+      },
+      {
+        "source": "MOIS public-sector IT operating facilities",
+        "status": "candidate_public_file_or_api",
+        "public_url": "https://www.data.go.kr/data/15080581/fileData.do",
+        "layer": "public_it",
+        "precision_allowed": "city/county/district level only for demo"
+      },
+      {
+        "source": "KPX generation facility / power market APIs",
+        "status": "candidate_public_api",
+        "public_url": "https://www.data.go.kr/data/15099767/openapi.do",
+        "layer": "power",
+        "precision_allowed": "regional/generator metadata; avoid sensitive substation/transmission detail"
+      },
+      {
+        "source": "MOIS national core infrastructure statistics",
+        "status": "candidate_public_api",
+        "public_url": "https://www.data.go.kr/data/15107185/openapi.do",
+        "layer": "critical_infra",
+        "precision_allowed": "aggregate statistics only"
+      }
+    ]
+  },
+  "support_options": [
+    {
+      "support_id": "support_medic_2",
+      "display_name": "Medic-2 지원 옵션",
+      "support_type": "medical_standby",
+      "lat": 37.5672,
+      "lon": 127.0057,
+      "route_name": "Route Blue",
+      "eta_minutes": 28,
+      "route_risk": 0.36,
+      "resource_cost": 0.38,
+      "support_score": 0.84,
+      "assigned_to": "unit_alpha_1",
+      "supports_objective": "12-1 의료 standby와 민간 응급 접근로 보호",
+      "why_ranked": "Best protected medical-context alignment with acceptable route risk and no additional comms authorization dependency."
+    },
+    {
+      "support_id": "support_comms_relay_3",
+      "display_name": "Comms Relay-3",
+      "support_type": "mobile_relay",
+      "lat": 37.535,
+      "lon": 126.97,
+      "route_name": "Route Green",
+      "eta_minutes": 22,
+      "route_risk": 0.44,
+      "resource_cost": 0.48,
+      "support_score": 0.79,
+      "assigned_to": "unit_relay_3",
+      "supports_objective": "한강 통신 aggregate 후보 검증과 재연결 창 확보",
+      "why_ranked": "Fastest communications restoration option, but authorization and backhaul uncertainty reduce confidence."
+    },
+    {
+      "support_id": "support_power_pack_a",
+      "display_name": "Power Pack A",
+      "support_type": "power_extension",
+      "lat": 37.552,
+      "lon": 127.002,
+      "route_name": "Route Amber",
+      "eta_minutes": 35,
+      "route_risk": 0.31,
+      "resource_cost": 0.32,
+      "support_score": 0.72,
+      "assigned_to": "unit_alpha_1",
+      "supports_objective": "12-1 로컬 COP 캐시와 S-DOT outbox 생존시간 연장",
+      "why_ranked": "Useful for endurance, but less urgent than medical standby and comms relay."
+    }
+  ],
+  "sdot_messages": [
+    {
+      "message_id": "sdot_001",
+      "family": "IntentUpdate",
+      "from": "지휘부",
+      "to": "12-1",
+      "event_id": "evt_unit_isolated_alpha1",
+      "payload_tier": "T2_SEMANTIC",
+      "priority": 0.94,
+      "raw_bytes": 18000,
+      "semantic_bytes": 520,
+      "decision_value": "Keeps local decisions aligned with mission intent while disconnected."
+    },
+    {
+      "message_id": "sdot_002",
+      "family": "ReadinessSnapshot",
+      "from": "12-1",
+      "to": "지휘부",
+      "event_id": "evt_support_request_medical_power",
+      "payload_tier": "T3_PRIORITY_CARD",
+      "priority": 0.89,
+      "raw_bytes": 74000,
+      "semantic_bytes": 610,
+      "decision_value": "Changes support allocation because power and medical status are degrading."
+    },
+    {
+      "message_id": "sdot_003",
+      "family": "SupportRequest",
+      "from": "12-1",
+      "to": "지휘부",
+      "event_id": "evt_support_request_medical_power",
+      "payload_tier": "T3_PRIORITY_CARD",
+      "priority": 0.87,
+      "raw_bytes": 88000,
+      "semantic_bytes": 690,
+      "decision_value": "Triggers ranking of Medic-2, Comms Relay-3, and Power Pack A."
+    },
+    {
+      "message_id": "sdot_004",
+      "family": "NetworkStateUpdate",
+      "from": "인프라 레이어",
+      "to": "지휘부",
+      "event_id": "evt_civil_bearer_candidate_han",
+      "payload_tier": "T2_SEMANTIC",
+      "priority": 0.7,
+      "raw_bytes": 56000,
+      "semantic_bytes": 540,
+      "decision_value": "Identifies Han River aggregate as possible but authorization-gated bearer."
+    },
+    {
+      "message_id": "sdot_005",
+      "family": "RejoinWindow",
+      "from": "지휘부",
+      "to": "12-1",
+      "event_id": "evt_rejoin_window_predicted",
+      "payload_tier": "T3_PRIORITY_CARD",
+      "priority": 0.76,
+      "raw_bytes": 45000,
+      "semantic_bytes": 490,
+      "decision_value": "Determines which queued bundles are sent during a 90-second contact window."
+    }
+  ],
+  "rejoin_audit": {
+    "audit_id": "audit_rejoin_alpha_1_preview",
+    "status": "pending_contact_window",
+    "prediction_before_rejoin": {
+      "lat": 37.545,
+      "lon": 126.965,
+      "confidence": 0.62,
+      "uncertainty_km": 2.4
+    },
+    "expected_sync_order": [
+      "sdot_001",
+      "sdot_002",
+      "sdot_003",
+      "sdot_005",
+      "sdot_004"
+    ],
+    "open_questions": [
+      "Did Alpha-1 remain inside the predicted branch corridor?",
+      "Did power saving preserve local COP until contact?",
+      "Was the Han River aggregate legally/technically available as a bearer?"
+    ]
+  },
+  "vessels": [],
+  "tracks": [],
+  "urban_routes": [
+    {
+      "route_id": "route_blue_seoul",
+      "label": "Route Blue",
+      "points": [
+        [
+          37.5672,
+          127.0057
+        ],
+        [
+          37.555,
+          126.99
+        ],
+        [
+          37.545,
+          126.965
+        ]
+      ],
+      "risk": 0.36
+    },
+    {
+      "route_id": "route_green_seoul",
+      "label": "Route Green",
+      "points": [
+        [
+          37.535,
+          126.97
+        ],
+        [
+          37.54,
+          126.965
+        ],
+        [
+          37.545,
+          126.965
+        ]
+      ],
+      "risk": 0.44
+    },
+    {
+      "route_id": "route_amber_seoul",
+      "label": "Route Amber",
+      "points": [
+        [
+          37.552,
+          127.002
+        ],
+        [
+          37.555,
+          126.99
+        ],
+        [
+          37.545,
+          126.965
+        ]
+      ],
+      "risk": 0.31
     }
   ],
   "observations": [
     {
-      "observation_id": "obs_ais_gap_h77",
-      "source_id": "mock_ais_tracks",
-      "sensor_type": "AIS",
-      "time": "2026-07-04T02:25:00Z",
+      "observation_id": "obs_network_001",
+      "source_id": "mock_network_state",
+      "sensor_type": "NETWORK",
+      "time": "2026-07-04T02:18:00Z",
       "location": {
-        "lat": 37.36,
-        "lon": 125.66
+        "lat": 37.535,
+        "lon": 126.97
       },
-      "claim": "No cooperative AIS update received for Haneul-77 after 02:05Z.",
-      "raw_ref": "mock://ais/haneul_77#last_point=trk_h77_003",
-      "raw_bytes": 420000
-    },
-    {
-      "observation_id": "obs_sar_unmatched_001",
-      "source_id": "mock_sar_detections",
-      "sensor_type": "SAR",
-      "time": "2026-07-04T02:24:00Z",
-      "location": {
-        "lat": 37.41,
-        "lon": 125.72
-      },
-      "claim": "Vessel-sized object detected 8.1 km from predicted Haneul-77 position; no AIS match inside gate.",
-      "raw_ref": "mock://sar/scene_20260704_0224#det=1",
-      "raw_bytes": 1480000
+      "claim": "Central Seoul link quality dropped below semantic-summary threshold near the Han River crossing corridor.",
+      "raw_ref": "mock://network/seoul_link_alpha#state=semantic_summary",
+      "raw_bytes": 21000
     },
     {
       "observation_id": "obs_weather_001",
@@ -209,11 +1092,11 @@
       "sensor_type": "WEATHER",
       "time": "2026-07-04T02:10:00Z",
       "location": {
-        "lat": 37.32,
-        "lon": 125.6
+        "lat": 37.54,
+        "lon": 126.93
       },
-      "claim": "Visibility reduced and wave hazard elevated across the corridor.",
-      "raw_ref": "mock://weather/kma_style_warning#yellow_sea_corridor",
+      "claim": "Rain and reduced visibility raise movement risk across Mapo/Yeouido river-crossing routes.",
+      "raw_ref": "mock://weather/kma_style_warning#seoul_river_crossing",
       "raw_bytes": 65000
     },
     {
@@ -222,25 +1105,12 @@
       "sensor_type": "OSINT",
       "time": "2026-07-04T01:35:00Z",
       "location": {
-        "lat": 37.55,
-        "lon": 125.95
+        "lat": 37.57,
+        "lon": 126.985
       },
-      "claim": "Open-source advisory reports temporary maritime inspection activity near the northern corridor.",
-      "raw_ref": "mock://osint/gdelt_style/advisory_20260704_0135",
+      "claim": "Public advisory context flags congestion and emergency-service access pressure around the central business district.",
+      "raw_ref": "mock://osint/gdelt_style/seoul_cbd_advisory",
       "raw_bytes": 38000
-    },
-    {
-      "observation_id": "obs_network_001",
-      "source_id": "mock_network_state",
-      "sensor_type": "NETWORK",
-      "time": "2026-07-04T02:18:00Z",
-      "location": {
-        "lat": 37.38,
-        "lon": 125.63
-      },
-      "claim": "Ship-to-shore relay bandwidth dropped below semantic-summary threshold.",
-      "raw_ref": "mock://network/link_alpha#state=semantic_summary",
-      "raw_bytes": 21000
     },
     {
       "observation_id": "obs_operator_lowtrust_001",
@@ -248,12 +1118,116 @@
       "sensor_type": "HUMAN_REPORT",
       "time": "2026-07-04T02:28:00Z",
       "location": {
-        "lat": 37.02,
-        "lon": 125.1
+        "lat": 37.504,
+        "lon": 127.033
       },
-      "claim": "Unconfirmed voice report places Haneul-77 south of the corridor, conflicting with SAR/time-distance feasibility.",
-      "raw_ref": "mock://operator/report_20260704_0228",
+      "claim": "Unconfirmed field report conflicts with predicted Alpha-1 branch timing and should remain contested.",
+      "raw_ref": "mock://operator/seoul_report_20260704_0228",
       "raw_bytes": 12000
+    },
+    {
+      "observation_id": "obs_unit_alpha1_readiness",
+      "source_id": "mock_unit_state",
+      "sensor_type": "UNIT_STATUS",
+      "time": "2026-07-04T02:31:00Z",
+      "location": {
+        "lat": 37.532,
+        "lon": 126.98
+      },
+      "claim": "Alpha-1 entered intermittent contact; power at 42%, local COP cached, medical support priority elevated.",
+      "raw_ref": "mock://unit/alpha_1/readiness_0231",
+      "raw_bytes": 74000
+    },
+    {
+      "observation_id": "obs_intent_packet_001",
+      "source_id": "mock_unit_state",
+      "sensor_type": "MISSION_INTENT",
+      "time": "2026-07-04T02:05:00Z",
+      "location": {
+        "lat": 37.5665,
+        "lon": 126.978
+      },
+      "claim": "Mission intent packet prioritizes civilian protection, unit continuity, medical readiness, and critical comms restoration.",
+      "raw_ref": "mock://hq/intent_packet/urban_continuity_alpha",
+      "raw_bytes": 18000
+    },
+    {
+      "observation_id": "obs_civil_bearer_han",
+      "source_id": "mock_civil_comms_assets",
+      "sensor_type": "INFRASTRUCTURE",
+      "time": "2026-07-04T02:34:00Z",
+      "location": {
+        "lat": 37.535,
+        "lon": 126.97
+      },
+      "claim": "Han River communications aggregate is a candidate bearer, but legal authority, authentication, power, backhaul, and security conditions are unresolved.",
+      "raw_ref": "mock://civil_comms/han_river_aggregate/status_0234",
+      "raw_bytes": 56000
+    },
+    {
+      "observation_id": "obs_support_route_medic",
+      "source_id": "mock_support_resources",
+      "sensor_type": "SUPPORT_RESOURCE",
+      "time": "2026-07-04T02:36:00Z",
+      "location": {
+        "lat": 37.5672,
+        "lon": 127.0057
+      },
+      "claim": "Medic-2 support option can stage near the public hospital corridor in 28 minutes if the north-central route remains open.",
+      "raw_ref": "mock://support/medic_2/route_blue_seoul",
+      "raw_bytes": 88000
+    },
+    {
+      "observation_id": "obs_civilian_exposure_cbd",
+      "source_id": "public_civil_infra_context",
+      "sensor_type": "URBAN_CONTEXT",
+      "time": "2026-07-04T02:20:00Z",
+      "location": {
+        "lat": 37.57,
+        "lon": 126.985
+      },
+      "claim": "CBD building density and civilian exposure are high, requiring deconfliction and emergency access preservation.",
+      "raw_ref": "mock://civil_infra/building_exposure/bld_jongno_jung",
+      "raw_bytes": 240000
+    },
+    {
+      "observation_id": "obs_medical_capacity_north",
+      "source_id": "public_civil_infra_context",
+      "sensor_type": "MEDICAL",
+      "time": "2026-07-04T02:22:00Z",
+      "location": {
+        "lat": 37.579,
+        "lon": 126.999
+      },
+      "claim": "Central and north-east hospitals provide overlapping public medical support capacity near the AOI.",
+      "raw_ref": "mock://civil_infra/medical_capacity/north_central",
+      "raw_bytes": 110000
+    },
+    {
+      "observation_id": "obs_public_it_power",
+      "source_id": "public_civil_infra_context",
+      "sensor_type": "PUBLIC_INFRA",
+      "time": "2026-07-04T02:24:00Z",
+      "location": {
+        "lat": 37.552,
+        "lon": 127.002
+      },
+      "claim": "Public IT and regional power dependency are continuity context only; exact protected-facility coordinates stay out of the COP.",
+      "raw_ref": "mock://civil_infra/power_it/aggregate_context",
+      "raw_bytes": 96000
+    },
+    {
+      "observation_id": "obs_opposing_axis_a",
+      "source_id": "mock_threat_assessment",
+      "sensor_type": "THREAT_ASSESSMENT",
+      "time": "2026-07-04T02:39:00Z",
+      "location": {
+        "lat": 37.57,
+        "lon": 126.985
+      },
+      "claim": "Synthetic assessment ranks opposing candidate axis A as the highest watch priority, with axis B and C retained as lower-confidence branches.",
+      "raw_ref": "mock://scenario/opposing_axis_assessment/v0_5",
+      "raw_bytes": 135000
     }
   ],
   "evidence_bundles": [
@@ -261,20 +1235,16 @@
       "bundle_id": "eb_network_degraded_001",
       "event_id": "evt_network_degraded_001",
       "modality_slots": {
-        "ais": "not_used",
-        "sar": "not_used",
+        "network": "available",
         "weather": "not_used",
         "osint": "not_used",
-        "network": "available",
-        "operator_report": "not_used"
+        "unit_status": "not_used",
+        "civil_infra": "not_used",
+        "operator_report": "not_used",
+        "threat_assessment": "not_used"
       },
       "availability_mask": {
-        "ais": false,
-        "sar": false,
-        "weather": false,
-        "osint": false,
-        "network": true,
-        "operator_report": false
+        "obs_network_001": true
       },
       "evidence_refs": [
         "obs_network_001"
@@ -283,26 +1253,22 @@
       "trust_score": 0.82,
       "freshness_seconds": 300,
       "review_status": "needs_analyst_review",
-      "source_rationale": "Evidence bundle keeps source disagreements visible instead of overwriting them with a single truth value."
+      "source_rationale": "Evidence bundle keeps public context, synthetic unit state, and uncertainty visible instead of flattening them into a single truth value."
     },
     {
       "bundle_id": "eb_weather_hazard_001",
       "event_id": "evt_weather_hazard_001",
       "modality_slots": {
-        "ais": "not_used",
-        "sar": "not_used",
+        "network": "not_used",
         "weather": "available",
         "osint": "not_used",
-        "network": "not_used",
-        "operator_report": "not_used"
+        "unit_status": "not_used",
+        "civil_infra": "not_used",
+        "operator_report": "not_used",
+        "threat_assessment": "not_used"
       },
       "availability_mask": {
-        "ais": false,
-        "sar": false,
-        "weather": true,
-        "osint": false,
-        "network": false,
-        "operator_report": false
+        "obs_weather_001": true
       },
       "evidence_refs": [
         "obs_weather_001"
@@ -311,155 +1277,277 @@
       "trust_score": 0.83,
       "freshness_seconds": 1800,
       "review_status": "context_only",
-      "source_rationale": "Evidence bundle keeps source disagreements visible instead of overwriting them with a single truth value."
+      "source_rationale": "Evidence bundle keeps public context, synthetic unit state, and uncertainty visible instead of flattening them into a single truth value."
     },
     {
-      "bundle_id": "eb_ais_gap_h77",
-      "event_id": "evt_ais_gap_h77",
+      "bundle_id": "eb_urban_mobility_constraint",
+      "event_id": "evt_urban_mobility_constraint",
       "modality_slots": {
-        "ais": "available",
-        "sar": "not_used",
-        "weather": "not_used",
-        "osint": "not_used",
-        "network": "available",
-        "operator_report": "not_used"
+        "network": "not_used",
+        "weather": "available",
+        "osint": "available",
+        "unit_status": "not_used",
+        "civil_infra": "available",
+        "operator_report": "not_used",
+        "threat_assessment": "not_used"
       },
       "availability_mask": {
-        "ais": true,
-        "sar": false,
-        "weather": false,
-        "osint": false,
-        "network": true,
-        "operator_report": false
+        "obs_weather_001": true,
+        "obs_osint_001": true,
+        "obs_civilian_exposure_cbd": true
       },
       "evidence_refs": [
-        "obs_ais_gap_h77",
-        "obs_network_001"
+        "obs_weather_001",
+        "obs_osint_001",
+        "obs_civilian_exposure_cbd"
       ],
-      "confidence": 0.76,
-      "trust_score": 0.72,
+      "confidence": 0.7,
+      "trust_score": 0.7,
       "freshness_seconds": 300,
       "review_status": "needs_analyst_review",
-      "source_rationale": "Evidence bundle keeps source disagreements visible instead of overwriting them with a single truth value."
+      "source_rationale": "Evidence bundle keeps public context, synthetic unit state, and uncertainty visible instead of flattening them into a single truth value."
     },
     {
-      "bundle_id": "eb_sar_without_ais_001",
-      "event_id": "evt_sar_without_ais_001",
+      "bundle_id": "eb_opposing_axis_watch",
+      "event_id": "evt_opposing_axis_watch",
       "modality_slots": {
-        "ais": "available",
-        "sar": "available",
-        "weather": "available",
-        "osint": "not_used",
         "network": "not_used",
-        "operator_report": "not_used"
+        "weather": "not_used",
+        "osint": "available",
+        "unit_status": "not_used",
+        "civil_infra": "available",
+        "operator_report": "not_used",
+        "threat_assessment": "available"
       },
       "availability_mask": {
-        "ais": true,
-        "sar": true,
-        "weather": true,
-        "osint": false,
-        "network": false,
-        "operator_report": false
+        "obs_opposing_axis_a": true,
+        "obs_osint_001": true,
+        "obs_civilian_exposure_cbd": true
       },
       "evidence_refs": [
-        "obs_sar_unmatched_001",
-        "obs_ais_gap_h77",
-        "obs_weather_001"
+        "obs_opposing_axis_a",
+        "obs_osint_001",
+        "obs_civilian_exposure_cbd"
       ],
-      "confidence": 0.79,
+      "confidence": 0.54,
+      "trust_score": 0.64,
+      "freshness_seconds": 300,
+      "review_status": "needs_analyst_review",
+      "source_rationale": "Evidence bundle keeps public context, synthetic unit state, and uncertainty visible instead of flattening them into a single truth value."
+    },
+    {
+      "bundle_id": "eb_civilian_exposure_cbd",
+      "event_id": "evt_civilian_exposure_cbd",
+      "modality_slots": {
+        "network": "not_used",
+        "weather": "not_used",
+        "osint": "available",
+        "unit_status": "not_used",
+        "civil_infra": "available",
+        "operator_report": "not_used",
+        "threat_assessment": "not_used"
+      },
+      "availability_mask": {
+        "obs_civilian_exposure_cbd": true,
+        "obs_osint_001": true
+      },
+      "evidence_refs": [
+        "obs_civilian_exposure_cbd",
+        "obs_osint_001"
+      ],
+      "confidence": 0.76,
       "trust_score": 0.76,
       "freshness_seconds": 300,
       "review_status": "needs_analyst_review",
-      "source_rationale": "Evidence bundle keeps source disagreements visible instead of overwriting them with a single truth value."
+      "source_rationale": "Evidence bundle keeps public context, synthetic unit state, and uncertainty visible instead of flattening them into a single truth value."
     },
     {
-      "bundle_id": "eb_low_trust_report_001",
-      "event_id": "evt_low_trust_report_001",
+      "bundle_id": "eb_medical_capacity_north",
+      "event_id": "evt_medical_capacity_north",
       "modality_slots": {
-        "ais": "not_used",
-        "sar": "available",
+        "network": "not_used",
         "weather": "not_used",
         "osint": "not_used",
-        "network": "not_used",
-        "operator_report": "available"
+        "unit_status": "not_used",
+        "civil_infra": "available",
+        "operator_report": "not_used",
+        "threat_assessment": "not_used"
       },
       "availability_mask": {
-        "ais": false,
-        "sar": true,
-        "weather": false,
-        "osint": false,
-        "network": false,
-        "operator_report": true
+        "obs_medical_capacity_north": true,
+        "obs_support_route_medic": true
       },
       "evidence_refs": [
-        "obs_operator_lowtrust_001",
-        "obs_sar_unmatched_001"
-      ],
-      "confidence": 0.42,
-      "trust_score": 0.35,
-      "freshness_seconds": 1800,
-      "review_status": "context_only",
-      "source_rationale": "Evidence bundle keeps source disagreements visible instead of overwriting them with a single truth value."
-    },
-    {
-      "bundle_id": "eb_osint_context_001",
-      "event_id": "evt_osint_context_001",
-      "modality_slots": {
-        "ais": "not_used",
-        "sar": "not_used",
-        "weather": "not_used",
-        "osint": "available",
-        "network": "not_used",
-        "operator_report": "not_used"
-      },
-      "availability_mask": {
-        "ais": false,
-        "sar": false,
-        "weather": false,
-        "osint": true,
-        "network": false,
-        "operator_report": false
-      },
-      "evidence_refs": [
-        "obs_osint_001"
-      ],
-      "confidence": 0.54,
-      "trust_score": 0.52,
-      "freshness_seconds": 1800,
-      "review_status": "context_only",
-      "source_rationale": "Evidence bundle keeps source disagreements visible instead of overwriting them with a single truth value."
-    },
-    {
-      "bundle_id": "eb_composite_dark_vessel_review_001",
-      "event_id": "evt_composite_dark_vessel_review_001",
-      "modality_slots": {
-        "ais": "available",
-        "sar": "available",
-        "weather": "available",
-        "osint": "available",
-        "network": "available",
-        "operator_report": "not_used"
-      },
-      "availability_mask": {
-        "ais": true,
-        "sar": true,
-        "weather": true,
-        "osint": true,
-        "network": true,
-        "operator_report": false
-      },
-      "evidence_refs": [
-        "obs_ais_gap_h77",
-        "obs_sar_unmatched_001",
-        "obs_weather_001",
-        "obs_network_001",
-        "obs_osint_001"
+        "obs_medical_capacity_north",
+        "obs_support_route_medic"
       ],
       "confidence": 0.8,
+      "trust_score": 0.82,
+      "freshness_seconds": 300,
+      "review_status": "needs_analyst_review",
+      "source_rationale": "Evidence bundle keeps public context, synthetic unit state, and uncertainty visible instead of flattening them into a single truth value."
+    },
+    {
+      "bundle_id": "eb_power_it_context",
+      "event_id": "evt_power_it_context",
+      "modality_slots": {
+        "network": "not_used",
+        "weather": "not_used",
+        "osint": "not_used",
+        "unit_status": "not_used",
+        "civil_infra": "available",
+        "operator_report": "not_used",
+        "threat_assessment": "not_used"
+      },
+      "availability_mask": {
+        "obs_public_it_power": true
+      },
+      "evidence_refs": [
+        "obs_public_it_power"
+      ],
+      "confidence": 0.72,
+      "trust_score": 0.78,
+      "freshness_seconds": 1800,
+      "review_status": "context_only",
+      "source_rationale": "Evidence bundle keeps public context, synthetic unit state, and uncertainty visible instead of flattening them into a single truth value."
+    },
+    {
+      "bundle_id": "eb_unit_isolated_alpha1",
+      "event_id": "evt_unit_isolated_alpha1",
+      "modality_slots": {
+        "network": "available",
+        "weather": "not_used",
+        "osint": "not_used",
+        "unit_status": "available",
+        "civil_infra": "not_used",
+        "operator_report": "not_used",
+        "threat_assessment": "not_used"
+      },
+      "availability_mask": {
+        "obs_unit_alpha1_readiness": true,
+        "obs_network_001": true,
+        "obs_intent_packet_001": true
+      },
+      "evidence_refs": [
+        "obs_unit_alpha1_readiness",
+        "obs_network_001",
+        "obs_intent_packet_001"
+      ],
+      "confidence": 0.82,
+      "trust_score": 0.8,
+      "freshness_seconds": 300,
+      "review_status": "needs_analyst_review",
+      "source_rationale": "Evidence bundle keeps public context, synthetic unit state, and uncertainty visible instead of flattening them into a single truth value."
+    },
+    {
+      "bundle_id": "eb_support_request_medical_power",
+      "event_id": "evt_support_request_medical_power",
+      "modality_slots": {
+        "network": "not_used",
+        "weather": "not_used",
+        "osint": "not_used",
+        "unit_status": "available",
+        "civil_infra": "not_used",
+        "operator_report": "not_used",
+        "threat_assessment": "not_used"
+      },
+      "availability_mask": {
+        "obs_unit_alpha1_readiness": true,
+        "obs_support_route_medic": true
+      },
+      "evidence_refs": [
+        "obs_unit_alpha1_readiness",
+        "obs_support_route_medic"
+      ],
+      "confidence": 0.76,
       "trust_score": 0.78,
       "freshness_seconds": 300,
       "review_status": "needs_analyst_review",
-      "source_rationale": "Evidence bundle keeps source disagreements visible instead of overwriting them with a single truth value."
+      "source_rationale": "Evidence bundle keeps public context, synthetic unit state, and uncertainty visible instead of flattening them into a single truth value."
+    },
+    {
+      "bundle_id": "eb_civil_bearer_candidate_han",
+      "event_id": "evt_civil_bearer_candidate_han",
+      "modality_slots": {
+        "network": "available",
+        "weather": "not_used",
+        "osint": "not_used",
+        "unit_status": "not_used",
+        "civil_infra": "not_used",
+        "operator_report": "not_used",
+        "threat_assessment": "not_used"
+      },
+      "availability_mask": {
+        "obs_civil_bearer_han": true,
+        "obs_network_001": true
+      },
+      "evidence_refs": [
+        "obs_civil_bearer_han",
+        "obs_network_001"
+      ],
+      "confidence": 0.68,
+      "trust_score": 0.7,
+      "freshness_seconds": 1800,
+      "review_status": "context_only",
+      "source_rationale": "Evidence bundle keeps public context, synthetic unit state, and uncertainty visible instead of flattening them into a single truth value."
+    },
+    {
+      "bundle_id": "eb_rejoin_window_predicted",
+      "event_id": "evt_rejoin_window_predicted",
+      "modality_slots": {
+        "network": "available",
+        "weather": "not_used",
+        "osint": "not_used",
+        "unit_status": "available",
+        "civil_infra": "not_used",
+        "operator_report": "not_used",
+        "threat_assessment": "not_used"
+      },
+      "availability_mask": {
+        "obs_network_001": true,
+        "obs_unit_alpha1_readiness": true
+      },
+      "evidence_refs": [
+        "obs_network_001",
+        "obs_unit_alpha1_readiness"
+      ],
+      "confidence": 0.66,
+      "trust_score": 0.7,
+      "freshness_seconds": 1800,
+      "review_status": "context_only",
+      "source_rationale": "Evidence bundle keeps public context, synthetic unit state, and uncertainty visible instead of flattening them into a single truth value."
+    },
+    {
+      "bundle_id": "eb_priority_brief_urban_continuity",
+      "event_id": "evt_priority_brief_urban_continuity",
+      "modality_slots": {
+        "network": "available",
+        "weather": "not_used",
+        "osint": "not_used",
+        "unit_status": "available",
+        "civil_infra": "available",
+        "operator_report": "not_used",
+        "threat_assessment": "not_used"
+      },
+      "availability_mask": {
+        "obs_unit_alpha1_readiness": true,
+        "obs_network_001": true,
+        "obs_support_route_medic": true,
+        "obs_civilian_exposure_cbd": true,
+        "obs_civil_bearer_han": true
+      },
+      "evidence_refs": [
+        "obs_unit_alpha1_readiness",
+        "obs_network_001",
+        "obs_support_route_medic",
+        "obs_civilian_exposure_cbd",
+        "obs_civil_bearer_han"
+      ],
+      "confidence": 0.8,
+      "trust_score": 0.8,
+      "freshness_seconds": 300,
+      "review_status": "needs_analyst_review",
+      "source_rationale": "Evidence bundle keeps public context, synthetic unit state, and uncertainty visible instead of flattening them into a single truth value."
     }
   ],
   "semantic_events": [
@@ -469,31 +1557,31 @@
       "severity": "high",
       "time": "2026-07-04T02:18:00Z",
       "location": {
-        "lat": 37.38,
-        "lon": 125.63,
-        "area": "Yellow Sea AOI"
+        "lat": 37.535,
+        "lon": 126.97,
+        "area": "Han River crossing corridor"
       },
       "entity_refs": [
-        "link_alpha"
+        "link_seoul_alpha"
       ],
-      "summary": "Ship-to-shore relay moved from delta sync to semantic summary.",
-      "why_it_matters": "The COP can no longer move raw evidence reliably, so alert cards and evidence references must be prioritized.",
-      "recommended_action": "Switch to semantic summary mode and queue raw evidence for store-forward sync.",
+      "summary": "Central Seoul link quality moved from delta sync to semantic summary.",
+      "why_it_matters": "The command room can no longer assume raw map/evidence sync, so intent, readiness, support, and uncertainty packets must be prioritized.",
+      "recommended_action": "Switch to semantic summary mode and queue raw context for store-forward sync.",
       "evidence_refs": [
         "obs_network_001"
       ],
       "raw_bytes": 21000,
       "semantic_bytes": 690,
-      "priority": 0.807,
+      "priority": 0.812,
       "priority_features": {
-        "mission_impact": 0.82,
+        "mission_impact": 0.84,
         "urgency": 0.86,
         "confidence": 0.78,
         "trust": 0.82,
         "novelty": 0.56,
         "network_efficiency": 0.94
       },
-      "mock_notice": "Synthetic event for safe hackathon demo."
+      "mock_notice": "Synthetic event over a public Seoul map for safe hackathon demo."
     },
     {
       "event_id": "evt_weather_hazard_001",
@@ -501,200 +1589,378 @@
       "severity": "medium",
       "time": "2026-07-04T02:10:00Z",
       "location": {
-        "lat": 37.32,
-        "lon": 125.6,
-        "area": "Yellow Sea AOI"
+        "lat": 37.54,
+        "lon": 126.93,
+        "area": "Mapo/Yeouido crossing belt"
       },
       "entity_refs": [
-        "area_yellow_sea_corridor"
+        "route_blue_seoul"
       ],
-      "summary": "Reduced visibility and wave risk affect the monitored corridor.",
-      "why_it_matters": "Weather raises route risk and lowers confidence in visual confirmation, making SAR/AIS disagreement more important.",
-      "recommended_action": "Increase uncertainty on visual-only reports and prioritize non-cooperative detection evidence.",
+      "summary": "Rain and reduced visibility increase ground movement and confirmation risk.",
+      "why_it_matters": "Weather lowers confidence in visual-only reporting and can slow medical, power, and relay support options.",
+      "recommended_action": "Increase route uncertainty and prioritize compact readiness/support packets.",
       "evidence_refs": [
         "obs_weather_001"
       ],
       "raw_bytes": 65000,
       "semantic_bytes": 740,
-      "priority": 0.688,
+      "priority": 0.691,
       "priority_features": {
-        "mission_impact": 0.62,
+        "mission_impact": 0.63,
         "urgency": 0.67,
         "confidence": 0.78,
         "trust": 0.83,
         "novelty": 0.38,
         "network_efficiency": 0.86
       },
-      "mock_notice": "Synthetic event for safe hackathon demo."
+      "mock_notice": "Synthetic event over a public Seoul map for safe hackathon demo."
     },
     {
-      "event_id": "evt_ais_gap_h77",
-      "event_type": "AIS_GAP",
+      "event_id": "evt_urban_mobility_constraint",
+      "event_type": "URBAN_MOBILITY_CONSTRAINT",
       "severity": "high",
-      "time": "2026-07-04T02:25:00Z",
+      "time": "2026-07-04T02:21:00Z",
       "location": {
-        "lat": 37.36,
-        "lon": 125.66,
-        "area": "Yellow Sea AOI"
+        "lat": 37.54,
+        "lon": 126.93,
+        "area": "Mapo/Yeouido river crossing belt"
       },
       "entity_refs": [
-        "vessel_haneul_77"
+        "route_blue_seoul",
+        "route_green_seoul"
       ],
-      "summary": "Haneul-77 has no cooperative AIS update after 02:05Z near the monitored corridor.",
-      "why_it_matters": "The gap appears during network degradation and near a later SAR detection without AIS match.",
-      "recommended_action": "Preserve a compact alert card and request independent confirmation.",
+      "summary": "River-crossing movement constraints may delay support and rejoin windows.",
+      "why_it_matters": "A support option that looks close on a map may be low value if crossings, weather, and congestion degrade movement.",
+      "recommended_action": "Rank support as options, not automatic dispatch; keep human approval in the loop.",
       "evidence_refs": [
-        "obs_ais_gap_h77",
-        "obs_network_001"
+        "obs_weather_001",
+        "obs_osint_001",
+        "obs_civilian_exposure_cbd"
       ],
-      "raw_bytes": 420000,
-      "semantic_bytes": 910,
-      "priority": 0.821,
+      "raw_bytes": 180000,
+      "semantic_bytes": 820,
+      "priority": 0.779,
       "priority_features": {
-        "mission_impact": 0.88,
-        "urgency": 0.86,
-        "confidence": 0.76,
-        "trust": 0.72,
-        "novelty": 0.74,
-        "network_efficiency": 0.91
-      },
-      "mock_notice": "Synthetic event for safe hackathon demo."
-    },
-    {
-      "event_id": "evt_sar_without_ais_001",
-      "event_type": "SAR_WITHOUT_AIS",
-      "severity": "critical",
-      "time": "2026-07-04T02:24:00Z",
-      "location": {
-        "lat": 37.41,
-        "lon": 125.72,
-        "area": "Yellow Sea AOI"
-      },
-      "entity_refs": [
-        "vessel_candidate_sar_001"
-      ],
-      "summary": "SAR-like detection appears without an AIS candidate inside the time-distance gate.",
-      "why_it_matters": "Independent physical evidence conflicts with the cooperative AIS picture and may indicate a dark-vessel candidate.",
-      "recommended_action": "Route immediately as high-priority alert and queue raw SAR reference for later sync.",
-      "evidence_refs": [
-        "obs_sar_unmatched_001",
-        "obs_ais_gap_h77",
-        "obs_weather_001"
-      ],
-      "raw_bytes": 1480000,
-      "semantic_bytes": 980,
-      "priority": 0.879,
-      "priority_features": {
-        "mission_impact": 0.95,
-        "urgency": 0.9,
-        "confidence": 0.79,
-        "trust": 0.76,
-        "novelty": 0.88,
-        "network_efficiency": 0.96
-      },
-      "mock_notice": "Synthetic event for safe hackathon demo."
-    },
-    {
-      "event_id": "evt_low_trust_report_001",
-      "event_type": "LOW_TRUST_REPORT",
-      "severity": "medium",
-      "time": "2026-07-04T02:28:00Z",
-      "location": {
-        "lat": 37.02,
-        "lon": 125.1,
-        "area": "Yellow Sea AOI"
-      },
-      "entity_refs": [
-        "vessel_haneul_77"
-      ],
-      "summary": "Unconfirmed operator report conflicts with SAR/time-distance feasibility.",
-      "why_it_matters": "Human reports are useful but must be weighted against sensor evidence and feasibility constraints.",
-      "recommended_action": "Keep the report visible as contested evidence; do not let it overwrite the SAR/AIS alert.",
-      "evidence_refs": [
-        "obs_operator_lowtrust_001",
-        "obs_sar_unmatched_001"
-      ],
-      "raw_bytes": 12000,
-      "semantic_bytes": 640,
-      "priority": 0.563,
-      "priority_features": {
-        "mission_impact": 0.6,
-        "urgency": 0.58,
-        "confidence": 0.42,
-        "trust": 0.35,
-        "novelty": 0.72,
-        "network_efficiency": 0.82
-      },
-      "mock_notice": "Synthetic event for safe hackathon demo."
-    },
-    {
-      "event_id": "evt_osint_context_001",
-      "event_type": "OSINT_INCIDENT",
-      "severity": "medium",
-      "time": "2026-07-04T01:35:00Z",
-      "location": {
-        "lat": 37.55,
-        "lon": 125.95,
-        "area": "Northern corridor context"
-      },
-      "entity_refs": [
-        "area_yellow_sea_corridor"
-      ],
-      "summary": "Open-source advisory context raises watch priority near the corridor.",
-      "why_it_matters": "OSINT is not proof, but it gives cited context for why the area deserves monitoring.",
-      "recommended_action": "Attach as context only; do not escalate without sensor corroboration.",
-      "evidence_refs": [
-        "obs_osint_001"
-      ],
-      "raw_bytes": 38000,
-      "semantic_bytes": 690,
-      "priority": 0.557,
-      "priority_features": {
-        "mission_impact": 0.52,
-        "urgency": 0.45,
-        "confidence": 0.54,
-        "trust": 0.52,
-        "novelty": 0.63,
+        "mission_impact": 0.86,
+        "urgency": 0.8,
+        "confidence": 0.7,
+        "trust": 0.7,
+        "novelty": 0.66,
         "network_efficiency": 0.88
       },
-      "mock_notice": "Synthetic event for safe hackathon demo."
+      "mock_notice": "Synthetic event over a public Seoul map for safe hackathon demo."
     },
     {
-      "event_id": "evt_composite_dark_vessel_review_001",
-      "event_type": "PRIORITY_BRIEF",
-      "severity": "critical",
-      "time": "2026-07-04T02:30:00Z",
+      "event_id": "evt_opposing_axis_watch",
+      "event_type": "OPPOSING_AXIS_WATCH",
+      "severity": "high",
+      "time": "2026-07-04T02:39:00Z",
       "location": {
-        "lat": 37.4,
-        "lon": 125.7,
-        "area": "Yellow Sea AOI"
+        "lat": 37.57,
+        "lon": 126.985,
+        "area": "Synthetic north-to-CBD watch axis"
       },
       "entity_refs": [
-        "vessel_haneul_77",
-        "vessel_candidate_sar_001"
+        "opp_axis_a_north_cbd",
+        "unit_anchor_2",
+        "unit_relay_3"
       ],
-      "summary": "Composite alert: AIS gap, SAR-without-AIS, weather hazard, and degraded network converge.",
-      "why_it_matters": "This is the highest-value message to preserve when the link can only carry one alert card.",
-      "recommended_action": "Send composite alert card, keep raw evidence queued, and request independent confirmation when link recovers.",
+      "summary": "Synthetic opposing candidate axis A is the current watch priority, but it remains a probability branch rather than confirmed movement.",
+      "why_it_matters": "Command staff need a visible route hypothesis without mistaking it for real-time tracking or verified intelligence.",
+      "recommended_action": "Keep 12-2 on CBD watch, preserve 12-3 relay near the crossing aggregate, and transmit the axis summary only as a compact S-DOT watch card.",
       "evidence_refs": [
-        "obs_ais_gap_h77",
-        "obs_sar_unmatched_001",
-        "obs_weather_001",
-        "obs_network_001",
+        "obs_opposing_axis_a",
+        "obs_osint_001",
+        "obs_civilian_exposure_cbd"
+      ],
+      "raw_bytes": 135000,
+      "semantic_bytes": 860,
+      "priority": 0.764,
+      "priority_features": {
+        "mission_impact": 0.89,
+        "urgency": 0.82,
+        "confidence": 0.54,
+        "trust": 0.64,
+        "novelty": 0.74,
+        "network_efficiency": 0.9
+      },
+      "mock_notice": "Synthetic event over a public Seoul map for safe hackathon demo."
+    },
+    {
+      "event_id": "evt_civilian_exposure_cbd",
+      "event_type": "CIVILIAN_EXPOSURE_DENSITY",
+      "severity": "high",
+      "time": "2026-07-04T02:20:00Z",
+      "location": {
+        "lat": 37.57,
+        "lon": 126.985,
+        "area": "Jongno/Jung CBD"
+      },
+      "entity_refs": [
+        "bld_jongno_jung"
+      ],
+      "summary": "CBD building density and civilian exposure are high around the central AOI.",
+      "why_it_matters": "Urban ground support must preserve emergency access and avoid treating public civilian context as a targeting layer.",
+      "recommended_action": "Use exposure as deconfliction and protection context only.",
+      "evidence_refs": [
+        "obs_civilian_exposure_cbd",
         "obs_osint_001"
       ],
-      "raw_bytes": 2004000,
-      "semantic_bytes": 1150,
-      "priority": 0.897,
+      "raw_bytes": 240000,
+      "semantic_bytes": 760,
+      "priority": 0.788,
       "priority_features": {
-        "mission_impact": 0.97,
-        "urgency": 0.92,
+        "mission_impact": 0.88,
+        "urgency": 0.78,
+        "confidence": 0.76,
+        "trust": 0.76,
+        "novelty": 0.58,
+        "network_efficiency": 0.84
+      },
+      "mock_notice": "Synthetic event over a public Seoul map for safe hackathon demo."
+    },
+    {
+      "event_id": "evt_medical_capacity_north",
+      "event_type": "MEDICAL_SUPPORT_CAPACITY",
+      "severity": "high",
+      "time": "2026-07-04T02:22:00Z",
+      "location": {
+        "lat": 37.579,
+        "lon": 126.999,
+        "area": "Central / north-east medical corridor"
+      },
+      "entity_refs": [
+        "med_nmc",
+        "med_snuh",
+        "med_korea_anam"
+      ],
+      "summary": "Public hospitals provide overlapping medical support context near the AOI.",
+      "why_it_matters": "Protected civilian medical capacity is critical context for support planning, but not a military asset to command.",
+      "recommended_action": "Show as protected support context and route Medic-2 staging through human approval.",
+      "evidence_refs": [
+        "obs_medical_capacity_north",
+        "obs_support_route_medic"
+      ],
+      "raw_bytes": 110000,
+      "semantic_bytes": 780,
+      "priority": 0.817,
+      "priority_features": {
+        "mission_impact": 0.9,
+        "urgency": 0.84,
         "confidence": 0.8,
+        "trust": 0.82,
+        "novelty": 0.52,
+        "network_efficiency": 0.86
+      },
+      "mock_notice": "Synthetic event over a public Seoul map for safe hackathon demo."
+    },
+    {
+      "event_id": "evt_power_it_context",
+      "event_type": "PUBLIC_IT_POWER_CONTEXT",
+      "severity": "medium",
+      "time": "2026-07-04T02:24:00Z",
+      "location": {
+        "lat": 37.552,
+        "lon": 127.002,
+        "area": "District aggregate continuity context"
+      },
+      "entity_refs": [
+        "it_public_ops_seoul",
+        "power_seoul_region"
+      ],
+      "summary": "Public IT and power dependency are continuity context, not precise protected-facility data.",
+      "why_it_matters": "Command staff need continuity awareness without exposing sensitive nodes or creating target-like maps.",
+      "recommended_action": "Display district/regional aggregate only and keep exact sensitive facility coordinates out.",
+      "evidence_refs": [
+        "obs_public_it_power"
+      ],
+      "raw_bytes": 96000,
+      "semantic_bytes": 690,
+      "priority": 0.689,
+      "priority_features": {
+        "mission_impact": 0.7,
+        "urgency": 0.58,
+        "confidence": 0.72,
         "trust": 0.78,
-        "novelty": 0.9,
+        "novelty": 0.54,
+        "network_efficiency": 0.84
+      },
+      "mock_notice": "Synthetic event over a public Seoul map for safe hackathon demo."
+    },
+    {
+      "event_id": "evt_unit_isolated_alpha1",
+      "event_type": "UNIT_ISOLATED",
+      "severity": "critical",
+      "time": "2026-07-04T02:31:00Z",
+      "location": {
+        "lat": 37.532,
+        "lon": 126.98,
+        "area": "Synthetic central Seoul urban corridor"
+      },
+      "entity_refs": [
+        "unit_alpha_1"
+      ],
+      "summary": "Alpha-1 shifted to intermittent contact with local COP only partially visible to HQ.",
+      "why_it_matters": "HQ cannot treat the last known position as live truth; the command board must switch to branch scenarios with uncertainty.",
+      "recommended_action": "Send only intent and critical support packets; keep local event log queued for rejoin.",
+      "evidence_refs": [
+        "obs_unit_alpha1_readiness",
+        "obs_network_001",
+        "obs_intent_packet_001"
+      ],
+      "raw_bytes": 74000,
+      "semantic_bytes": 870,
+      "priority": 0.906,
+      "priority_features": {
+        "mission_impact": 0.98,
+        "urgency": 0.94,
+        "confidence": 0.82,
+        "trust": 0.8,
+        "novelty": 0.86,
         "network_efficiency": 0.98
       },
-      "mock_notice": "Synthetic event for safe hackathon demo."
+      "mock_notice": "Synthetic event over a public Seoul map for safe hackathon demo."
+    },
+    {
+      "event_id": "evt_support_request_medical_power",
+      "event_type": "SUPPORT_REQUEST",
+      "severity": "high",
+      "time": "2026-07-04T02:36:00Z",
+      "location": {
+        "lat": 37.545,
+        "lon": 126.965,
+        "area": "Predicted Alpha-1 branch corridor"
+      },
+      "entity_refs": [
+        "unit_alpha_1",
+        "support_medic_2",
+        "support_power_pack_a"
+      ],
+      "summary": "Alpha-1 needs medical standby and power extension before the next contact window.",
+      "why_it_matters": "Power depletion can break the local COP and S-DOT outbox before the unit physically moves out of the urban corridor.",
+      "recommended_action": "Rank Medic-2 and Comms Relay-3 as support options; reserve contact window for readiness and route packets.",
+      "evidence_refs": [
+        "obs_unit_alpha1_readiness",
+        "obs_support_route_medic"
+      ],
+      "raw_bytes": 162000,
+      "semantic_bytes": 930,
+      "priority": 0.83,
+      "priority_features": {
+        "mission_impact": 0.9,
+        "urgency": 0.88,
+        "confidence": 0.76,
+        "trust": 0.78,
+        "novelty": 0.64,
+        "network_efficiency": 0.92
+      },
+      "mock_notice": "Synthetic event over a public Seoul map for safe hackathon demo."
+    },
+    {
+      "event_id": "evt_civil_bearer_candidate_han",
+      "event_type": "CIVIL_BEARER_CANDIDATE",
+      "severity": "medium",
+      "time": "2026-07-04T02:34:00Z",
+      "location": {
+        "lat": 37.535,
+        "lon": 126.97,
+        "area": "Han River communications aggregate"
+      },
+      "entity_refs": [
+        "civil_comms_han_river",
+        "unit_alpha_1"
+      ],
+      "summary": "Han River communications aggregate is a candidate emergency bearer but not automatically available.",
+      "why_it_matters": "Dense Korean infrastructure may help continuity only if legal status, authentication, power, backhaul, security, and congestion conditions align.",
+      "recommended_action": "Show as authorized opportunistic bearer candidate; do not assume access.",
+      "evidence_refs": [
+        "obs_civil_bearer_han",
+        "obs_network_001"
+      ],
+      "raw_bytes": 56000,
+      "semantic_bytes": 760,
+      "priority": 0.716,
+      "priority_features": {
+        "mission_impact": 0.74,
+        "urgency": 0.64,
+        "confidence": 0.68,
+        "trust": 0.7,
+        "novelty": 0.7,
+        "network_efficiency": 0.9
+      },
+      "mock_notice": "Synthetic event over a public Seoul map for safe hackathon demo."
+    },
+    {
+      "event_id": "evt_rejoin_window_predicted",
+      "event_type": "REJOIN_WINDOW",
+      "severity": "medium",
+      "time": "2026-07-04T02:44:00Z",
+      "location": {
+        "lat": 37.545,
+        "lon": 126.965,
+        "area": "Predicted Alpha-1 branch corridor"
+      },
+      "entity_refs": [
+        "unit_alpha_1",
+        "link_seoul_alpha"
+      ],
+      "summary": "Next 90-second contact window is predicted near the Alpha-1 branch corridor.",
+      "why_it_matters": "The S-DOT queue must choose which messages to send before the window closes.",
+      "recommended_action": "Transmit intent receipt, readiness snapshot, and support request before lower-priority evidence.",
+      "evidence_refs": [
+        "obs_network_001",
+        "obs_unit_alpha1_readiness"
+      ],
+      "raw_bytes": 45000,
+      "semantic_bytes": 710,
+      "priority": 0.76,
+      "priority_features": {
+        "mission_impact": 0.78,
+        "urgency": 0.86,
+        "confidence": 0.66,
+        "trust": 0.7,
+        "novelty": 0.58,
+        "network_efficiency": 0.95
+      },
+      "mock_notice": "Synthetic event over a public Seoul map for safe hackathon demo."
+    },
+    {
+      "event_id": "evt_priority_brief_urban_continuity",
+      "event_type": "PRIORITY_BRIEF",
+      "severity": "critical",
+      "time": "2026-07-04T02:45:00Z",
+      "location": {
+        "lat": 37.555,
+        "lon": 126.98,
+        "area": "Central Seoul command view"
+      },
+      "entity_refs": [
+        "unit_alpha_1",
+        "civil_comms_han_river",
+        "support_medic_2"
+      ],
+      "summary": "Composite brief: Alpha-1 intermittent contact, route uncertainty, public medical context, and candidate bearer state converge.",
+      "why_it_matters": "This is the highest-value command-continuity message when the link can only carry one alert card.",
+      "recommended_action": "Send composite S-DOT card, queue raw map/building/context data, and prepare rejoin audit.",
+      "evidence_refs": [
+        "obs_unit_alpha1_readiness",
+        "obs_network_001",
+        "obs_support_route_medic",
+        "obs_civilian_exposure_cbd",
+        "obs_civil_bearer_han"
+      ],
+      "raw_bytes": 2050000,
+      "semantic_bytes": 1120,
+      "priority": 0.898,
+      "priority_features": {
+        "mission_impact": 0.98,
+        "urgency": 0.92,
+        "confidence": 0.8,
+        "trust": 0.8,
+        "novelty": 0.86,
+        "network_efficiency": 0.98
+      },
+      "mock_notice": "Synthetic event over a public Seoul map for safe hackathon demo."
     }
   ],
   "network_modes": {
@@ -774,58 +2040,103 @@
           "bytes_semantic": 740
         },
         {
-          "packet_id": "pkt_full_sync_ais_gap_h77",
-          "event_id": "evt_ais_gap_h77",
+          "packet_id": "pkt_full_sync_urban_mobility_constraint",
+          "event_id": "evt_urban_mobility_constraint",
           "network_mode": "full_sync",
           "payload_tier": "full_event",
           "decision": "send",
-          "bytes_raw_estimate": 420000,
-          "bytes_semantic": 910
+          "bytes_raw_estimate": 180000,
+          "bytes_semantic": 820
         },
         {
-          "packet_id": "pkt_full_sync_sar_without_ais_001",
-          "event_id": "evt_sar_without_ais_001",
+          "packet_id": "pkt_full_sync_opposing_axis_watch",
+          "event_id": "evt_opposing_axis_watch",
           "network_mode": "full_sync",
           "payload_tier": "full_event",
           "decision": "send",
-          "bytes_raw_estimate": 1480000,
-          "bytes_semantic": 980
+          "bytes_raw_estimate": 135000,
+          "bytes_semantic": 860
         },
         {
-          "packet_id": "pkt_full_sync_low_trust_report_001",
-          "event_id": "evt_low_trust_report_001",
+          "packet_id": "pkt_full_sync_civilian_exposure_cbd",
+          "event_id": "evt_civilian_exposure_cbd",
           "network_mode": "full_sync",
           "payload_tier": "full_event",
           "decision": "send",
-          "bytes_raw_estimate": 12000,
-          "bytes_semantic": 640
+          "bytes_raw_estimate": 240000,
+          "bytes_semantic": 760
         },
         {
-          "packet_id": "pkt_full_sync_osint_context_001",
-          "event_id": "evt_osint_context_001",
+          "packet_id": "pkt_full_sync_medical_capacity_north",
+          "event_id": "evt_medical_capacity_north",
           "network_mode": "full_sync",
           "payload_tier": "full_event",
           "decision": "send",
-          "bytes_raw_estimate": 38000,
+          "bytes_raw_estimate": 110000,
+          "bytes_semantic": 780
+        },
+        {
+          "packet_id": "pkt_full_sync_power_it_context",
+          "event_id": "evt_power_it_context",
+          "network_mode": "full_sync",
+          "payload_tier": "full_event",
+          "decision": "send",
+          "bytes_raw_estimate": 96000,
           "bytes_semantic": 690
         },
         {
-          "packet_id": "pkt_full_sync_composite_dark_vessel_review_001",
-          "event_id": "evt_composite_dark_vessel_review_001",
+          "packet_id": "pkt_full_sync_unit_isolated_alpha1",
+          "event_id": "evt_unit_isolated_alpha1",
           "network_mode": "full_sync",
           "payload_tier": "full_event",
           "decision": "send",
-          "bytes_raw_estimate": 2004000,
-          "bytes_semantic": 1150
+          "bytes_raw_estimate": 74000,
+          "bytes_semantic": 870
+        },
+        {
+          "packet_id": "pkt_full_sync_support_request_medical_power",
+          "event_id": "evt_support_request_medical_power",
+          "network_mode": "full_sync",
+          "payload_tier": "full_event",
+          "decision": "send",
+          "bytes_raw_estimate": 162000,
+          "bytes_semantic": 930
+        },
+        {
+          "packet_id": "pkt_full_sync_civil_bearer_candidate_han",
+          "event_id": "evt_civil_bearer_candidate_han",
+          "network_mode": "full_sync",
+          "payload_tier": "full_event",
+          "decision": "send",
+          "bytes_raw_estimate": 56000,
+          "bytes_semantic": 760
+        },
+        {
+          "packet_id": "pkt_full_sync_rejoin_window_predicted",
+          "event_id": "evt_rejoin_window_predicted",
+          "network_mode": "full_sync",
+          "payload_tier": "full_event",
+          "decision": "send",
+          "bytes_raw_estimate": 45000,
+          "bytes_semantic": 710
+        },
+        {
+          "packet_id": "pkt_full_sync_priority_brief_urban_continuity",
+          "event_id": "evt_priority_brief_urban_continuity",
+          "network_mode": "full_sync",
+          "payload_tier": "full_event",
+          "decision": "send",
+          "bytes_raw_estimate": 2050000,
+          "bytes_semantic": 1120
         }
       ],
       "metrics": {
-        "events_sent": 7,
-        "events_total": 7,
-        "raw_bytes_total_if_full_feed": 4040000,
-        "raw_bytes_represented_by_sent_events": 4040000,
-        "semantic_bytes_sent": 5800,
-        "bytes_saved_pct_vs_full_feed": 99.86,
+        "events_sent": 12,
+        "events_total": 12,
+        "raw_bytes_total_if_full_feed": 3234000,
+        "raw_bytes_represented_by_sent_events": 3234000,
+        "semantic_bytes_sent": 9730,
+        "bytes_saved_pct_vs_full_feed": 99.7,
         "message_survival_rate": 1.0
       }
     },
@@ -858,58 +2169,103 @@
           "bytes_semantic": 740
         },
         {
-          "packet_id": "pkt_delta_sync_ais_gap_h77",
-          "event_id": "evt_ais_gap_h77",
+          "packet_id": "pkt_delta_sync_urban_mobility_constraint",
+          "event_id": "evt_urban_mobility_constraint",
           "network_mode": "delta_sync",
           "payload_tier": "event_delta",
           "decision": "send",
-          "bytes_raw_estimate": 420000,
-          "bytes_semantic": 910
+          "bytes_raw_estimate": 180000,
+          "bytes_semantic": 820
         },
         {
-          "packet_id": "pkt_delta_sync_sar_without_ais_001",
-          "event_id": "evt_sar_without_ais_001",
+          "packet_id": "pkt_delta_sync_opposing_axis_watch",
+          "event_id": "evt_opposing_axis_watch",
           "network_mode": "delta_sync",
           "payload_tier": "event_delta",
           "decision": "send",
-          "bytes_raw_estimate": 1480000,
-          "bytes_semantic": 980
+          "bytes_raw_estimate": 135000,
+          "bytes_semantic": 860
         },
         {
-          "packet_id": "pkt_delta_sync_low_trust_report_001",
-          "event_id": "evt_low_trust_report_001",
+          "packet_id": "pkt_delta_sync_civilian_exposure_cbd",
+          "event_id": "evt_civilian_exposure_cbd",
           "network_mode": "delta_sync",
           "payload_tier": "event_delta",
           "decision": "send",
-          "bytes_raw_estimate": 12000,
-          "bytes_semantic": 640
+          "bytes_raw_estimate": 240000,
+          "bytes_semantic": 760
         },
         {
-          "packet_id": "pkt_delta_sync_osint_context_001",
-          "event_id": "evt_osint_context_001",
+          "packet_id": "pkt_delta_sync_medical_capacity_north",
+          "event_id": "evt_medical_capacity_north",
           "network_mode": "delta_sync",
           "payload_tier": "event_delta",
           "decision": "send",
-          "bytes_raw_estimate": 38000,
+          "bytes_raw_estimate": 110000,
+          "bytes_semantic": 780
+        },
+        {
+          "packet_id": "pkt_delta_sync_power_it_context",
+          "event_id": "evt_power_it_context",
+          "network_mode": "delta_sync",
+          "payload_tier": "event_delta",
+          "decision": "send",
+          "bytes_raw_estimate": 96000,
           "bytes_semantic": 690
         },
         {
-          "packet_id": "pkt_delta_sync_composite_dark_vessel_review_001",
-          "event_id": "evt_composite_dark_vessel_review_001",
+          "packet_id": "pkt_delta_sync_unit_isolated_alpha1",
+          "event_id": "evt_unit_isolated_alpha1",
           "network_mode": "delta_sync",
           "payload_tier": "event_delta",
           "decision": "send",
-          "bytes_raw_estimate": 2004000,
-          "bytes_semantic": 1150
+          "bytes_raw_estimate": 74000,
+          "bytes_semantic": 870
+        },
+        {
+          "packet_id": "pkt_delta_sync_support_request_medical_power",
+          "event_id": "evt_support_request_medical_power",
+          "network_mode": "delta_sync",
+          "payload_tier": "event_delta",
+          "decision": "send",
+          "bytes_raw_estimate": 162000,
+          "bytes_semantic": 930
+        },
+        {
+          "packet_id": "pkt_delta_sync_civil_bearer_candidate_han",
+          "event_id": "evt_civil_bearer_candidate_han",
+          "network_mode": "delta_sync",
+          "payload_tier": "event_delta",
+          "decision": "send",
+          "bytes_raw_estimate": 56000,
+          "bytes_semantic": 760
+        },
+        {
+          "packet_id": "pkt_delta_sync_rejoin_window_predicted",
+          "event_id": "evt_rejoin_window_predicted",
+          "network_mode": "delta_sync",
+          "payload_tier": "event_delta",
+          "decision": "send",
+          "bytes_raw_estimate": 45000,
+          "bytes_semantic": 710
+        },
+        {
+          "packet_id": "pkt_delta_sync_priority_brief_urban_continuity",
+          "event_id": "evt_priority_brief_urban_continuity",
+          "network_mode": "delta_sync",
+          "payload_tier": "event_delta",
+          "decision": "send",
+          "bytes_raw_estimate": 2050000,
+          "bytes_semantic": 1120
         }
       ],
       "metrics": {
-        "events_sent": 7,
-        "events_total": 7,
-        "raw_bytes_total_if_full_feed": 4040000,
-        "raw_bytes_represented_by_sent_events": 4040000,
-        "semantic_bytes_sent": 5800,
-        "bytes_saved_pct_vs_full_feed": 99.86,
+        "events_sent": 12,
+        "events_total": 12,
+        "raw_bytes_total_if_full_feed": 3234000,
+        "raw_bytes_represented_by_sent_events": 3234000,
+        "semantic_bytes_sent": 9730,
+        "bytes_saved_pct_vs_full_feed": 99.7,
         "message_survival_rate": 1.0
       }
     },
@@ -942,59 +2298,104 @@
           "bytes_semantic": 0
         },
         {
-          "packet_id": "pkt_semantic_summary_ais_gap_h77",
-          "event_id": "evt_ais_gap_h77",
+          "packet_id": "pkt_semantic_summary_urban_mobility_constraint",
+          "event_id": "evt_urban_mobility_constraint",
           "network_mode": "semantic_summary",
           "payload_tier": "alert_card",
           "decision": "send",
-          "bytes_raw_estimate": 420000,
-          "bytes_semantic": 910
+          "bytes_raw_estimate": 180000,
+          "bytes_semantic": 820
         },
         {
-          "packet_id": "pkt_semantic_summary_sar_without_ais_001",
-          "event_id": "evt_sar_without_ais_001",
+          "packet_id": "pkt_semantic_summary_opposing_axis_watch",
+          "event_id": "evt_opposing_axis_watch",
           "network_mode": "semantic_summary",
           "payload_tier": "alert_card",
           "decision": "send",
-          "bytes_raw_estimate": 1480000,
-          "bytes_semantic": 980
+          "bytes_raw_estimate": 135000,
+          "bytes_semantic": 860
         },
         {
-          "packet_id": "pkt_semantic_summary_low_trust_report_001",
-          "event_id": "evt_low_trust_report_001",
+          "packet_id": "pkt_semantic_summary_civilian_exposure_cbd",
+          "event_id": "evt_civilian_exposure_cbd",
+          "network_mode": "semantic_summary",
+          "payload_tier": "alert_card",
+          "decision": "send",
+          "bytes_raw_estimate": 240000,
+          "bytes_semantic": 760
+        },
+        {
+          "packet_id": "pkt_semantic_summary_medical_capacity_north",
+          "event_id": "evt_medical_capacity_north",
+          "network_mode": "semantic_summary",
+          "payload_tier": "alert_card",
+          "decision": "send",
+          "bytes_raw_estimate": 110000,
+          "bytes_semantic": 780
+        },
+        {
+          "packet_id": "pkt_semantic_summary_power_it_context",
+          "event_id": "evt_power_it_context",
           "network_mode": "semantic_summary",
           "payload_tier": "alert_card",
           "decision": "defer",
-          "bytes_raw_estimate": 12000,
+          "bytes_raw_estimate": 96000,
           "bytes_semantic": 0
         },
         {
-          "packet_id": "pkt_semantic_summary_osint_context_001",
-          "event_id": "evt_osint_context_001",
-          "network_mode": "semantic_summary",
-          "payload_tier": "alert_card",
-          "decision": "defer",
-          "bytes_raw_estimate": 38000,
-          "bytes_semantic": 0
-        },
-        {
-          "packet_id": "pkt_semantic_summary_composite_dark_vessel_review_001",
-          "event_id": "evt_composite_dark_vessel_review_001",
+          "packet_id": "pkt_semantic_summary_unit_isolated_alpha1",
+          "event_id": "evt_unit_isolated_alpha1",
           "network_mode": "semantic_summary",
           "payload_tier": "alert_card",
           "decision": "send",
-          "bytes_raw_estimate": 2004000,
-          "bytes_semantic": 1150
+          "bytes_raw_estimate": 74000,
+          "bytes_semantic": 870
+        },
+        {
+          "packet_id": "pkt_semantic_summary_support_request_medical_power",
+          "event_id": "evt_support_request_medical_power",
+          "network_mode": "semantic_summary",
+          "payload_tier": "alert_card",
+          "decision": "send",
+          "bytes_raw_estimate": 162000,
+          "bytes_semantic": 930
+        },
+        {
+          "packet_id": "pkt_semantic_summary_civil_bearer_candidate_han",
+          "event_id": "evt_civil_bearer_candidate_han",
+          "network_mode": "semantic_summary",
+          "payload_tier": "alert_card",
+          "decision": "defer",
+          "bytes_raw_estimate": 56000,
+          "bytes_semantic": 0
+        },
+        {
+          "packet_id": "pkt_semantic_summary_rejoin_window_predicted",
+          "event_id": "evt_rejoin_window_predicted",
+          "network_mode": "semantic_summary",
+          "payload_tier": "alert_card",
+          "decision": "send",
+          "bytes_raw_estimate": 45000,
+          "bytes_semantic": 710
+        },
+        {
+          "packet_id": "pkt_semantic_summary_priority_brief_urban_continuity",
+          "event_id": "evt_priority_brief_urban_continuity",
+          "network_mode": "semantic_summary",
+          "payload_tier": "alert_card",
+          "decision": "send",
+          "bytes_raw_estimate": 2050000,
+          "bytes_semantic": 1120
         }
       ],
       "metrics": {
-        "events_sent": 4,
-        "events_total": 7,
-        "raw_bytes_total_if_full_feed": 4040000,
-        "raw_bytes_represented_by_sent_events": 3925000,
-        "semantic_bytes_sent": 3730,
-        "bytes_saved_pct_vs_full_feed": 99.91,
-        "message_survival_rate": 0.571
+        "events_sent": 9,
+        "events_total": 12,
+        "raw_bytes_total_if_full_feed": 3234000,
+        "raw_bytes_represented_by_sent_events": 3017000,
+        "semantic_bytes_sent": 7540,
+        "bytes_saved_pct_vs_full_feed": 99.77,
+        "message_survival_rate": 0.75
       }
     },
     "store_forward": {
@@ -1026,59 +2427,104 @@
           "bytes_semantic": 0
         },
         {
-          "packet_id": "pkt_store_forward_ais_gap_h77",
-          "event_id": "evt_ais_gap_h77",
+          "packet_id": "pkt_store_forward_urban_mobility_constraint",
+          "event_id": "evt_urban_mobility_constraint",
           "network_mode": "store_forward",
           "payload_tier": "critical_summary",
           "decision": "defer",
-          "bytes_raw_estimate": 420000,
+          "bytes_raw_estimate": 180000,
           "bytes_semantic": 0
         },
         {
-          "packet_id": "pkt_store_forward_sar_without_ais_001",
-          "event_id": "evt_sar_without_ais_001",
+          "packet_id": "pkt_store_forward_opposing_axis_watch",
+          "event_id": "evt_opposing_axis_watch",
           "network_mode": "store_forward",
           "payload_tier": "critical_summary",
           "decision": "defer",
-          "bytes_raw_estimate": 1480000,
+          "bytes_raw_estimate": 135000,
           "bytes_semantic": 0
         },
         {
-          "packet_id": "pkt_store_forward_low_trust_report_001",
-          "event_id": "evt_low_trust_report_001",
+          "packet_id": "pkt_store_forward_civilian_exposure_cbd",
+          "event_id": "evt_civilian_exposure_cbd",
           "network_mode": "store_forward",
           "payload_tier": "critical_summary",
           "decision": "defer",
-          "bytes_raw_estimate": 12000,
+          "bytes_raw_estimate": 240000,
           "bytes_semantic": 0
         },
         {
-          "packet_id": "pkt_store_forward_osint_context_001",
-          "event_id": "evt_osint_context_001",
+          "packet_id": "pkt_store_forward_medical_capacity_north",
+          "event_id": "evt_medical_capacity_north",
           "network_mode": "store_forward",
           "payload_tier": "critical_summary",
           "decision": "defer",
-          "bytes_raw_estimate": 38000,
+          "bytes_raw_estimate": 110000,
           "bytes_semantic": 0
         },
         {
-          "packet_id": "pkt_store_forward_composite_dark_vessel_review_001",
-          "event_id": "evt_composite_dark_vessel_review_001",
+          "packet_id": "pkt_store_forward_power_it_context",
+          "event_id": "evt_power_it_context",
+          "network_mode": "store_forward",
+          "payload_tier": "critical_summary",
+          "decision": "defer",
+          "bytes_raw_estimate": 96000,
+          "bytes_semantic": 0
+        },
+        {
+          "packet_id": "pkt_store_forward_unit_isolated_alpha1",
+          "event_id": "evt_unit_isolated_alpha1",
           "network_mode": "store_forward",
           "payload_tier": "critical_summary",
           "decision": "send",
-          "bytes_raw_estimate": 2004000,
-          "bytes_semantic": 1150
+          "bytes_raw_estimate": 74000,
+          "bytes_semantic": 870
+        },
+        {
+          "packet_id": "pkt_store_forward_support_request_medical_power",
+          "event_id": "evt_support_request_medical_power",
+          "network_mode": "store_forward",
+          "payload_tier": "critical_summary",
+          "decision": "defer",
+          "bytes_raw_estimate": 162000,
+          "bytes_semantic": 0
+        },
+        {
+          "packet_id": "pkt_store_forward_civil_bearer_candidate_han",
+          "event_id": "evt_civil_bearer_candidate_han",
+          "network_mode": "store_forward",
+          "payload_tier": "critical_summary",
+          "decision": "defer",
+          "bytes_raw_estimate": 56000,
+          "bytes_semantic": 0
+        },
+        {
+          "packet_id": "pkt_store_forward_rejoin_window_predicted",
+          "event_id": "evt_rejoin_window_predicted",
+          "network_mode": "store_forward",
+          "payload_tier": "critical_summary",
+          "decision": "defer",
+          "bytes_raw_estimate": 45000,
+          "bytes_semantic": 0
+        },
+        {
+          "packet_id": "pkt_store_forward_priority_brief_urban_continuity",
+          "event_id": "evt_priority_brief_urban_continuity",
+          "network_mode": "store_forward",
+          "payload_tier": "critical_summary",
+          "decision": "send",
+          "bytes_raw_estimate": 2050000,
+          "bytes_semantic": 1120
         }
       ],
       "metrics": {
-        "events_sent": 1,
-        "events_total": 7,
-        "raw_bytes_total_if_full_feed": 4040000,
-        "raw_bytes_represented_by_sent_events": 2004000,
-        "semantic_bytes_sent": 1150,
-        "bytes_saved_pct_vs_full_feed": 99.97,
-        "message_survival_rate": 0.143
+        "events_sent": 2,
+        "events_total": 12,
+        "raw_bytes_total_if_full_feed": 3234000,
+        "raw_bytes_represented_by_sent_events": 2124000,
+        "semantic_bytes_sent": 1990,
+        "bytes_saved_pct_vs_full_feed": 99.94,
+        "message_survival_rate": 0.167
       }
     },
     "local_only": {
@@ -1110,55 +2556,100 @@
           "bytes_semantic": 0
         },
         {
-          "packet_id": "pkt_local_only_ais_gap_h77",
-          "event_id": "evt_ais_gap_h77",
+          "packet_id": "pkt_local_only_urban_mobility_constraint",
+          "event_id": "evt_urban_mobility_constraint",
           "network_mode": "local_only",
           "payload_tier": "local_cache",
           "decision": "hold_local",
-          "bytes_raw_estimate": 420000,
+          "bytes_raw_estimate": 180000,
           "bytes_semantic": 0
         },
         {
-          "packet_id": "pkt_local_only_sar_without_ais_001",
-          "event_id": "evt_sar_without_ais_001",
+          "packet_id": "pkt_local_only_opposing_axis_watch",
+          "event_id": "evt_opposing_axis_watch",
           "network_mode": "local_only",
           "payload_tier": "local_cache",
           "decision": "hold_local",
-          "bytes_raw_estimate": 1480000,
+          "bytes_raw_estimate": 135000,
           "bytes_semantic": 0
         },
         {
-          "packet_id": "pkt_local_only_low_trust_report_001",
-          "event_id": "evt_low_trust_report_001",
+          "packet_id": "pkt_local_only_civilian_exposure_cbd",
+          "event_id": "evt_civilian_exposure_cbd",
           "network_mode": "local_only",
           "payload_tier": "local_cache",
           "decision": "hold_local",
-          "bytes_raw_estimate": 12000,
+          "bytes_raw_estimate": 240000,
           "bytes_semantic": 0
         },
         {
-          "packet_id": "pkt_local_only_osint_context_001",
-          "event_id": "evt_osint_context_001",
+          "packet_id": "pkt_local_only_medical_capacity_north",
+          "event_id": "evt_medical_capacity_north",
           "network_mode": "local_only",
           "payload_tier": "local_cache",
           "decision": "hold_local",
-          "bytes_raw_estimate": 38000,
+          "bytes_raw_estimate": 110000,
           "bytes_semantic": 0
         },
         {
-          "packet_id": "pkt_local_only_composite_dark_vessel_review_001",
-          "event_id": "evt_composite_dark_vessel_review_001",
+          "packet_id": "pkt_local_only_power_it_context",
+          "event_id": "evt_power_it_context",
           "network_mode": "local_only",
           "payload_tier": "local_cache",
           "decision": "hold_local",
-          "bytes_raw_estimate": 2004000,
+          "bytes_raw_estimate": 96000,
+          "bytes_semantic": 0
+        },
+        {
+          "packet_id": "pkt_local_only_unit_isolated_alpha1",
+          "event_id": "evt_unit_isolated_alpha1",
+          "network_mode": "local_only",
+          "payload_tier": "local_cache",
+          "decision": "hold_local",
+          "bytes_raw_estimate": 74000,
+          "bytes_semantic": 0
+        },
+        {
+          "packet_id": "pkt_local_only_support_request_medical_power",
+          "event_id": "evt_support_request_medical_power",
+          "network_mode": "local_only",
+          "payload_tier": "local_cache",
+          "decision": "hold_local",
+          "bytes_raw_estimate": 162000,
+          "bytes_semantic": 0
+        },
+        {
+          "packet_id": "pkt_local_only_civil_bearer_candidate_han",
+          "event_id": "evt_civil_bearer_candidate_han",
+          "network_mode": "local_only",
+          "payload_tier": "local_cache",
+          "decision": "hold_local",
+          "bytes_raw_estimate": 56000,
+          "bytes_semantic": 0
+        },
+        {
+          "packet_id": "pkt_local_only_rejoin_window_predicted",
+          "event_id": "evt_rejoin_window_predicted",
+          "network_mode": "local_only",
+          "payload_tier": "local_cache",
+          "decision": "hold_local",
+          "bytes_raw_estimate": 45000,
+          "bytes_semantic": 0
+        },
+        {
+          "packet_id": "pkt_local_only_priority_brief_urban_continuity",
+          "event_id": "evt_priority_brief_urban_continuity",
+          "network_mode": "local_only",
+          "payload_tier": "local_cache",
+          "decision": "hold_local",
+          "bytes_raw_estimate": 2050000,
           "bytes_semantic": 0
         }
       ],
       "metrics": {
         "events_sent": 0,
-        "events_total": 7,
-        "raw_bytes_total_if_full_feed": 4040000,
+        "events_total": 12,
+        "raw_bytes_total_if_full_feed": 3234000,
         "raw_bytes_represented_by_sent_events": 0,
         "semantic_bytes_sent": 0,
         "bytes_saved_pct_vs_full_feed": 100.0,
@@ -1167,18 +2658,51 @@
     }
   },
   "briefing": {
-    "headline": "Critical dark-vessel review candidate should survive semantic-summary mode.",
+    "headline": "S-DOT should preserve intent, readiness, support options, uncertainty, and rejoin audit when raw map/context data cannot move.",
     "grounded_claims": [
       {
-        "claim": "Haneul-77 AIS is stale after 02:05Z.",
+        "claim": "Alpha-1 is intermittently connected and should be shown as predicted branch scenarios, not live tracking.",
         "evidence_refs": [
-          "obs_ais_gap_h77"
+          "obs_unit_alpha1_readiness",
+          "obs_network_001"
         ]
       },
       {
-        "claim": "A SAR-like detection appears without AIS match at 02:24Z.",
+        "claim": "Mission intent prioritizes civilian protection, medical readiness, local awareness, and comms restoration.",
         "evidence_refs": [
-          "obs_sar_unmatched_001"
+          "obs_intent_packet_001"
+        ]
+      },
+      {
+        "claim": "Opposing movement is shown only as synthetic probability branches, with candidate axis A at the highest watch priority.",
+        "evidence_refs": [
+          "obs_opposing_axis_a",
+          "obs_osint_001"
+        ]
+      },
+      {
+        "claim": "Civil communication aggregates are candidate bearers only if authorization, authentication, power, backhaul, congestion, and security align.",
+        "evidence_refs": [
+          "obs_civil_bearer_han"
+        ]
+      },
+      {
+        "claim": "Medic-2 is the highest-ranked support option in the synthetic Seoul scenario.",
+        "evidence_refs": [
+          "obs_support_route_medic",
+          "obs_medical_capacity_north"
+        ]
+      },
+      {
+        "claim": "Dense CBD exposure is deconfliction/protection context, not a targeting or force-disposition layer.",
+        "evidence_refs": [
+          "obs_civilian_exposure_cbd"
+        ]
+      },
+      {
+        "claim": "Public IT/power dependencies remain aggregate-only continuity context.",
+        "evidence_refs": [
+          "obs_public_it_power"
         ]
       },
       {
@@ -1187,14 +2711,8 @@
           "obs_weather_001",
           "obs_network_001"
         ]
-      },
-      {
-        "claim": "A conflicting human report should be retained but down-weighted.",
-        "evidence_refs": [
-          "obs_operator_lowtrust_001"
-        ]
       }
     ],
-    "operator_summary": "Send the composite alert card first; queue raw SAR/AIS evidence for later sync; do not infer legal status without analyst review."
+    "operator_summary": "Send intent receipt, readiness snapshot, and support request before lower-priority context; queue raw map/building/context data for later sync; keep all unit/resource data synthetic in public demos."
   }
 }

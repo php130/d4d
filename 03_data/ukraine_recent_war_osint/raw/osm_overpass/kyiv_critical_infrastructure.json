@@ -1,0 +1,8339 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-07-04T01:42:48Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 242893042,
+  "lat": 50.2568218,
+  "lon": 30.3054217,
+  "tags": {
+    "name": "Глеваха",
+    "name:en": "Hlevakha",
+    "name:ru": "Глеваха",
+    "name:uk": "Глеваха",
+    "public_transport": "stop_position",
+    "railway": "halt",
+    "train": "yes",
+    "uic_ref": "2201145",
+    "wikidata": "Q12096053",
+    "wikipedia": "uk:Глеваха (зупинний пункт)"
+  }
+},
+{
+  "type": "node",
+  "id": 346462220,
+  "lat": 50.4688799,
+  "lon": 30.4408397,
+  "tags": {
+    "name": "Київ-Пасажирський-Дитячий",
+    "name:ru": "Киев-Пассажирский-Детский",
+    "name:uk": "Київ-Пасажирський-Дитячий",
+    "note": "Переименовано с 01.06.2019",
+    "old_name": "Яблунька",
+    "operator": "АТ \"Укрзалізниця\"",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 354092439,
+  "lat": 50.3744047,
+  "lon": 30.5490557,
+  "tags": {
+    "esr:user": "320810",
+    "int_name": "Prospekt Nauky",
+    "name": "Проспект Науки",
+    "name:en": "Prospekt Nauky",
+    "name:ru": "Проспект Науки",
+    "name:uk": "Проспект Науки",
+    "name:uk-Latn": "Prospekt Nauky",
+    "network": "Укрзалізниця",
+    "network:en": "Ukrainian Railways",
+    "network:short": "УЗ",
+    "network:uk": "Укрзалізниця",
+    "network:wikidata": "Q923337",
+    "operator": "Укрзалізниця",
+    "operator:en": "Ukrainian Railways",
+    "operator:short": "УЗ",
+    "operator:uk": "Укрзалізниця",
+    "operator:wikidata": "Q923337",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes",
+    "uic_ref": "2201044",
+    "wikidata": "Q4381289",
+    "wikipedia": "uk:Проспект Науки (зупинний пункт)"
+  }
+},
+{
+  "type": "node",
+  "id": 354674961,
+  "lat": 50.5336396,
+  "lon": 30.1993668,
+  "tags": {
+    "esr:user": "322036",
+    "int_name": "Sklozavods'ka",
+    "name": "Склозаводська",
+    "name:en": "Sklozavods'ka",
+    "name:ru": "Стеклозаводская",
+    "name:uk": "Склозаводська",
+    "railway": "halt",
+    "uic_ref": "2201210"
+  }
+},
+{
+  "type": "node",
+  "id": 354674990,
+  "lat": 50.5511396,
+  "lon": 30.2368066,
+  "tags": {
+    "esr:user": "322110",
+    "int_name": "Lisova Bucha",
+    "name": "Лісова Буча",
+    "name:en": "Lisova Bucha",
+    "name:ru": "Лесная Буча",
+    "name:uk": "Лісова Буча",
+    "railway": "halt",
+    "uic_ref": "2200326"
+  }
+},
+{
+  "type": "node",
+  "id": 354675239,
+  "lat": 50.4284782,
+  "lon": 30.4028472,
+  "tags": {
+    "esr:code": "322411",
+    "esr:user": "322411",
+    "int_name": "Almaz",
+    "name": "Алмаз",
+    "name:en": "Almaz",
+    "name:ru": "Алмаз",
+    "name:uk": "Алмаз",
+    "railway": "halt",
+    "wikidata": "Q4062703",
+    "wikipedia": "uk:Алмаз (зупинний пункт)"
+  }
+},
+{
+  "type": "node",
+  "id": 384752646,
+  "lat": 50.4567837,
+  "lon": 30.5228045,
+  "tags": {
+    "access": "yes",
+    "entrance": "main",
+    "railway": "train_station_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 420462973,
+  "lat": 50.4384993,
+  "lon": 30.6755078,
+  "tags": {
+    "esr:code": "320011",
+    "esr:user": "320011",
+    "express:code": "2201280",
+    "name": "Дарниця-Депо",
+    "name:ru": "Дарница-Депо",
+    "name:uk": "Дарниця-Депо",
+    "name:uk-Latn": "Darnytsia-Depo",
+    "network": "Укрзалізниця",
+    "network:en": "Ukrainian Railways",
+    "network:short": "УЗ",
+    "network:uk": "Укрзалізниця",
+    "network:wikidata": "Q923337",
+    "operator": "Укрзалізниця",
+    "operator:en": "Ukrainian Railways",
+    "operator:short": "УЗ",
+    "operator:uk": "Укрзалізниця",
+    "operator:wikidata": "Q923337",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes",
+    "uic_ref": "2201280",
+    "wikidata": "Q12099570",
+    "wikipedia": "uk:Дарниця-Депо"
+  }
+},
+{
+  "type": "node",
+  "id": 420462975,
+  "lat": 50.4422986,
+  "lon": 30.6902406,
+  "tags": {
+    "esr:code": "320026",
+    "esr:user": "320026",
+    "express:code": "2201128",
+    "name": "ДВРЗ",
+    "name:ru": "ДВРЗ",
+    "name:uk": "ДВРЗ",
+    "name:uk-Latn": "DVRZ",
+    "network": "Укрзалізниця",
+    "network:en": "Ukrainian Railways",
+    "network:short": "УЗ",
+    "network:uk": "Укрзалізниця",
+    "network:wikidata": "Q923337",
+    "operator": "Укрзалізниця",
+    "operator:en": "Ukrainian Railways",
+    "operator:short": "УЗ",
+    "operator:uk": "Укрзалізниця",
+    "operator:wikidata": "Q923337",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes",
+    "uic_ref": "2201128",
+    "wikidata": "Q4153372",
+    "wikipedia": "uk:ДВРЗ (зупинний пункт)"
+  }
+},
+{
+  "type": "node",
+  "id": 420462976,
+  "lat": 50.4787289,
+  "lon": 30.7573344,
+  "tags": {
+    "esr:user": "320030",
+    "int_name": "Yalynka",
+    "name": "Ялинка",
+    "name:en": "Yalynka",
+    "name:ru": "Ялынка",
+    "name:uk": "Ялинка",
+    "railway": "halt",
+    "uic_ref": "2201124",
+    "wikidata": "Q12173612",
+    "wikipedia": "uk:Ялинка (зупинний пункт)"
+  }
+},
+{
+  "type": "node",
+  "id": 420462978,
+  "lat": 50.4955802,
+  "lon": 30.7838995,
+  "tags": {
+    "esr:code": "320045",
+    "esr:user": "320045",
+    "express:code": "2201205",
+    "int_name": "Knjazhichi",
+    "name": "Княжичі",
+    "name:en": "Knjazhichi",
+    "name:ru": "Княжичи",
+    "name:uk": "Княжичі",
+    "railway": "halt",
+    "uic_ref": "2201205",
+    "wikidata": "Q12110764",
+    "wikipedia": "uk:Княжичі (зупинний пункт)"
+  }
+},
+{
+  "type": "node",
+  "id": 429630790,
+  "lat": 50.5143973,
+  "lon": 30.8137269,
+  "tags": {
+    "addr:housenumber": "18-А",
+    "addr:postcode": "07400",
+    "addr:street": "вулиця Степана Бандери",
+    "esr:code": "323306",
+    "esr:user": "323306",
+    "express:code": "2200053",
+    "int_name": "Brovary",
+    "name": "Бровари",
+    "name:en": "Brovary",
+    "name:pl": "Browary",
+    "name:ru": "Бровары",
+    "name:uk": "Бровари",
+    "network": "Укрзалізниця",
+    "network:en": "Ukrainian Railways",
+    "network:short": "УЗ",
+    "network:short:uk": "УЗ",
+    "network:short:uk-Latn": "UZ",
+    "network:uk": "Укрзалізниця",
+    "network:uk-Latn": "Ukrzaliznytsia",
+    "network:wikidata": "Q923337",
+    "operator": "Укрзалізниця",
+    "operator:en": "Ukrainian Railways",
+    "operator:short": "УЗ",
+    "operator:short:uk": "УЗ",
+    "operator:short:uk-Latn": "UZ",
+    "operator:uk": "Укрзалізниця",
+    "operator:uk-Latn": "Ukrzaliznytsia",
+    "operator:wikidata": "Q923337",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "uic_ref": "2200053",
+    "wheelchair": "yes",
+    "wikidata": "Q892999",
+    "wikipedia": "uk:Бровари (станція)"
+  }
+},
+{
+  "type": "node",
+  "id": 440315387,
+  "lat": 50.4378289,
+  "lon": 30.4490791,
+  "tags": {
+    "esr:code": "320312",
+    "esr:user": "320312",
+    "express:code": "2200311",
+    "int_name": "Karavaievi Dachi",
+    "name": "Караваєві Дачі",
+    "name:en": "Karavaievi Dachi",
+    "name:ru": "Караваевы Дачи",
+    "name:uk": "Караваєві Дачі",
+    "operator": "Південно-Західна залізниця",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes",
+    "uic_ref": "2200311",
+    "wheelchair": "yes",
+    "wikidata": "Q893295",
+    "wikipedia": "uk:Караваєві Дачі (зупинний пункт)"
+  }
+},
+{
+  "type": "node",
+  "id": 493853015,
+  "lat": 50.3167991,
+  "lon": 30.2988697,
+  "tags": {
+    "esr:user": "321230",
+    "int_name": "Boyarka",
+    "name": "Боярка",
+    "name:en": "Boyarka",
+    "name:ru": "Боярка",
+    "name:uk": "Боярка",
+    "network": "Укрзалізниця",
+    "network:en": "Ukrainian Railways",
+    "network:short": "УЗ",
+    "network:uk": "Укрзалізниця",
+    "network:wikidata": "Q923337",
+    "operator": "Укрзалізниця",
+    "operator:en": "Ukrainian Railways",
+    "operator:short": "УЗ",
+    "operator:uk": "Укрзалізниця",
+    "operator:wikidata": "Q923337",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "uic_ref": "2200140",
+    "wikidata": "Q12084483",
+    "wikipedia": "uk:Боярка (станція)"
+  }
+},
+{
+  "type": "node",
+  "id": 599211137,
+  "lat": 50.3713004,
+  "lon": 30.8609381,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital"
+  }
+},
+{
+  "type": "node",
+  "id": 612054087,
+  "lat": 50.5486430,
+  "lon": 30.2209020,
+  "tags": {
+    "esr:user": "322106",
+    "int_name": "Bucha",
+    "name": "Буча",
+    "name:en": "Bucha",
+    "name:lt": "Buča",
+    "name:ru": "Буча",
+    "name:uk": "Буча",
+    "network": "Укрзалізниця",
+    "network:en": "Ukrainian Railways",
+    "network:short": "УЗ",
+    "network:short:uk": "УЗ",
+    "network:short:uk-Latn": "UZ",
+    "network:uk": "Укрзалізниця",
+    "network:uk-Latn": "Ukrzaliznytsia",
+    "network:wikidata": "Q923337",
+    "operator": "Укрзалізниця",
+    "operator:en": "Ukrainian Railways",
+    "operator:short": "УЗ",
+    "operator:short:uk": "УЗ",
+    "operator:short:uk-Latn": "UZ",
+    "operator:uk": "Укрзалізниця",
+    "operator:uk-Latn": "Ukrzaliznytsia",
+    "operator:wikidata": "Q923337",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "uic_ref": "2200084",
+    "wikidata": "Q12086030",
+    "wikipedia": "uk:Буча (станція)"
+  }
+},
+{
+  "type": "node",
+  "id": 615951279,
+  "lat": 50.2668363,
+  "lon": 30.5541664,
+  "tags": {
+    "esr:user": "320825",
+    "int_name": "Pidgirtsi",
+    "name": "Підгірці",
+    "name:en": "Pidhirtsi",
+    "name:ru": "Подгорцы",
+    "name:uk": "Підгірці",
+    "railway": "station",
+    "uic_ref": "2201043",
+    "wikidata": "Q12145986",
+    "wikipedia": "uk:Підгірці (станція)"
+  }
+},
+{
+  "type": "node",
+  "id": 796649126,
+  "lat": 50.3902810,
+  "lon": 30.5661284,
+  "tags": {
+    "addr:housenumber": "4",
+    "addr:street": "Промислова вулиця",
+    "name": "Заводська",
+    "name:ru": "Киев-сортировочная",
+    "name:uk": "Заводська",
+    "operator": "ПрАТ «Київ-Дніпровське МППЗТ»",
+    "public_transport": "station",
+    "railway": "station"
+  }
+},
+{
+  "type": "node",
+  "id": 820924386,
+  "lat": 50.4006820,
+  "lon": 30.8230576,
+  "tags": {
+    "esr:user": "322553",
+    "int_name": "Mala Oleksandrivka",
+    "name": "Мала Олександрівка",
+    "name:en": "Mala Oleksandrivka",
+    "name:ru": "Малая Александровка",
+    "name:uk": "Мала Олександрівка",
+    "network": "Укрзалізниця",
+    "operator": "Південно-Західна залізниця",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes",
+    "wikidata": "Q16706049",
+    "wikipedia": "uk:Мала Олександрівка (зупинний пункт)"
+  }
+},
+{
+  "type": "node",
+  "id": 852766062,
+  "lat": 50.4601679,
+  "lon": 30.4923873,
+  "tags": {
+    "amenity": "hospital",
+    "emergency": "yes",
+    "healthcare": "hospital",
+    "name": "Невідкладна допомога «Добробут»",
+    "name:ru": "Неотложная помощь Добробут",
+    "name:uk": "Невідкладна допомога «Добробут»"
+  }
+},
+{
+  "type": "node",
+  "id": 854326868,
+  "lat": 50.4539944,
+  "lon": 30.5990931,
+  "tags": {
+    "name": "РП-6",
+    "name:uk": "РП-6",
+    "power": "substation",
+    "ref": "6",
+    "substation": "distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 988560310,
+  "lat": 50.4263216,
+  "lon": 30.5065198,
+  "tags": {
+    "esr:code": "320219",
+    "esr:user": "320219",
+    "express:code": "2201155",
+    "int_name": "Protasiv Yar",
+    "name": "Протасів Яр",
+    "name:en": "Protasiv Yar",
+    "name:ru": "Протасов Яр",
+    "name:uk": "Протасів Яр",
+    "public_transport": "station",
+    "railway": "halt",
+    "uic_ref": "2201155",
+    "wikidata": "Q4381662",
+    "wikipedia": "uk:Протасів Яр (зупинний пункт)"
+  }
+},
+{
+  "type": "node",
+  "id": 988560679,
+  "lat": 50.4050736,
+  "lon": 30.5366647,
+  "tags": {
+    "addr:housenumber": "39",
+    "addr:street": "Саперно-Слобідська вулиця",
+    "esr:code": "320100",
+    "esr:user": "320100",
+    "express:code": "220004",
+    "int_name": "Kyiv-Demiivskyi",
+    "internet_access": "no",
+    "name": "Київ-Деміївський",
+    "name:en": "Kyiv-Demiivskyi",
+    "name:ru": "Киев-Демиевский",
+    "name:uk": "Київ-Деміївський",
+    "name:uk-Latn": "Kyiv-Demiivskyi",
+    "network": "Укрзалізниця",
+    "network:en": "Ukrainian Railways",
+    "network:short": "УЗ",
+    "network:short:uk": "УЗ",
+    "network:short:uk-Latn": "UZ",
+    "network:uk": "Укрзалізниця",
+    "network:uk-Latn": "Ukrzaliznytsia",
+    "network:wikidata": "Q923337",
+    "old_name": "Київ-Московський",
+    "old_name:en": "Kyiv-Moskovskyi",
+    "old_name:uk": "Київ-Московський",
+    "operator": "Укрзалізниця",
+    "operator:en": "Ukrainian Railways",
+    "operator:short": "УЗ",
+    "operator:short:uk": "УЗ",
+    "operator:short:uk-Latn": "UZ",
+    "operator:uk": "Укрзалізниця",
+    "operator:uk-Latn": "Ukrzaliznytsia",
+    "operator:wikidata": "Q923337",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "uic_ref": "2200004",
+    "wikidata": "Q4220100",
+    "wikipedia": "uk:Київ-Деміївський"
+  }
+},
+{
+  "type": "node",
+  "id": 1011177075,
+  "lat": 50.4521317,
+  "lon": 30.6042366,
+  "tags": {
+    "name": "Лівобережна",
+    "name:en": "Livoberezhna",
+    "name:ru": "Левобережная",
+    "name:uk": "Лівобережна",
+    "name:uk-Latn": "Livoberezhna",
+    "network": "Укрзалізниця",
+    "network:en": "Ukrainian Railways",
+    "network:short": "УЗ",
+    "network:uk": "Укрзалізниця",
+    "network:wikidata": "Q923337",
+    "operator": "Укрзалізниця",
+    "operator:en": "Ukrainian Railways",
+    "operator:short": "УЗ",
+    "operator:uk": "Укрзалізниця",
+    "operator:wikidata": "Q923337",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes",
+    "wikidata": "Q4256717"
+  }
+},
+{
+  "type": "node",
+  "id": 1175792200,
+  "lat": 50.4320794,
+  "lon": 30.6477174,
+  "tags": {
+    "addr:housenumber": "1",
+    "addr:street": "Привокзальна вулиця",
+    "esr:code": "320007",
+    "express:code": "2200007",
+    "name": "Дарниця",
+    "name:en": "Darnytsia",
+    "name:ru": "Дарница",
+    "name:uk": "Дарниця",
+    "network": "Укрзалізниця",
+    "network:en": "Ukrainian Railways",
+    "network:short": "УЗ",
+    "network:short:uk": "УЗ",
+    "network:short:uk-Latn": "UZ",
+    "network:uk": "Укрзалізниця",
+    "network:uk-Latn": "Ukrzaliznytsia",
+    "network:wikidata": "Q923337",
+    "operator": "Укрзалізниця",
+    "operator:en": "Ukrainian Railways",
+    "operator:short": "УЗ",
+    "operator:short:uk": "УЗ",
+    "operator:short:uk-Latn": "UZ",
+    "operator:uk": "Укрзалізниця",
+    "operator:uk-Latn": "Ukrzaliznytsia",
+    "operator:wikidata": "Q923337",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "uic_ref": "2200007",
+    "wikidata": "Q2093770",
+    "wikipedia": "uk:Дарниця (залізнична станція)"
+  }
+},
+{
+  "type": "node",
+  "id": 1178950971,
+  "lat": 50.4222320,
+  "lon": 30.7235108,
+  "tags": {
+    "esr:code": "322534",
+    "express:code": "2200726",
+    "name": "Лісництво",
+    "name:en": "Lisnytstvo",
+    "name:ru": "Лесничество",
+    "name:uk": "Лісництво",
+    "network": "Укрзалізниця",
+    "operator": "Південно-Західна залізниця",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes",
+    "uic_ref": "2200726",
+    "wikidata": "Q4259573",
+    "wikipedia": "uk:Лісництво (зупинний пункт)"
+  }
+},
+{
+  "type": "node",
+  "id": 1223849846,
+  "lat": 50.2899106,
+  "lon": 30.3050690,
+  "tags": {
+    "name": "Малютянка",
+    "name:en": "Maliutianka",
+    "name:ru": "Малютянка",
+    "name:uk": "Малютянка",
+    "public_transport": "stop_position",
+    "railway": "halt",
+    "train": "yes",
+    "uic_ref": "2200312"
+  }
+},
+{
+  "type": "node",
+  "id": 1224050384,
+  "lat": 50.5415956,
+  "lon": 30.1582338,
+  "tags": {
+    "name": "Ворзель",
+    "name:en": "Vorzel",
+    "name:ru": "Ворзель",
+    "name:uk": "Ворзель",
+    "railway": "halt",
+    "uic_ref": "2200085"
+  }
+},
+{
+  "type": "node",
+  "id": 1224050385,
+  "lat": 50.5510164,
+  "lon": 30.1248382,
+  "tags": {
+    "alt_name:uk": "з.п. Кічеєве",
+    "inscription": "з.п. Кічеєве",
+    "name": "Кичеїве",
+    "name:en": "z.p. Kycheive",
+    "name:ru": "Кичеево",
+    "name:uk": "Кичеїве",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes",
+    "uic_ref": "2201240"
+  }
+},
+{
+  "type": "node",
+  "id": 1224050397,
+  "lat": 50.5342325,
+  "lon": 30.8450533,
+  "tags": {
+    "esr:code": "323310",
+    "esr:user": "323310",
+    "express:code": "2201164",
+    "name": "Квітневий",
+    "name:ru": "Квитневый",
+    "name:uk": "Квітневий",
+    "railway": "halt",
+    "uic_ref": "2201164",
+    "wikidata": "Q12109371",
+    "wikipedia": "uk:Квітневий"
+  }
+},
+{
+  "type": "node",
+  "id": 1224117506,
+  "lat": 50.2056512,
+  "lon": 30.5944304,
+  "tags": {
+    "name": "Мар'янівська",
+    "name:en": "Marianivska",
+    "name:ru": "Марьяновская",
+    "name:uk": "Мар'янівська",
+    "railway": "halt",
+    "uic_ref": "2200429",
+    "wikidata": "Q12121275",
+    "wikipedia": "uk:Мар'янівська"
+  }
+},
+{
+  "type": "node",
+  "id": 1224117508,
+  "lat": 50.2963119,
+  "lon": 30.5341338,
+  "tags": {
+    "esr:user": "320844",
+    "name": "Лісники",
+    "name:en": "Lisnyky",
+    "name:ru": "Лесники",
+    "name:uk": "Лісники",
+    "railway": "halt",
+    "uic_ref": "2200335",
+    "wikidata": "Q12119831",
+    "wikipedia": "uk:Лісники (зупинний пункт)"
+  }
+},
+{
+  "type": "node",
+  "id": 1232861122,
+  "lat": 50.4297055,
+  "lon": 30.6854241,
+  "tags": {
+    "esr:code": "322549",
+    "express:code": "2201132",
+    "name": "Фармацевтична",
+    "name:en": "Farmatsevtychna",
+    "name:ru": "Фармацевтическая",
+    "name:uk": "Фармацевтична",
+    "network": "Укрзалізниця",
+    "operator": "Південно-Західна залізниця",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes",
+    "uic_ref": "2201132",
+    "wikidata": "Q4481270",
+    "wikipedia": "uk:Фармацевтична"
+  }
+},
+{
+  "type": "node",
+  "id": 1233117090,
+  "lat": 50.3540573,
+  "lon": 30.5447604,
+  "tags": {
+    "esr:code": "320806",
+    "express:code": "2200301",
+    "name": "Петро Кривоніс",
+    "name:en": "Petro Kryvonis",
+    "name:ru": "Пётр Кривонос",
+    "name:uk": "Петро Кривоніс",
+    "public_transport": "stop_position",
+    "railway": "station",
+    "train": "yes",
+    "uic_ref": "2200301",
+    "wikidata": "Q4386208",
+    "wikipedia": "uk:Петро Кривоніс (станція)"
+  }
+},
+{
+  "type": "node",
+  "id": 1233151073,
+  "lat": 50.4771655,
+  "lon": 30.3580421,
+  "tags": {
+    "esr:code": "322318",
+    "express:code": "2201160",
+    "name": "Новобіличі",
+    "name:en": "Novobilychi",
+    "name:esr": "Новобелечи",
+    "name:ru": "Новобеличи",
+    "name:uk": "Новобіличі",
+    "public_transport": "stop_position",
+    "railway": "halt",
+    "uic_ref": "2201160",
+    "wikidata": "Q4323220",
+    "wikipedia": "uk:Новобіличі (зупинний пункт)"
+  }
+},
+{
+  "type": "node",
+  "id": 1233151074,
+  "lat": 50.4876868,
+  "lon": 30.3352713,
+  "tags": {
+    "addr:postcode": "08298",
+    "internet_access": "no",
+    "name": "Біличі",
+    "name:en": "Bilychi",
+    "name:uk": "Біличі",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "uic_ref": "2200082",
+    "wikidata": "Q12086655",
+    "wikipedia": "uk:Біличі (станція)"
+  }
+},
+{
+  "type": "node",
+  "id": 1237079097,
+  "lat": 50.2390408,
+  "lon": 30.5884309,
+  "tags": {
+    "name": "Романків",
+    "name:en": "Romankiv",
+    "name:ru": "Романков",
+    "name:uk": "Романків",
+    "public_transport": "station",
+    "railway": "halt",
+    "uic_ref": "2201042",
+    "wikidata": "Q12148658",
+    "wikipedia": "uk:Романків (зупинний пункт)"
+  }
+},
+{
+  "type": "node",
+  "id": 1250748534,
+  "lat": 50.4382888,
+  "lon": 30.4191619,
+  "tags": {
+    "railway": "train_station_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 1250748535,
+  "lat": 50.4379208,
+  "lon": 30.4193827,
+  "tags": {
+    "railway": "train_station_entrance",
+    "ref": "3"
+  }
+},
+{
+  "type": "node",
+  "id": 1250748537,
+  "lat": 50.4380277,
+  "lon": 30.4197579,
+  "tags": {
+    "railway": "train_station_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 1253853198,
+  "lat": 50.5510044,
+  "lon": 30.2107957,
+  "tags": {
+    "addr:housenumber": "10",
+    "addr:postcode": "08292",
+    "addr:street": "вулиця Енергетиків",
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Бучанська міська поліклініка",
+    "name:ru": "Поликлиника Буча",
+    "name:uk": "Бучанська міська поліклініка",
+    "opening_hours": "Mo-Fr 08:00-19:12; Sa 09:00-14:00"
+  }
+},
+{
+  "type": "node",
+  "id": 1305973984,
+  "lat": 50.6702798,
+  "lon": 30.3851257,
+  "tags": {
+    "addr:city": "Лютіж",
+    "addr:housenumber": "69а",
+    "addr:street": "вулиця Вітряного",
+    "amenity": "hospital",
+    "name": "Онкологічна клініка «Іновація»",
+    "name:ru": "Инновация",
+    "name:uk": "Онкологічна клініка «Іновація»",
+    "phone": "+380 44 331 2100;+380 44 331 2300",
+    "website": "https://www.innovacia.com.ua/"
+  }
+},
+{
+  "type": "node",
+  "id": 1352606581,
+  "lat": 50.3526660,
+  "lon": 30.5981093,
+  "tags": {
+    "leisure": "marina",
+    "name": "Нижні Сади - 2",
+    "name:uk": "Нижні Сади - 2",
+    "seamark:harbour:category": "marina",
+    "seamark:type": "harbour"
+  }
+},
+{
+  "type": "node",
+  "id": 1359826618,
+  "lat": 50.2355531,
+  "lon": 30.6423103,
+  "tags": {
+    "amenity": "hospital",
+    "name": "Поліклініка",
+    "name:ru": "Поликлиника",
+    "name:uk": "Поліклініка"
+  }
+},
+{
+  "type": "node",
+  "id": 1365231901,
+  "lat": 50.4312902,
+  "lon": 30.6481608,
+  "tags": {
+    "entrance": "main",
+    "railway": "train_station_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 1412869841,
+  "lat": 50.4614776,
+  "lon": 30.4166866,
+  "tags": {
+    "amenity": "ticket_validator",
+    "barrier": "turnstile",
+    "fee": "yes",
+    "railway": "train_station_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 1412869844,
+  "lat": 50.4615650,
+  "lon": 30.4165414,
+  "tags": {
+    "amenity": "ticket_validator",
+    "barrier": "turnstile",
+    "fee": "yes",
+    "railway": "train_station_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 1435378061,
+  "lat": 50.4588004,
+  "lon": 30.5243835,
+  "tags": {
+    "entrance": "main",
+    "railway": "train_station_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 1460509993,
+  "lat": 50.4203384,
+  "lon": 30.3821792,
+  "tags": {
+    "amenity": "ticket_validator",
+    "barrier": "turnstile",
+    "operator": "Київпастранс",
+    "operator:en": "Kyivpastrans",
+    "operator:uk": "Київпастранс",
+    "operator:wikidata": "Q12110155",
+    "railway": "train_station_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 1460509995,
+  "lat": 50.4202784,
+  "lon": 30.3820954,
+  "tags": {
+    "amenity": "ticket_validator",
+    "barrier": "turnstile",
+    "operator": "Київпастранс",
+    "operator:en": "Kyivpastrans",
+    "operator:uk": "Київпастранс",
+    "operator:wikidata": "Q12110155",
+    "railway": "train_station_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 1460509997,
+  "lat": 50.4259172,
+  "lon": 30.3847984,
+  "tags": {
+    "amenity": "ticket_validator",
+    "barrier": "turnstile",
+    "operator": "Київпастранс",
+    "operator:en": "Kyivpastrans",
+    "operator:uk": "Київпастранс",
+    "operator:wikidata": "Q12110155",
+    "railway": "train_station_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 1460510000,
+  "lat": 50.4259355,
+  "lon": 30.3846519,
+  "tags": {
+    "amenity": "ticket_validator",
+    "barrier": "turnstile",
+    "operator": "Київпастранс",
+    "operator:en": "Kyivpastrans",
+    "operator:uk": "Київпастранс",
+    "operator:wikidata": "Q12110155",
+    "railway": "train_station_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 1460515776,
+  "lat": 50.4167666,
+  "lon": 30.3898427,
+  "tags": {
+    "amenity": "ticket_validator",
+    "barrier": "turnstile",
+    "operator": "Київпастранс",
+    "operator:en": "Kyivpastrans",
+    "operator:uk": "Київпастранс",
+    "operator:wikidata": "Q12110155",
+    "railway": "train_station_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 1461860092,
+  "lat": 50.4092966,
+  "lon": 30.4001280,
+  "tags": {
+    "amenity": "ticket_validator",
+    "barrier": "turnstile",
+    "operator": "Київпастранс",
+    "operator:en": "Kyivpastrans",
+    "operator:uk": "Київпастранс",
+    "operator:wikidata": "Q12110155",
+    "railway": "train_station_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 1461860094,
+  "lat": 50.4092267,
+  "lon": 30.4000352,
+  "tags": {
+    "amenity": "ticket_validator",
+    "barrier": "turnstile",
+    "operator": "Київпастранс",
+    "operator:en": "Kyivpastrans",
+    "operator:uk": "Київпастранс",
+    "operator:wikidata": "Q12110155",
+    "railway": "train_station_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 1461860119,
+  "lat": 50.4138115,
+  "lon": 30.3954779,
+  "tags": {
+    "amenity": "ticket_validator",
+    "barrier": "turnstile",
+    "operator": "Київпастранс",
+    "operator:en": "Kyivpastrans",
+    "operator:uk": "Київпастранс",
+    "operator:wikidata": "Q12110155",
+    "railway": "train_station_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 1461860125,
+  "lat": 50.4137897,
+  "lon": 30.3953415,
+  "tags": {
+    "amenity": "ticket_validator",
+    "barrier": "turnstile",
+    "operator": "Київпастранс",
+    "operator:en": "Kyivpastrans",
+    "operator:uk": "Київпастранс",
+    "operator:wikidata": "Q12110155",
+    "railway": "train_station_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 1461860150,
+  "lat": 50.4436491,
+  "lon": 30.4891369,
+  "tags": {
+    "amenity": "ticket_validator",
+    "barrier": "turnstile",
+    "operator": "Київпастранс",
+    "operator:en": "Kyivpastrans",
+    "operator:uk": "Київпастранс",
+    "operator:wikidata": "Q12110155",
+    "railway": "train_station_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 1541640382,
+  "lat": 50.4835378,
+  "lon": 30.3909388,
+  "tags": {
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 1604754003,
+  "lat": 50.3920236,
+  "lon": 30.3758051,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Дитяча полікліника",
+    "name:ru": "Детская поликлиника",
+    "name:uk": "Дитяча полікліника"
+  }
+},
+{
+  "type": "node",
+  "id": 1641395455,
+  "lat": 50.3849578,
+  "lon": 30.3813815,
+  "tags": {
+    "power": "substation"
+  }
+},
+{
+  "type": "node",
+  "id": 1651070414,
+  "lat": 50.4662638,
+  "lon": 30.5193908,
+  "tags": {
+    "generator:method": "combustion",
+    "power": "generator"
+  }
+},
+{
+  "type": "node",
+  "id": 1685277180,
+  "lat": 50.4861692,
+  "lon": 30.6342416,
+  "tags": {
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 1697537983,
+  "lat": 50.5198033,
+  "lon": 30.8016283,
+  "tags": {
+    "power": "substation"
+  }
+},
+{
+  "type": "node",
+  "id": 1711488457,
+  "lat": 50.2233268,
+  "lon": 30.7937179,
+  "tags": {
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 1711488560,
+  "lat": 50.2244887,
+  "lon": 30.8055559,
+  "tags": {
+    "power": "substation"
+  }
+},
+{
+  "type": "node",
+  "id": 1711488695,
+  "lat": 50.2267232,
+  "lon": 30.8040538,
+  "tags": {
+    "power": "substation"
+  }
+},
+{
+  "type": "node",
+  "id": 1720345940,
+  "lat": 50.2414841,
+  "lon": 30.8060059,
+  "tags": {
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 1720345980,
+  "lat": 50.2532121,
+  "lon": 30.7861976,
+  "tags": {
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 1721504516,
+  "lat": 50.2337306,
+  "lon": 30.7924772,
+  "tags": {
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 1721504671,
+  "lat": 50.2389207,
+  "lon": 30.7862229,
+  "tags": {
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 1721504675,
+  "lat": 50.2390822,
+  "lon": 30.7798076,
+  "tags": {
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 1722420139,
+  "lat": 50.2356892,
+  "lon": 30.8038165,
+  "tags": {
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 1730530468,
+  "lat": 50.4362804,
+  "lon": 30.5992575,
+  "tags": {
+    "power": "substation"
+  }
+},
+{
+  "type": "node",
+  "id": 1730538945,
+  "lat": 50.4361091,
+  "lon": 30.6006235,
+  "tags": {
+    "power": "substation"
+  }
+},
+{
+  "type": "node",
+  "id": 1738590746,
+  "lat": 50.4131527,
+  "lon": 30.7692410,
+  "tags": {
+    "esr:code": "322500",
+    "express:code": "2200065",
+    "name": "Імені Георгія Кірпи",
+    "name:de": "Heorhija Kirpy",
+    "name:en": "Heorhiya Kirpy",
+    "name:ru": "Им. Георгия Кирпы",
+    "name:uk": "Імені Георгія Кірпи",
+    "network": "Укрзалізниця",
+    "network:en": "Ukrainian Railways",
+    "network:short": "УЗ",
+    "network:short:uk": "УЗ",
+    "network:short:uk-Latn": "UZ",
+    "network:uk": "Укрзалізниця",
+    "network:uk-Latn": "Ukrzaliznytsia",
+    "network:wikidata": "Q923337",
+    "operator": "Укрзалізниця",
+    "operator:en": "Ukrainian Railways",
+    "operator:short": "УЗ",
+    "operator:short:uk": "УЗ",
+    "operator:short:uk-Latn": "UZ",
+    "operator:uk": "Укрзалізниця",
+    "operator:uk-Latn": "Ukrzaliznytsia",
+    "operator:wikidata": "Q923337",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "uic_ref": "2200065",
+    "wikidata": "Q155486",
+    "wikipedia": "uk:Імені Георгія Кірпи"
+  }
+},
+{
+  "type": "node",
+  "id": 1769787589,
+  "lat": 50.4752549,
+  "lon": 30.4371338,
+  "tags": {
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 1772762979,
+  "lat": 50.4614933,
+  "lon": 30.5963270,
+  "tags": {
+    "esr:code": "320702",
+    "express:code": "2200005",
+    "name": "Микільська Слобідка",
+    "name:en": "Mykilska Slobidka",
+    "name:uk": "Микільська Слобідка",
+    "name:uk-Latn": "Mykilska Slobidka",
+    "network": "Укрзалізниця",
+    "network:en": "Ukrainian Railways",
+    "network:short": "УЗ",
+    "network:uk": "Укрзалізниця",
+    "network:wikidata": "Q923337",
+    "old_name": "Київ-Дніпровський",
+    "old_name:en": "Kyiv-Dniprovskyi",
+    "old_name:uk": "Київ-Дніпровський",
+    "operator": "Укрзалізниця",
+    "operator:en": "Ukrainian Railways",
+    "operator:short": "УЗ",
+    "operator:uk": "Укрзалізниця",
+    "operator:wikidata": "Q923337",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "uic_ref": "2200005",
+    "wikidata": "Q4220096",
+    "wikipedia": "uk:Микільська Слобідка (станція)"
+  }
+},
+{
+  "type": "node",
+  "id": 1794559499,
+  "lat": 50.5782843,
+  "lon": 30.5349237,
+  "tags": {
+    "leisure": "marina",
+    "seamark:harbour:category": "marina",
+    "seamark:type": "harbour"
+  }
+},
+{
+  "type": "node",
+  "id": 1840413617,
+  "lat": 50.4388192,
+  "lon": 30.3562972,
+  "tags": {
+    "name": "КТП-956",
+    "name:uk": "КТП-956",
+    "power": "substation",
+    "ref": "956",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 1852185333,
+  "lat": 50.4564203,
+  "lon": 30.6190046,
+  "tags": {
+    "generator:method": "photovoltaic",
+    "generator:output:electricity": "<1 kW",
+    "generator:source": "solar",
+    "generator:type": "solar_photovoltaic_panel",
+    "power": "generator"
+  }
+},
+{
+  "type": "node",
+  "id": 2026085798,
+  "lat": 50.4152843,
+  "lon": 30.5193375,
+  "tags": {
+    "power": "substation"
+  }
+},
+{
+  "type": "node",
+  "id": 2241002471,
+  "lat": 50.6033248,
+  "lon": 30.4878054,
+  "tags": {
+    "power": "substation"
+  }
+},
+{
+  "type": "node",
+  "id": 2251283199,
+  "lat": 50.5879468,
+  "lon": 30.5138873,
+  "tags": {
+    "generator:output:electricity": "yes",
+    "generator:source": "hydro",
+    "power": "generator"
+  }
+},
+{
+  "type": "node",
+  "id": 2251283200,
+  "lat": 50.5881284,
+  "lon": 30.5131185,
+  "tags": {
+    "generator:output:electricity": "yes",
+    "generator:source": "hydro",
+    "power": "generator"
+  }
+},
+{
+  "type": "node",
+  "id": 2251283201,
+  "lat": 50.5882966,
+  "lon": 30.5123434,
+  "tags": {
+    "generator:output:electricity": "yes",
+    "generator:source": "hydro",
+    "power": "generator"
+  }
+},
+{
+  "type": "node",
+  "id": 2251283202,
+  "lat": 50.5885657,
+  "lon": 30.5112030,
+  "tags": {
+    "generator:output:electricity": "yes",
+    "generator:source": "hydro",
+    "power": "generator"
+  }
+},
+{
+  "type": "node",
+  "id": 2251283203,
+  "lat": 50.5886660,
+  "lon": 30.5108367,
+  "tags": {
+    "generator:output:electricity": "yes",
+    "generator:source": "hydro",
+    "power": "generator"
+  }
+},
+{
+  "type": "node",
+  "id": 2263027831,
+  "lat": 50.5235124,
+  "lon": 30.6088198,
+  "tags": {
+    "amenity": "ticket_validator",
+    "barrier": "turnstile",
+    "operator": "Київпастранс",
+    "operator:en": "Kyivpastrans",
+    "operator:uk": "Київпастранс",
+    "operator:wikidata": "Q12110155",
+    "railway": "train_station_entrance",
+    "wikidata": "Q4503421",
+    "wikipedia": "uk:Олександри Екстер (станція швидкісного трамвая)"
+  }
+},
+{
+  "type": "node",
+  "id": 2263027832,
+  "lat": 50.5235260,
+  "lon": 30.6085362,
+  "tags": {
+    "amenity": "ticket_validator",
+    "barrier": "turnstile",
+    "operator": "Київпастранс",
+    "operator:en": "Kyivpastrans",
+    "operator:uk": "Київпастранс",
+    "operator:wikidata": "Q12110155",
+    "railway": "train_station_entrance",
+    "wikidata": "Q4503421",
+    "wikipedia": "uk:Олександри Екстер (станція швидкісного трамвая)"
+  }
+},
+{
+  "type": "node",
+  "id": 2276949678,
+  "lat": 50.2082332,
+  "lon": 30.3636843,
+  "tags": {
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 2329276298,
+  "lat": 50.4809390,
+  "lon": 30.5181699,
+  "tags": {
+    "leisure": "marina",
+    "seamark:harbour:category": "marina",
+    "seamark:type": "harbour"
+  }
+},
+{
+  "type": "node",
+  "id": 2372608682,
+  "lat": 50.5586832,
+  "lon": 30.8220648,
+  "tags": {
+    "addr:housenumber": "10",
+    "addr:postcode": "07443",
+    "addr:street": "Травнева вулиця",
+    "amenity": "hospital",
+    "emergency": "no",
+    "healthcare": "clinic",
+    "name": "Калинівська амбулаторія",
+    "name:uk": "Калинівська амбулаторія"
+  }
+},
+{
+  "type": "node",
+  "id": 2457715083,
+  "lat": 50.5738950,
+  "lon": 30.6754418,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital"
+  }
+},
+{
+  "type": "node",
+  "id": 2489645901,
+  "lat": 50.4848895,
+  "lon": 30.4982399,
+  "tags": {
+    "esr:code": "320609",
+    "express:code": "2200002",
+    "name": "Почайна",
+    "name:en": "Pochaina",
+    "name:ru": "Почайна",
+    "name:uk": "Почайна",
+    "network": "Укрзалізниця",
+    "network:en": "Ukrainian Railways",
+    "network:short": "УЗ",
+    "network:uk": "Укрзалізниця",
+    "network:wikidata": "Q923337",
+    "operator": "Укрзалізниця",
+    "operator:en": "Ukrainian Railways",
+    "operator:short": "УЗ",
+    "operator:uk": "Укрзалізниця",
+    "operator:wikidata": "Q923337",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "uic_ref": "2200002",
+    "wheelchair": "limited",
+    "wikidata": "Q3406798"
+  }
+},
+{
+  "type": "node",
+  "id": 2515514943,
+  "lat": 50.4794010,
+  "lon": 30.5808232,
+  "tags": {
+    "alt_name": "Городня",
+    "alt_name:ru": "Огородная",
+    "esr:code": "320666",
+    "express:code": "2201215",
+    "express:name": "ОГОРОДНАЯ",
+    "name": "Воскресенка",
+    "name:en": "Voskresenka",
+    "name:uk": "Воскресенка",
+    "name:uk-Latn": "Voskresenka",
+    "network": "Укрзалізниця",
+    "network:en": "Ukrainian Railways",
+    "network:short": "УЗ",
+    "network:uk": "Укрзалізниця",
+    "network:wikidata": "Q923337",
+    "old_name": "Троєщина",
+    "old_name:uk": "Троєщина",
+    "operator": "Укрзалізниця",
+    "operator:en": "Ukrainian Railways",
+    "operator:short": "УЗ",
+    "operator:uk": "Укрзалізниця",
+    "operator:wikidata": "Q923337",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes",
+    "uic_ref": "2201215",
+    "wikidata": "Q4463381",
+    "wikipedia": "uk:Воскресенка (зупинний пункт)"
+  }
+},
+{
+  "type": "node",
+  "id": 2515514944,
+  "lat": 50.4831171,
+  "lon": 30.5736671,
+  "tags": {
+    "name": "Райдужний",
+    "name:en": "Raiduzhnyi",
+    "name:uk": "Райдужний",
+    "name:uk-Latn": "Raiduzhnyi",
+    "network": "Укрзалізниця",
+    "network:en": "Ukrainian Railways",
+    "network:short": "УЗ",
+    "network:short:uk": "УЗ",
+    "network:short:uk-Latn": "UZ",
+    "network:uk": "Укрзалізниця",
+    "network:uk-Latn": "Ukrzaliznytsia",
+    "network:wikidata": "Q923337",
+    "old_name": "Троєщина-2",
+    "old_name:en": "Troieshchyna-2",
+    "old_name:uk": "Троєщина-2",
+    "operator": "Укрзалізниця",
+    "operator:en": "Ukrainian Railways",
+    "operator:short": "УЗ",
+    "operator:short:uk": "УЗ",
+    "operator:short:uk-Latn": "UZ",
+    "operator:uk": "Укрзалізниця",
+    "operator:uk-Latn": "Ukrzaliznytsia",
+    "operator:wikidata": "Q923337",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes",
+    "wikidata": "Q12162573",
+    "wikipedia": "uk:Райдужний (зупинний пункт)"
+  }
+},
+{
+  "type": "node",
+  "id": 2515515001,
+  "lat": 50.4832309,
+  "lon": 30.5736379,
+  "tags": {
+    "entrance": "main",
+    "railway": "train_station_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 2515515003,
+  "lat": 50.4832401,
+  "lon": 30.5735959,
+  "tags": {
+    "entrance": "main",
+    "railway": "train_station_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 2515515008,
+  "lat": 50.4833017,
+  "lon": 30.5736292,
+  "tags": {
+    "entrance": "main",
+    "railway": "train_station_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 2550376927,
+  "lat": 50.4861908,
+  "lon": 30.4691826,
+  "tags": {
+    "addr:housenumber": "1/7",
+    "addr:postcode": "04023",
+    "addr:street": "Копилівська вулиця",
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "healthcare:speciality": "gastroenterology",
+    "name": "Київський дитячий міський гастроентерологічний центр",
+    "name:en": "Kiev Children City Gastroenterological Center",
+    "name:ru": "Киевский детский городской гастроэнтерологический центр",
+    "name:uk": "Київський дитячий міський гастроентерологічний центр",
+    "website": "https://deti-gastro.org.ua/"
+  }
+},
+{
+  "type": "node",
+  "id": 2644051429,
+  "lat": 50.4398558,
+  "lon": 30.4886551,
+  "tags": {
+    "esr:code": "320308",
+    "int_name": "Kyiv-Pasazhyrskyi",
+    "internet_access": "wlan",
+    "name": "Київ-Пасажирський",
+    "name:cs": "Kyjiv-Pasažyrskyj",
+    "name:de": "Kiew Personenbahnhof",
+    "name:en": "Kyiv Passenger Railway Station",
+    "name:es": "Estación central de ferrocarril de Kiev",
+    "name:pl": "Kijów Centralny",
+    "name:ru": "Киев-Пассажирский",
+    "name:ru-Latn": "Kijew-Passajirski",
+    "name:uk": "Київ-Пасажирський",
+    "name:uk-Latn": "Kyiv-Pasazhyrskyi",
+    "name:zh": "基辅客运",
+    "network": "Укрзалізниця",
+    "network:en": "Ukrainian Railways",
+    "network:short": "УЗ",
+    "network:short:uk": "УЗ",
+    "network:short:uk-Latn": "UZ",
+    "network:uk": "Укрзалізниця",
+    "network:uk-Latn": "Ukrzaliznytsia",
+    "network:wikidata": "Q923337",
+    "operator": "Укрзалізниця",
+    "operator:en": "Ukrainian Railways",
+    "operator:short": "УЗ",
+    "operator:short:uk": "УЗ",
+    "operator:short:uk-Latn": "UZ",
+    "operator:uk": "Укрзалізниця",
+    "operator:uk-Latn": "Ukrzaliznytsia",
+    "operator:wikidata": "Q923337",
+    "platforms": "7",
+    "public_transport": "station",
+    "railway": "station",
+    "railway:ref:DB": "ZUK",
+    "railway:station_category": "1",
+    "short_name": "Київ-Пас",
+    "train": "yes",
+    "uic_ref": "2200001",
+    "website": "https://www.uz.gov.ua/passengers/station_services_and_facilities/service_stations/southwestrailway/428819/",
+    "wheelchair": "limited",
+    "wikidata": "Q2105249",
+    "wikipedia": "uk:Київ-Пасажирський"
+  }
+},
+{
+  "type": "node",
+  "id": 2752466760,
+  "lat": 50.4475934,
+  "lon": 30.5162627,
+  "tags": {
+    "name": "РП-410",
+    "name:uk": "РП-410",
+    "power": "substation",
+    "rating": "2 MVA",
+    "substation": "minor_distribution",
+    "voltage": "400"
+  }
+},
+{
+  "type": "node",
+  "id": 2885712571,
+  "lat": 50.3905191,
+  "lon": 30.4915898,
+  "tags": {
+    "building": "yes",
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 2907095269,
+  "lat": 50.3913386,
+  "lon": 30.4957072,
+  "tags": {
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 3073011913,
+  "lat": 50.4009811,
+  "lon": 30.5571203,
+  "tags": {
+    "image": "https://railwayz.info/photolines/photo/64064",
+    "int_name": "Vydubychi-Trypiljsjki",
+    "name": "Видубичі-Трипільські",
+    "name:en": "Vydubychi-Trypiljsjki",
+    "name:ru": "Выдубычи-Трипольские",
+    "name:uk": "Видубичі-Трипільські",
+    "railway": "halt",
+    "uic_ref": "2200360",
+    "wikidata": "Q4128890",
+    "wikipedia": "uk:Видубичі-Трипільські"
+  }
+},
+{
+  "type": "node",
+  "id": 3152367564,
+  "lat": 50.2715422,
+  "lon": 30.3134991,
+  "tags": {
+    "esr:user": "321279",
+    "name": "Шляхова",
+    "name:ru": "Шляхова",
+    "name:uk": "Шляхова",
+    "operator": "Укрзалізниця",
+    "public_transport": "stop_position",
+    "railway": "station",
+    "train": "yes",
+    "uic_ref": "2200353",
+    "wikidata": "Q12172123",
+    "wikipedia": "uk:Шляхова (зупинний пункт)"
+  }
+},
+{
+  "type": "node",
+  "id": 3190952934,
+  "lat": 50.4511770,
+  "lon": 30.4787638,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Відділення патологічної анатомії",
+    "name:ru": "Отделение патологической анатомии",
+    "name:uk": "Відділення патологічної анатомії",
+    "operator": "Охматдит"
+  }
+},
+{
+  "type": "node",
+  "id": 3190952935,
+  "lat": 50.4506492,
+  "lon": 30.4785838,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Господарчій блок",
+    "name:ru": "Хозяйственный блок",
+    "name:uk": "Господарчій блок",
+    "operator": "Охматдит"
+  }
+},
+{
+  "type": "node",
+  "id": 3190952936,
+  "lat": 50.4503672,
+  "lon": 30.4808187,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Діагностічне відділення",
+    "name:ru": "Диагностическое отделение",
+    "name:uk": "Діагностічне відділення",
+    "operator": "Охматдит"
+  }
+},
+{
+  "type": "node",
+  "id": 3190952937,
+  "lat": 50.4512316,
+  "lon": 30.4788545,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Медико-генетичний центр",
+    "name:ru": "Медико-генетический центр",
+    "name:uk": "Медико-генетичний центр",
+    "operator": "Охматдит"
+  }
+},
+{
+  "type": "node",
+  "id": 3190952939,
+  "lat": 50.4503921,
+  "lon": 30.4814140,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Травматологічний пункт",
+    "name:uk": "Травматологічний пункт",
+    "operator": "Охматдит"
+  }
+},
+{
+  "type": "node",
+  "id": 3190952940,
+  "lat": 50.4507337,
+  "lon": 30.4786075,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Харчоблок",
+    "name:uk": "Харчоблок",
+    "operator": "Охматдит"
+  }
+},
+{
+  "type": "node",
+  "id": 3190952941,
+  "lat": 50.4509953,
+  "lon": 30.4795472,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Центральна клінічна лабораторія",
+    "name:uk": "Центральна клінічна лабораторія",
+    "operator": "Охматдит"
+  }
+},
+{
+  "type": "node",
+  "id": 3196765924,
+  "lat": 50.4270993,
+  "lon": 30.4220890,
+  "tags": {
+    "operator": "Київенерго",
+    "power": "substation"
+  }
+},
+{
+  "type": "node",
+  "id": 3228472655,
+  "lat": 50.4540435,
+  "lon": 30.4597288,
+  "tags": {
+    "fixme": "ref",
+    "power": "substation"
+  }
+},
+{
+  "type": "node",
+  "id": 3376796863,
+  "lat": 50.2449167,
+  "lon": 30.2743815,
+  "tags": {
+    "esr:user": "321194",
+    "name": "Данилівка",
+    "name:ru": "Даниловка",
+    "name:uk": "Данилівка",
+    "old_name": "888 км",
+    "public_transport": "stop_position",
+    "railway": "halt",
+    "train": "yes",
+    "uic_ref": "2200384",
+    "wikidata": "Q12099484",
+    "wikipedia": "uk:Данилівка (зупинний пункт, Південно-Західна залізниця)"
+  }
+},
+{
+  "type": "node",
+  "id": 3376797593,
+  "lat": 50.3445561,
+  "lon": 30.3026722,
+  "tags": {
+    "esr:user": "321245",
+    "name": "Тарасівка",
+    "name:ru": "Тарасовка",
+    "name:uk": "Тарасівка",
+    "public_transport": "stop_position",
+    "railway": "halt",
+    "train": "yes",
+    "uic_ref": "2201135",
+    "wikidata": "Q12160031",
+    "wikipedia": "uk:Тарасівка (зупинний пункт, Південно-Західна залізниця)"
+  }
+},
+{
+  "type": "node",
+  "id": 3376816024,
+  "lat": 50.4410225,
+  "lon": 30.4905179,
+  "tags": {
+    "layer": "-1",
+    "name": "Вокзальна",
+    "name:en": "Vokzalna",
+    "name:uk": "Вокзальна",
+    "name:uk-Latn": "Vokzalna",
+    "network": "Укрзалізниця",
+    "network:en": "Ukrainian Railways",
+    "network:short": "УЗ",
+    "network:uk": "Укрзалізниця",
+    "network:wikidata": "Q923337",
+    "old_name": "Північна",
+    "old_name:uk": "Північна",
+    "operator": "Укрзалізниця",
+    "operator:en": "Ukrainian Railways",
+    "operator:short": "УЗ",
+    "operator:uk": "Укрзалізниця",
+    "operator:wikidata": "Q923337",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes",
+    "wikidata": "Q4412050",
+    "wikipedia": "uk:Вокзальна (зупинний пункт)"
+  }
+},
+{
+  "type": "node",
+  "id": 3466484305,
+  "lat": 50.2257455,
+  "lon": 30.2248887,
+  "tags": {
+    "esr:user": "321207",
+    "int_name": "Vasylkiv-I",
+    "name": "Васильків-1",
+    "name:de": "Wasylkiw-1",
+    "name:en": "Vasylkiv-I",
+    "name:pl": "Wasylkiv-1",
+    "name:ru": "Васильков 1",
+    "name:uk": "Васильків-1",
+    "network": "Укрзалізниця",
+    "network:en": "Ukrainian Railways",
+    "network:short": "УЗ",
+    "network:uk": "Укрзалізниця",
+    "network:wikidata": "Q923337",
+    "operator": "Укрзалізниця",
+    "operator:en": "Ukrainian Railways",
+    "operator:short": "УЗ",
+    "operator:uk": "Укрзалізниця",
+    "operator:wikidata": "Q923337",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "uic_ref": "2200139",
+    "wikidata": "Q12087922",
+    "wikipedia": "uk:Васильків I"
+  }
+},
+{
+  "type": "node",
+  "id": 3559377584,
+  "lat": 50.4555847,
+  "lon": 30.4373125,
+  "tags": {
+    "location": "indoor",
+    "name": "РП-438",
+    "name:uk": "РП-438",
+    "operator": "Київенерго",
+    "power": "substation",
+    "rating": "6 MVA",
+    "ref": "438",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 3618169902,
+  "lat": 50.4536215,
+  "lon": 30.6116536,
+  "tags": {
+    "location": "indoor",
+    "name": "ТП-3269",
+    "name:uk": "ТП-3269",
+    "operator": "Київенерго",
+    "power": "substation",
+    "ref": "3269",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 3627406736,
+  "lat": 50.4316518,
+  "lon": 30.3838095,
+  "tags": {
+    "location": "indoor",
+    "name": "ТП-6050",
+    "name:uk": "ТП-6050",
+    "power": "substation",
+    "ref": "6050",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 3627411010,
+  "lat": 50.4326413,
+  "lon": 30.3855926,
+  "tags": {
+    "power": "substation",
+    "ref": "ТП-2859",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 3629499137,
+  "lat": 50.4290009,
+  "lon": 30.4440401,
+  "tags": {
+    "building": "service",
+    "name": "ТП-2264",
+    "name:uk": "ТП-2264",
+    "power": "substation",
+    "ref": "2264",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 3659300027,
+  "lat": 50.4219182,
+  "lon": 30.4247658,
+  "tags": {
+    "building": "yes",
+    "building:levels": "1",
+    "fixme": "stats",
+    "name": "ТП-2111",
+    "name:uk": "ТП-2111",
+    "power": "substation",
+    "ref": "2111",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 3659320529,
+  "lat": 50.4177565,
+  "lon": 30.4236528,
+  "tags": {
+    "building": "yes",
+    "building:levels": "1",
+    "fixme": "syats",
+    "name": "ТП-2113",
+    "name:uk": "ТП-2113",
+    "power": "substation",
+    "ref": "2113",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 3666127133,
+  "lat": 50.4316345,
+  "lon": 30.4341092,
+  "tags": {
+    "fixme": "stats",
+    "name": "ТП-6981",
+    "name:uk": "ТП-6981",
+    "power": "substation",
+    "ref": "6981",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 3666127226,
+  "lat": 50.4313906,
+  "lon": 30.4298944,
+  "tags": {
+    "building": "yes",
+    "building:levels": "1",
+    "fixme": "stats",
+    "name": "ТП-1823",
+    "name:uk": "ТП-1823",
+    "power": "substation",
+    "ref": "1823",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 3675340379,
+  "lat": 50.4340120,
+  "lon": 30.6546846,
+  "tags": {
+    "railway": "hump_yard"
+  }
+},
+{
+  "type": "node",
+  "id": 3675676877,
+  "lat": 50.4422990,
+  "lon": 30.6711518,
+  "tags": {
+    "railway": "hump_yard"
+  }
+},
+{
+  "type": "node",
+  "id": 3676383525,
+  "lat": 50.4266179,
+  "lon": 30.4443763,
+  "tags": {
+    "building": "yes",
+    "building:levels": "1",
+    "name": "ТП-2269",
+    "name:uk": "ТП-2269",
+    "note": "stats",
+    "power": "substation",
+    "rating": "320 kVA",
+    "ref": "2269",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 3721339325,
+  "lat": 50.4474043,
+  "lon": 30.4446284,
+  "tags": {
+    "building": "service",
+    "building:levels": "1",
+    "name": "ТП-4450",
+    "name:uk": "ТП-4450",
+    "operator": "Київенерго",
+    "power": "substation",
+    "ref": "4450",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 3723591894,
+  "lat": 50.4640594,
+  "lon": 30.4355681,
+  "tags": {
+    "building": "yes",
+    "building:levels": "1",
+    "name": "ТП-2318",
+    "name:uk": "ТП-2318",
+    "operator": "Київенерго",
+    "power": "substation",
+    "ref": "2318",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 3747929626,
+  "lat": 50.4258600,
+  "lon": 30.4470224,
+  "tags": {
+    "building": "yes",
+    "building:levels": "1",
+    "name": "ТП-5946",
+    "name:uk": "ТП-5946",
+    "operator": "Київенерго",
+    "power": "substation",
+    "ref": "5946",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 3747930125,
+  "lat": 50.4261411,
+  "lon": 30.4463557,
+  "tags": {
+    "building": "yes",
+    "building:levels": "1",
+    "name": "ТП-2969",
+    "name:uk": "ТП-2969",
+    "operator": "Київенерго",
+    "power": "substation",
+    "ref": "2969",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 3783406654,
+  "lat": 50.4592890,
+  "lon": 30.4100083,
+  "tags": {
+    "location": "kiosk",
+    "name": "КТП-7561",
+    "name:uk": "КТП-7561",
+    "power": "substation",
+    "ref": "7561",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 3789104458,
+  "lat": 50.4601075,
+  "lon": 30.5149484,
+  "tags": {
+    "location": "indoor",
+    "name": "ТП-381",
+    "name:uk": "ТП-381",
+    "operator": "Київенерго",
+    "power": "substation",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 3803383803,
+  "lat": 50.4518631,
+  "lon": 30.5981679,
+  "tags": {
+    "line": "Святошинсько-Броварська",
+    "name": "Лівобережна",
+    "name:en": "Livoberezhna",
+    "name:es": "Livoberezhna",
+    "name:ru": "Левобережная",
+    "name:uk": "Лівобережна",
+    "name:zh": "左岸",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "operator": "Київський метрополітен",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "124",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "yes",
+    "wikidata": "Q2385351",
+    "wikipedia": "uk:Лівобережна (станція метро)"
+  }
+},
+{
+  "type": "node",
+  "id": 3803423898,
+  "lat": 50.4459930,
+  "lon": 30.5770339,
+  "tags": {
+    "int_name": "Hidropark",
+    "line": "Святошинсько-Броварська",
+    "name": "Гідропарк",
+    "name:de": "Hidropark",
+    "name:en": "Hydropark",
+    "name:es": "Hidropárk",
+    "name:ru": "Гидропарк",
+    "name:uk": "Гідропарк",
+    "name:uk-Latn": "Hidropark",
+    "name:zh": "水公园",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "operator": "Київський метрополітен",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "123",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "no",
+    "wikidata": "Q2249474",
+    "wikipedia": "uk:Гідропарк (станція метро)"
+  }
+},
+{
+  "type": "node",
+  "id": 3803601761,
+  "lat": 50.4559397,
+  "lon": 30.6128423,
+  "tags": {
+    "covered": "yes",
+    "line": "Святошинсько-Броварська",
+    "name": "Дарниця",
+    "name:en": "Darnytsia",
+    "name:es": "Dárnytsia",
+    "name:ru": "Дарница",
+    "name:uk": "Дарниця",
+    "name:zh": "达尔尼齐亚",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "opening_hours": "Mo-Su 05:30-22:31",
+    "operator": "Київський метрополітен",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "125",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "yes",
+    "wikidata": "Q608532",
+    "wikipedia": "uk:Дарниця (станція метро)"
+  }
+},
+{
+  "type": "node",
+  "id": 3803615569,
+  "lat": 50.4598903,
+  "lon": 30.6303119,
+  "tags": {
+    "line": "Святошинсько-Броварська",
+    "name": "Чернігівська",
+    "name:en": "Chernihivska",
+    "name:es": "Cherníhivska",
+    "name:ru": "Черниговская",
+    "name:uk": "Чернігівська",
+    "name:zh": "切尔尼戈夫",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "old_name": "Комсомольська",
+    "operator": "Київський метрополітен",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "126",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "no",
+    "wikidata": "Q744366",
+    "wikipedia": "uk:Чернігівська (станція метро)"
+  }
+},
+{
+  "type": "node",
+  "id": 3803636265,
+  "lat": 50.4647597,
+  "lon": 30.6459702,
+  "tags": {
+    "line": "Святошинсько-Броварська",
+    "name": "Лісова",
+    "name:en": "Lisova",
+    "name:es": "Lisová",
+    "name:ru": "Лесная",
+    "name:uk": "Лісова",
+    "name:zh": "森林",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "old_name": "Піонерська",
+    "opening_hours": "05:45-00:02",
+    "operator": "Київський метрополітен",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "127",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "yes",
+    "wikidata": "Q2720732",
+    "wikipedia": "uk:Лісова (станція метро, Київ)"
+  }
+},
+{
+  "type": "node",
+  "id": 3804139642,
+  "lat": 50.4410407,
+  "lon": 30.5586885,
+  "tags": {
+    "line": "Святошинсько-Броварська",
+    "name": "Дніпро",
+    "name:en": "Dnipro",
+    "name:es": "Dnipro",
+    "name:ru": "Днепр",
+    "name:uk": "Дніпро",
+    "name:uk-Latn": "Dnipro",
+    "name:zh": "第聂伯",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "operator": "Київський метрополітен",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "122",
+    "start_date": "1960-11-06",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "no",
+    "wikidata": "Q2684139",
+    "wikipedia": "uk:Дніпро (станція метро)"
+  }
+},
+{
+  "type": "node",
+  "id": 3804612585,
+  "lat": 50.4444878,
+  "lon": 30.5454331,
+  "tags": {
+    "line": "Святошинсько-Броварська",
+    "name": "Арсенальна",
+    "name:en": "Arsenalna",
+    "name:es": "Arsenalna",
+    "name:ru": "Арсенальная",
+    "name:uk": "Арсенальна",
+    "name:zh": "兵工厂",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "operator": "Київський метрополітен",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "121",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "no",
+    "wikidata": "Q1875185",
+    "wikipedia": "uk:Арсенальна (станція метро)"
+  }
+},
+{
+  "type": "node",
+  "id": 3806362030,
+  "lat": 50.4442469,
+  "lon": 30.5058928,
+  "tags": {
+    "alt_name:en": "University",
+    "covered": "yes",
+    "int_name": "Universytet",
+    "line": "Святошинсько-Броварська",
+    "name": "Університет",
+    "name:de": "Universität",
+    "name:en": "Universytet",
+    "name:ru": "Университет",
+    "name:uk": "Університет",
+    "name:uk-Latn": "Universytet",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "operator": "Київський метрополітен",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "118",
+    "start_date": "1960-11-06",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "no",
+    "wikidata": "Q1825824",
+    "wikipedia": "uk:Університет (станція метро, Київ)"
+  }
+},
+{
+  "type": "node",
+  "id": 3806369598,
+  "lat": 50.4416401,
+  "lon": 30.4882512,
+  "tags": {
+    "covered": "yes",
+    "line": "Святошинсько-Броварська",
+    "name": "Вокзальна",
+    "name:en": "Vokzalna",
+    "name:pl": "Wokzalna",
+    "name:ru": "Вокзальная",
+    "name:uk": "Вокзальна",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "operator": "Київський метрополітен",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "117",
+    "start_date": "1960-11-06",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "no",
+    "wikidata": "Q2042690",
+    "wikipedia": "uk:Вокзальна (станція метро, Київ)"
+  }
+},
+{
+  "type": "node",
+  "id": 3806396836,
+  "lat": 50.4507932,
+  "lon": 30.4661270,
+  "tags": {
+    "alt_name:en": "Polytechnic Institute",
+    "covered": "yes",
+    "int_name": "Politekhnichnyi Instytut",
+    "line": "Святошинсько-Броварська",
+    "name": "Політехнічний інститут",
+    "name:en": "Politekhnichnyi Instytut",
+    "name:ru": "Политехнический институт",
+    "name:uk": "Політехнічний інститут",
+    "name:uk-Latn": "Politekhnichnyi Instytut",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "operator": "Київський метрополітен",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "116",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "no",
+    "wikidata": "Q2069203",
+    "wikipedia": "uk:Політехнічний інститут (станція метро)"
+  }
+},
+{
+  "type": "node",
+  "id": 3806407690,
+  "lat": 50.4550745,
+  "lon": 30.4453703,
+  "tags": {
+    "covered": "yes",
+    "line": "Святошинсько-Броварська",
+    "name": "Шулявська",
+    "name:en": "Shuliavska",
+    "name:ru": "Шулявская",
+    "name:uk": "Шулявська",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "old_name": "Завод «Більшовик»",
+    "operator": "Київський метрополітен",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "115",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "no",
+    "wikidata": "Q1851611",
+    "wikipedia": "uk:Шулявська (станція метро)"
+  }
+},
+{
+  "type": "node",
+  "id": 3806424761,
+  "lat": 50.4590925,
+  "lon": 30.4196880,
+  "tags": {
+    "line": "Святошинсько-Броварська",
+    "name": "Берестейська",
+    "name:en": "Beresteiska",
+    "name:ru": "Берестейская",
+    "name:uk": "Берестейська",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "old_name": "Жовтнева",
+    "operator": "Київський метрополітен",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "114",
+    "start_date": "5-11-1971",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "no",
+    "wikidata": "Q1926240",
+    "wikipedia": "uk:Берестейська (станція метро)"
+  }
+},
+{
+  "type": "node",
+  "id": 3806440513,
+  "lat": 50.4585958,
+  "lon": 30.4042048,
+  "tags": {
+    "line": "Святошинсько-Броварська",
+    "name": "Нивки",
+    "name:en": "Nyvky",
+    "name:ru": "Нивки",
+    "name:uk": "Нивки",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "operator": "Київський метрополітен",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "113",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "no",
+    "wikidata": "Q2293785",
+    "wikipedia": "uk:Нивки (станція метро)"
+  }
+},
+{
+  "type": "node",
+  "id": 3806462121,
+  "lat": 50.4561717,
+  "lon": 30.3658729,
+  "tags": {
+    "covered": "yes",
+    "fee": "yes",
+    "internet_access": "no",
+    "line": "Святошинсько-Броварська",
+    "name": "Житомирська",
+    "name:en": "Zhytomyrska",
+    "name:ru": "Житомирская",
+    "name:uk": "Житомирська",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "opening_hours": "Mo-Su 05:45-22:27",
+    "operator": "Київський метрополітен",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "111",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "no",
+    "wikidata": "Q2386553",
+    "wikipedia": "uk:Житомирська (станція метро)"
+  }
+},
+{
+  "type": "node",
+  "id": 3806504759,
+  "lat": 50.4647043,
+  "lon": 30.3550833,
+  "tags": {
+    "covered": "yes",
+    "int_name": "Akademmistechko",
+    "layer": "-2",
+    "line": "Святошинсько-Броварська",
+    "name": "Академмістечко",
+    "name:en": "Akademmistechko",
+    "name:ru": "Академгородок",
+    "name:uk": "Академмістечко",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "operator": "Київський метрополітен",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "110",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "no",
+    "wikidata": "Q672013",
+    "wikipedia": "uk:Академмістечко (станція метро)"
+  }
+},
+{
+  "type": "node",
+  "id": 3807314558,
+  "lat": 50.4528310,
+  "lon": 30.5945919,
+  "tags": {
+    "name": "ТП-7455",
+    "name:uk": "ТП-7455",
+    "operator": "Київенерго",
+    "power": "substation",
+    "ref": "7455",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 3807395059,
+  "lat": 50.4512465,
+  "lon": 30.5978182,
+  "tags": {
+    "name": "ТП-7508",
+    "name:uk": "ТП-7508",
+    "power": "substation",
+    "ref": "7508",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 3815631761,
+  "lat": 50.4686409,
+  "lon": 30.5823239,
+  "tags": {
+    "name": "КТП-5788",
+    "name:uk": "КТП-5788",
+    "power": "substation",
+    "ref": "5788",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 3815686959,
+  "lat": 50.4701547,
+  "lon": 30.5806564,
+  "tags": {
+    "name": "КТП-1511",
+    "name:uk": "КТП-1511",
+    "power": "substation",
+    "ref": "1511",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 3815687057,
+  "lat": 50.4727689,
+  "lon": 30.5793509,
+  "tags": {
+    "name": "КТП-7420",
+    "name:uk": "КТП-7420",
+    "power": "substation",
+    "ref": "7420",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 3815855220,
+  "lat": 50.4691630,
+  "lon": 30.4138593,
+  "tags": {
+    "building": "yes",
+    "building:levels": "1",
+    "name": "ТП-1493",
+    "name:uk": "ТП-1493",
+    "operator": "Київенерго",
+    "power": "substation",
+    "ref": "1493",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 3817258690,
+  "lat": 50.4261013,
+  "lon": 30.4090614,
+  "tags": {
+    "esr:code": "322459",
+    "esr:user": "322459",
+    "express:code": "2200409",
+    "name": "Борщагівка-Технічна",
+    "name:en": "Borshchahivka-Tekhnichna",
+    "name:ru": "Борщаговка-Техническая",
+    "name:uk": "Борщагівка-Технічна",
+    "name:uk-Latn": "Borshchahivka-Tekhnichna",
+    "network": "Укрзалізниця",
+    "network:en": "Ukrainian Railways",
+    "network:short": "УЗ",
+    "network:uk": "Укрзалізниця",
+    "network:wikidata": "Q923337",
+    "operator": "Укрзалізниця",
+    "operator:en": "Ukrainian Railways",
+    "operator:short": "УЗ",
+    "operator:uk": "Укрзалізниця",
+    "operator:wikidata": "Q923337",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "uic_ref": "2200409",
+    "wikidata": "Q12084280",
+    "wikipedia": "uk:Борщагівка-Технічна"
+  }
+},
+{
+  "type": "node",
+  "id": 3831366663,
+  "lat": 50.4572291,
+  "lon": 30.3778174,
+  "tags": {
+    "building": "yes",
+    "building:levels": "1",
+    "fixme": "ref",
+    "power": "substation"
+  }
+},
+{
+  "type": "node",
+  "id": 3831366867,
+  "lat": 50.4563798,
+  "lon": 30.3834189,
+  "tags": {
+    "name": "ТП-4348",
+    "name:uk": "ТП-4348",
+    "operator": "Київенерго",
+    "power": "substation",
+    "ref": "4348",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 3831367364,
+  "lat": 50.4553205,
+  "lon": 30.3668997,
+  "tags": {
+    "building": "yes",
+    "building:levels": "1",
+    "building:material": "brick",
+    "name": "ТП-1498",
+    "name:uk": "ТП-1498",
+    "operator": "Київенерго",
+    "power": "substation",
+    "ref": "1498",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 3831367861,
+  "lat": 50.4553137,
+  "lon": 30.3775485,
+  "tags": {
+    "building": "yes",
+    "building:levels": "1",
+    "name": "ТП-3886",
+    "name:uk": "ТП-3886",
+    "operator": "Київенерго",
+    "power": "substation",
+    "ref": "3886",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 3858676081,
+  "lat": 50.5790087,
+  "lon": 30.4940323,
+  "tags": {
+    "description": "Станція не діє.",
+    "name": "Вишгород",
+    "name:uk": "Вишгород",
+    "network": "Укрзалізниця",
+    "operator": "Південно-Західна залізниця",
+    "railway": "halt",
+    "wikidata": "Q12089699",
+    "wikipedia": "uk:Вишгород (зупинний пункт)",
+    "working": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 3883726757,
+  "lat": 50.4663727,
+  "lon": 30.4461214,
+  "tags": {
+    "building": "yes",
+    "building:levels": "1",
+    "name": "ТП-1826",
+    "name:uk": "ТП-1826",
+    "operator": "Київенерго",
+    "power": "substation",
+    "ref": "1826",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 3895442375,
+  "lat": 50.3430833,
+  "lon": 30.3091895,
+  "tags": {
+    "addr:housenumber": "11",
+    "addr:street": "вулиця Шевченка",
+    "amenity": "hospital",
+    "name": "Амбулаторія",
+    "name:uk": "Амбулаторія"
+  }
+},
+{
+  "type": "node",
+  "id": 3916745115,
+  "lat": 50.4336097,
+  "lon": 30.6467782,
+  "tags": {
+    "entrance": "main",
+    "railway": "train_station_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 3949939683,
+  "lat": 50.4456112,
+  "lon": 30.5229613,
+  "tags": {
+    "location": "indoor",
+    "name": "ТП-183",
+    "name:uk": "ТП-183",
+    "operator": "Київенерго",
+    "power": "substation",
+    "ref": "183",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 4056927299,
+  "lat": 50.4573972,
+  "lon": 30.4076367,
+  "tags": {
+    "fixme": "check ref and name on ground",
+    "location": "indoor",
+    "name": "ТП-6351",
+    "name:uk": "ТП-6351",
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 4056927600,
+  "lat": 50.4555979,
+  "lon": 30.4054845,
+  "tags": {
+    "location": "indoor",
+    "name": "ТП-619",
+    "name:uk": "ТП-619",
+    "power": "substation",
+    "ref": "619",
+    "substation": "minor_distribution",
+    "voltage": "10000"
+  }
+},
+{
+  "type": "node",
+  "id": 4084749149,
+  "lat": 50.5556587,
+  "lon": 30.2137660,
+  "tags": {
+    "amenity": "hospital",
+    "name": "Сантален",
+    "name:uk": "Сантален",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 4086336590,
+  "lat": 50.5171768,
+  "lon": 30.2470744,
+  "tags": {
+    "addr:housenumber": "5",
+    "addr:street": "Центральна вулиця",
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Тубдиспансер",
+    "name:uk": "Тубдиспансер"
+  }
+},
+{
+  "type": "node",
+  "id": 4099185445,
+  "lat": 50.5434748,
+  "lon": 30.2695220,
+  "tags": {
+    "addr:city": "Ірпінь",
+    "addr:housenumber": "1",
+    "addr:street": "вулиця 11-та Лінія",
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Ірпінський військовий шпиталь",
+    "name:uk": "Ірпінський військовий шпиталь"
+  }
+},
+{
+  "type": "node",
+  "id": 4110522207,
+  "lat": 50.4578851,
+  "lon": 30.4288548,
+  "tags": {
+    "building": "yes",
+    "building:levels": "1",
+    "building:material": "brick",
+    "name": "ТП-2462",
+    "name:uk": "ТП-2462",
+    "operator": "Київенерго",
+    "power": "substation",
+    "ref": "2462",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 4110522309,
+  "lat": 50.4584141,
+  "lon": 30.4383286,
+  "tags": {
+    "building": "yes",
+    "building:levels": "1",
+    "building:material": "brick",
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 4110522310,
+  "lat": 50.4578037,
+  "lon": 30.4372727,
+  "tags": {
+    "building": "yes",
+    "building:levels": "1",
+    "building:material": "brick",
+    "name": "ТП-2880",
+    "name:uk": "ТП-2880",
+    "operator": "Київенерго",
+    "power": "substation",
+    "ref": "2880",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 4134152285,
+  "lat": 50.4380461,
+  "lon": 30.5198591,
+  "tags": {
+    "building": "yes",
+    "building:levels": "1",
+    "name": "ТП-700",
+    "name:uk": "ТП-700",
+    "operator": "Київенерго",
+    "power": "substation",
+    "ref": "700",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 4149383397,
+  "lat": 50.4707656,
+  "lon": 30.4390699,
+  "tags": {
+    "building": "yes",
+    "building:levels": "1",
+    "building:material": "brick",
+    "name": "ТП-2622",
+    "name:uk": "ТП-2622",
+    "power": "substation",
+    "ref": "2622",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 4149384889,
+  "lat": 50.4707335,
+  "lon": 30.4449786,
+  "tags": {
+    "building": "yes",
+    "building:levels": "1",
+    "building:material": "brick",
+    "name": "ТП-2244",
+    "name:uk": "ТП-2244",
+    "operator": "Київенерго",
+    "power": "substation",
+    "ref": "2244",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 4202965094,
+  "lat": 50.4509059,
+  "lon": 30.3813537,
+  "tags": {
+    "location": "indoor",
+    "power": "substation"
+  }
+},
+{
+  "type": "node",
+  "id": 4228730601,
+  "lat": 50.4345470,
+  "lon": 30.5070791,
+  "tags": {
+    "comment": "ТР-3;ТР-4",
+    "location": "indoor",
+    "name": "ТП-3747",
+    "name:uk": "ТП-3747",
+    "operator": "Київенерго",
+    "power": "substation",
+    "rating": "315 kVA",
+    "ref": "3747",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 4264705104,
+  "lat": 50.4280143,
+  "lon": 30.3629389,
+  "tags": {
+    "generator:method": "combustion",
+    "generator:source": "gas",
+    "power": "generator"
+  }
+},
+{
+  "type": "node",
+  "id": 4270196998,
+  "lat": 50.4309184,
+  "lon": 30.3661759,
+  "tags": {
+    "location": "indoor",
+    "operator": "Київенерго",
+    "power": "substation",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 4272974737,
+  "lat": 50.2615344,
+  "lon": 30.6427529,
+  "tags": {
+    "leisure": "marina",
+    "name": "YACHT CHARTER",
+    "name:uk": "YACHT CHARTER",
+    "seamark:harbour:category": "marina",
+    "seamark:type": "harbour"
+  }
+},
+{
+  "type": "node",
+  "id": 4307981797,
+  "lat": 50.4764488,
+  "lon": 30.4035404,
+  "tags": {
+    "building": "yes",
+    "building:levels": "1",
+    "name": "ТП-1984",
+    "name:uk": "ТП-1984",
+    "power": "substation",
+    "ref": "1984",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 4325419793,
+  "lat": 50.4691524,
+  "lon": 30.5144298,
+  "tags": {
+    "name": "ТП-479",
+    "name:uk": "ТП-479",
+    "operator": "Київенерго",
+    "power": "substation",
+    "ref": "479",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 4326087206,
+  "lat": 50.4718939,
+  "lon": 30.5082260,
+  "tags": {
+    "building": "yes",
+    "building:levels": "1",
+    "building:material": "brick",
+    "name": "ТП-3388",
+    "name:uk": "ТП-3388",
+    "operator": "Київенерго",
+    "power": "substation",
+    "ref": "3388",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 4328361295,
+  "lat": 50.4907143,
+  "lon": 30.4038605,
+  "tags": {
+    "note": "КТП",
+    "power": "substation"
+  }
+},
+{
+  "type": "node",
+  "id": 4328509636,
+  "lat": 50.4799872,
+  "lon": 30.4469235,
+  "tags": {
+    "generator:source": "gas",
+    "power": "generator"
+  }
+},
+{
+  "type": "node",
+  "id": 4328509637,
+  "lat": 50.4799087,
+  "lon": 30.4467706,
+  "tags": {
+    "generator:source": "oil",
+    "power": "generator"
+  }
+},
+{
+  "type": "node",
+  "id": 4329806497,
+  "lat": 50.4568317,
+  "lon": 30.6238463,
+  "tags": {
+    "amenity": "hospital",
+    "email": "opik.center@gmail.com",
+    "healthcare": "hospital",
+    "name": "Опіковий центр",
+    "name:en": "Burn Center",
+    "name:ru": "Ожоговый центр",
+    "name:uk": "Опіковий центр",
+    "phone": "+380 44 292 1163",
+    "website": "http://opik-center.com.ua"
+  }
+},
+{
+  "type": "node",
+  "id": 4330748990,
+  "lat": 50.3492948,
+  "lon": 30.4539744,
+  "tags": {
+    "addr:housenumber": "1",
+    "addr:postcode": "03027",
+    "addr:street": "Озерна вулиця",
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Новосілківська амбулаторія",
+    "name:uk": "Новосілківська амбулаторія",
+    "phone": "+380 44 526 8741"
+  }
+},
+{
+  "type": "node",
+  "id": 4357249192,
+  "lat": 50.4351024,
+  "lon": 30.5107890,
+  "tags": {
+    "location": "indoor",
+    "name": "ТП-6361",
+    "name:uk": "ТП-6361",
+    "power": "substation",
+    "rating": "2000 kVA",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 4365558093,
+  "lat": 50.4836559,
+  "lon": 30.4241452,
+  "tags": {
+    "name": "КТП-7377",
+    "name:uk": "КТП-7377",
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 4385321604,
+  "lat": 50.3858521,
+  "lon": 30.4843821,
+  "tags": {
+    "building": "yes",
+    "building:levels": "1",
+    "building:material": "brick",
+    "name": "ТП-1933",
+    "name:uk": "ТП-1933",
+    "power": "substation",
+    "ref": "1933",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 4385321725,
+  "lat": 50.3880938,
+  "lon": 30.4840448,
+  "tags": {
+    "location": "indoor",
+    "name": "ТП-2134",
+    "name:uk": "ТП-2134",
+    "power": "substation",
+    "ref": "2134",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 4385385603,
+  "lat": 50.3886406,
+  "lon": 30.4831682,
+  "tags": {
+    "building": "yes",
+    "building:levels": "1",
+    "building:material": "brick",
+    "name": "ТП-4175",
+    "name:uk": "ТП-4175",
+    "power": "substation",
+    "ref": "4175",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 4385399598,
+  "lat": 50.3863833,
+  "lon": 30.4829764,
+  "tags": {
+    "building": "yes",
+    "building:levels": "1",
+    "building:material": "brick",
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 4402672390,
+  "lat": 50.4613594,
+  "lon": 30.4928732,
+  "tags": {
+    "building": "yes",
+    "building:levels": "1",
+    "building:material": "brick",
+    "name": "РП-8198",
+    "name:uk": "РП-8198",
+    "power": "substation",
+    "ref": "8198",
+    "substation": "distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 4404250190,
+  "lat": 50.4564239,
+  "lon": 30.4862512,
+  "tags": {
+    "location": "indoor",
+    "power": "substation",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 4429019742,
+  "lat": 50.4529823,
+  "lon": 30.4904795,
+  "tags": {
+    "name": "ТП-5791",
+    "name:uk": "ТП-5791",
+    "power": "substation",
+    "ref": "5791",
+    "substation": "minor_distribution",
+    "voltage": "400"
+  }
+},
+{
+  "type": "node",
+  "id": 4436803796,
+  "lat": 50.4494443,
+  "lon": 30.4521939,
+  "tags": {
+    "building": "service",
+    "building:levels": "1",
+    "name": "ТП-640",
+    "name:uk": "ТП-640",
+    "power": "substation",
+    "ref": "640",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 4436803803,
+  "lat": 50.4473552,
+  "lon": 30.4482499,
+  "tags": {
+    "building": "yes",
+    "building:levels": "1",
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 4441952789,
+  "lat": 50.5603293,
+  "lon": 30.1394232,
+  "tags": {
+    "addr:housenumber": "4",
+    "addr:postcode": "08296",
+    "addr:street": "Паркова вулиця",
+    "amenity": "hospital",
+    "email": "kopnl2_vorzel@ukr.net",
+    "emergency": "yes",
+    "fax": "+380 (4597) 4 64 11",
+    "healthcare": "hospital",
+    "healthcare:speciality": "psychiatry",
+    "name": "Київська обласна психоневрологічна лікарня №2",
+    "name:uk": "Київська обласна психоневрологічна лікарня №2",
+    "opening_hours": "24/7",
+    "operator": "КНП КОР “КОПНЛ №2”",
+    "operator:type": "public",
+    "phone": "+380 (66) 351 90 41",
+    "website": "https://kopnl.com.ua/"
+  }
+},
+{
+  "type": "node",
+  "id": 4461927098,
+  "lat": 50.4610613,
+  "lon": 30.4922754,
+  "tags": {
+    "name": "РП-533",
+    "name:uk": "РП-533",
+    "power": "substation",
+    "ref": "533",
+    "substation": "distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 4602870975,
+  "lat": 50.3894407,
+  "lon": 30.3825832,
+  "tags": {
+    "addr:housenumber": "1-А",
+    "addr:street": "Вітянська вулиця",
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Асклепий (мед.центр)",
+    "name:uk": "Асклепий (мед.центр)"
+  }
+},
+{
+  "type": "node",
+  "id": 4685226096,
+  "lat": 50.4120772,
+  "lon": 30.4314658,
+  "tags": {
+    "addr:housenumber": "101-Б",
+    "addr:street": "Новопольова вулиця",
+    "esr:user": "320505",
+    "int_name": "Kyiv-Volynskyi",
+    "name": "Київ-Волинський",
+    "name:en": "Kyiv-Volynskyi",
+    "name:ru": "Киев-Волынский",
+    "name:uk": "Київ-Волинський",
+    "network": "Укрзалізниця",
+    "network:en": "Ukrainian Railways",
+    "network:short": "УЗ",
+    "network:uk": "Укрзалізниця",
+    "network:wikidata": "Q923337",
+    "operator": "Укрзалізниця",
+    "operator:en": "Ukrainian Railways",
+    "operator:short": "УЗ",
+    "operator:uk": "Укрзалізниця",
+    "operator:wikidata": "Q923337",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "uic_ref": "2200003",
+    "wikidata": "Q3406762",
+    "wikipedia": "uk:Київ-Волинський"
+  }
+},
+{
+  "type": "node",
+  "id": 4685226097,
+  "lat": 50.4392776,
+  "lon": 30.6119629,
+  "tags": {
+    "addr:housenumber": "1",
+    "addr:street": "Вифлеємська вулиця",
+    "esr:code": "320064",
+    "esr:user": "320064",
+    "express:code": "2201180",
+    "int_name": "Kyivska Rusanivka",
+    "name": "Русанівка",
+    "name:de": "Rußaniwka",
+    "name:en": "Rusanivka",
+    "name:uk": "Русанівка",
+    "name:uk-Latn": "Rusanivka",
+    "network": "Укрзалізниця",
+    "network:en": "Ukrainian Railways",
+    "network:short": "УЗ",
+    "network:uk": "Укрзалізниця",
+    "network:wikidata": "Q923337",
+    "old_name": "Київська Русанівка",
+    "old_name:en": "Kyivska Rusanivka",
+    "old_name:uk": "Київська Русанівка",
+    "operator": "Південно-Західна залізниця",
+    "operator:en": "Ukrainian Railways",
+    "operator:short": "УЗ",
+    "operator:uk": "Укрзалізниця",
+    "operator:wikidata": "Q923337",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes",
+    "uic_ref": "2201180",
+    "wikidata": "Q4220146",
+    "wikipedia": "uk:Русанівка (зупинний пункт)"
+  }
+},
+{
+  "type": "node",
+  "id": 4685226100,
+  "lat": 50.4620789,
+  "lon": 30.4171028,
+  "tags": {
+    "addr:housenumber": "82-Д",
+    "addr:street": "Берестейський проспект",
+    "esr:code": "320647",
+    "esr:user": "320647",
+    "express:code": "2201295",
+    "name": "Берестейська",
+    "name:en": "Beresteiska",
+    "name:uk": "Берестейська",
+    "name:uk-Latn": "Beresteiska",
+    "network": "Укрзалізниця",
+    "network:en": "Ukrainian Railways",
+    "network:short": "УЗ",
+    "network:uk": "Укрзалізниця",
+    "network:wikidata": "Q923337",
+    "old_name": "Рубежівський",
+    "old_name:en": "Rubezhivskyi",
+    "old_name:uk": "Рубежівський",
+    "operator": "Укрзалізниця",
+    "operator:en": "Ukrainian Railways",
+    "operator:short": "УЗ",
+    "operator:uk": "Укрзалізниця",
+    "operator:wikidata": "Q923337",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes",
+    "uic_ref": "2201295",
+    "wikidata": "Q4399037",
+    "wikipedia": "uk:Берестейська (зупинний пункт)"
+  }
+},
+{
+  "type": "node",
+  "id": 4685226101,
+  "lat": 50.4757478,
+  "lon": 30.4298671,
+  "tags": {
+    "esr:user": "320632",
+    "int_name": "Syrets",
+    "name": "Сирець",
+    "name:en": "Syrets",
+    "name:ru": "Сырец",
+    "name:uk": "Сирець",
+    "network": "Укрзалізниця",
+    "network:en": "Ukrainian Railways",
+    "network:short": "УЗ",
+    "network:short:uk": "УЗ",
+    "network:short:uk-Latn": "UZ",
+    "network:uk": "Укрзалізниця",
+    "network:uk-Latn": "Ukrzaliznytsia",
+    "network:wikidata": "Q923337",
+    "operator": "Укрзалізниця",
+    "operator:en": "Ukrainian Railways",
+    "operator:short": "УЗ",
+    "operator:short:uk": "УЗ",
+    "operator:short:uk-Latn": "UZ",
+    "operator:uk": "Укрзалізниця",
+    "operator:uk-Latn": "Ukrzaliznytsia",
+    "operator:wikidata": "Q923337",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes",
+    "uic_ref": "2201279",
+    "wheelchair": "limited",
+    "wikidata": "Q4448027"
+  }
+},
+{
+  "type": "node",
+  "id": 4704500480,
+  "lat": 50.5111363,
+  "lon": 30.2290374,
+  "tags": {
+    "addr:housenumber": "31",
+    "addr:street": "Пушкінська вулиця",
+    "amenity": "hospital",
+    "name": "Кардіологічний центр",
+    "name:uk": "Кардіологічний центр"
+  }
+},
+{
+  "type": "node",
+  "id": 4747735748,
+  "lat": 50.4400370,
+  "lon": 30.2812790,
+  "tags": {
+    "amenity": "hospital",
+    "name": "Чайка",
+    "name:uk": "Чайка",
+    "phone": "+380 44 593 4081"
+  }
+},
+{
+  "type": "node",
+  "id": 4753035471,
+  "lat": 50.4460782,
+  "lon": 30.5255302,
+  "tags": {
+    "building": "yes",
+    "building:levels": "1",
+    "power": "substation"
+  }
+},
+{
+  "type": "node",
+  "id": 4762911230,
+  "lat": 50.4587207,
+  "lon": 30.5243006,
+  "tags": {
+    "baby_feeding": "no",
+    "funicular": "yes",
+    "name": "Нижня станція",
+    "name:de": "Talstation",
+    "name:en": "Lower station",
+    "name:uk": "Нижня станція",
+    "network": "Київський фунікулер",
+    "operator": "Київпастранс",
+    "payment:contactless": "yes",
+    "payment:credit_cards": "yes",
+    "public_transport": "station",
+    "railway": "station",
+    "station": "funicular",
+    "tourism": "attraction",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 4764470693,
+  "lat": 50.4627785,
+  "lon": 30.4366871,
+  "tags": {
+    "building": "yes",
+    "building:levels": "1",
+    "name": "ТП-2067",
+    "name:uk": "ТП-2067",
+    "power": "substation",
+    "ref": "2067",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 4807814052,
+  "lat": 50.4694342,
+  "lon": 30.4643295,
+  "tags": {
+    "power": "substation"
+  }
+},
+{
+  "type": "node",
+  "id": 4813820404,
+  "lat": 50.4499140,
+  "lon": 30.4778008,
+  "tags": {
+    "building": "service",
+    "building:levels": "1",
+    "building:material": "brick",
+    "name": "ТП-2495",
+    "name:uk": "ТП-2495",
+    "power": "substation",
+    "ref": "2495",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 4813820412,
+  "lat": 50.4508038,
+  "lon": 30.4725012,
+  "tags": {
+    "building": "yes",
+    "building:levels": "1",
+    "building:material": "brick",
+    "name": "РП-76",
+    "name:uk": "РП-76",
+    "power": "substation",
+    "ref": "76",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 4813820417,
+  "lat": 50.4510825,
+  "lon": 30.4708530,
+  "tags": {
+    "building": "yes",
+    "building:levels": "1",
+    "building:material": "brick",
+    "name": "ТП-2757",
+    "name:uk": "ТП-2757",
+    "power": "substation",
+    "ref": "2757",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 4813820420,
+  "lat": 50.4519645,
+  "lon": 30.4688788,
+  "tags": {
+    "building": "yes",
+    "building:levels": "1",
+    "building:material": "brick",
+    "name": "ТП-1163",
+    "name:uk": "ТП-1163",
+    "power": "substation",
+    "ref": "1163",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 4813821031,
+  "lat": 50.4503376,
+  "lon": 30.4751565,
+  "tags": {
+    "name": "ТП-2756",
+    "name:uk": "ТП-2756",
+    "power": "substation",
+    "ref": "2756",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 4830968927,
+  "lat": 50.4532023,
+  "lon": 30.3294309,
+  "tags": {
+    "addr:housenumber": "7-Б",
+    "addr:street": "Берестейське шосе",
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Медичний Центр Ембріотек",
+    "name:ru": "Медицинский Центр Эмбриотек",
+    "name:uk": "Медичний Центр Ембріотек",
+    "website": "http://www.embryotech.com.ua/"
+  }
+},
+{
+  "type": "node",
+  "id": 4840237441,
+  "lat": 50.4588044,
+  "lon": 30.3968667,
+  "tags": {
+    "building": "yes",
+    "building:levels": "1",
+    "name": "ТП-1744",
+    "name:uk": "ТП-1744",
+    "power": "substation",
+    "ref": "1744",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 4840237444,
+  "lat": 50.4555000,
+  "lon": 30.3846945,
+  "tags": {
+    "building": "yes",
+    "building:levels": "1",
+    "name": "ТП-5012",
+    "name:uk": "ТП-5012",
+    "power": "substation",
+    "ref": "5012",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 4854324085,
+  "lat": 50.4385270,
+  "lon": 30.3568140,
+  "tags": {
+    "location": "indoor",
+    "name": "ТП-6984",
+    "name:uk": "ТП-6984",
+    "power": "substation",
+    "ref": "6984",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 4854324091,
+  "lat": 50.4398789,
+  "lon": 30.3511376,
+  "tags": {
+    "location": "platform",
+    "name": "ТП-1546",
+    "name:uk": "ТП-1546",
+    "power": "substation",
+    "ref": "1546",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 4854324096,
+  "lat": 50.4388674,
+  "lon": 30.3559616,
+  "tags": {
+    "name": "КТП",
+    "name:uk": "КТП",
+    "power": "substation",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 4854324115,
+  "lat": 50.4399667,
+  "lon": 30.3505765,
+  "tags": {
+    "location": "platform",
+    "name": "КТП-746",
+    "name:uk": "КТП-746",
+    "power": "substation",
+    "ref": "746",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 4885770073,
+  "lat": 50.4366172,
+  "lon": 30.4503939,
+  "tags": {
+    "building": "yes",
+    "building:levels": "1",
+    "power": "substation"
+  }
+},
+{
+  "type": "node",
+  "id": 4885770091,
+  "lat": 50.4351128,
+  "lon": 30.4528333,
+  "tags": {
+    "building": "yes",
+    "building:levels": "1",
+    "name": "ТП-1670",
+    "name:uk": "ТП-1670",
+    "power": "substation",
+    "ref": "1670",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 4885770107,
+  "lat": 50.4336634,
+  "lon": 30.4510736,
+  "tags": {
+    "building": "yes",
+    "building:levels": "1",
+    "building:material": "brick",
+    "name": "ТП-1668",
+    "name:uk": "ТП-1668",
+    "power": "substation",
+    "ref": "1668",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 4885770112,
+  "lat": 50.4358878,
+  "lon": 30.4513660,
+  "tags": {
+    "building": "yes",
+    "building:levels": "1",
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 4910684971,
+  "lat": 50.4599631,
+  "lon": 30.3714987,
+  "tags": {
+    "building": "yes",
+    "building:levels": "1",
+    "building:material": "brick",
+    "name": "ТП-3264",
+    "name:uk": "ТП-3264",
+    "power": "substation",
+    "ref": "3264",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 4911041596,
+  "lat": 50.4627143,
+  "lon": 30.3811236,
+  "tags": {
+    "building": "yes",
+    "building:levels": "1",
+    "name": "ТП-1485",
+    "name:uk": "ТП-1485",
+    "power": "substation",
+    "ref": "1485",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 4922108283,
+  "lat": 50.3815572,
+  "lon": 30.4730076,
+  "tags": {
+    "location": "indoor",
+    "name": "ТП-3662",
+    "name:uk": "ТП-3662",
+    "power": "substation",
+    "ref": "3662",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 4988886323,
+  "lat": 50.4851023,
+  "lon": 30.3673535,
+  "tags": {
+    "name": "КТП-6642",
+    "name:uk": "Ктп-6642",
+    "power": "substation",
+    "ref": "6642",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 5140116348,
+  "lat": 50.4631662,
+  "lon": 30.6341482,
+  "tags": {
+    "building": "yes",
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 5233489724,
+  "lat": 50.3888762,
+  "lon": 30.4847930,
+  "tags": {
+    "addr:housenumber": "33",
+    "addr:street": "вулиця Юлії Здановської",
+    "amenity": "hospital",
+    "healthcare": "hospital"
+  }
+},
+{
+  "type": "node",
+  "id": 5248944101,
+  "lat": 50.4529154,
+  "lon": 30.3541343,
+  "tags": {
+    "location": "indoor",
+    "name": "ТП-7277",
+    "name:uk": "ТП-7277",
+    "power": "substation",
+    "ref": "7277",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 5267935777,
+  "lat": 50.3933354,
+  "lon": 30.4882230,
+  "tags": {
+    "name": "Васильківська",
+    "name:en": "Vasylkivska",
+    "name:uk": "Васильківська",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "opening_hours": "05:50-22:32",
+    "operator": "Київський метрополітен",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "224",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "yes",
+    "wikidata": "Q2639661",
+    "wikipedia": "uk:Васильківська (станція метро)"
+  }
+},
+{
+  "type": "node",
+  "id": 5267935778,
+  "lat": 50.4382891,
+  "lon": 30.5208694,
+  "tags": {
+    "alt_name:en": "Palace of Sports",
+    "int_name": "Palats Sportu",
+    "name": "Палац спорту",
+    "name:de": "Sportpalast",
+    "name:en": "Palats Sportu",
+    "name:es": "Palacio de los deportes",
+    "name:fr": "Palais des Sports",
+    "name:ja": "キエフ・スポーツ宮殿",
+    "name:nl": "Sportpaleis",
+    "name:pl": "Pałac Sportu",
+    "name:ro": "Palatul Sporturilor",
+    "name:ru": "Дворец спорта",
+    "name:sv": "Sportpalatset",
+    "name:uk": "Палац спорту",
+    "name:uk-Latn": "Palats Sportu",
+    "name:zh": "体育宫",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "operator": "Київський метрополітен",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "315",
+    "station": "subway",
+    "subway": "yes",
+    "wikidata": "Q2395573",
+    "wikipedia": "uk:Палац спорту (станція метро)"
+  }
+},
+{
+  "type": "node",
+  "id": 5267935779,
+  "lat": 50.3942003,
+  "lon": 30.6051576,
+  "tags": {
+    "name": "Славутич",
+    "name:en": "Slavutych",
+    "name:es": "Slavutych",
+    "name:ru": "Славутич",
+    "name:uk": "Славутич",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "operator": "Київський метрополітен",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "321",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "no",
+    "wikidata": "Q2098439",
+    "wikipedia": "uk:Славутич (станція метро)"
+  }
+},
+{
+  "type": "node",
+  "id": 5267935780,
+  "lat": 50.3951862,
+  "lon": 30.6162493,
+  "tags": {
+    "name": "Осокорки",
+    "name:en": "Osokorky",
+    "name:es": "Osokorky",
+    "name:uk": "Осокорки",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "operator": "Київський метрополітен",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "322",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "no",
+    "wikidata": "Q2395489",
+    "wikipedia": "uk:Осокорки (станція метро)"
+  }
+},
+{
+  "type": "node",
+  "id": 5267935781,
+  "lat": 50.4763888,
+  "lon": 30.4308310,
+  "tags": {
+    "name": "Сирець",
+    "name:en": "Syrets",
+    "name:ru": "Сырец",
+    "name:uk": "Сирець",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "operator": "Київський метрополітен",
+    "public_transport": "station",
+    "railway": "station",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "no",
+    "wikidata": "Q2635604",
+    "wikipedia": "uk:Сирець (станція метро)"
+  }
+},
+{
+  "type": "node",
+  "id": 5267955452,
+  "lat": 50.4094593,
+  "lon": 30.6961767,
+  "tags": {
+    "name": "Червоний Хутір",
+    "name:en": "Chervonyi Khutir",
+    "name:es": "Chervony Jutir",
+    "name:ru": "Красный хутор",
+    "name:uk": "Червоний Хутір",
+    "name:uk-Latn": "Chervonyi Khutir",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "operator": "Київський метрополітен",
+    "public_transport": "station",
+    "railway": "station",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "yes",
+    "wikidata": "Q2395585",
+    "wikipedia": "uk:Червоний Хутір (станція метро)"
+  }
+},
+{
+  "type": "node",
+  "id": 5267955453,
+  "lat": 50.3824987,
+  "lon": 30.4775836,
+  "tags": {
+    "departures_board": "realtime",
+    "layer": "-2",
+    "name": "Виставковий центр",
+    "name:en": "Vystavkovyi Tsentr",
+    "name:uk": "Виставковий центр",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "opening_hours": "Mo-Su 05:53-22:28",
+    "operator": "Київський метрополітен",
+    "passenger_information_display": "yes",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "225",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "yes",
+    "wikidata": "Q4837469",
+    "wikipedia": "uk:Виставковий центр (станція метро)"
+  }
+},
+{
+  "type": "node",
+  "id": 5267955454,
+  "lat": 50.3765534,
+  "lon": 30.4690454,
+  "tags": {
+    "alt_name:en": "Hippodrome",
+    "name": "Іподром",
+    "name:en": "Ipodrom",
+    "name:ru": "Ипподром",
+    "name:uk": "Іподром",
+    "name:uk-Latn": "Ipodrom",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "opening_hours": "Mo-Su 05:52-22:47",
+    "operator": "Київський метрополітен",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "226",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "yes",
+    "wikidata": "Q2070993",
+    "wikipedia": "uk:Іподром (станція метро)"
+  }
+},
+{
+  "type": "node",
+  "id": 5267955455,
+  "lat": 50.3669054,
+  "lon": 30.4538209,
+  "tags": {
+    "name": "Теремки",
+    "name:en": "Teremky",
+    "name:ru": "Теремки",
+    "name:uk": "Теремки",
+    "name:uk-Latn": "Teremky",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "opening_hours": "05:53-22:25",
+    "operator": "Київський метрополітен",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "227",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "yes",
+    "wikidata": "Q4455579",
+    "wikipedia": "uk:Теремки (станція метро)"
+  }
+},
+{
+  "type": "node",
+  "id": 5267955456,
+  "lat": 50.4737337,
+  "lon": 30.4487773,
+  "tags": {
+    "name": "Дорогожичі",
+    "name:en": "Dorohozhychi",
+    "name:ru": "Дорогожичи",
+    "name:uk": "Дорогожичі",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "operator": "Київський метрополітен",
+    "public_transport": "station",
+    "railway": "station",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "no",
+    "wikidata": "Q2107939",
+    "wikipedia": "uk:Дорогожичі (станція метро)"
+  }
+},
+{
+  "type": "node",
+  "id": 5267993444,
+  "lat": 50.4350741,
+  "lon": 30.4016000,
+  "tags": {
+    "bench": "yes",
+    "esr:code": "322445",
+    "esr:user": "322445",
+    "express:code": "2201150",
+    "name": "Борщагівка",
+    "name:en": "Borshchahivka",
+    "name:ru": "Борщаговка",
+    "name:uk": "Борщагівка",
+    "name:uk-Latn": "Borshchahivka",
+    "network": "Укрзалізниця",
+    "network:en": "Ukrainian Railways",
+    "network:short": "УЗ",
+    "network:uk": "Укрзалізниця",
+    "network:wikidata": "Q923337",
+    "operator": "Укрзалізниця",
+    "operator:en": "Ukrainian Railways",
+    "operator:short": "УЗ",
+    "operator:uk": "Укрзалізниця",
+    "operator:wikidata": "Q923337",
+    "public_transport": "station",
+    "railway": "station",
+    "shelter": "yes",
+    "train": "yes",
+    "uic_ref": "2201150",
+    "wheelchair": "no",
+    "wikidata": "Q4094863"
+  }
+},
+{
+  "type": "node",
+  "id": 5268007579,
+  "lat": 50.4977161,
+  "lon": 30.4598656,
+  "tags": {
+    "esr:code": "320628",
+    "esr:user": "320628",
+    "express:code": "2201170",
+    "name": "Пріорка",
+    "name:en": "Priorka",
+    "name:uk": "Пріорка",
+    "name:uk-Latn": "Priorka",
+    "network": "Укрзалізниця",
+    "network:en": "Ukrainian Railways",
+    "network:short": "УЗ",
+    "network:short:uk": "УЗ",
+    "network:short:uk-Latn": "UZ",
+    "network:uk": "Укрзалізниця",
+    "network:uk-Latn": "Ukrzaliznytsia",
+    "network:wikidata": "Q923337",
+    "old_name": "Вишгородська",
+    "old_name:en": "Vyshhorodska",
+    "old_name:uk": "Вишгородська",
+    "operator": "Укрзалізниця",
+    "operator:en": "Ukrainian Railways",
+    "operator:short": "УЗ",
+    "operator:short:uk": "УЗ",
+    "operator:short:uk-Latn": "UZ",
+    "operator:uk": "Укрзалізниця",
+    "operator:uk-Latn": "Ukrzaliznytsia",
+    "operator:wikidata": "Q923337",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes",
+    "uic_ref": "2201170",
+    "wikidata": "Q4129951",
+    "wikipedia": "uk:Пріорка (зупинний пункт)"
+  }
+},
+{
+  "type": "node",
+  "id": 5299648658,
+  "lat": 50.5131735,
+  "lon": 30.5006360,
+  "tags": {
+    "name": "ТП-8051",
+    "name:uk": "ТП-8051",
+    "operator": "Київенерго",
+    "power": "substation",
+    "rating": "2000 kVA",
+    "ref": "8051",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 5299648690,
+  "lat": 50.5128063,
+  "lon": 30.5016464,
+  "tags": {
+    "name": "ТП-5699",
+    "name:uk": "ТП-5699",
+    "operator": "Київенерго",
+    "power": "substation",
+    "rating": "1260 kVA",
+    "ref": "5699",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 5300692559,
+  "lat": 50.4989518,
+  "lon": 30.3639401,
+  "tags": {
+    "location": "container",
+    "name": "КТП-7936",
+    "name:uk": "КТП-7936",
+    "power": "substation",
+    "ref": "7936",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 5300692567,
+  "lat": 50.4955904,
+  "lon": 30.3606293,
+  "tags": {
+    "location": "indoor",
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 5300692593,
+  "lat": 50.4957436,
+  "lon": 30.3641162,
+  "tags": {
+    "location": "indoor",
+    "name": "ТП-8294",
+    "name:uk": "ТП-8294",
+    "power": "substation",
+    "ref": "8294",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 5302318615,
+  "lat": 50.5062170,
+  "lon": 30.5127363,
+  "tags": {
+    "name": "ТП-5999",
+    "name:uk": "ТП-5999",
+    "operator": "Київенерго",
+    "power": "substation",
+    "rating": "2000 kVA",
+    "ref": "5999",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 5323518978,
+  "lat": 50.4454617,
+  "lon": 30.4261379,
+  "tags": {
+    "power": "substation",
+    "ref": "2206"
+  }
+},
+{
+  "type": "node",
+  "id": 5336883122,
+  "lat": 50.4305715,
+  "lon": 30.5190822,
+  "tags": {
+    "addr:housenumber": "10 к7",
+    "addr:street": "Ділова вулиця",
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "healthcare:speciality": "trauma",
+    "name": "Центр спортивної травматології",
+    "name:en": "Sport Traumatology Center",
+    "name:ru": "Центр спортивной травматологии",
+    "name:uk": "Центр спортивної травматології",
+    "official_name": "Центр спортивної травматології і відновлювальної медицини",
+    "phone": "+380 44 287 2034",
+    "website": "https://www.sportmed.com.ua/"
+  }
+},
+{
+  "type": "node",
+  "id": 5362524991,
+  "lat": 50.5015331,
+  "lon": 30.4982231,
+  "tags": {
+    "int_name": "Obolon",
+    "name": "Оболонь",
+    "name:en": "Obolon",
+    "name:ru": "Оболонь",
+    "name:uk": "Оболонь",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "opening_hours": "Mo-Su 05:29-22:29",
+    "operator": "Київський метрополітен",
+    "public_transport": "station",
+    "railway": "station",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "no",
+    "wikidata": "Q2635594",
+    "wikipedia": "uk:Оболонь (станція метро)"
+  }
+},
+{
+  "type": "node",
+  "id": 5362526369,
+  "lat": 50.5226701,
+  "lon": 30.4988991,
+  "tags": {
+    "name": "Героїв Дніпра",
+    "name:en": "Heroiv Dnipra",
+    "name:uk": "Героїв Дніпра",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "opening_hours": "Mo-Su 05:22-22:25",
+    "operator": "Київський метрополітен",
+    "public_transport": "station",
+    "railway": "station",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "no",
+    "wikidata": "Q1935961",
+    "wikipedia": "uk:Героїв Дніпра (станція метро)"
+  }
+},
+{
+  "type": "node",
+  "id": 5368724274,
+  "lat": 50.5134151,
+  "lon": 30.5006387,
+  "tags": {
+    "name": "ТП-8050",
+    "name:uk": "ТП-8050",
+    "operator": "Київенерго",
+    "power": "substation",
+    "rating": "2000 kVA",
+    "ref": "8050",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 5715590711,
+  "lat": 50.4264988,
+  "lon": 30.5160505,
+  "tags": {
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 5803034033,
+  "lat": 50.4395671,
+  "lon": 30.3997198,
+  "tags": {
+    "power": "substation"
+  }
+},
+{
+  "type": "node",
+  "id": 5803034090,
+  "lat": 50.4494638,
+  "lon": 30.3945525,
+  "tags": {
+    "power": "substation"
+  }
+},
+{
+  "type": "node",
+  "id": 5872646957,
+  "lat": 50.4407432,
+  "lon": 30.4820448,
+  "tags": {
+    "name": "ТП-4613",
+    "name:uk": "ТП-4613",
+    "power": "substation",
+    "ref": "4613",
+    "substation": "minor_distribution",
+    "voltage": "400"
+  }
+},
+{
+  "type": "node",
+  "id": 5919635385,
+  "lat": 50.5392866,
+  "lon": 30.1398072,
+  "tags": {
+    "amenity": "hospital",
+    "name": "Санаторій \"Україна\"",
+    "name:uk": "Санаторій \"Україна\""
+  }
+},
+{
+  "type": "node",
+  "id": 5961799084,
+  "lat": 50.4499063,
+  "lon": 30.5162300,
+  "tags": {
+    "name": "РП-225",
+    "name:uk": "РП-225",
+    "power": "substation",
+    "ref": "225",
+    "substation": "distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 6049276283,
+  "lat": 50.6092856,
+  "lon": 30.7830555,
+  "tags": {
+    "generator:output:electricity": "1 MW",
+    "generator:source": "biogas",
+    "power": "generator"
+  }
+},
+{
+  "type": "node",
+  "id": 6255645086,
+  "lat": 50.4487767,
+  "lon": 30.6621395,
+  "tags": {
+    "esr:user": "321000",
+    "name": "Київ-Ліски",
+    "name:ru": "Киев-Лиски",
+    "name:uk": "Київ-Ліски",
+    "network": "Укрзалізниця",
+    "network:en": "Ukrainian Railways",
+    "network:uk": "Укрзалізниця",
+    "network:wikidata": "Q923337",
+    "operator": "Укрзалізниця",
+    "operator:en": "Ukrainian Railways",
+    "operator:uk": "Укрзалізниця",
+    "operator:wikidata": "Q923337",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "wikidata": "Q4220097",
+    "wikipedia": "uk:Київ-Ліски"
+  }
+},
+{
+  "type": "node",
+  "id": 6380666121,
+  "lat": 50.4920846,
+  "lon": 30.6156125,
+  "tags": {
+    "location": "indoor",
+    "name": "ТП-4841",
+    "name:uk": "ТП-4841",
+    "power": "substation",
+    "ref": "4841",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 6394746619,
+  "lat": 50.4076259,
+  "lon": 30.5557202,
+  "tags": {
+    "name": "РП-456",
+    "name:uk": "РП-456",
+    "power": "substation",
+    "ref": "456",
+    "substation": "distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 6419199918,
+  "lat": 50.4292773,
+  "lon": 30.5225116,
+  "tags": {
+    "building": "yes",
+    "building:levels": "1",
+    "name": "ТП-6390",
+    "name:uk": "ТП-6390",
+    "power": "substation",
+    "ref": "6390",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 6419199924,
+  "lat": 50.4308715,
+  "lon": 30.5192800,
+  "tags": {
+    "location": "indoor",
+    "power": "substation",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 6461444856,
+  "lat": 50.4393239,
+  "lon": 30.5476779,
+  "tags": {
+    "location": "indoor",
+    "name": "ТП-27",
+    "name:uk": "ТП-27",
+    "power": "substation",
+    "ref": "27",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 6461444881,
+  "lat": 50.4400912,
+  "lon": 30.5471914,
+  "tags": {
+    "building": "yes",
+    "building:colour": "white",
+    "building:levels": "1",
+    "building:material": "brick",
+    "name": "ТП-3330",
+    "name:uk": "ТП-3330",
+    "power": "substation",
+    "ref": "3330",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 6469993999,
+  "lat": 50.4832921,
+  "lon": 30.5736696,
+  "tags": {
+    "entrance": "main",
+    "railway": "train_station_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 6497310898,
+  "lat": 50.4485613,
+  "lon": 30.5277947,
+  "tags": {
+    "power": "substation"
+  }
+},
+{
+  "type": "node",
+  "id": 6501691226,
+  "lat": 50.4457505,
+  "lon": 30.4668669,
+  "tags": {
+    "internet_access": "no",
+    "name": "Вагонне Депо",
+    "name:ru": "Вагонное депо",
+    "name:uk": "Вагонне Депо",
+    "network": "УЗ",
+    "operator": "РФ \"Південно-Західна залізниця\"",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 6501703049,
+  "lat": 50.3539562,
+  "lon": 30.8972909,
+  "tags": {
+    "check_date": "2026-03-19",
+    "name": "Бориспіль-Аеропорт",
+    "name:en": "Boryspil Aeroport",
+    "name:uk": "Бориспіль-Аеропорт",
+    "network": "Укрзалізниця",
+    "network:en": "Ukrainian Railways",
+    "network:short": "УЗ",
+    "network:short:uk": "УЗ",
+    "network:short:uk-Latn": "UZ",
+    "network:uk": "Укрзалізниця",
+    "network:uk-Latn": "Ukrzaliznytsia",
+    "network:wikidata": "Q923337",
+    "note": "Наразі (під час воєнного стану) станція не працює",
+    "operator": "Укрзалізниця",
+    "operator:en": "Ukrainian Railways",
+    "operator:short": "УЗ",
+    "operator:short:uk": "УЗ",
+    "operator:short:uk-Latn": "UZ",
+    "operator:uk": "Укрзалізниця",
+    "operator:uk-Latn": "Ukrzaliznytsia",
+    "operator:wikidata": "Q923337",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "wikidata": "Q57579902",
+    "wikipedia": "uk:Бориспіль-Аеропорт"
+  }
+},
+{
+  "type": "node",
+  "id": 6512139363,
+  "lat": 50.4732061,
+  "lon": 30.4983353,
+  "tags": {
+    "name": "КТП-7663",
+    "name:uk": "КТП-7663",
+    "power": "substation",
+    "ref": "7663",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 6667982281,
+  "lat": 50.3989525,
+  "lon": 30.5131145,
+  "tags": {
+    "amenity": "hospital",
+    "email": "clinic@zemskov.com.ua",
+    "healthcare": "hospital",
+    "name": "Клініка академіка Земскова",
+    "name:ru": "Клиника академика Земскова",
+    "name:uk": "Клініка академіка Земскова",
+    "phone": "+380 44 524 4540",
+    "website": "http://zemskov.com.ua"
+  }
+},
+{
+  "type": "node",
+  "id": 6699280451,
+  "lat": 50.4725017,
+  "lon": 30.4639800,
+  "tags": {
+    "location": "indoor",
+    "name": "РП-546",
+    "name:uk": "РП-546",
+    "power": "substation",
+    "substation": "distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 6699280480,
+  "lat": 50.4751190,
+  "lon": 30.4590104,
+  "tags": {
+    "location": "indoor",
+    "power": "substation"
+  }
+},
+{
+  "type": "node",
+  "id": 6718215956,
+  "lat": 50.4480809,
+  "lon": 30.6297945,
+  "tags": {
+    "name": "ТП-1317",
+    "name:uk": "ТП-1317",
+    "power": "substation",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 6738747806,
+  "lat": 50.4550887,
+  "lon": 30.6297142,
+  "tags": {
+    "building": "yes",
+    "building:levels": "1",
+    "building:material": "brick",
+    "name": "ТП-7744",
+    "name:uk": "ТП-7744",
+    "power": "substation",
+    "ref": "7744",
+    "substation": "minor_distribution",
+    "voltage": "400"
+  }
+},
+{
+  "type": "node",
+  "id": 6738749315,
+  "lat": 50.4531168,
+  "lon": 30.6294624,
+  "tags": {
+    "name": "ТП-1577",
+    "name:uk": "ТП-1577",
+    "power": "substation",
+    "ref": "1577",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 6738756123,
+  "lat": 50.4550152,
+  "lon": 30.6302158,
+  "tags": {
+    "location": "indoor",
+    "name": "ТП-8183",
+    "name:uk": "ТП-8183",
+    "power": "substation",
+    "ref": "8183",
+    "substation": "minor_distribution",
+    "voltage": "10000"
+  }
+},
+{
+  "type": "node",
+  "id": 6738773648,
+  "lat": 50.4599377,
+  "lon": 30.6453453,
+  "tags": {
+    "name": "ТП-7962",
+    "name:uk": "ТП-7962",
+    "power": "substation",
+    "ref": "7962",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 6840914430,
+  "lat": 50.4506326,
+  "lon": 30.5951083,
+  "tags": {
+    "location": "indoor",
+    "name": "ТП-7071",
+    "name:uk": "ТП-7071",
+    "power": "substation",
+    "ref": "7071",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 6878649886,
+  "lat": 50.4048848,
+  "lon": 30.3404372,
+  "tags": {
+    "amenity": "hospital",
+    "name": "Амеда",
+    "name:en": "Ameda",
+    "name:uk": "Амеда"
+  }
+},
+{
+  "type": "node",
+  "id": 6915729806,
+  "lat": 50.4538603,
+  "lon": 30.4807183,
+  "tags": {
+    "name": "ТП-606",
+    "name:uk": "ТП-606",
+    "power": "substation",
+    "ref": "606",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 6915729832,
+  "lat": 50.4538421,
+  "lon": 30.4803618,
+  "tags": {
+    "building": "yes",
+    "building:levels": "1",
+    "building:material": "brick",
+    "name": "ТП-8019",
+    "name:uk": "ТП-8019",
+    "power": "substation",
+    "ref": "8019",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 7069862806,
+  "lat": 50.4372921,
+  "lon": 30.5366897,
+  "tags": {
+    "operator": "Київські електромережі",
+    "power": "substation",
+    "ref": "ТП-735",
+    "substation": "minor_distribution",
+    "voltage": "400"
+  }
+},
+{
+  "type": "node",
+  "id": 7104804657,
+  "lat": 50.4028249,
+  "lon": 30.5599818,
+  "tags": {
+    "addr:street": "Залізничне шосе",
+    "esr:user": "320098",
+    "image": "https://railwayz.info/photolines/photo/40951",
+    "int_name": "Vydubychi",
+    "name": "Видубичі",
+    "name:en": "Vydubychi",
+    "name:ru": "Выдубычи",
+    "name:uk": "Видубичі",
+    "name:uk-Latn": "Vydubychi",
+    "network": "Укрзалізниця",
+    "network:en": "Ukrainian Railways",
+    "network:short": "УЗ",
+    "network:uk": "Укрзалізниця",
+    "network:wikidata": "Q923337",
+    "operator": "Укрзалізниця",
+    "operator:en": "Ukrainian Railways",
+    "operator:short": "УЗ",
+    "operator:uk": "Укрзалізниця",
+    "operator:wikidata": "Q923337",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes",
+    "uic_ref": "2200360",
+    "wikidata": "Q4128891"
+  }
+},
+{
+  "type": "node",
+  "id": 7104804658,
+  "lat": 50.4213304,
+  "lon": 30.6058786,
+  "tags": {
+    "esr:code": "320079",
+    "esr:user": "320079",
+    "express:code": "2201165",
+    "int_name": "Berezniaky",
+    "name": "Березняки",
+    "name:en": "Berezniaky",
+    "name:uk": "Березняки",
+    "name:uk-Latn": "Berezniaky",
+    "network": "Укрзалізниця",
+    "network:en": "Ukrainian Railways",
+    "network:short": "УЗ",
+    "network:uk": "Укрзалізниця",
+    "network:wikidata": "Q923337",
+    "old_name": "Лівий берег",
+    "old_name:uk": "Лівий берег",
+    "operator": "Укрзалізниця",
+    "operator:en": "Ukrainian Railways",
+    "operator:short": "УЗ",
+    "operator:uk": "Укрзалізниця",
+    "operator:wikidata": "Q923337",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes",
+    "uic_ref": "2201165",
+    "wheelchair": "yes",
+    "wikidata": "Q4256839",
+    "wikipedia": "uk:Березняки (зупинний пункт, Південно-Західна залізниця)"
+  }
+},
+{
+  "type": "node",
+  "id": 7104807495,
+  "lat": 50.4658354,
+  "lon": 30.5150809,
+  "tags": {
+    "name": "Контрактова площа",
+    "name:de": "Kontraktowa-Platz",
+    "name:en": "Kontraktova Ploshcha",
+    "name:ru": "Контрактовая площадь",
+    "name:uk": "Контрактова площа",
+    "name:uk-Latn": "Kontraktova Ploshcha",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "opening_hours": "Mo-Su 05:37-22:36",
+    "operator": "Київський метрополітен",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "215",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "no",
+    "wikidata": "Q2634558",
+    "wikipedia": "uk:Контрактова площа (станція метро)"
+  }
+},
+{
+  "type": "node",
+  "id": 7160992960,
+  "lat": 50.4482462,
+  "lon": 30.5134785,
+  "tags": {
+    "alt_name:en": "Golden Gate",
+    "architect": "В. Б. Жежерін;Б. П. Жежерін",
+    "artist_name": "Г. І. Корень;В. П. Федько;С. М. Адаменко;М. А. Ралко",
+    "int_name": "Zoloti Vorota",
+    "layer": "-2",
+    "name": "Золоті ворота",
+    "name:de": "Goldenes Tor",
+    "name:en": "Zoloti Vorota",
+    "name:es": "Zoloti Vorota",
+    "name:fr": "Porte dorée",
+    "name:ru": "Золотые ворота",
+    "name:uk": "Золоті ворота",
+    "name:uk-Latn": "Zoloti Vorota",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "operator": "Київський метрополітен",
+    "public_transport": "station",
+    "railway": "station",
+    "start_date": "1989-12-31",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "no",
+    "wikidata": "Q2388637",
+    "wikipedia": "uk:Золоті ворота (станція метро)"
+  }
+},
+{
+  "type": "node",
+  "id": 7161002666,
+  "lat": 50.4394165,
+  "lon": 30.5166416,
+  "tags": {
+    "internet_access": "wlan",
+    "name": "Площа Українських Героїв",
+    "name:en": "Ploshcha Ukrainskykh Heroiv",
+    "name:uk": "Площа Українських Героїв",
+    "name:uk-Latn": "Ploshcha Ukrainskykh Heroiv",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "old_name": "Площа Льва Толстого",
+    "old_name:en": "Ploshcha Lva Tolstoho",
+    "old_name:uk": "Площа Льва Толстого",
+    "old_name:zh": "列夫·托尔斯泰广场",
+    "opening_hours": "Mo-Su 05:37-22:39",
+    "operator": "Київський метрополітен",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "218",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "no",
+    "wikidata": "Q2388684",
+    "wikipedia": "uk:Площа Українських Героїв (станція метро)"
+  }
+},
+{
+  "type": "node",
+  "id": 7161002667,
+  "lat": 50.4452100,
+  "lon": 30.5180449,
+  "tags": {
+    "layer": "-2",
+    "name": "Театральна",
+    "name:de": "Theaterplatz",
+    "name:en": "Teatralna",
+    "name:ru": "Театральная",
+    "name:uk": "Театральна",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "operator": "Київський метрополітен",
+    "public_transport": "station",
+    "railway": "station",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "no",
+    "wikidata": "Q2623829",
+    "wikipedia": "uk:Театральна (станція метро, Київ)"
+  }
+},
+{
+  "type": "node",
+  "id": 7178400383,
+  "lat": 50.4028540,
+  "lon": 30.5601446,
+  "tags": {
+    "amenity": "ticket_validator",
+    "barrier": "turnstile",
+    "capacity": "3",
+    "layer": "-1",
+    "railway": "train_station_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 7178471287,
+  "lat": 50.4028413,
+  "lon": 30.5600815,
+  "tags": {
+    "amenity": "ticket_validator",
+    "barrier": "turnstile",
+    "capacity": "3",
+    "layer": "-1",
+    "railway": "train_station_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 7193542918,
+  "lat": 50.3914995,
+  "lon": 30.8556526,
+  "tags": {
+    "alt_name": "Чуби́нське",
+    "alt_name:uk": "Чуби́нське",
+    "internet_access": "no",
+    "name": "Чубинський",
+    "name:en": "Chubynskyi",
+    "name:uk": "Чубинський",
+    "network": "Укрзалізниця",
+    "operator": "Південно-Західна залізниця",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes",
+    "wikidata": "Q12170696",
+    "wikipedia": "uk:Чубинський (зупинний пункт)"
+  }
+},
+{
+  "type": "node",
+  "id": 7218139984,
+  "lat": 50.4369287,
+  "lon": 30.5319209,
+  "tags": {
+    "name": "Кловська",
+    "name:en": "Klovska",
+    "name:ru": "Кловская",
+    "name:uk": "Кловська",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "operator": "Київський метрополітен",
+    "public_transport": "station",
+    "railway": "station",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "no",
+    "wikidata": "Q2298547",
+    "wikipedia": "uk:Кловська (станція метро)"
+  }
+},
+{
+  "type": "node",
+  "id": 7247486081,
+  "lat": 50.4206817,
+  "lon": 30.5213092,
+  "tags": {
+    "alt_name:en": "Palace \"Ukraine\"",
+    "name": "Палац «Україна»",
+    "name:en": "Palats Ukraina",
+    "name:ru": "Дворец «Украина»",
+    "name:uk": "Палац «Україна»",
+    "name:uk-Latn": "Palats Ukraina",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "opening_hours": "Mo-Su 05:33-22:36",
+    "operator": "Київський метрополітен",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "220",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "no",
+    "wikidata": "Q2388593",
+    "wikipedia": "uk:Палац «Україна» (станція метро)"
+  }
+},
+{
+  "type": "node",
+  "id": 7511176418,
+  "lat": 50.3857026,
+  "lon": 30.4731823,
+  "tags": {
+    "location": "indoor",
+    "name": "ТП-8012",
+    "name:uk": "ТП-8012",
+    "power": "substation",
+    "ref": "8012",
+    "substation": "minor_distribution",
+    "voltage": "10000"
+  }
+},
+{
+  "type": "node",
+  "id": 7518511976,
+  "lat": 50.3833898,
+  "lon": 30.4763832,
+  "tags": {
+    "location": "indoor",
+    "name": "ТП-4881",
+    "name:uk": "ТП-4881",
+    "power": "substation",
+    "ref": "4881",
+    "substation": "minor_distribution",
+    "voltage": "400, 10000"
+  }
+},
+{
+  "type": "node",
+  "id": 7538249324,
+  "lat": 50.3821027,
+  "lon": 30.4785857,
+  "tags": {
+    "location": "outdoor",
+    "name": "ТП-8491",
+    "name:uk": "ТП-8491",
+    "power": "substation",
+    "ref": "8491",
+    "substation": "minor_distribution",
+    "voltage": "10000"
+  }
+},
+{
+  "type": "node",
+  "id": 7541227524,
+  "lat": 50.3819765,
+  "lon": 30.3840832,
+  "tags": {
+    "amenity": "hospital",
+    "description": "Пульс, клиника семейной медицины, сімейна клініка Многопрофильная семейная клиника Пульс: Ваше здоровье – наша главная задача!",
+    "healthcare": "hospital",
+    "healthcare:speciality": "clinic",
+    "name": "Пульс",
+    "name:uk": "Пульс"
+  }
+},
+{
+  "type": "node",
+  "id": 7541648378,
+  "lat": 50.3867284,
+  "lon": 30.4743410,
+  "tags": {
+    "name": "ТП-1818",
+    "name:uk": "ТП-1818",
+    "power": "substation",
+    "ref": "1818",
+    "substation": "minor_distribution",
+    "voltage": "400,10000"
+  }
+},
+{
+  "type": "node",
+  "id": 7607060344,
+  "lat": 50.4386263,
+  "lon": 30.4327431,
+  "tags": {
+    "location": "indoor",
+    "name": "ТП-2564",
+    "name:uk": "ТП-2564",
+    "power": "substation",
+    "ref": "2564"
+  }
+},
+{
+  "type": "node",
+  "id": 7675813758,
+  "lat": 50.3887170,
+  "lon": 30.4799005,
+  "tags": {
+    "location": "outdoor",
+    "name": "ТП-2391",
+    "name:uk": "ТП-2391",
+    "power": "substation",
+    "ref": "2391",
+    "substation": "minor_distribution",
+    "voltage": "400"
+  }
+},
+{
+  "type": "node",
+  "id": 7719252985,
+  "lat": 50.3698898,
+  "lon": 30.5509649,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Корчуватська поліклініка 4 амбулаторія",
+    "name:ru": "Корчеватская поликлиника 4 амбулатория",
+    "name:uk": "Корчуватська поліклініка 4 амбулаторія"
+  }
+},
+{
+  "type": "node",
+  "id": 7721141267,
+  "lat": 50.4442353,
+  "lon": 30.5429129,
+  "tags": {
+    "power": "substation"
+  }
+},
+{
+  "type": "node",
+  "id": 7732170074,
+  "lat": 50.4556866,
+  "lon": 30.6192000,
+  "tags": {
+    "building": "service",
+    "building:material": "brick",
+    "name": "ТП-3062",
+    "name:uk": "ТП-3062",
+    "power": "substation",
+    "ref": "3062",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 7734706694,
+  "lat": 50.4544338,
+  "lon": 30.4252325,
+  "tags": {
+    "name": "ТП-7621",
+    "name:uk": "ТП-7621",
+    "power": "substation",
+    "ref": "7621",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 7772068650,
+  "lat": 50.3812707,
+  "lon": 30.4718240,
+  "tags": {
+    "location": "indoor",
+    "name": "ТП-3510",
+    "name:uk": "ТП-3510",
+    "power": "substation",
+    "ref": "3510",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 7817336543,
+  "lat": 50.3864922,
+  "lon": 30.4701222,
+  "tags": {
+    "location": "indoor",
+    "name": "ТП-7486",
+    "name:uk": "ТП-7486",
+    "power": "substation",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 7817510629,
+  "lat": 50.5741268,
+  "lon": 30.1024538,
+  "tags": {
+    "power": "substation",
+    "ref": "ТП-282",
+    "substation": "minor_distribution",
+    "voltage": "10000"
+  }
+},
+{
+  "type": "node",
+  "id": 7817510640,
+  "lat": 50.5794600,
+  "lon": 30.1018947,
+  "tags": {
+    "power": "substation",
+    "ref": "ТП-283"
+  }
+},
+{
+  "type": "node",
+  "id": 7817510643,
+  "lat": 50.5787109,
+  "lon": 30.1082611,
+  "tags": {
+    "power": "substation",
+    "ref": "ТП-4431"
+  }
+},
+{
+  "type": "node",
+  "id": 7840821367,
+  "lat": 50.4401728,
+  "lon": 30.5167370,
+  "tags": {
+    "power": "substation",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 7840821368,
+  "lat": 50.4402380,
+  "lon": 30.5174261,
+  "tags": {
+    "power": "substation"
+  }
+},
+{
+  "type": "node",
+  "id": 7840860924,
+  "lat": 50.4417994,
+  "lon": 30.5184675,
+  "tags": {
+    "name": "ТП-46",
+    "name:uk": "ТП-46",
+    "power": "substation",
+    "ref": "46",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 7840863695,
+  "lat": 50.4198307,
+  "lon": 30.5501382,
+  "tags": {
+    "building": "service",
+    "building:levels": "1",
+    "building:material": "brick",
+    "name": "ТП-791",
+    "name:uk": "ТП-791",
+    "power": "substation",
+    "ref": "791",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 7840868788,
+  "lat": 50.4174678,
+  "lon": 30.5514124,
+  "tags": {
+    "name": "ТП-1540",
+    "name:uk": "ТП-1540",
+    "power": "substation",
+    "ref": "1540",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 7840869348,
+  "lat": 50.4198468,
+  "lon": 30.5500522,
+  "tags": {
+    "building": "service",
+    "building:levels": "1",
+    "building:material": "brick",
+    "power": "substation"
+  }
+},
+{
+  "type": "node",
+  "id": 7844659495,
+  "lat": 50.4479712,
+  "lon": 30.4214359,
+  "tags": {
+    "fixme": "resurvey location",
+    "location": "indoor",
+    "name": "РП-470",
+    "name:uk": "РП-470",
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 7844659496,
+  "lat": 50.4479610,
+  "lon": 30.4214975,
+  "tags": {
+    "fixme": "resurvey location",
+    "location": "indoor",
+    "name": "ТП-7397",
+    "name:uk": "ТП-7397",
+    "operator": "Київенерго",
+    "power": "substation",
+    "rating": "2000 kVA",
+    "ref": "7397",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 7879965026,
+  "lat": 50.4569011,
+  "lon": 30.4917210,
+  "tags": {
+    "location": "indoor",
+    "name": "ТП-6952",
+    "name:uk": "ТП-6952",
+    "power": "substation",
+    "ref": "6952",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 7902309755,
+  "lat": 50.4544821,
+  "lon": 30.5984622,
+  "tags": {
+    "name": "РП-437",
+    "name:uk": "РП-437",
+    "power": "substation",
+    "ref": "437",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 7920340234,
+  "lat": 50.6000095,
+  "lon": 30.5591674,
+  "tags": {
+    "plant:method": "photovoltaic",
+    "plant:output:electricity": "yes",
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "node",
+  "id": 7924890028,
+  "lat": 50.3815517,
+  "lon": 30.8960090,
+  "tags": {
+    "name": "Колійний пост 19 км",
+    "name:uk": "Колійний пост 19 км",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 7947692651,
+  "lat": 50.4687714,
+  "lon": 30.5112598,
+  "tags": {
+    "name": "ТП-80",
+    "name:uk": "ТП-80",
+    "power": "substation",
+    "ref": "80",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 8059159903,
+  "lat": 50.3859917,
+  "lon": 30.4774274,
+  "tags": {
+    "location": "indoor",
+    "name": "ТП-1917",
+    "name:uk": "ТП-1917",
+    "power": "substation",
+    "ref": "1917",
+    "substation": "minor_distribution",
+    "voltage": "400;10000"
+  }
+},
+{
+  "type": "node",
+  "id": 8108631869,
+  "lat": 50.3704486,
+  "lon": 30.4778526,
+  "tags": {
+    "name": "ТП-2743",
+    "name:uk": "ТП-2743",
+    "power": "substation",
+    "ref": "ТП-2743"
+  }
+},
+{
+  "type": "node",
+  "id": 8111162323,
+  "lat": 50.4556605,
+  "lon": 30.4750063,
+  "tags": {
+    "amenity": "hospital",
+    "emergency": "no",
+    "healthcare": "hospital",
+    "name": "Mediland",
+    "name:en": "Mediland",
+    "website": "https://mediland.com.ua/"
+  }
+},
+{
+  "type": "node",
+  "id": 8210821817,
+  "lat": 50.3269071,
+  "lon": 30.2836343,
+  "tags": {
+    "addr:housenumber": "173",
+    "addr:street": "вулиця Хрещатик",
+    "amenity": "hospital",
+    "internet_access": "wlan",
+    "name": "Медичні огляди",
+    "name:uk": "Медичні огляди",
+    "phone": "+380 68 526 4480",
+    "website": "https://www.meddovidki.com.ua/"
+  }
+},
+{
+  "type": "node",
+  "id": 8325345803,
+  "lat": 50.5185110,
+  "lon": 30.5980566,
+  "tags": {
+    "addr:city": "Киев",
+    "addr:housenumber": "9",
+    "addr:postcode": "02225",
+    "addr:street": "Градинська вулиця",
+    "amenity": "hospital",
+    "description": "До Ваших послуг: Індивідуальна та групова психотерапія, арт-терапія для дітей та дорослих.\nЗапитання, з якими до мене найчастіше звертаються:\n- Проблеми у спілкуванні\n- Проблеми з навчанням, роботою\n- емоційні переживання\n- Некерована поведінка\n- Низька с",
+    "healthcare": "hospital",
+    "healthcare:speciality": "humanistic",
+    "name": "Психолог, психотерапевт Анастасія Лебедь",
+    "name:uk": "Психолог, психотерапевт Анастасія Лебедь",
+    "website": "http://xn--c1ajjlbco7a2g3c.com/"
+  }
+},
+{
+  "type": "node",
+  "id": 8515513218,
+  "lat": 50.2807627,
+  "lon": 30.6840739,
+  "tags": {
+    "leisure": "marina",
+    "seamark:harbour:category": "marina",
+    "seamark:type": "harbour"
+  }
+},
+{
+  "type": "node",
+  "id": 8562832054,
+  "lat": 50.4665504,
+  "lon": 30.4939543,
+  "tags": {
+    "power": "substation",
+    "substation": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 8569669279,
+  "lat": 50.4300015,
+  "lon": 30.5035508,
+  "tags": {
+    "addr:housenumber": "32",
+    "addr:street": "вулиця Івана Федорова",
+    "name": "Київ-Товарний",
+    "name:en": "Kyiv-Tovarnyi",
+    "name:pl": "Kijów-Towarowy",
+    "name:ru": "Киев-Товарный",
+    "name:uk": "Київ-Товарний",
+    "name:uk-Latn": "Kyiv-Tovarnyi",
+    "network": "Укрзалізниця",
+    "network:en": "Ukrainian Railways",
+    "network:uk": "Укрзалізниця",
+    "network:wikidata": "Q923337",
+    "operator": "Укрзалізниця",
+    "operator:en": "Ukrainian Railways",
+    "operator:uk": "Укрзалізниця",
+    "operator:wikidata": "Q923337",
+    "railway": "station",
+    "wikidata": "Q4220101",
+    "wikipedia": "uk:Київ-Товарний"
+  }
+},
+{
+  "type": "node",
+  "id": 8632795843,
+  "lat": 50.5366450,
+  "lon": 30.1893665,
+  "tags": {
+    "frequency": "50",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "official_short_type": "КТП",
+    "power": "substation",
+    "rating": "400 kVa",
+    "ref": "КТП-8126",
+    "street_cabinet": "power",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 8709291872,
+  "lat": 50.5181468,
+  "lon": 30.4679306,
+  "tags": {
+    "generator:method": "photovoltaic",
+    "generator:output:electricity": "yes",
+    "generator:source": "solar",
+    "generator:type": "solar_photovoltaic_panel",
+    "power": "generator"
+  }
+},
+{
+  "type": "node",
+  "id": 8709291877,
+  "lat": 50.5182797,
+  "lon": 30.4680365,
+  "tags": {
+    "generator:method": "photovoltaic",
+    "generator:output:electricity": "yes",
+    "generator:source": "solar",
+    "generator:type": "solar_photovoltaic_panel",
+    "power": "generator"
+  }
+},
+{
+  "type": "node",
+  "id": 8709291878,
+  "lat": 50.5183816,
+  "lon": 30.4682229,
+  "tags": {
+    "generator:method": "photovoltaic",
+    "generator:output:electricity": "yes",
+    "generator:source": "solar",
+    "generator:type": "solar_photovoltaic_panel",
+    "power": "generator"
+  }
+},
+{
+  "type": "node",
+  "id": 8742673417,
+  "lat": 50.3896242,
+  "lon": 30.4832194,
+  "tags": {
+    "addr:housenumber": "33/43",
+    "addr:postcode": "03022",
+    "addr:street": "вулиця Юлії Здановської",
+    "amenity": "hospital",
+    "email": "info@vartaclinic.com.ua",
+    "healthcare": "hospital",
+    "name": "Клініка Варта",
+    "name:uk": "Клініка Варта",
+    "opening_hours": "Mo-Fr 08:00-21:00; Sa-Su 09:00-18:00",
+    "phone:UA": "0 800 756 065",
+    "website": "https://vartaclinic.com.ua/"
+  }
+},
+{
+  "type": "node",
+  "id": 8750182965,
+  "lat": 50.4282201,
+  "lon": 30.5150166,
+  "tags": {
+    "name": "ТП-3401",
+    "name:uk": "ТП-3401",
+    "power": "substation",
+    "ref": "3401",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 8781098477,
+  "lat": 50.4234617,
+  "lon": 30.5933632,
+  "tags": {
+    "operator": "Київські електромережі",
+    "power": "substation",
+    "ref": "ТП-5441",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 8804878683,
+  "lat": 50.4155575,
+  "lon": 30.5274560,
+  "tags": {
+    "location": "indoor",
+    "name": "ТП-8427",
+    "name:uk": "ТП-8427",
+    "power": "substation",
+    "ref": "8427"
+  }
+},
+{
+  "type": "node",
+  "id": 8828334526,
+  "lat": 50.4606213,
+  "lon": 30.6136808,
+  "tags": {
+    "name": "ТП-3705",
+    "name:uk": "ТП-3705",
+    "power": "substation",
+    "ref": "3705",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 8843079111,
+  "lat": 50.4150954,
+  "lon": 30.5253757,
+  "tags": {
+    "building": "yes",
+    "location": "indoor",
+    "name": "ТП-8718",
+    "name:uk": "ТП-8718",
+    "power": "substation",
+    "ref": "8718",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 8848858785,
+  "lat": 50.4158689,
+  "lon": 30.5317770,
+  "tags": {
+    "building": "yes",
+    "location": "indoor",
+    "name": "ТП-4148",
+    "name:uk": "ТП-4148",
+    "power": "substation",
+    "ref": "4148",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 8855101617,
+  "lat": 50.5421631,
+  "lon": 30.2660824,
+  "tags": {
+    "amenity": "hospital",
+    "email": "amosova.clinic@gmail.com",
+    "name": "Медичний центр Амосової",
+    "name:en": "Amosova Medical Center",
+    "name:uk": "Медичний центр Амосової",
+    "opening_hours": "Mo-Fr 09:00-19:00",
+    "phone": "+380 98 008 1008",
+    "website": "https://www.amosova.clinic/"
+  }
+},
+{
+  "type": "node",
+  "id": 8856844260,
+  "lat": 50.4183584,
+  "lon": 30.5238990,
+  "tags": {
+    "name": "ТП-3683",
+    "name:uk": "ТП-3683",
+    "power": "substation",
+    "ref": "3683"
+  }
+},
+{
+  "type": "node",
+  "id": 8856850592,
+  "lat": 50.4156169,
+  "lon": 30.5229705,
+  "tags": {
+    "name": "ТП-5212",
+    "name:uk": "ТП-5212",
+    "power": "substation",
+    "ref": "5212",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 8898649250,
+  "lat": 50.4149575,
+  "lon": 30.5307226,
+  "tags": {
+    "power": "substation"
+  }
+},
+{
+  "type": "node",
+  "id": 8905810985,
+  "lat": 50.4406989,
+  "lon": 30.5488205,
+  "tags": {
+    "name": "РП-202",
+    "name:uk": "РП-202",
+    "power": "substation",
+    "ref": "202",
+    "substation": "distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 8905851509,
+  "lat": 50.4404421,
+  "lon": 30.5483202,
+  "tags": {
+    "building": "service",
+    "building:levels": "1",
+    "name": "ТП-515",
+    "name:uk": "ТП-515",
+    "power": "substation",
+    "ref": "515",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 8905858547,
+  "lat": 50.4390659,
+  "lon": 30.5459081,
+  "tags": {
+    "building": "service",
+    "building:colour": "white",
+    "building:levels": "1",
+    "building:material": "brick",
+    "name": "ТП-3682",
+    "name:uk": "ТП-3682",
+    "power": "substation",
+    "ref": "3682",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 8919356197,
+  "lat": 50.3858179,
+  "lon": 30.4692648,
+  "tags": {
+    "power": "substation",
+    "ref": "1808"
+  }
+},
+{
+  "type": "node",
+  "id": 8948480258,
+  "lat": 50.4087017,
+  "lon": 30.5056493,
+  "tags": {
+    "name": "КТП-8515",
+    "name:uk": "КТП-8515",
+    "note": "630 kVA",
+    "power": "substation",
+    "ref": "8515",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 8948497366,
+  "lat": 50.4079077,
+  "lon": 30.5086153,
+  "tags": {
+    "name": "КТПБ-8092",
+    "name:uk": "КТПБ-8092",
+    "power": "substation",
+    "ref": "8092",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 8948526330,
+  "lat": 50.4552136,
+  "lon": 30.6110664,
+  "tags": {
+    "location": "indoor",
+    "name": "ТП-8067",
+    "name:uk": "ТП-8067",
+    "power": "substation",
+    "ref": "8067",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 8961427978,
+  "lat": 50.4528297,
+  "lon": 30.5928248,
+  "tags": {
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 8961472827,
+  "lat": 50.4592612,
+  "lon": 30.6115014,
+  "tags": {
+    "building": "service",
+    "building:levels": "1",
+    "name": "ТП-3703",
+    "name:uk": "ТП-3703",
+    "power": "substation",
+    "ref": "3703",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 8961490699,
+  "lat": 50.4520859,
+  "lon": 30.5928826,
+  "tags": {
+    "name": "РП-414",
+    "name:uk": "РП-414",
+    "power": "substation",
+    "ref": "414",
+    "substation": "distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 8992930243,
+  "lat": 50.4502550,
+  "lon": 30.5276314,
+  "tags": {
+    "name": "ТП-1305",
+    "name:uk": "ТП-1305",
+    "power": "substation",
+    "ref": "1305",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 9011499399,
+  "lat": 50.4691063,
+  "lon": 30.6548681,
+  "tags": {
+    "name": "РП-511",
+    "name:uk": "РП-511",
+    "power": "substation",
+    "ref": "511",
+    "substation": "distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 9012103173,
+  "lat": 50.4664389,
+  "lon": 30.6547827,
+  "tags": {
+    "location": "indoor",
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 9012116019,
+  "lat": 50.4646970,
+  "lon": 30.6465568,
+  "tags": {
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 9033423995,
+  "lat": 50.4795917,
+  "lon": 30.4517794,
+  "tags": {
+    "name": "ТП-2128",
+    "name:uk": "ТП-2128",
+    "power": "substation",
+    "ref": "2128",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 9033434275,
+  "lat": 50.4785155,
+  "lon": 30.4501934,
+  "tags": {
+    "name": "РП-153",
+    "name:uk": "РП-153",
+    "power": "substation",
+    "ref": "153",
+    "substation": "distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 9033434276,
+  "lat": 50.4748160,
+  "lon": 30.4473461,
+  "tags": {
+    "building": "service",
+    "building:colour": "white",
+    "building:levels": "1",
+    "building:material": "brick",
+    "name": "ТП-1806",
+    "name:uk": "ТП-1806",
+    "power": "substation",
+    "ref": "1806",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 9033443934,
+  "lat": 50.4754824,
+  "lon": 30.4474286,
+  "tags": {
+    "building": "service",
+    "building:colour": "white",
+    "building:levels": "1",
+    "building:material": "brick",
+    "name": "ТП-1807",
+    "name:uk": "ТП-1807",
+    "power": "substation",
+    "ref": "1807",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 9033450240,
+  "lat": 50.4788376,
+  "lon": 30.4508686,
+  "tags": {
+    "building": "service",
+    "building:levels": "1",
+    "building:material": "brick",
+    "name": "ТП-2127",
+    "name:uk": "ТП-2127",
+    "power": "substation",
+    "ref": "2127",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 9045087280,
+  "lat": 50.4340888,
+  "lon": 30.5462413,
+  "tags": {
+    "building": "service",
+    "building:colour": "white",
+    "building:levels": "1",
+    "building:material": "brick",
+    "name": "ТП-1194",
+    "name:uk": "ТП-1194",
+    "power": "substation",
+    "ref": "1194",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 9045091120,
+  "lat": 50.4056946,
+  "lon": 30.5452276,
+  "tags": {
+    "building:levels": "1",
+    "building:material": "brick",
+    "name": "ТП-3102",
+    "name:uk": "ТП-3102",
+    "power": "substation",
+    "ref": "3102",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 9045092200,
+  "lat": 50.4113461,
+  "lon": 30.5446200,
+  "tags": {
+    "location": "indoor",
+    "name": "ТП-7417",
+    "name:uk": "ТП-7417",
+    "power": "substation",
+    "ref": "7417",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 9045111518,
+  "lat": 50.4351013,
+  "lon": 30.5465406,
+  "tags": {
+    "building": "service",
+    "building:colour": "white",
+    "building:levels": "1",
+    "building:material": "brick",
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 9057044245,
+  "lat": 50.4657157,
+  "lon": 30.6373220,
+  "tags": {
+    "power": "substation"
+  }
+},
+{
+  "type": "node",
+  "id": 9073476787,
+  "lat": 50.4295256,
+  "lon": 30.5938688,
+  "tags": {
+    "description": "III-IV С.Ш.\nРУ-0,4 кВ",
+    "location": "indoor",
+    "name": "РП-494",
+    "name:uk": "РП-494",
+    "operator": "Київські електромережі",
+    "power": "substation",
+    "ref": "494",
+    "substation": "distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 9104327595,
+  "lat": 50.4276186,
+  "lon": 30.5206298,
+  "tags": {
+    "building:colour": "white",
+    "building:levels": "1",
+    "building:material": "brick",
+    "name": "ТП-2626",
+    "name:uk": "ТП-2626",
+    "power": "substation",
+    "ref": "2626",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 9105666281,
+  "lat": 50.4669752,
+  "lon": 30.5164339,
+  "tags": {
+    "location": "indoor",
+    "name": "ТП-8348",
+    "name:uk": "ТП-8348",
+    "power": "substation"
+  }
+},
+{
+  "type": "node",
+  "id": 9108128231,
+  "lat": 50.4160161,
+  "lon": 30.5253894,
+  "tags": {
+    "location": "indoor",
+    "name": "ТП-8426",
+    "name:uk": "ТП-8426",
+    "power": "substation",
+    "ref": "8426",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 9118879463,
+  "lat": 50.4403172,
+  "lon": 30.5474041,
+  "tags": {
+    "building": "service",
+    "building:colour": "white",
+    "building:levels": "1",
+    "name": "ТП-2430",
+    "name:uk": "ТП-2430",
+    "power": "substation",
+    "ref": "2430",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 9126082013,
+  "lat": 50.3846133,
+  "lon": 30.3700041,
+  "tags": {
+    "name": "Вишневе",
+    "name:de": "Wyschnewe",
+    "name:en": "Vyshneve",
+    "name:ru": "Вишнёвое",
+    "name:uk": "Вишневе",
+    "network": "Укрзалізниця",
+    "network:en": "Ukrainian Railways",
+    "network:short": "УЗ",
+    "network:uk": "Укрзалізниця",
+    "network:wikidata": "Q923337",
+    "operator": "Укрзалізниця",
+    "operator:en": "Ukrainian Railways",
+    "operator:short": "УЗ",
+    "operator:uk": "Укрзалізниця",
+    "operator:wikidata": "Q923337",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "uic_ref": "2200006",
+    "wikidata": "Q12089725",
+    "wikipedia": "uk:Вишневе (станція)"
+  }
+},
+{
+  "type": "node",
+  "id": 9151090552,
+  "lat": 50.4499356,
+  "lon": 30.5244408,
+  "tags": {
+    "alt_name:nl": "Onafhankelijkheidsplein;Maidanplein",
+    "covered": "yes",
+    "int_name": "Maidan Nezalezhnosti",
+    "line": "Оболонсько-Теремківська лінія",
+    "name": "Майдан Незалежності",
+    "name:bs": "Trg Neovisnosti",
+    "name:de": "Platz der Unabhängigkeit",
+    "name:en": "Independence Square",
+    "name:es": "Plaza de la Independencia",
+    "name:fr": "Place de l'Indépendance",
+    "name:hr": "Trg Neovisnosti",
+    "name:ja": "独立広場",
+    "name:nl": "Majdan Nezalezjnosti",
+    "name:pl": "Plac Niepodległości",
+    "name:ru": "Майдан Незалежности",
+    "name:uk": "Майдан Незалежності",
+    "name:uk-Latn": "Maidan Nezalezhnosti",
+    "name:zh": "独立广场",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "opening_hours": "Mo-Su 05:38-22:38",
+    "operator": "Київський метрополітен",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "217",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "no",
+    "wikidata": "Q1864476",
+    "wikipedia": "uk:Майдан Незалежності (станція метро)"
+  }
+},
+{
+  "type": "node",
+  "id": 9151108492,
+  "lat": 50.4471871,
+  "lon": 30.5229456,
+  "tags": {
+    "line": "Святошинсько-Броварська",
+    "name": "Хрещатик",
+    "name:de": "Chreschtschatyk",
+    "name:en": "Khreschatyk",
+    "name:es": "Jreshchatyk",
+    "name:ru": "Крещатик",
+    "name:uk": "Хрещатик",
+    "name:zh": "赫雷夏蒂克站",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "operator": "Київський метрополітен",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "120",
+    "start_date": "1960-11-06",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "no",
+    "wikidata": "Q1846051",
+    "wikipedia": "uk:Хрещатик (станція метро)"
+  }
+},
+{
+  "type": "node",
+  "id": 9383528722,
+  "lat": 50.5217406,
+  "lon": 30.5130285,
+  "tags": {
+    "location": "indoor",
+    "name": "ТП-7018",
+    "name:uk": "ТП-7018",
+    "power": "substation",
+    "ref": "7018",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 9428845038,
+  "lat": 50.4171698,
+  "lon": 30.3888112,
+  "tags": {
+    "railway": "train_station_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 9428845040,
+  "lat": 50.4166895,
+  "lon": 30.3897762,
+  "tags": {
+    "amenity": "ticket_validator",
+    "barrier": "turnstile",
+    "operator": "Київпастранс",
+    "operator:en": "Kyivpastrans",
+    "operator:uk": "Київпастранс",
+    "operator:wikidata": "Q12110155",
+    "railway": "train_station_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 9437511397,
+  "lat": 50.4684067,
+  "lon": 30.5132534,
+  "tags": {
+    "addr:housenumber": "24-А",
+    "addr:street": "Межигірська вулиця",
+    "amenity": "hospital",
+    "emergency": "no",
+    "healthcare": "psychotherapist",
+    "name": "Психолог Олексій Шумський",
+    "name:uk": "Психолог Олексій Шумський",
+    "website": "https://shumskyi.pro/"
+  }
+},
+{
+  "type": "node",
+  "id": 9441328251,
+  "lat": 50.4140305,
+  "lon": 30.5259179,
+  "tags": {
+    "power": "substation"
+  }
+},
+{
+  "type": "node",
+  "id": 9446923045,
+  "lat": 50.4520473,
+  "lon": 30.4106520,
+  "tags": {
+    "network": "Укрзалізниця",
+    "network:en": "Ukrainian Railways",
+    "network:short": "УЗ",
+    "network:short:uk": "УЗ",
+    "network:short:uk-Latn": "UZ",
+    "operator": "Укрзалізниця",
+    "operator:en": "Ukrainian Railways",
+    "operator:short": "УЗ",
+    "operator:short:uk": "УЗ",
+    "operator:short:uk-Latn": "UZ",
+    "operator:uk": "Укрзалізниця",
+    "operator:uk-Latn": "Ukrzaliznytsia",
+    "operator:wikidata": "Q923337",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 9455987119,
+  "lat": 50.4782130,
+  "lon": 30.5963198,
+  "tags": {
+    "building": "yes",
+    "building:levels": "1",
+    "name": "ТП-2141",
+    "name:uk": "ТП-2141",
+    "power": "substation",
+    "ref": "2141",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 9456000148,
+  "lat": 50.4791581,
+  "lon": 30.6026488,
+  "tags": {
+    "amenity": "hospital",
+    "name": "Наркологічне відділення №2",
+    "name:uk": "Наркологічне відділення №2",
+    "operator": "Київська міська наркологічна клінічна лікарня \"Соціотерапія\"",
+    "ref": "2"
+  }
+},
+{
+  "type": "node",
+  "id": 9480315817,
+  "lat": 50.5214306,
+  "lon": 30.5058074,
+  "tags": {
+    "building": "service",
+    "building:levels": "1",
+    "name": "ТП-4281",
+    "name:uk": "ТП-4281",
+    "power": "substation",
+    "ref": "4281",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 9577246417,
+  "lat": 50.3839920,
+  "lon": 30.4872842,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Підстанція швидкої допомоги",
+    "name:ru": "Подстанция скорой помощи#3",
+    "name:uk": "Підстанція швидкої допомоги"
+  }
+},
+{
+  "type": "node",
+  "id": 9688798834,
+  "lat": 50.4572470,
+  "lon": 30.3889212,
+  "tags": {
+    "alt_name": "Святошино",
+    "esr:code": "322407",
+    "esr:user": "322407",
+    "express:code": "2200008",
+    "int_name": "Sviatoshyn",
+    "name": "Святошин",
+    "name:en": "Sviatoshyn",
+    "name:fr": "Sviatochine",
+    "name:ru": "Святошин",
+    "name:uk": "Святошин",
+    "name:uk-Latn": "Sviatoshyn",
+    "network": "Укрзалізниця",
+    "network:en": "Ukrainian Railways",
+    "network:short": "УЗ",
+    "network:short:uk": "УЗ",
+    "network:short:uk-Latn": "UZ",
+    "network:uk": "Укрзалізниця",
+    "network:uk-Latn": "Ukrzaliznytsia",
+    "network:wikidata": "Q923337",
+    "operator": "Укрзалізниця",
+    "operator:en": "Ukrainian Railways",
+    "operator:short": "УЗ",
+    "operator:short:uk": "УЗ",
+    "operator:short:uk-Latn": "UZ",
+    "operator:uk": "Укрзалізниця",
+    "operator:uk-Latn": "Ukrzaliznytsia",
+    "operator:wikidata": "Q923337",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "uic_ref": "2200008",
+    "usage": "main",
+    "wheelchair": "limited",
+    "wikidata": "Q4411665"
+  }
+},
+{
+  "type": "node",
+  "id": 9748040677,
+  "lat": 50.4627454,
+  "lon": 30.6067805,
+  "tags": {
+    "location": "indoor",
+    "name": "ТП-3161",
+    "name:uk": "ТП-3161",
+    "power": "substation",
+    "ref": "3161",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 9756944265,
+  "lat": 50.3814758,
+  "lon": 30.4958759,
+  "tags": {
+    "addr:postcode": "03041",
+    "addr:street": "вулиця Героїв Оборони",
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "healthcare:speciality": "psychiatry",
+    "name": "Корпус ІТ",
+    "name:uk": "Корпус ІТ"
+  }
+},
+{
+  "type": "node",
+  "id": 9826209092,
+  "lat": 50.4040212,
+  "lon": 30.5356160,
+  "tags": {
+    "name": "ТП-3737",
+    "name:uk": "ТП-3737",
+    "power": "substation",
+    "ref": "3737",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 9826240302,
+  "lat": 50.4069786,
+  "lon": 30.5336598,
+  "tags": {
+    "building": "yes",
+    "building:levels": "2",
+    "name": "ТП-2092",
+    "name:uk": "ТП-2092",
+    "power": "substation",
+    "ref": "2092",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 9826241359,
+  "lat": 50.4070331,
+  "lon": 30.5311488,
+  "tags": {
+    "power": "substation"
+  }
+},
+{
+  "type": "node",
+  "id": 10079241615,
+  "lat": 50.3998948,
+  "lon": 30.5077003,
+  "tags": {
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 10102954477,
+  "lat": 50.3714254,
+  "lon": 30.4553419,
+  "tags": {
+    "location": "indoor",
+    "power": "substation"
+  }
+},
+{
+  "type": "node",
+  "id": 10177259262,
+  "lat": 50.5002994,
+  "lon": 30.5232535,
+  "tags": {
+    "generator:method": "photovoltaic",
+    "generator:output:electricity": "yes",
+    "generator:source": "solar",
+    "generator:type": "solar_photovoltaic_panel",
+    "power": "generator"
+  }
+},
+{
+  "type": "node",
+  "id": 10250352209,
+  "lat": 50.4894195,
+  "lon": 30.4827922,
+  "tags": {
+    "esr:user": "320613",
+    "name": "Куренівка",
+    "name:en": "Kurenivka",
+    "name:uk": "Куренівка",
+    "name:uk-Latn": "Kurenivka",
+    "network": "Укрзалізниця",
+    "network:en": "Ukrainian Railways",
+    "network:short": "УЗ",
+    "network:uk": "Укрзалізниця",
+    "network:wikidata": "Q923337",
+    "old_name": "Зеніт",
+    "old_name:en": "Zenit",
+    "old_name:uk": "Зеніт",
+    "operator": "Укрзалізниця",
+    "operator:en": "Ukrainian Railways",
+    "operator:short": "УЗ",
+    "operator:uk": "Укрзалізниця",
+    "operator:wikidata": "Q923337",
+    "public_transport": "station",
+    "railway": "halt",
+    "train": "yes",
+    "uic_ref": "2201270",
+    "wikidata": "Q2369110",
+    "wikipedia": "uk:Куренівка (зупинний пункт, Південно-Західна залізниця)"
+  }
+},
+{
+  "type": "node",
+  "id": 10270393510,
+  "lat": 50.4262456,
+  "lon": 30.4181253,
+  "tags": {
+    "addr:housenumber": "40-А",
+    "addr:street": "бульвар Вацлава Гавела",
+    "amenity": "hospital",
+    "internet_access": "wlan",
+    "name": "Приватна лікарня Добрий прогноз",
+    "name:uk": "Добрий прогноз - Клініка німецької медицини",
+    "website": "https://dobro-clinic.com/ua"
+  }
+},
+{
+  "type": "node",
+  "id": 10292299342,
+  "lat": 50.5299637,
+  "lon": 30.6094129,
+  "tags": {
+    "light_rail": "yes",
+    "name": "Милославська",
+    "name:en": "Myloslavska",
+    "name:uk": "Милославська",
+    "name:uk-Latn": "Myloslavska",
+    "network": "Київський швидкісний трамвай",
+    "network:wikidata": "Q1984902",
+    "operator": "Київпастранс",
+    "operator:en": "Kyivpastrans",
+    "operator:uk": "Київпастранс",
+    "operator:wikidata": "Q12110155",
+    "public_transport": "station",
+    "railway": "station",
+    "station": "light_rail",
+    "wheelchair": "no",
+    "wikidata": "Q4293710",
+    "wikipedia": "uk:Милославська (станція швидкісного трамвая)"
+  }
+},
+{
+  "type": "node",
+  "id": 10292299344,
+  "lat": 50.5235099,
+  "lon": 30.6086824,
+  "tags": {
+    "light_rail": "yes",
+    "name": "Олександри Екстер",
+    "name:en": "Oleksandry Ekster",
+    "name:uk": "Олександри Екстер",
+    "name:uk-Latn": "Oleksandry Ekster",
+    "network": "Київський швидкісний трамвай",
+    "network:wikidata": "Q1984902",
+    "old_name": "Цвєтаєвої",
+    "old_name:en": "Tsvietaievoi",
+    "old_name:uk": "Цвєтаєвої",
+    "operator": "Київпастранс",
+    "operator:en": "Kyivpastrans",
+    "operator:uk": "Київпастранс",
+    "operator:wikidata": "Q12110155",
+    "public_transport": "station",
+    "railway": "station",
+    "station": "light_rail",
+    "wheelchair": "no",
+    "wikidata": "Q4503421",
+    "wikipedia": "uk:Олександри Екстер (станція швидкісного трамвая)"
+  }
+},
+{
+  "type": "node",
+  "id": 10292299345,
+  "lat": 50.5167311,
+  "lon": 30.6047754,
+  "tags": {
+    "light_rail": "yes",
+    "name": "Сержа Лифаря",
+    "name:uk": "Сержа Лифаря",
+    "name:uk-Latn": "Serzha Lyfaria",
+    "network": "Київський швидкісний трамвай",
+    "network:wikidata": "Q1984902",
+    "operator": "Київпастранс",
+    "operator:en": "Kyivpastrans",
+    "operator:uk": "Київпастранс",
+    "operator:wikidata": "Q12110155",
+    "public_transport": "station",
+    "railway": "station",
+    "station": "light_rail",
+    "wheelchair": "no",
+    "wikidata": "Q4403626",
+    "wikipedia": "uk:Сержа Лифаря (станція швидкісного трамвая)"
+  }
+},
+{
+  "type": "node",
+  "id": 10292299346,
+  "lat": 50.5111565,
+  "lon": 30.5949999,
+  "tags": {
+    "light_rail": "yes",
+    "name": "Рональда Рейгана",
+    "name:uk": "Рональда Рейгана",
+    "name:uk-Latn": "Ronalda Reihana",
+    "network": "Київський швидкісний трамвай",
+    "network:wikidata": "Q1984902",
+    "operator": "Київпастранс",
+    "operator:en": "Kyivpastrans",
+    "operator:uk": "Київпастранс",
+    "operator:wikidata": "Q12110155",
+    "public_transport": "station",
+    "railway": "station",
+    "station": "light_rail",
+    "wheelchair": "no",
+    "wikidata": "Q4167575",
+    "wikipedia": "uk:Рональда Рейгана (станція швидкісного трамвая)"
+  }
+},
+{
+  "type": "node",
+  "id": 10292299347,
+  "lat": 50.5062266,
+  "lon": 30.5831717,
+  "tags": {
+    "light_rail": "yes",
+    "name": "Каштанова",
+    "name:en": "Kashtanova",
+    "name:uk": "Каштанова",
+    "name:uk-Latn": "Kashtanova",
+    "network": "Київський швидкісний трамвай",
+    "network:wikidata": "Q1984902",
+    "operator": "Київпастранс",
+    "operator:en": "Kyivpastrans",
+    "operator:uk": "Київпастранс",
+    "operator:wikidata": "Q12110155",
+    "public_transport": "station",
+    "railway": "station",
+    "station": "light_rail",
+    "wheelchair": "no",
+    "wikidata": "Q4218284",
+    "wikipedia": "uk:Каштанова (станція швидкісного трамвая)"
+  }
+},
+{
+  "type": "node",
+  "id": 10292299348,
+  "lat": 50.4954839,
+  "lon": 30.5744853,
+  "tags": {
+    "light_rail": "yes",
+    "name": "Романа Шухевича",
+    "name:en": "Romana Shukhevycha",
+    "name:uk": "Романа Шухевича",
+    "name:uk-Latn": "Romana Shukhevycha",
+    "network": "Київський швидкісний трамвай",
+    "network:wikidata": "Q1984902",
+    "operator": "Київпастранс",
+    "operator:en": "Kyivpastrans",
+    "operator:uk": "Київпастранс",
+    "operator:wikidata": "Q12110155",
+    "public_transport": "station",
+    "railway": "station",
+    "station": "light_rail",
+    "wheelchair": "no",
+    "wikidata": "Q4105311",
+    "wikipedia": "uk:Романа Шухевича (станція швидкісного трамвая)"
+  }
+},
+{
+  "type": "node",
+  "id": 10292299349,
+  "lat": 50.4832890,
+  "lon": 30.5737709,
+  "tags": {
+    "light_rail": "yes",
+    "name": "Райдужний",
+    "name:en": "Raiduzhnyi",
+    "name:uk": "Райдужний",
+    "name:uk-Latn": "Raiduzhnyi",
+    "network": "Київський швидкісний трамвай",
+    "network:wikidata": "Q1984902",
+    "old_name": "Троєщина-2",
+    "old_name:en": "Troieshchyna-2",
+    "operator": "Київпастранс",
+    "operator:en": "Kyivpastrans",
+    "operator:uk": "Київпастранс",
+    "operator:wikidata": "Q12110155",
+    "public_transport": "station",
+    "railway": "station",
+    "station": "light_rail",
+    "wheelchair": "no",
+    "wikidata": "Q4463379",
+    "wikipedia": "uk:Райдужний (станція швидкісного трамвая)"
+  }
+},
+{
+  "type": "node",
+  "id": 10295806176,
+  "lat": 50.4437488,
+  "lon": 30.4893999,
+  "tags": {
+    "light_rail": "yes",
+    "name": "Старовокзальна",
+    "name:be": "Старавакзальная",
+    "name:en": "Starovokzalna",
+    "name:ru": "Старовокзальная",
+    "name:uk": "Старовокзальна",
+    "name:uk-Latn": "Starovokzalna",
+    "network": "Київський швидкісний трамвай",
+    "network:wikidata": "Q1984902",
+    "operator": "Київпастранс",
+    "operator:en": "Kyivpastrans",
+    "operator:uk": "Київпастранс",
+    "operator:wikidata": "Q12110155",
+    "public_transport": "station",
+    "railway": "station",
+    "station": "light_rail",
+    "wheelchair": "yes",
+    "wikidata": "Q4440168",
+    "wikipedia": "uk:Старовокзальна (станція швидкісного трамвая)"
+  }
+},
+{
+  "type": "node",
+  "id": 10295806177,
+  "lat": 50.4462357,
+  "lon": 30.4883665,
+  "tags": {
+    "light_rail": "yes",
+    "name": "Площа Галицька",
+    "name:be": "Плошча Галіцкая",
+    "name:en": "Halytska Square",
+    "name:ru": "Площадь Галицкая",
+    "name:uk": "Площа Галицька",
+    "name:uk-Latn": "Ploshcha Halytska",
+    "network": "Київський швидкісний трамвай",
+    "network:wikidata": "Q1984902",
+    "old_name": "Площа Перемоги",
+    "operator": "Київпастранс",
+    "operator:en": "Kyivpastrans",
+    "operator:uk": "Київпастранс",
+    "operator:wikidata": "Q12110155",
+    "public_transport": "station",
+    "railway": "station",
+    "station": "light_rail",
+    "wheelchair": "yes",
+    "wikidata": "Q4365717",
+    "wikipedia": "uk:Площа Галицька (станція швидкісного трамвая)"
+  }
+},
+{
+  "type": "node",
+  "id": 10295806178,
+  "lat": 50.4464606,
+  "lon": 30.4671114,
+  "tags": {
+    "light_rail": "yes",
+    "name": "Політехнічна",
+    "name:be": "Політэхнічная",
+    "name:en": "Politekhnichna",
+    "name:uk": "Політехнічна",
+    "name:uk-Latn": "Politekhnichna",
+    "network": "Київський швидкісний трамвай",
+    "network:wikidata": "Q1984902",
+    "note": "Вихід до станції метро \"Політехнічний інститут\"",
+    "operator": "Київпастранс",
+    "operator:en": "Kyivpastrans",
+    "operator:uk": "Київпастранс",
+    "operator:wikidata": "Q12110155",
+    "public_transport": "station",
+    "railway": "station",
+    "station": "light_rail",
+    "wheelchair": "no",
+    "wikidata": "Q4370049",
+    "wikipedia": "uk:Політехнічна (станція швидкісного трамвая)"
+  }
+},
+{
+  "type": "node",
+  "id": 10295806179,
+  "lat": 50.4443731,
+  "lon": 30.4696149,
+  "tags": {
+    "name": "Вагонна дільниця \"Київ-Пасажирський\"",
+    "name:uk": "Вагонна дільниця \"Київ-Пасажирський\"",
+    "operator": "Філія \"Пасажирська компанія\"",
+    "railway": "yard"
+  }
+},
+{
+  "type": "node",
+  "id": 10295806180,
+  "lat": 50.4447694,
+  "lon": 30.4668087,
+  "tags": {
+    "name": "Вагонне депо \"Київ-Пасажирський\"",
+    "name:uk": "Вагонне депо \"Київ-Пасажирський\"",
+    "operator": "Філія \"Пасажирська компанія\"",
+    "railway": "yard"
+  }
+},
+{
+  "type": "node",
+  "id": 10726000863,
+  "lat": 50.5121705,
+  "lon": 30.4985738,
+  "tags": {
+    "name": "Мінська",
+    "name:de": "Minska",
+    "name:en": "Minska",
+    "name:ru": "Минская",
+    "name:uk": "Мінська",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "opening_hours": "Mo-Su 05:27-22:27",
+    "operator": "Київський метрополітен",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "211",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "no",
+    "wikidata": "Q2635654",
+    "wikipedia": "uk:Мінська (станція метро, Київ)"
+  }
+},
+{
+  "type": "node",
+  "id": 10726000864,
+  "lat": 50.4861951,
+  "lon": 30.4978905,
+  "tags": {
+    "name": "Почайна",
+    "name:en": "Pochaina",
+    "name:ru": "Почайна",
+    "name:uk": "Почайна",
+    "name:uk-Latn": "Pochaina",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "old_name": "Петрівка",
+    "old_name:en": "Petrivka",
+    "old_name:uk": "Петрівка",
+    "opening_hours": "Mo-Su 05:32-22:31",
+    "operator": "Київський метрополітен",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "213",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "no",
+    "wikidata": "Q2388672",
+    "wikipedia": "uk:Почайна (станція метро)"
+  }
+},
+{
+  "type": "node",
+  "id": 10726000865,
+  "lat": 50.4735413,
+  "lon": 30.5045395,
+  "tags": {
+    "name": "Тараса Шевченка",
+    "name:en": "Tarasa Shevchenka",
+    "name:ru": "Тараса Шевченко",
+    "name:uk": "Тараса Шевченка",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "opening_hours": "Mo-Su 05:35-22:34",
+    "operator": "Київський метрополітен",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "214",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "no",
+    "wikidata": "Q2046904",
+    "wikipedia": "uk:Тараса Шевченка (станція метро)"
+  }
+},
+{
+  "type": "node",
+  "id": 10726000866,
+  "lat": 50.4587762,
+  "lon": 30.5248945,
+  "tags": {
+    "name": "Поштова площа",
+    "name:de": "Postplatz",
+    "name:en": "Poshtova Ploshcha",
+    "name:ru": "Почтовая площадь",
+    "name:uk": "Поштова площа",
+    "name:uk-Latn": "Poshtova Ploshcha",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "opening_hours": "Mo-Su 05:39-22:38",
+    "operator": "Київський метрополітен",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "216",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "no",
+    "wikidata": "Q2388610",
+    "wikipedia": "uk:Поштова площа (станція метро)"
+  }
+},
+{
+  "type": "node",
+  "id": 10726000867,
+  "lat": 50.4322821,
+  "lon": 30.5164035,
+  "tags": {
+    "name": "Олімпійська",
+    "name:en": "Olimpiiska",
+    "name:ru": "Олимпийская",
+    "name:uk": "Олімпійська",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "opening_hours": "Mo-Su 05:35-22:38",
+    "operator": "Київський метрополітен",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "219",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "no",
+    "wikidata": "Q2387897",
+    "wikipedia": "uk:Олімпійська (станція метро)"
+  }
+},
+{
+  "type": "node",
+  "id": 10726000868,
+  "lat": 50.4131113,
+  "lon": 30.5248282,
+  "tags": {
+    "name": "Либідська",
+    "name:en": "Lybidska",
+    "name:ru": "Лыбедская",
+    "name:uk": "Либідська",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "opening_hours": "Mo-Su 05:46-22:35",
+    "operator": "Київський метрополітен",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "221",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "no",
+    "wikidata": "Q2503994",
+    "wikipedia": "uk:Либідська (станція метро)"
+  }
+},
+{
+  "type": "node",
+  "id": 10726000869,
+  "lat": 50.4049317,
+  "lon": 30.5169137,
+  "tags": {
+    "name": "Деміївська",
+    "name:en": "Demiivska",
+    "name:fr": "Demiïvska",
+    "name:ru": "Демиевская",
+    "name:uk": "Деміївська",
+    "name:uk-Latn": "Demiivska",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "opening_hours": "Mo-Su 05:49-22:34",
+    "operator": "Київський метрополітен",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "222",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "yes",
+    "wikidata": "Q2069065",
+    "wikipedia": "uk:Деміївська (станція метро)"
+  }
+},
+{
+  "type": "node",
+  "id": 10726000870,
+  "lat": 50.3973294,
+  "lon": 30.5081616,
+  "tags": {
+    "name": "Голосіївська",
+    "name:en": "Holosiivska",
+    "name:ru": "Голосеевская",
+    "name:uk": "Голосіївська",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "opening_hours": "05:52-22:35",
+    "operator": "Київський метрополітен",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "223",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "yes",
+    "wikidata": "Q1980209",
+    "wikipedia": "uk:Голосіївська (станція метро)"
+  }
+},
+{
+  "type": "node",
+  "id": 10726245814,
+  "lat": 50.4032730,
+  "lon": 30.6842649,
+  "tags": {
+    "name": "Бориспільська",
+    "name:en": "Boryspilska",
+    "name:es": "Boryspilska",
+    "name:ru": "Бориспольская",
+    "name:uk": "Бориспільська",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "operator": "Київський метрополітен",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "326",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "yes",
+    "wikidata": "Q2328814",
+    "wikipedia": "uk:Бориспільська (станція метро)"
+  }
+},
+{
+  "type": "node",
+  "id": 10726245815,
+  "lat": 50.4028950,
+  "lon": 30.6661156,
+  "tags": {
+    "name": "Вирлиця",
+    "name:en": "Vyrlytsia",
+    "name:es": "Vyrlytsia",
+    "name:ru": "Вырлица",
+    "name:uk": "Вирлиця",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "operator": "Київський метрополітен",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "325",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "yes",
+    "wikidata": "Q2395599",
+    "wikipedia": "uk:Вирлиця (станція метро)"
+  }
+},
+{
+  "type": "node",
+  "id": 10726245816,
+  "lat": 50.4006902,
+  "lon": 30.6523061,
+  "tags": {
+    "name": "Харківська",
+    "name:en": "Kharkivska",
+    "name:es": "Járkivska",
+    "name:ru": "Харьковская",
+    "name:uk": "Харківська",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "operator": "Київський метрополітен",
+    "public_transport": "station",
+    "railway": "station",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "no",
+    "wikidata": "Q1982637",
+    "wikipedia": "uk:Харківська (станція метро)"
+  }
+},
+{
+  "type": "node",
+  "id": 10726245817,
+  "lat": 50.3978967,
+  "lon": 30.6346619,
+  "tags": {
+    "name": "Позняки",
+    "name:en": "Pozniaky",
+    "name:es": "Pozniaky",
+    "name:ru": "Позняки",
+    "name:uk": "Позняки",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "operator": "Київський метрополітен",
+    "public_transport": "station",
+    "railway": "station",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "no",
+    "wikidata": "Q1982618",
+    "wikipedia": "uk:Позняки (станція метро)"
+  }
+},
+{
+  "type": "node",
+  "id": 10726245818,
+  "lat": 50.4182500,
+  "lon": 30.5450279,
+  "tags": {
+    "name": "Звіринецька",
+    "name:en": "Zvirynetska",
+    "name:uk": "Звіринецька",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "old_name": "Дружби народів",
+    "old_name:en": "Druzhby Narodiv",
+    "old_name:uk": "Дружби народів",
+    "operator": "Київський метрополітен",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "318",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "no",
+    "wikidata": "Q2395626",
+    "wikipedia": "uk:Звіринецька (станція метро)"
+  }
+},
+{
+  "type": "node",
+  "id": 10726245819,
+  "lat": 50.4020929,
+  "lon": 30.5603010,
+  "tags": {
+    "architect": "Целіковська Т. О.",
+    "artist_name": "Бородай А. А.; Бабак А. П.",
+    "name": "Видубичі",
+    "name:en": "Vydubychi",
+    "name:uk": "Видубичі",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "operator": "Київський метрополітен",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "319",
+    "start_date": "1991",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "no",
+    "wikidata": "Q2395463",
+    "wikipedia": "uk:Видубичі (станція метро)"
+  }
+},
+{
+  "type": "node",
+  "id": 10726245820,
+  "lat": 50.4276251,
+  "lon": 30.5389263,
+  "tags": {
+    "check_date:opening_hours": "2026-03-19",
+    "name": "Печерська",
+    "name:en": "Pecherska",
+    "name:ru": "Печерская",
+    "name:uk": "Печерська",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "opening_hours": "Mo-Su 05:44-22:38",
+    "operator": "Київський метрополітен",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "317",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "no",
+    "wikidata": "Q2217253",
+    "wikipedia": "uk:Печерська (станція метро)"
+  }
+},
+{
+  "type": "node",
+  "id": 10726245822,
+  "lat": 50.4623623,
+  "lon": 30.4818047,
+  "tags": {
+    "name": "Лукʼянівська",
+    "name:en": "Lukianivska",
+    "name:ru": "Лукьяновская",
+    "name:uk": "Лукʼянівська",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "operator": "Київський метрополітен",
+    "public_transport": "station",
+    "railway": "station",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "no",
+    "wikidata": "Q2384631",
+    "wikipedia": "uk:Лук'янівська (станція метро)"
+  }
+},
+{
+  "type": "node",
+  "id": 10726245823,
+  "lat": 50.4578249,
+  "lon": 30.3908011,
+  "tags": {
+    "name": "Святошин",
+    "name:en": "Sviatoshyn",
+    "name:fr": "Sviatochine",
+    "name:ru": "Святошин",
+    "name:uk": "Святошин",
+    "network": "Київський метрополітен",
+    "network:wikidata": "Q215871",
+    "opening_hours": "Mo-Su 05:32-22:30",
+    "operator": "Київський метрополітен",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "112",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "yes",
+    "wikidata": "Q2265613",
+    "wikipedia": "uk:Святошин (станція метро)"
+  }
+},
+{
+  "type": "node",
+  "id": 10816803167,
+  "lat": 50.4171062,
+  "lon": 30.5471945,
+  "tags": {
+    "building": "service",
+    "building:colour": "white",
+    "building:levels": "1",
+    "building:material": "brick",
+    "name": "ТП-3047",
+    "name:uk": "ТП-3047",
+    "power": "substation",
+    "ref": "3047",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 10816818282,
+  "lat": 50.4165351,
+  "lon": 30.5510596,
+  "tags": {
+    "name": "ТП-3985",
+    "name:uk": "ТП-3985",
+    "power": "substation",
+    "ref": "3985",
+    "substation": "minor_distribution",
+    "voltage": "10000;400"
+  }
+},
+{
+  "type": "node",
+  "id": 10816824920,
+  "lat": 50.4164057,
+  "lon": 30.5478692,
+  "tags": {
+    "building": "service",
+    "building:colour": "white",
+    "building:levels": "1",
+    "building:material": "brick",
+    "name": "ТП-981",
+    "name:uk": "ТП-981",
+    "power": "substation",
+    "ref": "981",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 10848226268,
+  "lat": 50.4094865,
+  "lon": 30.6133036,
+  "tags": {
+    "name": "ТП-6869",
+    "name:uk": "ТП-6869",
+    "power": "substation",
+    "ref": "6869",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 10848269071,
+  "lat": 50.4112299,
+  "lon": 30.6241256,
+  "tags": {
+    "name": "ТП-7003",
+    "name:uk": "ТП-7003",
+    "power": "substation",
+    "ref": "7003",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 10848270687,
+  "lat": 50.4349726,
+  "lon": 30.6264399,
+  "tags": {
+    "name": "ТП-1961",
+    "name:uk": "ТП-1961",
+    "power": "substation",
+    "ref": "1961",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 10848270688,
+  "lat": 50.4941366,
+  "lon": 30.5986072,
+  "tags": {
+    "name": "ТП-4407",
+    "name:uk": "ТП-4407",
+    "power": "substation",
+    "ref": "4407",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 10848298264,
+  "lat": 50.5030769,
+  "lon": 30.5834499,
+  "tags": {
+    "power": "substation"
+  }
+},
+{
+  "type": "node",
+  "id": 10848301512,
+  "lat": 50.4169774,
+  "lon": 30.6346744,
+  "tags": {
+    "name": "ТП-8107",
+    "name:uk": "ТП-8107",
+    "power": "substation",
+    "ref": "8107",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 10848301609,
+  "lat": 50.4361073,
+  "lon": 30.4642812,
+  "tags": {
+    "building": "service",
+    "name": "ТП-6514",
+    "name:uk": "ТП-6514",
+    "power": "substation",
+    "ref": "6514",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 10848343462,
+  "lat": 50.3864707,
+  "lon": 30.4623446,
+  "tags": {
+    "addr:housenumber": "5",
+    "addr:postcode": "03189",
+    "addr:street": "вулиця Композитора Мейтуса",
+    "amenity": "hospital",
+    "emergency": "yes",
+    "healthcare": "hospital",
+    "healthcare:speciality": "gynaecology;orthopaedics;ophthalmology;paediatrics;psychiatry;otolaryngology;urology;general;cardiology;allergology",
+    "name": "DENIS",
+    "name:uk": "ДЕНИС",
+    "opening_hours": "Mo-Sa 08:00-20:00; Su 09:00-18:00",
+    "website": "https://denis.ua/"
+  }
+},
+{
+  "type": "node",
+  "id": 10859690565,
+  "lat": 50.4315967,
+  "lon": 30.5350285,
+  "tags": {
+    "building": "service",
+    "building:levels": "1",
+    "name": "ТП-2398",
+    "name:uk": "ТП-2398",
+    "power": "substation",
+    "ref": "2398",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 10867283690,
+  "lat": 50.4531205,
+  "lon": 30.4032472,
+  "tags": {
+    "name": "КТП-16",
+    "name:uk": "КТП-16",
+    "power": "substation",
+    "ref": "16",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 10867311444,
+  "lat": 50.4709401,
+  "lon": 30.4107676,
+  "tags": {
+    "building": "service",
+    "building:levels": "1",
+    "building:material": "brick",
+    "name": "ТП-2521",
+    "name:uk": "ТП-2521",
+    "power": "substation",
+    "ref": "2521",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 10867314704,
+  "lat": 50.4569217,
+  "lon": 30.4050984,
+  "tags": {
+    "power": "substation"
+  }
+},
+{
+  "type": "node",
+  "id": 10867317403,
+  "lat": 50.4897734,
+  "lon": 30.6084168,
+  "tags": {
+    "name": "ТП-5142",
+    "name:uk": "ТП-5142",
+    "power": "substation",
+    "ref": "5142",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 10867317446,
+  "lat": 50.4453587,
+  "lon": 30.6013034,
+  "tags": {
+    "name": "ТП-154",
+    "name:uk": "ТП-154",
+    "power": "substation",
+    "ref": "154",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 10867328645,
+  "lat": 50.4353620,
+  "lon": 30.5284459,
+  "tags": {
+    "building": "service",
+    "building:levels": "1",
+    "power": "substation"
+  }
+},
+{
+  "type": "node",
+  "id": 10867337823,
+  "lat": 50.4671408,
+  "lon": 30.4066317,
+  "tags": {
+    "building": "service",
+    "building:colour": "white",
+    "building:levels": "1",
+    "building:material": "brick",
+    "name": "ТП-2030",
+    "name:uk": "ТП-2030",
+    "power": "substation",
+    "ref": "2030",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 10867338277,
+  "lat": 50.4529814,
+  "lon": 30.4038826,
+  "tags": {
+    "name": "ТП-2747",
+    "name:uk": "ТП-2747",
+    "power": "substation",
+    "ref": "2747",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 10867339821,
+  "lat": 50.4588523,
+  "lon": 30.6043675,
+  "tags": {
+    "name": "ТП-392",
+    "power": "substation",
+    "ref": "392",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 10867356020,
+  "lat": 50.4529772,
+  "lon": 30.4038076,
+  "tags": {
+    "name": "ТП-17",
+    "name:uk": "ТП-17",
+    "power": "substation",
+    "ref": "17",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 10885980154,
+  "lat": 50.4985356,
+  "lon": 30.5180151,
+  "tags": {
+    "location": "indoor",
+    "name": "РП-417",
+    "name:uk": "РП-417",
+    "power": "substation",
+    "ref": "417",
+    "substation": "distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 10885989029,
+  "lat": 50.4553496,
+  "lon": 30.6170337,
+  "tags": {
+    "location": "indoor",
+    "name": "ТП-1287",
+    "name:uk": "ТП-1287",
+    "power": "substation",
+    "ref": "1287",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 10897741438,
+  "lat": 50.3792378,
+  "lon": 30.4482458,
+  "tags": {
+    "location": "indoor",
+    "name": "ТП-4311",
+    "name:uk": "ТП-4311",
+    "power": "substation",
+    "ref": "4311",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 10897746091,
+  "lat": 50.4629095,
+  "lon": 30.6273357,
+  "tags": {
+    "name": "ТП-2594",
+    "name:uk": "ТП-2594",
+    "power": "substation",
+    "ref": "2594",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 10900661069,
+  "lat": 50.4023928,
+  "lon": 30.6112488,
+  "tags": {
+    "location": "indoor",
+    "name": "ТП-8277",
+    "name:uk": "ТП-8277",
+    "power": "substation",
+    "ref": "8277",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 10900831347,
+  "lat": 50.3967584,
+  "lon": 30.6151840,
+  "tags": {
+    "name": "КТП-7906",
+    "name:uk": "КТП-7906",
+    "power": "substation",
+    "ref": "7906",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 10900843083,
+  "lat": 50.4105571,
+  "lon": 30.6330019,
+  "tags": {
+    "building": "service",
+    "building:colour": "white",
+    "building:levels": "1",
+    "building:material": "brick",
+    "name": "ТП-6506",
+    "name:uk": "ТП-6506",
+    "power": "substation",
+    "ref": "6506",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 10900845047,
+  "lat": 50.5297217,
+  "lon": 30.6063189,
+  "tags": {
+    "building": "service",
+    "building:levels": "1",
+    "name": "ТП-5486",
+    "name:uk": "ТП-5486",
+    "power": "substation",
+    "ref": "5487",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 10900872111,
+  "lat": 50.3974805,
+  "lon": 30.6140811,
+  "tags": {
+    "name": "ТП-8839",
+    "name:uk": "ТП-8839",
+    "power": "substation",
+    "ref": "8839",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 10904532781,
+  "lat": 50.4373087,
+  "lon": 30.4990909,
+  "tags": {
+    "location": "indoor",
+    "name": "РП-425",
+    "name:uk": "РП-425",
+    "power": "substation",
+    "ref": "425",
+    "substation": "distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 10907886851,
+  "lat": 50.4175690,
+  "lon": 30.5270991,
+  "tags": {
+    "building": "service",
+    "building:levels": "1",
+    "power": "substation"
+  }
+},
+{
+  "type": "node",
+  "id": 10908022898,
+  "lat": 50.4700680,
+  "lon": 30.4633005,
+  "tags": {
+    "name": "РП-542",
+    "name:uk": "РП-542",
+    "power": "substation",
+    "ref": "542",
+    "substation": "distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 10917004823,
+  "lat": 50.4043244,
+  "lon": 30.6291574,
+  "tags": {
+    "name": "ТП-5953",
+    "name:uk": "ТП-5953",
+    "power": "substation",
+    "ref": "5953",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 10917043272,
+  "lat": 50.5249173,
+  "lon": 30.6187349,
+  "tags": {
+    "building": "service",
+    "building:levels": "1",
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 10921479364,
+  "lat": 50.5252284,
+  "lon": 30.4560619,
+  "tags": {
+    "amenity": "hospital",
+    "name": "Авдіївська лікарня",
+    "name:uk": "Авдіївська лікарня"
+  }
+},
+{
+  "type": "node",
+  "id": 10923042941,
+  "lat": 50.4768593,
+  "lon": 30.4427126,
+  "tags": {
+    "name": "ТП-1432",
+    "name:uk": "ТП-1432",
+    "power": "substation",
+    "ref": "1432",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 10923045682,
+  "lat": 50.4672771,
+  "lon": 30.4473012,
+  "tags": {
+    "power": "substation"
+  }
+},
+{
+  "type": "node",
+  "id": 10923062453,
+  "lat": 50.4695967,
+  "lon": 30.4659415,
+  "tags": {
+    "name": "ТП-2941",
+    "name:uk": "ТП-2941",
+    "power": "substation",
+    "ref": "2941",
+    "substation": "minor"
+  }
+},
+{
+  "type": "node",
+  "id": 10923067142,
+  "lat": 50.4687835,
+  "lon": 30.4667960,
+  "tags": {
+    "name": "ТП-5770",
+    "name:uk": "ТП-5770",
+    "power": "substation",
+    "ref": "5770",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 10930609885,
+  "lat": 50.4544150,
+  "lon": 30.3991285,
+  "tags": {
+    "building": "service",
+    "building:levels": "1",
+    "name": "ТП-1254",
+    "name:uk": "ТП-1254",
+    "power": "substation",
+    "ref": "1254",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 10930748307,
+  "lat": 50.4988891,
+  "lon": 30.6076131,
+  "tags": {
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 10930763098,
+  "lat": 50.5296956,
+  "lon": 30.6156014,
+  "tags": {
+    "building": "service",
+    "building:colour": "white",
+    "building:levels": "1",
+    "name": "ТП-5318",
+    "name:uk": "ТП-5318",
+    "power": "substation",
+    "ref": "5318",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 10930770186,
+  "lat": 50.5299905,
+  "lon": 30.6124179,
+  "tags": {
+    "power": "substation"
+  }
+},
+{
+  "type": "node",
+  "id": 10930770677,
+  "lat": 50.4569797,
+  "lon": 30.4021274,
+  "tags": {
+    "name": "ТП-8314",
+    "name:uk": "ТП-8314",
+    "power": "substation"
+  }
+},
+{
+  "type": "node",
+  "id": 10930770678,
+  "lat": 50.5314359,
+  "lon": 30.6118885,
+  "tags": {
+    "name": "ТП-5398",
+    "name:uk": "ТП-5398",
+    "power": "substation",
+    "ref": "5398",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 10930775144,
+  "lat": 50.3917968,
+  "lon": 30.6026914,
+  "tags": {
+    "power": "substation"
+  }
+},
+{
+  "type": "node",
+  "id": 10939042341,
+  "lat": 50.4247793,
+  "lon": 30.6269193,
+  "tags": {
+    "location": "cabinet",
+    "name": "ТП-5680",
+    "name:uk": "ТП-5680",
+    "power": "substation",
+    "ref": "5680",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 10945121786,
+  "lat": 50.3671552,
+  "lon": 30.4570589,
+  "tags": {
+    "building": "service",
+    "building:levels": "1",
+    "name": "ТП-6079",
+    "name:uk": "ТП-6079",
+    "power": "substation",
+    "ref": "6079",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 10945124930,
+  "lat": 50.4834733,
+  "lon": 30.4648624,
+  "tags": {
+    "building:architecture": "service",
+    "building:levels": "1",
+    "power": "substation"
+  }
+},
+{
+  "type": "node",
+  "id": 10945125179,
+  "lat": 50.3671187,
+  "lon": 30.4591067,
+  "tags": {
+    "building": "service",
+    "building:levels": "1",
+    "name": "ТП-6080",
+    "name:uk": "ТП-6080",
+    "power": "substation",
+    "ref": "6080",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 10945129283,
+  "lat": 50.3674059,
+  "lon": 30.4578072,
+  "tags": {
+    "location": "indoor",
+    "name": "ТП-8688",
+    "name:uk": "ТП-8688",
+    "power": "substation",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 10945131855,
+  "lat": 50.4806000,
+  "lon": 30.4535261,
+  "tags": {
+    "name": "ТП-2656",
+    "name:uk": "ТП-2656",
+    "power": "substation",
+    "ref": "2656",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 10957083059,
+  "lat": 50.4334042,
+  "lon": 30.4800209,
+  "tags": {
+    "name": "ТП-4293",
+    "name:uk": "ТП-4293",
+    "power": "substation",
+    "ref": "4293",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 10957095546,
+  "lat": 50.4290065,
+  "lon": 30.4812968,
+  "tags": {
+    "location": "indoor",
+    "name": "ТП-5900",
+    "name:uk": "ТП-5900",
+    "power": "substation",
+    "ref": "5900",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 10957102564,
+  "lat": 50.4317111,
+  "lon": 30.4770611,
+  "tags": {
+    "location": "indoor",
+    "name": "ТП-8255",
+    "name:uk": "ТП-8255",
+    "power": "substation",
+    "ref": "8255",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 10957112435,
+  "lat": 50.5138520,
+  "lon": 30.4932625,
+  "tags": {
+    "location": "indoor",
+    "name": "РП-422",
+    "name:uk": "РП-422",
+    "power": "substation",
+    "substation": "distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 10962969670,
+  "lat": 50.4865163,
+  "lon": 30.4055321,
+  "tags": {
+    "name": "КТП-7155",
+    "name:uk": "КТП-7155",
+    "power": "substation",
+    "ref": "7155",
+    "substation": "minor_distribution"
+  }
+},
+{
+  "type": "node",
+  "id": 10970379026,
+  "lat": 50.4341194,
+  "lon": 30.6337266,
+  "tags": {
+    "power": "substation"
+  }
+}
+
+  ]
+}

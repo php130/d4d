@@ -1,0 +1,85 @@
+{
+  "generated_at": "2026-07-04T05:29:49.520089+00:00",
+  "feature_count": 3200,
+  "class_counts": {
+    "other_building": 955,
+    "commercial": 1401,
+    "public_or_civic": 175,
+    "residential": 665,
+    "industrial": 4
+  },
+  "aoi_stats": [
+    {
+      "aoi": "seoul_cbd",
+      "label": "Seoul CBD",
+      "bbox": [
+        37.55,
+        126.96,
+        37.59,
+        127.02
+      ],
+      "accepted_features": 800
+    },
+    {
+      "aoi": "yeouido_mapo",
+      "label": "Yeouido/Mapo",
+      "bbox": [
+        37.515,
+        126.88,
+        37.56,
+        126.96
+      ],
+      "accepted_features": 700
+    },
+    {
+      "aoi": "gangnam_seocho",
+      "label": "Gangnam/Seocho",
+      "bbox": [
+        37.48,
+        127.0,
+        37.53,
+        127.08
+      ],
+      "accepted_features": 800
+    },
+    {
+      "aoi": "songpa_jamsil",
+      "label": "Songpa/Jamsil",
+      "bbox": [
+        37.5,
+        127.07,
+        37.545,
+        127.14
+      ],
+      "accepted_features": 697
+    },
+    {
+      "aoi": "guro_geumcheon",
+      "label": "Guro/Geumcheon",
+      "bbox": [
+        37.46,
+        126.86,
+        37.51,
+        126.93
+      ],
+      "accepted_features": 203
+    }
+  ],
+  "source": {
+    "name": "OpenStreetMap Overpass API",
+    "url": "https://overpass-api.de/",
+    "license": "Open Database License (ODbL)",
+    "note": "Public building footprints only. No PII, ownership, resident, contact, access-control, or protected-facility attributes are collected."
+  },
+  "collection_policy": {
+    "precision": "public exact building footprint",
+    "public_demo_rule": "Display for civilian exposure and deconfliction only.",
+    "sensitive_exclusions": [
+      "resident/unit-level apartment data",
+      "ownership records",
+      "contact details",
+      "access-control information",
+      "military or protected-facility enrichment"
+    ]
+  }
+}

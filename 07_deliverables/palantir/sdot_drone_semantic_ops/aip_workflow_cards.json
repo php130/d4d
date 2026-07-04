@@ -1,0 +1,46 @@
+[
+  {
+    "card_id": "operator_situation_summary",
+    "title_ko": "오퍼레이터 상황 요약",
+    "input_objects": [
+      "DroneAsset",
+      "SimulationCase",
+      "SemanticEvent",
+      "KalmanTracePoint"
+    ],
+    "prompt_intent": "선택 케이스에서 현재 드론 상태, contested measurement, 전송해야 할 S-DOT 패킷을 한국어로 요약합니다.",
+    "guardrails": [
+      "교란 원점/위치 추정 금지",
+      "합성 데이터임을 명시",
+      "확정 표현 대신 가설/신뢰도 표현 사용"
+    ]
+  },
+  {
+    "card_id": "packet_priority_review",
+    "title_ko": "S-DOT 패킷 우선순위 검토",
+    "input_objects": [
+      "SemanticEvent",
+      "SemanticPacket",
+      "RoutingDecision"
+    ],
+    "prompt_intent": "DDIL 모드별로 어떤 패킷을 전송/보류/로컬 보존해야 하는지 근거와 함께 제안합니다.",
+    "guardrails": [
+      "원본 raw data 외부 공개 금지",
+      "API key/token 출력 금지"
+    ]
+  },
+  {
+    "card_id": "rejoin_audit_assistant",
+    "title_ko": "재연결 감사 보조",
+    "input_objects": [
+      "RejoinAudit",
+      "KalmanTracePoint",
+      "RawObservation",
+      "SemanticPacket"
+    ],
+    "prompt_intent": "재연결 이후 예측 trace와 캐시 원본 간 차이를 감사하고 동기화 순서를 추천합니다.",
+    "guardrails": [
+      "실제 작전 위치 또는 실제 군사 데이터와 연결 금지"
+    ]
+  }
+]

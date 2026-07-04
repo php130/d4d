@@ -1,0 +1,6 @@
+case_id,label_ko,scenario_summary_ko,default_mode,primary
+case_a_normal,정상 임무,예측 위치와 보고 위치가 일치하는 기준선입니다.,full_sync,False
+case_b_link_degraded,통신 저하,위치는 안정적이지만 링크가 좁아져 원본 feed 대신 상태 카드가 필요합니다.,semantic_summary,False
+case_c_gnss_jamming_suspected,GNSS 교란 의심,보고 위치와 예측 위치가 벌어지고 GNSS/link 품질이 함께 저하됩니다.,semantic_summary,True
+case_d_spoofing_like_inconsistency,위치 불일치,GNSS-like 보고는 존재하지만 물리 예측과 IMU 연속성에 맞지 않습니다.,semantic_summary,False
+case_e_rejoin_audit,재연결 감사,재연결 이후 단절 중 판단과 로컬 캐시 원본을 대조해야 합니다.,store_forward,False

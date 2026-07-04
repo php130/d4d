@@ -1,0 +1,3 @@
+hypothesis_id,asset_id,time,label,score,inputs_json,caveat
+jam_hyp_uav_s1_001,uav_s1,2026-07-04T03:01:12Z,jamming_suspected,0.683,"{""context_risk"":0.42,""gnss_quality_drop"":0.72,""heartbeat_gap_score"":0.6,""imu_gnss_disagreement"":0.55,""link_quality_drop"":0.58,""normalized_position_residual"":1.0}","방어적 진단 가설일 뿐이며, 간섭원의 존재나 위치를 입증하지 않습니다."
+jam_hyp_uav_s1_002,uav_s1,2026-07-04T03:01:20Z,spoofing_like_inconsistency,0.66,"{""context_risk"":0.36,""gnss_quality_drop"":0.18,""heartbeat_gap_score"":0.3,""imu_gnss_disagreement"":0.82,""link_quality_drop"":0.48,""normalized_position_residual"":1.0}","방어적 무결성 가설일 뿐이며, spoofing 주체나 발생원을 입증하지 않습니다."

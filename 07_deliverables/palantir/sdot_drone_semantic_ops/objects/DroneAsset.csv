@@ -1,0 +1,4 @@
+asset_id,asset_code,asset_type,sensor_modalities_json,comm_state,battery_pct,last_contact_time,local_cache_status,sdot_outbox_count
+uav_s1,UAV-S1,synthetic_quadcopter,"[""EO_IR"",""GNSS"",""IMU"",""LINK_TELEMETRY""]",intermittent,64,2026-07-04T03:00:40Z,raw_video_cached,4
+ugv_r1,UGV-R1,synthetic_ground_relay,"[""LINK_RELAY"",""RF_CONTEXT""]",degraded,78,2026-07-04T03:01:10Z,relay_logs_cached,2
+rf_s3,RF-S3,synthetic_rf_sensor,"[""RF_CONTEXT"",""LINK_TELEMETRY""]",connected,92,2026-07-04T03:01:10Z,summary_only,1

@@ -1,0 +1,3 @@
+35270 9916553f2222516515a21d2321146741 http://data.gdeltproject.org/gdeltv2/20260704014500.export.CSV.zip
+42006 4444ebea8fca5f4cfaf9cd538612ae00 http://data.gdeltproject.org/gdeltv2/20260704014500.mentions.CSV.zip
+2865682 21a983b3319455f307118d7cc40eed4f http://data.gdeltproject.org/gdeltv2/20260704014500.gkg.csv.zip

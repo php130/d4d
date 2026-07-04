@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Korea Civil Infrastructure COP</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="./assets/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">D4D Civil Protection COP</p>
+          <h1>Korea Civil Infrastructure Board</h1>
+          <p class="subtitle">Public medical assets · aggregate communications and power context · protected-facility safe mode</p>
+        </div>
+        <div class="topbar-status" id="topbarStatus"></div>
+      </header>
+
+      <section class="ops-grid" aria-label="Civil infrastructure COP">
+        <aside class="panel controls-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="panel-kicker">Layers</p>
+              <h2>Safe Data View</h2>
+            </div>
+            <span class="status-pill">No sensitive coordinates</span>
+          </div>
+          <div class="layer-toggles" id="layerToggles"></div>
+          <div class="safe-boundary" id="safeBoundary"></div>
+        </aside>
+
+        <section class="panel map-panel">
+          <div class="panel-heading map-heading">
+            <div>
+              <p class="panel-kicker">Common Operational Picture</p>
+              <h2 id="mapTitle">Seoul Metropolitan AOI</h2>
+            </div>
+            <div class="mode-tabs" id="modeTabs"></div>
+          </div>
+          <div class="map-meta-strip" id="mapMetaStrip"></div>
+          <div class="map-stage">
+            <div id="infraMap" role="application" aria-label="Korea civil infrastructure COP map"></div>
+          </div>
+        </section>
+
+        <aside class="panel details-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="panel-kicker">Selected Item</p>
+              <h2 id="selectedTitle">Civil Infrastructure</h2>
+            </div>
+            <span class="status-pill muted" id="selectedMode">aggregate</span>
+          </div>
+          <div id="selectedDetails"></div>
+        </aside>
+      </section>
+
+      <section class="bottom-grid">
+        <section class="panel event-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="panel-kicker">Semantic Events</p>
+              <h2>Staff Queue</h2>
+            </div>
+          </div>
+          <div class="event-list" id="eventList"></div>
+        </section>
+
+        <section class="panel source-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="panel-kicker">Public Sources</p>
+              <h2>Integration Readiness</h2>
+            </div>
+          </div>
+          <div class="source-table" id="sourceTable"></div>
+        </section>
+      </section>
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="./data/civil_infra_dataset.js"></script>
+    <script src="./data/building_footprints_osm.js"></script>
+    <script src="./assets/app.js"></script>
+  </body>
+</html>

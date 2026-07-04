@@ -1,0 +1,1804 @@
+[
+  {
+    "source": "petro_ivaniuk_github",
+    "file": "README.md",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/petro_ivaniuk/README.md",
+    "status": "cached"
+  },
+  {
+    "source": "petro_ivaniuk_github",
+    "file": "LICENSE",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/petro_ivaniuk/LICENSE",
+    "status": "cached"
+  },
+  {
+    "source": "petro_ivaniuk_github",
+    "file": "data/russia_losses_equipment.json",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/petro_ivaniuk/data__russia_losses_equipment.json",
+    "status": "cached"
+  },
+  {
+    "source": "petro_ivaniuk_github",
+    "file": "data/russia_losses_equipment_correction.json",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/petro_ivaniuk/data__russia_losses_equipment_correction.json",
+    "status": "cached"
+  },
+  {
+    "source": "petro_ivaniuk_github",
+    "file": "data/russia_losses_equipment_oryx.json",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/petro_ivaniuk/data__russia_losses_equipment_oryx.json",
+    "status": "cached"
+  },
+  {
+    "source": "petro_ivaniuk_github",
+    "file": "data/russia_losses_personnel.json",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/petro_ivaniuk/data__russia_losses_personnel.json",
+    "status": "cached"
+  },
+  {
+    "source": "petro_ivaniuk_github",
+    "processed": "equipment_recent",
+    "rows": 214
+  },
+  {
+    "source": "petro_ivaniuk_github",
+    "processed": "personnel_recent",
+    "rows": 214
+  },
+  {
+    "source": "massive_missile_attacks_github",
+    "file": "README.md",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/missile_attacks_github/README.md",
+    "status": "cached"
+  },
+  {
+    "source": "massive_missile_attacks_github",
+    "file": "missile_attacks_daily.csv",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/missile_attacks_github/missile_attacks_daily.csv",
+    "status": "cached"
+  },
+  {
+    "source": "massive_missile_attacks_github",
+    "file": "missiles_and_uavs.csv",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/missile_attacks_github/missiles_and_uavs.csv",
+    "status": "cached"
+  },
+  {
+    "source": "massive_missile_attacks_github",
+    "processed": "recent_attack_rows",
+    "rows": 311
+  },
+  {
+    "source": "massive_missile_attacks_github",
+    "processed": "daily_summary",
+    "rows": 90
+  },
+  {
+    "source": "ucdp",
+    "dataset": "candidate_ged_26_0_5",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/ucdp/GEDEvent_v26_0_5.csv",
+    "status": "cached"
+  },
+  {
+    "source": "ucdp",
+    "dataset": "stable_ged_26_1_csv_zip",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/ucdp/ged261-csv.zip",
+    "status": "cached"
+  },
+  {
+    "source": "ucdp",
+    "processed": "candidate_ukraine_filtered",
+    "rows": 280
+  },
+  {
+    "source": "ucdp",
+    "processed": "stable_ged_ukraine_2022plus",
+    "rows": 38234
+  },
+  {
+    "url": "http://api.gdeltproject.org/api/v2/doc/doc?query=Ukrzaliznytsia&mode=artlist&format=json&maxrecords=50&timespan=6m",
+    "error": {
+      "type": "HTTPError",
+      "code": 429,
+      "reason": "Too Many Requests",
+      "body": "Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-traffic users should switch to our ngrams dataset: https://blog.gdeltproject.org/using-the-new-web-ngrams-dataset-to-find-relevant-coverage/. For trend analysis, please see our daily newsletter briefings: https://blog.gdeltproject.org/announcing-our-new-daily-todays-trends-on-capitol-hill-todays-media-trends-newsletter-briefings/.\n\n"
+    },
+    "fetched_at": "2026-07-04T01:42:52.785834+00:00",
+    "source": "gdelt_doc_api",
+    "query": "Ukrzaliznytsia"
+  },
+  {
+    "url": "http://api.gdeltproject.org/api/v2/doc/doc?query=%22Ukraine%22+%22railway%22+%22attack%22&mode=artlist&format=json&maxrecords=50&timespan=6m",
+    "error": {
+      "type": "HTTPError",
+      "code": 429,
+      "reason": "Too Many Requests",
+      "body": "Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-traffic users should switch to our ngrams dataset: https://blog.gdeltproject.org/using-the-new-web-ngrams-dataset-to-find-relevant-coverage/. For trend analysis, please see our daily newsletter briefings: https://blog.gdeltproject.org/announcing-our-new-daily-todays-trends-on-capitol-hill-todays-media-trends-newsletter-briefings/.\n\n"
+    },
+    "fetched_at": "2026-07-04T01:43:00.610661+00:00",
+    "source": "gdelt_doc_api",
+    "query": "\"Ukraine\" \"railway\" \"attack\""
+  },
+  {
+    "url": "http://api.gdeltproject.org/api/v2/doc/doc?query=%22Ukraine%22+%22energy+infrastructure%22&mode=artlist&format=json&maxrecords=50&timespan=6m",
+    "error": {
+      "type": "HTTPError",
+      "code": 429,
+      "reason": "Too Many Requests",
+      "body": "Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-traffic users should switch to our ngrams dataset: https://blog.gdeltproject.org/using-the-new-web-ngrams-dataset-to-find-relevant-coverage/. For trend analysis, please see our daily newsletter briefings: https://blog.gdeltproject.org/announcing-our-new-daily-todays-trends-on-capitol-hill-todays-media-trends-newsletter-briefings/.\n\n"
+    },
+    "fetched_at": "2026-07-04T01:43:09.391800+00:00",
+    "source": "gdelt_doc_api",
+    "query": "\"Ukraine\" \"energy infrastructure\""
+  },
+  {
+    "url": "http://api.gdeltproject.org/api/v2/doc/doc?query=%22Ukraine%22+%22power+grid%22&mode=artlist&format=json&maxrecords=50&timespan=6m",
+    "error": {
+      "type": "HTTPError",
+      "code": 429,
+      "reason": "Too Many Requests",
+      "body": "Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-traffic users should switch to our ngrams dataset: https://blog.gdeltproject.org/using-the-new-web-ngrams-dataset-to-find-relevant-coverage/. For trend analysis, please see our daily newsletter briefings: https://blog.gdeltproject.org/announcing-our-new-daily-todays-trends-on-capitol-hill-todays-media-trends-newsletter-briefings/.\n\n"
+    },
+    "fetched_at": "2026-07-04T01:43:17.343555+00:00",
+    "source": "gdelt_doc_api",
+    "query": "\"Ukraine\" \"power grid\""
+  },
+  {
+    "url": "http://api.gdeltproject.org/api/v2/doc/doc?query=%22Ukraine%22+%22Shahed%22&mode=artlist&format=json&maxrecords=50&timespan=6m",
+    "error": {
+      "type": "HTTPError",
+      "code": 429,
+      "reason": "Too Many Requests",
+      "body": "Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-traffic users should switch to our ngrams dataset: https://blog.gdeltproject.org/using-the-new-web-ngrams-dataset-to-find-relevant-coverage/. For trend analysis, please see our daily newsletter briefings: https://blog.gdeltproject.org/announcing-our-new-daily-todays-trends-on-capitol-hill-todays-media-trends-newsletter-briefings/.\n\n"
+    },
+    "fetched_at": "2026-07-04T01:43:25.732845+00:00",
+    "source": "gdelt_doc_api",
+    "query": "\"Ukraine\" \"Shahed\""
+  },
+  {
+    "url": "http://api.gdeltproject.org/api/v2/doc/doc?query=%22Ukraine%22+%22missile%22+%22drone%22&mode=artlist&format=json&maxrecords=50&timespan=6m",
+    "error": {
+      "type": "HTTPError",
+      "code": 429,
+      "reason": "Too Many Requests",
+      "body": "Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-traffic users should switch to our ngrams dataset: https://blog.gdeltproject.org/using-the-new-web-ngrams-dataset-to-find-relevant-coverage/. For trend analysis, please see our daily newsletter briefings: https://blog.gdeltproject.org/announcing-our-new-daily-todays-trends-on-capitol-hill-todays-media-trends-newsletter-briefings/.\n\n"
+    },
+    "fetched_at": "2026-07-04T01:43:34.645340+00:00",
+    "source": "gdelt_doc_api",
+    "query": "\"Ukraine\" \"missile\" \"drone\""
+  },
+  {
+    "url": "http://api.gdeltproject.org/api/v2/doc/doc?query=%22Odesa%22+%22port%22+%22drone%22&mode=artlist&format=json&maxrecords=50&timespan=6m",
+    "error": {
+      "type": "HTTPError",
+      "code": 429,
+      "reason": "Too Many Requests",
+      "body": "Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-traffic users should switch to our ngrams dataset: https://blog.gdeltproject.org/using-the-new-web-ngrams-dataset-to-find-relevant-coverage/. For trend analysis, please see our daily newsletter briefings: https://blog.gdeltproject.org/announcing-our-new-daily-todays-trends-on-capitol-hill-todays-media-trends-newsletter-briefings/.\n\n"
+    },
+    "fetched_at": "2026-07-04T01:43:43.445378+00:00",
+    "source": "gdelt_doc_api",
+    "query": "\"Odesa\" \"port\" \"drone\""
+  },
+  {
+    "url": "http://api.gdeltproject.org/api/v2/doc/doc?query=%22Black+Sea%22+%22Ukraine%22+%22shipping%22&mode=artlist&format=json&maxrecords=50&timespan=6m",
+    "error": {
+      "type": "HTTPError",
+      "code": 429,
+      "reason": "Too Many Requests",
+      "body": "Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-traffic users should switch to our ngrams dataset: https://blog.gdeltproject.org/using-the-new-web-ngrams-dataset-to-find-relevant-coverage/. For trend analysis, please see our daily newsletter briefings: https://blog.gdeltproject.org/announcing-our-new-daily-todays-trends-on-capitol-hill-todays-media-trends-newsletter-briefings/.\n\n"
+    },
+    "fetched_at": "2026-07-04T01:43:51.022704+00:00",
+    "source": "gdelt_doc_api",
+    "query": "\"Black Sea\" \"Ukraine\" \"shipping\""
+  },
+  {
+    "source": "gdelt_doc_api",
+    "processed": "deduped_articles",
+    "rows": 0
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/lastupdate.txt",
+    "status": 200,
+    "content_type": "text/plain",
+    "content_length": "319",
+    "sha256": "4ccdf4025976a4f94be2e963afd28f973379c0ad18b4a0a3c3278a66400f421b",
+    "fetched_at": "2026-07-04T01:43:55.265384+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "file": "lastupdate.txt"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260704014500.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "35270",
+    "sha256": "075b0c3b13af0a5e3672b15de5961c3b6a6ff99f63e42b4dccdd995204759262",
+    "fetched_at": "2026-07-04T01:43:55.295423+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260704014500",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260704014500.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260704013000.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "52276",
+    "sha256": "6c09499ef573a57dcdebc04aed44cbaadd663cfb6a5b67a0129465adfe84af5e",
+    "fetched_at": "2026-07-04T01:43:55.494732+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260704013000",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260704013000.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260704011500.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "21175",
+    "sha256": "fd8039d44ae2a5fc728f3395b843d600798a07ab07a742449c284928f6e6d49e",
+    "fetched_at": "2026-07-04T01:43:55.657576+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260704011500",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260704011500.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260704010000.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "51098",
+    "sha256": "e86b60a08b13cea8d18507033f5a48a5042a4790cc673b857504115a28ee7789",
+    "fetched_at": "2026-07-04T01:43:55.835962+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260704010000",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260704010000.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260704004500.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "38452",
+    "sha256": "1f13e2f0988fad5085757fd2fa0d8d976c3a6c5968aba5902d6e6b22777323a7",
+    "fetched_at": "2026-07-04T01:43:56.103427+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260704004500",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260704004500.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260704003000.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "49632",
+    "sha256": "ce95de71f9927105dcada67d04c990b3e974067e8860c7ab9ce5406b6928fc0d",
+    "fetched_at": "2026-07-04T01:43:56.276621+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260704003000",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260704003000.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260704001500.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "72700",
+    "sha256": "a0a9500fb9f9cb0f877c02ed302bfa2077105a1f43248446e1c19cf945a951da",
+    "fetched_at": "2026-07-04T01:43:56.473359+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260704001500",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260704001500.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260704000000.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "75939",
+    "sha256": "75dc3ae65b86de3966fe4cad53018286c7b659d871d4472bb683b34c91adc093",
+    "fetched_at": "2026-07-04T01:43:56.655460+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260704000000",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260704000000.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703234500.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "33743",
+    "sha256": "a55fda71defb2a10ac03ed13603d9a1a485dde6a58c0c12a0f8ffeb1d90a8a5b",
+    "fetched_at": "2026-07-04T01:43:56.826355+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703234500",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703234500.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703233000.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "37394",
+    "sha256": "43b9a9fb8b4c604263227889c1dc6a86c3b55beb3c4df50d6041c1c105d36141",
+    "fetched_at": "2026-07-04T01:43:57.000930+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703233000",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703233000.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703231500.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "27290",
+    "sha256": "ae3c816569a99091d7a3480f0427b3ec1d3d72f61315be34fe9b65bb678112e6",
+    "fetched_at": "2026-07-04T01:43:57.176437+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703231500",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703231500.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703230000.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "31176",
+    "sha256": "49287fdec1193c64f929323f20e4418e0beaac1193b845b6cd20f5f390127ef2",
+    "fetched_at": "2026-07-04T01:43:57.336215+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703230000",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703230000.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703224500.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "28364",
+    "sha256": "a7c3a9640023033ab6a90fe201896fc74d9821ff124985df2f064930c96ee4de",
+    "fetched_at": "2026-07-04T01:43:57.494650+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703224500",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703224500.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703223000.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "54315",
+    "sha256": "183fe5ff3086a3b1cb126af1ac90c3d17d0fee759eb5299513b9ee6876c4a2bf",
+    "fetched_at": "2026-07-04T01:43:57.684731+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703223000",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703223000.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703221500.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "35719",
+    "sha256": "54a702196cfc417d074e76a8665fc7f0c278ec369e35fa4259a0f63efb5206a4",
+    "fetched_at": "2026-07-04T01:43:57.854880+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703221500",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703221500.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703220000.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "43458",
+    "sha256": "5a6f060118849e9784b8bb8705b29f94da976b032dd40e7f1d9d28fabbc27755",
+    "fetched_at": "2026-07-04T01:43:58.016699+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703220000",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703220000.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703214500.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "42546",
+    "sha256": "7b925ff6adaff351557e3c10a6587c2462999fd6010f8516f406f7d3f3d26bdb",
+    "fetched_at": "2026-07-04T01:43:58.226823+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703214500",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703214500.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703213000.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "27062",
+    "sha256": "e6d89e33d0e2b27f7edc6d21380090b8c372d6d3fd61a87bfcdcc5882613efa4",
+    "fetched_at": "2026-07-04T01:43:58.384193+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703213000",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703213000.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703211500.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "34289",
+    "sha256": "09d871710b5daf3e555dc9e02dcb9577d32bd0a15d4fe8b344201531129afb32",
+    "fetched_at": "2026-07-04T01:43:58.532195+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703211500",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703211500.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703210000.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "44755",
+    "sha256": "c288090f4a896c9d8cb971c994d32d8f22dcef6c5fa80e254d25ac8454d801e9",
+    "fetched_at": "2026-07-04T01:43:58.689191+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703210000",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703210000.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703204500.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "51114",
+    "sha256": "e6da6255e9829413d37ad933f28a201bfdfdf2df9ca13f03f90acbe8367ae458",
+    "fetched_at": "2026-07-04T01:43:58.851456+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703204500",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703204500.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703203000.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "63941",
+    "sha256": "766711be20850281ba35b43e77c34a402fab571ec07346983e3940bed9a04993",
+    "fetched_at": "2026-07-04T01:43:59.028650+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703203000",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703203000.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703201500.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "60114",
+    "sha256": "375e65ade3b86aa954a4d9af9d41dfc6f54a18717c60310fd8874857e28db658",
+    "fetched_at": "2026-07-04T01:43:59.271565+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703201500",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703201500.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703200000.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "45014",
+    "sha256": "13cadfdb8c1b412aad5a65642b29a8f449d222b250d2fe4e9bbaa37e571dae1e",
+    "fetched_at": "2026-07-04T01:43:59.446670+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703200000",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703200000.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703194500.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "46936",
+    "sha256": "1f88ce0aa1cca4aa25600e2bc8fe960f0bc476558a13d760c893d42e8da05ad1",
+    "fetched_at": "2026-07-04T01:43:59.610250+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703194500",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703194500.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703193000.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "80239",
+    "sha256": "a9f2addbb787db4628f1925961068af368955ecb3218f6fb69c7df483106cb08",
+    "fetched_at": "2026-07-04T01:43:59.776064+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703193000",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703193000.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703191500.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "62536",
+    "sha256": "87586738fb8bf545a7e4952fab95a70364f1ea7f930ab6eb60db1510e2f67ec4",
+    "fetched_at": "2026-07-04T01:43:59.954054+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703191500",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703191500.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703190000.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "51627",
+    "sha256": "906047d44de00a3ce732d6833fbb91e3499ee2c1ab16c759ba087ae4121eea18",
+    "fetched_at": "2026-07-04T01:44:00.127768+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703190000",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703190000.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703184500.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "56341",
+    "sha256": "354397e733fee01842a7a5d63e3753fff4d7467f584d82fca45dfb54b06de0b3",
+    "fetched_at": "2026-07-04T01:44:00.353219+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703184500",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703184500.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703183000.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "60018",
+    "sha256": "8ed28824b47483faff3c35c6af138f667c7830dcd5a8ffb5f4a56cf50e6fe08a",
+    "fetched_at": "2026-07-04T01:44:00.551888+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703183000",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703183000.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703181500.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "83441",
+    "sha256": "bb9dfbe06fb8cca180527c4f2ea13beaf720f2e912ec66f0eca6023516baf64f",
+    "fetched_at": "2026-07-04T01:44:00.730310+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703181500",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703181500.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703180000.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "79813",
+    "sha256": "3b76aa4333f219031739e6afcd1653f55fce94492e7f3be257e0e5613eb52bb1",
+    "fetched_at": "2026-07-04T01:44:00.936246+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703180000",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703180000.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703174500.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "83637",
+    "sha256": "5f6a5613137a59604ea46c083701463c3e8cf08e20a12870c716ea3bd32c7850",
+    "fetched_at": "2026-07-04T01:44:01.119152+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703174500",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703174500.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703173000.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "71931",
+    "sha256": "4ae29852cced6a7e8458b6d5390c834c1c0e7af9d7eb96f88528ffaada7aa061",
+    "fetched_at": "2026-07-04T01:44:01.516622+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703173000",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703173000.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703171500.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "59649",
+    "sha256": "7b88ec60e8745400e79f7bde0e9173d9b677a63c45305e9ecd9e1c1d8b38d863",
+    "fetched_at": "2026-07-04T01:44:01.844413+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703171500",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703171500.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703170000.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "84488",
+    "sha256": "e0a0245f8090b2b31c741952a314e16d49eeaa2c22c61aedc4637e02caaa3c56",
+    "fetched_at": "2026-07-04T01:44:02.159413+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703170000",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703170000.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703164500.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "74340",
+    "sha256": "8c484e60b7bde41c99a1e59706171580b8119c45028502afbcc4f299b092a9ca",
+    "fetched_at": "2026-07-04T01:44:02.601967+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703164500",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703164500.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703163000.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "56331",
+    "sha256": "7b9d9351bd2304af7fc8407e928d0691d6a3d59ca180655ff9dc660e12558b15",
+    "fetched_at": "2026-07-04T01:44:02.907392+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703163000",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703163000.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703161500.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "72469",
+    "sha256": "cddb9163d168242dcd6f682ecb0fe317cd65b3d03e20c8038bb047d3b8fcbacb",
+    "fetched_at": "2026-07-04T01:44:03.209204+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703161500",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703161500.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703160000.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "66773",
+    "sha256": "f1883eabc8cd9c96a22270fe1cd1743ab392b6ca199e4af6b9c83c115301aa30",
+    "fetched_at": "2026-07-04T01:44:03.607045+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703160000",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703160000.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703154500.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "77551",
+    "sha256": "3eeec34a7aebc05bb8adb1691bf675e764e102c85b2730a610395c9a91b59f96",
+    "fetched_at": "2026-07-04T01:44:03.920019+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703154500",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703154500.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703153000.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "116632",
+    "sha256": "44557700e527a3fef6d82355654bc9f985a43fe0f1127186f8475c79e7b82460",
+    "fetched_at": "2026-07-04T01:44:04.246899+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703153000",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703153000.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703151500.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "74356",
+    "sha256": "62fcf3c0837af3acb531a8fb16a5a1e7b5c83d78e89611b49975a177516e2e46",
+    "fetched_at": "2026-07-04T01:44:04.668907+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703151500",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703151500.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703150000.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "61383",
+    "sha256": "49212a1cc15793ca7f40e087f93a2478818b2cfc8ec9e4cc62509d6e85f81c7d",
+    "fetched_at": "2026-07-04T01:44:05.015514+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703150000",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703150000.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703144500.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "90903",
+    "sha256": "5a325b02e2e6b90c1528a401d05e1e0be3e6315b0199c7706e3d3647dfa8614f",
+    "fetched_at": "2026-07-04T01:44:05.327615+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703144500",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703144500.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703143000.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "83402",
+    "sha256": "4c922c71ce21d260abebe31dfc2644f8d9d0b21b9374308cd059057e1a1e9de5",
+    "fetched_at": "2026-07-04T01:44:05.705594+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703143000",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703143000.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703141500.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "97661",
+    "sha256": "eb0b6dadbf1e9c1003534a7b44288b69244cdd40bdf5df28d77fb135d5e58dc5",
+    "fetched_at": "2026-07-04T01:44:06.032763+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703141500",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703141500.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703140000.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "80862",
+    "sha256": "48d3dfdbbfe18f1ef4cfc68d205d680d5b4fff5f3832c2336f49a062115af6c4",
+    "fetched_at": "2026-07-04T01:44:06.370304+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703140000",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703140000.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703134500.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "80962",
+    "sha256": "29cf2b9fac063c711f6b7e9c5ab2011f643fa74e066acde6e9a99d7183feb521",
+    "fetched_at": "2026-07-04T01:44:06.769936+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703134500",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703134500.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703133000.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "68809",
+    "sha256": "fd36c222e65b0240b7fa4f7cbbeedee4b9a0c9fede31033d88b9646449dad644",
+    "fetched_at": "2026-07-04T01:44:07.119934+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703133000",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703133000.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703131500.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "69233",
+    "sha256": "284ed881e6167a49a02ff04dfaf4925cd197c35ca1147edfacf06126c56d0a1c",
+    "fetched_at": "2026-07-04T01:44:07.432848+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703131500",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703131500.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703130000.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "52933",
+    "sha256": "709b3e4ea986c7a2de532cbb83a26adeab4b8e1b1704058bc6d9d4294b0e800c",
+    "fetched_at": "2026-07-04T01:44:07.813447+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703130000",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703130000.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703124500.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "76788",
+    "sha256": "ce47edce090af22faadbbd326a0eba4e6b608ea59b365d0ea0d7a480554054a5",
+    "fetched_at": "2026-07-04T01:44:08.129668+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703124500",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703124500.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703123000.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "114445",
+    "sha256": "61d3b7514f123a8a3f003f45a5717fde8078eb2bcc1900edcf49015eca848504",
+    "fetched_at": "2026-07-04T01:44:08.478105+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703123000",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703123000.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703121500.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "70200",
+    "sha256": "2011587915ac089b15c4a80280b54f64ef34ed504522a8dff53006f1aa247e9f",
+    "fetched_at": "2026-07-04T01:44:08.867855+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703121500",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703121500.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703120000.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "82734",
+    "sha256": "c1d37ea24ca698e41c9aa72c8f97bf61bd56b5e6742b8781a526f714c7670dda",
+    "fetched_at": "2026-07-04T01:44:09.234106+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703120000",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703120000.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703114500.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "85049",
+    "sha256": "7a69c23e7b08de33fc511b3d3ae3b595a57a4e6d7e2fb87d86d51add4065231f",
+    "fetched_at": "2026-07-04T01:44:09.543829+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703114500",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703114500.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703113000.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "63049",
+    "sha256": "144d3fbaf377ea4cae1575e2e5af341d4a474a000747512a14761494d9af5994",
+    "fetched_at": "2026-07-04T01:44:09.904893+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703113000",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703113000.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703111500.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "66473",
+    "sha256": "69b3ccb1aaea219bea1cc95c0abf815e58d1190f819546534fae99eed6d175ee",
+    "fetched_at": "2026-07-04T01:44:10.216210+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703111500",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703111500.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703110000.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "68074",
+    "sha256": "117346648259d6eac1d42232fc3992ae301c8637b06b46de39b7b34b66ce6b5c",
+    "fetched_at": "2026-07-04T01:44:10.526200+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703110000",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703110000.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703104500.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "58274",
+    "sha256": "83613a209f51e3671bb6c21bf5dbafc2e969ef2a6666228a8014f4121e08d810",
+    "fetched_at": "2026-07-04T01:44:10.839620+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703104500",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703104500.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703103000.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "48680",
+    "sha256": "615ecf5119d8d7334ff51513dba0ff02f306bc947239d2d6f85637c6200788e4",
+    "fetched_at": "2026-07-04T01:44:11.179809+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703103000",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703103000.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703101500.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "79687",
+    "sha256": "ec74d819a7f9d47e726ccfd06c5770ade4b0cbc73ba9ee5ea77ce84f2ffb55fd",
+    "fetched_at": "2026-07-04T01:44:11.489552+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703101500",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703101500.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703100000.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "86958",
+    "sha256": "76be6c7c72272d906a5634e89f82bc7494ff838bb449f131b24e1a862318af0c",
+    "fetched_at": "2026-07-04T01:44:11.870777+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703100000",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703100000.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703094500.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "49393",
+    "sha256": "5cb2c8f0ff763ff24da272eec16076fe550512aaef1bf606f3c6a095f293cd2c",
+    "fetched_at": "2026-07-04T01:44:12.194191+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703094500",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703094500.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703093000.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "83022",
+    "sha256": "576d5620676cdd19cf64ababcf936f8076c1341a7b95a363599568fd58d2b01b",
+    "fetched_at": "2026-07-04T01:44:12.564302+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703093000",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703093000.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703091500.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "63581",
+    "sha256": "a71eb6120ef19c7c46581109bf9be8f617e6820c5c9ee692b867a5788d377fca",
+    "fetched_at": "2026-07-04T01:44:12.907894+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703091500",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703091500.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703090000.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "62172",
+    "sha256": "da517c2dc1bb3ef1e89786aab3ba06ae8e4a7d76078151784bf0167092157996",
+    "fetched_at": "2026-07-04T01:44:13.234565+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703090000",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703090000.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703084500.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "41741",
+    "sha256": "a576761244f84e3c70a477f104c8775c57c84a60363fd43c5793e63a901f1b4c",
+    "fetched_at": "2026-07-04T01:44:13.542599+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703084500",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703084500.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703083000.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "86549",
+    "sha256": "c2c1b62b8b155b8c5b5f8956cacd5e81f1c82ea51ab603102812a9d05fc99af0",
+    "fetched_at": "2026-07-04T01:44:13.939830+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703083000",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703083000.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703081500.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "60556",
+    "sha256": "b8edf486a669bdbde23fe008ccd5b4918e11bd0c18e4e5f178332b63afe17470",
+    "fetched_at": "2026-07-04T01:44:14.274012+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703081500",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703081500.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703080000.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "40987",
+    "sha256": "c3d2061df4e3549d09c353086b0e20bff27acd8b079f994694dfe7c3fcafb8c5",
+    "fetched_at": "2026-07-04T01:44:14.587620+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703080000",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703080000.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703074500.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "67549",
+    "sha256": "cd169c8ec8d437870c56b5c8a029accdbeb12cc82d203db2c3c767581c0fb35b",
+    "fetched_at": "2026-07-04T01:44:14.980053+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703074500",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703074500.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703073000.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "50052",
+    "sha256": "6740d40b8f519757611bb2f5cca501b3e808aa6990672c0a4cbb6eea5a14a61d",
+    "fetched_at": "2026-07-04T01:44:15.309655+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703073000",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703073000.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703071500.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "61377",
+    "sha256": "e5c3c8b0bb9941c7615b1a2a31552328cb7b3e5668511524939b915ca6d6c62f",
+    "fetched_at": "2026-07-04T01:44:15.733148+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703071500",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703071500.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703070000.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "77972",
+    "sha256": "359adc72fa378f99408e18522a52682d93f39ca746098bb634f0af9736a3d4cc",
+    "fetched_at": "2026-07-04T01:44:16.051296+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703070000",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703070000.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703064500.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "67948",
+    "sha256": "fd3734fd64ba4666c7c8ec74c34c8e4d4c002f2fcebcc2ff83f8eec2c5d1ac79",
+    "fetched_at": "2026-07-04T01:44:16.384694+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703064500",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703064500.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703063000.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "63009",
+    "sha256": "59c3d1f417f62581c37ea947860320e063586082fae214aa6f28b06121b5598d",
+    "fetched_at": "2026-07-04T01:44:16.693767+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703063000",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703063000.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703061500.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "44815",
+    "sha256": "586ad9040f8e26279b863fae4dbbc6b840b6e6b968c5277ef2b28e55fde1251e",
+    "fetched_at": "2026-07-04T01:44:17.117965+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703061500",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703061500.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703060000.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "71736",
+    "sha256": "17cd3cc82c78f1cf137f39e0c3c420a6d1993a3caff5866bbe5413acd9a0872d",
+    "fetched_at": "2026-07-04T01:44:17.447988+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703060000",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703060000.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703054500.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "42361",
+    "sha256": "f9ea03c6d0b4bbfd2a02b7a034f1b6681509a4ff4d7f363ce1c449e5fbd75ce2",
+    "fetched_at": "2026-07-04T01:44:17.770520+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703054500",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703054500.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703053000.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "71718",
+    "sha256": "40eec79d7a438efff5c1a5461ed5606533cfd71c43a5e3ac69ab7e46e9465067",
+    "fetched_at": "2026-07-04T01:44:18.131206+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703053000",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703053000.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703051500.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "58727",
+    "sha256": "530387cd1f7f49b2f6c1bb9ae876b6f2eae18e59faff37ad587515d9b9ede7b7",
+    "fetched_at": "2026-07-04T01:44:18.462026+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703051500",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703051500.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703050000.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "43443",
+    "sha256": "cf64fa38e4fd22620b813ce63aaa1b9241685b7fdf34ee87d1af9fe45cff051b",
+    "fetched_at": "2026-07-04T01:44:18.753432+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703050000",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703050000.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703044500.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "51597",
+    "sha256": "09001e2172e8a6f0828ab8bd49537777d63586ed39d006a03eee0dd6149d3d02",
+    "fetched_at": "2026-07-04T01:44:19.062064+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703044500",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703044500.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703043000.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "49269",
+    "sha256": "770bf505b40edddc74d3f529a0b8be22465568c694c257b750416f38e1646549",
+    "fetched_at": "2026-07-04T01:44:19.376898+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703043000",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703043000.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703041500.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "62295",
+    "sha256": "f76014d8f8be0399a7a5e113ca89b159a999de9af3d596cb6f021f366b872215",
+    "fetched_at": "2026-07-04T01:44:19.709688+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703041500",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703041500.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703040000.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "57455",
+    "sha256": "71ddba49a073d9bb1a7123e76e0407fe5bf2656e1f2f0c36f96fa1574769106b",
+    "fetched_at": "2026-07-04T01:44:20.026614+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703040000",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703040000.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703034500.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "52365",
+    "sha256": "6d528ca71b688b59ef4668ed2013c6981c9bfd305e94f05587a4fa4427b085a1",
+    "fetched_at": "2026-07-04T01:44:20.392496+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703034500",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703034500.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703033000.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "51500",
+    "sha256": "611abf31eece890f756dd57377f52fe91615856bb07fb2c8371e0680d82ab0c6",
+    "fetched_at": "2026-07-04T01:44:20.703804+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703033000",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703033000.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703031500.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "56436",
+    "sha256": "a7718966c9cace4faf547d2005dfee4111367f27423ce6da0a5695d4a2ab379e",
+    "fetched_at": "2026-07-04T01:44:21.013211+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703031500",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703031500.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703030000.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "57049",
+    "sha256": "2e051159fa40bde9fcf571eaa48e05f9501c6970424efbbd284f000ea16ea59b",
+    "fetched_at": "2026-07-04T01:44:21.315771+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703030000",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703030000.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703024500.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "70937",
+    "sha256": "91978c1d25c6471c922754da54ccab849fcba0a18bc97f5174bd1f8c62bdbd75",
+    "fetched_at": "2026-07-04T01:44:21.634240+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703024500",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703024500.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703023000.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "47742",
+    "sha256": "1bd3e1f55d4067eda82cbbdcf9f3e376e3c6e889516046039dbe6127502244b2",
+    "fetched_at": "2026-07-04T01:44:21.975424+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703023000",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703023000.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703021500.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "91191",
+    "sha256": "cf392ef9bbdf7bcaf0ce6ac1ed8ace3f5e67ea77f20c8d14eadc136ac705cea9",
+    "fetched_at": "2026-07-04T01:44:22.329846+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703021500",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703021500.export.CSV.zip"
+  },
+  {
+    "url": "http://data.gdeltproject.org/gdeltv2/20260703020000.export.CSV.zip",
+    "status": 200,
+    "content_type": "application/zip",
+    "content_length": "65730",
+    "sha256": "36c0f717aa0ea5a99473a07375beb31066acf47b6e2bd8f16a4302baf8f1172c",
+    "fetched_at": "2026-07-04T01:44:22.660670+00:00",
+    "attempt": 1,
+    "source": "gdelt_v2_event_export",
+    "timestamp": "20260703020000",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_events/20260703020000.export.CSV.zip"
+  },
+  {
+    "source": "gdelt_v2_event_export",
+    "processed": "ukraine_filtered_events",
+    "downloaded_export_files": 96,
+    "rows": 3353,
+    "hours": 24
+  },
+  {
+    "url": "https://overpass-api.de/api/interpreter",
+    "status": 200,
+    "content_type": "application/json",
+    "content_length": null,
+    "sha256": "6fbbe20955fcebb8b91ec770d038c9e992ae6fb83e3dee1affa5edde28acb8b9",
+    "fetched_at": "2026-07-04T01:44:30.701905+00:00",
+    "attempt": 1,
+    "source": "openstreetmap_overpass",
+    "aoi": "kyiv",
+    "label": "Kyiv",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/osm_overpass/kyiv_critical_infrastructure.json",
+    "elements": 500
+  },
+  {
+    "url": "https://overpass-api.de/api/interpreter",
+    "status": 200,
+    "content_type": "application/json",
+    "content_length": null,
+    "sha256": "a3e7d167de14cdea313d93edcc4cfa16c6d1c0a04ef03fb3256fbfffa0ab8de4",
+    "fetched_at": "2026-07-04T01:44:41.393898+00:00",
+    "attempt": 1,
+    "source": "openstreetmap_overpass",
+    "aoi": "kharkiv",
+    "label": "Kharkiv",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/osm_overpass/kharkiv_critical_infrastructure.json",
+    "elements": 500
+  },
+  {
+    "url": "https://overpass-api.de/api/interpreter",
+    "status": 200,
+    "content_type": "application/json",
+    "content_length": null,
+    "sha256": "c350229e4c98307c5aaacfa6183062ae6d1c401ace3ba4bc64c6371ddda21e47",
+    "fetched_at": "2026-07-04T01:44:49.451327+00:00",
+    "attempt": 1,
+    "source": "openstreetmap_overpass",
+    "aoi": "odesa",
+    "label": "Odesa",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/osm_overpass/odesa_critical_infrastructure.json",
+    "elements": 500
+  },
+  {
+    "url": "https://overpass-api.de/api/interpreter",
+    "status": 200,
+    "content_type": "application/json",
+    "content_length": null,
+    "sha256": "f81ae7977b2513f5e090fe752e033816131e391369392deda6af9a6075b5e8b3",
+    "fetched_at": "2026-07-04T01:44:59.848006+00:00",
+    "attempt": 1,
+    "source": "openstreetmap_overpass",
+    "aoi": "dnipro",
+    "label": "Dnipro",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/osm_overpass/dnipro_critical_infrastructure.json",
+    "elements": 500
+  },
+  {
+    "url": "https://overpass-api.de/api/interpreter",
+    "status": 200,
+    "content_type": "application/json",
+    "content_length": null,
+    "sha256": "076cfbc95624799c77de00c8a919d7e290d615fa8960cd3286e356d7353a0fda",
+    "fetched_at": "2026-07-04T01:45:08.911939+00:00",
+    "attempt": 1,
+    "source": "openstreetmap_overpass",
+    "aoi": "zaporizhzhia",
+    "label": "Zaporizhzhia",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/osm_overpass/zaporizhzhia_critical_infrastructure.json",
+    "elements": 500
+  },
+  {
+    "url": "https://overpass-api.de/api/interpreter",
+    "status": 200,
+    "content_type": "application/json",
+    "content_length": null,
+    "sha256": "eb2d9778ad2e36f6f903ba35236e8c951d66f21b3a7c51060b1c6473fbbfb8a0",
+    "fetched_at": "2026-07-04T01:45:20.287783+00:00",
+    "attempt": 1,
+    "source": "openstreetmap_overpass",
+    "aoi": "lviv",
+    "label": "Lviv",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/osm_overpass/lviv_critical_infrastructure.json",
+    "elements": 500
+  },
+  {
+    "url": "https://overpass-api.de/api/interpreter",
+    "status": 200,
+    "content_type": "application/json",
+    "content_length": null,
+    "sha256": "f7228b147d378a35f93b94b393c3fdf2aa3641ce8415b162c03c65c914eb2a14",
+    "fetched_at": "2026-07-04T01:45:32.239463+00:00",
+    "attempt": 1,
+    "source": "openstreetmap_overpass",
+    "aoi": "kramatorsk",
+    "label": "Kramatorsk / Donetsk North",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/osm_overpass/kramatorsk_critical_infrastructure.json",
+    "elements": 500
+  },
+  {
+    "source": "openstreetmap_overpass",
+    "processed": "critical_infrastructure",
+    "rows": 3500
+  },
+  {
+    "url": "https://ukr.warspotting.net/api/losses/russia",
+    "status": 200,
+    "content_type": "application/json",
+    "content_length": "24978",
+    "sha256": "a34012f02a41283c6aefa2d918928f1c5e894296c1be8a44d955af80ebbb3fb4",
+    "fetched_at": "2026-07-04T01:45:40.017736+00:00",
+    "attempt": 1,
+    "source": "warspotting",
+    "side": "russia",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/warspotting/latest_losses_russia.json",
+    "losses": 100
+  },
+  {
+    "url": "https://ukr.warspotting.net/api/losses/unknown",
+    "status": 200,
+    "content_type": "application/json",
+    "content_length": "24512",
+    "sha256": "c6372b8f1014fa77cdc2b525fadf8b3efde771eb5dce52e2caef697c84af5408",
+    "fetched_at": "2026-07-04T01:45:55.282918+00:00",
+    "attempt": 1,
+    "source": "warspotting",
+    "side": "unknown",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/warspotting/latest_losses_unknown.json",
+    "losses": 100
+  },
+  {
+    "source": "warspotting",
+    "processed": "latest_losses",
+    "rows": 200
+  },
+  {
+    "url": "https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+    "status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "content_length": null,
+    "sha256": "78e05d5b55cf9d70b697eb2f280cc0e7ef34cf90498b351b8bcf0de679c4db8c",
+    "fetched_at": "2026-07-04T01:46:08.923615+00:00",
+    "attempt": 1,
+    "source": "oryx",
+    "side": "russia",
+    "headings": 2
+  },
+  {
+    "url": "https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-ukrainian.html",
+    "status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "content_length": null,
+    "sha256": "c2c4564fdb9b5c4f07ecc3b28f47159880968b646c4fad41a5ecde24b76067ec",
+    "fetched_at": "2026-07-04T01:46:12.147709+00:00",
+    "attempt": 1,
+    "source": "oryx",
+    "side": "ukraine",
+    "headings": 2
+  },
+  {
+    "source": "oryx",
+    "processed": "category_summaries",
+    "rows": 4
+  },
+  {
+    "url": "https://www.understandingwar.org/research/russia-ukraine",
+    "status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "content_length": null,
+    "sha256": "b01379372c59c210aec3df2bd7ff755ba1611fa7b2b4d5159a592e4883fd9bc0",
+    "fetched_at": "2026-07-04T01:46:14.839780+00:00",
+    "attempt": 1,
+    "source": "isw",
+    "file": "russia_ukraine_index",
+    "links": 7
+  },
+  {
+    "source": "isw",
+    "processed": "assessment_links",
+    "rows": 7
+  },
+  {
+    "url": "https://archive-api.open-meteo.com/v1/archive?latitude=50.4501&longitude=30.5234&start_date=2025-12-01&end_date=2026-07-03&daily=temperature_2m_mean%2Cprecipitation_sum%2Cwind_speed_10m_max&timezone=UTC",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "content_length": null,
+    "sha256": "9367400014c99a25795fbcf5e3e68a0c31098f0fefb0bf46dc46bb4cae8e9450",
+    "fetched_at": "2026-07-04T01:46:16.622370+00:00",
+    "attempt": 1,
+    "source": "open_meteo_archive",
+    "aoi": "kyiv",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/open_meteo/kyiv_daily_weather.json",
+    "days": 215
+  },
+  {
+    "url": "https://archive-api.open-meteo.com/v1/archive?latitude=49.9935&longitude=36.2304&start_date=2025-12-01&end_date=2026-07-03&daily=temperature_2m_mean%2Cprecipitation_sum%2Cwind_speed_10m_max&timezone=UTC",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "content_length": null,
+    "sha256": "82c8859a16b9311cb79a14e629fd6a21e67cf6686eeeae6d1b56b86316abde62",
+    "fetched_at": "2026-07-04T01:46:18.702776+00:00",
+    "attempt": 1,
+    "source": "open_meteo_archive",
+    "aoi": "kharkiv",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/open_meteo/kharkiv_daily_weather.json",
+    "days": 215
+  },
+  {
+    "url": "https://archive-api.open-meteo.com/v1/archive?latitude=46.4825&longitude=30.7233&start_date=2025-12-01&end_date=2026-07-03&daily=temperature_2m_mean%2Cprecipitation_sum%2Cwind_speed_10m_max&timezone=UTC",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "content_length": null,
+    "sha256": "80eab5a682cea1ea7cad327626fe20e410f112f6517d112a84a5f16db5b692d5",
+    "fetched_at": "2026-07-04T01:46:20.797325+00:00",
+    "attempt": 1,
+    "source": "open_meteo_archive",
+    "aoi": "odesa",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/open_meteo/odesa_daily_weather.json",
+    "days": 215
+  },
+  {
+    "url": "https://archive-api.open-meteo.com/v1/archive?latitude=48.4647&longitude=35.0462&start_date=2025-12-01&end_date=2026-07-03&daily=temperature_2m_mean%2Cprecipitation_sum%2Cwind_speed_10m_max&timezone=UTC",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "content_length": null,
+    "sha256": "1bd5d627ecafccec7fdc9eab32bd3773e45933d36f9ec6db1cc2f8c8c762eb50",
+    "fetched_at": "2026-07-04T01:46:25.127777+00:00",
+    "attempt": 1,
+    "source": "open_meteo_archive",
+    "aoi": "dnipro",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/open_meteo/dnipro_daily_weather.json",
+    "days": 215
+  },
+  {
+    "url": "https://archive-api.open-meteo.com/v1/archive?latitude=47.8388&longitude=35.1396&start_date=2025-12-01&end_date=2026-07-03&daily=temperature_2m_mean%2Cprecipitation_sum%2Cwind_speed_10m_max&timezone=UTC",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "content_length": null,
+    "sha256": "f22cbfd8ebc9e5e17c55c2f5d3b36b2d198f62de633c852aef4afb5ca0ec7b16",
+    "fetched_at": "2026-07-04T01:46:27.126266+00:00",
+    "attempt": 1,
+    "source": "open_meteo_archive",
+    "aoi": "zaporizhzhia",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/open_meteo/zaporizhzhia_daily_weather.json",
+    "days": 215
+  },
+  {
+    "url": "https://archive-api.open-meteo.com/v1/archive?latitude=49.8397&longitude=24.0297&start_date=2025-12-01&end_date=2026-07-03&daily=temperature_2m_mean%2Cprecipitation_sum%2Cwind_speed_10m_max&timezone=UTC",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "content_length": null,
+    "sha256": "34b6d2f4bb3f77acc067c30e9f52a8afd2717aaee46e22df352a77bdcc6a4152",
+    "fetched_at": "2026-07-04T01:46:30.776094+00:00",
+    "attempt": 1,
+    "source": "open_meteo_archive",
+    "aoi": "lviv",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/open_meteo/lviv_daily_weather.json",
+    "days": 215
+  },
+  {
+    "url": "https://archive-api.open-meteo.com/v1/archive?latitude=48.7389&longitude=37.5844&start_date=2025-12-01&end_date=2026-07-03&daily=temperature_2m_mean%2Cprecipitation_sum%2Cwind_speed_10m_max&timezone=UTC",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "content_length": null,
+    "sha256": "e709f9c39820f3ed9897b07ab9dbe71b80381aacc52b00f8b1b79366871908ac",
+    "fetched_at": "2026-07-04T01:46:32.895635+00:00",
+    "attempt": 1,
+    "source": "open_meteo_archive",
+    "aoi": "kramatorsk",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/open_meteo/kramatorsk_daily_weather.json",
+    "days": 215
+  },
+  {
+    "source": "open_meteo_archive",
+    "processed": "aoi_daily_weather",
+    "rows": 1505
+  },
+  {
+    "source": "acled",
+    "status": "blocked_invalid_credentials",
+    "needed_env": [
+      "ACLED_EMAIL",
+      "ACLED_ACCESS_TOKEN",
+      "ACLED_REFRESH_TOKEN"
+    ],
+    "example_endpoint": "https://acleddata.com/api/acled/read?_format=json&country=Ukraine&event_date=2025-12-01|2026-07-04&event_date_where=BETWEEN&limit=5000",
+    "note": "ACLED OAuth token request returned invalid_grant / incorrect credentials for the provided account. Verify password or email activation."
+  },
+  {
+    "source": "nasa_firms",
+    "status": "key_issued_smoke_passed",
+    "needed_env": [
+      "NASA_FIRMS_MAP_KEY"
+    ],
+    "example_endpoint": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/{MAP_KEY}/VIIRS_SNPP_NRT/22,44,40,53/10/2026-07-04",
+    "note": "Use for thermal anomaly/fire proxy, not direct strike attribution without corroboration.",
+    "last_smoke_test": "20260704_114329"
+  },
+  {
+    "source": "alerts_in_ua",
+    "status": "request_submitted_token_pending",
+    "needed_env": [
+      "ALERTS_IN_UA_TOKEN"
+    ],
+    "example_project": "https://github.com/alerts-ua/alerts-in-ua-py",
+    "note": "Use delayed/historical mode for public demos.",
+    "requested_at": "2026-07-04"
+  },
+  {
+    "source": "kaggle",
+    "status": "api_token_issued_smoke_passed",
+    "needed_env": [
+      "KAGGLE_API_TOKEN"
+    ],
+    "dataset": "piterfm/massive-missile-attacks-on-ukraine",
+    "note": "Kaggle API token issued and direct Bearer API smoke passed.",
+    "last_smoke_test": "20260704_114329"
+  },
+  {
+    "source": "hdx",
+    "status": "api_token_issued_smoke_passed",
+    "example_endpoint": "https://data.humdata.org/api/3/action/package_search?q=Ukraine&rows=20",
+    "note": "HDX API token issued and authorized CKAN package_search passed.",
+    "needed_env": [
+      "HDX_API_TOKEN"
+    ],
+    "last_smoke_test": "20260704_114329"
+  },
+  {
+    "source": "reliefweb",
+    "status": "blocked_preapproved_appname_required",
+    "example_endpoint": "https://api.reliefweb.int/v2/reports?appname={RELIEFWEB_APPNAME}&query[value]=Ukraine&limit=100",
+    "note": "ReliefWeb API v2 requires a pre-approved appname from 2025-11-01.",
+    "needed_env": [
+      "RELIEFWEB_APPNAME"
+    ]
+  },
+  {
+    "rerun": "gdelt_doc_rebuild",
+    "source": "gdelt_doc_api",
+    "query": "Ukrzaliznytsia",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_doc/ukrzaliznytsia.json",
+    "status": "cached",
+    "articles": 100
+  },
+  {
+    "rerun": "gdelt_doc_rebuild",
+    "url": "http://api.gdeltproject.org/api/v2/doc/doc?query=%22Ukraine%22+%22railway%22+%22attack%22&mode=artlist&format=json&maxrecords=50&timespan=6m",
+    "error": {
+      "type": "HTTPError",
+      "code": 429,
+      "reason": "Too Many Requests",
+      "body": "Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-traffic users should switch to our ngrams dataset: https://blog.gdeltproject.org/using-the-new-web-ngrams-dataset-to-find-relevant-coverage/. For trend analysis, please see our daily newsletter briefings: https://blog.gdeltproject.org/announcing-our-new-daily-todays-trends-on-capitol-hill-todays-media-trends-newsletter-briefings/.\n\n"
+    },
+    "fetched_at": "2026-07-04T01:47:56.477654+00:00",
+    "source": "gdelt_doc_api",
+    "query": "\"Ukraine\" \"railway\" \"attack\""
+  },
+  {
+    "rerun": "gdelt_doc_rebuild",
+    "source": "gdelt_doc_api",
+    "query": "\"Ukraine\" \"energy infrastructure\"",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_doc/ukraine_energy_infrastructure.json",
+    "status": "cached",
+    "articles": 100
+  },
+  {
+    "rerun": "gdelt_doc_rebuild",
+    "url": "http://api.gdeltproject.org/api/v2/doc/doc?query=%22Ukraine%22+%22power+grid%22&mode=artlist&format=json&maxrecords=50&timespan=6m",
+    "error": {
+      "type": "HTTPError",
+      "code": 429,
+      "reason": "Too Many Requests",
+      "body": "Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-traffic users should switch to our ngrams dataset: https://blog.gdeltproject.org/using-the-new-web-ngrams-dataset-to-find-relevant-coverage/. For trend analysis, please see our daily newsletter briefings: https://blog.gdeltproject.org/announcing-our-new-daily-todays-trends-on-capitol-hill-todays-media-trends-newsletter-briefings/.\n\n"
+    },
+    "fetched_at": "2026-07-04T01:48:05.565582+00:00",
+    "source": "gdelt_doc_api",
+    "query": "\"Ukraine\" \"power grid\""
+  },
+  {
+    "rerun": "gdelt_doc_rebuild",
+    "url": "http://api.gdeltproject.org/api/v2/doc/doc?query=%22Ukraine%22+%22Shahed%22&mode=artlist&format=json&maxrecords=50&timespan=6m",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "content_length": null,
+    "sha256": "1b7826c01a13f1d748fa0ae5e225102c78927b053f01a9d91e2e7af2783112f1",
+    "fetched_at": "2026-07-04T01:48:14.514892+00:00",
+    "attempt": 1,
+    "source": "gdelt_doc_api",
+    "query": "\"Ukraine\" \"Shahed\"",
+    "local_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/gdelt_doc/ukraine_shahed.json",
+    "articles": 50
+  },
+  {
+    "rerun": "gdelt_doc_rebuild",
+    "url": "http://api.gdeltproject.org/api/v2/doc/doc?query=%22Ukraine%22+%22missile%22+%22drone%22&mode=artlist&format=json&maxrecords=50&timespan=6m",
+    "error": {
+      "type": "timeout",
+      "message": "timed out"
+    },
+    "fetched_at": "2026-07-04T01:48:25.732857+00:00",
+    "source": "gdelt_doc_api",
+    "query": "\"Ukraine\" \"missile\" \"drone\""
+  },
+  {
+    "rerun": "gdelt_doc_rebuild",
+    "url": "http://api.gdeltproject.org/api/v2/doc/doc?query=%22Odesa%22+%22port%22+%22drone%22&mode=artlist&format=json&maxrecords=50&timespan=6m",
+    "error": {
+      "type": "HTTPError",
+      "code": 429,
+      "reason": "Too Many Requests",
+      "body": "Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-traffic users should switch to our ngrams dataset: https://blog.gdeltproject.org/using-the-new-web-ngrams-dataset-to-find-relevant-coverage/. For trend analysis, please see our daily newsletter briefings: https://blog.gdeltproject.org/announcing-our-new-daily-todays-trends-on-capitol-hill-todays-media-trends-newsletter-briefings/.\n\n"
+    },
+    "fetched_at": "2026-07-04T01:48:34.326849+00:00",
+    "source": "gdelt_doc_api",
+    "query": "\"Odesa\" \"port\" \"drone\""
+  },
+  {
+    "rerun": "gdelt_doc_rebuild",
+    "url": "http://api.gdeltproject.org/api/v2/doc/doc?query=%22Black+Sea%22+%22Ukraine%22+%22shipping%22&mode=artlist&format=json&maxrecords=50&timespan=6m",
+    "error": {
+      "type": "HTTPError",
+      "code": 429,
+      "reason": "Too Many Requests",
+      "body": "Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-traffic users should switch to our ngrams dataset: https://blog.gdeltproject.org/using-the-new-web-ngrams-dataset-to-find-relevant-coverage/. For trend analysis, please see our daily newsletter briefings: https://blog.gdeltproject.org/announcing-our-new-daily-todays-trends-on-capitol-hill-todays-media-trends-newsletter-briefings/.\n\n"
+    },
+    "fetched_at": "2026-07-04T01:48:42.689564+00:00",
+    "source": "gdelt_doc_api",
+    "query": "\"Black Sea\" \"Ukraine\" \"shipping\""
+  },
+  {
+    "rerun": "gdelt_doc_rebuild",
+    "source": "gdelt_doc_api",
+    "processed": "deduped_articles",
+    "rows": 250
+  }
+]

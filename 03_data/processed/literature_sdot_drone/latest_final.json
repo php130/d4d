@@ -1,0 +1,281 @@
+{
+  "version": "final_20260704_170558",
+  "generated_at": "2026-07-04T08:06:21Z",
+  "total_records": 1900,
+  "source_counts": {
+    "OpenAlex": 1619,
+    "arXiv": 281
+  },
+  "top_records": [
+    {
+      "title": "A GNSS Instrumentation Covert Directional Spoofing Algorithm for UAV Equipped With Tightly-Coupled GNSS/IMU",
+      "year": 2023,
+      "source": "OpenAlex",
+      "topic_id": "gnss_jamming_spoofing_detection",
+      "relevance_score": 63,
+      "cited_by_count": 40,
+      "url": "https://doi.org/10.1109/tim.2023.3240197"
+    },
+    {
+      "title": "SemperFi: Anti-spoofing GPS Receiver for UAVs",
+      "year": 2022,
+      "source": "OpenAlex",
+      "topic_id": "gnss_jamming_spoofing_detection",
+      "relevance_score": 58,
+      "cited_by_count": 36,
+      "url": "https://doi.org/10.14722/ndss.2022.23071"
+    },
+    {
+      "title": "GNSS-denied geolocalization of UAVs by visual matching of onboard camera images with orthophotos",
+      "year": "2021",
+      "source": "arXiv",
+      "topic_id": "gnss_jamming_spoofing_detection",
+      "relevance_score": 56,
+      "cited_by_count": 0,
+      "url": "http://arxiv.org/abs/2103.14381v2"
+    },
+    {
+      "title": "Two-Step Trajectory Spoofing Algorithm for Loosely Coupled GNSS/IMU and NIS Sequence Detection",
+      "year": 2019,
+      "source": "OpenAlex",
+      "topic_id": "kalman_residual_integrity",
+      "relevance_score": 55,
+      "cited_by_count": 20,
+      "url": "https://doi.org/10.1109/access.2019.2927539"
+    },
+    {
+      "title": "Urban Digital Twins for Sustainable Smart Cities: A Systematic Literature Review of UAV-Assisted MEC, Federated Intelligence, and Semantic Communications",
+      "year": 2026,
+      "source": "OpenAlex",
+      "topic_id": "semantic_communications_uav_edge",
+      "relevance_score": 54,
+      "cited_by_count": 0,
+      "url": "https://doi.org/10.36227/techrxiv.176948217.76093650/v1"
+    },
+    {
+      "title": "A Slowly Varying Spoofing Algorithm Avoiding Tightly-Coupled GNSS/IMU With Multiple Anti-Spoofing Techniques",
+      "year": 2022,
+      "source": "OpenAlex",
+      "topic_id": "gnss_jamming_spoofing_detection",
+      "relevance_score": 51,
+      "cited_by_count": 36,
+      "url": "https://doi.org/10.1109/tvt.2022.3174406"
+    },
+    {
+      "title": "Detecting Signal Spoofing Attack in UAVs Using Machine Learning Models",
+      "year": 2021,
+      "source": "OpenAlex",
+      "topic_id": "gnss_jamming_spoofing_detection",
+      "relevance_score": 50,
+      "cited_by_count": 115,
+      "url": "https://doi.org/10.1109/access.2021.3089847"
+    },
+    {
+      "title": "A Pragmatic Approach to the Design of Advanced Precision Terrain-Aided Navigation for UAVs and Its Verification",
+      "year": 2020,
+      "source": "OpenAlex",
+      "topic_id": "snowball",
+      "relevance_score": 50,
+      "cited_by_count": 12,
+      "url": "https://doi.org/10.3390/rs12091396"
+    },
+    {
+      "title": "Gnss-denied unmanned aerial vehicle navigation: analyzing computational complexity, sensor fusion, and localization methodologies",
+      "year": 2025,
+      "source": "OpenAlex",
+      "topic_id": "gnss_jamming_spoofing_detection",
+      "relevance_score": 49,
+      "cited_by_count": 59,
+      "url": "https://doi.org/10.1186/s43020-025-00162-z"
+    },
+    {
+      "title": "GPS-denied navigation using location estimation and texel image correction",
+      "year": 2023,
+      "source": "OpenAlex",
+      "topic_id": "snowball",
+      "relevance_score": 49,
+      "cited_by_count": 2,
+      "url": "https://doi.org/10.1117/12.2664119"
+    },
+    {
+      "title": "Tight Fusion of a Monocular Camera, MEMS-IMU, and Single-Frequency Multi-GNSS RTK for Precise Navigation in GNSS-Challenged Environments",
+      "year": 2019,
+      "source": "OpenAlex",
+      "topic_id": "uav_gnss_denied_navigation",
+      "relevance_score": 48,
+      "cited_by_count": 141,
+      "url": "https://doi.org/10.3390/rs11060610"
+    },
+    {
+      "title": "Distributed Machine Learning for UAV Swarms: Computing, Sensing, and Semantics",
+      "year": 2023,
+      "source": "OpenAlex",
+      "topic_id": "semantic_communications_uav_edge",
+      "relevance_score": 48,
+      "cited_by_count": 76,
+      "url": "https://doi.org/10.1109/jiot.2023.3341307"
+    },
+    {
+      "title": "Enhanced Machine Learning Ensemble Approach for Securing Small Unmanned Aerial Vehicles From GPS Spoofing Attacks",
+      "year": 2024,
+      "source": "OpenAlex",
+      "topic_id": "gnss_jamming_spoofing_detection",
+      "relevance_score": 48,
+      "cited_by_count": 29,
+      "url": "https://doi.org/10.1109/access.2024.3359700"
+    },
+    {
+      "title": "Unjammable and Resilient Communications for UAV Swarms: A Hybrid FSO/mmWave Approach",
+      "year": 2025,
+      "source": "OpenAlex",
+      "topic_id": "anti_jamming_resilient_uav_comms",
+      "relevance_score": 48,
+      "cited_by_count": 0,
+      "url": "https://doi.org/10.1109/gcet68529.2025.11450673"
+    },
+    {
+      "title": "Operator Strategy Model Development in UAV Hacking Detection",
+      "year": 2019,
+      "source": "OpenAlex",
+      "topic_id": "gnss_jamming_spoofing_detection",
+      "relevance_score": 47,
+      "cited_by_count": 45,
+      "url": "https://doi.org/10.1109/thms.2018.2888578"
+    },
+    {
+      "title": "Goal-Oriented Semantic Communications for 6G Networks",
+      "year": 2024,
+      "source": "OpenAlex",
+      "topic_id": "semantic_communications_uav_edge",
+      "relevance_score": 47,
+      "cited_by_count": 26,
+      "url": "https://doi.org/10.1109/iotm.001.2300269"
+    },
+    {
+      "title": "UAV Positioning Using GNSS: A Review of the Current Status",
+      "year": 2026,
+      "source": "OpenAlex",
+      "topic_id": "gnss_jamming_spoofing_detection",
+      "relevance_score": 47,
+      "cited_by_count": 3,
+      "url": "https://doi.org/10.3390/drones10020091"
+    },
+    {
+      "title": "DATAMUt: Deterministic Algorithms for Time-Delay Attack Detection in Multi-Hop UAV Networks",
+      "year": "2025",
+      "source": "arXiv",
+      "topic_id": "uav_networks_ddil_dtn",
+      "relevance_score": 47,
+      "cited_by_count": 0,
+      "url": "http://arxiv.org/abs/2505.07670v1"
+    },
+    {
+      "title": "Wide-Area GNSS Spoofing and Jamming Detection Using AIS-Derived Spatiotemporal Integrity Monitoring",
+      "year": 2026,
+      "source": "OpenAlex",
+      "topic_id": "gnss_jamming_spoofing_detection",
+      "relevance_score": 47,
+      "cited_by_count": 0,
+      "url": "http://arxiv.org/abs/2603.11055"
+    },
+    {
+      "title": "A Hierarchical Detection and Response System to Enhance Security Against Lethal Cyber-Attacks in UAV Networks",
+      "year": 2017,
+      "source": "OpenAlex",
+      "topic_id": "uav_networks_ddil_dtn",
+      "relevance_score": 46,
+      "cited_by_count": 273,
+      "url": "https://doi.org/10.1109/tsmc.2017.2681698"
+    },
+    {
+      "title": "Review of Navigation Methods for UAV-Based Parcel Delivery",
+      "year": 2023,
+      "source": "OpenAlex",
+      "topic_id": "uav_gnss_denied_navigation",
+      "relevance_score": 46,
+      "cited_by_count": 88,
+      "url": "https://doi.org/10.1109/tase.2022.3232025"
+    },
+    {
+      "title": "GNSS/GPS Spoofing and Jamming Identification Using Machine Learning and Deep Learning",
+      "year": 2025,
+      "source": "OpenAlex",
+      "topic_id": "gnss_jamming_spoofing_detection",
+      "relevance_score": 46,
+      "cited_by_count": 3,
+      "url": "http://arxiv.org/abs/2501.02352"
+    },
+    {
+      "title": "AUSLUN: A Fixed-Hover UAV--USV System for GNSS-Denied Maritime Search and Navigation",
+      "year": "2026",
+      "source": "arXiv",
+      "topic_id": "uav_gnss_denied_navigation",
+      "relevance_score": 46,
+      "cited_by_count": 0,
+      "url": "http://arxiv.org/abs/2606.29875v1"
+    },
+    {
+      "title": "Towards Robust UAV Tracking in GNSS-Denied Environments: A Multi-LiDAR Multi-UAV Dataset",
+      "year": "2023",
+      "source": "arXiv",
+      "topic_id": "uav_gnss_denied_navigation",
+      "relevance_score": 46,
+      "cited_by_count": 0,
+      "url": "http://arxiv.org/abs/2310.09165v1"
+    },
+    {
+      "title": "Error State Extended Kalman Filter Multi-Sensor Fusion for Unmanned Aerial Vehicle Localization in GPS and Magnetometer Denied Indoor Environments",
+      "year": "2021",
+      "source": "arXiv",
+      "topic_id": "uav_gnss_denied_navigation",
+      "relevance_score": 46,
+      "cited_by_count": 0,
+      "url": "http://arxiv.org/abs/2109.04908v1"
+    },
+    {
+      "title": "Beyond GNSS: A Survey and Tutorial on Satellite-Based Radio Frequency (RF) Geolocation and Emitter Fingerprinting",
+      "year": 2026,
+      "source": "OpenAlex",
+      "topic_id": "kalman_residual_integrity",
+      "relevance_score": 46,
+      "cited_by_count": 0,
+      "url": "https://doi.org/10.36227/techrxiv.176827281.16626683/v1"
+    },
+    {
+      "title": "Personalized Saliency in Task-Oriented Semantic Communications: Image Transmission and Performance Analysis",
+      "year": 2022,
+      "source": "OpenAlex",
+      "topic_id": "semantic_communications_uav_edge",
+      "relevance_score": 45,
+      "cited_by_count": 154,
+      "url": "https://doi.org/10.1109/jsac.2022.3221990"
+    },
+    {
+      "title": "Survey of Security Protocols and Vulnerabilities in Unmanned Aerial Vehicles",
+      "year": 2021,
+      "source": "OpenAlex",
+      "topic_id": "gnss_jamming_spoofing_detection",
+      "relevance_score": 45,
+      "cited_by_count": 112,
+      "url": "https://doi.org/10.1109/access.2021.3066778"
+    },
+    {
+      "title": "Capture of UAVs Through GPS Spoofing",
+      "year": 2018,
+      "source": "OpenAlex",
+      "topic_id": "snowball",
+      "relevance_score": 45,
+      "cited_by_count": 41,
+      "url": "https://doi.org/10.1109/gws.2018.8686727"
+    },
+    {
+      "title": "GNSS Integrity Monitoring Schemes for Terrestrial Applications in Harsh Signal Environments",
+      "year": 2020,
+      "source": "OpenAlex",
+      "topic_id": "gnss_jamming_spoofing_detection",
+      "relevance_score": 45,
+      "cited_by_count": 31,
+      "url": "https://doi.org/10.1109/mits.2020.2994076"
+    }
+  ]
+}

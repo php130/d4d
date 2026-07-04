@@ -1,0 +1,13 @@
+{
+  "version": "arxiv_retry_20260704_170558",
+  "generated_at": "2026-07-04T17:05:58.812266",
+  "raw_records": 216,
+  "new_records": 111,
+  "failure_count": 0,
+  "failures": [],
+  "outputs": {
+    "new_json": "/Users/mollykim/projects/D4D/03_data/processed/literature_sdot_drone/arxiv_retry_20260704_170558/sdot_drone_arxiv_retry_new_records.json",
+    "new_csv": "/Users/mollykim/projects/D4D/03_data/processed/literature_sdot_drone/arxiv_retry_20260704_170558/sdot_drone_arxiv_retry_new_records.csv",
+    "queue": "/Users/mollykim/projects/D4D/01_research/literature/sdot_drone_research/sdot_drone_arxiv_retry_queue_20260704_170558.md"
+  }
+}

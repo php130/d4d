@@ -1,0 +1,13 @@
+{
+  "latest": "/Users/mollykim/projects/D4D/03_data/processed/literature_sdot_drone/dataset_smoke_tests/20260704_173915/dataset_smoke_test_report.json",
+  "latest_markdown": "/Users/mollykim/projects/D4D/03_data/processed/literature_sdot_drone/dataset_smoke_tests/20260704_173915/dataset_smoke_test_report.md",
+  "run_id": "20260704_173915",
+  "updated_at": "2026-07-04T08:39:38.839610+00:00",
+  "summary": {
+    "dataset_count": 14,
+    "passed": 13,
+    "partial": 0,
+    "failed": 1,
+    "no_urls": 0
+  }
+}

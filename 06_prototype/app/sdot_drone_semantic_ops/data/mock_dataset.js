@@ -1,0 +1,6934 @@
+window.__D4D_DRONE_SDOT_DATASET = {
+  "metadata": {
+    "dataset_id": "s_dot_drone_semantic_ops_mock_v0_6",
+    "generated_at": "2026-07-04T08:33:51.311648+00:00",
+    "display_name_ko": "S-DOT 드론 시맨틱 전송 시뮬레이션",
+    "scenario_name": "Drone semantic transmission under GNSS/link degradation",
+    "mock_dataset": true,
+    "safety_note": "Synthetic drone flight, GNSS/link degradation, jamming hypothesis, and semantic packet data. No real routes, force posture, EW emitter data, or sensitive coordinates.",
+    "schema_doc": "05_analysis/knowledge_graph/s_dot_drone_semantic_transmission_schema_v0_1.md",
+    "operating_concept_doc": "02_problem_statements/hypotheses/s_dot_drone_jamming_operating_concept_20260704.md"
+  },
+  "algorithm_basis": {
+    "prediction_model": {
+      "name": "constant_velocity_with_wind_uncertainty_v0",
+      "formula": "x_hat(t) = x_last + v_last * dt + wind_context * dt",
+      "explain_ko": "마지막 신뢰 위치, 최근 속도, 합성 풍향/풍속 맥락으로 예측 위치를 계산합니다."
+    },
+    "uncertainty_model": {
+      "formula": "sigma^2 = sigma0^2 + vel_sigma^2*dt^2 + 0.25*accel_sigma^2*dt^4 + wind_sigma^2*dt^2",
+      "explain_ko": "통신 단절 시간이 길어질수록 속도·가속·풍향 오차가 누적되어 불확실성 타원이 커집니다."
+    },
+    "residual_model": {
+      "formula": "residual = distance(reported_position, predicted_position)",
+      "explain_ko": "수신 위치가 예측 가능한 물리 경로에서 얼마나 벗어났는지 계산합니다."
+    },
+    "nis_model": {
+      "formula": "NIS ~= (residual / (0.55 * sigma_major))^2",
+      "watch_threshold": 9.21,
+      "critical_threshold": 16.0,
+      "explain_ko": "잔차가 현재 불확실성 범위 대비 과도한지 보는 단순화된 항법 무결성 지표입니다."
+    },
+    "hypothesis_score_model": {
+      "formula": "0.25*GNSS_drop + 0.20*Link_drop + 0.20*Residual + 0.15*Heartbeat_gap + 0.10*IMU_GNSS_disagreement + 0.10*Context_risk",
+      "watch_threshold": 0.6,
+      "explain_ko": "교란 의심은 단일 신호가 아니라 GNSS, 링크, 위치 잔차, heartbeat, IMU 불일치, 환경 맥락을 가중합한 방어적 가설 점수입니다."
+    },
+    "kalman_filter_model": {
+      "name": "constant_velocity_kalman_filter_v0",
+      "formula": "predict: x_k = F*x_{k-1}; update only if innovation_nis <= 9.21",
+      "state_vector": [
+        "north_m",
+        "east_m",
+        "north_velocity_mps",
+        "east_velocity_mps"
+      ],
+      "explain_ko": "보고 위치를 항상 믿지 않고, 예측 공분산 대비 innovation이 과도하면 측정값을 게이트에서 차단하고 추정 상태를 유지합니다."
+    }
+  },
+  "platform_handoff": {
+    "bundle_id": "sdot_drone_semantic_ops_palantir_handoff_v0_1",
+    "bundle_path": "07_deliverables/palantir/sdot_drone_semantic_ops",
+    "handoff_type": "Foundry/AIP planning bundle",
+    "official_import_spec": false,
+    "object_tables": [
+      "DroneAsset",
+      "SimulationCase",
+      "SemanticEvent",
+      "SemanticPacket",
+      "RawObservation",
+      "EdgeDetection",
+      "JammingHypothesis",
+      "CaseEvaluation",
+      "CaseEvaluationPoint",
+      "KalmanTracePoint",
+      "RoutingDecision",
+      "RejoinAudit"
+    ],
+    "relationship_links": 225,
+    "action_definitions": [
+      "approve_semantic_packet",
+      "mark_measurement_contested",
+      "request_rejoin_audit",
+      "change_ddil_mode"
+    ],
+    "aip_workflow_cards": [
+      "operator_situation_summary",
+      "packet_priority_review",
+      "rejoin_audit_assistant"
+    ],
+    "guardrails_ko": [
+      "공식 Palantir import spec이 아니라 Foundry/AIP 매핑용 handoff bundle입니다.",
+      "모든 데이터는 합성이며 실제 군사 위치, EW 원점, 민감 인프라 좌표를 포함하지 않습니다.",
+      "교란 판단은 확정이 아니라 방어적 가설 점수와 근거 체인으로 표현합니다."
+    ]
+  },
+  "simulation_cases": [
+    {
+      "case_id": "case_a_normal",
+      "label_ko": "정상 임무",
+      "scenario_summary_ko": "예측 위치와 보고 위치가 일치하는 기준선입니다.",
+      "default_mode": "full_sync",
+      "primary": false
+    },
+    {
+      "case_id": "case_b_link_degraded",
+      "label_ko": "통신 저하",
+      "scenario_summary_ko": "위치는 안정적이지만 링크가 좁아져 원본 feed 대신 상태 카드가 필요합니다.",
+      "default_mode": "semantic_summary",
+      "primary": false
+    },
+    {
+      "case_id": "case_c_gnss_jamming_suspected",
+      "label_ko": "GNSS 교란 의심",
+      "scenario_summary_ko": "보고 위치와 예측 위치가 벌어지고 GNSS/link 품질이 함께 저하됩니다.",
+      "default_mode": "semantic_summary",
+      "primary": true
+    },
+    {
+      "case_id": "case_d_spoofing_like_inconsistency",
+      "label_ko": "위치 불일치",
+      "scenario_summary_ko": "GNSS-like 보고는 존재하지만 물리 예측과 IMU 연속성에 맞지 않습니다.",
+      "default_mode": "semantic_summary",
+      "primary": false
+    },
+    {
+      "case_id": "case_e_rejoin_audit",
+      "label_ko": "재연결 감사",
+      "scenario_summary_ko": "재연결 이후 단절 중 판단과 로컬 캐시 원본을 대조해야 합니다.",
+      "default_mode": "store_forward",
+      "primary": false
+    }
+  ],
+  "source_catalog": [
+    {
+      "source_id": "synthetic_uav_telemetry",
+      "label": "Synthetic UAV telemetry",
+      "mock_notice": "비행 상태와 원격측정값은 시뮬레이션용 합성 데이터입니다."
+    },
+    {
+      "source_id": "synthetic_gnss_health",
+      "label": "Synthetic GNSS health",
+      "mock_notice": "품질값은 실제 GNSS 측정값이 아니라 합성 상태 구간입니다."
+    },
+    {
+      "source_id": "synthetic_link_monitor",
+      "label": "Synthetic command/data link monitor",
+      "mock_notice": "패킷 손실, heartbeat, 대역폭 값은 합성 시뮬레이션입니다."
+    },
+    {
+      "source_id": "synthetic_eoir_cache",
+      "label": "Synthetic EO/IR raw cache",
+      "mock_notice": "원본 영상은 byte 수와 참조값만으로 표현합니다."
+    },
+    {
+      "source_id": "synthetic_weather_context",
+      "label": "Synthetic weather/wind context",
+      "mock_notice": "기상/풍향은 불확실성 증가에만 쓰는 합성 맥락이며 공식 예보가 아닙니다."
+    }
+  ],
+  "control_intent": {
+    "intent_id": "intent_drone_semantic_watch_01",
+    "display_name_ko": "드론 시맨틱 감시 임무",
+    "primary_objective": "드론 원본 영상/텔레메트리를 모두 전송할 수 없는 상황에서도 위치 예측, 불확실성, 링크/GNSS 상태, 교란 의심 근거를 시맨틱 패킷으로 유지한다.",
+    "valid_until": "2026-07-04T04:00:00Z",
+    "priority_weights": {
+      "flight_safety": 0.25,
+      "navigation_integrity": 0.24,
+      "mission_relevance": 0.21,
+      "link_survivability": 0.18,
+      "provenance_audit": 0.12
+    }
+  },
+  "drone_assets": [
+    {
+      "asset_id": "uav_s1",
+      "asset_code": "UAV-S1",
+      "asset_type": "synthetic_quadcopter",
+      "sensor_modalities": [
+        "EO_IR",
+        "GNSS",
+        "IMU",
+        "LINK_TELEMETRY"
+      ],
+      "comm_state": "intermittent",
+      "battery_pct": 64,
+      "last_contact_time": "2026-07-04T03:00:40Z",
+      "local_cache_status": "raw_video_cached",
+      "sdot_outbox_count": 4
+    },
+    {
+      "asset_id": "ugv_r1",
+      "asset_code": "UGV-R1",
+      "asset_type": "synthetic_ground_relay",
+      "sensor_modalities": [
+        "LINK_RELAY",
+        "RF_CONTEXT"
+      ],
+      "comm_state": "degraded",
+      "battery_pct": 78,
+      "last_contact_time": "2026-07-04T03:01:10Z",
+      "local_cache_status": "relay_logs_cached",
+      "sdot_outbox_count": 2
+    },
+    {
+      "asset_id": "rf_s3",
+      "asset_code": "RF-S3",
+      "asset_type": "synthetic_rf_sensor",
+      "sensor_modalities": [
+        "RF_CONTEXT",
+        "LINK_TELEMETRY"
+      ],
+      "comm_state": "connected",
+      "battery_pct": 92,
+      "last_contact_time": "2026-07-04T03:01:10Z",
+      "local_cache_status": "summary_only",
+      "sdot_outbox_count": 1
+    }
+  ],
+  "case_diagnostics": {
+    "case_a_normal": {
+      "case_id": "case_a_normal",
+      "label": "normal",
+      "score": 0.08,
+      "max_residual_m": 0.0,
+      "max_nis": 0.0,
+      "interpretation_ko": "예측과 수신 상태가 일치합니다. 원본 일부와 상태 요약을 모두 전송할 수 있습니다."
+    },
+    "case_b_link_degraded": {
+      "case_id": "case_b_link_degraded",
+      "label": "link_degraded",
+      "score": 0.38,
+      "max_residual_m": 0.0,
+      "max_nis": 0.0,
+      "interpretation_ko": "위치는 안정적이지만 링크 품질이 낮아 원본 영상 대신 링크/상태 카드가 우선됩니다."
+    },
+    "case_c_gnss_jamming_suspected": {
+      "case_id": "case_c_gnss_jamming_suspected",
+      "label": "jamming_suspected",
+      "score": 0.683,
+      "max_residual_m": 114.02,
+      "max_nis": 76.06,
+      "interpretation_ko": "GNSS 품질 저하, 링크 저하, 예측-수신 잔차가 함께 커져 교란 의심 가설을 올립니다."
+    },
+    "case_d_spoofing_like_inconsistency": {
+      "case_id": "case_d_spoofing_like_inconsistency",
+      "label": "spoofing_suspected",
+      "score": 0.66,
+      "max_residual_m": 282.84,
+      "max_nis": 816.24,
+      "interpretation_ko": "GNSS가 표면상 존재하지만 물리 예측/IMU와 맞지 않아 위치 불일치 가설을 올립니다."
+    },
+    "case_e_rejoin_audit": {
+      "case_id": "case_e_rejoin_audit",
+      "label": "rejoin_audit",
+      "score": 0.52,
+      "max_residual_m": 114.02,
+      "max_nis": 76.06,
+      "interpretation_ko": "재연결 후 시맨틱 예측과 로컬 캐시 원본을 대조해야 합니다."
+    }
+  },
+  "case_evaluations": {
+    "case_a_normal": {
+      "case_id": "case_a_normal",
+      "prediction_model": "constant_velocity_with_wind_uncertainty_v0",
+      "nis_threshold_watch": 9.21,
+      "nis_threshold_critical": 16.0,
+      "hypothesis_threshold_watch": 0.6,
+      "max_residual_m": 0.0,
+      "max_residual_time": "2026-07-04T03:00:00Z",
+      "max_nis": 0.0,
+      "max_nis_time": "2026-07-04T03:00:00Z",
+      "max_uncertainty_major_m": 18.0,
+      "first_anomaly_time": null,
+      "detection_latency_sec": null,
+      "false_alarm_risk": 0.03,
+      "confidence": 0.92,
+      "operator_decision_ko": "정상 감시를 유지하고 저율 상태 요약만 전송합니다.",
+      "semantic_policy_ko": "Full Sync에서는 원본 일부를 허용하고, 저대역 모드에서는 상태 요약만 보냅니다."
+    },
+    "case_b_link_degraded": {
+      "case_id": "case_b_link_degraded",
+      "prediction_model": "constant_velocity_with_wind_uncertainty_v0",
+      "nis_threshold_watch": 9.21,
+      "nis_threshold_critical": 16.0,
+      "hypothesis_threshold_watch": 0.6,
+      "max_residual_m": 0.0,
+      "max_residual_time": "2026-07-04T03:00:00Z",
+      "max_nis": 0.0,
+      "max_nis_time": "2026-07-04T03:00:00Z",
+      "max_uncertainty_major_m": 112.91,
+      "first_anomaly_time": "2026-07-04T03:01:10Z",
+      "detection_latency_sec": 0,
+      "false_alarm_risk": 0.16,
+      "confidence": 0.76,
+      "operator_decision_ko": "영상 feed 우선순위를 낮추고 링크 상태 카드를 먼저 전송합니다.",
+      "semantic_policy_ko": "Raw video 대신 LINK_HEALTH_CARD와 상태 카드가 우선됩니다."
+    },
+    "case_c_gnss_jamming_suspected": {
+      "case_id": "case_c_gnss_jamming_suspected",
+      "prediction_model": "constant_velocity_with_wind_uncertainty_v0",
+      "nis_threshold_watch": 9.21,
+      "nis_threshold_critical": 16.0,
+      "hypothesis_threshold_watch": 0.6,
+      "max_residual_m": 244.13,
+      "max_residual_time": "2026-07-04T03:01:40Z",
+      "max_nis": 76.06,
+      "max_nis_time": "2026-07-04T03:00:50Z",
+      "max_uncertainty_major_m": 283.3,
+      "first_anomaly_time": "2026-07-04T03:00:50Z",
+      "detection_latency_sec": 0,
+      "false_alarm_risk": 0.22,
+      "confidence": 0.68,
+      "operator_decision_ko": "정확 위치가 아니라 예측 위치와 불확실성 타원으로 운용합니다.",
+      "semantic_policy_ko": "NAV_HEALTH_CARD를 우선 전송하고 EO/IR 원본은 로컬 캐시에 보존합니다."
+    },
+    "case_d_spoofing_like_inconsistency": {
+      "case_id": "case_d_spoofing_like_inconsistency",
+      "prediction_model": "constant_velocity_with_wind_uncertainty_v0",
+      "nis_threshold_watch": 9.21,
+      "nis_threshold_critical": 16.0,
+      "hypothesis_threshold_watch": 0.6,
+      "max_residual_m": 282.84,
+      "max_residual_time": "2026-07-04T03:01:00Z",
+      "max_nis": 816.24,
+      "max_nis_time": "2026-07-04T03:01:00Z",
+      "max_uncertainty_major_m": 18.0,
+      "first_anomaly_time": "2026-07-04T03:01:00Z",
+      "detection_latency_sec": 0,
+      "false_alarm_risk": 0.28,
+      "confidence": 0.66,
+      "operator_decision_ko": "보고 위치를 확정값으로 쓰지 않고 contested position으로 표시합니다.",
+      "semantic_policy_ko": "NAV_INTEGRITY_CARD와 근거 체인을 raw feed보다 먼저 전송합니다."
+    },
+    "case_e_rejoin_audit": {
+      "case_id": "case_e_rejoin_audit",
+      "prediction_model": "constant_velocity_with_wind_uncertainty_v0",
+      "nis_threshold_watch": 9.21,
+      "nis_threshold_critical": 16.0,
+      "hypothesis_threshold_watch": 0.6,
+      "max_residual_m": 244.13,
+      "max_residual_time": "2026-07-04T03:01:40Z",
+      "max_nis": 76.06,
+      "max_nis_time": "2026-07-04T03:00:50Z",
+      "max_uncertainty_major_m": 283.3,
+      "first_anomaly_time": "2026-07-04T03:00:50Z",
+      "detection_latency_sec": 0,
+      "false_alarm_risk": 0.18,
+      "confidence": 0.71,
+      "operator_decision_ko": "재연결 후 예측 로그와 로컬 캐시 원본의 차이를 먼저 감사합니다.",
+      "semantic_policy_ko": "REJOIN_AUDIT_CARD와 항법 로그를 먼저 동기화하고 EO/IR 원본은 후순위로 둡니다."
+    }
+  },
+  "case_evaluation_series": {
+    "case_a_normal": {
+      "case_id": "case_a_normal",
+      "chart_type": "normalized_time_series",
+      "metrics": [
+        "residual_norm",
+        "nis_norm",
+        "uncertainty_norm",
+        "hypothesis_score"
+      ],
+      "series": [
+        {
+          "time": "2026-07-04T03:00:00Z",
+          "t_seconds": 0,
+          "residual_m": 0.0,
+          "residual_norm": 0.0,
+          "nis": 0.0,
+          "nis_norm": 0.0,
+          "uncertainty_major_m": 18.0,
+          "uncertainty_norm": 1.0,
+          "hypothesis_score": 0.008,
+          "threshold_state": "nominal",
+          "gnss_quality": "normal",
+          "link_quality": "normal",
+          "action_hint_ko": "저율 상태 요약"
+        },
+        {
+          "time": "2026-07-04T03:00:10Z",
+          "t_seconds": 10,
+          "residual_m": 0.0,
+          "residual_norm": 0.0,
+          "nis": 0.0,
+          "nis_norm": 0.0,
+          "uncertainty_major_m": 18.0,
+          "uncertainty_norm": 1.0,
+          "hypothesis_score": 0.008,
+          "threshold_state": "nominal",
+          "gnss_quality": "normal",
+          "link_quality": "normal",
+          "action_hint_ko": "저율 상태 요약"
+        },
+        {
+          "time": "2026-07-04T03:00:20Z",
+          "t_seconds": 20,
+          "residual_m": 0.0,
+          "residual_norm": 0.0,
+          "nis": 0.0,
+          "nis_norm": 0.0,
+          "uncertainty_major_m": 18.0,
+          "uncertainty_norm": 1.0,
+          "hypothesis_score": 0.008,
+          "threshold_state": "nominal",
+          "gnss_quality": "normal",
+          "link_quality": "normal",
+          "action_hint_ko": "저율 상태 요약"
+        },
+        {
+          "time": "2026-07-04T03:00:30Z",
+          "t_seconds": 30,
+          "residual_m": 0.0,
+          "residual_norm": 0.0,
+          "nis": 0.0,
+          "nis_norm": 0.0,
+          "uncertainty_major_m": 18.0,
+          "uncertainty_norm": 1.0,
+          "hypothesis_score": 0.008,
+          "threshold_state": "nominal",
+          "gnss_quality": "normal",
+          "link_quality": "normal",
+          "action_hint_ko": "저율 상태 요약"
+        },
+        {
+          "time": "2026-07-04T03:00:40Z",
+          "t_seconds": 40,
+          "residual_m": 0.0,
+          "residual_norm": 0.0,
+          "nis": 0.0,
+          "nis_norm": 0.0,
+          "uncertainty_major_m": 18.0,
+          "uncertainty_norm": 1.0,
+          "hypothesis_score": 0.008,
+          "threshold_state": "nominal",
+          "gnss_quality": "normal",
+          "link_quality": "normal",
+          "action_hint_ko": "저율 상태 요약"
+        },
+        {
+          "time": "2026-07-04T03:00:50Z",
+          "t_seconds": 50,
+          "residual_m": 0.0,
+          "residual_norm": 0.0,
+          "nis": 0.0,
+          "nis_norm": 0.0,
+          "uncertainty_major_m": 18.0,
+          "uncertainty_norm": 1.0,
+          "hypothesis_score": 0.008,
+          "threshold_state": "nominal",
+          "gnss_quality": "normal",
+          "link_quality": "normal",
+          "action_hint_ko": "저율 상태 요약"
+        },
+        {
+          "time": "2026-07-04T03:01:00Z",
+          "t_seconds": 60,
+          "residual_m": 0.0,
+          "residual_norm": 0.0,
+          "nis": 0.0,
+          "nis_norm": 0.0,
+          "uncertainty_major_m": 18.0,
+          "uncertainty_norm": 1.0,
+          "hypothesis_score": 0.008,
+          "threshold_state": "nominal",
+          "gnss_quality": "normal",
+          "link_quality": "normal",
+          "action_hint_ko": "저율 상태 요약"
+        },
+        {
+          "time": "2026-07-04T03:01:10Z",
+          "t_seconds": 70,
+          "residual_m": 0.0,
+          "residual_norm": 0.0,
+          "nis": 0.0,
+          "nis_norm": 0.0,
+          "uncertainty_major_m": 18.0,
+          "uncertainty_norm": 1.0,
+          "hypothesis_score": 0.008,
+          "threshold_state": "nominal",
+          "gnss_quality": "normal",
+          "link_quality": "normal",
+          "action_hint_ko": "저율 상태 요약"
+        },
+        {
+          "time": "2026-07-04T03:01:20Z",
+          "t_seconds": 80,
+          "residual_m": 0.0,
+          "residual_norm": 0.0,
+          "nis": 0.0,
+          "nis_norm": 0.0,
+          "uncertainty_major_m": 18.0,
+          "uncertainty_norm": 1.0,
+          "hypothesis_score": 0.008,
+          "threshold_state": "nominal",
+          "gnss_quality": "normal",
+          "link_quality": "normal",
+          "action_hint_ko": "저율 상태 요약"
+        },
+        {
+          "time": "2026-07-04T03:01:30Z",
+          "t_seconds": 90,
+          "residual_m": 0.0,
+          "residual_norm": 0.0,
+          "nis": 0.0,
+          "nis_norm": 0.0,
+          "uncertainty_major_m": 18.0,
+          "uncertainty_norm": 1.0,
+          "hypothesis_score": 0.008,
+          "threshold_state": "nominal",
+          "gnss_quality": "normal",
+          "link_quality": "normal",
+          "action_hint_ko": "저율 상태 요약"
+        },
+        {
+          "time": "2026-07-04T03:01:40Z",
+          "t_seconds": 100,
+          "residual_m": 0.0,
+          "residual_norm": 0.0,
+          "nis": 0.0,
+          "nis_norm": 0.0,
+          "uncertainty_major_m": 18.0,
+          "uncertainty_norm": 1.0,
+          "hypothesis_score": 0.008,
+          "threshold_state": "nominal",
+          "gnss_quality": "normal",
+          "link_quality": "normal",
+          "action_hint_ko": "저율 상태 요약"
+        },
+        {
+          "time": "2026-07-04T03:01:50Z",
+          "t_seconds": 110,
+          "residual_m": 0.0,
+          "residual_norm": 0.0,
+          "nis": 0.0,
+          "nis_norm": 0.0,
+          "uncertainty_major_m": 18.0,
+          "uncertainty_norm": 1.0,
+          "hypothesis_score": 0.008,
+          "threshold_state": "nominal",
+          "gnss_quality": "normal",
+          "link_quality": "normal",
+          "action_hint_ko": "저율 상태 요약"
+        },
+        {
+          "time": "2026-07-04T03:02:00Z",
+          "t_seconds": 120,
+          "residual_m": 0.0,
+          "residual_norm": 0.0,
+          "nis": 0.0,
+          "nis_norm": 0.0,
+          "uncertainty_major_m": 18.0,
+          "uncertainty_norm": 1.0,
+          "hypothesis_score": 0.008,
+          "threshold_state": "nominal",
+          "gnss_quality": "normal",
+          "link_quality": "normal",
+          "action_hint_ko": "저율 상태 요약"
+        }
+      ],
+      "notes_ko": "각 값은 한 화면 비교를 위해 0~1 범위로 정규화했습니다. 원 단위 값은 같은 row에 함께 보존됩니다.",
+      "thresholds": {
+        "nis_watch": 9.21,
+        "nis_critical": 16.0,
+        "hypothesis_watch": 0.6
+      }
+    },
+    "case_b_link_degraded": {
+      "case_id": "case_b_link_degraded",
+      "chart_type": "normalized_time_series",
+      "metrics": [
+        "residual_norm",
+        "nis_norm",
+        "uncertainty_norm",
+        "hypothesis_score"
+      ],
+      "series": [
+        {
+          "time": "2026-07-04T03:00:00Z",
+          "t_seconds": 0,
+          "residual_m": 0.0,
+          "residual_norm": 0.0,
+          "nis": 0.0,
+          "nis_norm": 0.0,
+          "uncertainty_major_m": 18.0,
+          "uncertainty_norm": 0.159,
+          "hypothesis_score": 0.008,
+          "threshold_state": "nominal",
+          "gnss_quality": "normal",
+          "link_quality": "normal",
+          "action_hint_ko": "저율 상태 요약"
+        },
+        {
+          "time": "2026-07-04T03:00:10Z",
+          "t_seconds": 10,
+          "residual_m": 0.0,
+          "residual_norm": 0.0,
+          "nis": 0.0,
+          "nis_norm": 0.0,
+          "uncertainty_major_m": 18.0,
+          "uncertainty_norm": 0.159,
+          "hypothesis_score": 0.008,
+          "threshold_state": "nominal",
+          "gnss_quality": "normal",
+          "link_quality": "normal",
+          "action_hint_ko": "저율 상태 요약"
+        },
+        {
+          "time": "2026-07-04T03:00:20Z",
+          "t_seconds": 20,
+          "residual_m": 0.0,
+          "residual_norm": 0.0,
+          "nis": 0.0,
+          "nis_norm": 0.0,
+          "uncertainty_major_m": 18.0,
+          "uncertainty_norm": 0.159,
+          "hypothesis_score": 0.008,
+          "threshold_state": "nominal",
+          "gnss_quality": "normal",
+          "link_quality": "normal",
+          "action_hint_ko": "저율 상태 요약"
+        },
+        {
+          "time": "2026-07-04T03:00:30Z",
+          "t_seconds": 30,
+          "residual_m": 0.0,
+          "residual_norm": 0.0,
+          "nis": 0.0,
+          "nis_norm": 0.0,
+          "uncertainty_major_m": 18.0,
+          "uncertainty_norm": 0.159,
+          "hypothesis_score": 0.008,
+          "threshold_state": "nominal",
+          "gnss_quality": "normal",
+          "link_quality": "normal",
+          "action_hint_ko": "저율 상태 요약"
+        },
+        {
+          "time": "2026-07-04T03:00:40Z",
+          "t_seconds": 40,
+          "residual_m": 0.0,
+          "residual_norm": 0.0,
+          "nis": 0.0,
+          "nis_norm": 0.0,
+          "uncertainty_major_m": 18.0,
+          "uncertainty_norm": 0.159,
+          "hypothesis_score": 0.008,
+          "threshold_state": "nominal",
+          "gnss_quality": "normal",
+          "link_quality": "normal",
+          "action_hint_ko": "저율 상태 요약"
+        },
+        {
+          "time": "2026-07-04T03:00:50Z",
+          "t_seconds": 50,
+          "residual_m": 0.0,
+          "residual_norm": 0.0,
+          "nis": 0.0,
+          "nis_norm": 0.0,
+          "uncertainty_major_m": 18.0,
+          "uncertainty_norm": 0.159,
+          "hypothesis_score": 0.008,
+          "threshold_state": "nominal",
+          "gnss_quality": "normal",
+          "link_quality": "normal",
+          "action_hint_ko": "저율 상태 요약"
+        },
+        {
+          "time": "2026-07-04T03:01:00Z",
+          "t_seconds": 60,
+          "residual_m": 0.0,
+          "residual_norm": 0.0,
+          "nis": 0.0,
+          "nis_norm": 0.0,
+          "uncertainty_major_m": 18.0,
+          "uncertainty_norm": 0.159,
+          "hypothesis_score": 0.008,
+          "threshold_state": "nominal",
+          "gnss_quality": "normal",
+          "link_quality": "normal",
+          "action_hint_ko": "저율 상태 요약"
+        },
+        {
+          "time": "2026-07-04T03:01:10Z",
+          "t_seconds": 70,
+          "residual_m": 0.0,
+          "residual_norm": 0.0,
+          "nis": 0.0,
+          "nis_norm": 0.0,
+          "uncertainty_major_m": 18.0,
+          "uncertainty_norm": 0.159,
+          "hypothesis_score": 0.149,
+          "threshold_state": "degraded",
+          "gnss_quality": "normal",
+          "link_quality": "degraded",
+          "action_hint_ko": "링크 상태 카드 전송"
+        },
+        {
+          "time": "2026-07-04T03:01:20Z",
+          "t_seconds": 80,
+          "residual_m": 0.0,
+          "residual_norm": 0.0,
+          "nis": 0.0,
+          "nis_norm": 0.0,
+          "uncertainty_major_m": 20.9,
+          "uncertainty_norm": 0.185,
+          "hypothesis_score": 0.149,
+          "threshold_state": "degraded",
+          "gnss_quality": "normal",
+          "link_quality": "degraded",
+          "action_hint_ko": "링크 상태 카드 전송"
+        },
+        {
+          "time": "2026-07-04T03:01:30Z",
+          "t_seconds": 90,
+          "residual_m": 0.0,
+          "residual_norm": 0.0,
+          "nis": 0.0,
+          "nis_norm": 0.0,
+          "uncertainty_major_m": 31.11,
+          "uncertainty_norm": 0.276,
+          "hypothesis_score": 0.149,
+          "threshold_state": "degraded",
+          "gnss_quality": "normal",
+          "link_quality": "degraded",
+          "action_hint_ko": "링크 상태 카드 전송"
+        },
+        {
+          "time": "2026-07-04T03:01:40Z",
+          "t_seconds": 100,
+          "residual_m": 0.0,
+          "residual_norm": 0.0,
+          "nis": 0.0,
+          "nis_norm": 0.0,
+          "uncertainty_major_m": 49.93,
+          "uncertainty_norm": 0.442,
+          "hypothesis_score": 0.149,
+          "threshold_state": "degraded",
+          "gnss_quality": "normal",
+          "link_quality": "degraded",
+          "action_hint_ko": "링크 상태 카드 전송"
+        },
+        {
+          "time": "2026-07-04T03:01:50Z",
+          "t_seconds": 110,
+          "residual_m": 0.0,
+          "residual_norm": 0.0,
+          "nis": 0.0,
+          "nis_norm": 0.0,
+          "uncertainty_major_m": 77.28,
+          "uncertainty_norm": 0.684,
+          "hypothesis_score": 0.149,
+          "threshold_state": "degraded",
+          "gnss_quality": "normal",
+          "link_quality": "degraded",
+          "action_hint_ko": "링크 상태 카드 전송"
+        },
+        {
+          "time": "2026-07-04T03:02:00Z",
+          "t_seconds": 120,
+          "residual_m": 0.0,
+          "residual_norm": 0.0,
+          "nis": 0.0,
+          "nis_norm": 0.0,
+          "uncertainty_major_m": 112.91,
+          "uncertainty_norm": 1.0,
+          "hypothesis_score": 0.149,
+          "threshold_state": "degraded",
+          "gnss_quality": "normal",
+          "link_quality": "degraded",
+          "action_hint_ko": "링크 상태 카드 전송"
+        }
+      ],
+      "notes_ko": "각 값은 한 화면 비교를 위해 0~1 범위로 정규화했습니다. 원 단위 값은 같은 row에 함께 보존됩니다.",
+      "thresholds": {
+        "nis_watch": 9.21,
+        "nis_critical": 16.0,
+        "hypothesis_watch": 0.6
+      }
+    },
+    "case_c_gnss_jamming_suspected": {
+      "case_id": "case_c_gnss_jamming_suspected",
+      "chart_type": "normalized_time_series",
+      "metrics": [
+        "residual_norm",
+        "nis_norm",
+        "uncertainty_norm",
+        "hypothesis_score"
+      ],
+      "series": [
+        {
+          "time": "2026-07-04T03:00:00Z",
+          "t_seconds": 0,
+          "residual_m": 0.0,
+          "residual_norm": 0.0,
+          "nis": 0.0,
+          "nis_norm": 0.0,
+          "uncertainty_major_m": 18.0,
+          "uncertainty_norm": 0.064,
+          "hypothesis_score": 0.042,
+          "threshold_state": "nominal",
+          "gnss_quality": "normal",
+          "link_quality": "normal",
+          "action_hint_ko": "저율 상태 요약"
+        },
+        {
+          "time": "2026-07-04T03:00:10Z",
+          "t_seconds": 10,
+          "residual_m": 0.0,
+          "residual_norm": 0.0,
+          "nis": 0.0,
+          "nis_norm": 0.0,
+          "uncertainty_major_m": 18.0,
+          "uncertainty_norm": 0.064,
+          "hypothesis_score": 0.042,
+          "threshold_state": "nominal",
+          "gnss_quality": "normal",
+          "link_quality": "normal",
+          "action_hint_ko": "저율 상태 요약"
+        },
+        {
+          "time": "2026-07-04T03:00:20Z",
+          "t_seconds": 20,
+          "residual_m": 0.0,
+          "residual_norm": 0.0,
+          "nis": 0.0,
+          "nis_norm": 0.0,
+          "uncertainty_major_m": 18.0,
+          "uncertainty_norm": 0.064,
+          "hypothesis_score": 0.042,
+          "threshold_state": "nominal",
+          "gnss_quality": "normal",
+          "link_quality": "normal",
+          "action_hint_ko": "저율 상태 요약"
+        },
+        {
+          "time": "2026-07-04T03:00:30Z",
+          "t_seconds": 30,
+          "residual_m": 0.0,
+          "residual_norm": 0.0,
+          "nis": 0.0,
+          "nis_norm": 0.0,
+          "uncertainty_major_m": 18.0,
+          "uncertainty_norm": 0.064,
+          "hypothesis_score": 0.042,
+          "threshold_state": "nominal",
+          "gnss_quality": "normal",
+          "link_quality": "normal",
+          "action_hint_ko": "저율 상태 요약"
+        },
+        {
+          "time": "2026-07-04T03:00:40Z",
+          "t_seconds": 40,
+          "residual_m": 0.0,
+          "residual_norm": 0.0,
+          "nis": 0.0,
+          "nis_norm": 0.0,
+          "uncertainty_major_m": 18.0,
+          "uncertainty_norm": 0.064,
+          "hypothesis_score": 0.042,
+          "threshold_state": "nominal",
+          "gnss_quality": "normal",
+          "link_quality": "normal",
+          "action_hint_ko": "저율 상태 요약"
+        },
+        {
+          "time": "2026-07-04T03:00:50Z",
+          "t_seconds": 50,
+          "residual_m": 114.02,
+          "residual_norm": 0.467,
+          "nis": 76.06,
+          "nis_norm": 1.0,
+          "uncertainty_major_m": 23.77,
+          "uncertainty_norm": 0.084,
+          "hypothesis_score": 0.683,
+          "threshold_state": "critical",
+          "gnss_quality": "degraded",
+          "link_quality": "intermittent",
+          "action_hint_ko": "항법 무결성 카드 우선"
+        },
+        {
+          "time": "2026-07-04T03:01:00Z",
+          "t_seconds": 60,
+          "residual_m": 140.0,
+          "residual_norm": 0.573,
+          "nis": 43.78,
+          "nis_norm": 1.0,
+          "uncertainty_major_m": 38.47,
+          "uncertainty_norm": 0.136,
+          "hypothesis_score": 0.683,
+          "threshold_state": "critical",
+          "gnss_quality": "degraded",
+          "link_quality": "intermittent",
+          "action_hint_ko": "항법 무결성 카드 우선"
+        },
+        {
+          "time": "2026-07-04T03:01:10Z",
+          "t_seconds": 70,
+          "residual_m": 166.01,
+          "residual_norm": 0.68,
+          "nis": 25.0,
+          "nis_norm": 1.0,
+          "uncertainty_major_m": 60.37,
+          "uncertainty_norm": 0.213,
+          "hypothesis_score": 0.683,
+          "threshold_state": "critical",
+          "gnss_quality": "degraded",
+          "link_quality": "intermittent",
+          "action_hint_ko": "항법 무결성 카드 우선"
+        },
+        {
+          "time": "2026-07-04T03:01:20Z",
+          "t_seconds": 80,
+          "residual_m": 192.04,
+          "residual_norm": 0.787,
+          "nis": 15.2,
+          "nis_norm": 0.95,
+          "uncertainty_major_m": 89.55,
+          "uncertainty_norm": 0.316,
+          "hypothesis_score": 0.635,
+          "threshold_state": "watch",
+          "gnss_quality": "degraded",
+          "link_quality": "intermittent",
+          "action_hint_ko": "상태/근거 카드 전송"
+        },
+        {
+          "time": "2026-07-04T03:01:30Z",
+          "t_seconds": 90,
+          "residual_m": 218.08,
+          "residual_norm": 0.893,
+          "nis": 9.86,
+          "nis_norm": 0.616,
+          "uncertainty_major_m": 126.29,
+          "uncertainty_norm": 0.446,
+          "hypothesis_score": 0.582,
+          "threshold_state": "watch",
+          "gnss_quality": "degraded",
+          "link_quality": "intermittent",
+          "action_hint_ko": "상태/근거 카드 전송"
+        },
+        {
+          "time": "2026-07-04T03:01:40Z",
+          "t_seconds": 100,
+          "residual_m": 244.13,
+          "residual_norm": 1.0,
+          "nis": 6.76,
+          "nis_norm": 0.422,
+          "uncertainty_major_m": 170.76,
+          "uncertainty_norm": 0.603,
+          "hypothesis_score": 0.551,
+          "threshold_state": "degraded",
+          "gnss_quality": "degraded",
+          "link_quality": "intermittent",
+          "action_hint_ko": "링크 상태 카드 전송"
+        },
+        {
+          "time": "2026-07-04T03:01:50Z",
+          "t_seconds": 110,
+          "residual_m": 0.0,
+          "residual_norm": 0.0,
+          "nis": 0.0,
+          "nis_norm": 0.0,
+          "uncertainty_major_m": 223.08,
+          "uncertainty_norm": 0.787,
+          "hypothesis_score": 0.042,
+          "threshold_state": "nominal",
+          "gnss_quality": "normal",
+          "link_quality": "normal",
+          "action_hint_ko": "저율 상태 요약"
+        },
+        {
+          "time": "2026-07-04T03:02:00Z",
+          "t_seconds": 120,
+          "residual_m": 0.0,
+          "residual_norm": 0.0,
+          "nis": 0.0,
+          "nis_norm": 0.0,
+          "uncertainty_major_m": 283.3,
+          "uncertainty_norm": 1.0,
+          "hypothesis_score": 0.042,
+          "threshold_state": "nominal",
+          "gnss_quality": "normal",
+          "link_quality": "normal",
+          "action_hint_ko": "저율 상태 요약"
+        }
+      ],
+      "notes_ko": "각 값은 한 화면 비교를 위해 0~1 범위로 정규화했습니다. 원 단위 값은 같은 row에 함께 보존됩니다.",
+      "thresholds": {
+        "nis_watch": 9.21,
+        "nis_critical": 16.0,
+        "hypothesis_watch": 0.6
+      }
+    },
+    "case_d_spoofing_like_inconsistency": {
+      "case_id": "case_d_spoofing_like_inconsistency",
+      "chart_type": "normalized_time_series",
+      "metrics": [
+        "residual_norm",
+        "nis_norm",
+        "uncertainty_norm",
+        "hypothesis_score"
+      ],
+      "series": [
+        {
+          "time": "2026-07-04T03:00:00Z",
+          "t_seconds": 0,
+          "residual_m": 0.0,
+          "residual_norm": 0.0,
+          "nis": 0.0,
+          "nis_norm": 0.0,
+          "uncertainty_major_m": 18.0,
+          "uncertainty_norm": 1.0,
+          "hypothesis_score": 0.036,
+          "threshold_state": "nominal",
+          "gnss_quality": "normal",
+          "link_quality": "normal",
+          "action_hint_ko": "저율 상태 요약"
+        },
+        {
+          "time": "2026-07-04T03:00:10Z",
+          "t_seconds": 10,
+          "residual_m": 0.0,
+          "residual_norm": 0.0,
+          "nis": 0.0,
+          "nis_norm": 0.0,
+          "uncertainty_major_m": 18.0,
+          "uncertainty_norm": 1.0,
+          "hypothesis_score": 0.036,
+          "threshold_state": "nominal",
+          "gnss_quality": "normal",
+          "link_quality": "normal",
+          "action_hint_ko": "저율 상태 요약"
+        },
+        {
+          "time": "2026-07-04T03:00:20Z",
+          "t_seconds": 20,
+          "residual_m": 0.0,
+          "residual_norm": 0.0,
+          "nis": 0.0,
+          "nis_norm": 0.0,
+          "uncertainty_major_m": 18.0,
+          "uncertainty_norm": 1.0,
+          "hypothesis_score": 0.036,
+          "threshold_state": "nominal",
+          "gnss_quality": "normal",
+          "link_quality": "normal",
+          "action_hint_ko": "저율 상태 요약"
+        },
+        {
+          "time": "2026-07-04T03:00:30Z",
+          "t_seconds": 30,
+          "residual_m": 0.0,
+          "residual_norm": 0.0,
+          "nis": 0.0,
+          "nis_norm": 0.0,
+          "uncertainty_major_m": 18.0,
+          "uncertainty_norm": 1.0,
+          "hypothesis_score": 0.036,
+          "threshold_state": "nominal",
+          "gnss_quality": "normal",
+          "link_quality": "normal",
+          "action_hint_ko": "저율 상태 요약"
+        },
+        {
+          "time": "2026-07-04T03:00:40Z",
+          "t_seconds": 40,
+          "residual_m": 0.0,
+          "residual_norm": 0.0,
+          "nis": 0.0,
+          "nis_norm": 0.0,
+          "uncertainty_major_m": 18.0,
+          "uncertainty_norm": 1.0,
+          "hypothesis_score": 0.036,
+          "threshold_state": "nominal",
+          "gnss_quality": "normal",
+          "link_quality": "normal",
+          "action_hint_ko": "저율 상태 요약"
+        },
+        {
+          "time": "2026-07-04T03:00:50Z",
+          "t_seconds": 50,
+          "residual_m": 0.0,
+          "residual_norm": 0.0,
+          "nis": 0.0,
+          "nis_norm": 0.0,
+          "uncertainty_major_m": 18.0,
+          "uncertainty_norm": 1.0,
+          "hypothesis_score": 0.036,
+          "threshold_state": "nominal",
+          "gnss_quality": "normal",
+          "link_quality": "normal",
+          "action_hint_ko": "저율 상태 요약"
+        },
+        {
+          "time": "2026-07-04T03:01:00Z",
+          "t_seconds": 60,
+          "residual_m": 282.84,
+          "residual_norm": 1.0,
+          "nis": 816.24,
+          "nis_norm": 1.0,
+          "uncertainty_major_m": 18.0,
+          "uncertainty_norm": 1.0,
+          "hypothesis_score": 0.504,
+          "threshold_state": "critical",
+          "gnss_quality": "nominal_but_inconsistent",
+          "link_quality": "degraded",
+          "action_hint_ko": "항법 무결성 카드 우선"
+        },
+        {
+          "time": "2026-07-04T03:01:10Z",
+          "t_seconds": 70,
+          "residual_m": 282.84,
+          "residual_norm": 1.0,
+          "nis": 816.24,
+          "nis_norm": 1.0,
+          "uncertainty_major_m": 18.0,
+          "uncertainty_norm": 1.0,
+          "hypothesis_score": 0.504,
+          "threshold_state": "critical",
+          "gnss_quality": "nominal_but_inconsistent",
+          "link_quality": "degraded",
+          "action_hint_ko": "항법 무결성 카드 우선"
+        },
+        {
+          "time": "2026-07-04T03:01:20Z",
+          "t_seconds": 80,
+          "residual_m": 282.84,
+          "residual_norm": 1.0,
+          "nis": 816.24,
+          "nis_norm": 1.0,
+          "uncertainty_major_m": 18.0,
+          "uncertainty_norm": 1.0,
+          "hypothesis_score": 0.504,
+          "threshold_state": "critical",
+          "gnss_quality": "nominal_but_inconsistent",
+          "link_quality": "degraded",
+          "action_hint_ko": "항법 무결성 카드 우선"
+        },
+        {
+          "time": "2026-07-04T03:01:30Z",
+          "t_seconds": 90,
+          "residual_m": 282.84,
+          "residual_norm": 1.0,
+          "nis": 816.24,
+          "nis_norm": 1.0,
+          "uncertainty_major_m": 18.0,
+          "uncertainty_norm": 1.0,
+          "hypothesis_score": 0.504,
+          "threshold_state": "critical",
+          "gnss_quality": "nominal_but_inconsistent",
+          "link_quality": "degraded",
+          "action_hint_ko": "항법 무결성 카드 우선"
+        },
+        {
+          "time": "2026-07-04T03:01:40Z",
+          "t_seconds": 100,
+          "residual_m": 0.0,
+          "residual_norm": 0.0,
+          "nis": 0.0,
+          "nis_norm": 0.0,
+          "uncertainty_major_m": 18.0,
+          "uncertainty_norm": 1.0,
+          "hypothesis_score": 0.118,
+          "threshold_state": "nominal",
+          "gnss_quality": "normal",
+          "link_quality": "normal",
+          "action_hint_ko": "저율 상태 요약"
+        },
+        {
+          "time": "2026-07-04T03:01:50Z",
+          "t_seconds": 110,
+          "residual_m": 0.0,
+          "residual_norm": 0.0,
+          "nis": 0.0,
+          "nis_norm": 0.0,
+          "uncertainty_major_m": 18.0,
+          "uncertainty_norm": 1.0,
+          "hypothesis_score": 0.118,
+          "threshold_state": "nominal",
+          "gnss_quality": "normal",
+          "link_quality": "normal",
+          "action_hint_ko": "저율 상태 요약"
+        },
+        {
+          "time": "2026-07-04T03:02:00Z",
+          "t_seconds": 120,
+          "residual_m": 0.0,
+          "residual_norm": 0.0,
+          "nis": 0.0,
+          "nis_norm": 0.0,
+          "uncertainty_major_m": 18.0,
+          "uncertainty_norm": 1.0,
+          "hypothesis_score": 0.118,
+          "threshold_state": "nominal",
+          "gnss_quality": "normal",
+          "link_quality": "normal",
+          "action_hint_ko": "저율 상태 요약"
+        }
+      ],
+      "notes_ko": "각 값은 한 화면 비교를 위해 0~1 범위로 정규화했습니다. 원 단위 값은 같은 row에 함께 보존됩니다.",
+      "thresholds": {
+        "nis_watch": 9.21,
+        "nis_critical": 16.0,
+        "hypothesis_watch": 0.6
+      }
+    },
+    "case_e_rejoin_audit": {
+      "case_id": "case_e_rejoin_audit",
+      "chart_type": "normalized_time_series",
+      "metrics": [
+        "residual_norm",
+        "nis_norm",
+        "uncertainty_norm",
+        "hypothesis_score"
+      ],
+      "series": [
+        {
+          "time": "2026-07-04T03:00:00Z",
+          "t_seconds": 0,
+          "residual_m": 0.0,
+          "residual_norm": 0.0,
+          "nis": 0.0,
+          "nis_norm": 0.0,
+          "uncertainty_major_m": 18.0,
+          "uncertainty_norm": 0.064,
+          "hypothesis_score": 0.042,
+          "threshold_state": "nominal",
+          "gnss_quality": "normal",
+          "link_quality": "normal",
+          "action_hint_ko": "저율 상태 요약"
+        },
+        {
+          "time": "2026-07-04T03:00:10Z",
+          "t_seconds": 10,
+          "residual_m": 0.0,
+          "residual_norm": 0.0,
+          "nis": 0.0,
+          "nis_norm": 0.0,
+          "uncertainty_major_m": 18.0,
+          "uncertainty_norm": 0.064,
+          "hypothesis_score": 0.042,
+          "threshold_state": "nominal",
+          "gnss_quality": "normal",
+          "link_quality": "normal",
+          "action_hint_ko": "저율 상태 요약"
+        },
+        {
+          "time": "2026-07-04T03:00:20Z",
+          "t_seconds": 20,
+          "residual_m": 0.0,
+          "residual_norm": 0.0,
+          "nis": 0.0,
+          "nis_norm": 0.0,
+          "uncertainty_major_m": 18.0,
+          "uncertainty_norm": 0.064,
+          "hypothesis_score": 0.042,
+          "threshold_state": "nominal",
+          "gnss_quality": "normal",
+          "link_quality": "normal",
+          "action_hint_ko": "저율 상태 요약"
+        },
+        {
+          "time": "2026-07-04T03:00:30Z",
+          "t_seconds": 30,
+          "residual_m": 0.0,
+          "residual_norm": 0.0,
+          "nis": 0.0,
+          "nis_norm": 0.0,
+          "uncertainty_major_m": 18.0,
+          "uncertainty_norm": 0.064,
+          "hypothesis_score": 0.042,
+          "threshold_state": "nominal",
+          "gnss_quality": "normal",
+          "link_quality": "normal",
+          "action_hint_ko": "저율 상태 요약"
+        },
+        {
+          "time": "2026-07-04T03:00:40Z",
+          "t_seconds": 40,
+          "residual_m": 0.0,
+          "residual_norm": 0.0,
+          "nis": 0.0,
+          "nis_norm": 0.0,
+          "uncertainty_major_m": 18.0,
+          "uncertainty_norm": 0.064,
+          "hypothesis_score": 0.042,
+          "threshold_state": "nominal",
+          "gnss_quality": "normal",
+          "link_quality": "normal",
+          "action_hint_ko": "저율 상태 요약"
+        },
+        {
+          "time": "2026-07-04T03:00:50Z",
+          "t_seconds": 50,
+          "residual_m": 114.02,
+          "residual_norm": 0.467,
+          "nis": 76.06,
+          "nis_norm": 1.0,
+          "uncertainty_major_m": 23.77,
+          "uncertainty_norm": 0.084,
+          "hypothesis_score": 0.683,
+          "threshold_state": "critical",
+          "gnss_quality": "degraded",
+          "link_quality": "intermittent",
+          "action_hint_ko": "항법 무결성 카드 우선"
+        },
+        {
+          "time": "2026-07-04T03:01:00Z",
+          "t_seconds": 60,
+          "residual_m": 140.0,
+          "residual_norm": 0.573,
+          "nis": 43.78,
+          "nis_norm": 1.0,
+          "uncertainty_major_m": 38.47,
+          "uncertainty_norm": 0.136,
+          "hypothesis_score": 0.683,
+          "threshold_state": "critical",
+          "gnss_quality": "degraded",
+          "link_quality": "intermittent",
+          "action_hint_ko": "항법 무결성 카드 우선"
+        },
+        {
+          "time": "2026-07-04T03:01:10Z",
+          "t_seconds": 70,
+          "residual_m": 166.01,
+          "residual_norm": 0.68,
+          "nis": 25.0,
+          "nis_norm": 1.0,
+          "uncertainty_major_m": 60.37,
+          "uncertainty_norm": 0.213,
+          "hypothesis_score": 0.683,
+          "threshold_state": "critical",
+          "gnss_quality": "degraded",
+          "link_quality": "intermittent",
+          "action_hint_ko": "항법 무결성 카드 우선"
+        },
+        {
+          "time": "2026-07-04T03:01:20Z",
+          "t_seconds": 80,
+          "residual_m": 192.04,
+          "residual_norm": 0.787,
+          "nis": 15.2,
+          "nis_norm": 0.95,
+          "uncertainty_major_m": 89.55,
+          "uncertainty_norm": 0.316,
+          "hypothesis_score": 0.635,
+          "threshold_state": "watch",
+          "gnss_quality": "degraded",
+          "link_quality": "intermittent",
+          "action_hint_ko": "상태/근거 카드 전송"
+        },
+        {
+          "time": "2026-07-04T03:01:30Z",
+          "t_seconds": 90,
+          "residual_m": 218.08,
+          "residual_norm": 0.893,
+          "nis": 9.86,
+          "nis_norm": 0.616,
+          "uncertainty_major_m": 126.29,
+          "uncertainty_norm": 0.446,
+          "hypothesis_score": 0.582,
+          "threshold_state": "watch",
+          "gnss_quality": "degraded",
+          "link_quality": "intermittent",
+          "action_hint_ko": "상태/근거 카드 전송"
+        },
+        {
+          "time": "2026-07-04T03:01:40Z",
+          "t_seconds": 100,
+          "residual_m": 244.13,
+          "residual_norm": 1.0,
+          "nis": 6.76,
+          "nis_norm": 0.422,
+          "uncertainty_major_m": 170.76,
+          "uncertainty_norm": 0.603,
+          "hypothesis_score": 0.551,
+          "threshold_state": "degraded",
+          "gnss_quality": "degraded",
+          "link_quality": "intermittent",
+          "action_hint_ko": "링크 상태 카드 전송"
+        },
+        {
+          "time": "2026-07-04T03:01:50Z",
+          "t_seconds": 110,
+          "residual_m": 0.0,
+          "residual_norm": 0.0,
+          "nis": 0.0,
+          "nis_norm": 0.0,
+          "uncertainty_major_m": 223.08,
+          "uncertainty_norm": 0.787,
+          "hypothesis_score": 0.042,
+          "threshold_state": "nominal",
+          "gnss_quality": "normal",
+          "link_quality": "normal",
+          "action_hint_ko": "저율 상태 요약"
+        },
+        {
+          "time": "2026-07-04T03:02:00Z",
+          "t_seconds": 120,
+          "residual_m": 0.0,
+          "residual_norm": 0.0,
+          "nis": 0.0,
+          "nis_norm": 0.0,
+          "uncertainty_major_m": 283.3,
+          "uncertainty_norm": 1.0,
+          "hypothesis_score": 0.042,
+          "threshold_state": "nominal",
+          "gnss_quality": "normal",
+          "link_quality": "normal",
+          "action_hint_ko": "저율 상태 요약"
+        }
+      ],
+      "notes_ko": "각 값은 한 화면 비교를 위해 0~1 범위로 정규화했습니다. 원 단위 값은 같은 row에 함께 보존됩니다.",
+      "thresholds": {
+        "nis_watch": 9.21,
+        "nis_critical": 16.0,
+        "hypothesis_watch": 0.6
+      }
+    }
+  },
+  "kalman_estimator_traces": {
+    "case_a_normal": {
+      "case_id": "case_a_normal",
+      "filter_name": "constant_velocity_kalman_filter_v0",
+      "state_vector": [
+        "north_m",
+        "east_m",
+        "north_velocity_mps",
+        "east_velocity_mps"
+      ],
+      "measurement": "reported_position_m",
+      "gate_rule": "innovation_nis <= 9.21",
+      "trace": [
+        {
+          "time": "2026-07-04T03:00:00Z",
+          "t_seconds": 0,
+          "prior_position_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "norm": 0.0
+          },
+          "innovation_nis": 0.0,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 8.49,
+          "estimate_error_m": 0.0,
+          "reported_error_m": 0.0,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        },
+        {
+          "time": "2026-07-04T03:00:10Z",
+          "t_seconds": 10,
+          "prior_position_m": {
+            "north": 122.0,
+            "east": 29.0,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 122.0,
+            "east": 29.0,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 122.0,
+            "east": 29.0,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 122.0,
+            "east": 29.0,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "norm": 0.0
+          },
+          "innovation_nis": 0.0,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 11.63,
+          "estimate_error_m": 0.0,
+          "reported_error_m": 0.0,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        },
+        {
+          "time": "2026-07-04T03:00:20Z",
+          "t_seconds": 20,
+          "prior_position_m": {
+            "north": 244.0,
+            "east": 58.0,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 244.0,
+            "east": 58.0,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 244.0,
+            "east": 58.0,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 244.0,
+            "east": 58.0,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "norm": 0.0
+          },
+          "innovation_nis": 0.0,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 11.7,
+          "estimate_error_m": 0.0,
+          "reported_error_m": 0.0,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        },
+        {
+          "time": "2026-07-04T03:00:30Z",
+          "t_seconds": 30,
+          "prior_position_m": {
+            "north": 366.0,
+            "east": 87.0,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 366.0,
+            "east": 87.0,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 366.0,
+            "east": 87.0,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 366.0,
+            "east": 87.0,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "norm": 0.0
+          },
+          "innovation_nis": 0.0,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 11.73,
+          "estimate_error_m": 0.0,
+          "reported_error_m": 0.0,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        },
+        {
+          "time": "2026-07-04T03:00:40Z",
+          "t_seconds": 40,
+          "prior_position_m": {
+            "north": 488.0,
+            "east": 116.0,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 488.0,
+            "east": 116.0,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 488.0,
+            "east": 116.0,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 488.0,
+            "east": 116.0,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "norm": 0.0
+          },
+          "innovation_nis": 0.0,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 11.73,
+          "estimate_error_m": 0.0,
+          "reported_error_m": 0.0,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        },
+        {
+          "time": "2026-07-04T03:00:50Z",
+          "t_seconds": 50,
+          "prior_position_m": {
+            "north": 610.0,
+            "east": 145.0,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 610.0,
+            "east": 145.0,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 610.0,
+            "east": 145.0,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 610.0,
+            "east": 145.0,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "norm": 0.0
+          },
+          "innovation_nis": 0.0,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 11.73,
+          "estimate_error_m": 0.0,
+          "reported_error_m": 0.0,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        },
+        {
+          "time": "2026-07-04T03:01:00Z",
+          "t_seconds": 60,
+          "prior_position_m": {
+            "north": 732.0,
+            "east": 174.0,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 732.0,
+            "east": 174.0,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 732.0,
+            "east": 174.0,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 732.0,
+            "east": 174.0,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "norm": 0.0
+          },
+          "innovation_nis": 0.0,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 11.73,
+          "estimate_error_m": 0.0,
+          "reported_error_m": 0.0,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        },
+        {
+          "time": "2026-07-04T03:01:10Z",
+          "t_seconds": 70,
+          "prior_position_m": {
+            "north": 854.0,
+            "east": 203.0,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 854.0,
+            "east": 203.0,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 854.0,
+            "east": 203.0,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 854.0,
+            "east": 203.0,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "norm": 0.0
+          },
+          "innovation_nis": 0.0,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 11.73,
+          "estimate_error_m": 0.0,
+          "reported_error_m": 0.0,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        },
+        {
+          "time": "2026-07-04T03:01:20Z",
+          "t_seconds": 80,
+          "prior_position_m": {
+            "north": 976.0,
+            "east": 232.0,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 976.0,
+            "east": 232.0,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 976.0,
+            "east": 232.0,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 976.0,
+            "east": 232.0,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "norm": 0.0
+          },
+          "innovation_nis": 0.0,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 11.73,
+          "estimate_error_m": 0.0,
+          "reported_error_m": 0.0,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        },
+        {
+          "time": "2026-07-04T03:01:30Z",
+          "t_seconds": 90,
+          "prior_position_m": {
+            "north": 1098.0,
+            "east": 261.0,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 1098.0,
+            "east": 261.0,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 1098.0,
+            "east": 261.0,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 1098.0,
+            "east": 261.0,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "norm": 0.0
+          },
+          "innovation_nis": 0.0,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 11.73,
+          "estimate_error_m": 0.0,
+          "reported_error_m": 0.0,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        },
+        {
+          "time": "2026-07-04T03:01:40Z",
+          "t_seconds": 100,
+          "prior_position_m": {
+            "north": 1220.0,
+            "east": 290.0,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 1220.0,
+            "east": 290.0,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 1220.0,
+            "east": 290.0,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 1220.0,
+            "east": 290.0,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "norm": 0.0
+          },
+          "innovation_nis": 0.0,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 11.73,
+          "estimate_error_m": 0.0,
+          "reported_error_m": 0.0,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        },
+        {
+          "time": "2026-07-04T03:01:50Z",
+          "t_seconds": 110,
+          "prior_position_m": {
+            "north": 1342.0,
+            "east": 319.0,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 1342.0,
+            "east": 319.0,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 1342.0,
+            "east": 319.0,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 1342.0,
+            "east": 319.0,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "norm": 0.0
+          },
+          "innovation_nis": 0.0,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 11.73,
+          "estimate_error_m": 0.0,
+          "reported_error_m": 0.0,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        },
+        {
+          "time": "2026-07-04T03:02:00Z",
+          "t_seconds": 120,
+          "prior_position_m": {
+            "north": 1464.0,
+            "east": 348.0,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 1464.0,
+            "east": 348.0,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 1464.0,
+            "east": 348.0,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 1464.0,
+            "east": 348.0,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "norm": 0.0
+          },
+          "innovation_nis": 0.0,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 11.73,
+          "estimate_error_m": 0.0,
+          "reported_error_m": 0.0,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        }
+      ],
+      "summary": {
+        "points": 13,
+        "rejected_measurements": 0,
+        "max_innovation_nis": 0.0,
+        "max_innovation_time": "2026-07-04T03:00:00Z",
+        "max_estimate_error_m": 0.0,
+        "max_estimate_error_time": "2026-07-04T03:00:00Z"
+      }
+    },
+    "case_b_link_degraded": {
+      "case_id": "case_b_link_degraded",
+      "filter_name": "constant_velocity_kalman_filter_v0",
+      "state_vector": [
+        "north_m",
+        "east_m",
+        "north_velocity_mps",
+        "east_velocity_mps"
+      ],
+      "measurement": "reported_position_m",
+      "gate_rule": "innovation_nis <= 9.21",
+      "trace": [
+        {
+          "time": "2026-07-04T03:00:00Z",
+          "t_seconds": 0,
+          "prior_position_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "norm": 0.0
+          },
+          "innovation_nis": 0.0,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 8.49,
+          "estimate_error_m": 0.0,
+          "reported_error_m": 0.0,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        },
+        {
+          "time": "2026-07-04T03:00:10Z",
+          "t_seconds": 10,
+          "prior_position_m": {
+            "north": 123.0,
+            "east": 29.0,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 123.0,
+            "east": 29.0,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 123.0,
+            "east": 29.0,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 123.0,
+            "east": 29.0,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "norm": 0.0
+          },
+          "innovation_nis": 0.0,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 11.63,
+          "estimate_error_m": 0.0,
+          "reported_error_m": 0.0,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        },
+        {
+          "time": "2026-07-04T03:00:20Z",
+          "t_seconds": 20,
+          "prior_position_m": {
+            "north": 246.0,
+            "east": 58.0,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 246.0,
+            "east": 58.0,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 246.0,
+            "east": 58.0,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 246.0,
+            "east": 58.0,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "norm": 0.0
+          },
+          "innovation_nis": 0.0,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 11.7,
+          "estimate_error_m": 0.0,
+          "reported_error_m": 0.0,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        },
+        {
+          "time": "2026-07-04T03:00:30Z",
+          "t_seconds": 30,
+          "prior_position_m": {
+            "north": 369.0,
+            "east": 87.0,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 369.0,
+            "east": 87.0,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 369.0,
+            "east": 87.0,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 369.0,
+            "east": 87.0,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "norm": 0.0
+          },
+          "innovation_nis": 0.0,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 11.73,
+          "estimate_error_m": 0.0,
+          "reported_error_m": 0.0,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        },
+        {
+          "time": "2026-07-04T03:00:40Z",
+          "t_seconds": 40,
+          "prior_position_m": {
+            "north": 492.0,
+            "east": 116.0,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 492.0,
+            "east": 116.0,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 492.0,
+            "east": 116.0,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 492.0,
+            "east": 116.0,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "norm": 0.0
+          },
+          "innovation_nis": 0.0,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 11.73,
+          "estimate_error_m": 0.0,
+          "reported_error_m": 0.0,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        },
+        {
+          "time": "2026-07-04T03:00:50Z",
+          "t_seconds": 50,
+          "prior_position_m": {
+            "north": 615.0,
+            "east": 145.0,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 615.0,
+            "east": 145.0,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 615.0,
+            "east": 145.0,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 615.0,
+            "east": 145.0,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "norm": 0.0
+          },
+          "innovation_nis": 0.0,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 11.73,
+          "estimate_error_m": 0.0,
+          "reported_error_m": 0.0,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        },
+        {
+          "time": "2026-07-04T03:01:00Z",
+          "t_seconds": 60,
+          "prior_position_m": {
+            "north": 738.0,
+            "east": 174.0,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 738.0,
+            "east": 174.0,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 738.0,
+            "east": 174.0,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 738.0,
+            "east": 174.0,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "norm": 0.0
+          },
+          "innovation_nis": 0.0,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 11.73,
+          "estimate_error_m": 0.0,
+          "reported_error_m": 0.0,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        },
+        {
+          "time": "2026-07-04T03:01:10Z",
+          "t_seconds": 70,
+          "prior_position_m": {
+            "north": 861.0,
+            "east": 203.0,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 861.0,
+            "east": 203.0,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 861.0,
+            "east": 203.0,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 861.0,
+            "east": 203.0,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "norm": 0.0
+          },
+          "innovation_nis": 0.0,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 11.73,
+          "estimate_error_m": 0.0,
+          "reported_error_m": 0.0,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        },
+        {
+          "time": "2026-07-04T03:01:20Z",
+          "t_seconds": 80,
+          "prior_position_m": {
+            "north": 984.0,
+            "east": 232.0,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 984.0,
+            "east": 232.0,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 984.0,
+            "east": 232.0,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 984.0,
+            "east": 232.0,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "norm": 0.0
+          },
+          "innovation_nis": 0.0,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 11.73,
+          "estimate_error_m": 0.0,
+          "reported_error_m": 0.0,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        },
+        {
+          "time": "2026-07-04T03:01:30Z",
+          "t_seconds": 90,
+          "prior_position_m": {
+            "north": 1107.0,
+            "east": 261.0,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 1107.0,
+            "east": 261.0,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 1107.0,
+            "east": 261.0,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 1107.0,
+            "east": 261.0,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "norm": 0.0
+          },
+          "innovation_nis": 0.0,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 11.73,
+          "estimate_error_m": 0.0,
+          "reported_error_m": 0.0,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        },
+        {
+          "time": "2026-07-04T03:01:40Z",
+          "t_seconds": 100,
+          "prior_position_m": {
+            "north": 1230.0,
+            "east": 290.0,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 1230.0,
+            "east": 290.0,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 1230.0,
+            "east": 290.0,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 1230.0,
+            "east": 290.0,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "norm": 0.0
+          },
+          "innovation_nis": 0.0,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 11.73,
+          "estimate_error_m": 0.0,
+          "reported_error_m": 0.0,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        },
+        {
+          "time": "2026-07-04T03:01:50Z",
+          "t_seconds": 110,
+          "prior_position_m": {
+            "north": 1353.0,
+            "east": 319.0,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 1353.0,
+            "east": 319.0,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 1353.0,
+            "east": 319.0,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 1353.0,
+            "east": 319.0,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "norm": 0.0
+          },
+          "innovation_nis": 0.0,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 11.73,
+          "estimate_error_m": 0.0,
+          "reported_error_m": 0.0,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        },
+        {
+          "time": "2026-07-04T03:02:00Z",
+          "t_seconds": 120,
+          "prior_position_m": {
+            "north": 1476.0,
+            "east": 348.0,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 1476.0,
+            "east": 348.0,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 1476.0,
+            "east": 348.0,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 1476.0,
+            "east": 348.0,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "norm": 0.0
+          },
+          "innovation_nis": 0.0,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 11.73,
+          "estimate_error_m": 0.0,
+          "reported_error_m": 0.0,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        }
+      ],
+      "summary": {
+        "points": 13,
+        "rejected_measurements": 0,
+        "max_innovation_nis": 0.0,
+        "max_innovation_time": "2026-07-04T03:00:00Z",
+        "max_estimate_error_m": 0.0,
+        "max_estimate_error_time": "2026-07-04T03:00:00Z"
+      }
+    },
+    "case_c_gnss_jamming_suspected": {
+      "case_id": "case_c_gnss_jamming_suspected",
+      "filter_name": "constant_velocity_kalman_filter_v0",
+      "state_vector": [
+        "north_m",
+        "east_m",
+        "north_velocity_mps",
+        "east_velocity_mps"
+      ],
+      "measurement": "reported_position_m",
+      "gate_rule": "innovation_nis <= 9.21",
+      "trace": [
+        {
+          "time": "2026-07-04T03:00:00Z",
+          "t_seconds": 0,
+          "prior_position_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "norm": 0.0
+          },
+          "innovation_nis": 0.0,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 8.49,
+          "estimate_error_m": 0.0,
+          "reported_error_m": 0.0,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        },
+        {
+          "time": "2026-07-04T03:00:10Z",
+          "t_seconds": 10,
+          "prior_position_m": {
+            "north": 128.0,
+            "east": 26.5,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 128.0,
+            "east": 26.5,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 128.0,
+            "east": 26.5,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 128.0,
+            "east": 26.5,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "norm": 0.0
+          },
+          "innovation_nis": 0.0,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 11.63,
+          "estimate_error_m": 0.0,
+          "reported_error_m": 0.0,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        },
+        {
+          "time": "2026-07-04T03:00:20Z",
+          "t_seconds": 20,
+          "prior_position_m": {
+            "north": 256.0,
+            "east": 53.0,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 256.0,
+            "east": 53.0,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 256.0,
+            "east": 53.0,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 256.0,
+            "east": 53.0,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "norm": 0.0
+          },
+          "innovation_nis": 0.0,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 11.7,
+          "estimate_error_m": 0.0,
+          "reported_error_m": 0.0,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        },
+        {
+          "time": "2026-07-04T03:00:30Z",
+          "t_seconds": 30,
+          "prior_position_m": {
+            "north": 384.0,
+            "east": 79.5,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 384.0,
+            "east": 79.5,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 384.0,
+            "east": 79.5,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 384.0,
+            "east": 79.5,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "norm": 0.0
+          },
+          "innovation_nis": 0.0,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 11.73,
+          "estimate_error_m": 0.0,
+          "reported_error_m": 0.0,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        },
+        {
+          "time": "2026-07-04T03:00:40Z",
+          "t_seconds": 40,
+          "prior_position_m": {
+            "north": 512.0,
+            "east": 106.0,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 512.0,
+            "east": 106.0,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 512.0,
+            "east": 106.0,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 512.0,
+            "east": 106.0,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "norm": 0.0
+          },
+          "innovation_nis": 0.0,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 11.73,
+          "estimate_error_m": 0.0,
+          "reported_error_m": 0.0,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        },
+        {
+          "time": "2026-07-04T03:00:50Z",
+          "t_seconds": 50,
+          "prior_position_m": {
+            "north": 640.0,
+            "east": 132.5,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 640.0,
+            "east": 132.5,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 730.0,
+            "east": 62.5,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 640.0,
+            "east": 132.5,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": 90.0,
+            "east": -70.0,
+            "norm": 114.02
+          },
+          "innovation_nis": 11.99,
+          "measurement_sigma_m": 18.0,
+          "position_sigma_major_m": 55.16,
+          "estimate_error_m": 0.0,
+          "reported_error_m": 114.02,
+          "update_decision": "rejected_gate",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산을 벗어나 추정기는 관성/예측 상태를 유지합니다."
+        },
+        {
+          "time": "2026-07-04T03:01:00Z",
+          "t_seconds": 60,
+          "prior_position_m": {
+            "north": 768.0,
+            "east": 159.0,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 872.63,
+            "east": 80.53,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 880.0,
+            "east": 75.0,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 768.0,
+            "east": 159.0,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": 112.0,
+            "east": -84.0,
+            "norm": 140.0
+          },
+          "innovation_nis": 3.98,
+          "measurement_sigma_m": 18.0,
+          "position_sigma_major_m": 34.8,
+          "estimate_error_m": 130.78,
+          "reported_error_m": 140.0,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        },
+        {
+          "time": "2026-07-04T03:01:10Z",
+          "t_seconds": 70,
+          "prior_position_m": {
+            "north": 1072.44,
+            "east": 53.17,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 1036.53,
+            "east": 82.22,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 1030.0,
+            "east": 87.5,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 896.0,
+            "east": 185.5,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": -42.44,
+            "east": 34.33,
+            "norm": 54.59
+          },
+          "innovation_nis": 1.42,
+          "measurement_sigma_m": 18.0,
+          "position_sigma_major_m": 33.11,
+          "estimate_error_m": 174.4,
+          "reported_error_m": 166.01,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        },
+        {
+          "time": "2026-07-04T03:01:20Z",
+          "t_seconds": 80,
+          "prior_position_m": {
+            "north": 1204.55,
+            "east": 80.58,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 1183.63,
+            "east": 97.13,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 1180.0,
+            "east": 100.0,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 1024.0,
+            "east": 212.0,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": -24.55,
+            "east": 19.42,
+            "norm": 31.3
+          },
+          "innovation_nis": 0.45,
+          "measurement_sigma_m": 18.0,
+          "position_sigma_major_m": 33.23,
+          "estimate_error_m": 196.67,
+          "reported_error_m": 192.04,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        },
+        {
+          "time": "2026-07-04T03:01:30Z",
+          "t_seconds": 90,
+          "prior_position_m": {
+            "north": 1333.09,
+            "east": 110.17,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 1330.46,
+            "east": 112.15,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 1330.0,
+            "east": 112.5,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 1152.0,
+            "east": 238.5,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": -3.09,
+            "east": 2.33,
+            "norm": 3.87
+          },
+          "innovation_nis": 0.01,
+          "measurement_sigma_m": 18.0,
+          "position_sigma_major_m": 33.2,
+          "estimate_error_m": 218.66,
+          "reported_error_m": 218.08,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        },
+        {
+          "time": "2026-07-04T03:01:40Z",
+          "t_seconds": 100,
+          "prior_position_m": {
+            "north": 1477.6,
+            "east": 126.95,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 1479.64,
+            "east": 125.29,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 1480.0,
+            "east": 125.0,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 1280.0,
+            "east": 265.0,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": 2.4,
+            "east": -1.95,
+            "norm": 3.09
+          },
+          "innovation_nis": 0.0,
+          "measurement_sigma_m": 18.0,
+          "position_sigma_major_m": 33.2,
+          "estimate_error_m": 243.67,
+          "reported_error_m": 244.13,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        },
+        {
+          "time": "2026-07-04T03:01:50Z",
+          "t_seconds": 110,
+          "prior_position_m": {
+            "north": 1628.58,
+            "east": 138.62,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 1628.58,
+            "east": 138.62,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 1408.0,
+            "east": 291.5,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 1408.0,
+            "east": 291.5,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": -220.58,
+            "east": 152.88,
+            "norm": 268.38
+          },
+          "innovation_nis": 38.36,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 85.83,
+          "estimate_error_m": 268.38,
+          "reported_error_m": 0.0,
+          "update_decision": "rejected_gate",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산을 벗어나 추정기는 관성/예측 상태를 유지합니다."
+        },
+        {
+          "time": "2026-07-04T03:02:00Z",
+          "t_seconds": 120,
+          "prior_position_m": {
+            "north": 1777.53,
+            "east": 151.95,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 1777.53,
+            "east": 151.95,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 1536.0,
+            "east": 318.0,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 1536.0,
+            "east": 318.0,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": -241.53,
+            "east": 166.05,
+            "norm": 293.1
+          },
+          "innovation_nis": 11.55,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 172.09,
+          "estimate_error_m": 293.1,
+          "reported_error_m": 0.0,
+          "update_decision": "rejected_gate",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산을 벗어나 추정기는 관성/예측 상태를 유지합니다."
+        }
+      ],
+      "summary": {
+        "points": 13,
+        "rejected_measurements": 3,
+        "max_innovation_nis": 38.36,
+        "max_innovation_time": "2026-07-04T03:01:50Z",
+        "max_estimate_error_m": 293.1,
+        "max_estimate_error_time": "2026-07-04T03:02:00Z"
+      }
+    },
+    "case_d_spoofing_like_inconsistency": {
+      "case_id": "case_d_spoofing_like_inconsistency",
+      "filter_name": "constant_velocity_kalman_filter_v0",
+      "state_vector": [
+        "north_m",
+        "east_m",
+        "north_velocity_mps",
+        "east_velocity_mps"
+      ],
+      "measurement": "reported_position_m",
+      "gate_rule": "innovation_nis <= 9.21",
+      "trace": [
+        {
+          "time": "2026-07-04T03:00:00Z",
+          "t_seconds": 0,
+          "prior_position_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "norm": 0.0
+          },
+          "innovation_nis": 0.0,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 8.49,
+          "estimate_error_m": 0.0,
+          "reported_error_m": 0.0,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        },
+        {
+          "time": "2026-07-04T03:00:10Z",
+          "t_seconds": 10,
+          "prior_position_m": {
+            "north": 122.5,
+            "east": 29.5,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 122.5,
+            "east": 29.5,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 122.5,
+            "east": 29.5,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 122.5,
+            "east": 29.5,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "norm": 0.0
+          },
+          "innovation_nis": 0.0,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 11.63,
+          "estimate_error_m": 0.0,
+          "reported_error_m": 0.0,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        },
+        {
+          "time": "2026-07-04T03:00:20Z",
+          "t_seconds": 20,
+          "prior_position_m": {
+            "north": 245.0,
+            "east": 59.0,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 245.0,
+            "east": 59.0,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 245.0,
+            "east": 59.0,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 245.0,
+            "east": 59.0,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "norm": 0.0
+          },
+          "innovation_nis": 0.0,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 11.7,
+          "estimate_error_m": 0.0,
+          "reported_error_m": 0.0,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        },
+        {
+          "time": "2026-07-04T03:00:30Z",
+          "t_seconds": 30,
+          "prior_position_m": {
+            "north": 367.5,
+            "east": 88.5,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 367.5,
+            "east": 88.5,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 367.5,
+            "east": 88.5,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 367.5,
+            "east": 88.5,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "norm": 0.0
+          },
+          "innovation_nis": 0.0,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 11.73,
+          "estimate_error_m": 0.0,
+          "reported_error_m": 0.0,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        },
+        {
+          "time": "2026-07-04T03:00:40Z",
+          "t_seconds": 40,
+          "prior_position_m": {
+            "north": 490.0,
+            "east": 118.0,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 490.0,
+            "east": 118.0,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 490.0,
+            "east": 118.0,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 490.0,
+            "east": 118.0,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "norm": 0.0
+          },
+          "innovation_nis": 0.0,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 11.73,
+          "estimate_error_m": 0.0,
+          "reported_error_m": 0.0,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        },
+        {
+          "time": "2026-07-04T03:00:50Z",
+          "t_seconds": 50,
+          "prior_position_m": {
+            "north": 612.5,
+            "east": 147.5,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 612.5,
+            "east": 147.5,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 612.5,
+            "east": 147.5,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 612.5,
+            "east": 147.5,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "norm": 0.0
+          },
+          "innovation_nis": 0.0,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 11.73,
+          "estimate_error_m": 0.0,
+          "reported_error_m": 0.0,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        },
+        {
+          "time": "2026-07-04T03:01:00Z",
+          "t_seconds": 60,
+          "prior_position_m": {
+            "north": 735.0,
+            "east": 177.0,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 735.0,
+            "east": 177.0,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 775.0,
+            "east": 457.0,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 735.0,
+            "east": 177.0,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": 40.0,
+            "east": 280.0,
+            "norm": 282.84
+          },
+          "innovation_nis": 100.42,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 55.16,
+          "estimate_error_m": 0.0,
+          "reported_error_m": 282.84,
+          "update_decision": "rejected_gate",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산을 벗어나 추정기는 관성/예측 상태를 유지합니다."
+        },
+        {
+          "time": "2026-07-04T03:01:10Z",
+          "t_seconds": 70,
+          "prior_position_m": {
+            "north": 857.5,
+            "east": 206.5,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 857.5,
+            "east": 206.5,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 897.5,
+            "east": 486.5,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 857.5,
+            "east": 206.5,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": 40.0,
+            "east": 280.0,
+            "norm": 282.84
+          },
+          "innovation_nis": 17.26,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 135.62,
+          "estimate_error_m": 0.0,
+          "reported_error_m": 282.84,
+          "update_decision": "rejected_gate",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산을 벗어나 추정기는 관성/예측 상태를 유지합니다."
+        },
+        {
+          "time": "2026-07-04T03:01:20Z",
+          "t_seconds": 80,
+          "prior_position_m": {
+            "north": 980.0,
+            "east": 236.0,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 1019.9,
+            "east": 515.28,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 1020.0,
+            "east": 516.0,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 980.0,
+            "east": 236.0,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": 40.0,
+            "east": 280.0,
+            "norm": 282.84
+          },
+          "innovation_nis": 5.7,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 11.98,
+          "estimate_error_m": 282.12,
+          "reported_error_m": 282.84,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        },
+        {
+          "time": "2026-07-04T03:01:30Z",
+          "t_seconds": 90,
+          "prior_position_m": {
+            "north": 1161.07,
+            "east": 675.46,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 1161.07,
+            "east": 675.46,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 1142.5,
+            "east": 545.5,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 1102.5,
+            "east": 265.5,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": -18.57,
+            "east": -129.96,
+            "norm": 131.27
+          },
+          "innovation_nis": 12.66,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 72.8,
+          "estimate_error_m": 414.12,
+          "reported_error_m": 282.84,
+          "update_decision": "rejected_gate",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산을 벗어나 추정기는 관성/예측 상태를 유지합니다."
+        },
+        {
+          "time": "2026-07-04T03:01:40Z",
+          "t_seconds": 100,
+          "prior_position_m": {
+            "north": 1302.23,
+            "east": 835.63,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 1302.23,
+            "east": 835.63,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 1225.0,
+            "east": 295.0,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 1225.0,
+            "east": 295.0,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": -77.23,
+            "east": -540.63,
+            "norm": 546.12
+          },
+          "innovation_nis": 42.62,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 166.88,
+          "estimate_error_m": 546.12,
+          "reported_error_m": 0.0,
+          "update_decision": "rejected_gate",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산을 벗어나 추정기는 관성/예측 상태를 유지합니다."
+        },
+        {
+          "time": "2026-07-04T03:01:50Z",
+          "t_seconds": 110,
+          "prior_position_m": {
+            "north": 1443.4,
+            "east": 995.8,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 1443.4,
+            "east": 995.8,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 1347.5,
+            "east": 324.5,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 1347.5,
+            "east": 324.5,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": -95.9,
+            "east": -671.3,
+            "norm": 678.12
+          },
+          "innovation_nis": 23.66,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 278.56,
+          "estimate_error_m": 678.12,
+          "reported_error_m": 0.0,
+          "update_decision": "rejected_gate",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산을 벗어나 추정기는 관성/예측 상태를 유지합니다."
+        },
+        {
+          "time": "2026-07-04T03:02:00Z",
+          "t_seconds": 120,
+          "prior_position_m": {
+            "north": 1584.57,
+            "east": 1155.98,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 1584.57,
+            "east": 1155.98,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 1470.0,
+            "east": 354.0,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 1470.0,
+            "east": 354.0,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": -114.57,
+            "east": -801.98,
+            "norm": 810.12
+          },
+          "innovation_nis": 15.96,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 405.38,
+          "estimate_error_m": 810.12,
+          "reported_error_m": 0.0,
+          "update_decision": "rejected_gate",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산을 벗어나 추정기는 관성/예측 상태를 유지합니다."
+        }
+      ],
+      "summary": {
+        "points": 13,
+        "rejected_measurements": 6,
+        "max_innovation_nis": 100.42,
+        "max_innovation_time": "2026-07-04T03:01:00Z",
+        "max_estimate_error_m": 810.12,
+        "max_estimate_error_time": "2026-07-04T03:02:00Z"
+      }
+    },
+    "case_e_rejoin_audit": {
+      "case_id": "case_e_rejoin_audit",
+      "filter_name": "constant_velocity_kalman_filter_v0",
+      "state_vector": [
+        "north_m",
+        "east_m",
+        "north_velocity_mps",
+        "east_velocity_mps"
+      ],
+      "measurement": "reported_position_m",
+      "gate_rule": "innovation_nis <= 9.21",
+      "trace": [
+        {
+          "time": "2026-07-04T03:00:00Z",
+          "t_seconds": 0,
+          "prior_position_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "norm": 0.0
+          },
+          "innovation_nis": 0.0,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 8.49,
+          "estimate_error_m": 0.0,
+          "reported_error_m": 0.0,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        },
+        {
+          "time": "2026-07-04T03:00:10Z",
+          "t_seconds": 10,
+          "prior_position_m": {
+            "north": 128.0,
+            "east": 26.5,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 128.0,
+            "east": 26.5,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 128.0,
+            "east": 26.5,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 128.0,
+            "east": 26.5,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "norm": 0.0
+          },
+          "innovation_nis": 0.0,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 11.63,
+          "estimate_error_m": 0.0,
+          "reported_error_m": 0.0,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        },
+        {
+          "time": "2026-07-04T03:00:20Z",
+          "t_seconds": 20,
+          "prior_position_m": {
+            "north": 256.0,
+            "east": 53.0,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 256.0,
+            "east": 53.0,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 256.0,
+            "east": 53.0,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 256.0,
+            "east": 53.0,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "norm": 0.0
+          },
+          "innovation_nis": 0.0,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 11.7,
+          "estimate_error_m": 0.0,
+          "reported_error_m": 0.0,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        },
+        {
+          "time": "2026-07-04T03:00:30Z",
+          "t_seconds": 30,
+          "prior_position_m": {
+            "north": 384.0,
+            "east": 79.5,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 384.0,
+            "east": 79.5,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 384.0,
+            "east": 79.5,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 384.0,
+            "east": 79.5,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "norm": 0.0
+          },
+          "innovation_nis": 0.0,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 11.73,
+          "estimate_error_m": 0.0,
+          "reported_error_m": 0.0,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        },
+        {
+          "time": "2026-07-04T03:00:40Z",
+          "t_seconds": 40,
+          "prior_position_m": {
+            "north": 512.0,
+            "east": 106.0,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 512.0,
+            "east": 106.0,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 512.0,
+            "east": 106.0,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 512.0,
+            "east": 106.0,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": 0.0,
+            "east": 0.0,
+            "norm": 0.0
+          },
+          "innovation_nis": 0.0,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 11.73,
+          "estimate_error_m": 0.0,
+          "reported_error_m": 0.0,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        },
+        {
+          "time": "2026-07-04T03:00:50Z",
+          "t_seconds": 50,
+          "prior_position_m": {
+            "north": 640.0,
+            "east": 132.5,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 640.0,
+            "east": 132.5,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 730.0,
+            "east": 62.5,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 640.0,
+            "east": 132.5,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": 90.0,
+            "east": -70.0,
+            "norm": 114.02
+          },
+          "innovation_nis": 11.99,
+          "measurement_sigma_m": 18.0,
+          "position_sigma_major_m": 55.16,
+          "estimate_error_m": 0.0,
+          "reported_error_m": 114.02,
+          "update_decision": "rejected_gate",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산을 벗어나 추정기는 관성/예측 상태를 유지합니다."
+        },
+        {
+          "time": "2026-07-04T03:01:00Z",
+          "t_seconds": 60,
+          "prior_position_m": {
+            "north": 768.0,
+            "east": 159.0,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 872.63,
+            "east": 80.53,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 880.0,
+            "east": 75.0,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 768.0,
+            "east": 159.0,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": 112.0,
+            "east": -84.0,
+            "norm": 140.0
+          },
+          "innovation_nis": 3.98,
+          "measurement_sigma_m": 18.0,
+          "position_sigma_major_m": 34.8,
+          "estimate_error_m": 130.78,
+          "reported_error_m": 140.0,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        },
+        {
+          "time": "2026-07-04T03:01:10Z",
+          "t_seconds": 70,
+          "prior_position_m": {
+            "north": 1072.44,
+            "east": 53.17,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 1036.53,
+            "east": 82.22,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 1030.0,
+            "east": 87.5,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 896.0,
+            "east": 185.5,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": -42.44,
+            "east": 34.33,
+            "norm": 54.59
+          },
+          "innovation_nis": 1.42,
+          "measurement_sigma_m": 18.0,
+          "position_sigma_major_m": 33.11,
+          "estimate_error_m": 174.4,
+          "reported_error_m": 166.01,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        },
+        {
+          "time": "2026-07-04T03:01:20Z",
+          "t_seconds": 80,
+          "prior_position_m": {
+            "north": 1204.55,
+            "east": 80.58,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 1183.63,
+            "east": 97.13,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 1180.0,
+            "east": 100.0,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 1024.0,
+            "east": 212.0,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": -24.55,
+            "east": 19.42,
+            "norm": 31.3
+          },
+          "innovation_nis": 0.45,
+          "measurement_sigma_m": 18.0,
+          "position_sigma_major_m": 33.23,
+          "estimate_error_m": 196.67,
+          "reported_error_m": 192.04,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        },
+        {
+          "time": "2026-07-04T03:01:30Z",
+          "t_seconds": 90,
+          "prior_position_m": {
+            "north": 1333.09,
+            "east": 110.17,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 1330.46,
+            "east": 112.15,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 1330.0,
+            "east": 112.5,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 1152.0,
+            "east": 238.5,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": -3.09,
+            "east": 2.33,
+            "norm": 3.87
+          },
+          "innovation_nis": 0.01,
+          "measurement_sigma_m": 18.0,
+          "position_sigma_major_m": 33.2,
+          "estimate_error_m": 218.66,
+          "reported_error_m": 218.08,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        },
+        {
+          "time": "2026-07-04T03:01:40Z",
+          "t_seconds": 100,
+          "prior_position_m": {
+            "north": 1477.6,
+            "east": 126.95,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 1479.64,
+            "east": 125.29,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 1480.0,
+            "east": 125.0,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 1280.0,
+            "east": 265.0,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": 2.4,
+            "east": -1.95,
+            "norm": 3.09
+          },
+          "innovation_nis": 0.0,
+          "measurement_sigma_m": 18.0,
+          "position_sigma_major_m": 33.2,
+          "estimate_error_m": 243.67,
+          "reported_error_m": 244.13,
+          "update_decision": "accepted",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산 안에 있어 추정기에 반영합니다."
+        },
+        {
+          "time": "2026-07-04T03:01:50Z",
+          "t_seconds": 110,
+          "prior_position_m": {
+            "north": 1628.58,
+            "east": 138.62,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 1628.58,
+            "east": 138.62,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 1408.0,
+            "east": 291.5,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 1408.0,
+            "east": 291.5,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": -220.58,
+            "east": 152.88,
+            "norm": 268.38
+          },
+          "innovation_nis": 38.36,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 85.83,
+          "estimate_error_m": 268.38,
+          "reported_error_m": 0.0,
+          "update_decision": "rejected_gate",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산을 벗어나 추정기는 관성/예측 상태를 유지합니다."
+        },
+        {
+          "time": "2026-07-04T03:02:00Z",
+          "t_seconds": 120,
+          "prior_position_m": {
+            "north": 1777.53,
+            "east": 151.95,
+            "down": -120.0
+          },
+          "estimated_position_m": {
+            "north": 1777.53,
+            "east": 151.95,
+            "down": -120.0
+          },
+          "reported_position_m": {
+            "north": 1536.0,
+            "east": 318.0,
+            "down": -120.0
+          },
+          "truth_position_m": {
+            "north": 1536.0,
+            "east": 318.0,
+            "down": -120.0
+          },
+          "innovation_m": {
+            "north": -241.53,
+            "east": 166.05,
+            "norm": 293.1
+          },
+          "innovation_nis": 11.55,
+          "measurement_sigma_m": 6.0,
+          "position_sigma_major_m": 172.09,
+          "estimate_error_m": 293.1,
+          "reported_error_m": 0.0,
+          "update_decision": "rejected_gate",
+          "gate_threshold": 9.21,
+          "semantic_meaning_ko": "보고 위치가 예측 공분산을 벗어나 추정기는 관성/예측 상태를 유지합니다."
+        }
+      ],
+      "summary": {
+        "points": 13,
+        "rejected_measurements": 3,
+        "max_innovation_nis": 38.36,
+        "max_innovation_time": "2026-07-04T03:01:50Z",
+        "max_estimate_error_m": 293.1,
+        "max_estimate_error_time": "2026-07-04T03:02:00Z"
+      }
+    }
+  },
+  "flight_timelines": {
+    "case_a_normal": [
+      {
+        "time": "2026-07-04T03:00:00Z",
+        "t_seconds": 0,
+        "truth_position_m": {
+          "north": 0.0,
+          "east": 0.0,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 0.0,
+          "east": 0.0,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 0.0,
+          "east": 0.0,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 18.0,
+          "minor": 25.0,
+          "bearing_deg": 76
+        },
+        "residual_m": 0.0,
+        "nis": 0.0,
+        "gnss_quality": "normal",
+        "link_quality": "normal"
+      },
+      {
+        "time": "2026-07-04T03:00:10Z",
+        "t_seconds": 10,
+        "truth_position_m": {
+          "north": 122.0,
+          "east": 29.0,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 122.0,
+          "east": 29.0,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 122.0,
+          "east": 29.0,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 18.0,
+          "minor": 25.0,
+          "bearing_deg": 76
+        },
+        "residual_m": 0.0,
+        "nis": 0.0,
+        "gnss_quality": "normal",
+        "link_quality": "normal"
+      },
+      {
+        "time": "2026-07-04T03:00:20Z",
+        "t_seconds": 20,
+        "truth_position_m": {
+          "north": 244.0,
+          "east": 58.0,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 244.0,
+          "east": 58.0,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 244.0,
+          "east": 58.0,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 18.0,
+          "minor": 25.0,
+          "bearing_deg": 76
+        },
+        "residual_m": 0.0,
+        "nis": 0.0,
+        "gnss_quality": "normal",
+        "link_quality": "normal"
+      },
+      {
+        "time": "2026-07-04T03:00:30Z",
+        "t_seconds": 30,
+        "truth_position_m": {
+          "north": 366.0,
+          "east": 87.0,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 366.0,
+          "east": 87.0,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 366.0,
+          "east": 87.0,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 18.0,
+          "minor": 25.0,
+          "bearing_deg": 76
+        },
+        "residual_m": 0.0,
+        "nis": 0.0,
+        "gnss_quality": "normal",
+        "link_quality": "normal"
+      },
+      {
+        "time": "2026-07-04T03:00:40Z",
+        "t_seconds": 40,
+        "truth_position_m": {
+          "north": 488.0,
+          "east": 116.0,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 488.0,
+          "east": 116.0,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 488.0,
+          "east": 116.0,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 18.0,
+          "minor": 25.0,
+          "bearing_deg": 76
+        },
+        "residual_m": 0.0,
+        "nis": 0.0,
+        "gnss_quality": "normal",
+        "link_quality": "normal"
+      },
+      {
+        "time": "2026-07-04T03:00:50Z",
+        "t_seconds": 50,
+        "truth_position_m": {
+          "north": 610.0,
+          "east": 145.0,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 610.0,
+          "east": 145.0,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 610.0,
+          "east": 145.0,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 18.0,
+          "minor": 25.0,
+          "bearing_deg": 76
+        },
+        "residual_m": 0.0,
+        "nis": 0.0,
+        "gnss_quality": "normal",
+        "link_quality": "normal"
+      },
+      {
+        "time": "2026-07-04T03:01:00Z",
+        "t_seconds": 60,
+        "truth_position_m": {
+          "north": 732.0,
+          "east": 174.0,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 732.0,
+          "east": 174.0,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 732.0,
+          "east": 174.0,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 18.0,
+          "minor": 25.0,
+          "bearing_deg": 76
+        },
+        "residual_m": 0.0,
+        "nis": 0.0,
+        "gnss_quality": "normal",
+        "link_quality": "normal"
+      },
+      {
+        "time": "2026-07-04T03:01:10Z",
+        "t_seconds": 70,
+        "truth_position_m": {
+          "north": 854.0,
+          "east": 203.0,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 854.0,
+          "east": 203.0,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 854.0,
+          "east": 203.0,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 18.0,
+          "minor": 25.0,
+          "bearing_deg": 76
+        },
+        "residual_m": 0.0,
+        "nis": 0.0,
+        "gnss_quality": "normal",
+        "link_quality": "normal"
+      },
+      {
+        "time": "2026-07-04T03:01:20Z",
+        "t_seconds": 80,
+        "truth_position_m": {
+          "north": 976.0,
+          "east": 232.0,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 976.0,
+          "east": 232.0,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 976.0,
+          "east": 232.0,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 18.0,
+          "minor": 25.0,
+          "bearing_deg": 76
+        },
+        "residual_m": 0.0,
+        "nis": 0.0,
+        "gnss_quality": "normal",
+        "link_quality": "normal"
+      },
+      {
+        "time": "2026-07-04T03:01:30Z",
+        "t_seconds": 90,
+        "truth_position_m": {
+          "north": 1098.0,
+          "east": 261.0,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 1098.0,
+          "east": 261.0,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 1098.0,
+          "east": 261.0,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 18.0,
+          "minor": 25.0,
+          "bearing_deg": 76
+        },
+        "residual_m": 0.0,
+        "nis": 0.0,
+        "gnss_quality": "normal",
+        "link_quality": "normal"
+      },
+      {
+        "time": "2026-07-04T03:01:40Z",
+        "t_seconds": 100,
+        "truth_position_m": {
+          "north": 1220.0,
+          "east": 290.0,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 1220.0,
+          "east": 290.0,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 1220.0,
+          "east": 290.0,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 18.0,
+          "minor": 25.0,
+          "bearing_deg": 76
+        },
+        "residual_m": 0.0,
+        "nis": 0.0,
+        "gnss_quality": "normal",
+        "link_quality": "normal"
+      },
+      {
+        "time": "2026-07-04T03:01:50Z",
+        "t_seconds": 110,
+        "truth_position_m": {
+          "north": 1342.0,
+          "east": 319.0,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 1342.0,
+          "east": 319.0,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 1342.0,
+          "east": 319.0,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 18.0,
+          "minor": 25.0,
+          "bearing_deg": 76
+        },
+        "residual_m": 0.0,
+        "nis": 0.0,
+        "gnss_quality": "normal",
+        "link_quality": "normal"
+      },
+      {
+        "time": "2026-07-04T03:02:00Z",
+        "t_seconds": 120,
+        "truth_position_m": {
+          "north": 1464.0,
+          "east": 348.0,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 1464.0,
+          "east": 348.0,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 1464.0,
+          "east": 348.0,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 18.0,
+          "minor": 25.0,
+          "bearing_deg": 76
+        },
+        "residual_m": 0.0,
+        "nis": 0.0,
+        "gnss_quality": "normal",
+        "link_quality": "normal"
+      }
+    ],
+    "case_b_link_degraded": [
+      {
+        "time": "2026-07-04T03:00:00Z",
+        "t_seconds": 0,
+        "truth_position_m": {
+          "north": 0.0,
+          "east": 0.0,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 0.0,
+          "east": 0.0,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 0.0,
+          "east": 0.0,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 18.0,
+          "minor": 25.0,
+          "bearing_deg": 76
+        },
+        "residual_m": 0.0,
+        "nis": 0.0,
+        "gnss_quality": "normal",
+        "link_quality": "normal"
+      },
+      {
+        "time": "2026-07-04T03:00:10Z",
+        "t_seconds": 10,
+        "truth_position_m": {
+          "north": 123.0,
+          "east": 29.0,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 123.0,
+          "east": 29.0,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 123.0,
+          "east": 29.0,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 18.0,
+          "minor": 25.0,
+          "bearing_deg": 76
+        },
+        "residual_m": 0.0,
+        "nis": 0.0,
+        "gnss_quality": "normal",
+        "link_quality": "normal"
+      },
+      {
+        "time": "2026-07-04T03:00:20Z",
+        "t_seconds": 20,
+        "truth_position_m": {
+          "north": 246.0,
+          "east": 58.0,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 246.0,
+          "east": 58.0,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 246.0,
+          "east": 58.0,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 18.0,
+          "minor": 25.0,
+          "bearing_deg": 76
+        },
+        "residual_m": 0.0,
+        "nis": 0.0,
+        "gnss_quality": "normal",
+        "link_quality": "normal"
+      },
+      {
+        "time": "2026-07-04T03:00:30Z",
+        "t_seconds": 30,
+        "truth_position_m": {
+          "north": 369.0,
+          "east": 87.0,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 369.0,
+          "east": 87.0,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 369.0,
+          "east": 87.0,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 18.0,
+          "minor": 25.0,
+          "bearing_deg": 76
+        },
+        "residual_m": 0.0,
+        "nis": 0.0,
+        "gnss_quality": "normal",
+        "link_quality": "normal"
+      },
+      {
+        "time": "2026-07-04T03:00:40Z",
+        "t_seconds": 40,
+        "truth_position_m": {
+          "north": 492.0,
+          "east": 116.0,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 492.0,
+          "east": 116.0,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 492.0,
+          "east": 116.0,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 18.0,
+          "minor": 25.0,
+          "bearing_deg": 76
+        },
+        "residual_m": 0.0,
+        "nis": 0.0,
+        "gnss_quality": "normal",
+        "link_quality": "normal"
+      },
+      {
+        "time": "2026-07-04T03:00:50Z",
+        "t_seconds": 50,
+        "truth_position_m": {
+          "north": 615.0,
+          "east": 145.0,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 615.0,
+          "east": 145.0,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 615.0,
+          "east": 145.0,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 18.0,
+          "minor": 25.0,
+          "bearing_deg": 76
+        },
+        "residual_m": 0.0,
+        "nis": 0.0,
+        "gnss_quality": "normal",
+        "link_quality": "normal"
+      },
+      {
+        "time": "2026-07-04T03:01:00Z",
+        "t_seconds": 60,
+        "truth_position_m": {
+          "north": 738.0,
+          "east": 174.0,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 738.0,
+          "east": 174.0,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 738.0,
+          "east": 174.0,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 18.0,
+          "minor": 25.0,
+          "bearing_deg": 76
+        },
+        "residual_m": 0.0,
+        "nis": 0.0,
+        "gnss_quality": "normal",
+        "link_quality": "normal"
+      },
+      {
+        "time": "2026-07-04T03:01:10Z",
+        "t_seconds": 70,
+        "truth_position_m": {
+          "north": 861.0,
+          "east": 203.0,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 861.0,
+          "east": 203.0,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 861.0,
+          "east": 203.0,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 18.0,
+          "minor": 25.0,
+          "bearing_deg": 76
+        },
+        "residual_m": 0.0,
+        "nis": 0.0,
+        "gnss_quality": "normal",
+        "link_quality": "degraded"
+      },
+      {
+        "time": "2026-07-04T03:01:20Z",
+        "t_seconds": 80,
+        "truth_position_m": {
+          "north": 984.0,
+          "east": 232.0,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 984.0,
+          "east": 232.0,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 984.0,
+          "east": 232.0,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 20.9,
+          "minor": 25.0,
+          "bearing_deg": 76
+        },
+        "residual_m": 0.0,
+        "nis": 0.0,
+        "gnss_quality": "normal",
+        "link_quality": "degraded"
+      },
+      {
+        "time": "2026-07-04T03:01:30Z",
+        "t_seconds": 90,
+        "truth_position_m": {
+          "north": 1107.0,
+          "east": 261.0,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 1107.0,
+          "east": 261.0,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 1107.0,
+          "east": 261.0,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 31.11,
+          "minor": 25.0,
+          "bearing_deg": 76
+        },
+        "residual_m": 0.0,
+        "nis": 0.0,
+        "gnss_quality": "normal",
+        "link_quality": "degraded"
+      },
+      {
+        "time": "2026-07-04T03:01:40Z",
+        "t_seconds": 100,
+        "truth_position_m": {
+          "north": 1230.0,
+          "east": 290.0,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 1230.0,
+          "east": 290.0,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 1230.0,
+          "east": 290.0,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 49.93,
+          "minor": 25.0,
+          "bearing_deg": 76
+        },
+        "residual_m": 0.0,
+        "nis": 0.0,
+        "gnss_quality": "normal",
+        "link_quality": "degraded"
+      },
+      {
+        "time": "2026-07-04T03:01:50Z",
+        "t_seconds": 110,
+        "truth_position_m": {
+          "north": 1353.0,
+          "east": 319.0,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 1353.0,
+          "east": 319.0,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 1353.0,
+          "east": 319.0,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 77.28,
+          "minor": 32.46,
+          "bearing_deg": 76
+        },
+        "residual_m": 0.0,
+        "nis": 0.0,
+        "gnss_quality": "normal",
+        "link_quality": "degraded"
+      },
+      {
+        "time": "2026-07-04T03:02:00Z",
+        "t_seconds": 120,
+        "truth_position_m": {
+          "north": 1476.0,
+          "east": 348.0,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 1476.0,
+          "east": 348.0,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 1476.0,
+          "east": 348.0,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 112.91,
+          "minor": 47.42,
+          "bearing_deg": 76
+        },
+        "residual_m": 0.0,
+        "nis": 0.0,
+        "gnss_quality": "normal",
+        "link_quality": "degraded"
+      }
+    ],
+    "case_c_gnss_jamming_suspected": [
+      {
+        "time": "2026-07-04T03:00:00Z",
+        "t_seconds": 0,
+        "truth_position_m": {
+          "north": 0.0,
+          "east": 0.0,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 0.0,
+          "east": 0.0,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 0.0,
+          "east": 0.0,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 18.0,
+          "minor": 25.0,
+          "bearing_deg": 76
+        },
+        "residual_m": 0.0,
+        "nis": 0.0,
+        "gnss_quality": "normal",
+        "link_quality": "normal"
+      },
+      {
+        "time": "2026-07-04T03:00:10Z",
+        "t_seconds": 10,
+        "truth_position_m": {
+          "north": 128.0,
+          "east": 26.5,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 128.0,
+          "east": 26.5,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 128.0,
+          "east": 26.5,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 18.0,
+          "minor": 25.0,
+          "bearing_deg": 76
+        },
+        "residual_m": 0.0,
+        "nis": 0.0,
+        "gnss_quality": "normal",
+        "link_quality": "normal"
+      },
+      {
+        "time": "2026-07-04T03:00:20Z",
+        "t_seconds": 20,
+        "truth_position_m": {
+          "north": 256.0,
+          "east": 53.0,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 256.0,
+          "east": 53.0,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 256.0,
+          "east": 53.0,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 18.0,
+          "minor": 25.0,
+          "bearing_deg": 76
+        },
+        "residual_m": 0.0,
+        "nis": 0.0,
+        "gnss_quality": "normal",
+        "link_quality": "normal"
+      },
+      {
+        "time": "2026-07-04T03:00:30Z",
+        "t_seconds": 30,
+        "truth_position_m": {
+          "north": 384.0,
+          "east": 79.5,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 384.0,
+          "east": 79.5,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 384.0,
+          "east": 79.5,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 18.0,
+          "minor": 25.0,
+          "bearing_deg": 76
+        },
+        "residual_m": 0.0,
+        "nis": 0.0,
+        "gnss_quality": "normal",
+        "link_quality": "normal"
+      },
+      {
+        "time": "2026-07-04T03:00:40Z",
+        "t_seconds": 40,
+        "truth_position_m": {
+          "north": 512.0,
+          "east": 106.0,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 512.0,
+          "east": 106.0,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 512.0,
+          "east": 106.0,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 18.0,
+          "minor": 25.0,
+          "bearing_deg": 76
+        },
+        "residual_m": 0.0,
+        "nis": 0.0,
+        "gnss_quality": "normal",
+        "link_quality": "normal"
+      },
+      {
+        "time": "2026-07-04T03:00:50Z",
+        "t_seconds": 50,
+        "truth_position_m": {
+          "north": 640.0,
+          "east": 132.5,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 730.0,
+          "east": 62.5,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 640.0,
+          "east": 132.5,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 23.77,
+          "minor": 25.0,
+          "bearing_deg": 76
+        },
+        "residual_m": 114.02,
+        "nis": 76.06,
+        "gnss_quality": "degraded",
+        "link_quality": "intermittent"
+      },
+      {
+        "time": "2026-07-04T03:01:00Z",
+        "t_seconds": 60,
+        "truth_position_m": {
+          "north": 768.0,
+          "east": 159.0,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 880.0,
+          "east": 75.0,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 768.0,
+          "east": 159.0,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 38.47,
+          "minor": 25.0,
+          "bearing_deg": 76
+        },
+        "residual_m": 140.0,
+        "nis": 43.78,
+        "gnss_quality": "degraded",
+        "link_quality": "intermittent"
+      },
+      {
+        "time": "2026-07-04T03:01:10Z",
+        "t_seconds": 70,
+        "truth_position_m": {
+          "north": 896.0,
+          "east": 185.5,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 1030.0,
+          "east": 87.5,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 896.0,
+          "east": 185.5,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 60.37,
+          "minor": 25.36,
+          "bearing_deg": 76
+        },
+        "residual_m": 166.01,
+        "nis": 25.0,
+        "gnss_quality": "degraded",
+        "link_quality": "intermittent"
+      },
+      {
+        "time": "2026-07-04T03:01:20Z",
+        "t_seconds": 80,
+        "truth_position_m": {
+          "north": 1024.0,
+          "east": 212.0,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 1180.0,
+          "east": 100.0,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 1024.0,
+          "east": 212.0,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 89.55,
+          "minor": 37.61,
+          "bearing_deg": 76
+        },
+        "residual_m": 192.04,
+        "nis": 15.2,
+        "gnss_quality": "degraded",
+        "link_quality": "intermittent"
+      },
+      {
+        "time": "2026-07-04T03:01:30Z",
+        "t_seconds": 90,
+        "truth_position_m": {
+          "north": 1152.0,
+          "east": 238.5,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 1330.0,
+          "east": 112.5,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 1152.0,
+          "east": 238.5,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 126.29,
+          "minor": 53.04,
+          "bearing_deg": 76
+        },
+        "residual_m": 218.08,
+        "nis": 9.86,
+        "gnss_quality": "degraded",
+        "link_quality": "intermittent"
+      },
+      {
+        "time": "2026-07-04T03:01:40Z",
+        "t_seconds": 100,
+        "truth_position_m": {
+          "north": 1280.0,
+          "east": 265.0,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 1480.0,
+          "east": 125.0,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 1280.0,
+          "east": 265.0,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 170.76,
+          "minor": 71.72,
+          "bearing_deg": 76
+        },
+        "residual_m": 244.13,
+        "nis": 6.76,
+        "gnss_quality": "degraded",
+        "link_quality": "intermittent"
+      },
+      {
+        "time": "2026-07-04T03:01:50Z",
+        "t_seconds": 110,
+        "truth_position_m": {
+          "north": 1408.0,
+          "east": 291.5,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 1408.0,
+          "east": 291.5,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 1408.0,
+          "east": 291.5,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 223.08,
+          "minor": 93.69,
+          "bearing_deg": 76
+        },
+        "residual_m": 0.0,
+        "nis": 0.0,
+        "gnss_quality": "normal",
+        "link_quality": "normal"
+      },
+      {
+        "time": "2026-07-04T03:02:00Z",
+        "t_seconds": 120,
+        "truth_position_m": {
+          "north": 1536.0,
+          "east": 318.0,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 1536.0,
+          "east": 318.0,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 1536.0,
+          "east": 318.0,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 283.3,
+          "minor": 118.99,
+          "bearing_deg": 76
+        },
+        "residual_m": 0.0,
+        "nis": 0.0,
+        "gnss_quality": "normal",
+        "link_quality": "normal"
+      }
+    ],
+    "case_d_spoofing_like_inconsistency": [
+      {
+        "time": "2026-07-04T03:00:00Z",
+        "t_seconds": 0,
+        "truth_position_m": {
+          "north": 0.0,
+          "east": 0.0,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 0.0,
+          "east": 0.0,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 0.0,
+          "east": 0.0,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 18.0,
+          "minor": 25.0,
+          "bearing_deg": 76
+        },
+        "residual_m": 0.0,
+        "nis": 0.0,
+        "gnss_quality": "normal",
+        "link_quality": "normal"
+      },
+      {
+        "time": "2026-07-04T03:00:10Z",
+        "t_seconds": 10,
+        "truth_position_m": {
+          "north": 122.5,
+          "east": 29.5,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 122.5,
+          "east": 29.5,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 122.5,
+          "east": 29.5,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 18.0,
+          "minor": 25.0,
+          "bearing_deg": 76
+        },
+        "residual_m": 0.0,
+        "nis": 0.0,
+        "gnss_quality": "normal",
+        "link_quality": "normal"
+      },
+      {
+        "time": "2026-07-04T03:00:20Z",
+        "t_seconds": 20,
+        "truth_position_m": {
+          "north": 245.0,
+          "east": 59.0,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 245.0,
+          "east": 59.0,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 245.0,
+          "east": 59.0,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 18.0,
+          "minor": 25.0,
+          "bearing_deg": 76
+        },
+        "residual_m": 0.0,
+        "nis": 0.0,
+        "gnss_quality": "normal",
+        "link_quality": "normal"
+      },
+      {
+        "time": "2026-07-04T03:00:30Z",
+        "t_seconds": 30,
+        "truth_position_m": {
+          "north": 367.5,
+          "east": 88.5,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 367.5,
+          "east": 88.5,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 367.5,
+          "east": 88.5,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 18.0,
+          "minor": 25.0,
+          "bearing_deg": 76
+        },
+        "residual_m": 0.0,
+        "nis": 0.0,
+        "gnss_quality": "normal",
+        "link_quality": "normal"
+      },
+      {
+        "time": "2026-07-04T03:00:40Z",
+        "t_seconds": 40,
+        "truth_position_m": {
+          "north": 490.0,
+          "east": 118.0,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 490.0,
+          "east": 118.0,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 490.0,
+          "east": 118.0,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 18.0,
+          "minor": 25.0,
+          "bearing_deg": 76
+        },
+        "residual_m": 0.0,
+        "nis": 0.0,
+        "gnss_quality": "normal",
+        "link_quality": "normal"
+      },
+      {
+        "time": "2026-07-04T03:00:50Z",
+        "t_seconds": 50,
+        "truth_position_m": {
+          "north": 612.5,
+          "east": 147.5,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 612.5,
+          "east": 147.5,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 612.5,
+          "east": 147.5,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 18.0,
+          "minor": 25.0,
+          "bearing_deg": 76
+        },
+        "residual_m": 0.0,
+        "nis": 0.0,
+        "gnss_quality": "normal",
+        "link_quality": "normal"
+      },
+      {
+        "time": "2026-07-04T03:01:00Z",
+        "t_seconds": 60,
+        "truth_position_m": {
+          "north": 735.0,
+          "east": 177.0,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 775.0,
+          "east": 457.0,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 735.0,
+          "east": 177.0,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 18.0,
+          "minor": 25.0,
+          "bearing_deg": 76
+        },
+        "residual_m": 282.84,
+        "nis": 816.24,
+        "gnss_quality": "nominal_but_inconsistent",
+        "link_quality": "degraded"
+      },
+      {
+        "time": "2026-07-04T03:01:10Z",
+        "t_seconds": 70,
+        "truth_position_m": {
+          "north": 857.5,
+          "east": 206.5,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 897.5,
+          "east": 486.5,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 857.5,
+          "east": 206.5,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 18.0,
+          "minor": 25.0,
+          "bearing_deg": 76
+        },
+        "residual_m": 282.84,
+        "nis": 816.24,
+        "gnss_quality": "nominal_but_inconsistent",
+        "link_quality": "degraded"
+      },
+      {
+        "time": "2026-07-04T03:01:20Z",
+        "t_seconds": 80,
+        "truth_position_m": {
+          "north": 980.0,
+          "east": 236.0,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 1020.0,
+          "east": 516.0,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 980.0,
+          "east": 236.0,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 18.0,
+          "minor": 25.0,
+          "bearing_deg": 76
+        },
+        "residual_m": 282.84,
+        "nis": 816.24,
+        "gnss_quality": "nominal_but_inconsistent",
+        "link_quality": "degraded"
+      },
+      {
+        "time": "2026-07-04T03:01:30Z",
+        "t_seconds": 90,
+        "truth_position_m": {
+          "north": 1102.5,
+          "east": 265.5,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 1142.5,
+          "east": 545.5,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 1102.5,
+          "east": 265.5,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 18.0,
+          "minor": 25.0,
+          "bearing_deg": 76
+        },
+        "residual_m": 282.84,
+        "nis": 816.24,
+        "gnss_quality": "nominal_but_inconsistent",
+        "link_quality": "degraded"
+      },
+      {
+        "time": "2026-07-04T03:01:40Z",
+        "t_seconds": 100,
+        "truth_position_m": {
+          "north": 1225.0,
+          "east": 295.0,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 1225.0,
+          "east": 295.0,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 1225.0,
+          "east": 295.0,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 18.0,
+          "minor": 25.0,
+          "bearing_deg": 76
+        },
+        "residual_m": 0.0,
+        "nis": 0.0,
+        "gnss_quality": "normal",
+        "link_quality": "normal"
+      },
+      {
+        "time": "2026-07-04T03:01:50Z",
+        "t_seconds": 110,
+        "truth_position_m": {
+          "north": 1347.5,
+          "east": 324.5,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 1347.5,
+          "east": 324.5,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 1347.5,
+          "east": 324.5,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 18.0,
+          "minor": 25.0,
+          "bearing_deg": 76
+        },
+        "residual_m": 0.0,
+        "nis": 0.0,
+        "gnss_quality": "normal",
+        "link_quality": "normal"
+      },
+      {
+        "time": "2026-07-04T03:02:00Z",
+        "t_seconds": 120,
+        "truth_position_m": {
+          "north": 1470.0,
+          "east": 354.0,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 1470.0,
+          "east": 354.0,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 1470.0,
+          "east": 354.0,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 18.0,
+          "minor": 25.0,
+          "bearing_deg": 76
+        },
+        "residual_m": 0.0,
+        "nis": 0.0,
+        "gnss_quality": "normal",
+        "link_quality": "normal"
+      }
+    ],
+    "case_e_rejoin_audit": [
+      {
+        "time": "2026-07-04T03:00:00Z",
+        "t_seconds": 0,
+        "truth_position_m": {
+          "north": 0.0,
+          "east": 0.0,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 0.0,
+          "east": 0.0,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 0.0,
+          "east": 0.0,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 18.0,
+          "minor": 25.0,
+          "bearing_deg": 76
+        },
+        "residual_m": 0.0,
+        "nis": 0.0,
+        "gnss_quality": "normal",
+        "link_quality": "normal"
+      },
+      {
+        "time": "2026-07-04T03:00:10Z",
+        "t_seconds": 10,
+        "truth_position_m": {
+          "north": 128.0,
+          "east": 26.5,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 128.0,
+          "east": 26.5,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 128.0,
+          "east": 26.5,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 18.0,
+          "minor": 25.0,
+          "bearing_deg": 76
+        },
+        "residual_m": 0.0,
+        "nis": 0.0,
+        "gnss_quality": "normal",
+        "link_quality": "normal"
+      },
+      {
+        "time": "2026-07-04T03:00:20Z",
+        "t_seconds": 20,
+        "truth_position_m": {
+          "north": 256.0,
+          "east": 53.0,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 256.0,
+          "east": 53.0,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 256.0,
+          "east": 53.0,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 18.0,
+          "minor": 25.0,
+          "bearing_deg": 76
+        },
+        "residual_m": 0.0,
+        "nis": 0.0,
+        "gnss_quality": "normal",
+        "link_quality": "normal"
+      },
+      {
+        "time": "2026-07-04T03:00:30Z",
+        "t_seconds": 30,
+        "truth_position_m": {
+          "north": 384.0,
+          "east": 79.5,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 384.0,
+          "east": 79.5,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 384.0,
+          "east": 79.5,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 18.0,
+          "minor": 25.0,
+          "bearing_deg": 76
+        },
+        "residual_m": 0.0,
+        "nis": 0.0,
+        "gnss_quality": "normal",
+        "link_quality": "normal"
+      },
+      {
+        "time": "2026-07-04T03:00:40Z",
+        "t_seconds": 40,
+        "truth_position_m": {
+          "north": 512.0,
+          "east": 106.0,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 512.0,
+          "east": 106.0,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 512.0,
+          "east": 106.0,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 18.0,
+          "minor": 25.0,
+          "bearing_deg": 76
+        },
+        "residual_m": 0.0,
+        "nis": 0.0,
+        "gnss_quality": "normal",
+        "link_quality": "normal"
+      },
+      {
+        "time": "2026-07-04T03:00:50Z",
+        "t_seconds": 50,
+        "truth_position_m": {
+          "north": 640.0,
+          "east": 132.5,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 730.0,
+          "east": 62.5,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 640.0,
+          "east": 132.5,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 23.77,
+          "minor": 25.0,
+          "bearing_deg": 76
+        },
+        "residual_m": 114.02,
+        "nis": 76.06,
+        "gnss_quality": "degraded",
+        "link_quality": "intermittent"
+      },
+      {
+        "time": "2026-07-04T03:01:00Z",
+        "t_seconds": 60,
+        "truth_position_m": {
+          "north": 768.0,
+          "east": 159.0,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 880.0,
+          "east": 75.0,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 768.0,
+          "east": 159.0,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 38.47,
+          "minor": 25.0,
+          "bearing_deg": 76
+        },
+        "residual_m": 140.0,
+        "nis": 43.78,
+        "gnss_quality": "degraded",
+        "link_quality": "intermittent"
+      },
+      {
+        "time": "2026-07-04T03:01:10Z",
+        "t_seconds": 70,
+        "truth_position_m": {
+          "north": 896.0,
+          "east": 185.5,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 1030.0,
+          "east": 87.5,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 896.0,
+          "east": 185.5,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 60.37,
+          "minor": 25.36,
+          "bearing_deg": 76
+        },
+        "residual_m": 166.01,
+        "nis": 25.0,
+        "gnss_quality": "degraded",
+        "link_quality": "intermittent"
+      },
+      {
+        "time": "2026-07-04T03:01:20Z",
+        "t_seconds": 80,
+        "truth_position_m": {
+          "north": 1024.0,
+          "east": 212.0,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 1180.0,
+          "east": 100.0,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 1024.0,
+          "east": 212.0,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 89.55,
+          "minor": 37.61,
+          "bearing_deg": 76
+        },
+        "residual_m": 192.04,
+        "nis": 15.2,
+        "gnss_quality": "degraded",
+        "link_quality": "intermittent"
+      },
+      {
+        "time": "2026-07-04T03:01:30Z",
+        "t_seconds": 90,
+        "truth_position_m": {
+          "north": 1152.0,
+          "east": 238.5,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 1330.0,
+          "east": 112.5,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 1152.0,
+          "east": 238.5,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 126.29,
+          "minor": 53.04,
+          "bearing_deg": 76
+        },
+        "residual_m": 218.08,
+        "nis": 9.86,
+        "gnss_quality": "degraded",
+        "link_quality": "intermittent"
+      },
+      {
+        "time": "2026-07-04T03:01:40Z",
+        "t_seconds": 100,
+        "truth_position_m": {
+          "north": 1280.0,
+          "east": 265.0,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 1480.0,
+          "east": 125.0,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 1280.0,
+          "east": 265.0,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 170.76,
+          "minor": 71.72,
+          "bearing_deg": 76
+        },
+        "residual_m": 244.13,
+        "nis": 6.76,
+        "gnss_quality": "degraded",
+        "link_quality": "intermittent"
+      },
+      {
+        "time": "2026-07-04T03:01:50Z",
+        "t_seconds": 110,
+        "truth_position_m": {
+          "north": 1408.0,
+          "east": 291.5,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 1408.0,
+          "east": 291.5,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 1408.0,
+          "east": 291.5,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 223.08,
+          "minor": 93.69,
+          "bearing_deg": 76
+        },
+        "residual_m": 0.0,
+        "nis": 0.0,
+        "gnss_quality": "normal",
+        "link_quality": "normal"
+      },
+      {
+        "time": "2026-07-04T03:02:00Z",
+        "t_seconds": 120,
+        "truth_position_m": {
+          "north": 1536.0,
+          "east": 318.0,
+          "down": -120.0
+        },
+        "reported_position_m": {
+          "north": 1536.0,
+          "east": 318.0,
+          "down": -120.0
+        },
+        "predicted_position_m": {
+          "north": 1536.0,
+          "east": 318.0,
+          "down": -120.0
+        },
+        "uncertainty_ellipse_m": {
+          "major": 283.3,
+          "minor": 118.99,
+          "bearing_deg": 76
+        },
+        "residual_m": 0.0,
+        "nis": 0.0,
+        "gnss_quality": "normal",
+        "link_quality": "normal"
+      }
+    ]
+  },
+  "navigation_estimates": [
+    {
+      "estimate_id": "nav_uav_s1_case_c_t070",
+      "asset_id": "uav_s1",
+      "case_id": "case_c_gnss_jamming_suspected",
+      "time": "2026-07-04T03:01:10Z",
+      "prediction_model": "constant_velocity_with_wind_uncertainty_v0",
+      "predicted_position_m": {
+        "north": 896.0,
+        "east": 185.5,
+        "down": -120.0
+      },
+      "reported_position_m": {
+        "north": 1030.0,
+        "east": 87.5,
+        "down": -120.0
+      },
+      "uncertainty_ellipse_m": {
+        "major": 60.37,
+        "minor": 25.36,
+        "bearing_deg": 76
+      },
+      "residual_m": 166.01,
+      "nis": 25.0,
+      "confidence": 0.61
+    }
+  ],
+  "network_modes": {
+    "full_sync": {
+      "label": "Full Sync",
+      "bandwidth_kbps": 4096,
+      "latency_ms": 80,
+      "packet_loss_pct": 0.5,
+      "send_threshold": 0.1,
+      "defer_threshold": 0.05
+    },
+    "delta_sync": {
+      "label": "Delta Sync",
+      "bandwidth_kbps": 512,
+      "latency_ms": 220,
+      "packet_loss_pct": 4,
+      "send_threshold": 0.32,
+      "defer_threshold": 0.18
+    },
+    "semantic_summary": {
+      "label": "Semantic Summary",
+      "bandwidth_kbps": 96,
+      "latency_ms": 950,
+      "packet_loss_pct": 14,
+      "send_threshold": 0.58,
+      "defer_threshold": 0.36
+    },
+    "store_forward": {
+      "label": "Store Forward",
+      "bandwidth_kbps": 24,
+      "latency_ms": 1800,
+      "packet_loss_pct": 35,
+      "send_threshold": 0.84,
+      "defer_threshold": 0.45
+    },
+    "local_only": {
+      "label": "Local Only",
+      "bandwidth_kbps": 0,
+      "latency_ms": null,
+      "packet_loss_pct": 100,
+      "send_threshold": 1.01,
+      "defer_threshold": 1.01
+    }
+  },
+  "bearer_states": [
+    {
+      "pace": "P",
+      "label": "전술 데이터 링크",
+      "status_by_mode": {
+        "full_sync": "active",
+        "delta_sync": "active",
+        "semantic_summary": "degraded",
+        "store_forward": "degraded",
+        "local_only": "down"
+      }
+    },
+    {
+      "pace": "A",
+      "label": "장거리/위성 백업",
+      "status_by_mode": {
+        "full_sync": "standby",
+        "delta_sync": "standby",
+        "semantic_summary": "candidate",
+        "store_forward": "candidate",
+        "local_only": "down"
+      }
+    },
+    {
+      "pace": "C",
+      "label": "메시/중계 노드",
+      "status_by_mode": {
+        "full_sync": "standby",
+        "delta_sync": "candidate",
+        "semantic_summary": "candidate",
+        "store_forward": "active",
+        "local_only": "local"
+      }
+    },
+    {
+      "pace": "E",
+      "label": "로컬 캐시/재연결 감사",
+      "status_by_mode": {
+        "full_sync": "standby",
+        "delta_sync": "standby",
+        "semantic_summary": "standby",
+        "store_forward": "active",
+        "local_only": "active"
+      }
+    }
+  ],
+  "raw_observations": [
+    {
+      "observation_id": "obs_status_001",
+      "asset_id": "uav_s1",
+      "source_id": "synthetic_uav_telemetry",
+      "sensor_type": "STATUS_SUMMARY",
+      "time": "2026-07-04T03:00:20Z",
+      "raw_ref": "mock://uav_s1/status/summary_030020",
+      "raw_bytes": 96000,
+      "summary": "합성 정상 비행 상태입니다. 예측 위치와 보고 위치가 정렬되어 있습니다.",
+      "retention_policy": "send_summary"
+    },
+    {
+      "observation_id": "obs_eoir_001",
+      "asset_id": "uav_s1",
+      "source_id": "synthetic_eoir_cache",
+      "sensor_type": "EO_IR",
+      "time": "2026-07-04T03:01:10Z",
+      "raw_ref": "mock://uav_s1/eoir/frame_batch_030110",
+      "raw_bytes": 18000000,
+      "summary": "원본 EO/IR 프레임 묶음은 로컬 캐시에 보존됩니다. 시맨틱 요약 모드로 보내기에는 큽니다.",
+      "retention_policy": "cache_until_rejoin_audit"
+    },
+    {
+      "observation_id": "obs_gnss_012",
+      "asset_id": "uav_s1",
+      "source_id": "synthetic_gnss_health",
+      "sensor_type": "GNSS_HEALTH",
+      "time": "2026-07-04T03:01:10Z",
+      "raw_ref": "mock://uav_s1/gnss/health_030110",
+      "raw_bytes": 82000,
+      "summary": "저하 구간에서 합성 GNSS 품질이 낮아졌습니다.",
+      "retention_policy": "send_summary_hold_raw"
+    },
+    {
+      "observation_id": "obs_link_014",
+      "asset_id": "uav_s1",
+      "source_id": "synthetic_link_monitor",
+      "sensor_type": "LINK_TELEMETRY",
+      "time": "2026-07-04T03:01:12Z",
+      "raw_ref": "mock://uav_s1/link/telemetry_030112",
+      "raw_bytes": 240000,
+      "summary": "합성 패킷 손실과 heartbeat 공백이 증가했습니다.",
+      "retention_policy": "send_summary_hold_raw"
+    },
+    {
+      "observation_id": "obs_imu_011",
+      "asset_id": "uav_s1",
+      "source_id": "synthetic_uav_telemetry",
+      "sensor_type": "IMU_STATE",
+      "time": "2026-07-04T03:01:10Z",
+      "raw_ref": "mock://uav_s1/imu/state_030110",
+      "raw_bytes": 120000,
+      "summary": "합성 관성 추정값이 저하된 GNSS 보고 위치와 벌어졌습니다.",
+      "retention_policy": "send_summary_hold_raw"
+    },
+    {
+      "observation_id": "obs_spoofing_like_021",
+      "asset_id": "uav_s1",
+      "source_id": "synthetic_gnss_health",
+      "sensor_type": "GNSS_INCONSISTENCY",
+      "time": "2026-07-04T03:01:20Z",
+      "raw_ref": "mock://uav_s1/gnss/inconsistent_030120",
+      "raw_bytes": 140000,
+      "summary": "GNSS-like 보고는 존재하지만 관성/물리 예측과 맞지 않습니다.",
+      "retention_policy": "send_summary_hold_raw"
+    },
+    {
+      "observation_id": "obs_weather_020",
+      "asset_id": "uav_s1",
+      "source_id": "synthetic_weather_context",
+      "sensor_type": "WEATHER_CONTEXT",
+      "time": "2026-07-04T03:01:00Z",
+      "raw_ref": "mock://weather/wind_context_030100",
+      "raw_bytes": 110000,
+      "summary": "합성 풍향 맥락이 예측 불확실성 증가에 반영됩니다.",
+      "retention_policy": "context_summary"
+    }
+  ],
+  "edge_detections": [
+    {
+      "detection_id": "det_nav_residual_001",
+      "asset_id": "uav_s1",
+      "observation_refs": [
+        "obs_gnss_012",
+        "obs_link_014",
+        "obs_imu_011"
+      ],
+      "candidate_type": "NAVIGATION_RESIDUAL_SPIKE",
+      "model_or_rule": "nis_residual_rule_v0",
+      "confidence": 0.63,
+      "features": {
+        "normalized_innovation_squared": 25.0,
+        "threshold": 9.21,
+        "residual_m": 166.01,
+        "heartbeat_gap_seconds": 18,
+        "gnss_quality_drop": 0.72,
+        "link_quality_drop": 0.58
+      }
+    },
+    {
+      "detection_id": "det_nav_residual_002",
+      "asset_id": "uav_s1",
+      "observation_refs": [
+        "obs_spoofing_like_021",
+        "obs_imu_011"
+      ],
+      "candidate_type": "POSITION_REPORT_INCONSISTENCY",
+      "model_or_rule": "nis_residual_rule_v0",
+      "confidence": 0.66,
+      "features": {
+        "normalized_innovation_squared": 816.24,
+        "threshold": 9.21,
+        "residual_m": 282.84,
+        "gnss_present_but_inconsistent": 1.0,
+        "imu_gnss_disagreement": 0.82
+      }
+    }
+  ],
+  "jamming_hypotheses": [
+    {
+      "hypothesis_id": "jam_hyp_uav_s1_001",
+      "asset_id": "uav_s1",
+      "time": "2026-07-04T03:01:12Z",
+      "label": "jamming_suspected",
+      "score": 0.683,
+      "inputs": {
+        "gnss_quality_drop": 0.72,
+        "link_quality_drop": 0.58,
+        "normalized_position_residual": 1.0,
+        "heartbeat_gap_score": 0.6,
+        "imu_gnss_disagreement": 0.55,
+        "context_risk": 0.42
+      },
+      "caveat": "방어적 진단 가설일 뿐이며, 간섭원의 존재나 위치를 입증하지 않습니다."
+    },
+    {
+      "hypothesis_id": "jam_hyp_uav_s1_002",
+      "asset_id": "uav_s1",
+      "time": "2026-07-04T03:01:20Z",
+      "label": "spoofing_like_inconsistency",
+      "score": 0.66,
+      "inputs": {
+        "gnss_quality_drop": 0.18,
+        "link_quality_drop": 0.48,
+        "normalized_position_residual": 1.0,
+        "heartbeat_gap_score": 0.3,
+        "imu_gnss_disagreement": 0.82,
+        "context_risk": 0.36
+      },
+      "caveat": "방어적 무결성 가설일 뿐이며, spoofing 주체나 발생원을 입증하지 않습니다."
+    }
+  ],
+  "semantic_events": [
+    {
+      "event_id": "evt_uav_s1_status_summary",
+      "event_type": "STATUS_SUMMARY",
+      "severity": "low",
+      "asset_id": "uav_s1",
+      "case_ids": [
+        "case_a_normal"
+      ],
+      "time": "2026-07-04T03:00:20Z",
+      "summary": "UAV-S1의 예측 상태와 보고 상태가 정상 비행 중 일치합니다.",
+      "why_it_matters": "DDIL 또는 항법 저하가 시작되기 전의 기준 화면을 보여줍니다.",
+      "recommended_action": "정상 원격측정과 저율 S-DOT 상태 요약을 유지합니다.",
+      "evidence_refs": [
+        "obs_status_001"
+      ],
+      "raw_bytes": 96000,
+      "semantic_bytes": 360,
+      "priority": 0.346,
+      "priority_features": {
+        "flight_safety": 0.38,
+        "navigation_integrity": 0.42,
+        "mission_relevance": 0.32,
+        "link_survivability": 0.3,
+        "provenance_audit": 0.24
+      },
+      "mock_notice": "Synthetic drone S-DOT event for safe hackathon simulation."
+    },
+    {
+      "event_id": "evt_uav_s1_link_degraded",
+      "event_type": "LINK_DEGRADED",
+      "severity": "medium",
+      "asset_id": "uav_s1",
+      "case_ids": [
+        "case_b_link_degraded",
+        "case_c_gnss_jamming_suspected",
+        "case_d_spoofing_like_inconsistency"
+      ],
+      "time": "2026-07-04T03:01:00Z",
+      "summary": "UAV-S1 지휘/데이터 링크가 변경분 동기화에서 시맨틱 요약 수준으로 낮아졌습니다.",
+      "why_it_matters": "원본 영상과 전체 원격측정이 도착한다고 가정할 수 없습니다.",
+      "recommended_action": "원본 feed 우선순위를 낮추고 상태/임무 카드를 먼저 전송합니다.",
+      "evidence_refs": [
+        "obs_link_014"
+      ],
+      "raw_bytes": 240000,
+      "semantic_bytes": 520,
+      "priority": 0.638,
+      "priority_features": {
+        "flight_safety": 0.66,
+        "navigation_integrity": 0.5,
+        "mission_relevance": 0.64,
+        "link_survivability": 0.88,
+        "provenance_audit": 0.5
+      },
+      "mock_notice": "Synthetic drone S-DOT event for safe hackathon simulation."
+    },
+    {
+      "event_id": "evt_uav_s1_gnss_degraded",
+      "event_type": "GNSS_DEGRADED",
+      "severity": "high",
+      "asset_id": "uav_s1",
+      "case_ids": [
+        "case_c_gnss_jamming_suspected"
+      ],
+      "time": "2026-07-04T03:01:10Z",
+      "summary": "UAV-S1 GNSS 품질이 낮아지고 예측 불확실성이 커졌습니다.",
+      "why_it_matters": "상황판은 정확한 한 점이 아니라 불확실성 범위를 보여줘야 합니다.",
+      "recommended_action": "예측 상태와 공분산을 사용하고, 압축된 항법 상태 패킷만 요청합니다.",
+      "evidence_refs": [
+        "obs_gnss_012",
+        "obs_weather_020"
+      ],
+      "raw_bytes": 192000,
+      "semantic_bytes": 640,
+      "priority": 0.775,
+      "priority_features": {
+        "flight_safety": 0.82,
+        "navigation_integrity": 0.91,
+        "mission_relevance": 0.72,
+        "link_survivability": 0.7,
+        "provenance_audit": 0.62
+      },
+      "mock_notice": "Synthetic drone S-DOT event for safe hackathon simulation."
+    },
+    {
+      "event_id": "evt_uav_s1_jamming_suspected",
+      "event_type": "JAMMING_SUSPECTED",
+      "severity": "high",
+      "asset_id": "uav_s1",
+      "case_ids": [
+        "case_c_gnss_jamming_suspected"
+      ],
+      "time": "2026-07-04T03:01:12Z",
+      "summary": "UAV-S1 항법·링크 지표가 가능한 교란 상황을 시사합니다.",
+      "why_it_matters": "오퍼레이터는 드론 상태를 확정값이 아니라 불확실성과 감사 요구가 있는 가설로 다뤄야 합니다.",
+      "recommended_action": "항법 상태 카드를 보내고 EO/IR 원본은 로컬에 보존한 뒤 재연결 감사를 준비합니다.",
+      "evidence_refs": [
+        "obs_gnss_012",
+        "obs_link_014",
+        "obs_imu_011",
+        "det_nav_residual_001",
+        "jam_hyp_uav_s1_001"
+      ],
+      "raw_bytes": 18442000,
+      "semantic_bytes": 920,
+      "priority": 0.868,
+      "priority_features": {
+        "flight_safety": 0.9,
+        "navigation_integrity": 0.94,
+        "mission_relevance": 0.84,
+        "link_survivability": 0.82,
+        "provenance_audit": 0.78
+      },
+      "mock_notice": "Synthetic drone S-DOT event for safe hackathon simulation."
+    },
+    {
+      "event_id": "evt_uav_s1_spoofing_suspected",
+      "event_type": "SPOOFING_SUSPECTED",
+      "severity": "high",
+      "asset_id": "uav_s1",
+      "case_ids": [
+        "case_d_spoofing_like_inconsistency"
+      ],
+      "time": "2026-07-04T03:01:20Z",
+      "summary": "UAV-S1의 GNSS-like 보고는 존재하지만 물리/관성 예측과 맞지 않습니다.",
+      "why_it_matters": "유효해 보이는 위치도 기대 공분산을 초과하면 신뢰하기 어렵습니다.",
+      "recommended_action": "보고 위치를 contested 상태로 표시하고, 원본 feed보다 잔차/근거 카드를 먼저 전송합니다.",
+      "evidence_refs": [
+        "obs_spoofing_like_021",
+        "obs_imu_011",
+        "det_nav_residual_002",
+        "jam_hyp_uav_s1_002"
+      ],
+      "raw_bytes": 402000,
+      "semantic_bytes": 820,
+      "priority": 0.827,
+      "priority_features": {
+        "flight_safety": 0.88,
+        "navigation_integrity": 0.93,
+        "mission_relevance": 0.78,
+        "link_survivability": 0.7,
+        "provenance_audit": 0.78
+      },
+      "mock_notice": "Synthetic drone S-DOT event for safe hackathon simulation."
+    },
+    {
+      "event_id": "evt_uav_s1_rejoin_audit_required",
+      "event_type": "REJOIN_AUDIT_REQUIRED",
+      "severity": "medium",
+      "asset_id": "uav_s1",
+      "case_ids": [
+        "case_e_rejoin_audit"
+      ],
+      "time": "2026-07-04T03:02:00Z",
+      "summary": "UAV-S1 재연결 후 예측값과 캐시 원본의 감사가 필요합니다.",
+      "why_it_matters": "신뢰도를 복구하기 전에 시맨틱 예측을 캐시된 원본 원격측정과 대조해야 합니다.",
+      "recommended_action": "캐시된 항법 로그를 먼저 동기화하고, 차이가 남으면 선택된 EO/IR 조각을 후순위로 동기화합니다.",
+      "evidence_refs": [
+        "obs_eoir_001",
+        "obs_gnss_012",
+        "obs_link_014"
+      ],
+      "raw_bytes": 18322000,
+      "semantic_bytes": 760,
+      "priority": 0.725,
+      "priority_features": {
+        "flight_safety": 0.7,
+        "navigation_integrity": 0.82,
+        "mission_relevance": 0.66,
+        "link_survivability": 0.56,
+        "provenance_audit": 0.95
+      },
+      "mock_notice": "Synthetic drone S-DOT event for safe hackathon simulation."
+    }
+  ],
+  "semantic_packets": [
+    {
+      "packet_id": "sdot_uav_s1_status_summary",
+      "event_id": "evt_uav_s1_status_summary",
+      "asset_id": "uav_s1",
+      "payload_tier": "STATUS_CARD",
+      "case_ids": [
+        "case_a_normal"
+      ],
+      "priority": 0.346,
+      "bytes_raw_represented": 96000,
+      "bytes_semantic": 360,
+      "requires_ack": false,
+      "rejoin_audit_required": false
+    },
+    {
+      "packet_id": "sdot_uav_s1_link_degraded",
+      "event_id": "evt_uav_s1_link_degraded",
+      "asset_id": "uav_s1",
+      "payload_tier": "LINK_HEALTH_CARD",
+      "case_ids": [
+        "case_b_link_degraded",
+        "case_c_gnss_jamming_suspected",
+        "case_d_spoofing_like_inconsistency"
+      ],
+      "priority": 0.638,
+      "bytes_raw_represented": 240000,
+      "bytes_semantic": 520,
+      "requires_ack": false,
+      "rejoin_audit_required": false
+    },
+    {
+      "packet_id": "sdot_uav_s1_gnss_degraded",
+      "event_id": "evt_uav_s1_gnss_degraded",
+      "asset_id": "uav_s1",
+      "payload_tier": "NAV_HEALTH_CARD",
+      "case_ids": [
+        "case_c_gnss_jamming_suspected"
+      ],
+      "priority": 0.775,
+      "bytes_raw_represented": 192000,
+      "bytes_semantic": 640,
+      "requires_ack": true,
+      "rejoin_audit_required": false
+    },
+    {
+      "packet_id": "sdot_uav_s1_jamming_suspected",
+      "event_id": "evt_uav_s1_jamming_suspected",
+      "asset_id": "uav_s1",
+      "payload_tier": "NAV_HEALTH_CARD",
+      "case_ids": [
+        "case_c_gnss_jamming_suspected"
+      ],
+      "priority": 0.868,
+      "bytes_raw_represented": 18442000,
+      "bytes_semantic": 920,
+      "requires_ack": true,
+      "rejoin_audit_required": true
+    },
+    {
+      "packet_id": "sdot_uav_s1_spoofing_suspected",
+      "event_id": "evt_uav_s1_spoofing_suspected",
+      "asset_id": "uav_s1",
+      "payload_tier": "NAV_INTEGRITY_CARD",
+      "case_ids": [
+        "case_d_spoofing_like_inconsistency"
+      ],
+      "priority": 0.827,
+      "bytes_raw_represented": 402000,
+      "bytes_semantic": 820,
+      "requires_ack": false,
+      "rejoin_audit_required": false
+    },
+    {
+      "packet_id": "sdot_uav_s1_rejoin_audit_required",
+      "event_id": "evt_uav_s1_rejoin_audit_required",
+      "asset_id": "uav_s1",
+      "payload_tier": "REJOIN_AUDIT_CARD",
+      "case_ids": [
+        "case_e_rejoin_audit"
+      ],
+      "priority": 0.725,
+      "bytes_raw_represented": 18322000,
+      "bytes_semantic": 760,
+      "requires_ack": false,
+      "rejoin_audit_required": true
+    }
+  ],
+  "routing_results": {
+    "full_sync": {
+      "mode": "full_sync",
+      "network": {
+        "label": "Full Sync",
+        "bandwidth_kbps": 4096,
+        "latency_ms": 80,
+        "packet_loss_pct": 0.5
+      },
+      "packets": [
+        {
+          "packet_id": "sdot_uav_s1_status_summary",
+          "event_id": "evt_uav_s1_status_summary",
+          "asset_id": "uav_s1",
+          "payload_tier": "STATUS_CARD",
+          "case_ids": [
+            "case_a_normal"
+          ],
+          "priority": 0.346,
+          "bytes_raw_represented": 96000,
+          "bytes_semantic": 360,
+          "requires_ack": false,
+          "rejoin_audit_required": false,
+          "network_mode": "full_sync",
+          "decision": "send"
+        },
+        {
+          "packet_id": "sdot_uav_s1_link_degraded",
+          "event_id": "evt_uav_s1_link_degraded",
+          "asset_id": "uav_s1",
+          "payload_tier": "LINK_HEALTH_CARD",
+          "case_ids": [
+            "case_b_link_degraded",
+            "case_c_gnss_jamming_suspected",
+            "case_d_spoofing_like_inconsistency"
+          ],
+          "priority": 0.638,
+          "bytes_raw_represented": 240000,
+          "bytes_semantic": 520,
+          "requires_ack": false,
+          "rejoin_audit_required": false,
+          "network_mode": "full_sync",
+          "decision": "send"
+        },
+        {
+          "packet_id": "sdot_uav_s1_gnss_degraded",
+          "event_id": "evt_uav_s1_gnss_degraded",
+          "asset_id": "uav_s1",
+          "payload_tier": "NAV_HEALTH_CARD",
+          "case_ids": [
+            "case_c_gnss_jamming_suspected"
+          ],
+          "priority": 0.775,
+          "bytes_raw_represented": 192000,
+          "bytes_semantic": 640,
+          "requires_ack": true,
+          "rejoin_audit_required": false,
+          "network_mode": "full_sync",
+          "decision": "send"
+        },
+        {
+          "packet_id": "sdot_uav_s1_jamming_suspected",
+          "event_id": "evt_uav_s1_jamming_suspected",
+          "asset_id": "uav_s1",
+          "payload_tier": "NAV_HEALTH_CARD",
+          "case_ids": [
+            "case_c_gnss_jamming_suspected"
+          ],
+          "priority": 0.868,
+          "bytes_raw_represented": 18442000,
+          "bytes_semantic": 920,
+          "requires_ack": true,
+          "rejoin_audit_required": true,
+          "network_mode": "full_sync",
+          "decision": "send"
+        },
+        {
+          "packet_id": "sdot_uav_s1_spoofing_suspected",
+          "event_id": "evt_uav_s1_spoofing_suspected",
+          "asset_id": "uav_s1",
+          "payload_tier": "NAV_INTEGRITY_CARD",
+          "case_ids": [
+            "case_d_spoofing_like_inconsistency"
+          ],
+          "priority": 0.827,
+          "bytes_raw_represented": 402000,
+          "bytes_semantic": 820,
+          "requires_ack": false,
+          "rejoin_audit_required": false,
+          "network_mode": "full_sync",
+          "decision": "send"
+        },
+        {
+          "packet_id": "sdot_uav_s1_rejoin_audit_required",
+          "event_id": "evt_uav_s1_rejoin_audit_required",
+          "asset_id": "uav_s1",
+          "payload_tier": "REJOIN_AUDIT_CARD",
+          "case_ids": [
+            "case_e_rejoin_audit"
+          ],
+          "priority": 0.725,
+          "bytes_raw_represented": 18322000,
+          "bytes_semantic": 760,
+          "requires_ack": false,
+          "rejoin_audit_required": true,
+          "network_mode": "full_sync",
+          "decision": "send"
+        }
+      ],
+      "metrics": {
+        "events_sent": 6,
+        "events_total": 6,
+        "raw_bytes_total_if_full_feed": 37694000,
+        "raw_bytes_represented_by_sent_events": 37694000,
+        "semantic_bytes_sent": 4020,
+        "bytes_saved_pct_vs_full_feed": 99.99,
+        "message_survival_rate": 1.0
+      }
+    },
+    "delta_sync": {
+      "mode": "delta_sync",
+      "network": {
+        "label": "Delta Sync",
+        "bandwidth_kbps": 512,
+        "latency_ms": 220,
+        "packet_loss_pct": 4
+      },
+      "packets": [
+        {
+          "packet_id": "sdot_uav_s1_status_summary",
+          "event_id": "evt_uav_s1_status_summary",
+          "asset_id": "uav_s1",
+          "payload_tier": "STATUS_CARD",
+          "case_ids": [
+            "case_a_normal"
+          ],
+          "priority": 0.346,
+          "bytes_raw_represented": 96000,
+          "bytes_semantic": 360,
+          "requires_ack": false,
+          "rejoin_audit_required": false,
+          "network_mode": "delta_sync",
+          "decision": "send"
+        },
+        {
+          "packet_id": "sdot_uav_s1_link_degraded",
+          "event_id": "evt_uav_s1_link_degraded",
+          "asset_id": "uav_s1",
+          "payload_tier": "LINK_HEALTH_CARD",
+          "case_ids": [
+            "case_b_link_degraded",
+            "case_c_gnss_jamming_suspected",
+            "case_d_spoofing_like_inconsistency"
+          ],
+          "priority": 0.638,
+          "bytes_raw_represented": 240000,
+          "bytes_semantic": 520,
+          "requires_ack": false,
+          "rejoin_audit_required": false,
+          "network_mode": "delta_sync",
+          "decision": "send"
+        },
+        {
+          "packet_id": "sdot_uav_s1_gnss_degraded",
+          "event_id": "evt_uav_s1_gnss_degraded",
+          "asset_id": "uav_s1",
+          "payload_tier": "NAV_HEALTH_CARD",
+          "case_ids": [
+            "case_c_gnss_jamming_suspected"
+          ],
+          "priority": 0.775,
+          "bytes_raw_represented": 192000,
+          "bytes_semantic": 640,
+          "requires_ack": true,
+          "rejoin_audit_required": false,
+          "network_mode": "delta_sync",
+          "decision": "send"
+        },
+        {
+          "packet_id": "sdot_uav_s1_jamming_suspected",
+          "event_id": "evt_uav_s1_jamming_suspected",
+          "asset_id": "uav_s1",
+          "payload_tier": "NAV_HEALTH_CARD",
+          "case_ids": [
+            "case_c_gnss_jamming_suspected"
+          ],
+          "priority": 0.868,
+          "bytes_raw_represented": 18442000,
+          "bytes_semantic": 920,
+          "requires_ack": true,
+          "rejoin_audit_required": true,
+          "network_mode": "delta_sync",
+          "decision": "send"
+        },
+        {
+          "packet_id": "sdot_uav_s1_spoofing_suspected",
+          "event_id": "evt_uav_s1_spoofing_suspected",
+          "asset_id": "uav_s1",
+          "payload_tier": "NAV_INTEGRITY_CARD",
+          "case_ids": [
+            "case_d_spoofing_like_inconsistency"
+          ],
+          "priority": 0.827,
+          "bytes_raw_represented": 402000,
+          "bytes_semantic": 820,
+          "requires_ack": false,
+          "rejoin_audit_required": false,
+          "network_mode": "delta_sync",
+          "decision": "send"
+        },
+        {
+          "packet_id": "sdot_uav_s1_rejoin_audit_required",
+          "event_id": "evt_uav_s1_rejoin_audit_required",
+          "asset_id": "uav_s1",
+          "payload_tier": "REJOIN_AUDIT_CARD",
+          "case_ids": [
+            "case_e_rejoin_audit"
+          ],
+          "priority": 0.725,
+          "bytes_raw_represented": 18322000,
+          "bytes_semantic": 760,
+          "requires_ack": false,
+          "rejoin_audit_required": true,
+          "network_mode": "delta_sync",
+          "decision": "send"
+        }
+      ],
+      "metrics": {
+        "events_sent": 6,
+        "events_total": 6,
+        "raw_bytes_total_if_full_feed": 37694000,
+        "raw_bytes_represented_by_sent_events": 37694000,
+        "semantic_bytes_sent": 4020,
+        "bytes_saved_pct_vs_full_feed": 99.99,
+        "message_survival_rate": 1.0
+      }
+    },
+    "semantic_summary": {
+      "mode": "semantic_summary",
+      "network": {
+        "label": "Semantic Summary",
+        "bandwidth_kbps": 96,
+        "latency_ms": 950,
+        "packet_loss_pct": 14
+      },
+      "packets": [
+        {
+          "packet_id": "sdot_uav_s1_status_summary",
+          "event_id": "evt_uav_s1_status_summary",
+          "asset_id": "uav_s1",
+          "payload_tier": "STATUS_CARD",
+          "case_ids": [
+            "case_a_normal"
+          ],
+          "priority": 0.346,
+          "bytes_raw_represented": 96000,
+          "bytes_semantic": 360,
+          "requires_ack": false,
+          "rejoin_audit_required": false,
+          "network_mode": "semantic_summary",
+          "decision": "drop"
+        },
+        {
+          "packet_id": "sdot_uav_s1_link_degraded",
+          "event_id": "evt_uav_s1_link_degraded",
+          "asset_id": "uav_s1",
+          "payload_tier": "LINK_HEALTH_CARD",
+          "case_ids": [
+            "case_b_link_degraded",
+            "case_c_gnss_jamming_suspected",
+            "case_d_spoofing_like_inconsistency"
+          ],
+          "priority": 0.638,
+          "bytes_raw_represented": 240000,
+          "bytes_semantic": 520,
+          "requires_ack": false,
+          "rejoin_audit_required": false,
+          "network_mode": "semantic_summary",
+          "decision": "send"
+        },
+        {
+          "packet_id": "sdot_uav_s1_gnss_degraded",
+          "event_id": "evt_uav_s1_gnss_degraded",
+          "asset_id": "uav_s1",
+          "payload_tier": "NAV_HEALTH_CARD",
+          "case_ids": [
+            "case_c_gnss_jamming_suspected"
+          ],
+          "priority": 0.775,
+          "bytes_raw_represented": 192000,
+          "bytes_semantic": 640,
+          "requires_ack": true,
+          "rejoin_audit_required": false,
+          "network_mode": "semantic_summary",
+          "decision": "send"
+        },
+        {
+          "packet_id": "sdot_uav_s1_jamming_suspected",
+          "event_id": "evt_uav_s1_jamming_suspected",
+          "asset_id": "uav_s1",
+          "payload_tier": "NAV_HEALTH_CARD",
+          "case_ids": [
+            "case_c_gnss_jamming_suspected"
+          ],
+          "priority": 0.868,
+          "bytes_raw_represented": 18442000,
+          "bytes_semantic": 920,
+          "requires_ack": true,
+          "rejoin_audit_required": true,
+          "network_mode": "semantic_summary",
+          "decision": "send"
+        },
+        {
+          "packet_id": "sdot_uav_s1_spoofing_suspected",
+          "event_id": "evt_uav_s1_spoofing_suspected",
+          "asset_id": "uav_s1",
+          "payload_tier": "NAV_INTEGRITY_CARD",
+          "case_ids": [
+            "case_d_spoofing_like_inconsistency"
+          ],
+          "priority": 0.827,
+          "bytes_raw_represented": 402000,
+          "bytes_semantic": 820,
+          "requires_ack": false,
+          "rejoin_audit_required": false,
+          "network_mode": "semantic_summary",
+          "decision": "send"
+        },
+        {
+          "packet_id": "sdot_uav_s1_rejoin_audit_required",
+          "event_id": "evt_uav_s1_rejoin_audit_required",
+          "asset_id": "uav_s1",
+          "payload_tier": "REJOIN_AUDIT_CARD",
+          "case_ids": [
+            "case_e_rejoin_audit"
+          ],
+          "priority": 0.725,
+          "bytes_raw_represented": 18322000,
+          "bytes_semantic": 760,
+          "requires_ack": false,
+          "rejoin_audit_required": true,
+          "network_mode": "semantic_summary",
+          "decision": "send"
+        }
+      ],
+      "metrics": {
+        "events_sent": 5,
+        "events_total": 6,
+        "raw_bytes_total_if_full_feed": 37694000,
+        "raw_bytes_represented_by_sent_events": 37598000,
+        "semantic_bytes_sent": 3660,
+        "bytes_saved_pct_vs_full_feed": 99.99,
+        "message_survival_rate": 0.833
+      }
+    },
+    "store_forward": {
+      "mode": "store_forward",
+      "network": {
+        "label": "Store Forward",
+        "bandwidth_kbps": 24,
+        "latency_ms": 1800,
+        "packet_loss_pct": 35
+      },
+      "packets": [
+        {
+          "packet_id": "sdot_uav_s1_status_summary",
+          "event_id": "evt_uav_s1_status_summary",
+          "asset_id": "uav_s1",
+          "payload_tier": "STATUS_CARD",
+          "case_ids": [
+            "case_a_normal"
+          ],
+          "priority": 0.346,
+          "bytes_raw_represented": 96000,
+          "bytes_semantic": 360,
+          "requires_ack": false,
+          "rejoin_audit_required": false,
+          "network_mode": "store_forward",
+          "decision": "drop"
+        },
+        {
+          "packet_id": "sdot_uav_s1_link_degraded",
+          "event_id": "evt_uav_s1_link_degraded",
+          "asset_id": "uav_s1",
+          "payload_tier": "LINK_HEALTH_CARD",
+          "case_ids": [
+            "case_b_link_degraded",
+            "case_c_gnss_jamming_suspected",
+            "case_d_spoofing_like_inconsistency"
+          ],
+          "priority": 0.638,
+          "bytes_raw_represented": 240000,
+          "bytes_semantic": 520,
+          "requires_ack": false,
+          "rejoin_audit_required": false,
+          "network_mode": "store_forward",
+          "decision": "defer"
+        },
+        {
+          "packet_id": "sdot_uav_s1_gnss_degraded",
+          "event_id": "evt_uav_s1_gnss_degraded",
+          "asset_id": "uav_s1",
+          "payload_tier": "NAV_HEALTH_CARD",
+          "case_ids": [
+            "case_c_gnss_jamming_suspected"
+          ],
+          "priority": 0.775,
+          "bytes_raw_represented": 192000,
+          "bytes_semantic": 640,
+          "requires_ack": true,
+          "rejoin_audit_required": false,
+          "network_mode": "store_forward",
+          "decision": "defer"
+        },
+        {
+          "packet_id": "sdot_uav_s1_jamming_suspected",
+          "event_id": "evt_uav_s1_jamming_suspected",
+          "asset_id": "uav_s1",
+          "payload_tier": "NAV_HEALTH_CARD",
+          "case_ids": [
+            "case_c_gnss_jamming_suspected"
+          ],
+          "priority": 0.868,
+          "bytes_raw_represented": 18442000,
+          "bytes_semantic": 920,
+          "requires_ack": true,
+          "rejoin_audit_required": true,
+          "network_mode": "store_forward",
+          "decision": "send"
+        },
+        {
+          "packet_id": "sdot_uav_s1_spoofing_suspected",
+          "event_id": "evt_uav_s1_spoofing_suspected",
+          "asset_id": "uav_s1",
+          "payload_tier": "NAV_INTEGRITY_CARD",
+          "case_ids": [
+            "case_d_spoofing_like_inconsistency"
+          ],
+          "priority": 0.827,
+          "bytes_raw_represented": 402000,
+          "bytes_semantic": 820,
+          "requires_ack": false,
+          "rejoin_audit_required": false,
+          "network_mode": "store_forward",
+          "decision": "defer"
+        },
+        {
+          "packet_id": "sdot_uav_s1_rejoin_audit_required",
+          "event_id": "evt_uav_s1_rejoin_audit_required",
+          "asset_id": "uav_s1",
+          "payload_tier": "REJOIN_AUDIT_CARD",
+          "case_ids": [
+            "case_e_rejoin_audit"
+          ],
+          "priority": 0.725,
+          "bytes_raw_represented": 18322000,
+          "bytes_semantic": 760,
+          "requires_ack": false,
+          "rejoin_audit_required": true,
+          "network_mode": "store_forward",
+          "decision": "defer"
+        }
+      ],
+      "metrics": {
+        "events_sent": 1,
+        "events_total": 6,
+        "raw_bytes_total_if_full_feed": 37694000,
+        "raw_bytes_represented_by_sent_events": 18442000,
+        "semantic_bytes_sent": 920,
+        "bytes_saved_pct_vs_full_feed": 100.0,
+        "message_survival_rate": 0.167
+      }
+    },
+    "local_only": {
+      "mode": "local_only",
+      "network": {
+        "label": "Local Only",
+        "bandwidth_kbps": 0,
+        "latency_ms": null,
+        "packet_loss_pct": 100
+      },
+      "packets": [
+        {
+          "packet_id": "sdot_uav_s1_status_summary",
+          "event_id": "evt_uav_s1_status_summary",
+          "asset_id": "uav_s1",
+          "payload_tier": "STATUS_CARD",
+          "case_ids": [
+            "case_a_normal"
+          ],
+          "priority": 0.346,
+          "bytes_raw_represented": 96000,
+          "bytes_semantic": 360,
+          "requires_ack": false,
+          "rejoin_audit_required": false,
+          "network_mode": "local_only",
+          "decision": "hold_local"
+        },
+        {
+          "packet_id": "sdot_uav_s1_link_degraded",
+          "event_id": "evt_uav_s1_link_degraded",
+          "asset_id": "uav_s1",
+          "payload_tier": "LINK_HEALTH_CARD",
+          "case_ids": [
+            "case_b_link_degraded",
+            "case_c_gnss_jamming_suspected",
+            "case_d_spoofing_like_inconsistency"
+          ],
+          "priority": 0.638,
+          "bytes_raw_represented": 240000,
+          "bytes_semantic": 520,
+          "requires_ack": false,
+          "rejoin_audit_required": false,
+          "network_mode": "local_only",
+          "decision": "hold_local"
+        },
+        {
+          "packet_id": "sdot_uav_s1_gnss_degraded",
+          "event_id": "evt_uav_s1_gnss_degraded",
+          "asset_id": "uav_s1",
+          "payload_tier": "NAV_HEALTH_CARD",
+          "case_ids": [
+            "case_c_gnss_jamming_suspected"
+          ],
+          "priority": 0.775,
+          "bytes_raw_represented": 192000,
+          "bytes_semantic": 640,
+          "requires_ack": true,
+          "rejoin_audit_required": false,
+          "network_mode": "local_only",
+          "decision": "hold_local"
+        },
+        {
+          "packet_id": "sdot_uav_s1_jamming_suspected",
+          "event_id": "evt_uav_s1_jamming_suspected",
+          "asset_id": "uav_s1",
+          "payload_tier": "NAV_HEALTH_CARD",
+          "case_ids": [
+            "case_c_gnss_jamming_suspected"
+          ],
+          "priority": 0.868,
+          "bytes_raw_represented": 18442000,
+          "bytes_semantic": 920,
+          "requires_ack": true,
+          "rejoin_audit_required": true,
+          "network_mode": "local_only",
+          "decision": "hold_local"
+        },
+        {
+          "packet_id": "sdot_uav_s1_spoofing_suspected",
+          "event_id": "evt_uav_s1_spoofing_suspected",
+          "asset_id": "uav_s1",
+          "payload_tier": "NAV_INTEGRITY_CARD",
+          "case_ids": [
+            "case_d_spoofing_like_inconsistency"
+          ],
+          "priority": 0.827,
+          "bytes_raw_represented": 402000,
+          "bytes_semantic": 820,
+          "requires_ack": false,
+          "rejoin_audit_required": false,
+          "network_mode": "local_only",
+          "decision": "hold_local"
+        },
+        {
+          "packet_id": "sdot_uav_s1_rejoin_audit_required",
+          "event_id": "evt_uav_s1_rejoin_audit_required",
+          "asset_id": "uav_s1",
+          "payload_tier": "REJOIN_AUDIT_CARD",
+          "case_ids": [
+            "case_e_rejoin_audit"
+          ],
+          "priority": 0.725,
+          "bytes_raw_represented": 18322000,
+          "bytes_semantic": 760,
+          "requires_ack": false,
+          "rejoin_audit_required": true,
+          "network_mode": "local_only",
+          "decision": "hold_local"
+        }
+      ],
+      "metrics": {
+        "events_sent": 0,
+        "events_total": 6,
+        "raw_bytes_total_if_full_feed": 37694000,
+        "raw_bytes_represented_by_sent_events": 0,
+        "semantic_bytes_sent": 0,
+        "bytes_saved_pct_vs_full_feed": 100.0,
+        "message_survival_rate": 0.0
+      }
+    }
+  },
+  "custody_chains": [
+    {
+      "custody_id": "custody_evt_uav_s1_jamming_suspected",
+      "event_id": "evt_uav_s1_jamming_suspected",
+      "source_observation_refs": [
+        "obs_eoir_001",
+        "obs_gnss_012",
+        "obs_link_014",
+        "obs_imu_011"
+      ],
+      "edge_encoder_version": "edge_semantic_encoder_v0",
+      "packet_id": "sdot_uav_s1_jamming_suspected",
+      "held_raw_refs": [
+        "mock://uav_s1/eoir/frame_batch_030110"
+      ],
+      "audit_status": "pending_rejoin"
+    }
+  ],
+  "rejoin_audits": [
+    {
+      "audit_id": "audit_uav_s1_case_c",
+      "asset_id": "uav_s1",
+      "case_id": "case_c_gnss_jamming_suspected",
+      "status": "pending_rejoin",
+      "prediction_before_rejoin": {
+        "north": 1536.0,
+        "east": 318.0,
+        "down": -120.0
+      },
+      "simulated_truth_at_rejoin": {
+        "north": 1536.0,
+        "east": 318.0,
+        "down": -120.0
+      },
+      "discrepancy_m": 0.0,
+      "inside_uncertainty_envelope": true,
+      "expected_sync_order": [
+        "sdot_uav_s1_jamming_suspected",
+        "sdot_uav_s1_gnss_degraded",
+        "sdot_uav_s1_rejoin_audit_required"
+      ]
+    }
+  ],
+  "context_layers": {
+    "public_background": "Optional Seoul/public map context may be added later; primary demo uses local synthetic coordinates.",
+    "safety_boundary": "No sensitive coordinates or real EW details."
+  },
+  "briefing": {
+    "headline": "S-DOT keeps drone mission meaning alive when raw telemetry, imagery, and exact position cannot survive the network.",
+    "operator_summary": "Treat UAV-S1 as an uncertainty envelope, not an exact point. Send NAV_HEALTH_CARD first, hold raw EO/IR locally, and audit after rejoin."
+  }
+};

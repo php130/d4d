@@ -1,0 +1,8 @@
+observation_id,asset_id,source_id,sensor_type,time,raw_ref,raw_bytes,summary,retention_policy
+obs_status_001,uav_s1,synthetic_uav_telemetry,STATUS_SUMMARY,2026-07-04T03:00:20Z,mock://uav_s1/status/summary_030020,96000,합성 정상 비행 상태입니다. 예측 위치와 보고 위치가 정렬되어 있습니다.,send_summary
+obs_eoir_001,uav_s1,synthetic_eoir_cache,EO_IR,2026-07-04T03:01:10Z,mock://uav_s1/eoir/frame_batch_030110,18000000,원본 EO/IR 프레임 묶음은 로컬 캐시에 보존됩니다. 시맨틱 요약 모드로 보내기에는 큽니다.,cache_until_rejoin_audit
+obs_gnss_012,uav_s1,synthetic_gnss_health,GNSS_HEALTH,2026-07-04T03:01:10Z,mock://uav_s1/gnss/health_030110,82000,저하 구간에서 합성 GNSS 품질이 낮아졌습니다.,send_summary_hold_raw
+obs_link_014,uav_s1,synthetic_link_monitor,LINK_TELEMETRY,2026-07-04T03:01:12Z,mock://uav_s1/link/telemetry_030112,240000,합성 패킷 손실과 heartbeat 공백이 증가했습니다.,send_summary_hold_raw
+obs_imu_011,uav_s1,synthetic_uav_telemetry,IMU_STATE,2026-07-04T03:01:10Z,mock://uav_s1/imu/state_030110,120000,합성 관성 추정값이 저하된 GNSS 보고 위치와 벌어졌습니다.,send_summary_hold_raw
+obs_spoofing_like_021,uav_s1,synthetic_gnss_health,GNSS_INCONSISTENCY,2026-07-04T03:01:20Z,mock://uav_s1/gnss/inconsistent_030120,140000,GNSS-like 보고는 존재하지만 관성/물리 예측과 맞지 않습니다.,send_summary_hold_raw
+obs_weather_020,uav_s1,synthetic_weather_context,WEATHER_CONTEXT,2026-07-04T03:01:00Z,mock://weather/wind_context_030100,110000,합성 풍향 맥락이 예측 불확실성 증가에 반영됩니다.,context_summary

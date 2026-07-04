@@ -1,0 +1,56 @@
+{
+  "run_id": "20260704_114329",
+  "checked_at": "2026-07-04T02:43:32.696314+00:00",
+  "results": [
+    {
+      "service": "acled_oauth",
+      "status": "blocked",
+      "event_use": "CONFLICT_EVENT_SPINE",
+      "checked_at": "2026-07-04T02:43:29.684905+00:00",
+      "url_label": "ACLED OAuth + Ukraine query",
+      "http_status": null,
+      "sample_path": null,
+      "detail": "failed_http_400_invalid_credentials",
+      "next_action": "Verify ACLED username/password or email activation, then refresh ACLED_ACCESS_TOKEN."
+    },
+    {
+      "service": "nasa_firms",
+      "status": "passed",
+      "event_use": "THERMAL_ANOMALY_PROXY",
+      "checked_at": "2026-07-04T02:43:30.775197+00:00",
+      "url_label": "NASA FIRMS VIIRS_SNPP_NRT tiny AOI",
+      "http_status": 200,
+      "sample_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/api_smoke_tests/20260704_114329/nasa_firms/sample.csv",
+      "detail": "rows=0",
+      "next_action": null
+    },
+    {
+      "service": "kaggle_api",
+      "status": "passed",
+      "event_use": "MISSILE_UAV_ATTACK_DATASET",
+      "checked_at": "2026-07-04T02:43:31.141432+00:00",
+      "url_label": "Kaggle dataset search",
+      "http_status": 200,
+      "sample_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/api_smoke_tests/20260704_114329/kaggle_api/sample.json",
+      "detail": "results=11; token_file=/Users/mollykim/.kaggle/access_token",
+      "next_action": null
+    },
+    {
+      "service": "hdx_ckan",
+      "status": "passed",
+      "event_use": "HUMANITARIAN_CONTEXT_LAYER",
+      "checked_at": "2026-07-04T02:43:32.696254+00:00",
+      "url_label": "HDX CKAN package_search Ukraine",
+      "http_status": 200,
+      "sample_path": "/Users/mollykim/projects/D4D/03_data/ukraine_recent_war_osint/raw/api_smoke_tests/20260704_114329/hdx_ckan/sample.json",
+      "detail": "total_count=312",
+      "next_action": null
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "blocked": 1,
+    "skipped": 0,
+    "failed": 0
+  }
+}

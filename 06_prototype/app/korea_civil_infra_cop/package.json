@@ -1,0 +1,12 @@
+{
+  "name": "d4d-korea-civil-infra-cop",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Safe Korea civil infrastructure COP demo for D4D",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
