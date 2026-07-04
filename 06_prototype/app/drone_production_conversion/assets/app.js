@@ -1606,7 +1606,7 @@ function shiftScenarioStage(offset, {fromPlayback = false} = {}) {
     state.viewMode = "scenario";
     state.scenarioStageIndex = nextStageIndex;
     applyCurrentScenarioLayerPreset();
-    renderAll();
+    renderScenarioStep();
     if (mapState.map) fitMap();
     return;
   }
@@ -2054,28 +2054,26 @@ function factoryInCurrentScope(factory, activeIds = activeFactoryIds()) {
 }
 
 function currentScenarioExcludedFactoryIds() {
-  const focus = currentScenarioFocus();
-  return new Set(focus.excludedFactoryIds || []);
+  return currentScenarioFocusContext().excludedFactoryIds;
 }
 
 function currentScenarioDisabledPortIds() {
-  const focus = currentScenarioFocus();
-  return new Set(focus.disabledPortIds || []);
+  return currentScenarioFocusContext().disabledPortIds;
 }
 
 function currentScenarioBlockedRouteIds() {
-  const focus = currentScenarioFocus();
-  return new Set(focus.blockedRouteIds || []);
+  return currentScenarioFocusContext().blockedRouteIds;
 }
 
 function currentScenarioHiddenRouteIds() {
-  const focus = currentScenarioFocus();
-  return new Set(focus.hiddenRouteIds || []);
+  return currentScenarioFocusContext().hiddenRouteIds;
 }
 
 function currentScenarioForcedFactoryIds() {
-  const focus = currentScenarioFocus();
-  if (state.viewMode !== "scenario" || !Object.keys(focus).length) return new Set();
+  const context = currentScenarioFocusContext();
+  const focus = context.focus;
+  if (!context.active) return emptyScenarioSet;
+  if (context.forcedFactoryIds) return context.forcedFactoryIds;
   const ids = new Set([
     ...(focus.factoryIds || []),
     ...(focus.activeFactoryIds || []),
@@ -2087,41 +2085,46 @@ function currentScenarioForcedFactoryIds() {
     if (!routeShouldExposeEndpointNodes(route, focus)) return;
     routeFactoryIds(route).forEach((id) => ids.add(id));
   });
+  context.forcedFactoryIds = ids;
   return ids;
 }
 
 function factoryAllowedByScenarioDisplay(factory = {}) {
-  const focus = currentScenarioFocus();
-  if (!focus.hideExcludedFactories) return true;
-  return !currentScenarioExcludedFactoryIds().has(factory.id);
+  const context = currentScenarioFocusContext();
+  if (!context.focus.hideExcludedFactories) return true;
+  return !context.excludedFactoryIds.has(factory.id);
 }
 
 function routeBlockedByScenarioDisplay(route = {}) {
-  return currentScenarioBlockedRouteIds().has(route.id);
+  return currentScenarioFocusContext().blockedRouteIds.has(route.id);
 }
 
 function routeTouchesDisabledPort(route = {}) {
-  const disabledPortIds = currentScenarioDisabledPortIds();
-  return routePortIds(route).some((id) => disabledPortIds.has(id));
+  const context = currentScenarioFocusContext();
+  return routePortIds(route).some((id) => context.disabledPortIds.has(id));
 }
 
 function routeAllowedByScenarioDisplay(route = {}) {
-  const focus = currentScenarioFocus();
-  const routeIds = new Set(focus.routeIds || []);
-  if (currentScenarioHiddenRouteIds().has(route.id)) return false;
-  if (focus.strictRouteIds && routeIds.size && !routeIds.has(route.id)) return false;
+  const context = currentScenarioFocusContext();
+  const focus = context.focus;
+  if (context.hiddenRouteIds.has(route.id)) return false;
+  if (focus.strictRouteIds && context.routeIds.size && !context.routeIds.has(route.id)) return false;
   if (focus.hideRoutesThroughExcludedFactories) {
-    const excludedFactoryIds = currentScenarioExcludedFactoryIds();
-    if (routeFactoryIds(route).some((id) => excludedFactoryIds.has(id))) return false;
+    if (routeFactoryIds(route).some((id) => context.excludedFactoryIds.has(id))) return false;
   }
   if (focus.hideRoutesThroughDisabledPorts && route.route_type !== "maritime_import" && routeTouchesDisabledPort(route)) return false;
-  if (focus.hideRoutesThroughThreatImpact && !routeBlockedByScenarioDisplay(route)) {
+  if (focus.hideRoutesThroughThreatImpact && !context.blockedRouteIds.has(route.id)) {
+    const routeCacheKey = route.id || `${route.route_type || "route"}:${routeFactoryIds(route).join(">")}`;
+    if (context.threatRouteTouchCache.has(routeCacheKey)) {
+      return !context.threatRouteTouchCache.get(routeCacheKey);
+    }
     const threatPaths = focus.threatPaths || currentThreatPaths(currentPlan());
     const touchesImpact = routeTouchesThreatImpact(route, threatPaths, {
       circleRadiiKm: focus.threatCircleRadiiKm || [],
       circleRadiusKm: Number(focus.threatCircleRadiusKm || currentThreatRadiusKm(currentPlan())),
       corridorBufferKm: Number(focus.threatCorridorBufferKm || 0),
     });
+    context.threatRouteTouchCache.set(routeCacheKey, touchesImpact);
     if (touchesImpact) return false;
   }
   return true;
@@ -4556,6 +4559,18 @@ function renderApacExtension() {
         .join("")}
     </ul>
   `;
+}
+
+function renderScenarioStep() {
+  updateViewModeClass();
+  renderScenarioLiveTabs();
+  renderCaseTicker();
+  renderFactoryScopeControls();
+  renderLayerToggles();
+  renderMapMeta();
+  renderMap();
+  renderFlowLedger();
+  renderDecisionCards();
 }
 
 function renderAll() {
