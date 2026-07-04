@@ -767,6 +767,48 @@ h2 {
   filter: drop-shadow(0 0 4px rgba(255, 177, 74, 0.82));
 }
 
+.blockade-line {
+  filter:
+    drop-shadow(0 0 7px rgba(169, 54, 168, 0.72))
+    drop-shadow(0 3px 6px rgba(0, 0, 0, 0.42));
+}
+
+.blockade-ship-marker {
+  position: relative;
+  display: block;
+  width: 32px;
+  height: 20px;
+  filter:
+    drop-shadow(0 0 5px rgba(169, 54, 168, 0.72))
+    drop-shadow(0 4px 6px rgba(0, 0, 0, 0.42));
+}
+
+.blockade-ship-marker::before {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 8px;
+  width: 26px;
+  height: 9px;
+  border: 2px solid rgba(255, 236, 255, 0.92);
+  border-top: 0;
+  border-radius: 3px 3px 13px 13px;
+  background: linear-gradient(90deg, rgba(101, 35, 134, 0.96), rgba(195, 59, 174, 0.96));
+  clip-path: polygon(0 0, 76% 0, 100% 44%, 88% 100%, 14% 100%);
+}
+
+.blockade-ship-marker::after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 2px;
+  width: 12px;
+  height: 9px;
+  border-radius: 2px 2px 0 0;
+  background: rgba(255, 236, 255, 0.92);
+  clip-path: polygon(18% 100%, 36% 0, 100% 100%);
+}
+
 .flow-line.is-context-highlight,
 .resource-flow-line.is-context-highlight,
 .maritime-import-line.is-context-highlight,
@@ -1532,6 +1574,11 @@ body {
 
 .legend-route.threat {
   border-color: #ff5a4f;
+  border-top-style: dashed;
+}
+
+.legend-route.blockade {
+  border-color: #a936a8;
   border-top-style: dashed;
 }
 

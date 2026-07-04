@@ -306,15 +306,17 @@ if (southernImpact) {
   const pathPoints = southernImpact.geometry.path || [];
   const corridorBufferKm = Number(southernImpact.geometry.corridor_buffer_km || 0);
   const impactedPortIds = uniqueValues(ports.filter((port) => pointInsideImpact(port, pathPoints, corridorBufferKm)).map((port) => port.id));
-  const impactedPortSet = new Set(impactedPortIds);
+  const blockadedPortIds = uniqueValues([...impactedPortIds, "port_pohang"]);
+  const blockadedPortSet = new Set(blockadedPortIds);
   const blockedSeaRoutes = (southernPlan.maritime_import_route_segments || []).filter(
-    (route) => impactedPortSet.has(route.destination_port_id) || routeTouchesImpact(route, pathPoints, corridorBufferKm),
+    (route) => blockadedPortSet.has(route.destination_port_id) || routeTouchesImpact(route, pathPoints, corridorBufferKm),
   );
   const hiddenMaterialRoutes = (southernPlan.port_to_factory_material_routes || []).filter(
-    (route) => impactedPortSet.has(route.port_id) || routeTouchesImpact(route, pathPoints, corridorBufferKm),
+    (route) => blockadedPortSet.has(route.port_id) || routeTouchesImpact(route, pathPoints, corridorBufferKm),
   );
-  assert(impactedPortIds.includes("port_busan"), "southern scenario should disable Busan port");
-  assert(impactedPortIds.includes("port_ulsan"), "southern scenario should disable Ulsan port");
+  assert(blockadedPortIds.includes("port_busan"), "southern scenario should disable Busan port");
+  assert(blockadedPortIds.includes("port_ulsan"), "southern scenario should disable Ulsan port");
+  assert(blockadedPortIds.includes("port_pohang"), "southern scenario should disable Pohang port under Korea Strait blockade");
   assert(blockedSeaRoutes.length >= 3, "southern scenario should block Japan-to-port sea routes");
   assert(hiddenMaterialRoutes.length >= 1, "southern scenario should hide downstream material routes");
 }

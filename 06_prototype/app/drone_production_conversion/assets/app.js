@@ -243,6 +243,11 @@ const layerFilterPresets = {
     resources: [],
     materialRoutes: false,
   },
+  portBlockadeIntro: {
+    factories: ["drone_assembly"],
+    resources: [],
+    materialRoutes: true,
+  },
   motorBottleneck: {
     factories: ["drone_assembly", "propulsion"],
     resources: ["rare_earth_magnet_recovery"],
@@ -280,6 +285,21 @@ const mapState = {
 const uiState = {
   controlsReady: false,
   playbackTimer: null,
+};
+
+const scenarioStageCache = new Map();
+const scenarioFocusContextCache = new WeakMap();
+const emptyScenarioSet = new Set();
+const emptyScenarioFocusContext = {
+  active: false,
+  focus: {},
+  routeIds: emptyScenarioSet,
+  excludedFactoryIds: emptyScenarioSet,
+  disabledPortIds: emptyScenarioSet,
+  blockedRouteIds: emptyScenarioSet,
+  hiddenRouteIds: emptyScenarioSet,
+  threatRouteTouchCache: new Map(),
+  forcedFactoryIds: emptyScenarioSet,
 };
 
 function elementById(id) {
@@ -505,11 +525,32 @@ const routePalette = {
   material: "#f0bd5e",
   threat: "#ff5a4f",
   fallback: "#ffb14a",
+  blockade: "#a936a8",
 };
 
 function routeTypeColor(type) {
   return routePalette[type] || routePalette.part;
 }
+
+const koreaStraitBlockade = {
+  label: "중국 해상 민병대 대한해협 봉쇄선",
+  line: [
+    {lat: 33.98, lon: 128.42},
+    {lat: 34.18, lon: 128.82},
+    {lat: 34.47, lon: 129.05},
+    {lat: 34.82, lon: 129.23},
+    {lat: 35.18, lon: 129.37},
+  ],
+  ships: [
+    {lat: 34.03, lon: 128.55, angle: 28},
+    {lat: 34.18, lon: 128.82, angle: 32},
+    {lat: 34.36, lon: 128.98, angle: 38},
+    {lat: 34.58, lon: 129.09, angle: 52},
+    {lat: 34.82, lon: 129.23, angle: 62},
+    {lat: 35.02, lon: 129.31, angle: 70},
+    {lat: 35.2, lon: 129.38, angle: 76},
+  ],
+};
 
 function routeFlowColor(route = {}) {
   if (route.route_type === "maritime_import" || route.material_ids?.length) return routeTypeColor("maritime");
@@ -897,18 +938,24 @@ function buildScenarioStages(scenarioId = state.scenarioId) {
       .filter((port) => threatImpactForFactory(port, southernThreatPaths, southernImpactOptions).insideImpact)
       .map((port) => port.id),
   );
-  const southernImpactedPortIdSet = new Set(southernImpactedPortIds);
+  const southernBlockadedPortIds = uniqueValues([...southernImpactedPortIds, "port_pohang"]);
+  const southernBlockadedPortIdSet = new Set(southernBlockadedPortIds);
   const southernImpactSeaRouteIds = (plan.maritime_import_route_segments || [])
     .filter(
       (route) =>
-        southernImpactedPortIdSet.has(route.destination_port_id) ||
+        southernBlockadedPortIdSet.has(route.destination_port_id) ||
         routeTouchesThreatImpact(route, southernThreatPaths, southernImpactOptions),
     )
     .map((route) => route.id);
+  const southernBlockadeFocusPoints = uniqueValues([
+    ...southernThreatPaths.flat(),
+    ...koreaStraitBlockade.line,
+    ...southernBlockadedPortIds.map((id) => portById[id]).filter(Boolean),
+  ]);
   const southernImpactMaterialRouteIds = (plan.port_to_factory_material_routes || [])
     .filter(
       (route) =>
-        southernImpactedPortIdSet.has(route.port_id) ||
+        southernBlockadedPortIdSet.has(route.port_id) ||
         routeTouchesThreatImpact(route, southernThreatPaths, southernImpactOptions),
     )
     .map((route) => route.id);
@@ -1110,28 +1157,29 @@ function buildScenarioStages(scenarioId = state.scenarioId) {
     return [
       {
         code: "3-1",
-        title: "남부 항만 차질 감지",
+        title: "대한해협 봉쇄 감지",
         phase: "D+2 / T+00",
-        layerPreset: "finalAssemblyOnly",
-        situation: "남부 항만/연안 logistics disruption으로 원료 유입 경로의 위험이 상승합니다.",
-        action: "항만 주변과 해상 유입 route를 zoom-in하고, 원료 feeder route를 재계산 대상으로 전환합니다.",
-        algorithm: "항만/해상 route risk가 material feeder score에 반영됩니다.",
+        layerPreset: "portBlockadeIntro",
+        situation: "중국 해상 민병대성 선박이 대한해협 남동쪽을 둘러싸며 부산·울산·포항 항만 접근 위험이 동시에 상승합니다.",
+        action: "대한해협 봉쇄선과 항만 주변을 zoom-in하고, 일본발 원료 feeder route를 차단/재계산 대상으로 전환합니다.",
+        algorithm: "항만 좌표와 해상 route geometry가 blockade/impact corridor에 걸리면 port와 maritime edge를 disabled/blocked 상태로 전파합니다.",
         metric: {label: "route risk", value: pct(objective.weighted_route_risk || 0)},
-        alert: {label: "ALERT", title: "남부 항만 차질 발생", mission: "공격/차질 지점을 먼저 확인하고 원료 feeder route를 재평가합니다."},
+        alert: {label: "ALERT", title: "대한해협 봉쇄 징후", mission: "봉쇄선, 항만 불능, 원료 feeder route 차단 여부를 먼저 확인합니다."},
         focus: {
           includeThreat: true,
           includeTrade: true,
+          blockade: koreaStraitBlockade,
           threatPaths: southernThreatPaths,
           threatCircleRadiusKm: southernImpactDefaultCircleRadiusKm,
           threatCircleRadiiKm: southernImpactCircleRadiiKm,
           threatCorridorBufferKm: southernImpactCorridorBufferKm,
-          disabledPortIds: southernImpactedPortIds,
+          disabledPortIds: southernBlockadedPortIds,
           blockedRouteIds: southernImpactSeaRouteIds,
           hiddenRouteIds: southernImpactMaterialRouteIds,
           hideRoutesThroughDisabledPorts: true,
           fitThreatOnly: true,
           routeIds: [...southernImpactSeaRouteIds, ...southernImpactMaterialRouteIds],
-          fitPoints: southernThreatPaths[0] || [],
+          fitPoints: southernBlockadeFocusPoints,
           maxZoom: 10,
         },
       },
@@ -1140,24 +1188,26 @@ function buildScenarioStages(scenarioId = state.scenarioId) {
         title: "희토류/반도체 feeder 점검",
         phase: "D+2 / T+09",
         layerPreset: "rawMaterialFeeder",
-        situation: "남부 항만 영향권에 들어온 항만은 불능 처리되고, 해당 항만으로 들어오는 일본발 해상 원료 edge는 차단 상태가 됩니다.",
+        situation: "부산·울산·포항 항만은 봉쇄 영향 항만으로 불능 처리되고, 해당 항만으로 들어오는 일본발 해상 원료 edge는 차단 상태가 됩니다.",
         action: "불능 항만은 빨간 X로 표시하고, 일본→항만 해상 route는 빨간 차단선으로 표시하며, 항만→공장 downstream 파이프라인은 끕니다.",
-        algorithm: "port 좌표가 logistics disruption geometry 안에 있으면 disabledPortIds로 전환하고, destination_port_id/port_id가 해당 항만인 route를 blocked/hidden 상태로 전파합니다.",
+        algorithm: "port 좌표 또는 봉쇄 대상 항만 id가 disabledPortIds에 들어오면 destination_port_id/port_id가 연결된 route를 blocked/hidden 상태로 전파합니다.",
         metric: {label: "원료 route", value: countText(ndfebRouteIds.length + electronicsRouteIds.length)},
         focus: {
           includeThreat: true,
           includeTrade: true,
+          blockade: koreaStraitBlockade,
           threatPaths: southernThreatPaths,
           threatCircleRadiusKm: southernImpactDefaultCircleRadiusKm,
           threatCircleRadiiKm: southernImpactCircleRadiiKm,
           threatCorridorBufferKm: southernImpactCorridorBufferKm,
-          disabledPortIds: southernImpactedPortIds,
+          disabledPortIds: southernBlockadedPortIds,
           blockedRouteIds: southernImpactSeaRouteIds,
           hiddenRouteIds: southernImpactMaterialRouteIds,
           hideRoutesThroughDisabledPorts: true,
           hideRoutesThroughThreatImpact: true,
           materialIds: ["ndfeb_magnet_feedstock", "copper_electronics_feedstock"],
           routeIds: uniqueValues([...southernImpactSeaRouteIds, ...ndfebRouteIds, ...electronicsRouteIds]),
+          fitPoints: southernBlockadeFocusPoints,
           maxZoom: 9,
         },
       },
@@ -1171,7 +1221,8 @@ function buildScenarioStages(scenarioId = state.scenarioId) {
         algorithm: "baseline 대비 added/removed factory delta를 산출해 원료-부품-조립 흐름을 재구성합니다.",
         metric: {label: "대체 공장", value: countText(metrics.added_factory_count || addedFactoryIds.length)},
         focus: {
-          disabledPortIds: southernImpactedPortIds,
+          blockade: koreaStraitBlockade,
+          disabledPortIds: southernBlockadedPortIds,
           blockedRouteIds: southernImpactSeaRouteIds,
           hiddenRouteIds: southernImpactMaterialRouteIds,
           hideRoutesThroughDisabledPorts: true,
@@ -1193,7 +1244,8 @@ function buildScenarioStages(scenarioId = state.scenarioId) {
         algorithm: "v1.0 reconfiguration은 생산량/비용/위험 delta와 동결 주문 충돌을 Plan Delta로 표시합니다.",
         metric: {label: "운송 검토", value: countText(metrics.in_transit_review_count || 0)},
         focus: {
-          disabledPortIds: southernImpactedPortIds,
+          blockade: koreaStraitBlockade,
+          disabledPortIds: southernBlockadedPortIds,
           blockedRouteIds: southernImpactSeaRouteIds,
           hiddenRouteIds: southernImpactMaterialRouteIds,
           hideRoutesThroughDisabledPorts: true,
@@ -1268,8 +1320,16 @@ function buildScenarioStages(scenarioId = state.scenarioId) {
   ];
 }
 
+function getScenarioStages(scenarioId = state.scenarioId) {
+  const cacheKey = scenarioId || "baseline";
+  if (!scenarioStageCache.has(cacheKey)) {
+    scenarioStageCache.set(cacheKey, buildScenarioStages(cacheKey));
+  }
+  return scenarioStageCache.get(cacheKey) || [];
+}
+
 function currentScenarioStages() {
-  return buildScenarioStages(state.scenarioId);
+  return getScenarioStages(state.scenarioId);
 }
 
 function currentScenarioStage() {
@@ -1279,7 +1339,30 @@ function currentScenarioStage() {
 }
 
 function currentScenarioFocus() {
-  return state.viewMode === "scenario" ? currentScenarioStage()?.focus || {} : {};
+  return currentScenarioFocusContext().focus;
+}
+
+function scenarioFocusContext(focus = {}) {
+  if (!focus || !Object.keys(focus).length) return emptyScenarioFocusContext;
+  if (!scenarioFocusContextCache.has(focus)) {
+    scenarioFocusContextCache.set(focus, {
+      active: true,
+      focus,
+      routeIds: new Set(focus.routeIds || []),
+      excludedFactoryIds: new Set(focus.excludedFactoryIds || []),
+      disabledPortIds: new Set(focus.disabledPortIds || []),
+      blockedRouteIds: new Set(focus.blockedRouteIds || []),
+      hiddenRouteIds: new Set(focus.hiddenRouteIds || []),
+      threatRouteTouchCache: new Map(),
+      forcedFactoryIds: null,
+    });
+  }
+  return scenarioFocusContextCache.get(focus);
+}
+
+function currentScenarioFocusContext() {
+  if (state.viewMode !== "scenario") return emptyScenarioFocusContext;
+  return scenarioFocusContext(currentScenarioStage()?.focus || {});
 }
 
 function currentThreatPaths(plan = currentPlan()) {
@@ -1350,6 +1433,11 @@ function routeMatchesFocus(route = {}, focus = {}) {
     routeFactoryIds(route).some((id) => factoryIds.has(id)) ||
     routeMaterialIds(route).some((id) => materialIds.has(id))
   );
+}
+
+function routeShouldExposeEndpointNodes(route = {}, focus = {}) {
+  if (routeMatchesFocus(route, focus)) return true;
+  return Boolean(focus.includeTrade && routeHasMaterialFlow(route) && !focusHasExplicitRoutes(focus));
 }
 
 function addRouteToFocusContext(context, route = {}) {
@@ -1524,7 +1612,7 @@ function shiftScenarioStage(offset, {fromPlayback = false} = {}) {
   }
   const nextScenarioIndex = (scenarioIndex + (offset > 0 ? 1 : -1) + ids.length) % ids.length;
   const nextScenarioId = ids[nextScenarioIndex];
-  const nextStages = buildScenarioStages(nextScenarioId);
+  const nextStages = getScenarioStages(nextScenarioId);
   const wrappedStageIndex = offset > 0 ? 0 : Math.max(0, nextStages.length - 1);
   setScenario(nextScenarioId, {fromPlayback, stageIndex: wrappedStageIndex});
 }
@@ -1985,6 +2073,23 @@ function currentScenarioHiddenRouteIds() {
   return new Set(focus.hiddenRouteIds || []);
 }
 
+function currentScenarioForcedFactoryIds() {
+  const focus = currentScenarioFocus();
+  if (state.viewMode !== "scenario" || !Object.keys(focus).length) return new Set();
+  const ids = new Set([
+    ...(focus.factoryIds || []),
+    ...(focus.activeFactoryIds || []),
+    ...(focus.disabledFactoryIds || []),
+    ...(focus.fitFactoryIds || []),
+  ]);
+  allPlanRoutes(currentPlan()).forEach((route) => {
+    if (!routeAllowedByScenarioDisplay(route)) return;
+    if (!routeShouldExposeEndpointNodes(route, focus)) return;
+    routeFactoryIds(route).forEach((id) => ids.add(id));
+  });
+  return ids;
+}
+
 function factoryAllowedByScenarioDisplay(factory = {}) {
   const focus = currentScenarioFocus();
   if (!focus.hideExcludedFactories) return true;
@@ -2024,8 +2129,11 @@ function routeAllowedByScenarioDisplay(route = {}) {
 
 function visibleFactories() {
   const activeIds = activeFactoryIds();
+  const forcedIds = currentScenarioForcedFactoryIds();
   return factories.filter(
-    (factory) => state.visible[factory.category] && factoryInCurrentScope(factory, activeIds) && factoryAllowedByScenarioDisplay(factory),
+    (factory) =>
+      (forcedIds.has(factory.id) || (state.visible[factory.category] && factoryInCurrentScope(factory, activeIds))) &&
+      factoryAllowedByScenarioDisplay(factory),
   );
 }
 
@@ -2838,6 +2946,16 @@ function fallbackArrowIcon(angle) {
   });
 }
 
+function blockadeShipIcon(angle = 0) {
+  return L.divIcon({
+    className: "",
+    html: `<span class="blockade-ship-marker" style="transform: rotate(${Number(angle || 0)}deg)"></span>`,
+    iconSize: [34, 22],
+    iconAnchor: [17, 11],
+    popupAnchor: [0, -12],
+  });
+}
+
 function visibleRoutes() {
   return (currentPlan().route_segments || []).filter(
     (route) => state.visible[route.part_category] && hasRoadGeometry(route) && routeAllowedByScenarioDisplay(route),
@@ -2850,12 +2968,25 @@ function visibleResourceRoutes() {
   );
 }
 
+function materialNetworkForcedVisible() {
+  const focus = currentScenarioFocus();
+  return Boolean(
+    focus.includeTrade ||
+      focus.blockade ||
+      (focus.disabledPortIds || []).length ||
+      (focus.blockedRouteIds || []).length ||
+      (focus.hiddenRouteIds || []).length,
+  );
+}
+
 function visibleMaritimeRoutes() {
-  return state.materialRoutesVisible ? (currentPlan().maritime_import_route_segments || []).filter(routeAllowedByScenarioDisplay) : [];
+  return state.materialRoutesVisible || materialNetworkForcedVisible()
+    ? (currentPlan().maritime_import_route_segments || []).filter(routeAllowedByScenarioDisplay)
+    : [];
 }
 
 function visiblePortMaterialRoutes() {
-  return state.materialRoutesVisible
+  return state.materialRoutesVisible || materialNetworkForcedVisible()
     ? (currentPlan().port_to_factory_material_routes || []).filter((route) => hasRoadGeometry(route) && routeAllowedByScenarioDisplay(route))
     : [];
 }
@@ -2989,6 +3120,26 @@ function renderMap() {
     }).addTo(mapState.layerGroup);
   });
 
+  if (scenarioFocus.blockade?.line?.length) {
+    const blockade = scenarioFocus.blockade;
+    L.polyline(blockade.line.map((point) => [point.lat, point.lon]), {
+      color: routeTypeColor("blockade"),
+      weight: 7,
+      opacity: 0.9,
+      dashArray: "18 12",
+      className: "blockade-line",
+    })
+      .bindPopup(`<strong>${escapeHtml(blockade.label || "해상 봉쇄선")}</strong><br />부산항/대한해협 접근 제한`)
+      .addTo(mapState.layerGroup);
+    (blockade.ships || []).forEach((ship) => {
+      L.marker([ship.lat, ship.lon], {
+        icon: blockadeShipIcon(ship.angle),
+        interactive: false,
+        keyboard: false,
+      }).addTo(mapState.layerGroup);
+    });
+  }
+
   visibleMaritimeRoutes().forEach((route) => {
     const materialId = route.material_ids?.[0];
     const materials = (route.material_ids || []).map((id) => materialLabel(id, {short: true})).join(" / ");
@@ -3032,7 +3183,7 @@ function renderMap() {
       .addTo(mapState.layerGroup);
   });
 
-  if (state.materialRoutesVisible) {
+  if (state.materialRoutesVisible || materialNetworkForcedVisible()) {
     foreignMaterialSources.forEach((source) => {
       const labels = (source.material_ids || []).map((id) => materialLabel(id, {short: true})).join(" / ");
       const preferredPort = portById[source.preferred_port_id] || {};
