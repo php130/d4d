@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>D4D Drone Production Conversion</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="./assets/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell map-first-shell is-default-mode">
+      <header class="compact-header">
+        <div class="compact-brand">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span class="brand-kicker">D4D</span>
+          <h1>드론 생산전환 맵</h1>
+          <span class="verification-note">candidate verification</span>
+        </div>
+        <div class="compact-actions">
+          <div class="header-scenario-tabs" id="scenarioLiveTabs" aria-label="전시 상황 시나리오"></div>
+          <button class="map-float-button quiet" id="datasetInfoButton" type="button">데이터셋</button>
+        </div>
+      </header>
+
+      <section class="map-canvas" aria-label="Drone production conversion map-first canvas">
+        <div id="productionMap" role="application" aria-label="Drone production conversion map"></div>
+
+        <div class="map-toolbar map-toolbar-left" aria-label="Map controls">
+          <button class="map-float-button" id="layerDrawerButton" type="button">노드 필터</button>
+          <div class="factory-scope-toggle" aria-label="공장 노드 표시 범위">
+            <button class="factory-scope-button is-active" data-factory-scope="all" type="button">
+              <span>전체 공장</span>
+              <strong id="factoryScopeAllCount">0</strong>
+            </button>
+            <button class="factory-scope-button" data-factory-scope="active" type="button">
+              <span>활성화 공장</span>
+              <strong id="factoryScopeActiveCount">0</strong>
+            </button>
+          </div>
+          <button class="map-float-button" id="mapLegendButton" type="button" aria-expanded="false">범례</button>
+        </div>
+
+        <aside class="map-legend" id="mapLegend" hidden aria-hidden="true" aria-label="노드와 경로 범례">
+          <div class="map-legend-heading">
+            <div>
+              <p class="panel-kicker">Map Legend</p>
+              <h2>노드 / 경로 기준</h2>
+            </div>
+            <button class="legend-close" id="mapLegendClose" type="button" aria-label="범례 닫기">×</button>
+          </div>
+          <div class="legend-grid">
+            <section>
+              <h3>Nodes</h3>
+              <p><span class="legend-node factory"></span><span>일반 후보 공장</span></p>
+              <p><span class="legend-node convergence"></span><span>가동 최종조립 공장</span></p>
+              <p><span class="legend-node reserve"></span><span>예비 전환 조립 후보</span></p>
+              <p><span class="legend-node resource"></span><span>원료/재활용 후보</span></p>
+              <p><span class="legend-node port"></span><span>수입항</span></p>
+              <p><span class="legend-node threatened"></span><span>공격/위험 영향 노드</span></p>
+            </section>
+            <section>
+              <h3>Edges</h3>
+              <p><span class="legend-route maritime"></span><span>해외 원료 해상 경로</span></p>
+              <p><span class="legend-route material"></span><span>원료 수입항 → 공장</span></p>
+              <p><span class="legend-route resource"></span><span>국내 회수/자원 → 공장</span></p>
+              <p><span class="legend-route part"></span><span>부품 공장 → 조립 거점</span></p>
+              <p><span class="legend-route threat"></span><span>공격/위험 회랑</span></p>
+              <p><span class="legend-route fallback"></span><span>위험 노드 대체 후보 이동</span></p>
+            </section>
+          </div>
+        </aside>
+
+        <section class="ops-board ops-board-left" aria-label="생산 운영 현황">
+          <article class="ops-card" id="factoryStatusCard">
+            <div class="ops-card-empty">공장 현황 로딩 중</div>
+          </article>
+          <article class="ops-card" id="droneProgressCard">
+            <div class="ops-card-empty">드론 생산 현황 로딩 중</div>
+          </article>
+        </section>
+
+        <section class="ops-board ops-board-right" aria-label="수요 및 조달 현황">
+          <article class="ops-card" id="unitStatusCard">
+            <div class="ops-card-empty">부대 현황 로딩 중</div>
+          </article>
+          <article class="ops-card" id="procurementStatusCard">
+            <div class="ops-card-empty">조달 현황 로딩 중</div>
+          </article>
+        </section>
+
+        <div class="map-presets" aria-label="지도 보기 프리셋">
+          <button class="map-preset-button" id="presetTrade" type="button">한-일 무역로</button>
+          <button class="map-preset-button" id="presetKorea" type="button">대한민국</button>
+          <button class="map-preset-button" id="presetCentral" type="button">서울-충청</button>
+          <button class="map-preset-button" id="presetGyeongsang" type="button">경상권</button>
+        </div>
+
+        <section class="map-summary" aria-label="Production summary">
+          <button class="summary-chip" id="summaryToggle" type="button" aria-expanded="false">
+            <span id="mapSummaryCompact">Loading plan</span>
+          </button>
+          <div class="summary-popover" id="summaryPopover" hidden>
+            <p class="panel-kicker">Plan Snapshot</p>
+            <h2 class="summary-title" id="mapTitle">Production Plan</h2>
+            <div class="map-meta-strip" id="mapMetaStrip"></div>
+            <label class="demand-control compact-demand">
+              <span>30일 목표 수량</span>
+              <input id="targetInput" type="number" min="1000" max="30000" step="500" />
+            </label>
+          </div>
+        </section>
+
+        <section class="case-ticker" id="caseTicker" aria-label="실시간 케이스 변화">
+          <div class="ops-card-empty">전시 케이스 로딩 중</div>
+        </section>
+
+        <aside class="map-drawer layer-drawer" id="layerDrawer" aria-hidden="true" aria-label="Layers and filters">
+          <div class="drawer-heading">
+            <div>
+              <p class="panel-kicker">레이어</p>
+              <h2>후보 노드 필터</h2>
+            </div>
+            <button class="drawer-close" id="layerDrawerClose" type="button" aria-label="레이어 닫기">닫기</button>
+          </div>
+          <div class="drawer-scroll">
+            <div class="layer-toggles" id="layerToggles"></div>
+            <div class="safe-boundary" id="safeBoundary"></div>
+          </div>
+        </aside>
+
+        <aside class="map-drawer details-drawer" id="detailsDrawer" aria-hidden="true" aria-label="Selected node details">
+          <div class="drawer-heading">
+            <div>
+              <p class="panel-kicker">선택 노드</p>
+              <h2 id="selectedTitle">선택된 노드</h2>
+              <span class="selected-category" id="selectedCategory">public source</span>
+            </div>
+            <button class="drawer-close" id="detailsDrawerClose" type="button" aria-label="상세 닫기">닫기</button>
+          </div>
+          <div class="drawer-scroll">
+            <div id="selectedDetails"></div>
+          </div>
+        </aside>
+
+        <aside class="map-drawer dataset-drawer" id="datasetInfoDrawer" aria-hidden="true" aria-label="데이터셋 및 계획 근거">
+          <div class="drawer-heading">
+            <div>
+              <p class="panel-kicker">데이터셋 정보</p>
+              <h2>데이터셋 / 계획 근거</h2>
+            </div>
+            <button class="drawer-close" id="datasetInfoClose" type="button" aria-label="데이터셋 정보 닫기">닫기</button>
+          </div>
+          <div class="drawer-scroll dataset-scroll">
+            <section class="drawer-section">
+              <p class="drawer-section-title">출처 상태</p>
+              <div class="topbar-status" id="topbarStatus"></div>
+            </section>
+            <section class="drawer-section">
+              <p class="drawer-section-title">BOM / 자원 요약</p>
+              <div id="planSummary"></div>
+            </section>
+            <section class="drawer-section">
+              <p class="drawer-section-title">활성 흐름 장부</p>
+              <div id="flowLedger"></div>
+            </section>
+            <section class="drawer-section">
+              <p class="drawer-section-title">최적화 결과</p>
+              <div id="optimizationResultSummary"></div>
+            </section>
+            <section class="drawer-section">
+              <p class="drawer-section-title">계획 변경 / 재구성</p>
+              <div id="reconfigurationSummary"></div>
+            </section>
+            <section class="drawer-section">
+              <p class="drawer-section-title">전력 리스크</p>
+              <div id="powerRiskSummary"></div>
+            </section>
+            <section class="drawer-section">
+              <p class="drawer-section-title">주문 / 운송 / 생산 중</p>
+              <div id="operationalState"></div>
+            </section>
+            <section class="drawer-section">
+              <p class="drawer-section-title">원자재 / 수입 경로</p>
+              <div id="materialSupplySummary"></div>
+            </section>
+            <section class="drawer-section">
+              <p class="drawer-section-title">우방국 공급원</p>
+              <div id="alliedSupplySummary"></div>
+            </section>
+            <section class="drawer-section">
+              <p class="drawer-section-title">봉쇄 생존성</p>
+              <div id="blockadeSurvivalSummary"></div>
+            </section>
+            <section class="drawer-section">
+              <p class="drawer-section-title">핵심 원료</p>
+              <div id="apacExtension"></div>
+            </section>
+          </div>
+        </aside>
+
+        <div class="reserved-scenario-ui" aria-hidden="true">
+          <!-- Scenario tabs are intentionally hidden for this map-first version. Keep DOM for later reuse. -->
+          <div class="scenario-tabs" id="scenarioTabs"></div>
+        </div>
+
+        <aside class="ops-detail-sheet" id="opsDetailSheet" hidden aria-hidden="true" aria-label="운영 상세 패널">
+          <div class="ops-sheet-heading">
+            <div class="ops-sheet-title-block">
+              <button class="ops-sheet-back" id="opsSheetBack" type="button" hidden aria-label="목록으로 돌아가기">← 목록으로</button>
+              <p class="panel-kicker" id="opsSheetKicker">운영 상세</p>
+              <h2 id="opsSheetTitle">상세 정보</h2>
+              <span id="opsSheetSubtitle">지도 기반 의사결정 보조 정보</span>
+            </div>
+            <button class="ops-sheet-close" id="opsSheetClose" type="button" aria-label="운영 상세 닫기">×</button>
+          </div>
+          <div class="ops-sheet-body" id="opsSheetBody"></div>
+        </aside>
+
+        <div class="ops-modal" id="opsModal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="opsModalTitle">
+          <button class="ops-modal-backdrop" id="opsModalBackdrop" type="button" aria-label="운영 상세 닫기"></button>
+          <section class="ops-modal-panel">
+            <div class="ops-modal-heading">
+              <div>
+                <p class="panel-kicker" id="opsModalKicker">운영 상세</p>
+                <h2 id="opsModalTitle">상세 정보</h2>
+              </div>
+              <button class="drawer-close" id="opsModalClose" type="button" aria-label="운영 상세 닫기">닫기</button>
+            </div>
+            <div class="ops-modal-body" id="opsModalBody"></div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="./data/drone_production_conversion_dataset.js"></script>
+    <script src="./data/optimizer_result_v0_9.js"></script>
+    <script src="./data/reconfiguration_result_v1_0.js"></script>
+    <script src="./assets/app.js"></script>
+  </body>
+</html>

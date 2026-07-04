@@ -1,0 +1,13 @@
+{
+  "name": "d4d-drone-production-conversion",
+  "version": "0.1.0",
+  "private": true,
+  "description": "D4D wartime drone production conversion map demo",
+  "scripts": {
+    "start": "node server.js",
+    "check": "node --check server.js && node --check assets/app.js && node --check data/drone_production_conversion_dataset.js && node --check data/optimizer_result_v0_9.js && node --check data/reconfiguration_result_v1_0.js && node scripts/validate-demo.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
