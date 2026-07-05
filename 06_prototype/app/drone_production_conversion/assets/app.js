@@ -285,6 +285,8 @@ const mapState = {
 const uiState = {
   controlsReady: false,
   playbackTimer: null,
+  scenarioMapFrame: null,
+  scenarioMapSecondFrame: null,
 };
 
 const scenarioStageCache = new Map();
@@ -294,11 +296,14 @@ const emptyScenarioFocusContext = {
   active: false,
   focus: {},
   routeIds: emptyScenarioSet,
+  factoryIds: emptyScenarioSet,
+  materialIds: emptyScenarioSet,
   excludedFactoryIds: emptyScenarioSet,
   disabledPortIds: emptyScenarioSet,
   blockedRouteIds: emptyScenarioSet,
   hiddenRouteIds: emptyScenarioSet,
   threatRouteTouchCache: new Map(),
+  factoryRiskCache: new Map(),
   forcedFactoryIds: emptyScenarioSet,
 };
 
@@ -1349,11 +1354,14 @@ function scenarioFocusContext(focus = {}) {
       active: true,
       focus,
       routeIds: new Set(focus.routeIds || []),
+      factoryIds: new Set(focus.factoryIds || []),
+      materialIds: new Set(focus.materialIds || []),
       excludedFactoryIds: new Set(focus.excludedFactoryIds || []),
       disabledPortIds: new Set(focus.disabledPortIds || []),
       blockedRouteIds: new Set(focus.blockedRouteIds || []),
       hiddenRouteIds: new Set(focus.hiddenRouteIds || []),
       threatRouteTouchCache: new Map(),
+      factoryRiskCache: new Map(),
       forcedFactoryIds: null,
     });
   }
@@ -1424,10 +1432,10 @@ function routeHasMaterialFlow(route = {}) {
   );
 }
 
-function routeMatchesFocus(route = {}, focus = {}) {
-  const routeIds = new Set(focus.routeIds || []);
-  const factoryIds = new Set(focus.factoryIds || []);
-  const materialIds = new Set(focus.materialIds || []);
+function routeMatchesFocus(route = {}, focus = {}, context = null) {
+  const routeIds = context?.routeIds || new Set(focus.routeIds || []);
+  const factoryIds = context?.factoryIds || new Set(focus.factoryIds || []);
+  const materialIds = context?.materialIds || new Set(focus.materialIds || []);
   return (
     (route.id && routeIds.has(route.id)) ||
     routeFactoryIds(route).some((id) => factoryIds.has(id)) ||
@@ -1435,8 +1443,8 @@ function routeMatchesFocus(route = {}, focus = {}) {
   );
 }
 
-function routeShouldExposeEndpointNodes(route = {}, focus = {}) {
-  if (routeMatchesFocus(route, focus)) return true;
+function routeShouldExposeEndpointNodes(route = {}, focus = {}, context = null) {
+  if (routeMatchesFocus(route, focus, context)) return true;
   return Boolean(focus.includeTrade && routeHasMaterialFlow(route) && !focusHasExplicitRoutes(focus));
 }
 
@@ -1606,8 +1614,7 @@ function shiftScenarioStage(offset, {fromPlayback = false} = {}) {
     state.viewMode = "scenario";
     state.scenarioStageIndex = nextStageIndex;
     applyCurrentScenarioLayerPreset();
-    renderScenarioStep();
-    if (mapState.map) fitMap();
+    renderScenarioStep({deferMap: true});
     return;
   }
   const nextScenarioIndex = (scenarioIndex + (offset > 0 ? 1 : -1) + ids.length) % ids.length;
@@ -1760,18 +1767,25 @@ function routeTouchesThreatImpact(route = {}, paths = [], options = {}) {
 }
 
 function factoryRisk(factory, plan = currentPlan()) {
+  const context = state.viewMode === "scenario" && plan?.id === currentPlan()?.id ? currentScenarioFocusContext() : null;
+  const cacheKey = context?.active && factory?.id ? `${plan?.id || "plan"}:${factory.id}` : "";
+  if (cacheKey && context.factoryRiskCache.has(cacheKey)) return context.factoryRiskCache.get(cacheKey);
+  const remember = (result) => {
+    if (cacheKey) context.factoryRiskCache.set(cacheKey, result);
+    return result;
+  };
   const threat = plan.threat;
-  if (!threat) return {risk: 0.12, reason: "baseline uncertainty"};
+  if (!threat) return remember({risk: 0.12, reason: "baseline uncertainty"});
   const threatPaths = currentThreatPaths(plan);
-  if (!threatPaths.length) return {risk: 0.16, reason: "threat model unavailable"};
-  const scenarioFocus = currentScenarioFocus();
+  if (!threatPaths.length) return remember({risk: 0.16, reason: "threat model unavailable"});
+  const scenarioFocus = context?.focus || currentScenarioFocus();
   if (state.viewMode === "scenario" && Object.keys(scenarioFocus).length) {
     const impact = threatImpactForFactory(factory, threatPaths, {
       circleRadiiKm: scenarioFocus.threatCircleRadiiKm || [],
       circleRadiusKm: Number(scenarioFocus.threatCircleRadiusKm || currentThreatRadiusKm(plan)),
       corridorBufferKm: Number(scenarioFocus.threatCorridorBufferKm || 0),
     });
-    if (impact.insideImpact) return {risk: 0.94, reason: impact.reason};
+    if (impact.insideImpact) return remember({risk: 0.94, reason: impact.reason});
   }
   const point = {lat: factory.lat, lon: factory.lon};
   const distances = [];
@@ -1782,10 +1796,10 @@ function factoryRisk(factory, plan = currentPlan()) {
   });
   const nearest = Math.min(...distances);
   const radius = currentThreatRadiusKm(plan);
-  if (nearest >= radius * 2.1) return {risk: 0.16, reason: `예측 회랑에서 ${Math.round(nearest)} km 이격`};
+  if (nearest >= radius * 2.1) return remember({risk: 0.16, reason: `예측 회랑에서 ${Math.round(nearest)} km 이격`});
   const corridorFactor = Math.max(0, 1 - nearest / (radius * 2.1));
   const risk = Math.min(0.94, 0.16 + Number(threat.probability || 0.5) * 0.72 * corridorFactor);
-  return {risk, reason: `예측 회랑에서 ${Math.round(nearest)} km 이격`};
+  return remember({risk, reason: `예측 회랑에서 ${Math.round(nearest)} km 이격`});
 }
 
 function routeMidpoint(route, t) {
@@ -2082,7 +2096,7 @@ function currentScenarioForcedFactoryIds() {
   ]);
   allPlanRoutes(currentPlan()).forEach((route) => {
     if (!routeAllowedByScenarioDisplay(route)) return;
-    if (!routeShouldExposeEndpointNodes(route, focus)) return;
+    if (!routeShouldExposeEndpointNodes(route, focus, context)) return;
     routeFactoryIds(route).forEach((id) => ids.add(id));
   });
   context.forcedFactoryIds = ids;
@@ -2869,8 +2883,8 @@ function renderMapMeta() {
   `;
 }
 
-function markerIcon(factory, opsFocus = opsMapFocusContext(), plan = currentPlan()) {
-  const risk = factoryRisk(factory).risk;
+function markerIcon(factory, opsFocus = opsMapFocusContext(), plan = currentPlan(), riskValue = null) {
+  const risk = Number.isFinite(Number(riskValue)) ? Number(riskValue) : factoryRisk(factory, plan).risk;
   const selected = state.selectedKind === "factory" && factory.id === state.selectedFactoryId ? "is-selected" : "";
   const focused = opsFocus.active && opsFocus.factoryIds.has(factory.id) ? "is-context-highlight" : "";
   const disabled = opsFocus.active && opsFocus.disabledFactoryIds?.has(factory.id) ? "is-disabled-node" : "";
@@ -3294,7 +3308,7 @@ function renderMap() {
   visibleFactories()
     .forEach((factory) => {
       const risk = factoryRisk(factory);
-      L.marker([factory.lat, factory.lon], {icon: markerIcon(factory, opsFocus, plan)})
+      L.marker([factory.lat, factory.lon], {icon: markerIcon(factory, opsFocus, plan, risk.risk)})
         .on("click", (event) => {
           if (event.originalEvent) L.DomEvent.stopPropagation(event.originalEvent);
           state.selectedKind = "factory";
@@ -4561,19 +4575,53 @@ function renderApacExtension() {
   `;
 }
 
-function renderScenarioStep() {
+function cancelScheduledScenarioMapRender() {
+  if (uiState.scenarioMapFrame && typeof cancelAnimationFrame === "function") {
+    cancelAnimationFrame(uiState.scenarioMapFrame);
+  }
+  if (uiState.scenarioMapSecondFrame && typeof cancelAnimationFrame === "function") {
+    cancelAnimationFrame(uiState.scenarioMapSecondFrame);
+  }
+  uiState.scenarioMapFrame = null;
+  uiState.scenarioMapSecondFrame = null;
+}
+
+function scheduleScenarioMapRender({fit = true} = {}) {
+  cancelScheduledScenarioMapRender();
+  if (typeof requestAnimationFrame !== "function") {
+    renderMap();
+    if (fit && mapState.map) fitMap();
+    return;
+  }
+  uiState.scenarioMapFrame = requestAnimationFrame(() => {
+    uiState.scenarioMapFrame = null;
+    uiState.scenarioMapSecondFrame = requestAnimationFrame(() => {
+      uiState.scenarioMapSecondFrame = null;
+      renderMap();
+      if (fit && mapState.map) fitMap();
+    });
+  });
+}
+
+function renderScenarioStep({deferMap = false} = {}) {
   updateViewModeClass();
   renderScenarioLiveTabs();
   renderCaseTicker();
   renderFactoryScopeControls();
   renderLayerToggles();
   renderMapMeta();
-  renderMap();
+  if (deferMap) {
+    scheduleScenarioMapRender();
+  } else {
+    cancelScheduledScenarioMapRender();
+    renderMap();
+  }
   renderFlowLedger();
   renderDecisionCards();
 }
 
 function renderAll() {
+  cancelScheduledScenarioMapRender();
   setupChromeControls();
   updateViewModeClass();
   renderTopbar();
